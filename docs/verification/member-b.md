@@ -63,3 +63,7 @@ Still pending: A peer review, accepted staging/release on main, GitHub CI requir
 ## Actual review chain references
 
 [Issue4/F02](https://github.com/auto4496/studytrack/issues/4) → [draft PR6](https://github.com/auto4496/studytrack/pull/6), [Issue5/F04](https://github.com/auto4496/studytrack/issues/5) → [draft PR7](https://github.com/auto4496/studytrack/pull/7), authored through Datakung. PR6 temporarily depends on A PR3; PR7 depends on PR6. Neither is accepted/merged; A review and updated staging integration still required. No GitHub CI workflow/run added in this feature round
+
+## PR3 independent review follow-up
+
+Read [PR3 B review](../reviews/pr-3-member-b.md): separate exact-head check38API/10browser/build/restartPASS, plus2new host-alias guard regressionsFAIL. Submitted REQUEST_CHANGES asDatakung on2370df9. Earlier B115/24results remain historical tested-source results; they do not cover this newly confirmed guard defect. Actual configured B dev/test targets remained separate; no destructive alias probe was run. Keep BPR6/7draft until Afix/new-head review and staging acceptance

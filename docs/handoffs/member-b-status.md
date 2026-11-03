@@ -1,5 +1,8 @@
 # Member B status — implementation handoff
 
+> อัปเดตลำดับ review: [PR3 review ของ B](https://github.com/auto4496/studytrack/pull/3#pullrequestreview-5752031354) เป็น CHANGES_REQUESTED ที่2370df9 เนื่องจากP2 test-DB guardไม่normalize LOCALHOST/localhost.; original38 API+10browser/build/restartผ่าน แต่2guard regressionsเพิ่มเติมfail. ดู [reviewพร้อมหลักฐาน](../reviews/pr-3-member-b.md). ต้องแก้และรับPR3ก่อนreview/integrate PR6→PR7; ทั้งคู่ยังdraft ไม่มีmergeใดในรอบreviewนี้
+
+
 วันที่ 3 พฤศจิกายน 2026 (Asia/Bangkok) | Revision B-implementation-01
 
 **สมาชิก B = ผู้ใช้/Datakung, A = เพื่อนร่วมทีม/auto4496.** F02/F04 มี implementation และ local verification แล้ว พร้อมให้ A review; ยังไม่ใช่ accepted release และยังไม่ได้รวมเข้า main

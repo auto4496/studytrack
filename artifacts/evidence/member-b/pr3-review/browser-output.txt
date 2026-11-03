@@ -1,0 +1,43 @@
+[WebServer] (node:30588) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:29516) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:37512) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+Environment variables loaded from .env
+Prisma schema loaded from server\prisma\schema.prisma
+Datasource "db": PostgreSQL database "studytrack_b_test", schema "public" at "127.0.0.1:26433"
+
+1 migration found in prisma/migrations
+
+
+┌─────────────────────────────────────────────────────────┐
+No pending migrations to apply.
+│  Update available 6.19.3 -> 8.0.0-rc.29                 │
+│                                                         │
+│  This is a major update - please follow the guide at    │
+│  https://pris.ly/d/major-version-upgrade                │
+│                                                         │
+│  Run the following to update                            │
+│    npm i --save-dev prisma@latest                       │
+│    npm i @prisma/client@latest                          │
+└─────────────────────────────────────────────────────────┘
+
+Running 10 tests using 1 worker
+
+(node:15572) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 [desktop] › e2e\member-a.spec.ts:14:1 › TEST-F01-08: invalid login, keyboard recovery, reload and logout revoke browser access (1.3s)
+  ok  2 [desktop] › e2e\member-a.spec.ts:44:1 › TEST-F03-08: create, reload and retrieve a real persisted goal; duplicate is rejected (1.5s)
+  ok  3 [desktop] › e2e\member-a.spec.ts:103:1 › manager sees catalog but cannot read participant goals via the backend (663ms)
+  ok  4 [desktop] › e2e\member-a.spec.ts:115:1 › FR-19: a failed list request offers retry and recovers with real API data (911ms)
+  ok  5 [desktop] › e2e\member-a.spec.ts:135:1 › NFR-06: a valid long activity title stays inside the goal detail viewport (969ms)
+(node:12328) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  6 [mobile] › e2e\member-a.spec.ts:14:1 › TEST-F01-08: invalid login, keyboard recovery, reload and logout revoke browser access (1.3s)
+  ok  7 [mobile] › e2e\member-a.spec.ts:44:1 › TEST-F03-08: create, reload and retrieve a real persisted goal; duplicate is rejected (1.7s)
+  ok  8 [mobile] › e2e\member-a.spec.ts:103:1 › manager sees catalog but cannot read participant goals via the backend (747ms)
+  ok  9 [mobile] › e2e\member-a.spec.ts:115:1 › FR-19: a failed list request offers retry and recovers with real API data (1.9s)
+  ok 10 [mobile] › e2e\member-a.spec.ts:135:1 › NFR-06: a valid long activity title stays inside the goal detail viewport (1.0s)
+
+  10 passed (17.5s)
