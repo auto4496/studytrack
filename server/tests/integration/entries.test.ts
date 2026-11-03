@@ -46,7 +46,7 @@ describe("F-04 persisted daily entries, date-effective progress and privacy", ()
   }
 
   it("TEST-F04-01/02: committed entry and progress survive a fresh request/app; empty day has no phantom row", async () => {
-    const session = await login();
+    let session = await login();
     const own = await goal(session);
     const saved = await post(session, own.id, 45).expect(201);
     expect(saved.body.data).toMatchObject({
@@ -94,6 +94,7 @@ describe("F-04 persisted daily entries, date-effective progress and privacy", ()
       entryId: saved.body.data.id,
     });
     clock.instant = new Date("2026-11-04T05:00:00Z");
+    session = await login(); // The original session correctly expires after eight hours.
     const empty = await session.agent
       .get(`/api/goals/${own.id}/progress?date=2026-11-04`)
       .expect(200);
@@ -167,13 +168,14 @@ describe("F-04 persisted daily entries, date-effective progress and privacy", ()
   );
 
   it("TEST-F04-06: query/missing dates and Bangkok midnight obey inclusive start/today bounds", async () => {
-    const session = await login();
+    let session = await login();
     const own = await goal(session);
     for (const query of ["", "?date=2026-11-03&ownerId=x"])
       await session.agent
         .get(`/api/goals/${own.id}/progress${query}`)
         .expect(422);
     clock.instant = new Date("2026-11-03T16:59:59.999Z");
+    session = await login();
     await post(session, own.id, 45, "2026-11-04").expect(422);
     clock.instant = new Date("2026-11-03T17:00:00.000Z");
     await post(session, own.id, 45, "2026-11-04").expect(201);
@@ -197,11 +199,25 @@ describe("F-04 persisted daily entries, date-effective progress and privacy", ()
   );
 
   it("TEST-F04-08: snapshot endpoints 1 and 1440 are accepted", async () => {
-    const session = await login();
+    let session = await login();
     const own = await goal(session);
     await post(session, own.id, 1).expect(201);
     clock.instant = new Date("2026-11-04T05:00:00Z");
+    session = await login();
     await post(session, own.id, 1440, "2026-11-04").expect(201);
+  });
+
+  it("TEST-F04-08: custom snapshot endpoints30/120 are inclusive", async () => {
+    await db.activityTemplate.update({
+      where: { id: fixtures.template.id },
+      data: { minMinutes: 30, maxMinutes: 120 },
+    });
+    let session = await login();
+    const own = await goal(session);
+    await post(session, own.id, 30).expect(201);
+    clock.instant = new Date("2026-11-04T05:00:00Z");
+    session = await login();
+    await post(session, own.id, 120, "2026-11-04").expect(201);
   });
 
   it("TEST-F04-09: serial duplicate never overwrites and another participant can record the same day", async () => {
@@ -263,8 +279,9 @@ describe("F-04 persisted daily entries, date-effective progress and privacy", ()
         .expect(404);
       expect(denied.body.error.code).toBe(missing.body.error.code);
       expect(denied.body.error.message).toBe(missing.body.error.message);
+      expect(denied.body).not.toHaveProperty("data");
       expect(JSON.stringify(denied.body)).not.toMatch(
-        /Read CPE|123|targetMinutes|entryDate/,
+        /Read CPE|targetMinutes|entryDate/,
       );
     }
     await request(app)
@@ -307,6 +324,19 @@ describe("F-04 persisted daily entries, date-effective progress and privacy", ()
   it("TEST-F04-13: unknown derived/owner fields reject; database failure safely rolls back", async () => {
     const session = await login();
     const own = await goal(session);
+    await session.agent
+      .post(`/api/goals/${own.id}/entries`)
+      .set("Origin", origin)
+      .set("X-CSRF-Token", session.csrf)
+      .send({ minutes: 45 })
+      .expect(422);
+    await session.agent
+      .post(`/api/goals/${own.id}/entries`)
+      .set("Origin", origin)
+      .set("X-CSRF-Token", session.csrf)
+      .set("Content-Type", "text/plain")
+      .send("not JSON")
+      .expect(415);
     for (const key of [
       "ownerId",
       "userId",
@@ -352,7 +382,7 @@ describe("F-04 persisted daily entries, date-effective progress and privacy", ()
   });
 
   it("TEST-F04-14: effective targets and immutable snapshot ranges preserve historical progress", async () => {
-    const session = await login();
+    let session = await login();
     const own = await goal(session);
     await db.activityTemplate.update({
       where: { id: fixtures.template.id },
@@ -366,6 +396,7 @@ describe("F-04 persisted daily entries, date-effective progress and privacy", ()
       },
     });
     clock.instant = new Date("2026-11-04T05:00:00Z");
+    session = await login();
     expect(
       (await post(session, own.id, 75).expect(201)).body.data,
     ).toMatchObject({ targetMinutes: 60, progressPercent: 125 });
@@ -379,18 +410,30 @@ describe("F-04 persisted daily entries, date-effective progress and privacy", ()
   });
 
   it("TEST-F04-14: archived goal accepts historical dates through endDate, rejects later dates", async () => {
-    const session = await login();
+    let session = await login();
     const own = await goal(session, (await extraTemplate()).id);
     await db.goal.update({
       where: { id: own.id },
       data: { status: "ARCHIVED", endDate: new Date("2026-11-03T00:00:00Z") },
     });
     clock.instant = new Date("2026-11-04T05:00:00Z");
+    session = await login();
     await post(session, own.id, 45).expect(201);
     await post(session, own.id, 45, "2026-11-04").expect(422);
     await session.agent
       .get(`/api/goals/${own.id}/progress?date=2026-11-04`)
       .expect(422);
     expect(await db.dailyEntry.count()).toBe(1);
+  });
+
+  it("TEST-F04-14: missing effective target rejects rather than falling back to current/client target", async () => {
+    const session = await login();
+    const own = await goal(session);
+    await db.goalTargetVersion.deleteMany({ where: { goalId: own.id } });
+    await post(session, own.id, 45).expect(422);
+    await session.agent
+      .get(`/api/goals/${own.id}/progress?date=2026-11-03`)
+      .expect(422);
+    expect(await db.dailyEntry.count()).toBe(0);
   });
 });
