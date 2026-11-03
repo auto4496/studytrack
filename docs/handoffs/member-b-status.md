@@ -10,7 +10,7 @@
 
 - Issue #4: F02, branch `codex/f02-templates` อาศัย A `codex/member-a-sprint1` ชั่วคราว
 - Issue #5: F04, branch `codex/f04-entries-progress` อาศัย F02 branch
-- PR references จะเติมเฉพาะหลังเปิดสำเร็จจริง; อย่า merge dependency chain นี้โดยข้าม A acceptance/staging workflow
+- เปิด [draft PR #6 F02](https://github.com/auto4496/studytrack/pull/6) base `codex/member-a-sprint1` และ [draft PR #7 F04](https://github.com/auto4496/studytrack/pull/7) base `codex/f02-templates` แล้ว ในนาม Datakung; ยังไม่ merge/approve. Retarget/rebaseไปaccepted stagingเมื่อdependenciesผ่าน reviewตาม workflow
 - Contracts เดิม e3714d0, reconcileกับ A ee14477 ก่อน B implementation; F02 red0e1ca17/greena3769d4; F04 redd709741; final tested source0b51571c6d81a81921dca3e2596e0755488c8f1c
 
 ## 2. ทำแล้ว
@@ -52,3 +52,7 @@ Shared files ที่แตะ: App route/ActivityComponent, styles, template r
 A peer review/accepted staging+main release, D1 self-contained PDFที่รวม A–F, GitHub CI/required gate, Docker/GCP/redeploy evidence, independent UATและ Sprint2/3ยัง pending. Local greenของF02/F04ไม่เท่ากับงานเหล่านี้เสร็จแล้ว
 
 สำหรับรันทวนใช้ READMEและ B verification; ไม่ส่ง env/password/session tokensเข้า Gitหรือแชต. ใช้ seed-generated demo credentialsจาก private .envบนเครื่องเท่านั้น. AI-use declarationอยู่ docs/ai-use.md; Bต้องอ่านและอธิบายงานที่รับ ส่วน A reviewยังไม่ถูกสร้างแทนเพื่อน
+
+## ลองบนเครื่องนี้
+
+UI: http://127.0.0.1:3300/ ใช้ API5300 และฐานข้อมูล B devที่แยกจากtest/A. บัญชีสังเคราะห์ manager@studytrack.test, student1@studytrack.test, student2@studytrack.test; รหัสผ่านจาก private `.env` เท่านั้น ไม่ใส่ค่าในแชต/รายงาน. เครื่อง A ใช้ README setupของrepoและ envของตน ไม่คัดลอก private envจากเครื่อง B

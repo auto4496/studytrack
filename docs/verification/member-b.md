@@ -59,3 +59,7 @@ F02 AC01–09 actual mapping above remains valid and all six browser cases ran a
 Normal journey: [desktop75%](../../artifacts/evidence/member-b/desktop-daily-progress.png), [mobile75%](../../artifacts/evidence/member-b/mobile-daily-progress.png). Above-target: [desktop125%](../../artifacts/evidence/member-b/desktop-progress-125.png), [mobile125%](../../artifacts/evidence/member-b/mobile-progress-125.png). Recovery: [mobile unknown outcome](../../artifacts/evidence/member-b/mobile-entry-recovery.png). Expected/actual/source/roles in test names, assertions, execution metadata. No raw traces with session tokens committed
 
 Still pending: A peer review, accepted staging/release on main, GitHub CI required gate, Docker/GCP persistence/deployment, independent UAT, D1 full self-contained PDF. Local green results do not imply those items passed
+
+## Actual review chain references
+
+[Issue4/F02](https://github.com/auto4496/studytrack/issues/4) → [draft PR6](https://github.com/auto4496/studytrack/pull/6), [Issue5/F04](https://github.com/auto4496/studytrack/issues/5) → [draft PR7](https://github.com/auto4496/studytrack/pull/7), authored through Datakung. PR6 temporarily depends on A PR3; PR7 depends on PR6. Neither is accepted/merged; A review and updated staging integration still required. No GitHub CI workflow/run added in this feature round
