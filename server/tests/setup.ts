@@ -1,4 +1,4 @@
-import { testDatabaseUrl } from '../../scripts/test-env.mjs';
+import { testDatabaseUrl } from "../../scripts/test-env.mjs";
 
 process.env.DATABASE_URL = testDatabaseUrl();
-process.env.NODE_ENV = 'test';
+process.env.NODE_ENV = "test";

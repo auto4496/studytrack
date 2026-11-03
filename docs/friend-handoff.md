@@ -2,6 +2,8 @@
 
 จัดทำ: 3 พฤศจิกายน 2026 (Asia/Bangkok)
 
+อัปเดตหลัง baseline: สมาชิก A ลง implementation ใน branch `codex/member-a-sprint1` แล้ว ให้เริ่มจาก [implementation handoff ล่าสุด](handoffs/member-a-implementation.md) และ README ใน repository แทนการสร้าง scaffold ซ้ำ ZIP baseline เดิมยังเป็น snapshot ก่อนโค้ด จึงไม่ใช่ code ล่าสุด
+
 ## 1. วิธีส่งและเริ่มใช้
 
 ชุดแรกชื่อ `studytrack-handoff-2026-11-03.zip`; ชุดอัปเดตชื่อ `studytrack-baseline-v0.1-2026-11-03.zip` รวมเอกสารฝั่ง A เพิ่มแล้ว ให้ส่งชุดอัปเดตให้สมาชิก B มี PDF โจทย์สี่ฉบับใน `sources/` ยังไม่มี application code หรือผลทดสอบ

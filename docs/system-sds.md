@@ -1,6 +1,6 @@
 # StudyTrack — System-Level Software Design Specification
 
-Version 0.1, 3 November 2026. Member A draft; implementation and teammate review NOT STARTED. อ้างอิง [SRS](srs.md), [integration contract](integration-contract.md) และ [decisions](decisions.md)
+Version 0.1, 3 November 2026. Member A pre-code design; now implemented for A foundation/F-01/F-03 on `codex/member-a-sprint1`, teammate review still pending. [Current verification and gaps](verification/member-a.md). อ้างอิง [SRS](srs.md), [integration contract](integration-contract.md) และ [decisions](decisions.md)
 
 ## 1. Architecture
 
@@ -27,7 +27,7 @@ e2e/
 docs/
 ```
 
-ยังไม่มี directories/code เหล่านี้ เป็น source plan สำหรับ scaffold ครั้งเดียวโดย A. B ไม่ต้องสร้าง scaffold อีกชุด A ประสาน schema/migrations/auth/test harness; B ประสาน UI layout/router; feature files เป็นเจ้าของตาม team plan
+Directories/code ของ A มีแล้ว; actual mounts และ shared signatures อยู่ใน [implementation handoff](handoffs/member-a-implementation.md). B ไม่ต้องสร้าง scaffold อีกชุด A ประสาน schema/migrations/auth/test harness; B ต่อ UI layout/router ของ feature ตนโดย review การเปลี่ยนร่วม; feature files เป็นเจ้าของตาม team plan
 
 ## 3. Logical data model
 
@@ -110,7 +110,7 @@ Local database `studytrack_dev`, test database `studytrack_test`; test runner mu
 
 Seed upserts users by normalized email with consistent roles and hashes env-provided passwords; rerun no duplicate accounts. Separate fixtures create at least two participants, manager, active template; feature tests must exercise manager-created template too, not only seeded templates. Applied migrations are immutable; future change is new migration
 
-README setup commands filled only after scaffold/tools verified. No fabricated `npm test`/build PASS in this design phase
+README มีคำสั่ง setup/build/tests ที่ใช้จริงแล้ว; actual output/version อยู่ใน verification artifacts. ไม่มีการถือ design plan เป็น PASS ของฟีเจอร์ที่ยังไม่ได้ทำ
 
 ## 9. Deployment and verification plan
 

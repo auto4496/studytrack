@@ -22,12 +22,12 @@ enum ActivityUnit {
 }
 
 model User {
-  id              String   @id @default(uuid()) @db.Uuid
-  emailNormalized String   @unique @map("email_normalized") @db.VarChar(254)
-  displayName     String   @map("display_name") @db.VarChar(100)
-  passwordHash    String   @map("password_hash")
+  id              String             @id @default(uuid()) @db.Uuid
+  emailNormalized String             @unique @map("email_normalized") @db.VarChar(254)
+  displayName     String             @map("display_name") @db.VarChar(100)
+  passwordHash    String             @map("password_hash")
   role            Role
-  createdAt       DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  createdAt       DateTime           @default(now()) @map("created_at") @db.Timestamptz(3)
   sessions        Session[]
   templates       ActivityTemplate[]
   goals           Goal[]
@@ -66,21 +66,21 @@ model ActivityTemplate {
 }
 
 model Goal {
-  id                     String       @id @default(uuid()) @db.Uuid
-  ownerId                String       @map("owner_id") @db.Uuid
-  owner                  User         @relation(fields: [ownerId], references: [id], onDelete: Restrict)
-  templateId             String       @map("template_id") @db.Uuid
-  template               ActivityTemplate @relation(fields: [templateId], references: [id], onDelete: Restrict)
-  templateTitleSnapshot  String       @map("template_title_snapshot") @db.VarChar(100)
-  unit                   ActivityUnit @default(MINUTES)
-  minMinutesSnapshot     Int          @map("min_minutes_snapshot")
-  maxMinutesSnapshot     Int          @map("max_minutes_snapshot")
-  startDate              DateTime     @map("start_date") @db.Date
-  endDate                DateTime?    @map("end_date") @db.Date
-  status                 GoalStatus   @default(ACTIVE)
-  createdAt              DateTime     @default(now()) @map("created_at") @db.Timestamptz(3)
-  targets                GoalTargetVersion[]
-  entries                DailyEntry[]
+  id                    String              @id @default(uuid()) @db.Uuid
+  ownerId               String              @map("owner_id") @db.Uuid
+  owner                 User                @relation(fields: [ownerId], references: [id], onDelete: Restrict)
+  templateId            String              @map("template_id") @db.Uuid
+  template              ActivityTemplate    @relation(fields: [templateId], references: [id], onDelete: Restrict)
+  templateTitleSnapshot String              @map("template_title_snapshot") @db.VarChar(100)
+  unit                  ActivityUnit        @default(MINUTES)
+  minMinutesSnapshot    Int                 @map("min_minutes_snapshot")
+  maxMinutesSnapshot    Int                 @map("max_minutes_snapshot")
+  startDate             DateTime            @map("start_date") @db.Date
+  endDate               DateTime?           @map("end_date") @db.Date
+  status                GoalStatus          @default(ACTIVE)
+  createdAt             DateTime            @default(now()) @map("created_at") @db.Timestamptz(3)
+  targets               GoalTargetVersion[]
+  entries               DailyEntry[]
 
   // Partial unique ACTIVE owner/template index is maintained in the SQL migration.
   @@index([ownerId, createdAt])

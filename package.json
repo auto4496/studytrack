@@ -22,7 +22,9 @@
     "test": "vitest run",
     "test:unit": "vitest run server/tests/unit",
     "test:integration": "vitest run server/tests/integration",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "verify:restart": "tsx scripts/restart-smoke.ts",
+    "setup:local": "node scripts/setup-local.mjs"
   },
   "dependencies": {
     "@prisma/client": "6.19.3",
@@ -43,6 +45,7 @@
     "@types/supertest": "7.2.1",
     "@vitejs/plugin-react": "6.2.1",
     "concurrently": "10.0.6",
+    "prettier": "3.9.10",
     "prisma": "6.19.3",
     "react": "19.3.1",
     "react-dom": "19.3.1",

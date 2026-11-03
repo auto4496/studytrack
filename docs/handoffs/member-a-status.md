@@ -2,6 +2,8 @@
 
 Date: 3 November 2026. Status: DOCUMENT DRAFTS READY FOR B REVIEW; no application implementation or executed feature tests
 
+Historical baseline note above describes the initial handoff. **Current state:** A has implemented foundation/F-01/F-03 on `codex/member-a-sprint1`; read [latest implementation handoff](member-a-implementation.md) and [verification](../verification/member-a.md) before starting B work. Keep this original baseline chronology; do not interpret it as current absence of code
+
 ## Files now provided by A
 
 - `docs/srs.md`: stable FR-01..FR-19, BR-01..BR-13, NFR-01..NFR-08 and feature/sprint allocation
