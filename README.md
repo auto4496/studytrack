@@ -59,6 +59,8 @@ Browser suite ใช้ Microsoft Edge ที่ติดตั้งไว้�
 
 Repository กลาง (private): [auto4496/studytrack](https://github.com/auto4496/studytrack). สมาชิก A คือ auto4496, B คือ Datakung (ส่งคำเชิญ repository แบบ Write แล้ว). [Project board](https://github.com/users/auto4496/projects/2) แยกจาก TokTickIT และให้ Datakung เป็น writer แล้ว
 
+ตรวจงานฝั่ง A ที่ [PR #3](https://github.com/auto4496/studytrack/pull/3) → `codex/sprint-1-staging`; ยังเปิดรอ peer review และยังไม่ได้ merge เข้า staging/main
+
 บันทึก pre-code documents ครั้งแรกที่ `11cdfe5`; TDD red ที่ `2fc6252` และ initial green ที่ `a13858f`. [Issue #1 F-01](https://github.com/auto4496/studytrack/issues/1), [Issue #2 F-03](https://github.com/auto4496/studytrack/issues/2). Initial docs บน main ไม่ใช่ product release. Feature PR ต้องให้คู่ทีม review ก่อนรวมเข้า `codex/sprint-1-staging` และ release ไป main
 
 สำหรับส่งต่อเพื่อนที่ใช้ Codex อีกเครื่อง อ่าน [ข้อความเริ่มงานฝั่งสมาชิก B](docs/friend-handoff.md) มี prompt พร้อมคัดลอกและรูปแบบส่งสถานะกลับ สมาชิก A/B ไม่เปลี่ยนตามผู้ที่เปิดไฟล์

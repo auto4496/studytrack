@@ -6,6 +6,8 @@ Repo private `https://github.com/auto4496/studytrack`; invitation sent to Dataku
 
 Branch `codex/member-a-sprint1` contains A's scaffold/F-01/F-03. Issues #1 and #2. Pre-code specs `11cdfe5`; meaningful red `2fc6252` (logout501 and invalid/missing goal rule behavior); initial green `a13858f` (same six tests pass). Final source version and execution results go in [verification](../verification/member-a.md). Human B review is still pending
 
+Actual review PR: [#3 — Member A authentication and personal goals](https://github.com/auto4496/studytrack/pull/3), base `codex/sprint-1-staging`. Issues #1/#2 are In review on the project board, not Done. The PR is open and has not been self-approved or merged
+
 Current source `016daba`:38 API/unit and10 browser tests pass, build/restart pass, audit0; see execution.json for per-command hashes (unchanged backend verified against c059044). Long-title overflow has its own red e06f4e4 and fixed browser coverage. Documentation/evidence commits after016daba do not change application source
 
 ## B should start from this foundation
