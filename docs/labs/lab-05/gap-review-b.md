@@ -1,5 +1,7 @@
 # Lab 5 gap review — สมาชิก B
 
+> Historical audit before B implementation. F02/F04 are now locally implemented/tested; see [current handoff](../../handoffs/member-b-status.md). CI/Docker/GCP/public-repository requirements remain pending as recorded below.
+
 วันที่: 3 พฤศจิกายน 2026 (Asia/Bangkok) | Revision: B-lab5-review-01
 
 สถานะ: READ-ONLY AUDIT + DOCUMENT PLAN — ตรวจโจทย์/kit/central repository แล้ว ยังไม่ได้รันแอป, CI, Docker build, cloud commands หรือ deployment และไม่ได้ส่ง review/เปลี่ยน visibility บน GitHub
