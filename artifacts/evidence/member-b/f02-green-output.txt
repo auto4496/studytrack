@@ -1,0 +1,16 @@
+
+> studytrack@0.1.0 test
+> vitest run server/tests/integration/templates.test.ts server/tests/unit/template-rules.test.ts --reporter=default --reporter=json --outputFile=artifacts/evidence/member-b/f02-green-results.json
+
+
+ RUN  v5.1.0 C:/CPE/CPE334/Project/studytrack-member-b
+
+ ✓ server/tests/integration/templates.test.ts (16 tests) 1616ms
+ ✓ server/tests/unit/template-rules.test.ts (10 tests) 6ms
+
+ Test Files  2 passed (2)
+      Tests  26 passed (26)
+   Start at  18:26:56
+   Duration  2.29s (tests 79%, import 17%, transform 4%, setup 1%)
+
+JSON report written to C:/CPE/CPE334/Project/studytrack-member-b/artifacts/evidence/member-b/f02-green-results.json

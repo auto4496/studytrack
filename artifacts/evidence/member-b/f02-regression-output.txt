@@ -1,0 +1,23 @@
+
+> studytrack@0.1.0 test
+> vitest run --reporter=default --reporter=json --outputFile=artifacts/evidence/member-b/f02-regression-results.json
+
+
+ RUN  v5.1.0 C:/CPE/CPE334/Project/studytrack-member-b
+
+ ✓ server/tests/integration/goals.test.ts (19 tests) 2033ms
+ ✓ server/tests/integration/auth.test.ts (9 tests) 956ms
+ ✓ server/tests/integration/templates.test.ts (16 tests) 1595ms
+ ✓ server/tests/unit/goal-rules.test.ts (3 tests) 4ms
+ ✓ server/tests/unit/template-rules.test.ts (10 tests) 5ms
+ ✓ server/tests/unit/test-db-guard.test.ts (7 tests) 4ms
+
+ Test Files  6 passed (6)
+      Tests  64 passed (64)
+   Start at  18:29:06
+   Duration  6.47s (tests 79%, import 17%, transform 2%, setup 1%)
+
+    Isolate  6 workers spawned · ~107ms startup each (spawn + environment, per file)
+             at least ~537ms faster with isolate: false — reuses workers across files instead of one per file
+
+JSON report written to C:/CPE/CPE334/Project/studytrack-member-b/artifacts/evidence/member-b/f02-regression-results.json
