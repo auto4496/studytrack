@@ -11,20 +11,20 @@
 - รูปแบบ inventory/traceability: [Deliverable 1](../sources/project_deliverable_1_v1.pdf) หน้า 2-4; D1 ครอบคลุม baseline ทั้งผลิตภัณฑ์ แม้ implementation รอบแรกทำเฉพาะ Sprint 1
 - สถานะกลางและช่องว่าง: [traceability](traceability.md), [แผน Sprint](sprints/plan.md), [ผลตรวจ baseline ฝั่ง B](reviews/baseline-review-b.md)
 
-ยังไม่พบ `docs/srs.md` หรือ System SDS จาก A ในชุดเริ่มต้น ดังนั้น **FR/BR/NFR ของ SRS ทุกแถวยังรอ mapping** รหัส BR-01 ถึง BR-10 ด้านล่างอ้างร่างใน project brief §4 ไม่ใช่ baseline ที่ทีมอนุมัติแล้ว รายการ F-01 ถึง F-08 คงรหัสเดิมเพื่อให้ A เชื่อม SRS ได้โดยไม่ต้องเปลี่ยนชื่อฟีเจอร์
+ข้อความส่วนนี้เป็นประวัติ draft-01; ปัจจุบันมี SRS/System SDS ของ A ใน repository แล้ว ดังนั้น **FR/BR/NFR ของ SRS ทุกแถวยังรอ mapping** รหัส BR-01 ถึง BR-10 ด้านล่างอ้างร่างใน project brief §4 ไม่ใช่ baseline ที่ทีมอนุมัติแล้ว รายการ F-01 ถึง F-08 คงรหัสเดิมเพื่อให้ A เชื่อม SRS ได้โดยไม่ต้องเปลี่ยนชื่อฟีเจอร์
 
 ## 2. รายการฟีเจอร์ทั้งผลิตภัณฑ์
 
 | ID / ชื่อ | พฤติกรรมและผลลัพธ์ที่ต้องได้ตามร่าง | แหล่ง requirement ปัจจุบัน / SRS | Sprint / owner / reviewer | Dependencies | แนวทางตรวจผลที่วางแผนไว้ |
 |---|---|---|---|---|---|
-| F-01 Identity & access | Login/logout/current user ด้วย identity ที่ backend ตรวจได้; เก็บรหัสผ่านแบบ hash; session มี expiry/revocation; บังคับ role และ ownership ที่ทุก protected API | Brief §2, §3, §7; BR-07; FR/NFR รอ A | 1 / A / B | โครงสร้างร่วม, user/session data, seed และ test DB | Valid/invalid login, anonymous protected request, wrong role, cross-user, logout แล้ว session เดิมใช้ไม่ได้; API/DB integration และ selected UI |
-| F-02 Activity templates | Manager สร้างแม่แบบอ่านหนังสือที่ระบุหน่วยและช่วงที่ถูกต้อง; Participant เรียกและเลือกแม่แบบ active; ไม่มีการเปิดข้อมูลส่วนตัวของ Participant ผ่านแม่แบบ | Brief §3-5; BR-01, BR-07; FR/NFR รอ A | 1 / B / A | F-01; shared API/error; migration ที่ A ประสาน | Unit validation; API/DB persistence; Participant สร้างแม่แบบไม่ได้; UI create→list→select; [contract](sprints/sprint-1/f02-templates.md) |
-| F-03 Personal goals | Participant เลือก active template แล้วตั้งเป้าหมายรายวันและวันเริ่ม; อ่านเป้าหมายของตน; ปฏิเสธ target ผิดช่วงและ active goal ซ้ำต่อ template | Brief §3-5; BR-02, BR-03, BR-07; FR/NFR รอ A | 1 / A / B | F-01, F-02; รูปแบบ goal/date และข้อมูล target ที่ส่งต่อ F-04 | Unit bounds/date; API/DB ownership และ duplicate active goal; UI set→retrieve; contract/AC/STS รอ A |
-| F-04 Daily entries & progress | บันทึกนาทีรายวันและดึงผลจากฐานข้อมูล; คำนวณ actual/target × 100 โดยเกิน 100% ได้; ปฏิเสธค่าผิดช่วง วันผิดกฎ และรายการซ้ำรวมคำขอพร้อมกัน | Brief §3-5; BR-01, BR-04 ถึง BR-07; FR/NFR รอ A | 1 / B / A | F-01, F-03; authoritative goal owner/start date/target/range; unique constraint | Unit date/progress; API/DB reload และ concurrent duplicate; anonymous/manager/cross-user rejection; UI complete journey; [contract](sprints/sprint-1/f04-entries-progress.md) |
-| F-05 Goal/template lifecycle | เปลี่ยน target แบบมี effective date วันถัดไปโดยผลย้อนหลังคงเดิม; หยุด goal; ปิดใช้ template แล้วห้ามสร้าง goal ใหม่ แต่ goal เดิมยังบันทึกได้ด้วยหน่วย/ช่วงเดิม | Brief §4-5; BR-03, BR-07, BR-08, BR-10; FR/NFR รอ A | 2 / A / B | F-02, F-03, F-04; ตกลง target-version และ snapshot strategy | Unit effective-date/history; API/DB lifecycle และหลายคำขอก่อนมีผล; regression ผลย้อนหลังและ goal เดิมหลัง template inactive; contract ต้องกำหนด stop/revision rules ก่อน code |
-| F-06 History & streak | Participant ดูประวัติ/กรองวันที่ แก้รายการของตนตามกฎ และคำนวณ streak ใหม่จาก target ของแต่ละวัน; ไม่เปิด history ข้ามผู้ใช้ | Brief §4-5; BR-04 ถึง BR-09; FR/NFR รอ A | 2 / B / A | F-04, F-05; แหล่ง target ตามวันที่; กฎแก้ entry/goal ที่หยุด | Unit date gaps, target versions, current streak/today-not-complete; API/DB edits และ ownership; UI edit→history→recompute; contract ต้องตกลงขอบเขตแก้ไขก่อน code |
-| F-07 Schedule/reminder representation | บันทึกตารางที่ตั้งใจอ่าน/เวลาเตือนและเห็นสถานะในแอปของตน; ข้อมูลต้อง persist จริง; ไม่ต้องส่ง email/SMS/push | Brief §5-6; หัวข้อ 8 ของโจทย์; BR-07 และกฎวัน/เวลาที่ต้องร่าง; FR/NFR รอ A | 3 / A / B | F-01, F-03, F-05; timezone และผลเมื่อ goal หยุด | Unit schedule/time validation; API/DB save→reload และ ownership; UI planned schedule; contract ต้องระบุ weekday/time/stop behavior ก่อน code |
-| F-08 Summary & integrated completion | แสดงสรุปรายสัปดาห์/ช่วงเวลาจากข้อมูลจริงของตน; รวม actual/target ของช่วงที่เลือกตาม target history; เก็บงาน usability/error/access และ regression ของระบบรวม | Brief §5; หัวข้อ 8 ของโจทย์; BR-05 ถึง BR-09; FR/NFR รอ A | 3 / B / A | F-04, F-05, F-06; นิยามวันใน denominator และช่วงเวลาต้องตกลง | Unit period/denominator/versioned target; API/DB summary และ ownership; UI summary ที่มีข้อมูลจริง/ช่วงว่าง; integrated regression; ห้ามใช้ hardening แทน summary |
+| F-01 Identity & access | Login/logout/current user ด้วย identity ที่ backend ตรวจได้; เก็บรหัสผ่านแบบ hash; session มี expiry/revocation; บังคับ role และ ownership ที่ทุก protected API | Brief §2, §3, §7; BR-07; ดู SRS mapping §6 | 1 / A / B | โครงสร้างร่วม, user/session data, seed และ test DB | Valid/invalid login, anonymous protected request, wrong role, cross-user, logout แล้ว session เดิมใช้ไม่ได้; API/DB integration และ selected UI |
+| F-02 Activity templates | Manager สร้างแม่แบบอ่านหนังสือที่ระบุหน่วยและช่วงที่ถูกต้อง; Participant เรียกและเลือกแม่แบบ active; ไม่มีการเปิดข้อมูลส่วนตัวของ Participant ผ่านแม่แบบ | Brief §3-5; BR-01, BR-07; ดู SRS mapping §6 | 1 / B / A | F-01; shared API/error; migration ที่ A ประสาน | Unit validation; API/DB persistence; Participant สร้างแม่แบบไม่ได้; UI create→list→select; [contract](sprints/sprint-1/f02-templates.md) |
+| F-03 Personal goals | Participant เลือก active template แล้วตั้งเป้าหมายรายวันและวันเริ่ม; อ่านเป้าหมายของตน; ปฏิเสธ target ผิดช่วงและ active goal ซ้ำต่อ template | Brief §3-5; BR-02, BR-03, BR-07; ดู SRS mapping §6 | 1 / A / B | F-01, F-02; รูปแบบ goal/date และข้อมูล target ที่ส่งต่อ F-04 | Unit bounds/date; API/DB ownership และ duplicate active goal; UI set→retrieve; contract/AC/STS รอ A |
+| F-04 Daily entries & progress | บันทึกนาทีรายวันและดึงผลจากฐานข้อมูล; คำนวณ actual/target × 100 โดยเกิน 100% ได้; ปฏิเสธค่าผิดช่วง วันผิดกฎ และรายการซ้ำรวมคำขอพร้อมกัน | Brief §3-5; BR-01, BR-04 ถึง BR-07; ดู SRS mapping §6 | 1 / B / A | F-01, F-03; authoritative goal owner/start date/target/range; unique constraint | Unit date/progress; API/DB reload และ concurrent duplicate; anonymous/manager/cross-user rejection; UI complete journey; [contract](sprints/sprint-1/f04-entries-progress.md) |
+| F-05 Goal/template lifecycle | เปลี่ยน target แบบมี effective date วันถัดไปโดยผลย้อนหลังคงเดิม; หยุด goal; ปิดใช้ template แล้วห้ามสร้าง goal ใหม่ แต่ goal เดิมยังบันทึกได้ด้วยหน่วย/ช่วงเดิม | Brief §4-5; BR-03, BR-07, BR-08, BR-10; ดู SRS mapping §6 | 2 / A / B | F-02, F-03, F-04; ตกลง target-version และ snapshot strategy | Unit effective-date/history; API/DB lifecycle และหลายคำขอก่อนมีผล; regression ผลย้อนหลังและ goal เดิมหลัง template inactive; contract ต้องกำหนด stop/revision rules ก่อน code |
+| F-06 History & streak | Participant ดูประวัติ/กรองวันที่ แก้รายการของตนตามกฎ และคำนวณ streak ใหม่จาก target ของแต่ละวัน; ไม่เปิด history ข้ามผู้ใช้ | Brief §4-5; BR-04 ถึง BR-09; ดู SRS mapping §6 | 2 / B / A | F-04, F-05; แหล่ง target ตามวันที่; กฎแก้ entry/goal ที่หยุด | Unit date gaps, target versions, current streak/today-not-complete; API/DB edits และ ownership; UI edit→history→recompute; contract ต้องตกลงขอบเขตแก้ไขก่อน code |
+| F-07 Schedule/reminder representation | บันทึกตารางที่ตั้งใจอ่าน/เวลาเตือนและเห็นสถานะในแอปของตน; ข้อมูลต้อง persist จริง; ไม่ต้องส่ง email/SMS/push | Brief §5-6; หัวข้อ 8 ของโจทย์; BR-07 และกฎวัน/เวลาที่ต้องร่าง; ดู SRS mapping §6 | 3 / A / B | F-01, F-03, F-05; timezone และผลเมื่อ goal หยุด | Unit schedule/time validation; API/DB save→reload และ ownership; UI planned schedule; contract ต้องระบุ weekday/time/stop behavior ก่อน code |
+| F-08 Summary & integrated completion | แสดงสรุปรายสัปดาห์/ช่วงเวลาจากข้อมูลจริงของตน; รวม actual/target ของช่วงที่เลือกตาม target history; เก็บงาน usability/error/access และ regression ของระบบรวม | Brief §5; หัวข้อ 8 ของโจทย์; BR-05 ถึง BR-09; ดู SRS mapping §6 | 3 / B / A | F-04, F-05, F-06; นิยามวันใน denominator และช่วงเวลาต้องตกลง | Unit period/denominator/versioned target; API/DB summary และ ownership; UI summary ที่มีข้อมูลจริง/ช่วงว่าง; integrated regression; ห้ามใช้ hardening แทน summary |
 
 งาน F-05 ถึง F-08 มีที่ไปใน baseline ตั้งแต่ D1 แต่ยังไม่ต้องกำหนดทุก endpoint/AC ณ วันแรก ต้องมี contract ที่ตรวจได้ก่อนเริ่ม implementation ของแต่ละฟีเจอร์ ส่วน F-07 และ F-08 ต้องมี contract ครบและมีอย่างน้อยหนึ่ง workflow/rule ที่ implemented และ tested จริงภายใน D2
 
@@ -55,3 +55,18 @@ NFR ที่วัดได้และรหัสถาวรต้องม�
 | รุ่น / วันที่ | การเปลี่ยน | การยืนยัน |
 |---|---|---|
 | B-draft-01 / 3 พ.ย. 2026 | ร่าง inventory F-01 ถึง F-08 จาก brief และ PDF; แสดง dependencies, responsibilities และช่องว่าง SRS | รอ A/B; ไม่มีการอนุมัติหรือผลทดสอบในรอบนี้ |
+
+## 6. SRS mapping update v0.2
+
+Source: [SRS A v0.1](srs.md) on PR3 foundation. IDs are existing A IDs, not a new B requirement set. Full FR01–19/BR01–13/NFR01–08 allocation and planned verification in [traceability](traceability.md). Earlier pending-SRS wording above records the initial snapshot only. No A acceptance or B execution implied
+
+| Feature | SRS links |
+|---|---|
+| F01 | FR01–04, BR07, NFR01/02/07 |
+| F02 | FR05/06/19, BR01/07/10, NFR01/02/03/06/07 |
+| F03 | FR07/08/19, BR02/03/07, NFR01/03/04/06/08 |
+| F04 | FR11/12/19, BR04/05/06/07/08/10/11, NFR01–08 applicable |
+| F05 | FR09/10, BR03/08/10/11 |
+| F06 | FR13/14/15, BR04/05/08/09/11/12 |
+| F07 | FR16/17, BR07/13 |
+| F08 | FR18/19, BR06/07/08/09/12 |

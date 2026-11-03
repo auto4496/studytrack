@@ -71,3 +71,7 @@ B จะตรวจ SRS ของ A โดยเทียบ scope/exclusions �
 | B-draft-01 | 3 พ.ย. 2026 | Codex ตามคำสั่ง B | ตรวจ snapshot/แหล่งโจทย์ครบ แยกข้อเสนอและคำถามก่อน code | รอ B อ่านและ A review; ยังไม่มี TA ตอบ |
 
 ไม่รัน application tests เพราะยังไม่มีแอป ไม่มี commit/PR/review/UAT จริงในรอบนี้ ดูรายการไฟล์และงานต่อใน [สถานะส่งกลับ A](../handoffs/member-b-status.md)
+
+## Updated review from central source — 3 November 2026
+
+User authorized B implementation. Read A SRS/System SDS/integration/F01/F03 contracts and implementation handoff at2370df9. Adopt source SRS IDs and A's actual /api, MINUTES, title100/description500, UUID, startDate, DTO/envelope/pagination and cookie/CSRF. B draft01 API differences reconciled in v0.2 before code; do not create auth/schema scaffold again. F04 follows SRS BR11 for historical archived bounds rather than draft01 active-only behavior. PR3 still pending human review; this document is specific AI-assisted interface/source review, not approval submitted as A/B on GitHub. No full code-security approval implied
