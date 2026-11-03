@@ -18,7 +18,7 @@ npm run db:seed
 npm run dev
 ```
 
-เปิด UI ที่ **http://localhost:3000** (ใช้ origin นี้ให้ตรง `APP_ORIGIN`), API health ที่ http://127.0.0.1:5000/api/health. `setup:local` สร้าง `.env`/`.env.test.local` พร้อม generated passwords โดยไม่พิมพ์ค่าออกมาและไม่เขียนทับไฟล์เดิม ถ้าตั้งค่าเองให้เริ่มจาก `.env.example`/`.env.test.example`; อย่าใช้ CHANGE_ME จริง
+เปิด UI ตาม `APP_ORIGIN` ใน `.env` (ค่าเริ่มต้น **http://localhost:3000**), API health ที่ http://127.0.0.1:5000/api/health. เครื่อง A รอบนี้ใช้ **http://127.0.0.1:3000** เพื่อแยกจาก service ที่ฟัง wildcard localhost อยู่แล้ว Origin ต้องตรงกับค่าที่ตั้ง. `setup:local` สร้าง `.env`/`.env.test.local` พร้อม generated passwords โดยไม่พิมพ์ค่าออกมาและไม่เขียนทับไฟล์เดิม ถ้าตั้งค่าเองให้เริ่มจาก `.env.example`/`.env.test.example`; อย่าใช้ CHANGE_ME จริง
 
 | Local synthetic account | Password source (private .env) | Role |
 |---|---|---|
@@ -43,6 +43,8 @@ Vitest/API tests และ Playwright ใช้ `TEST_DATABASE_URL` ที่ม
 Browser suite ใช้ Microsoft Edge ที่ติดตั้งไว้บน Windows; บน Linux/macOS ใช้ `npx playwright install chromium` ก่อนรัน หรือกำหนด `PLAYWRIGHT_CHANNEL` ตาม browser ที่ติดตั้ง ทดสอบ UI/API จริงที่ ports 3100/5100 พร้อม CSRF/Origin config แยกจาก dev. หลักฐานอยู่ใน `artifacts/evidence/member-a/` และรายละเอียด/coverage gaps ใน [verification record](docs/verification/member-a.md)
 
 `verify:restart` ใช้ guarded test DB สร้างข้อมูลสังเคราะห์เฉพาะรอบ หยุดและเริ่ม API process จริง ตรวจ session/goal/target persistence แล้วลบเฉพาะข้อมูลของรอบนั้น ไม่ใช่หลักฐาน GCP redeployment ซึ่งยังเป็น Lab 5
+
+ผล local verification รอบนี้: API/unit38 ผ่าน, browser10 ผ่าน, failed/skipped0; build และ real process restart ผ่าน; npm audit0 vulnerabilities. Source/command versions ระบุใน `artifacts/evidence/member-a/execution.json` รวมการตรวจว่า backend ไม่เปลี่ยนหลัง API run; ยังไม่ใช่ teammate approval หรือ full Sprint1 acceptance
 
 ## ขอบเขตที่มีใน branch นี้
 

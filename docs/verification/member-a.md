@@ -2,6 +2,8 @@
 
 Date: 3 November 2026 (Asia/Bangkok). Scope: foundation + F-01 + F-03 on `codex/member-a-sprint1`; not a complete product release. Final execution manifest/results are recorded in `artifacts/evidence/member-a/` after code verification
 
+**Actual final local result:**38 API/unit tests passed,10 browser tests passed,0 failed/skipped; build PASS, real API process restart PASS, dependency audit0 vulnerabilities. Latest UI/e2e source `016daba`; API/restart/audit run at `c059044` and `git diff --exit-code` confirms server/scripts/package/config paths unchanged through `016daba`. Exact full hashes/commands are in execution.json. Later commits add docs/artifacts only
+
 ## Authentic TDD sequence
 
 | Stage | Source commit | Command | Actual result |
@@ -10,7 +12,7 @@ Date: 3 November 2026 (Asia/Bangkok). Scope: foundation + F-01 + F-03 on `codex/
 | Red | 2fc6252 | npm test -- --reporter=verbose --reporter=json --outputFile=artifacts/evidence/member-a/red-results.json | 6 tests: 3 pass,3 fail,0 skipped. Logout expected204 received501; valid/invalid goal rule checks fail because not implemented. Actual PostgreSQL/login setup works |
 | Initial green | a13858f | same suite with green-initial result filename | Same6 tests pass,0 fail,0 skipped after revocation/rule implementation; build passes |
 | UI boundary red | e06f4e4 | npm run test:e2e -- --grep 'valid long activity' --reporter=line | Desktop long-title overflow fails; mobile case passes in that initial check. Subsequent check compares document width to configured viewport width to avoid mobile layout expansion hiding overflow |
-| Expanded verification | see execution.json and final-results.json | npm test; npm run build; npm run verify:restart; npm run test:e2e; npm audit | use actual committed reports; never treat this row as a fabricated PASS |
+| Expanded verification | API c059044; UI/e2e016daba; full hashes in execution.json | npm test; npm run build; npm run verify:restart; npm run test:e2e; npm audit | API/unit38 PASS, browser10 PASS,0 fail/skipped; build/restart PASS; audit0. Backend source equivalence checked |
 
 Red/green files are actual outputs captured while working, not reconstructed from later success. Output clock labels from terminal may use host timezone; assignment deadlines/dates in docs use Asia/Bangkok
 
