@@ -44,6 +44,6 @@ export function validateCsrf(req: Request, deps: Dependencies, session: StoredSe
   }
 }
 
-export async function revokeSession(_deps: Dependencies, _sessionId: string): Promise<void> {
-  throw new ApiError(501, 'NOT_IMPLEMENTED', 'Session revocation is not implemented yet.');
+export async function revokeSession(deps: Dependencies, sessionId: string): Promise<void> {
+  await deps.db.session.deleteMany({ where: { id: sessionId } });
 }

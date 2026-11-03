@@ -1,0 +1,20 @@
+
+> studytrack@0.1.0 test
+> vitest run --reporter=verbose --reporter=json --outputFile=artifacts/evidence/member-a/green-initial-results.json
+
+
+ RUN  v5.1.0 C:/Users/User/studytrack
+
+ ✓ server/tests/integration/auth.test.ts > F-01 real PostgreSQL sessions > TEST-F01-01: salted Argon2id passwords and valid role identity 399ms
+ ✓ server/tests/integration/auth.test.ts > F-01 real PostgreSQL sessions > TEST-F01-04: logout revokes the real DB session, replay fails, independent session survives 207ms
+ ✓ server/tests/integration/auth.test.ts > F-01 real PostgreSQL sessions > TEST-F01-03: absent/tampered and server-expired sessions return no private data 123ms
+ ✓ server/tests/unit/goal-rules.test.ts > TEST-F03-07: Bangkok date boundaries and goal rules > accepts today/tomorrow including year rollover 2ms
+ ✓ server/tests/unit/goal-rules.test.ts > TEST-F03-07: Bangkok date boundaries and goal rules > rejects invalid calendar dates, past/far-future dates and fractional/out-of-range targets 1ms
+ ✓ server/tests/unit/goal-rules.test.ts > TEST-F03-07: Bangkok date boundaries and goal rules > uses Bangkok midnight, leap day and UTC date arithmetic without host timezone 3ms
+
+ Test Files  2 passed (2)
+      Tests  6 passed (6)
+   Start at  15:13:31
+   Duration  2.10s (import 45%, tests 42%, transform 10%, setup 2%, worker 1%)
+
+JSON report written to C:/Users/User/studytrack/artifacts/evidence/member-a/green-initial-results.json

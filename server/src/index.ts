@@ -6,7 +6,7 @@ import { systemClock } from './clock.js';
 
 const config = readConfig();
 const db = new PrismaClient();
-const server = createApp({ db, clock: systemClock, config }).listen(config.port, '127.0.0.1', () => {
+const server = createApp({ db, clock: systemClock, config }).listen(config.port, config.production ? '0.0.0.0' : '127.0.0.1', () => {
   console.log(`StudyTrack API ready on port ${config.port}`);
 });
 async function shutdown() { server.close(); await db.$disconnect(); }
