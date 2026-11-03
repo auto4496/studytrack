@@ -17,4 +17,6 @@ Human responsibilities: read/understand requirements and changes, run and inspec
 
 ## Member B implementation — 3 November 2026
 
+Workflow follow-up: Codex read the local TokTickIT README/Lab4 review record without modifying that project, checked actual GitHub contract/release PR metadata and current StudyTrack PR3/6/7, and documented the equivalent pair-review/staging/release/final-main procedure in docs/review-workflow.md. This follow-up changes documents only; no new application tests, peer approval, PR retarget, merge, board update or release is claimed.
+
 Codex assisted B with A foundation/interface review, reconciliation of B contracts before code (ee14477), F02/F04 tests and implementation, isolated local PostgreSQL setup, browser/restart/build execution and result inspection. Final source0b51571:115 API/unit +24 browser checks pass; initial failures retained. B must read/understand changes before accepting. Authenticated GitHub CLI account verified Datakung for B work; no A approval/merge/UAT/cloud actions performed. AI review/test execution is not a human teammate approval

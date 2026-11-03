@@ -1,5 +1,7 @@
 # Member B increment — templates and daily reading
 
+ขั้นตอนส่งตรวจร่วมกัน: [Review workflow ตาม TokTickIT](docs/review-workflow.md) — feature PR เข้า sprint staging, คู่ทีม review/merge, release PR เข้า main และตรวจ final-main ก่อนสรุปรายงาน
+
 สถานะ 3 Nov2026: F02/F04 implemented on A PR3 foundation; final source0b51571 passes115 API/unit checks +24 desktop/mobile browser checks, real process-restart persistence and build. Peer review/staging/main release, CI/GCP/UAT and D1PDF remain pending. [B handoff](docs/handoffs/member-b-status.md) / [verification](docs/verification/member-b.md)
 
 F02: manager creates templates, participant selects persisted catalog. F04: participant records minutes per goal/date, retrieves persisted progress (45/60=75%,75/60=125%), duplicate/concurrent/date/range/ownership enforced by API/PostgreSQL. Unknown POST outcome reconciles saved state before retry

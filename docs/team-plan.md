@@ -49,6 +49,8 @@
 
 ## 4. GitHub workflow
 
+รายละเอียดการส่งตรวจที่ B เทียบกับ TokTickIT ตามคำขอวันที่ 3 พ.ย. 2026 อยู่ใน [Review workflow](review-workflow.md): contract review → feature PR เข้า staging → แก้/ตรวจซ้ำ → peer approval/merge → release PR → final-main/report verification. ใช้เอกสารนั้นประกอบสถานะ PR ปัจจุบัน ไม่ถือข้อความ PROPOSED ตอนต้นเป็นสถานะ repository ล่าสุด
+
 1. สร้าง repository ใหม่หนึ่งแห่ง เพิ่มอีกคนเป็น collaborator และเปิด project board: Backlog / Ready / In progress / In review / Done
 2. ตั้ง local project และเริ่ม baseline โดยบันทึก documents ก่อน implementation อาจใช้ initial scaffold commit ตามความเหมาะสม แต่ต้องไม่อ้างว่าเป็น feature ที่เสร็จแล้ว
 3. สร้าง sprint staging เช่น `codex/sprint-1-staging` จาก `main`
