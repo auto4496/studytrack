@@ -13,6 +13,7 @@ import { GoalList } from "./features/goals/GoalList";
 import { GoalForm } from "./features/goals/GoalForm";
 import { GoalDetail } from "./features/goals/GoalDetail";
 import { TemplateCatalog } from "./features/templates/TemplateCatalog";
+import { TemplateForm } from "./features/templates/TemplateForm";
 import type { Role } from "./api";
 
 function Protected({ role }: { role?: Role }) {
@@ -59,6 +60,7 @@ function AppRoutes() {
             <Route path="templates" element={<TemplateCatalog />} />
           </Route>
           <Route element={<Protected role="PROGRAM_MANAGER" />}>
+            <Route path="manager/templates/new" element={<TemplateForm />} />
             <Route path="manager/templates" element={<TemplateCatalog />} />
           </Route>
           <Route

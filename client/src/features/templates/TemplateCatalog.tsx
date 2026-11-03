@@ -4,18 +4,20 @@ import { api, errorMessage, type Collection, type Template } from "../../api";
 import { useAuth } from "../../auth/AuthProvider";
 import { Empty, ErrorNotice, Loading } from "../../components/States";
 
-// Read-only integration surface for A's goal picker. F-02 manager mutations/UI belong to B.
 export function TemplateCatalog() {
   const { user } = useAuth();
   const [result, setResult] = useState<Collection<Template> | null>(null);
   const [page, setPage] = useState(1);
   const [error, setError] = useState("");
   const [retry, setRetry] = useState(0);
+  const [includeInactive, setIncludeInactive] = useState(false);
   useEffect(() => {
     let active = true;
     setResult(null);
     setError("");
-    api<Collection<Template>>(`/templates?page=${page}&pageSize=12`)
+    api<Collection<Template>>(
+      `/templates?page=${page}&pageSize=12${includeInactive && user?.role === "PROGRAM_MANAGER" ? "&includeInactive=true" : ""}`,
+    )
       .then((r) => {
         if (active) setResult(r);
       })
@@ -25,7 +27,7 @@ export function TemplateCatalog() {
     return () => {
       active = false;
     };
-  }, [page, retry]);
+  }, [page, retry, includeInactive, user?.role]);
   return (
     <>
       <section className="page-heading">
@@ -42,7 +44,25 @@ export function TemplateCatalog() {
               : "เลือกเรื่องที่สนใจ แล้วกำหนดเป้าหมายของคุณ"}
           </p>
         </div>
+        {user?.role === "PROGRAM_MANAGER" && (
+          <Link className="button primary" to="/manager/templates/new">
+            ＋ สร้างแม่แบบ
+          </Link>
+        )}
       </section>
+      {user?.role === "PROGRAM_MANAGER" && (
+        <label className="catalog-filter">
+          <input
+            type="checkbox"
+            checked={includeInactive}
+            onChange={(e) => {
+              setIncludeInactive(e.target.checked);
+              setPage(1);
+            }}
+          />
+          รวมแม่แบบที่ปิดใช้
+        </label>
+      )}
       {error ? (
         <ErrorNotice message={error} retry={() => setRetry((n) => n + 1)} />
       ) : !result ? (
@@ -59,6 +79,7 @@ export function TemplateCatalog() {
                 ▤
               </span>
               <h2>{t.title}</h2>
+              {!t.isActive && <span className="pill">ปิดใช้แล้ว</span>}
               <p className="muted">{t.description}</p>
               <p>
                 {t.minMinutes}–{t.maxMinutes} นาทีต่อวัน
