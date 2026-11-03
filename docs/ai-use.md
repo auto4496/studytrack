@@ -14,3 +14,7 @@ Assisted tasks actually performed so far:
 Application implementation and local test results now have explicit source/output records; they do not establish human peer approval, UAT, deployment or course acceptance. Member B's AI use and each person's actual contribution must be added by that person using real work references. Full prompt transcripts are not required by the handout
 
 Human responsibilities: read/understand requirements and changes, run and inspect meaningful tests, inspect diff, review peer work, verify claims and explain sampled engineering decisions. AI-generated proposed assignments are not proof of participation
+
+## Member B implementation — 3 November 2026
+
+Codex assisted B with A foundation/interface review, reconciliation of B contracts before code (ee14477), F02/F04 tests and implementation, isolated local PostgreSQL setup, browser/restart/build execution and result inspection. Final source0b51571:115 API/unit +24 browser checks pass; initial failures retained. B must read/understand changes before accepting. Authenticated GitHub CLI account verified Datakung for B work; no A approval/merge/UAT/cloud actions performed. AI review/test execution is not a human teammate approval

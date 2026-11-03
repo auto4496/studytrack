@@ -1,4 +1,27 @@
-> **Member B F02 increment:** manager template creation, persisted catalog and UI recovery implemented on `codex/f02-templates` (Issue #4). Based temporarily on unmerged A PR #3;64 API/unit regression and6 browser checks pass at a3769d4. A peer review and accepted staging integration remain pending. F04 is a separate dependent branch. [B verification](docs/verification/member-b.md). The A handoff below is preserved as its original context
+# Member B increment — templates and daily reading
+
+สถานะ 3 Nov2026: F02/F04 implemented on A PR3 foundation; final source0b51571 passes115 API/unit checks +24 desktop/mobile browser checks, real process-restart persistence and build. Peer review/staging/main release, CI/GCP/UAT and D1PDF remain pending. [B handoff](docs/handoffs/member-b-status.md) / [verification](docs/verification/member-b.md)
+
+F02: manager creates templates, participant selects persisted catalog. F04: participant records minutes per goal/date, retrieves persisted progress (45/60=75%,75/60=125%), duplicate/concurrent/date/range/ownership enforced by API/PostgreSQL. Unknown POST outcome reconciles saved state before retry
+
+## Reproduce B verification
+
+Follow the original setup below with a private development database and a **different** TEST_DATABASE_URL marked test. Then run sequentially (both suites reset the guarded test DB):
+
+```sh
+npm run db:generate
+npm run db:test:migrate
+npm test
+npx playwright test --config playwright.member-b.config.ts
+npx tsx scripts/member-b-restart.ts
+npm run build
+```
+
+B browser config uses isolated3310/5310 ports; Windows uses installed Edge as the A config does. Other platforms need Playwright Chromium installed. No package/lockfile/schema/auth changes are required by B features. Do not point tests at development/A databases
+
+On this machine only: B dev DB is separate from test, ignored .env uses API5300/UI3300 and loopback26433. Start API with `npm run dev:server`; start UI with `API_PROXY_TARGET=http://127.0.0.1:5300` and `npm run dev:client -- --port 3300`. Windows PowerShell: set `$env:API_PROXY_TARGET='http://127.0.0.1:5300'` before the UI command. Seed accounts manager@studytrack.test/student1@studytrack.test/student2@studytrack.test use generated passwords from private .env; never print/commit them
+
+## Original A setup and historical verification
 
 # StudyTrack — CPE 334 reading goals
 

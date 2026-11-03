@@ -2,7 +2,7 @@
 
 วันที่: 3 พฤศจิกายน 2026 (Asia/Bangkok) | ผู้ร่าง: สมาชิก B | รุ่น: B-draft-01
 
-สถานะ: **DRAFT / รอ A และ B ตรวจร่วมกัน** การแบ่ง A/B ยึด [handoff](friend-handoff.md) ไม่เปลี่ยนตามผู้เปิดไฟล์ รอบนี้เป็นเอกสารก่อน implementation ยังไม่มีฟีเจอร์ที่ implemented, tested หรือ accepted
+สถานะ: **DRAFT / รอ A และ B ตรวจร่วมกัน** การแบ่ง A/B ยึด [handoff](friend-handoff.md) ไม่เปลี่ยนตามผู้เปิดไฟล์ อัปเดต: F01/F03 A foundation และ F02/F04 B increment มี code และ local verification แล้ว; peer acceptance/release ยัง pending; F05–08 ยัง planned
 
 ## 1. แหล่งที่มาและวิธีอ่าน
 
@@ -48,7 +48,7 @@ NFR ที่วัดได้และรหัสถาวรต้องม�
 
 ## 5. สถานะและการบำรุงรักษารายการ
 
-ทุก F-01 ถึง F-08: **planned / ไม่ได้ implementation / tests ยังไม่รัน / ยังไม่ accepted**; F-02/F-04 มีร่าง contract ในรอบ B นี้ ส่วน F-01/F-03 รอ A ส่ง contract เพื่อ review
+สถานะปัจจุบัน: F01–04 implemented และตรวจ local regression115 + browser24 checks ผ่านบน source0b51571; ยังไม่ accepted/released. F05–08 planned และต้องมี contract ก่อน code. รายละเอียด actual tests/version และ pending gates อยู่ใน verification/member-b.md
 
 เมื่อ A ส่ง SRS ให้เติม FR/BR/NFR จริงลง [traceability](traceability.md), ตรวจว่าทุก baseline requirement มี feature หรือ named responsibility และ Sprint, แล้วให้ทั้งคู่บันทึกการตัดสินใจ ก่อนเลื่อนงานเป็น Ready/เริ่ม code ใช้ Issue และ branch จาก sprint staging ตาม team-plan; owner แต่ละฟีเจอร์เติมผลจริงและให้คู่ทีม review
 
@@ -70,3 +70,5 @@ Source: [SRS A v0.1](srs.md) on PR3 foundation. IDs are existing A IDs, not a ne
 | F06 | FR13/14/15, BR04/05/08/09/11/12 |
 | F07 | FR16/17, BR07/13 |
 | F08 | FR18/19, BR06/07/08/09/12 |
+
+Revision B-implementation-01 (3 Nov): actual F02/F04 local verification and full A SRS mapping updated; no peer approval or accepted release asserted.
