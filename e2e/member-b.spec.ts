@@ -52,6 +52,7 @@ test("TEST-F02-10: real manager creation → persisted catalog → participant g
     fullPage: true,
   });
   await page.getByRole("button", { name: "ออกจากระบบ", exact: true }).click();
+  await expect(page).toHaveURL(/\/login$/);
   await login(page, `reader-f02-${info.project.name}@browser.test`);
   await page.goto("/templates");
   await expect(
@@ -222,6 +223,7 @@ test("TEST-F04-16: full manager→goal→daily entry→persisted progress with r
     page.getByRole("heading", { name: title, exact: true }),
   ).toBeVisible();
   await page.getByRole("button", { name: "ออกจากระบบ", exact: true }).click();
+  await expect(page).toHaveURL(/\/login$/);
   await login(page, `reader-f04-${info.project.name}@browser.test`);
   await page.goto("/templates");
   await page
@@ -265,6 +267,7 @@ test("TEST-F04-16: full manager→goal→daily entry→persisted progress with r
     fullPage: true,
   });
   await page.getByRole("button", { name: "ออกจากระบบ", exact: true }).click();
+  await expect(page).toHaveURL(/\/login$/);
   expect(
     (await page.request.get(`/api/goals/${id}/progress?date=${date}`)).status(),
   ).toBe(401);
@@ -281,6 +284,7 @@ test("TEST-F04-16: full manager→goal→daily entry→persisted progress with r
     ).status(),
   ).toBe(404);
   await page.getByRole("button", { name: "ออกจากระบบ", exact: true }).click();
+  await expect(page).toHaveURL(/\/login$/);
   await login(page, "manager@browser.test");
   expect(
     (await page.request.get(`/api/goals/${id}/progress?date=${date}`)).status(),
