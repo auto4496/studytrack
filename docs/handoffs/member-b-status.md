@@ -1,3 +1,5 @@
+> อัปเดต implementation ฝั่ง B — 3 พฤศจิกายน 2026: branch `codex/f02-templates` ทำ F02 manager create/catalog/UI และ tests แล้ว (Issue #4) ใช้ A PR #3 เป็น temporary dependency. Source a3769d4: API/unit regression64ผ่าน, browser6ผ่าน, buildผ่าน; red15fail/1passที่0e1ca17ก่อนcode. ดู [verification](../verification/member-b.md). ยังไม่ merge/accepted และยังไม่รวม F04 ซึ่งทำใน branchถัดไป. ข้อความด้านล่างเก็บประวัติรอบเอกสารก่อนimplementation
+
 # สถานะส่งกลับสมาชิก A — รอบเอกสารของ B
 
 วันที่: 3 พฤศจิกายน 2026 (Asia/Bangkok) | Revision: B-draft-02

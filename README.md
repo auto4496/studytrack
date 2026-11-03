@@ -1,3 +1,5 @@
+> **Member B F02 increment:** manager template creation, persisted catalog and UI recovery implemented on `codex/f02-templates` (Issue #4). Based temporarily on unmerged A PR #3;64 API/unit regression and6 browser checks pass at a3769d4. A peer review and accepted staging integration remain pending. F04 is a separate dependent branch. [B verification](docs/verification/member-b.md). The A handoff below is preserved as its original context
+
 # StudyTrack — CPE 334 reading goals
 
 สถานะ: มี implementation ฝั่ง A (foundation, F-01 authentication และ F-03 personal goals) บน `codex/member-a-sprint1` พร้อมหลักฐาน local tests; ยังรอ teammate review และรวม F-02/F-04 จาก B จึงยังไม่ใช่ accepted Sprint 1 release
