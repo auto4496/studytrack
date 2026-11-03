@@ -1,5 +1,5 @@
 import { test, expect, type Page } from "@playwright/test";
-import { browserPassword } from "./fixtures";
+import { browserPassword, longTemplateId } from "./fixtures";
 
 async function login(page: Page, email = "reader@browser.test") {
   await page.goto("/login");
@@ -132,4 +132,17 @@ test("FR-19: a failed list request offers retry and recovers with real API data"
     }),
   ).toBeVisible();
   await expect(page.getByRole("alert")).toHaveCount(0);
+});
+
+test("NFR-06: a valid long activity title stays inside the goal detail viewport", async ({ page }, info) => {
+  await login(page, `reader-${info.project.name}@browser.test`);
+  const bootstrap = await page.request.get("/api/auth/csrf");
+  const origin = new URL(page.url()).origin;
+  const today = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Bangkok", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
+  const created = await page.request.post("/api/goals", { headers: { Origin: origin, "X-CSRF-Token": (await bootstrap.json()).data.csrfToken }, data: { templateId: longTemplateId, dailyTargetMinutes: 60, startDate: today } });
+  expect(created.status()).toBe(201);
+  const goal = (await created.json()).data;
+  await page.goto(`/goals/${goal.id}`);
+  await expect(page.getByRole("heading", { name: "Reading".repeat(14), exact: true })).toBeVisible();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
