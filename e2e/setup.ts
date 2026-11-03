@@ -62,7 +62,15 @@ export default async function setup() {
         createdById: manager.id,
       },
     });
-    await db.activityTemplate.create({ data: { id: longTemplateId, title: "Reading".repeat(14), minMinutes: 1, maxMinutes: 1440, createdById: manager.id } });
+    await db.activityTemplate.create({
+      data: {
+        id: longTemplateId,
+        title: "Reading".repeat(14),
+        minMinutes: 1,
+        maxMinutes: 1440,
+        createdById: manager.id,
+      },
+    });
   } finally {
     await db.$disconnect();
   }

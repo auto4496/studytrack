@@ -9,6 +9,7 @@ Date: 3 November 2026 (Asia/Bangkok). Scope: foundation + F-01 + F-03 on `codex/
 | Pre-code specs | 11cdfe5 | documentation baseline | F-01/F-03 contracts recorded before app implementation |
 | Red | 2fc6252 | npm test -- --reporter=verbose --reporter=json --outputFile=artifacts/evidence/member-a/red-results.json | 6 tests: 3 pass,3 fail,0 skipped. Logout expected204 received501; valid/invalid goal rule checks fail because not implemented. Actual PostgreSQL/login setup works |
 | Initial green | a13858f | same suite with green-initial result filename | Same6 tests pass,0 fail,0 skipped after revocation/rule implementation; build passes |
+| UI boundary red | e06f4e4 | npm run test:e2e -- --grep 'valid long activity' --reporter=line | Desktop long-title overflow fails; mobile case passes in that initial check. Subsequent check compares document width to configured viewport width to avoid mobile layout expansion hiding overflow |
 | Expanded verification | see execution.json and final-results.json | npm test; npm run build; npm run verify:restart; npm run test:e2e; npm audit | use actual committed reports; never treat this row as a fabricated PASS |
 
 Red/green files are actual outputs captured while working, not reconstructed from later success. Output clock labels from terminal may use host timezone; assignment deadlines/dates in docs use Asia/Bangkok
