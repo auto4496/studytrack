@@ -18,7 +18,7 @@ describe("NFR-04: destructive test setup must target a separate test database", 
   ])("rejects a missing or non-test PostgreSQL target", (value) => {
     expect(() => validateTestDatabaseUrl(value, undefined)).toThrow();
   });
-  it.each(["localhost", "127.0.0.1", "[::1]"])(
+  it.each(["localhost", "127.0.0.1", "[::1]", "LOCALHOST", "localhost."])(
     "rejects the same development database via loopback alias %s",
     (host) => {
       expect(() =>
