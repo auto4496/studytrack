@@ -20,7 +20,7 @@ Version 0.1, 3 November 2026. ผู้ร่าง: member A assisted by Codex.
 | ID | Item | Owner / next action |
 |---|---|---|
 | OPEN-01 | ชื่อ/รหัสนักศึกษา/GitHub ของ A และ B | ผู้ใช้เติมข้อมูลจริงก่อน PDF และ collaborator setup |
-| OPEN-02 | สร้าง shared repository และ board | A ประสานกับผู้ใช้; B ใช้ ZIP snapshot จน repository พร้อม |
+| OPEN-02 | shared repo สร้างแล้ว; collaborator และ board ยังต้องจัดทำ | Repo private auto4496/studytrack; รอ GitHub ของ B; ZIP ใช้ได้ระหว่างยังไม่มีสิทธิ์ |
 | OPEN-03 | B review SRS/SDS/interface/F-01/F-03 และส่ง contracts F-02/F-04 | B; feedback ที่มีจริงลง review notes/PR |
 | OPEN-04 | PDF แม่บทเรียก evidence index แต่ handouts ต้อง self-contained | ใช้รายละเอียด handout เตรียม PDF ที่ฝัง complete documents; ยืนยันถ้ามีคำสั่งใหม่ |
 | OPEN-05 | Final video 4/10 นาที และ rubric 8+2/10 ไม่ตรงกัน | ทั้งคู่ถาม TA ก่อนผลิต final video; ไม่ขวาง Sprint 1 |
@@ -28,3 +28,7 @@ Version 0.1, 3 November 2026. ผู้ร่าง: member A assisted by Codex.
 | OPEN-07 | คู่ UAT และ approved Lab 7 change | ทั้งคู่ประสานตามรอบ Lab; ไม่สร้าง defect/review records เอง |
 
 เมื่อเปลี่ยนข้อกำหนด ให้เพิ่มแถว: date / author / source / affected IDs / old→new / rationale / reviewer / implementation+test versions ไม่เขียนทับประวัติเดิมให้เหมือนตกลงตั้งแต่ต้น
+
+## Actual infrastructure events
+
+- 3 November 2026: ใช้ existing authenticated GitHub account `auto4496` สร้าง private repository `https://github.com/auto4496/studytrack` และ push initial pre-code documentation commit `11cdfe5` ไป main สำเร็จ เป็นการตั้งต้น repository ไม่ใช่ teammate-reviewed feature release; ไม่มีการเพิ่ม B เพราะยังไม่ทราบ username

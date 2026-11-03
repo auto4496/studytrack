@@ -102,4 +102,4 @@ BR-01 ถึง BR-10 รักษาความหมายจาก project b
 
 ตาราง FR/BR/NFR ข้างต้นเป็น allocation ฝั่ง A ให้ B ใช้ร่าง `features.md`, `traceability.md` และ sprint plan โดยคง IDs ที่นี่ การเสนอเปลี่ยน ID/กฎทำผ่าน review ก่อนรวม
 
-F-01 และ F-03 มี contracts ฝั่ง A อยู่ใน `docs/sprints/sprint-1/` F-02/F-04 เป็นงาน B ต้องเติม contracts/AC/STS ของตนและ actual results เมื่อเกิดขึ้นจริง ยังไม่มี requisito ใดถูกประกาศ accepted
+F-01 และ F-03 มี contracts ฝั่ง A อยู่ใน `docs/sprints/sprint-1/` F-02/F-04 เป็นงาน B ต้องเติม contracts/AC/STS ของตนและ actual results เมื่อเกิดขึ้นจริง ยังไม่มี requirement ใดถูกประกาศ accepted

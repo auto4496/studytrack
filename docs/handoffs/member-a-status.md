@@ -28,8 +28,12 @@ Date: 3 November 2026. Status: DOCUMENT DRAFTS READY FOR B REVIEW; no applicatio
 
 ## Current limitations
 
-No remote repository/collaborator/Issues/PR/UAT/deployment has yet been established by this document. A user confirmed no existing StudyTrack repository. Source documents are not a finished Deliverable 1 PDF and are not accepted feature evidence
+Private repository สร้างแล้ว: https://github.com/auto4496/studytrack; initial pre-code documents commit `11cdfe5` บน main. ไม่มี collaborator/Issues/PR review/UAT/deployment ที่ยืนยัน ต้องเพิ่ม GitHub username ของ B ก่อนเข้าถึง private repo. Source documents are not a finished Deliverable 1 PDF and are not accepted feature evidence
 
 ## A next implementation sequence
 
 Record pre-code specs in version control; establish shared repository and bootstrap once; create Issues/branches; implement F-01 with meaningful TDD and isolated DB tests; integrate F-02 dependencies from B; implement F-03; run cross-feature E2E/integration and peer-reviewed release. Actual reviewers/versions/results to be added only after they exist
+
+## Document verification performed
+
+Local link/fence checks, SRS sequence (19 FR, 13 BR, 8 NFR), F-01/F-03 contract checks (16 AC and 16 planned test IDs total), and source-PDF hash comparison passed before initial commit. `git diff --cached --check` passed. These are document checks; no application build or automated feature tests have run

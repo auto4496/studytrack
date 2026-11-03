@@ -13,7 +13,9 @@
 5. เขียน feature contract/AC/STS ก่อนเริ่ม implementation ของฟีเจอร์นั้น
 6. ทำ Sprint 1 ตาม Issue และ branch ที่แยกกัน ให้เพื่อนเป็นผู้ review ก่อนรวมงาน
 
-โฟลเดอร์นี้แยกจาก TokTickIT เดิม เอกสารเป็นข้อเสนอการวางแผน ยังไม่ใช่การอนุมัติจากเพื่อน อาจารย์ หรือ TA และยังไม่ได้สร้าง GitHub repository/Issues/PRs
+โฟลเดอร์นี้แยกจาก TokTickIT เดิม เอกสารเป็นข้อเสนอการวางแผน ยังไม่ใช่การอนุมัติจากเพื่อน อาจารย์ หรือ TA
+
+Repository กลาง (private): [auto4496/studytrack](https://github.com/auto4496/studytrack). บันทึก pre-implementation documents ครั้งแรกที่ commit `11cdfe5` บน main; เป็น initial documentation commit ไม่ใช่ accepted product release ยังไม่มี collaborator/Issues/PR review ที่ยืนยัน ต้องเพิ่ม GitHub ของ B ก่อน clone repository private ได้
 
 สำหรับส่งต่อเพื่อนที่ใช้ Codex อีกเครื่อง อ่าน [ข้อความเริ่มงานฝั่งสมาชิก B](docs/friend-handoff.md) มี prompt พร้อมคัดลอกและรูปแบบส่งสถานะกลับ สมาชิก A/B ไม่เปลี่ยนตามผู้ที่เปิดไฟล์
 
