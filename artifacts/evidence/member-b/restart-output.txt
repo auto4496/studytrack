@@ -1,0 +1,1 @@
+PASS TEST-F02-07 / TEST-F04-01/02 / NFR-03: real API process stopped and restarted; DB sessions, manager-created template, goal, daily entry and 45/60=75% persisted.

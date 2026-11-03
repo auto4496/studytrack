@@ -1,0 +1,25 @@
+
+> studytrack@0.1.0 test
+> vitest run --reporter=default --reporter=json --outputFile=artifacts/evidence/member-b/final-results.json
+
+
+ RUN  v5.1.0 C:/CPE/CPE334/Project/studytrack-member-b
+
+ ✓ server/tests/integration/entries.test.ts (32 tests) 4109ms
+ ✓ server/tests/integration/goals.test.ts (19 tests) 2111ms
+ ✓ server/tests/integration/templates.test.ts (16 tests) 1677ms
+ ✓ server/tests/integration/auth.test.ts (9 tests) 971ms
+ ✓ server/tests/unit/template-rules.test.ts (10 tests) 6ms
+ ✓ server/tests/unit/entry-rules.test.ts (19 tests) 7ms
+ ✓ server/tests/unit/goal-rules.test.ts (3 tests) 4ms
+ ✓ server/tests/unit/test-db-guard.test.ts (7 tests) 4ms
+
+ Test Files  8 passed (8)
+      Tests  115 passed (115)
+   Start at  18:48:25
+   Duration  11.32s (tests 85%, import 13%, transform 1%, setup 1%)
+
+    Isolate  8 workers spawned · ~104ms startup each (spawn + environment, per file)
+             at least ~729ms faster with isolate: false — reuses workers across files instead of one per file
+
+JSON report written to C:/CPE/CPE334/Project/studytrack-member-b/artifacts/evidence/member-b/final-results.json

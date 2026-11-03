@@ -1,0 +1,18 @@
+
+> studytrack@0.1.0 test
+> vitest run server/tests/integration/entries.test.ts server/tests/unit/entry-rules.test.ts --reporter=default --reporter=json --outputFile=artifacts/evidence/member-b/f04-green-results.json
+
+
+ RUN  v5.1.0 C:/CPE/CPE334/Project/studytrack-member-b
+
+ ✓ server/tests/integration/entries.test.ts (30 tests) 3935ms
+   ✓ F-04 persisted daily entries, date-effective progress and privacy (30)
+     ✓ TEST-F04-11: all entry/progress routes reject anonymous/manager/cross-owner without revealing private data 309ms
+ ✓ server/tests/unit/entry-rules.test.ts (19 tests) 6ms
+
+ Test Files  2 passed (2)
+      Tests  49 passed (49)
+   Start at  18:35:45
+   Duration  4.62s (tests 90%, import 8%, transform 2%)
+
+JSON report written to C:/CPE/CPE334/Project/studytrack-member-b/artifacts/evidence/member-b/f04-green-results.json

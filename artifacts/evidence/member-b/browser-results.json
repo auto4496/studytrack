@@ -5,8 +5,7 @@
       "C:\\CPE\\CPE334\\Project\\studytrack-member-b\\node_modules\\@playwright\\test\\cli.js",
       "test",
       "--config",
-      "playwright.member-b.config.ts",
-      "e2e/member-b.spec.ts"
+      "playwright.member-b.config.ts"
     ],
     "configFile": "C:\\CPE\\CPE334\\Project\\studytrack-member-b\\playwright.member-b.config.ts",
     "rootDir": "C:/CPE/CPE334/Project/studytrack-member-b/e2e",
@@ -153,6 +152,354 @@
   },
   "suites": [
     {
+      "title": "member-a.spec.ts",
+      "file": "member-a.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "TEST-F01-08: invalid login, keyboard recovery, reload and logout revoke browser access",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1222,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T11:45:29.415Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "42a0e947641394172c05-3243c9b5d05ad6779bcc",
+          "file": "member-a.spec.ts",
+          "line": 14,
+          "column": 1
+        },
+        {
+          "title": "TEST-F03-08: create, reload and retrieve a real persisted goal; duplicate is rejected",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1559,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T11:45:30.864Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "42a0e947641394172c05-b1ac3438bf640aa92d14",
+          "file": "member-a.spec.ts",
+          "line": 44,
+          "column": 1
+        },
+        {
+          "title": "manager sees catalog but cannot read participant goals via the backend",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 598,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T11:45:32.434Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "42a0e947641394172c05-0cc6ce81f525f568ca46",
+          "file": "member-a.spec.ts",
+          "line": 103,
+          "column": 1
+        },
+        {
+          "title": "FR-19: a failed list request offers retry and recovers with real API data",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 980,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T11:45:33.040Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "42a0e947641394172c05-8afa11f522aed01b6e4c",
+          "file": "member-a.spec.ts",
+          "line": 115,
+          "column": 1
+        },
+        {
+          "title": "NFR-06: a valid long activity title stays inside the goal detail viewport",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 969,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T11:45:34.032Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "42a0e947641394172c05-0ba2c57da006acf62d15",
+          "file": "member-a.spec.ts",
+          "line": 135,
+          "column": 1
+        },
+        {
+          "title": "TEST-F01-08: invalid login, keyboard recovery, reload and logout revoke browser access",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1216,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T11:45:46.467Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "42a0e947641394172c05-4f80b251257820356629",
+          "file": "member-a.spec.ts",
+          "line": 14,
+          "column": 1
+        },
+        {
+          "title": "TEST-F03-08: create, reload and retrieve a real persisted goal; duplicate is rejected",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1659,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T11:45:47.909Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "42a0e947641394172c05-fe9e8a4314562b25d07a",
+          "file": "member-a.spec.ts",
+          "line": 44,
+          "column": 1
+        },
+        {
+          "title": "manager sees catalog but cannot read participant goals via the backend",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 718,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T11:45:49.578Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "42a0e947641394172c05-e9511d23427958e5259d",
+          "file": "member-a.spec.ts",
+          "line": 103,
+          "column": 1
+        },
+        {
+          "title": "FR-19: a failed list request offers retry and recovers with real API data",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 932,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T11:45:50.303Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "42a0e947641394172c05-2c05f82dceba684d79e0",
+          "file": "member-a.spec.ts",
+          "line": 115,
+          "column": 1
+        },
+        {
+          "title": "NFR-06: a valid long activity title stays inside the goal detail viewport",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1061,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T11:45:51.245Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "42a0e947641394172c05-0fc4b559f8aef3f0431b",
+          "file": "member-a.spec.ts",
+          "line": 135,
+          "column": 1
+        }
+      ]
+    },
+    {
       "title": "member-b.spec.ts",
       "file": "member-b.spec.ts",
       "column": 0,
@@ -174,12 +521,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 2105,
+                  "duration": 2093,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-03T11:29:20.681Z",
+                  "startTime": "2026-11-03T11:45:35.064Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -189,7 +536,7 @@
           ],
           "id": "0c0db1d70d8546cf7931-e49c523e7eeb283ae401",
           "file": "member-b.spec.ts",
-          "line": 22,
+          "line": 24,
           "column": 1
         },
         {
@@ -208,12 +555,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 949,
+                  "duration": 1068,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-03T11:29:23.047Z",
+                  "startTime": "2026-11-03T11:45:37.165Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -223,7 +570,7 @@
           ],
           "id": "0c0db1d70d8546cf7931-02fadf30ecdb6b0c8a2d",
           "file": "member-b.spec.ts",
-          "line": 79,
+          "line": 82,
           "column": 1
         },
         {
@@ -242,12 +589,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1156,
+                  "duration": 1186,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-03T11:29:24.007Z",
+                  "startTime": "2026-11-03T11:45:38.243Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -257,7 +604,143 @@
           ],
           "id": "0c0db1d70d8546cf7931-86f64693525ac57d5a56",
           "file": "member-b.spec.ts",
-          "line": 144,
+          "line": 147,
+          "column": 1
+        },
+        {
+          "title": "TEST-F04-16: full manager→goal→daily entry→persisted progress with rejection, privacy and logout",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2854,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T11:45:39.441Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0c0db1d70d8546cf7931-682a4bca4f9f0050de39",
+          "file": "member-b.spec.ts",
+          "line": 211,
+          "column": 1
+        },
+        {
+          "title": "TEST-F04-15: validation and committed-but-lost response reconcile before any retry",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1214,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T11:45:42.309Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0c0db1d70d8546cf7931-29eaa941fab5fd84c9bd",
+          "file": "member-b.spec.ts",
+          "line": 294,
+          "column": 1
+        },
+        {
+          "title": "TEST-F04-15: stale date responses cannot replace the selected day; uncapped125% and read recovery",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1282,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T11:45:43.531Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0c0db1d70d8546cf7931-45b31a8030cc8984fa01",
+          "file": "member-b.spec.ts",
+          "line": 377,
+          "column": 1
+        },
+        {
+          "title": "TEST-F04-15: tomorrow goal never fetches an invalid daily date and logout clears its private view",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 996,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T11:45:44.823Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0c0db1d70d8546cf7931-eeca5698f3a36f9c604d",
+          "file": "member-b.spec.ts",
+          "line": 488,
           "column": 1
         },
         {
@@ -276,12 +759,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 2022,
+                  "duration": 2313,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-03T11:29:25.766Z",
+                  "startTime": "2026-11-03T11:45:52.354Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -291,7 +774,7 @@
           ],
           "id": "0c0db1d70d8546cf7931-365e1129357e4b6c4227",
           "file": "member-b.spec.ts",
-          "line": 22,
+          "line": 24,
           "column": 1
         },
         {
@@ -310,12 +793,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1147,
+                  "duration": 1151,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-03T11:29:28.013Z",
+                  "startTime": "2026-11-03T11:45:54.674Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -325,7 +808,7 @@
           ],
           "id": "0c0db1d70d8546cf7931-75438d34e01dd82eb26c",
           "file": "member-b.spec.ts",
-          "line": 79,
+          "line": 82,
           "column": 1
         },
         {
@@ -344,12 +827,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1218,
+                  "duration": 1273,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-11-03T11:29:29.169Z",
+                  "startTime": "2026-11-03T11:45:55.833Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -359,7 +842,143 @@
           ],
           "id": "0c0db1d70d8546cf7931-f30a4526590918b6eace",
           "file": "member-b.spec.ts",
-          "line": 144,
+          "line": 147,
+          "column": 1
+        },
+        {
+          "title": "TEST-F04-16: full manager→goal→daily entry→persisted progress with rejection, privacy and logout",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2926,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T11:45:57.116Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0c0db1d70d8546cf7931-b77dfd6caf94eaddcf85",
+          "file": "member-b.spec.ts",
+          "line": 211,
+          "column": 1
+        },
+        {
+          "title": "TEST-F04-15: validation and committed-but-lost response reconcile before any retry",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1334,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T11:46:00.052Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0c0db1d70d8546cf7931-951526d5989d780aaa11",
+          "file": "member-b.spec.ts",
+          "line": 294,
+          "column": 1
+        },
+        {
+          "title": "TEST-F04-15: stale date responses cannot replace the selected day; uncapped125% and read recovery",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1478,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T11:46:01.399Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0c0db1d70d8546cf7931-97323edcaaaac1e3ed8d",
+          "file": "member-b.spec.ts",
+          "line": 377,
+          "column": 1
+        },
+        {
+          "title": "TEST-F04-15: tomorrow goal never fetches an invalid daily date and logout clears its private view",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1076,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T11:46:02.884Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0c0db1d70d8546cf7931-008e53b4e09be1168e55",
+          "file": "member-b.spec.ts",
+          "line": 488,
           "column": 1
         }
       ]
@@ -367,9 +986,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-11-03T11:29:17.254Z",
-    "duration": 13964.592,
-    "expected": 6,
+    "startTime": "2026-11-03T11:45:25.964Z",
+    "duration": 38840.067,
+    "expected": 24,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0
