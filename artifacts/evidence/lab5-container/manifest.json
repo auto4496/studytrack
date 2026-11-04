@@ -1,0 +1,45 @@
+{
+  "contractSource": "f4a2fa6174790de223d6468805174163c1d048af",
+  "firstImplementation": "05755182a9f3a2a3f414315241282f788b3e2a38",
+  "firstResult": {
+    "passed": 4,
+    "reason": "Prisma CLI retained as optional peer in runtime",
+    "failed": 1
+  },
+  "peerOnlyCorrection": "089b6ac7c7d2fa5419ce56bd1e3cb258ae994939",
+  "peerOnlyResult": {
+    "passed": 4,
+    "reason": "npm lock classified Prisma as devOptional; optional omission also required",
+    "failed": 1
+  },
+  "finalTestedSource": "ee56d91dd4abf52f4c6bf13c5080c0f289620cc7",
+  "finalResult": {
+    "seedRerunCounts": "3users/2templates",
+    "passed": 35,
+    "runtimeDevToolsAbsent": "PASS",
+    "appContainerRecreation": "PASS",
+    "failed": 0,
+    "readOnlyNonRoot": "PASS",
+    "secureCookies": "PASS",
+    "databaseRestart": "PASS",
+    "browserViewports": [
+      "1440x900",
+      "390x844"
+    ],
+    "appRestart": "PASS"
+  },
+  "buildCommand": "node scripts/container.mjs up --project studytrack-container-review --fresh-build",
+  "verifyCommand": "node scripts/verify-container.mjs --project studytrack-container-review --browser --lifecycle",
+  "checkout": "Fresh review clone advanced to final clean tracked-source commit; generated private env/host verifier dependencies/test outputs are excluded from Docker context. No source edits were made in the verification clone.",
+  "interruptedBuild": "One intermediate build was stopped after detecting checkout still selected old local branch0575518; corrected remote-tracking commit was then selected explicitly. No verification was claimed for that interrupted build.",
+  "productSourceUnchangedFrom": "df08ec19cdeb0efcfbfbee92f3d385d87059528c",
+  "unchangedPaths": [
+    "server",
+    "client",
+    "e2e",
+    "package-lock.json"
+  ],
+  "independentHumanUAT": false,
+  "gcpVerified": false,
+  "ciGateVerified": false
+}

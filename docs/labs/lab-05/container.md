@@ -59,4 +59,20 @@ The required deployment.md will combine this local container contract with B's a
 
 ## Verification status
 
-NOT RUN at initial implementation commit. Actual clean-build/runtime/HTTPS/browser/lifecycle evidence and limitations will be added after execution.
+Final tested source: `ee56d91dd4abf52f4c6bf13c5080c0f289620cc7`. Clean tracked source in the fresh review clone; no-cache Docker build and explicit migration/seed completed. Repeated seed returned3users/2templates. Verification ran with both `--browser` and `--lifecycle`: **35 checks passed, 0 failed**. Desktop1440x900 and mobile390x844 screenshots were visually inspected. Linux runtime is Node24.22.2/x64, uid1000; Prisma6.19.3. Prisma CLI, TypeScript, Vite and Playwright are absent from the serving image.
+
+[Actual source/command/result manifest](../../../artifacts/evidence/lab5-container/manifest.json), [all assertions](../../../artifacts/evidence/lab5-container/final/execution.json), [build log](../../../artifacts/evidence/lab5-container/final/build-output.txt), [verification output](../../../artifacts/evidence/lab5-container/final/verification-output.txt), and desktop/mobile screenshots are retained. Actual saved IDs/45/60=75% and the DB session remained after app restart, actual app-container recreation and database restart. No existing dev/test databases were reset.
+
+| AC | Actual evidence |
+|---|---|
+| AC-CTR-01 | Clean tracked-source/no-cache build output; OCI source matches tested commit; built UI and JS asset served |
+| AC-CTR-02 | Explicit migrate/seed in build/start log, seed rerun log and3/2 count output |
+| AC-CTR-03 | Non-root/read-only/internal DB/private-file assertions; Secure/HttpOnly/SameSite cookie checks; actual HTTPS browser login/reload |
+| AC-CTR-04 | Template -> own goal -> saved45/60=75% assertions and screenshots |
+| AC-CTR-05 | Anonymous401, participant403, cross-owner404/no data, manager403, CSRF/Origin403, invalid422, duplicate409/no overwrite, logout/replay401 |
+| AC-CTR-06 | Same record/session comparisons after each real lifecycle operation; recreated-container-ID assertion |
+| AC-CTR-07 | Allowlisted context, env table/runbook, metadata/runtime inspection and no private .env/Git/toolchain files in serving image |
+
+Initial source0575518 and peer-only correction089b6ac each stopped at the same runtime-containment assertion (4 passed,1 failed); Prisma CLI was classified devOptional. The final Dockerfile also omits optional dependencies, while the same assertion and Argon2/Prisma runtime behavior remain enabled. Raw failed reports and a successful isolated dependency probe are retained; no failing assertion was removed. One stale-checkout build was interrupted and is separately identified. These are packaging failures, not domain-TDD claims.
+
+This supports local R01/R02 and C03 plus a local persistence rehearsal. Public GCP workflow/restart/redeploy, CI passing/blocked-required-check runs, public visibility and pipeline C04-C06 are still pending. B peer review/staging acceptance of this packaging PR is pending; passing local automation is not independent human UAT.

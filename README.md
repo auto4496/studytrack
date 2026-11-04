@@ -70,4 +70,4 @@ D1: one self-contained A-F PDF with reviewed main release/local evidence, due 8 
 
 ## Application Docker packaging (Lab 5)
 
-See [container quick start, environment and verification](docs/labs/lab-05/container.md). This is an isolated production-mode app/PostgreSQL/HTTPS stack; it preserves existing authentication and does not modify the development databases. CI/GCP remain separate work. Initial packaging validation is recorded after actual execution.
+See [container quick start, environment and verification](docs/labs/lab-05/container.md). This is an isolated production-mode app/PostgreSQL/HTTPS stack; it preserves existing authentication and does not modify the development databases. CI/GCP remain separate work. Local production packaging passed35 API/browser/lifecycle checks at ee56d91, including secure cookies, non-root runtime and persisted records/session after restart and container recreation. See the linked runbook for actual source/results and the remaining CI/GCP work.

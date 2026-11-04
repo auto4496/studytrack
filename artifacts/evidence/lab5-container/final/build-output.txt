@@ -1,0 +1,358 @@
+ Image studytrack-tools:ee56d91dd4ab Building 
+ Image studytrack:ee56d91dd4ab Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.36kB done
+#1 DONE 0.0s
+
+#2 [migrate internal] load build definition from Dockerfile
+#2 transferring dockerfile: 2.03kB 0.1s done
+#2 transferring dockerfile: 2.03kB 0.1s done
+#2 DONE 0.1s
+
+#3 [migrate] resolve image config for docker-image://docker.io/docker/dockerfile:1
+#3 DONE 2.5s
+
+#4 [migrate] docker-image://docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e
+#4 resolve docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e 0.1s done
+#4 CACHED
+
+#5 [app internal] load metadata for docker.io/library/node:24-bookworm-slim@sha256:c86ecead9e55a5210ac1727de38a4ca840bf03dcaf34dc9749addbf383b1920c
+#5 DONE 2.0s
+
+#6 [migrate internal] load .dockerignore
+#6 transferring context: 416B 0.0s done
+#6 DONE 0.0s
+
+#7 [migrate base 1/3] FROM docker.io/library/node:24-bookworm-slim@sha256:c86ecead9e55a5210ac1727de38a4ca840bf03dcaf34dc9749addbf383b1920c
+#7 resolve docker.io/library/node:24-bookworm-slim@sha256:c86ecead9e55a5210ac1727de38a4ca840bf03dcaf34dc9749addbf383b1920c 0.1s done
+#7 DONE 0.1s
+
+#8 [app base 2/3] WORKDIR /app
+#8 CACHED
+
+#9 [app base 3/3] RUN apt-get update     && apt-get install -y --no-install-recommends openssl ca-certificates     && rm -rf /var/lib/apt/lists/*
+#9 ...
+
+#10 [migrate internal] load build context
+#10 transferring context: 2.90kB 0.1s done
+#10 DONE 0.1s
+
+#9 [app base 3/3] RUN apt-get update     && apt-get install -y --no-install-recommends openssl ca-certificates     && rm -rf /var/lib/apt/lists/*
+#9 1.023 Get:1 http://deb.debian.org/debian bookworm InRelease [151 kB]
+#9 1.149 Get:2 http://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+#9 1.215 Get:3 http://deb.debian.org/debian-security bookworm-security InRelease [34.8 kB]
+#9 1.407 Get:4 http://deb.debian.org/debian bookworm/main amd64 Packages [8790 kB]
+#9 3.488 Get:5 http://deb.debian.org/debian bookworm-updates/main amd64 Packages [6924 B]
+#9 3.488 Get:6 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages [360 kB]
+#9 4.677 Fetched 9398 kB in 4s (2518 kB/s)
+#9 4.677 Reading package lists...
+#9 6.031 Reading package lists...
+#9 6.767 Building dependency tree...
+#9 6.966 Reading state information...
+#9 7.183 The following additional packages will be installed:
+#9 7.184   libssl3
+#9 7.208 The following NEW packages will be installed:
+#9 7.209   ca-certificates libssl3 openssl
+#9 7.263 0 upgraded, 3 newly installed, 0 to remove and 1 not upgraded.
+#9 7.263 Need to get 3643 kB of archives.
+#9 7.263 After this operation, 8955 kB of additional disk space will be used.
+#9 7.263 Get:1 http://deb.debian.org/debian-security bookworm-security/main amd64 libssl3 amd64 3.0.22-1~deb12u2 [2040 kB]
+#9 7.697 Get:2 http://deb.debian.org/debian-security bookworm-security/main amd64 openssl amd64 3.0.22-1~deb12u2 [1442 kB]
+#9 8.205 Get:3 http://deb.debian.org/debian-security bookworm-security/main amd64 ca-certificates all 20250419~deb12u2 [161 kB]
+#9 8.578 debconf: delaying package configuration, since apt-utils is not installed
+#9 8.623 Fetched 3643 kB in 1s (3147 kB/s)
+#9 8.687 Selecting previously unselected package libssl3:amd64.
+#9 8.687 (Reading database ... 
+(Reading database ... 5%
+(Reading database ... 10%
+(Reading database ... 15%
+(Reading database ... 20%
+(Reading database ... 25%
+(Reading database ... 30%
+(Reading database ... 35%
+(Reading database ... 40%
+(Reading database ... 45%
+(Reading database ... 50%
+(Reading database ... 55%
+(Reading database ... 60%
+(Reading database ... 65%
+(Reading database ... 70%
+(Reading database ... 75%
+(Reading database ... 80%
+(Reading database ... 85%
+(Reading database ... 90%
+(Reading database ... 95%
+(Reading database ... 100%
+(Reading database ... 6096 files and directories currently installed.)
+#9 8.702 Preparing to unpack .../libssl3_3.0.22-1~deb12u2_amd64.deb ...
+#9 8.721 Unpacking libssl3:amd64 (3.0.22-1~deb12u2) ...
+#9 8.944 Selecting previously unselected package openssl.
+#9 8.945 Preparing to unpack .../openssl_3.0.22-1~deb12u2_amd64.deb ...
+#9 8.957 Unpacking openssl (3.0.22-1~deb12u2) ...
+#9 9.208 Selecting previously unselected package ca-certificates.
+#9 9.210 Preparing to unpack .../ca-certificates_20250419~deb12u2_all.deb ...
+#9 9.219 Unpacking ca-certificates (20250419~deb12u2) ...
+#9 9.347 Setting up libssl3:amd64 (3.0.22-1~deb12u2) ...
+#9 9.379 Setting up openssl (3.0.22-1~deb12u2) ...
+#9 9.418 Setting up ca-certificates (20250419~deb12u2) ...
+#9 9.514 debconf: unable to initialize frontend: Dialog
+#9 9.514 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#9 9.514 debconf: falling back to frontend: Readline
+#9 9.514 debconf: unable to initialize frontend: Readline
+#9 9.514 debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.36.0 /usr/local/share/perl/5.36.0 /usr/lib/x86_64-linux-gnu/perl5/5.36 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl-base /usr/lib/x86_64-linux-gnu/perl/5.36 /usr/share/perl/5.36 /usr/local/lib/site_perl) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+#9 9.514 debconf: falling back to frontend: Teletype
+#9 10.36 Updating certificates in /etc/ssl/certs...
+#9 12.08 148 added, 0 removed; done.
+#9 12.15 Processing triggers for libc-bin (2.36-9+deb12u14) ...
+#9 12.19 Processing triggers for ca-certificates (20250419~deb12u2) ...
+#9 12.22 Updating certificates in /etc/ssl/certs...
+#9 13.02 0 added, 0 removed; done.
+#9 13.02 Running hooks in /etc/ca-certificates/update.d...
+#9 13.06 done.
+#9 DONE 13.2s
+
+#9 [app base 3/3] RUN apt-get update     && apt-get install -y --no-install-recommends openssl ca-certificates     && rm -rf /var/lib/apt/lists/*
+#9 DONE 13.2s
+
+#11 [app dependencies 1/2] COPY package.json package-lock.json ./
+#11 DONE 0.1s
+
+#11 [migrate dependencies 1/2] COPY package.json package-lock.json ./
+#11 DONE 0.1s
+
+#12 [app dependencies 2/2] RUN --mount=type=cache,target=/root/.npm npm ci
+#12 47.55 
+#12 47.55 added 231 packages, and audited 232 packages in 47s
+#12 47.55 
+#12 47.55 68 packages are looking for funding
+#12 47.55   run `npm fund` for details
+#12 47.55 
+#12 47.55 found 0 vulnerabilities
+#12 47.55 npm warn install-scripts 5 packages have install scripts not yet covered by allowScripts:
+#12 47.55 npm warn install-scripts   @prisma/client@6.19.3 (postinstall: node scripts/postinstall.js)
+#12 47.55 npm warn install-scripts   @prisma/engines@6.19.3 (postinstall: node scripts/postinstall.js)
+#12 47.55 npm warn install-scripts   argon2@0.45.2 (install: cross-env ZERO_AR_DATE=1 node-gyp-build)
+#12 47.55 npm warn install-scripts   esbuild@0.28.2 (postinstall: node install.js)
+#12 47.55 npm warn install-scripts   prisma@6.19.3 (preinstall: node scripts/preinstall-entry.js)
+#12 47.55 npm warn install-scripts
+#12 47.55 npm warn install-scripts Run `npm install-scripts ls` to review, or `npm install-scripts approve <pkg>` to allow.
+#12 47.56 npm notice
+#12 47.56 npm notice New major version of npm available! 11.19.1 -> 12.2.1
+#12 47.56 npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+#12 47.56 npm notice To update run: npm install -g npm@12.2.1
+#12 47.56 npm notice
+#12 DONE 48.1s
+
+#12 [app dependencies 2/2] RUN --mount=type=cache,target=/root/.npm npm ci
+#12 DONE 48.1s
+
+#13 [app build 1/7] COPY server/prisma ./server/prisma
+#13 DONE 0.3s
+
+#13 [migrate build 1/7] COPY server/prisma ./server/prisma
+#13 DONE 0.3s
+
+#14 [migrate build 2/7] RUN npm run db:generate
+#14 1.758 
+#14 1.758 > studytrack@0.1.0 db:generate
+#14 1.758 > prisma generate --schema server/prisma/schema.prisma
+#14 1.758 
+#14 4.272 Prisma schema loaded from server/prisma/schema.prisma
+#14 5.411 
+#14 5.411 ✔ Generated Prisma Client (v6.19.3) to ./node_modules/@prisma/client in 475ms
+#14 5.411 
+#14 5.411 Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+#14 5.411 
+#14 5.411 Tip: Need your database queries to be 1000x faster? Accelerate offers you that and more: https://pris.ly/tip-2-accelerate
+#14 5.411 
+#14 5.456 npm notice
+#14 5.456 npm notice New major version of npm available! 11.19.1 -> 12.2.1
+#14 5.456 npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+#14 5.456 npm notice To update run: npm install -g npm@12.2.1
+#14 5.456 npm notice
+#14 DONE 5.5s
+
+#14 [migrate build 2/7] RUN npm run db:generate
+#14 DONE 5.5s
+
+#15 [migrate build 3/7] COPY server/src ./server/src
+#15 DONE 0.1s
+
+#15 [app build 3/7] COPY server/src ./server/src
+#15 DONE 0.1s
+
+#16 [app build 4/7] COPY server/tsconfig.json ./server/tsconfig.json
+#16 DONE 0.1s
+
+#16 [migrate build 4/7] COPY server/tsconfig.json ./server/tsconfig.json
+#16 DONE 0.1s
+
+#17 [migrate build 5/7] COPY client ./client
+#17 DONE 0.2s
+
+#17 [app build 5/7] COPY client ./client
+#17 DONE 0.2s
+
+#18 [app build 6/7] COPY vite.config.ts ./vite.config.ts
+#18 DONE 0.1s
+
+#18 [migrate build 6/7] COPY vite.config.ts ./vite.config.ts
+#18 DONE 0.1s
+
+#19 [migrate build 7/7] RUN npm run build
+#19 0.680 
+#19 0.680 > studytrack@0.1.0 build
+#19 0.680 > npm run build:server && npm run build:client
+#19 0.680 
+#19 0.899 
+#19 0.899 > studytrack@0.1.0 build:server
+#19 0.899 > tsc -p server/tsconfig.json
+#19 0.899 
+#19 2.067 
+#19 2.067 > studytrack@0.1.0 build:client
+#19 2.067 > tsc -p client/tsconfig.json && vite build
+#19 2.067 
+#19 3.050 vite v8.3.5 building client environment for production...
+#19 3.194 transforming...
+#19 4.094 ✓ 34 modules transformed.
+#19 4.698 rendering chunks...
+#19 4.931 computing gzip size...
+#19 4.958 dist/client/index.html                   0.50 kB │ gzip:  0.36 kB
+#19 4.958 dist/client/assets/index-BQW3AJBT.css   13.38 kB │ gzip:  3.73 kB
+#19 4.958 dist/client/assets/index-BAVjzCdg.js   294.58 kB │ gzip: 90.52 kB
+#19 4.958 
+#19 4.966 ✓ built in 1.91s
+#19 DONE 5.1s
+
+#19 [app build 7/7] RUN npm run build
+#19 DONE 5.1s
+
+#20 [migrate] exporting to image
+#20 exporting layers
+#20 ...
+
+#21 [app production-dependencies 1/1] RUN npm prune --omit=dev --omit=peer --omit=optional
+#21 ...
+
+#20 [migrate] exporting to image
+#20 exporting layers 53.3s done
+#20 exporting manifest sha256:64b3efa355297b464a09f24b622fadfd24956fc441816b2a274577b42c507bbe 0.0s done
+#20 exporting config sha256:f38a07fe0ac4e3f8bb3289fd219ffc5e914331b0a38cc5a876a07f23c4d72739 0.0s done
+#20 exporting attestation manifest sha256:c5b4dcaf37f0e1e33fe6597a2d62314c457abf6cc21815f1b5d25aa9b8f8f021
+#20 exporting attestation manifest sha256:c5b4dcaf37f0e1e33fe6597a2d62314c457abf6cc21815f1b5d25aa9b8f8f021 0.1s done
+#20 exporting manifest list sha256:95a399983b2859fc8e5018095e0ee2357a6bb77e7a701ecb22fcecea53b240f8 0.1s done
+#20 naming to docker.io/library/studytrack-tools:ee56d91dd4ab done
+#20 unpacking to docker.io/library/studytrack-tools:ee56d91dd4ab
+#20 unpacking to docker.io/library/studytrack-tools:ee56d91dd4ab 15.3s done
+#20 DONE 69.1s
+
+#21 [app production-dependencies 1/1] RUN npm prune --omit=dev --omit=peer --omit=optional
+#21 ...
+
+#22 [migrate] resolving provenance for metadata file
+#22 DONE 0.7s
+
+#21 [app production-dependencies 1/1] RUN npm prune --omit=dev --omit=peer --omit=optional
+#21 93.15 
+#21 93.15 removed 148 packages, and audited 84 packages in 2m
+#21 93.15 
+#21 93.15 33 packages are looking for funding
+#21 93.15   run `npm fund` for details
+#21 93.15 
+#21 93.15 found 0 vulnerabilities
+#21 93.17 npm warn install-scripts 2 packages have install scripts not yet covered by allowScripts:
+#21 93.17 npm warn install-scripts   @prisma/client@6.19.3 (postinstall: node scripts/postinstall.js)
+#21 93.17 npm warn install-scripts   argon2@0.45.2 (install: node-gyp rebuild)
+#21 93.17 npm warn install-scripts
+#21 93.17 npm warn install-scripts Run `npm install-scripts ls` to review, or `npm install-scripts approve <pkg>` to allow.
+#21 DONE 93.9s
+
+#23 [app runtime 1/5] COPY --from=production-dependencies --chown=node:node /app/node_modules ./node_modules
+#23 DONE 0.9s
+
+#24 [app runtime 2/5] COPY --from=build --chown=node:node /app/node_modules/.prisma ./node_modules/.prisma
+#24 DONE 0.6s
+
+#25 [app runtime 3/5] COPY --from=build --chown=node:node /app/server/dist ./server/dist
+#25 DONE 0.2s
+
+#26 [app runtime 4/5] COPY --from=build --chown=node:node /app/dist/client ./dist/client
+#26 DONE 0.2s
+
+#27 [app runtime 5/5] COPY --chown=node:node package.json ./package.json
+#27 DONE 0.2s
+
+#28 [app] exporting to image
+#28 exporting layers
+#28 exporting layers 7.8s done
+#28 exporting manifest sha256:7e0fbfd7a835f0e343888f33dae8d59e2b07a568ae434e801d9bcfab720fa251 0.0s done
+#28 exporting config sha256:80dc31f9d3cfe2ff354b4cfe467484c526188f3af7eaff0b1b7f8957d7512812 0.0s done
+#28 exporting attestation manifest sha256:7ec10baf65c47154d505c09d15b575a9a930d7f073f550c464260699a6d9a24b
+#28 exporting attestation manifest sha256:7ec10baf65c47154d505c09d15b575a9a930d7f073f550c464260699a6d9a24b 0.1s done
+#28 exporting manifest list sha256:e52904966e3e70d76136c9d6af013548d2f6d9e2fa345568639604b6506bc2d1 0.0s done
+#28 naming to docker.io/library/studytrack:ee56d91dd4ab
+#28 naming to docker.io/library/studytrack:ee56d91dd4ab 0.0s done
+#28 unpacking to docker.io/library/studytrack:ee56d91dd4ab
+#28 unpacking to docker.io/library/studytrack:ee56d91dd4ab 1.4s done
+#28 DONE 9.4s
+
+#29 [app] resolving provenance for metadata file
+#29 DONE 0.1s
+ Image studytrack:ee56d91dd4ab Built 
+ Image studytrack-tools:ee56d91dd4ab Built 
+ Container studytrack-container-review-db-1 Running 
+ Container studytrack-container-review-db-1 Waiting 
+ Container studytrack-container-review-db-1 Healthy 
+ Container studytrack-container-review-db-1 Running 
+ Container studytrack-container-review-db-1 Waiting 
+ Container studytrack-container-review-db-1 Healthy 
+ Container studytrack-container-review-migrate-run-1ae0474ca921 Creating 
+ Container studytrack-container-review-migrate-run-1ae0474ca921 Created 
+
+> studytrack@0.1.0 db:migrate
+> prisma migrate deploy --schema server/prisma/schema.prisma
+
+Prisma schema loaded from server/prisma/schema.prisma
+Datasource "db": PostgreSQL database "studytrack_container", schema "public" at "db:5432"
+
+1 migration found in prisma/migrations
+
+
+No pending migrations to apply.
+npm notice
+npm notice New major version of npm available! 11.19.1 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice
+ Container studytrack-container-review-db-1 Running 
+ Container studytrack-container-review-db-1 Waiting 
+ Container studytrack-container-review-db-1 Healthy 
+ Container studytrack-container-review-seed-run-3f6b9b064845 Creating 
+ Container studytrack-container-review-seed-run-3f6b9b064845 Created 
+
+> studytrack@0.1.0 db:seed
+> tsx server/prisma/seed.ts
+
+Synthetic demo accounts and two templates ready; existing records preserved. Passwords are not printed.
+npm notice
+npm notice New major version of npm available! 11.19.1 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice
+ Container studytrack-container-review-proxy-1 Running 
+ Container studytrack-container-review-db-1 Running 
+ Container studytrack-container-review-app-1 Recreate 
+ Container studytrack-container-review-app-1 Recreated 
+ Container studytrack-container-review-db-1 Waiting 
+ Container studytrack-container-review-db-1 Healthy 
+ Container studytrack-container-review-app-1 Starting 
+ Container studytrack-container-review-app-1 Started 
+ Container studytrack-container-review-app-1 Waiting 
+ Container studytrack-container-review-app-1 Healthy 
+ Container studytrack-container-review-proxy-1 Waiting 
+ Container studytrack-container-review-db-1 Waiting 
+ Container studytrack-container-review-app-1 Waiting 
+ Container studytrack-container-review-app-1 Healthy 
+ Container studytrack-container-review-db-1 Healthy 
+ Container studytrack-container-review-proxy-1 Healthy 
+Local production stack ready. Database and local CA are stored in named volumes.
