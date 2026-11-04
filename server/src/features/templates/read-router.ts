@@ -1,14 +1,40 @@
 import { Router } from "express";
 import { z } from "zod";
 import type { Dependencies } from "../../auth/context.js";
-import { requireUser } from "../../auth/middleware.js";
+import {
+  requireCsrf,
+  requireJson,
+  requireRole,
+  requireUser,
+} from "../../auth/middleware.js";
 import { ApiError } from "../../errors.js";
 import { pagination, parseUuid } from "../../validation.js";
+import { templateInput } from "./rules.js";
 
-// Minimal real read adapter needed by F-03. Member B owns F-02's manager CRUD/UI and may extend this router.
+// F-02 extends the F-03 read adapter; both features share one catalog and DTO.
 export function templateReadRouter(deps: Dependencies) {
   const router = Router();
   router.use(requireUser(deps));
+  router.post(
+    "/",
+    requireRole("PROGRAM_MANAGER"),
+    requireCsrf(deps),
+    requireJson,
+    async (req, res) => {
+      const input = templateInput.parse(req.body);
+      const template = await deps.db.activityTemplate.create({
+        data: {
+          ...input,
+          createdById: req.principal!.user.id,
+          unit: "MINUTES",
+          isActive: true,
+          createdAt: deps.clock.now(),
+          updatedAt: deps.clock.now(),
+        },
+      });
+      res.status(201).json({ data: templateDTO(template) });
+    },
+  );
   router.get("/", async (req, res) => {
     const { page, pageSize, includeInactive } = pagination(req.query, {
       includeInactive: z.enum(["true", "false"]).optional(),

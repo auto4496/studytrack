@@ -1,0 +1,135 @@
+
+> studytrack@0.1.0 test
+> vitest run server/tests/integration/templates.test.ts --reporter=default --reporter=json --outputFile=artifacts/evidence/member-b/f02-red-results.json
+
+
+ RUN  v5.1.0 C:/CPE/CPE334/Project/studytrack-member-b
+
+ ❯ server/tests/integration/templates.test.ts (16 tests | 15 failed) 1499ms
+   ❯ F-02 manager templates, persistence and access (16)
+     × TEST-F02-01/07: manager creates normalized template and a fresh app reads the committed row 151ms
+     × TEST-F02-03: invalid template {"title":" "} is rejected without writes 81ms
+     × TEST-F02-03: invalid template {"title":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"} is rejected without writes 82ms
+     × TEST-F02-03: invalid template {"description":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"} is rejected without writes 83ms
+     × TEST-F02-03: invalid template {"unit":"MINUTES"} is rejected without writes 81ms
+     × TEST-F02-03: invalid template {"minMinutes":0} is rejected without writes 77ms
+     × TEST-F02-03: invalid template {"maxMinutes":1441} is rejected without writes 77ms
+     × TEST-F02-03: invalid template {"minMinutes":61,"maxMinutes":60} is rejected without writes 77ms
+     × TEST-F02-03: invalid template {"minMinutes":1.5} is rejected without writes 79ms
+     × TEST-F02-03: invalid template {"minMinutes":"60"} is rejected without writes 76ms
+     × TEST-F02-03: invalid template {"minMinutes":true} is rejected without writes 84ms
+     × TEST-F02-03: invalid template {"minMinutes":null} is rejected without writes 81ms
+     × TEST-F02-03/11: inclusive bounds and duplicate titles are accepted with distinct IDs 83ms
+     ✓ TEST-F02-04: active catalog/detail are paginated and inactive templates remain manager-only 206ms
+     × TEST-F02-05/06: roles, CSRF/origin and revoked cookies are enforced before writes 96ms
+     × TEST-F02-08: server-owned fields are rejected; failed database insert produces only safe errors 82ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 15 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  server/tests/integration/templates.test.ts > F-02 manager templates, persistence and access > TEST-F02-01/07: manager creates normalized template and a fresh app reads the committed row
+Error: expected 201 "Created", got 404 "Not Found"
+ ❯ server/tests/integration/templates.test.ts:15:55
+     13|     const session = await login("manager@studytrack.test");
+     14|     const saved = await session.agent.post("/api/templates").set("Orig…
+     15|       .set("X-CSRF-Token", session.csrf).send(body()).expect(201);
+       |                                                       ^
+     16|     expect(saved.body.data).toMatchObject({ title: "อ่าน CPE 334", des…
+     17|     expect(Object.keys(saved.body.data).sort()).toEqual(["id", "title"…
+ ❯ Test._assertStatus node_modules/supertest/lib/test.js:404:14
+ ❯ node_modules/supertest/lib/test.js:460:13
+ ❯ Test._assertFunction node_modules/supertest/lib/test.js:437:13
+ ❯ Test.assert node_modules/supertest/lib/test.js:302:23
+ ❯ localAssert node_modules/supertest/lib/test.js:220:38
+ ❯ Server.<anonymous> node_modules/supertest/lib/test.js:227:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/15]⎯
+
+ FAIL  server/tests/integration/templates.test.ts > F-02 manager templates, persistence and access > TEST-F02-03: invalid template {"title":" "} is rejected without writes
+ FAIL  server/tests/integration/templates.test.ts > F-02 manager templates, persistence and access > TEST-F02-03: invalid template {"title":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"} is rejected without writes
+ FAIL  server/tests/integration/templates.test.ts > F-02 manager templates, persistence and access > TEST-F02-03: invalid template {"description":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"} is rejected without writes
+ FAIL  server/tests/integration/templates.test.ts > F-02 manager templates, persistence and access > TEST-F02-03: invalid template {"unit":"MINUTES"} is rejected without writes
+ FAIL  server/tests/integration/templates.test.ts > F-02 manager templates, persistence and access > TEST-F02-03: invalid template {"minMinutes":0} is rejected without writes
+ FAIL  server/tests/integration/templates.test.ts > F-02 manager templates, persistence and access > TEST-F02-03: invalid template {"maxMinutes":1441} is rejected without writes
+ FAIL  server/tests/integration/templates.test.ts > F-02 manager templates, persistence and access > TEST-F02-03: invalid template {"minMinutes":61,"maxMinutes":60} is rejected without writes
+ FAIL  server/tests/integration/templates.test.ts > F-02 manager templates, persistence and access > TEST-F02-03: invalid template {"minMinutes":1.5} is rejected without writes
+ FAIL  server/tests/integration/templates.test.ts > F-02 manager templates, persistence and access > TEST-F02-03: invalid template {"minMinutes":"60"} is rejected without writes
+ FAIL  server/tests/integration/templates.test.ts > F-02 manager templates, persistence and access > TEST-F02-03: invalid template {"minMinutes":true} is rejected without writes
+ FAIL  server/tests/integration/templates.test.ts > F-02 manager templates, persistence and access > TEST-F02-03: invalid template {"minMinutes":null} is rejected without writes
+Error: expected 422 "Unprocessable Entity", got 404 "Not Found"
+ ❯ server/tests/integration/templates.test.ts:38:73
+     36|     const session = await login("manager@studytrack.test");
+     37|     const result = await session.agent.post("/api/templates").set("Ori…
+     38|       .set("X-CSRF-Token", session.csrf).send({ ...body(), ...change }…
+       |                                                                         ^
+     39|     expect(result.body.error.code).toBe("VALIDATION_ERROR");
+     40|     expect(result.body.error.requestId).toEqual(expect.any(String));
+ ❯ Test._assertStatus node_modules/supertest/lib/test.js:404:14
+ ❯ node_modules/supertest/lib/test.js:460:13
+ ❯ Test._assertFunction node_modules/supertest/lib/test.js:437:13
+ ❯ Test.assert node_modules/supertest/lib/test.js:302:23
+ ❯ localAssert node_modules/supertest/lib/test.js:220:38
+ ❯ Server.<anonymous> node_modules/supertest/lib/test.js:227:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/15]⎯
+
+ FAIL  server/tests/integration/templates.test.ts > F-02 manager templates, persistence and access > TEST-F02-03/11: inclusive bounds and duplicate titles are accepted with distinct IDs
+Error: expected 201 "Created", got 404 "Not Found"
+ ❯ server/tests/integration/templates.test.ts:49:151
+     47|     for (const range of [[1, 1], [1440, 1440]]) {
+     48|       const saved = await session.agent.post("/api/templates").set("Or…
+     49|         .set("X-CSRF-Token", session.csrf).send({ title: "a".repeat(10…
+       |                                                                                                                                                       ^
+     50|       ids.push(saved.body.data.id);
+     51|     }
+ ❯ Test._assertStatus node_modules/supertest/lib/test.js:404:14
+ ❯ node_modules/supertest/lib/test.js:460:13
+ ❯ Test._assertFunction node_modules/supertest/lib/test.js:437:13
+ ❯ Test.assert node_modules/supertest/lib/test.js:302:23
+ ❯ localAssert node_modules/supertest/lib/test.js:220:38
+ ❯ Server.<anonymous> node_modules/supertest/lib/test.js:227:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/15]⎯
+
+ FAIL  server/tests/integration/templates.test.ts > F-02 manager templates, persistence and access > TEST-F02-05/06: roles, CSRF/origin and revoked cookies are enforced before writes
+Error: expected 403 "Forbidden", got 404 "Not Found"
+ ❯ server/tests/integration/templates.test.ts:80:53
+     78|     const reader = await login();
+     79|     await reader.agent.post("/api/templates").set("Origin", origin).se…
+     80|       .send({ ...body(), role: "PROGRAM_MANAGER" }).expect(403);
+       |                                                     ^
+     81|     const manager = await login("manager@studytrack.test");
+     82|     await manager.agent.post("/api/templates").set("Origin", origin).s…
+ ❯ Test._assertStatus node_modules/supertest/lib/test.js:404:14
+ ❯ node_modules/supertest/lib/test.js:460:13
+ ❯ Test._assertFunction node_modules/supertest/lib/test.js:437:13
+ ❯ Test.assert node_modules/supertest/lib/test.js:302:23
+ ❯ localAssert node_modules/supertest/lib/test.js:220:38
+ ❯ Server.<anonymous> node_modules/supertest/lib/test.js:227:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/15]⎯
+
+ FAIL  server/tests/integration/templates.test.ts > F-02 manager templates, persistence and access > TEST-F02-08: server-owned fields are rejected; failed database insert produces only safe errors
+Error: expected 422 "Unprocessable Entity", got 404 "Not Found"
+ ❯ server/tests/integration/templates.test.ts:94:49
+     92|     for (const key of ["id", "createdById", "isActive", "ownerId", "us…
+     93|       await manager.agent.post("/api/templates").set("Origin", origin)…
+     94|         .send({ ...body(), [key]: "injected" }).expect(422);
+       |                                                 ^
+     95|     }
+     96|     await db.$executeRawUnsafe("CREATE FUNCTION test_reject_template_b…
+ ❯ Test._assertStatus node_modules/supertest/lib/test.js:404:14
+ ❯ node_modules/supertest/lib/test.js:460:13
+ ❯ Test._assertFunction node_modules/supertest/lib/test.js:437:13
+ ❯ Test.assert node_modules/supertest/lib/test.js:302:23
+ ❯ localAssert node_modules/supertest/lib/test.js:220:38
+ ❯ Server.<anonymous> node_modules/supertest/lib/test.js:227:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/15]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  15 failed | 1 passed (16)
+   Start at  18:25:25
+   Duration  2.07s (tests 77%, import 15%, transform 7%, setup 1%)
+
+JSON report written to C:/CPE/CPE334/Project/studytrack-member-b/artifacts/evidence/member-b/f02-red-results.json

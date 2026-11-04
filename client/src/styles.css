@@ -19,7 +19,8 @@ a {
 }
 button,
 input,
-select {
+select,
+textarea {
   font: inherit;
 }
 button,
@@ -38,7 +39,8 @@ button:disabled {
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
-select:focus-visible {
+select:focus-visible,
+textarea:focus-visible {
   outline: 3px solid #cc8a40;
   outline-offset: 3px;
 }
@@ -414,7 +416,8 @@ p {
   font-weight: 600;
 }
 input,
-select {
+select,
+textarea {
   width: 100%;
   min-width: 0;
   padding: 11px 13px;
@@ -425,7 +428,8 @@ select {
   min-height: 46px;
 }
 input[aria-invalid="true"],
-select[aria-invalid="true"] {
+select[aria-invalid="true"],
+textarea[aria-invalid="true"] {
   border-color: #b25241;
 }
 .field small {
@@ -437,6 +441,19 @@ select[aria-invalid="true"] {
 }
 .field-error:empty {
   display: none;
+}
+textarea {
+  resize: vertical;
+}
+.catalog-filter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+.catalog-filter input {
+  width: 18px;
+  min-height: 18px;
 }
 .form-actions {
   display: flex;
