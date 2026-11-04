@@ -1,5 +1,9 @@
 # Member B verification ledger
 
+## Accepted staging after A review — 4 November 2026
+
+PR6/7 approved byauto4496 and merged; staging85f510f. A's retained F02 reports contain66API/unit+16browser passes, and integrated F04 reports contain117API/unit+24browser passes; build/restart pass per reviewer record. B parsed those JSON reports and verified tree equality cb52f39=f1577ea and36fc9b6=85f510f; accepted application/test/config source is unchanged from B tested afca38f. No runtime rerun byB is claimed for this documentation-only round. See [A review](../reviews/pr-6-and-7-member-a.md), [comparison metadata](../../artifacts/evidence/member-b/sprint-1-release-readiness.json) and [release readiness](../handoffs/sprint-1-release-readiness.md). Main release and final-main checks remain pending; earlier draft/base descriptions below are historical.
+
 ## Current F02+F04 verification after PR3 merge — 4 November 2026
 
 Tested source **afca38f99507f1fa7558f0070c154b4209410339**, containing accepted staging1a4b74b and F02 dependency ec681e9. Actual results: **117 API/unit passes (A40+B77), 24 browser passes (A10+B14), 0 failures/skips**, build and real API restart pass. Restart retrieves the same persisted session, manager-created template, goal, entry and45/60=75% progress. Each DB-resetting suite ran sequentially against isolated B test DB; no application conflicts/fixes were needed. Two documentation merge conflicts retained F04 history and new F02 evidence.
