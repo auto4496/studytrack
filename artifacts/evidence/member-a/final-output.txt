@@ -1,0 +1,55 @@
+
+> studytrack@0.1.0 test
+> vitest run --reporter=verbose --reporter=json --outputFile=artifacts/evidence/member-a/final-results.json
+
+
+ RUN  v5.1.0 C:/Users/User/studytrack
+
+ ✓ server/tests/integration/goals.test.ts > F-03 persisted personal goals and backend permissions > TEST-F03-01/07: creates goal and initial version atomically with immutable snapshots 353ms
+ ✓ server/tests/integration/goals.test.ts > F-03 persisted personal goals and backend permissions > TEST-F03-02: reload and new application instance retrieve committed data 188ms
+ ✓ server/tests/integration/goals.test.ts > F-03 persisted personal goals and backend permissions > TEST-F03-01/07: accepts tomorrow start and returns initial target for a future-start goal 133ms
+ ✓ server/tests/integration/goals.test.ts > F-03 persisted personal goals and backend permissions > TEST-F03-03: rejects invalid target 0 without partial records 123ms
+ ✓ server/tests/integration/goals.test.ts > F-03 persisted personal goals and backend permissions > TEST-F03-03: rejects invalid target 1441 without partial records 118ms
+ ✓ server/tests/integration/goals.test.ts > F-03 persisted personal goals and backend permissions > TEST-F03-03: rejects invalid target 1.5 without partial records 105ms
+ ✓ server/tests/integration/goals.test.ts > F-03 persisted personal goals and backend permissions > TEST-F03-03: validates date 2026-11-02 at API boundary 110ms
+ ✓ server/tests/integration/goals.test.ts > F-03 persisted personal goals and backend permissions > TEST-F03-03: validates date 2026-11-05 at API boundary 103ms
+ ✓ server/tests/integration/goals.test.ts > F-03 persisted personal goals and backend permissions > TEST-F03-03: validates date 2026-02-30 at API boundary 102ms
+ ✓ server/tests/integration/goals.test.ts > F-03 persisted personal goals and backend permissions > TEST-F03-03: validates date 03/11/2026 at API boundary 102ms
+ ✓ server/tests/integration/goals.test.ts > F-03 persisted personal goals and backend permissions > TEST-F03-03: a database target-insert error rolls back the whole goal 143ms
+ ✓ server/tests/integration/goals.test.ts > F-03 persisted personal goals and backend permissions > TEST-F03-04: missing and inactive templates create no goal 118ms
+ ✓ server/tests/integration/goals.test.ts > F-03 persisted personal goals and backend permissions > TEST-F03-05: simultaneous requests store one ACTIVE goal and one target version 217ms
+ ✓ server/tests/integration/goals.test.ts > F-03 persisted personal goals and backend permissions > TEST-F01-05 / TEST-F03-06: role checks, ownership and collections are enforced on the real API 271ms
+ ✓ server/tests/integration/goals.test.ts > F-03 persisted personal goals and backend permissions > TEST-F03-06: client cannot override owner or role; malformed IDs and pagination reject 141ms
+ ✓ server/tests/integration/goals.test.ts > F-03 persisted personal goals and backend permissions > TEST-F01-06: wrong CSRF/origin cannot create a persisted goal 108ms
+ ✓ server/tests/integration/goals.test.ts > F-03 persisted personal goals and backend permissions > safe error handling: malformed JSON and non-JSON mutation have no database effects 114ms
+ ✓ server/tests/integration/goals.test.ts > F-03 persisted personal goals and backend permissions > TEST-F03-07: targetForDate retains historical values after a future target version 128ms
+ ✓ server/tests/integration/goals.test.ts > F-03 persisted personal goals and backend permissions > read-only F-02 adapter: active catalog supports real goal selection without private user fields 237ms
+ ✓ server/tests/integration/auth.test.ts > F-01 real PostgreSQL sessions > TEST-F01-01: salted Argon2id passwords and valid role identity 271ms
+ ✓ server/tests/integration/auth.test.ts > F-01 real PostgreSQL sessions > TEST-F01-04: logout revokes the real DB session, replay fails, independent session survives 157ms
+ ✓ server/tests/integration/auth.test.ts > F-01 real PostgreSQL sessions > TEST-F01-03: absent/tampered and server-expired sessions return no private data 97ms
+ ✓ server/tests/integration/auth.test.ts > F-01 real PostgreSQL sessions > TEST-F01-02: wrong email/password share a generic failure and create no authenticated session 123ms
+ ✓ server/tests/integration/auth.test.ts > F-01 real PostgreSQL sessions > TEST-F01-02: normalized email works; missing/oversize/unknown fields reject 119ms
+ ✓ server/tests/integration/auth.test.ts > F-01 real PostgreSQL sessions > TEST-F01-06: login CSRF/origin failures do not authenticate 70ms
+ ✓ server/tests/integration/auth.test.ts > F-01 real PostgreSQL sessions > TEST-F01-06: absent, cross-session and wrong CSRF/origin cannot revoke a session 184ms
+ ✓ server/tests/integration/auth.test.ts > F-01 real PostgreSQL sessions > TEST-F01-07: rotating login removes old pre-auth token and fixes the 8h expiry 104ms
+ ✓ server/tests/integration/auth.test.ts > F-01 real PostgreSQL sessions > TEST-F01-06: secure production cookie and cache policy, pre-auth never identifies a user 59ms
+ ✓ server/tests/unit/goal-rules.test.ts > TEST-F03-07: Bangkok date boundaries and goal rules > accepts today/tomorrow including year rollover 2ms
+ ✓ server/tests/unit/goal-rules.test.ts > TEST-F03-07: Bangkok date boundaries and goal rules > rejects invalid calendar dates, past/far-future dates and fractional/out-of-range targets 1ms
+ ✓ server/tests/unit/goal-rules.test.ts > TEST-F03-07: Bangkok date boundaries and goal rules > uses Bangkok midnight, leap day and UTC date arithmetic without host timezone 0ms
+ ✓ server/tests/unit/test-db-guard.test.ts > NFR-04: destructive test setup must target a separate test database > accepts an explicit separate PostgreSQL test database 1ms
+ ✓ server/tests/unit/test-db-guard.test.ts > NFR-04: destructive test setup must target a separate test database > rejects a missing or non-test PostgreSQL target 1ms
+ ✓ server/tests/unit/test-db-guard.test.ts > NFR-04: destructive test setup must target a separate test database > rejects a missing or non-test PostgreSQL target 0ms
+ ✓ server/tests/unit/test-db-guard.test.ts > NFR-04: destructive test setup must target a separate test database > rejects a missing or non-test PostgreSQL target 0ms
+ ✓ server/tests/unit/test-db-guard.test.ts > NFR-04: destructive test setup must target a separate test database > rejects the same development database via loopback alias localhost 0ms
+ ✓ server/tests/unit/test-db-guard.test.ts > NFR-04: destructive test setup must target a separate test database > rejects the same development database via loopback alias 127.0.0.1 0ms
+ ✓ server/tests/unit/test-db-guard.test.ts > NFR-04: destructive test setup must target a separate test database > rejects the same development database via loopback alias [::1] 0ms
+
+ Test Files  4 passed (4)
+      Tests  38 passed (38)
+   Start at  15:41:48
+   Duration  6.51s (tests 71%, import 23%, transform 4%, setup 1%)
+
+    Isolate  4 workers spawned · ~174ms startup each (spawn + environment, per file)
+             at least ~522ms faster with isolate: false — reuses workers across files instead of one per file
+
+JSON report written to C:/Users/User/studytrack/artifacts/evidence/member-a/final-results.json

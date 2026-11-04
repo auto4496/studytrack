@@ -1,0 +1,35 @@
+{
+  "reviewedPR": 3,
+  "reviewedHead": "2370df9d760862a2c96aead7c70eb63762bb7192",
+  "checkout": "separate detached PR3 worktree, not B increment",
+  "API": {
+    "passed": 38,
+    "failed": 0,
+    "skipped": 0
+  },
+  "browser": {
+    "passed": 10,
+    "failed": 0,
+    "skipped": 0
+  },
+  "build": "PASS",
+  "processRestart": "PASS",
+  "extraGuardRegression": {
+    "passed": 0,
+    "failed": 2,
+    "variants": [
+      "LOCALHOST",
+      "localhost."
+    ],
+    "failure": "guard accepts the same logical DB through hostname aliases"
+  },
+  "realDatabaseConfirmation": "SELECT current_database() via both aliases returned same B test DB; no writes in alias probe",
+  "severity": "P2",
+  "proposedReview": "REQUEST_CHANGES",
+  "reviewAcceptance": "not approved/merged",
+  "submittedReview": "https://github.com/auto4496/studytrack/pull/3#pullrequestreview-5752031354",
+  "reviewState": "CHANGES_REQUESTED",
+  "reviewerAccount": "Datakung",
+  "guardCondition": "Development DB name has the test marker (as in existing guard tests); TEST_DATABASE_URL uses LOCALHOST or localhost. while dev URL uses127.0.0.1. Current actual dev/test URLs remain distinct.",
+  "falseCandidateExcluded": "Percent-encoded database-name strings were not treated as aliases by Prisma6; no finding is claimed for that variant."
+}

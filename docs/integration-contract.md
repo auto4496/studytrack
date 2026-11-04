@@ -1,6 +1,6 @@
 # StudyTrack — Shared integration contract
 
-Version 0.1, member A proposal, 3 November 2026. เป็นข้อเสนอ interface สำหรับทั้งคู่ ยังไม่มี B review หรือ implementation. เปลี่ยนโดยเพิ่ม decision/version และประสานอีกฝ่ายก่อนทำโค้ดที่พึ่ง interface
+Version 0.1, member A proposal, 3 November 2026. เป็นข้อเสนอ interface สำหรับทั้งคู่ ยังไม่มี B review. อัปเดต: F-01/F-03 และ read-only template adapter มี A implementation แล้ว; F-02 mutations/F-04 ยังเป็น proposed surface ดู [actual signatures](handoffs/member-a-implementation.md). เปลี่ยนโดยเพิ่ม decision/version และประสานอีกฝ่ายก่อนทำโค้ดที่พึ่ง interface
 
 Sources: [SRS](srs.md), [System SDS](system-sds.md). B ยังคงเป็นเจ้าของ `ui-api-conventions.md` และ F-02/F-04 contracts; ใช้เอกสารนี้เป็นจุดตั้งต้น ไม่ใช่การอ้างว่า B ทำงานเสร็จแล้ว
 
@@ -92,4 +92,4 @@ No entry: actual=0/progress=0/achieved=false/entryId=null. Retrieval recomputes 
 | error mapper | known validation/constraint errors to envelope; safe unknown500 | A foundation |
 | API client/AuthProvider/layout | cookie+CSRF handling/navigation | agree with B before code |
 
-Feature branches: `codex/f01-auth`, `codex/f02-templates`, `codex/f03-goals`, `codex/f04-entries-progress` from `codex/sprint-1-staging`. Draft contract changes/docs may start earlier in separate docs branch. Actual Issues/PRs/releases only recorded after creation
+Feature branch examples: `codex/f01-auth`, `codex/f02-templates`, `codex/f03-goals`, `codex/f04-entries-progress` from `codex/sprint-1-staging`. Actual A implementation uses `codex/member-a-sprint1` for shared foundation/F-01/F-03 under Issues #1/#2, with separate TDD/feature commits and one reviewed integration PR; this dependency choice is recorded in decisions. B features remain separate. Actual PRs/releases only recorded after creation

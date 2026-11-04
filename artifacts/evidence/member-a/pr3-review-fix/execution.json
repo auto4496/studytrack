@@ -1,0 +1,37 @@
+{
+  "sourceCommit": "d2efadae5edb77f7eca3d36809f16cedb1645845",
+  "reviewedHead": "2370df9d760862a2c96aead7c70eb63762bb7192",
+  "reviewer": "Datakung",
+  "reviewComment": "https://github.com/auto4496/studytrack/pull/3#discussion_r4454538060",
+  "recordedAtUTC": "2026-11-03T13:23:03.387213+00:00",
+  "redCommit": "db199eb",
+  "fixCommit": "d2efadae5edb77f7eca3d36809f16cedb1645845",
+  "regressionCases": [
+    "LOCALHOST",
+    "localhost."
+  ],
+  "results": {
+    "red": {
+      "passed": 7,
+      "failed": 2
+    },
+    "guardAfterFix": {
+      "passed": 9,
+      "failed": 0
+    },
+    "apiAndUnit": {
+      "passed": 40,
+      "failed": 0,
+      "skipped": 0
+    },
+    "browser": {
+      "passed": 10,
+      "failed": 0,
+      "skipped": 0
+    },
+    "build": "PASS",
+    "realApiRestart": "PASS"
+  },
+  "status": "Fixed and locally verified; teammate re-review required, no merge or approval claimed",
+  "scope": "Test database hostname normalization only; original local README/handoff/verification edits not staged"
+}

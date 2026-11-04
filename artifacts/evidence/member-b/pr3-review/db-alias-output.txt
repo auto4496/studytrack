@@ -1,0 +1,30 @@
+{
+  "operations": "SELECT current_database() only; no writes",
+  "results": [
+    {
+      "alias": "LOCALHOST",
+      "sameDatabase": true,
+      "guardRejected": false
+    },
+    {
+      "alias": "localhost.",
+      "sameDatabase": true,
+      "guardRejected": false
+    }
+  ]
+}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Guard accepted equivalent localhost URLs that reach the same PostgreSQL database
+    at file:///C:/CPE/CPE334/Project/studytrack-pr3-review/tmp/review/check-db-alias.mjs:25:10 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v24.14.0

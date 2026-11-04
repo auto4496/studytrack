@@ -1,0 +1,53 @@
+{
+  "sourceCommit": "0b51571c6d81a81921dca3e2596e0755488c8f1c",
+  "baseACommit": "2370df9d760862a2c96aead7c70eb63762bb7192",
+  "specificationCommit": "ee14477",
+  "f02Issue": 4,
+  "f04Issue": 5,
+  "f04RedSource": "d709741",
+  "f04Red": {
+    "passed": 0,
+    "failed": 30,
+    "skipped": 0,
+    "reason": "Missing entry/progress API404 before implementation"
+  },
+  "intermediateFailures": {
+    "api": "f04-initial-results.json:5 failed/44 passed; fixed fixture re-login after clock advanced beyond8h expiry; auth expiry unchanged",
+    "browser": "browser-initial-results.json:2 failed/22 passed; awaited completed logout before checking revoked session; assertions retained"
+  },
+  "unitApi": {
+    "command": "npm test -- --reporter=default --reporter=json --outputFile=artifacts/evidence/member-b/final-results.json",
+    "passed": 115,
+    "failed": 0,
+    "skipped": 0,
+    "files": 8
+  },
+  "browser": {
+    "command": "npx playwright test --config playwright.member-b.config.ts",
+    "passed": 24,
+    "failed": 0,
+    "skipped": 0,
+    "viewports": [
+      "1440x900",
+      "390x844"
+    ],
+    "A_regression_cases": 10,
+    "B_cases": 14
+  },
+  "restart": {
+    "command": "npx tsx scripts/member-b-restart.ts",
+    "result": "PASS",
+    "scope": "API child process restart; DB session, manager-created template, goal, entry45/target60/progress75 retrieved"
+  },
+  "build": {
+    "command": "npm run build",
+    "result": "PASS"
+  },
+  "executionOrder": "Final API suite → process restart → build after browser suite ended; no shared database reset between suites",
+  "database": "Dedicated local PostgreSQL studytrack_b_test on loopback26433; dev/A databases untouched",
+  "credentialsScan": "No generated env credentials or raw session/CSRF tokens found in B artifact candidates; private env ignored",
+  "schemaAuthPackageChanges": false,
+  "peerReview": "PENDING",
+  "CI_GCP_UAT": "NOT EXECUTED",
+  "acceptedRelease": false
+}

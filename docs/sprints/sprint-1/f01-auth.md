@@ -2,7 +2,7 @@
 
 Version 0.1 / 3 November 2026 / owner A / reviewer B (not yet reviewed)
 
-Status: SPECIFIED, NOT IMPLEMENTED, NOT EXECUTED. Links: FR-01–FR-04, FR-19, BR-07, NFR-01/NFR-02/NFR-04/NFR-07. [SRS](../../srs.md), [System SDS](../../system-sds.md), [API contract](../../integration-contract.md)
+Status at v0.1 creation: SPECIFIED, NOT IMPLEMENTED, NOT EXECUTED. Update 3 November: A implementation and local verification now exist on `codex/member-a-sprint1`; teammate review/integration still pending. Current evidence: [verification record](../../verification/member-a.md). Links: FR-01–FR-04, FR-19, BR-07, NFR-01/NFR-02/NFR-04/NFR-07. [SRS](../../srs.md), [System SDS](../../system-sds.md), [API contract](../../integration-contract.md)
 
 ## 1. Behavior and dependencies
 
@@ -34,7 +34,7 @@ Needs schema/User+Session, migrations, synthetic seed, config, clock, DB test is
 
 ## 4. Software test specification
 
-Results for every row: NOT RUN; actual file/name/command/commit to be recorded after execution. Proposed file names are plans, not evidence
+Results at contract authoring: NOT RUN. Current actual files/results/versions are mapped in the verification record. Proposed filenames below are the original plan, not execution evidence; some cases are consolidated into auth.test.ts/goals.test.ts
 
 | Test ID | AC | Level / preconditions and action | Expected result | Planned file |
 |---|---|---|---|---|
@@ -53,4 +53,4 @@ TEST-F01-05 actual endpoints run after B/F-03 integration; middleware unit tests
 
 Use meaningful failing test first for server-side expiry/revocation or forbidden operation, preserve actual failing assertions/output/commit; implement; rerun green and regression. A dependency/config failure is not domain red evidence
 
-Done only when implementation satisfies ACs, required meaningful tests executed with actual results, feature access cases integrated, B has reviewed real changes, docs/setup current, release integration complete and gaps disclosed. No implementation/review/green evidence exists in this draft
+Done only when implementation satisfies ACs, required meaningful tests executed with actual results, feature access cases integrated, B has reviewed real changes, docs/setup current, release integration complete and gaps disclosed. Initial draft had no execution evidence; current A results are separate from still-pending B review and full product integration

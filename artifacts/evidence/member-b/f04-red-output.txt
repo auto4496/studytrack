@@ -1,0 +1,322 @@
+
+> studytrack@0.1.0 test
+> vitest run server/tests/integration/entries.test.ts --reporter=default --reporter=json --outputFile=artifacts/evidence/member-b/f04-red-results.json
+
+
+ RUN  v5.1.0 C:/CPE/CPE334/Project/studytrack-member-b
+
+ ❯ server/tests/integration/entries.test.ts (30 tests | 30 failed) 2951ms
+   ❯ F-04 persisted daily entries, date-effective progress and privacy (30)
+     × TEST-F04-01/02: committed entry and progress survive a fresh request/app; empty day has no phantom row 182ms
+     × TEST-F04-04: API computes 45/60 = 75 percent, achieved=false 97ms
+     × TEST-F04-04: API computes 75/60 = 125 percent, achieved=true 94ms
+     × TEST-F04-04: API computes 60/60 = 100 percent, achieved=true 93ms
+     × TEST-F04-04: API computes 1/32 = 3.13 percent, achieved=false 95ms
+     × TEST-F04-06: invalid date 2026-11-02 rejects with 422 and no write 89ms
+     × TEST-F04-06: invalid date 2026-11-04 rejects with 422 and no write 93ms
+     × TEST-F04-06: invalid date 2026-02-30 rejects with 422 and no write 89ms
+     × TEST-F04-06: invalid date 2026-02-29 rejects with 422 and no write 88ms
+     × TEST-F04-06: invalid date 03/11/2026 rejects with 400 and no write 97ms
+     × TEST-F04-06: invalid date 2026-11-03T00:00:00Z rejects with 400 and no write 87ms
+     × TEST-F04-06: query/missing dates and Bangkok midnight obey inclusive start/today bounds 87ms
+     × TEST-F04-08: invalid minutes 0 reject using snapshot bounds 90ms
+     × TEST-F04-08: invalid minutes -1 reject using snapshot bounds 92ms
+     × TEST-F04-08: invalid minutes 29 reject using snapshot bounds 100ms
+     × TEST-F04-08: invalid minutes 121 reject using snapshot bounds 95ms
+     × TEST-F04-08: invalid minutes 1441 reject using snapshot bounds 91ms
+     × TEST-F04-08: invalid minutes 1.5 reject using snapshot bounds 89ms
+     × TEST-F04-08: invalid minutes 60 reject using snapshot bounds 98ms
+     × TEST-F04-08: invalid minutes true reject using snapshot bounds 89ms
+     × TEST-F04-08: invalid minutes null reject using snapshot bounds 111ms
+     × TEST-F04-08: invalid minutes undefined reject using snapshot bounds 88ms
+     × TEST-F04-08: snapshot endpoints 1 and 1440 are accepted 87ms
+     × TEST-F04-09: serial duplicate never overwrites and another participant can record the same day 93ms
+     × TEST-F04-10: competing API writes get one201/one409 backed by exactly one database row 100ms
+     × TEST-F04-11: all entry/progress routes reject anonymous/manager/cross-owner without revealing private data 107ms
+     × TEST-F04-12: bad CSRF/origin and logout replay cannot write or retrieve protected entries 117ms
+     × TEST-F04-13: unknown derived/owner fields reject; database failure safely rolls back 102ms
+     × TEST-F04-14: effective targets and immutable snapshot ranges preserve historical progress 103ms
+     × TEST-F04-14: archived goal accepts historical dates through endDate, rejects later dates 107ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 30 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  server/tests/integration/entries.test.ts > F-04 persisted daily entries, date-effective progress and privacy > TEST-F04-01/02: committed entry and progress survive a fresh request/app; empty day has no phantom row
+Error: expected 201 "Created", got 404 "Not Found"
+ ❯ server/tests/integration/entries.test.ts:51:51
+     49|     const session = await login();
+     50|     const own = await goal(session);
+     51|     const saved = await post(session, own.id, 45).expect(201);
+       |                                                   ^
+     52|     expect(saved.body.data).toMatchObject({
+     53|       goalId: own.id,
+ ❯ Test._assertStatus node_modules/supertest/lib/test.js:404:14
+ ❯ node_modules/supertest/lib/test.js:460:13
+ ❯ Test._assertFunction node_modules/supertest/lib/test.js:437:13
+ ❯ Test.assert node_modules/supertest/lib/test.js:302:23
+ ❯ localAssert node_modules/supertest/lib/test.js:220:38
+ ❯ Server.<anonymous> node_modules/supertest/lib/test.js:227:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/30]⎯
+
+ FAIL  server/tests/integration/entries.test.ts > F-04 persisted daily entries, date-effective progress and privacy > TEST-F04-04: API computes 45/60 = 75 percent, achieved=false
+ FAIL  server/tests/integration/entries.test.ts > F-04 persisted daily entries, date-effective progress and privacy > TEST-F04-04: API computes 75/60 = 125 percent, achieved=true
+ FAIL  server/tests/integration/entries.test.ts > F-04 persisted daily entries, date-effective progress and privacy > TEST-F04-04: API computes 60/60 = 100 percent, achieved=true
+ FAIL  server/tests/integration/entries.test.ts > F-04 persisted daily entries, date-effective progress and privacy > TEST-F04-04: API computes 1/32 = 3.13 percent, achieved=false
+Error: expected 201 "Created", got 404 "Not Found"
+ ❯ server/tests/integration/entries.test.ts:130:58
+    128|       const session = await login();
+    129|       const own = await goal(session, fixtures.template.id, target as …
+    130|       const saved = await post(session, own.id, minutes).expect(201);
+       |                                                          ^
+    131|       expect(saved.body.data).toMatchObject({
+    132|         progressPercent: percent,
+ ❯ Test._assertStatus node_modules/supertest/lib/test.js:404:14
+ ❯ node_modules/supertest/lib/test.js:460:13
+ ❯ Test._assertFunction node_modules/supertest/lib/test.js:437:13
+ ❯ Test.assert node_modules/supertest/lib/test.js:302:23
+ ❯ localAssert node_modules/supertest/lib/test.js:220:38
+ ❯ Server.<anonymous> node_modules/supertest/lib/test.js:227:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/30]⎯
+
+ FAIL  server/tests/integration/entries.test.ts > F-04 persisted daily entries, date-effective progress and privacy > TEST-F04-06: invalid date 2026-11-02 rejects with 422 and no write
+ FAIL  server/tests/integration/entries.test.ts > F-04 persisted daily entries, date-effective progress and privacy > TEST-F04-06: invalid date 2026-11-04 rejects with 422 and no write
+ FAIL  server/tests/integration/entries.test.ts > F-04 persisted daily entries, date-effective progress and privacy > TEST-F04-06: invalid date 2026-02-30 rejects with 422 and no write
+ FAIL  server/tests/integration/entries.test.ts > F-04 persisted daily entries, date-effective progress and privacy > TEST-F04-06: invalid date 2026-02-29 rejects with 422 and no write
+Error: expected 422 "Unprocessable Entity", got 404 "Not Found"
+ ❯ server/tests/integration/entries.test.ts:157:70
+    155|       const session = await login();
+    156|       const own = await goal(session);
+    157|       const result = await post(session, own.id, 45, date as string).e…
+       |                                                                      ^
+    158|         status as number,
+    159|       );
+ ❯ Test._assertStatus node_modules/supertest/lib/test.js:404:14
+ ❯ node_modules/supertest/lib/test.js:460:13
+ ❯ Test._assertFunction node_modules/supertest/lib/test.js:437:13
+ ❯ Test.assert node_modules/supertest/lib/test.js:302:23
+ ❯ localAssert node_modules/supertest/lib/test.js:220:38
+ ❯ Server.<anonymous> node_modules/supertest/lib/test.js:227:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/30]⎯
+
+ FAIL  server/tests/integration/entries.test.ts > F-04 persisted daily entries, date-effective progress and privacy > TEST-F04-06: invalid date 03/11/2026 rejects with 400 and no write
+ FAIL  server/tests/integration/entries.test.ts > F-04 persisted daily entries, date-effective progress and privacy > TEST-F04-06: invalid date 2026-11-03T00:00:00Z rejects with 400 and no write
+Error: expected 400 "Bad Request", got 404 "Not Found"
+ ❯ server/tests/integration/entries.test.ts:157:70
+    155|       const session = await login();
+    156|       const own = await goal(session);
+    157|       const result = await post(session, own.id, 45, date as string).e…
+       |                                                                      ^
+    158|         status as number,
+    159|       );
+ ❯ Test._assertStatus node_modules/supertest/lib/test.js:404:14
+ ❯ node_modules/supertest/lib/test.js:460:13
+ ❯ Test._assertFunction node_modules/supertest/lib/test.js:437:13
+ ❯ Test.assert node_modules/supertest/lib/test.js:302:23
+ ❯ localAssert node_modules/supertest/lib/test.js:220:38
+ ❯ Server.<anonymous> node_modules/supertest/lib/test.js:227:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/30]⎯
+
+ FAIL  server/tests/integration/entries.test.ts > F-04 persisted daily entries, date-effective progress and privacy > TEST-F04-06: query/missing dates and Bangkok midnight obey inclusive start/today bounds
+Error: expected 422 "Unprocessable Entity", got 404 "Not Found"
+ ❯ server/tests/integration/entries.test.ts:175:10
+    173|       await session.agent
+    174|         .get(`/api/goals/${own.id}/progress${query}`)
+    175|         .expect(422);
+       |          ^
+    176|     clock.instant = new Date("2026-11-03T16:59:59.999Z");
+    177|     await post(session, own.id, 45, "2026-11-04").expect(422);
+ ❯ Test._assertStatus node_modules/supertest/lib/test.js:404:14
+ ❯ node_modules/supertest/lib/test.js:460:13
+ ❯ Test._assertFunction node_modules/supertest/lib/test.js:437:13
+ ❯ Test.assert node_modules/supertest/lib/test.js:302:23
+ ❯ localAssert node_modules/supertest/lib/test.js:220:38
+ ❯ Server.<anonymous> node_modules/supertest/lib/test.js:227:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/30]⎯
+
+ FAIL  server/tests/integration/entries.test.ts > F-04 persisted daily entries, date-effective progress and privacy > TEST-F04-08: invalid minutes 0 reject using snapshot bounds
+ FAIL  server/tests/integration/entries.test.ts > F-04 persisted daily entries, date-effective progress and privacy > TEST-F04-08: invalid minutes -1 reject using snapshot bounds
+ FAIL  server/tests/integration/entries.test.ts > F-04 persisted daily entries, date-effective progress and privacy > TEST-F04-08: invalid minutes 29 reject using snapshot bounds
+ FAIL  server/tests/integration/entries.test.ts > F-04 persisted daily entries, date-effective progress and privacy > TEST-F04-08: invalid minutes 121 reject using snapshot bounds
+ FAIL  server/tests/integration/entries.test.ts > F-04 persisted daily entries, date-effective progress and privacy > TEST-F04-08: invalid minutes 1441 reject using snapshot bounds
+ FAIL  server/tests/integration/entries.test.ts > F-04 persisted daily entries, date-effective progress and privacy > TEST-F04-08: invalid minutes 1.5 reject using snapshot bounds
+ FAIL  server/tests/integration/entries.test.ts > F-04 persisted daily entries, date-effective progress and privacy > TEST-F04-08: invalid minutes 60 reject using snapshot bounds
+ FAIL  server/tests/integration/entries.test.ts > F-04 persisted daily entries, date-effective progress and privacy > TEST-F04-08: invalid minutes true reject using snapshot bounds
+ FAIL  server/tests/integration/entries.test.ts > F-04 persisted daily entries, date-effective progress and privacy > TEST-F04-08: invalid minutes null reject using snapshot bounds
+ FAIL  server/tests/integration/entries.test.ts > F-04 persisted daily entries, date-effective progress and privacy > TEST-F04-08: invalid minutes undefined reject using snapshot bounds
+Error: expected 422 "Unprocessable Entity", got 404 "Not Found"
+ ❯ server/tests/integration/entries.test.ts:193:59
+    191|       const session = await login();
+    192|       const own = await goal(session);
+    193|       const result = await post(session, own.id, minutes).expect(422);
+       |                                                           ^
+    194|       expect(result.body.error.fields).toHaveProperty("minutes");
+    195|       expect(await db.dailyEntry.count()).toBe(0);
+ ❯ Test._assertStatus node_modules/supertest/lib/test.js:404:14
+ ❯ node_modules/supertest/lib/test.js:460:13
+ ❯ Test._assertFunction node_modules/supertest/lib/test.js:437:13
+ ❯ Test.assert node_modules/supertest/lib/test.js:302:23
+ ❯ localAssert node_modules/supertest/lib/test.js:220:38
+ ❯ Server.<anonymous> node_modules/supertest/lib/test.js:227:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/30]⎯
+
+ FAIL  server/tests/integration/entries.test.ts > F-04 persisted daily entries, date-effective progress and privacy > TEST-F04-08: snapshot endpoints 1 and 1440 are accepted
+Error: expected 201 "Created", got 404 "Not Found"
+ ❯ server/tests/integration/entries.test.ts:202:36
+    200|     const session = await login();
+    201|     const own = await goal(session);
+    202|     await post(session, own.id, 1).expect(201);
+       |                                    ^
+    203|     clock.instant = new Date("2026-11-04T05:00:00Z");
+    204|     await post(session, own.id, 1440, "2026-11-04").expect(201);
+ ❯ Test._assertStatus node_modules/supertest/lib/test.js:404:14
+ ❯ node_modules/supertest/lib/test.js:460:13
+ ❯ Test._assertFunction node_modules/supertest/lib/test.js:437:13
+ ❯ Test.assert node_modules/supertest/lib/test.js:302:23
+ ❯ localAssert node_modules/supertest/lib/test.js:220:38
+ ❯ Server.<anonymous> node_modules/supertest/lib/test.js:227:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/30]⎯
+
+ FAIL  server/tests/integration/entries.test.ts > F-04 persisted daily entries, date-effective progress and privacy > TEST-F04-09: serial duplicate never overwrites and another participant can record the same day
+Error: expected 201 "Created", got 404 "Not Found"
+ ❯ server/tests/integration/entries.test.ts:210:46
+    208|     const p1 = await login();
+    209|     const own = await goal(p1);
+    210|     const first = await post(p1, own.id, 45).expect(201);
+       |                                              ^
+    211|     const duplicate = await post(p1, own.id, 75).expect(409);
+    212|     expect(duplicate.body.error.code).toBe("ENTRY_ALREADY_EXISTS");
+ ❯ Test._assertStatus node_modules/supertest/lib/test.js:404:14
+ ❯ node_modules/supertest/lib/test.js:460:13
+ ❯ Test._assertFunction node_modules/supertest/lib/test.js:437:13
+ ❯ Test.assert node_modules/supertest/lib/test.js:302:23
+ ❯ localAssert node_modules/supertest/lib/test.js:220:38
+ ❯ Server.<anonymous> node_modules/supertest/lib/test.js:227:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/30]⎯
+
+ FAIL  server/tests/integration/entries.test.ts > F-04 persisted daily entries, date-effective progress and privacy > TEST-F04-10: competing API writes get one201/one409 backed by exactly one database row
+AssertionError: expected [ 404, 404 ] to deeply equal [ 201, 409 ]
+
+- Expected
++ Received
+
+  [
+-   201,
+-   409,
++   404,
++   404,
+  ]
+
+ ❯ server/tests/integration/entries.test.ts:234:49
+    232|       post(session, own.id, 75),
+    233|     ]);
+    234|     expect(results.map((r) => r.status).sort()).toEqual([201, 409]);
+       |                                                 ^
+    235|     expect(results.find((r) => r.status === 409)!.body.error.code).toB…
+    236|       "ENTRY_ALREADY_EXISTS",
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/30]⎯
+
+ FAIL  server/tests/integration/entries.test.ts > F-04 persisted daily entries, date-effective progress and privacy > TEST-F04-11: all entry/progress routes reject anonymous/manager/cross-owner without revealing private data
+Error: expected 201 "Created", got 404 "Not Found"
+ ❯ server/tests/integration/entries.test.ts:248:41
+    246|     const p2 = await login("b@studytrack.test");
+    247|     const privateGoal = await goal(p2);
+    248|     await post(p2, privateGoal.id, 123).expect(201);
+       |                                         ^
+    249|     const paths = [
+    250|       `/api/goals/${privateGoal.id}/entries`,
+ ❯ Test._assertStatus node_modules/supertest/lib/test.js:404:14
+ ❯ node_modules/supertest/lib/test.js:460:13
+ ❯ Test._assertFunction node_modules/supertest/lib/test.js:437:13
+ ❯ Test.assert node_modules/supertest/lib/test.js:302:23
+ ❯ localAssert node_modules/supertest/lib/test.js:220:38
+ ❯ Server.<anonymous> node_modules/supertest/lib/test.js:227:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/30]⎯
+
+ FAIL  server/tests/integration/entries.test.ts > F-04 persisted daily entries, date-effective progress and privacy > TEST-F04-12: bad CSRF/origin and logout replay cannot write or retrieve protected entries
+Error: expected 403 "Forbidden", got 404 "Not Found"
+ ❯ server/tests/integration/entries.test.ts:287:8
+    285|       .set("Origin", origin)
+    286|       .send({ entryDate: "2026-11-03", minutes: 45 })
+    287|       .expect(403);
+       |        ^
+    288|     await session.agent
+    289|       .post(`/api/goals/${own.id}/entries`)
+ ❯ Test._assertStatus node_modules/supertest/lib/test.js:404:14
+ ❯ node_modules/supertest/lib/test.js:460:13
+ ❯ Test._assertFunction node_modules/supertest/lib/test.js:437:13
+ ❯ Test.assert node_modules/supertest/lib/test.js:302:23
+ ❯ localAssert node_modules/supertest/lib/test.js:220:38
+ ❯ Server.<anonymous> node_modules/supertest/lib/test.js:227:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/30]⎯
+
+ FAIL  server/tests/integration/entries.test.ts > F-04 persisted daily entries, date-effective progress and privacy > TEST-F04-13: unknown derived/owner fields reject; database failure safely rolls back
+Error: expected 422 "Unprocessable Entity", got 404 "Not Found"
+ ❯ server/tests/integration/entries.test.ts:328:10
+    326|         .set("X-CSRF-Token", session.csrf)
+    327|         .send({ entryDate: "2026-11-03", minutes: 45, [key]: "injected…
+    328|         .expect(422);
+       |          ^
+    329|     }
+    330|     await session.agent
+ ❯ Test._assertStatus node_modules/supertest/lib/test.js:404:14
+ ❯ node_modules/supertest/lib/test.js:460:13
+ ❯ Test._assertFunction node_modules/supertest/lib/test.js:437:13
+ ❯ Test.assert node_modules/supertest/lib/test.js:302:23
+ ❯ localAssert node_modules/supertest/lib/test.js:220:38
+ ❯ Server.<anonymous> node_modules/supertest/lib/test.js:227:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/30]⎯
+
+ FAIL  server/tests/integration/entries.test.ts > F-04 persisted daily entries, date-effective progress and privacy > TEST-F04-14: effective targets and immutable snapshot ranges preserve historical progress
+Error: expected 201 "Created", got 401 "Unauthorized"
+ ❯ server/tests/integration/entries.test.ts:370:40
+    368|     clock.instant = new Date("2026-11-04T05:00:00Z");
+    369|     expect(
+    370|       (await post(session, own.id, 75).expect(201)).body.data,
+       |                                        ^
+    371|     ).toMatchObject({ targetMinutes: 60, progressPercent: 125 });
+    372|     expect(
+ ❯ Test._assertStatus node_modules/supertest/lib/test.js:404:14
+ ❯ node_modules/supertest/lib/test.js:460:13
+ ❯ Test._assertFunction node_modules/supertest/lib/test.js:437:13
+ ❯ Test.assert node_modules/supertest/lib/test.js:302:23
+ ❯ localAssert node_modules/supertest/lib/test.js:220:38
+ ❯ Server.<anonymous> node_modules/supertest/lib/test.js:227:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/30]⎯
+
+ FAIL  server/tests/integration/entries.test.ts > F-04 persisted daily entries, date-effective progress and privacy > TEST-F04-14: archived goal accepts historical dates through endDate, rejects later dates
+Error: expected 201 "Created", got 401 "Unauthorized"
+ ❯ server/tests/integration/entries.test.ts:389:37
+    387|     });
+    388|     clock.instant = new Date("2026-11-04T05:00:00Z");
+    389|     await post(session, own.id, 45).expect(201);
+       |                                     ^
+    390|     await post(session, own.id, 45, "2026-11-04").expect(422);
+    391|     await session.agent
+ ❯ Test._assertStatus node_modules/supertest/lib/test.js:404:14
+ ❯ node_modules/supertest/lib/test.js:460:13
+ ❯ Test._assertFunction node_modules/supertest/lib/test.js:437:13
+ ❯ Test.assert node_modules/supertest/lib/test.js:302:23
+ ❯ localAssert node_modules/supertest/lib/test.js:220:38
+ ❯ Server.<anonymous> node_modules/supertest/lib/test.js:227:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/30]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  30 failed (30)
+   Start at  18:32:52
+   Duration  3.45s (tests 89%, import 9%, transform 2%)
+
+JSON report written to C:/CPE/CPE334/Project/studytrack-member-b/artifacts/evidence/member-b/f04-red-results.json

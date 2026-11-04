@@ -1,0 +1,32 @@
+{
+  "specificationCommit": "ee14477",
+  "redSourceCommit": "0e1ca17",
+  "greenSourceCommit": "a3769d4c16f101268a96496326bc18c3766660b5",
+  "red": {
+    "command": "npm test -- server/tests/integration/templates.test.ts",
+    "passed": 1,
+    "failed": 15,
+    "skipped": 0,
+    "reason": "Expected template POST201/422/403; A read adapter only returned404. Existing catalog-read test passed."
+  },
+  "green": {
+    "command": "npm test",
+    "passed": 64,
+    "failed": 0,
+    "skipped": 0
+  },
+  "browser": {
+    "command": "npx playwright test --config playwright.member-b.config.ts e2e/member-b.spec.ts",
+    "passed": 6,
+    "failed": 0,
+    "skipped": 0,
+    "viewports": [
+      "1440x900",
+      "390x844"
+    ]
+  },
+  "build": "npm run build succeeded",
+  "database": "isolated studytrack_b_test; no A/dev reset",
+  "peerReview": "pending",
+  "acceptedRelease": false
+}

@@ -2,7 +2,7 @@
 
 Version 0.1 / 3 November 2026 / owner A / reviewer B (not yet reviewed)
 
-Status: SPECIFIED, NOT IMPLEMENTED, NOT EXECUTED. Links FR-04/FR-07/FR-08/FR-19, BR-02/BR-03/BR-07, NFR-01/NFR-03/NFR-04/NFR-06/NFR-08. [SRS](../../srs.md), [System SDS](../../system-sds.md), [API contract](../../integration-contract.md)
+Status at v0.1 creation: SPECIFIED, NOT IMPLEMENTED, NOT EXECUTED. Update 3 November: A implementation and local verification now exist on `codex/member-a-sprint1`; teammate review/full B integration pending. [Current evidence](../../verification/member-a.md). Links FR-04/FR-07/FR-08/FR-19, BR-02/BR-03/BR-07, NFR-01/NFR-03/NFR-04/NFR-06/NFR-08. [SRS](../../srs.md), [System SDS](../../system-sds.md), [API contract](../../integration-contract.md)
 
 ## 1. Workflow and dependencies
 
@@ -45,7 +45,7 @@ No template range mutation endpoint in S1. S2 lifecycle changes must preserve sn
 
 ## 5. Software test specification
 
-All results NOT RUN; planned file names below are not actual execution references
+At contract creation all results were NOT RUN. Planned filenames below remain the original design; actual cases consolidated into goals.test.ts/goal-rules.test.ts plus restart-smoke.ts/browser spec are mapped in the verification record
 
 | Test ID | AC | Level / inputs and action | Expected result | Planned file |
 |---|---|---|---|---|
@@ -62,4 +62,4 @@ All results NOT RUN; planned file names below are not actual execution reference
 
 Selected meaningful TDD case: duplicate ACTIVE goal rule with DB concurrency protection, or target/start-date boundary. Keep actual red/green versions/output. Migration failure/config error is not rule failure evidence
 
-DoD: complete ACs with real DB/unit/E2E results as appropriate; B review with specific findings; integration to staging and reviewed release process; docs/traceability/setup updated; actual commit/commands/counts attached. Incomplete/failed/skipped cases remain explicit. Current state only contract draft
+DoD: complete ACs with real DB/unit/E2E results as appropriate; B review with specific findings; integration to staging and reviewed release process; docs/traceability/setup updated; actual commit/commands/counts attached. Incomplete/failed/skipped cases remain explicit. A implementation exists; B review, manager-created-template integration and full F-04 journey are still pending

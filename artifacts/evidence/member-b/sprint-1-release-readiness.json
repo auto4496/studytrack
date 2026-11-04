@@ -1,0 +1,16 @@
+{
+  "dateBangkok": "2026-11-04",
+  "acceptedStaging": "85f510f0d73b84f39c08fbf3ef36e43b232bb044",
+  "observedMain": "42b9eb2f28989196e9280041ccdcdeae88461028",
+  "pr6": {"state": "MERGED", "approvedBy": "auto4496", "reviewId": 5764793996, "reviewedHead": "ec681e9c93e9baff10879c1564957e5221d7605d", "mergeCommit": "18e58829d917903b6f2a567304aa7ddebf01ed8d", "issue4": "CLOSED"},
+  "pr7": {"state": "MERGED", "approvedBy": "auto4496", "reviewId": 5764853759, "reviewedHead": "36fc9b69a26ba714e818febfd555ae033277024f", "mergeCommit": "85f510f0d73b84f39c08fbf3ef36e43b232bb044", "issue5": "CLOSED"},
+  "verifiedTrackedTreeEquivalence": [["cb52f392ed4d58cae722a87a1d3e42144558b1dc", "f1577ea5832ffcbb48870774155a03cff2045d97"], ["36fc9b69a26ba714e818febfd555ae033277024f", "85f510f0d73b84f39c08fbf3ef36e43b232bb044"]],
+  "bTestedSource": "afca38f99507f1fa7558f0070c154b4209410339",
+  "applicationTestConfigEquivalentToBSource": true,
+  "comparisonPaths": ["server", "client", "e2e", "scripts", "package.json", "package-lock.json", "vitest.config.ts", "playwright.config.ts", "playwright.member-b.config.ts", "vite.config.ts", "tsconfig.json"],
+  "comparisonCommand": "git diff --name-only <from> <to> [-- <comparisonPaths>]",
+  "authorReviewerReportsParsed": {"f02": {"apiUnitPassed": 66, "browserPassed": 16}, "f04-original": {"apiUnitPassed": 117, "browserPassed": 24}, "f04-integrated": {"apiUnitPassed": 117, "browserPassed": 24}, "allFailedSkippedFlaky": 0},
+  "runtimeRerunByBThisRound": false,
+  "reason": "No application/test/config changes since the successful B run; accepted staging matches reviewed head. Current work updates docs/evidence only.",
+  "mainReleaseAccepted": false
+}

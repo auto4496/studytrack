@@ -1,0 +1,21 @@
+
+> studytrack@0.1.0 test
+> vitest run --reporter=default --reporter=json --outputFile=tmp/review/api-results.json
+
+
+ RUN  v5.1.0 C:/CPE/CPE334/Project/studytrack-pr3-review
+
+ ✓ server/tests/integration/goals.test.ts (19 tests) 2211ms
+ ✓ server/tests/integration/auth.test.ts (9 tests) 997ms
+ ✓ server/tests/unit/goal-rules.test.ts (3 tests) 4ms
+ ✓ server/tests/unit/test-db-guard.test.ts (7 tests) 5ms
+
+ Test Files  4 passed (4)
+      Tests  38 passed (38)
+   Start at  19:14:51
+   Duration  4.55s (tests 78%, import 16%, transform 4%, setup 1%)
+
+    Isolate  4 workers spawned · ~104ms startup each (spawn + environment, per file)
+             at least ~313ms faster with isolate: false — reuses workers across files instead of one per file
+
+JSON report written to C:/CPE/CPE334/Project/studytrack-pr3-review/tmp/review/api-results.json

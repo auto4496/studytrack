@@ -1,0 +1,17 @@
+{
+  "dateBangkok": "2026-11-04",
+  "feature": "F02",
+  "issue": 4,
+  "pullRequest": 6,
+  "testedSource": "5e340f8a111579dbd2c5ef5e0767086ae4a1475b",
+  "acceptedStaging": "1a4b74b8373999dd969a17400f649113596b649e",
+  "integrationMethod": "Merged accepted staging into the existing F02 branch without rewriting published history; no conflicts",
+  "database": {"host": "127.0.0.1", "port": 26433, "name": "studytrack_b_test", "separateDevelopmentDatabase": "studytrack_b_dev"},
+  "results": {"apiUnit": {"passed": 66, "failed": 0, "skipped": 0, "aRegression": 40, "bChecks": 26}, "browser": {"passed": 16, "failed": 0, "skipped": 0, "aRegression": 10, "bChecks": 6}, "build": "PASS", "restart": "PASS: session, goal and initial target persisted; A restart smoke scope"},
+  "commands": ["npm run db:generate", "npm run db:test:migrate", "node node_modules/vitest/vitest.mjs run --reporter=default --reporter=json --outputFile=artifacts/evidence/member-b/post-pr3-merge/f02/api-results.json", "node node_modules/@playwright/test/cli.js test --config tmp/post-pr3-merge/playwright.config.ts", "npm run build", "npm run verify:restart"],
+  "browserHarness": "Copy retained playwright-config.txt to ignored tmp/post-pr3-merge/playwright.config.ts. It extends the normal B config, retaining all tests/projects/webServers and changing report/output locations with explicit absolute paths.",
+  "executionOrder": "API/unit, browser, build, then restart sequentially; no concurrent DB-resetting suites",
+  "setupNotes": "Initial default-permission offline install lacked cached packages; elevated offline install succeeded. Initial default-permission Prisma migrate returned a schema-engine access error; rerun with local DB access succeeded with no pending migrations. These setup failures were not application test failures.",
+  "historicalEvidence": "Original red/green and original A screenshots retained. Current F02 screenshots stored in screenshots/; generated A screenshot replacements restored to their original committed bytes.",
+  "status": "Local validation complete; A peer review and PR6 acceptance still pending. Not a full Sprint1 release."
+}

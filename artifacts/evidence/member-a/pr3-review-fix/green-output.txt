@@ -1,0 +1,19 @@
+
+ RUN  v5.1.0 C:/Users/User/studytrack
+
+ ✓ server/tests/unit/test-db-guard.test.ts > NFR-04: destructive test setup must target a separate test database > accepts an explicit separate PostgreSQL test database 1ms
+ ✓ server/tests/unit/test-db-guard.test.ts > NFR-04: destructive test setup must target a separate test database > rejects a missing or non-test PostgreSQL target 1ms
+ ✓ server/tests/unit/test-db-guard.test.ts > NFR-04: destructive test setup must target a separate test database > rejects a missing or non-test PostgreSQL target 0ms
+ ✓ server/tests/unit/test-db-guard.test.ts > NFR-04: destructive test setup must target a separate test database > rejects a missing or non-test PostgreSQL target 0ms
+ ✓ server/tests/unit/test-db-guard.test.ts > NFR-04: destructive test setup must target a separate test database > rejects the same development database via loopback alias localhost 0ms
+ ✓ server/tests/unit/test-db-guard.test.ts > NFR-04: destructive test setup must target a separate test database > rejects the same development database via loopback alias 127.0.0.1 0ms
+ ✓ server/tests/unit/test-db-guard.test.ts > NFR-04: destructive test setup must target a separate test database > rejects the same development database via loopback alias [::1] 0ms
+ ✓ server/tests/unit/test-db-guard.test.ts > NFR-04: destructive test setup must target a separate test database > rejects the same development database via loopback alias LOCALHOST 0ms
+ ✓ server/tests/unit/test-db-guard.test.ts > NFR-04: destructive test setup must target a separate test database > rejects the same development database via loopback alias localhost. 0ms
+
+ Test Files  1 passed (1)
+      Tests  9 passed (9)
+   Start at  20:17:47
+   Duration  252ms (transform 54%, setup 20%, import 11%, worker 8%, tests 6%)
+
+JSON report written to C:/Users/User/studytrack/artifacts/evidence/member-a/pr3-review-fix/green-results.json

@@ -1,0 +1,16 @@
+import { defineConfig } from "@playwright/test";
+import { resolve } from "node:path";
+import base from "../../playwright.member-b.config";
+
+const root = process.cwd();
+export default defineConfig({
+  ...base,
+  testDir: resolve(root, "e2e"),
+  globalSetup: resolve(root, "e2e/setup.ts"),
+  outputDir: resolve(root, "tmp/post-pr3-merge/f02-test-results"),
+  reporter: [
+    ["list"],
+    ["json", { outputFile: resolve(root, "artifacts/evidence/member-b/post-pr3-merge/f02/browser-results.json") }],
+  ],
+  webServer: (base.webServer as any[]).map((server) => ({ ...server, cwd: root })),
+});
