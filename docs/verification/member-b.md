@@ -1,5 +1,11 @@
 # Member B verification ledger
 
+## Current F02+F04 verification after PR3 merge — 4 November 2026
+
+Tested source **afca38f99507f1fa7558f0070c154b4209410339**, containing accepted staging1a4b74b and F02 dependency ec681e9. Actual results: **117 API/unit passes (A40+B77), 24 browser passes (A10+B14), 0 failures/skips**, build and real API restart pass. Restart retrieves the same persisted session, manager-created template, goal, entry and45/60=75% progress. Each DB-resetting suite ran sequentially against isolated B test DB; no application conflicts/fixes were needed. Two documentation merge conflicts retained F04 history and new F02 evidence.
+
+Evidence: [API output](../../artifacts/evidence/member-b/post-pr3-merge/f04/api-output.txt), [API JSON](../../artifacts/evidence/member-b/post-pr3-merge/f04/api-results.json), [browser output](../../artifacts/evidence/member-b/post-pr3-merge/f04/browser-output.txt), [browser JSON](../../artifacts/evidence/member-b/post-pr3-merge/f04/browser-results.json), [build](../../artifacts/evidence/member-b/post-pr3-merge/f04/build-output.txt), [restart](../../artifacts/evidence/member-b/post-pr3-merge/f04/restart-output.txt), [screenshots](../../artifacts/evidence/member-b/post-pr3-merge/f04/screenshots/), [commands/source metadata](../../artifacts/evidence/member-b/post-pr3-merge/f04/execution.json). Later commits update evidence/docs only. PR6 targets staging and is ready for A review; PR7 retains F02 as its base and stays draft until PR6 is accepted. A approval, integrated Sprint1 acceptance and main release are pending.
+
 ## Current F02 verification after PR3 merge — 4 November 2026
 
 Accepted staging1a4b74b merged into F02 without conflicts. Tested source5e340f8: **66 API/unit passes (A40+B26), 16 browser passes (A10+B6), 0 failures/skips, build and real API restart pass**. All DB-resetting checks ran sequentially against isolated studytrack_b_test. Current commands/results/screenshots and reviewer scope are in [F02 review handoff](../handoffs/f02-review-ready.md) and [execution metadata](../../artifacts/evidence/member-b/post-pr3-merge/f02/execution.json). A review/acceptance is pending; F04 and full Sprint1 release are separate. The earlier counts and temporary-dependency descriptions below are historical records from before PR3 acceptance.

@@ -2,6 +2,8 @@
 
 ## Re-review — 4 พฤศจิกายน 2026
 
+สถานะหลังจากนั้น: PR3 merge เข้า `codex/sprint-1-staging` วันที่4พ.ย.2026 ที่ `1a4b74b8373999dd969a17400f649113596b649e`. ข้อความ OPEN/mergedAt=null ด้านล่างเป็นสถานะ ณ เวลาส่ง approval ก่อน merge. ดู [ผลทดสอบ B หลัง sync ฐานรับแล้ว](../verification/member-b.md)
+
 ส่ง [APPROVED review ของ B](https://github.com/auto4496/studytrack/pull/3#pullrequestreview-5764429004) ด้วยบัญชี Datakung ตามคำสั่งผู้ใช้แล้ว ที่ exact head `94156cf230d9de0783170047078d6cdcd539524f`. P2 เดิมแก้ครบใน d2efada: normalize hostname เป็น lowercase และตัด trailing DNS dot ก่อน map loopback ทั้งสอง URL พร้อมเพิ่ม regression cases. ตรวจ correction delta แล้วไม่พบ blocking finding ค้างในขอบเขต PR3
 
 B ทดสอบบน head นี้วันที่ 3 พ.ย.: guard suite 9/9 ผ่าน และ alias probes เดิม 2/2 ผ่าน; ยืนยัน head ไม่เปลี่ยนก่อนส่ง review วันที่ 4 พ.ย. จึงใช้ผลเดิมโดยไม่อ้างว่ารันใหม่ เก็บ [guard JSON](../../artifacts/evidence/member-b/pr3-rereview/guard-results.json) และ [execution/review metadata](../../artifacts/evidence/member-b/pr3-rereview/execution.json)

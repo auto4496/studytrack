@@ -30,7 +30,7 @@ PR เข้า staging ต้องเชื่อม Issue อย่างช�
 
 ## 3. พา PR ปัจจุบันกลับเข้า flow
 
-**อัปเดต 4 พ.ย. 2026:** B ส่ง [APPROVED ของ PR3](https://github.com/auto4496/studytrack/pull/3#pullrequestreview-5764429004) ที่94156cfหลังตรวจ P2 correction แล้ว PR3ยังOPEN/ไม่merge จึงยังรอmergeเข้าstagingก่อนปรับฐาน PR6/7. ตารางด้านล่างเก็บ snapshot วันที่3พ.ย.ก่อนการแก้และอนุมัติไว้ ดู [review ล่าสุด](reviews/pr-3-member-b.md)
+**อัปเดต 4 พ.ย. 2026 หลังmerge:** PR3ผ่าน [B approval](https://github.com/auto4496/studytrack/pull/3#pullrequestreview-5764429004) และ mergeเข้าstaging1a4b74bแล้ว. PR6รวมฐานใหม่/ทดสอบ66API+16browser/build/restart และ retargetเข้าstagingพร้อมA review. PR7sync F02และทดสอบ117API+24browser/build/restartแล้ว แต่คงdraft/base F02จนกว่าPR6ผ่านและmerge; หลังจากนั้นจึงretargetและทวนบนaccepted staging. ตารางด้านล่างเป็นsnapshot3พ.ย.ก่อนแก้/อนุมัติ ไม่ใช่สถานะปัจจุบัน ดู [B status](handoffs/member-b-status.md)
 
 สถานะต่อไปนี้ตรวจ GitHub วันที่ 3 พฤศจิกายน 2026; เป็น snapshot ไม่ใช่สถานะสดตลอดเวลา
 

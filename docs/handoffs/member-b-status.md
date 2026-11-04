@@ -1,24 +1,24 @@
 # Member B status — implementation handoff
 
-> อัปเดต 4 พฤศจิกายน 2026: PR3 merge เข้า staging1a4b74bแล้ว B sync F02 โดยไม่มี conflict และทดสอบ source5e340f8: API/unit66ผ่าน, browser16ผ่าน, build/restartผ่าน ดู [F02 ส่ง A ตรวจ](f02-review-ready.md). ใช้ PR6 เดิมเข้า staging; ยังรอ A review/approval และยังไม่ merge F02. ข้อความด้านล่างเป็นประวัติเดิม
+> อัปเดต 4 พฤศจิกายน 2026: PR3 merge เข้า staging1a4b74bแล้ว. PR6/F02 ปรับเข้า staging และ ready for A review: source5e340f8ผ่าน66API/unit+16browser/build/restart ดู [F02 ส่ง A ตรวจ](f02-review-ready.md). PR7/F04 sync dependencyแล้ว sourceafca38fผ่าน117API/unit+24browser/build/restart แต่ยังdraft/base F02จนกว่าPR6ผ่านและmerge. [ผลใหม่และหลักฐาน](../verification/member-b.md)
 
 > Workflow ตาม TokTickIT: อ่าน flow และตรวจประวัติ contract PR45/release PR51 แล้ว เพิ่ม [ขั้นตอนส่งตรวจร่วมกัน](../review-workflow.md). A เขียนให้ B review และ B เขียนให้ A review ใน repo เดียว; feature PR ต้องเข้า sprint staging แล้วค่อย reviewed release ไป main. ใช้ PR6/7 เดิมได้ แต่หลัง dependency ผ่านต้อง sync/retarget ไป staging, รันทดสอบบน SHA ใหม่ และให้ A review ก่อน merge. ผลเดิมไม่ใช่ผลตรวจฐานใหม่ และยังไม่มี A approval ของ B contracts/implementation
 
-> อัปเดต 4 พ.ย. 2026: B ส่ง [APPROVED re-review ของ PR3](https://github.com/auto4496/studytrack/pull/3#pullrequestreview-5764429004) ที่94156cfแล้ว; P2 localhost aliases แก้ครบในd2efada. B focused verification บนheadนี้วันที่3พ.ย.ผ่าน9guard testsและ2alias probes; ตรวจheadยังเดิมก่อนส่งreview. หลักฐานชุดเต็ม40API/unit+10browser/build/restartที่เพื่อนแนบเป็นผลของ A ไม่ใช่ B รันซ้ำ ดู [reviewพร้อมหลักฐานและประวัติเดิม](../reviews/pr-3-member-b.md). PR3ยังOPEN/ไม่merge; รอmergeเข้าstagingก่อนsync/retarget PR6→PR7ซึ่งยังdraft
+> ประวัติ PR3: B ส่ง [APPROVED re-review](https://github.com/auto4496/studytrack/pull/3#pullrequestreview-5764429004) ที่94156cfหลังแก้P2 แล้ว PR3 mergeเมื่อ4พ.ย.เข้าstagingที่1a4b74b. ผลก่อนmergeและขอบเขตการตรวจแยกจากผลทดสอบงาน B บนฐานใหม่ใน [review history](../reviews/pr-3-member-b.md)
 
 
-วันที่ 3 พฤศจิกายน 2026 (Asia/Bangkok) | Revision B-implementation-01
+วันที่ 4 พฤศจิกายน 2026 (Asia/Bangkok) | Revision B-after-PR3-merge
 
 **สมาชิก B = ผู้ใช้/Datakung, A = เพื่อนร่วมทีม/auto4496.** F02/F04 มี implementation และ local verification แล้ว พร้อมให้ A review; ยังไม่ใช่ accepted release และยังไม่ได้รวมเข้า main
 
 ## 1. เริ่มจากและ branches
 
-ใช้ central repository https://github.com/auto4496/studytrack และ A PR #3 ที่2370df9 ซึ่งยังไม่ merge. ทำใน checkout `C:/CPE/CPE334/Project/studytrack-member-b` แยกจาก snapshotเอกสารเดิม ไม่สร้าง auth/schema/scaffold ซ้ำ
+ใช้ central repository https://github.com/auto4496/studytrack และ accepted A PR3/staging1a4b74b. Checkout F04 คือ `C:/CPE/CPE334/Project/studytrack-member-b`; F02 คือ `C:/CPE/CPE334/Project/studytrack-f02-review-ready`. แยกจาก snapshotเอกสารเดิม ไม่สร้าง auth/schema/scaffold ซ้ำ
 
-- Issue #4: F02, branch `codex/f02-templates` อาศัย A `codex/member-a-sprint1` ชั่วคราว
+- Issue #4: F02, branch `codex/f02-templates` รวม accepted staging แล้ว
 - Issue #5: F04, branch `codex/f04-entries-progress` อาศัย F02 branch
-- เปิด [draft PR #6 F02](https://github.com/auto4496/studytrack/pull/6) base `codex/member-a-sprint1` และ [draft PR #7 F04](https://github.com/auto4496/studytrack/pull/7) base `codex/f02-templates` แล้ว ในนาม Datakung; ยังไม่ merge/approve. Retarget/rebaseไปaccepted stagingเมื่อdependenciesผ่าน reviewตาม workflow
-- Contracts เดิม e3714d0, reconcileกับ A ee14477 ก่อน B implementation; F02 red0e1ca17/greena3769d4; F04 redd709741; final tested source0b51571c6d81a81921dca3e2596e0755488c8f1c
+- [PR #6 F02](https://github.com/auto4496/studytrack/pull/6) base `codex/sprint-1-staging`, ready for A review; [draft PR #7 F04](https://github.com/auto4496/studytrack/pull/7) base `codex/f02-templates` ซึ่งยังรอรับงาน. ทั้งสองเป็นงาน Datakung ยังไม่มี A approval/merge; หลังPR6mergeจึงปรับPR7เข้าstagingและทวนผลบนฐานรับจริง
+- Contracts เดิม e3714d0, reconcileกับ A ee14477 ก่อน B implementation; F02 red0e1ca17/greena3769d4; F04 redd709741. ผลฐานเดิม0b51571เก็บไว้ในverification; tested sourceใหม่ F02=5e340f8 และ F04=afca38f
 
 ## 2. ทำแล้ว
 
@@ -38,11 +38,11 @@ Shared files ที่แตะ: App route/ActivityComponent, styles, template r
 
 ## 4. ผลที่รันจริง
 
-| Check | Actual result / source0b51571 |
+| Check | Actual result / sourceafca38f หลังรับ A foundation |
 |---|---|
-| npm test |115ผ่าน,0fail,0skip (8files; A38+B77) |
-| npx playwright test --config playwright.member-b.config.ts |24ผ่าน,0fail,0skip (A10+B14;1440x900/390x844) |
-| npx tsx scripts/member-b-restart.ts |ผ่าน:หยุด/เริ่ม API processจริง แล้วอ่าน session/template/goal/entry45/target60/75%กลับจากDBได้ |
+| Vitest full suite, JSON/default reporters |117ผ่าน,0fail,0skip (8files; A40+B77) |
+| Playwright, B configผ่านreporting wrapper |24ผ่าน,0fail,0skip (A10+B14;1440x900/390x844) |
+| node --import tsx scripts/member-b-restart.ts |ผ่าน:หยุด/เริ่ม API processจริง แล้วอ่าน session/template/goal/entry45/target60/75%กลับจากDBได้ |
 | npm run build |ผ่าน backend/client typecheckและ production build |
 
 ใช้ PostgreSQL `studytrack_b_test` บน loopback26433 แยกจาก A/dev. Browser/API suitesรันแยกลำดับ ไม่ล้าง DBพร้อมกัน. เก็บ red/intermediate failures ไว้ครบ: F02 red15fail/1pass; F04 red30fail; fixture clock/loginครั้งแรก5fail และ browser logout timingครั้งแรก2fail แก้โดยคง assertions/expiryเดิม แล้ว final passesข้างต้น. รายละเอียด output/JSON/commands/commits และทุก AC→actual testsอยู่ใน verification ไม่ใช้ AI claimแทน execution
@@ -51,7 +51,7 @@ Shared files ที่แตะ: App route/ActivityComponent, styles, template r
 
 1. Review F02/F04 contracts+diff/assertions/resultsจริง โดยเฉพาะ middleware chain, transaction lock/unique error, date-effective target, snapshotและ archived bounds, UI unknown-outcome flow
 2. ตรวจการต่อ goal router/reader types/ActivityComponent และ ownership/auth ที่ใช้ร่วมกัน ไม่มีการเพิ่ม schema/migration แต่ shared integrationยังต้อง peer review
-3. รับ A PR3ผ่านการตรวจของสมาชิก Bจริงก่อน แล้ว retarget/rebase B branchesไป accepted `codex/sprint-1-staging` ตามลำดับ F02→F04; รัน integrationบน merged candidate ก่อน reviewed release PRไปmain. ห้ามอ้างว่า AIตรวจคือ human approval
+3. A review PR6/F02 ที่เข้าstagingแล้ว; หลังแก้/อนุมัติ/mergeจึง syncและretarget PR7/F04เข้าstagingและทวนผลก่อน A review. รันintegrationบนacceptedmergedcandidateก่อนreviewedrelease PRไปmain. PR3ผ่านreviewและmergeแล้ว ไม่ต้องเปิดPRใหม่หรือสร้างfoundationซ้ำ
 4. Ownerจัด repo publicตาม Lab5 R12หลังตรวจ secrets/history; เพิ่ม CI/required-check proof/Docker/GCP/deployment.md/C01–06ตาม [Lab5 review](../labs/lab-05/gap-review-b.md). รอบนี้ไม่เปลี่ยนvisibility/billing/IAM/databaseบนcloud
 
 ## 6. ยังไม่ทำ / งานต่อ
@@ -62,4 +62,4 @@ A peer review/accepted staging+main release, D1 self-contained PDFที่ร�
 
 ## ลองบนเครื่องนี้
 
-UI: http://127.0.0.1:3300/ ใช้ API5300 และฐานข้อมูล B devที่แยกจากtest/A. บัญชีสังเคราะห์ manager@studytrack.test, student1@studytrack.test, student2@studytrack.test; รหัสผ่านจาก private `.env` เท่านั้น ไม่ใส่ค่าในแชต/รายงาน. เครื่อง A ใช้ README setupของrepoและ envของตน ไม่คัดลอก private envจากเครื่อง B
+ค่า dev ที่กำหนดไว้: UI http://127.0.0.1:3300/ / API5300 และฐานข้อมูล B devที่แยกจากtest/A; เริ่มservicesตามREADMEก่อนลอง รอบนี้ไม่ได้ตรวจยืนยันว่าdevservicesเปิดค้างอยู่. บัญชีสังเคราะห์ manager@studytrack.test, student1@studytrack.test, student2@studytrack.test; รหัสผ่านจาก private `.env` เท่านั้น ไม่ใส่ค่าในแชต/รายงาน. เครื่อง A ใช้ README setupของrepoและ envของตน ไม่คัดลอก private envจากเครื่อง B
