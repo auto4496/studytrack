@@ -1,0 +1,30 @@
+{
+  "applicationSource": "df08ec19cdeb0efcfbfbee92f3d385d87059528c",
+  "tag": "v0.1.0-sprint1",
+  "cleanDetachedMainBeforeExecution": true,
+  "api": {
+    "passed": 117,
+    "skipped": 0,
+    "failed": 0
+  },
+  "browser": {
+    "passed": 24,
+    "skipped": 0,
+    "failed": 0
+  },
+  "build": "PASS",
+  "restart": "PASS",
+  "setupAndDemonstrationSource": "85f510f0d73b84f39c08fbf3ef36e43b232bb044",
+  "setupAndDemoApplicationEquivalentToMain": true,
+  "freshInstalledPackages": 229,
+  "seedRerunCounts": {
+    "users": 3,
+    "templates": 2
+  },
+  "scriptedDemonstrationChecks": 15,
+  "independentHumanUAT": false,
+  "testDatabase": "127.0.0.1:25433/studytrack_d1_test_20261104",
+  "developmentDatabase": "127.0.0.1:25433/studytrack_d1_dev_20261104",
+  "privateConfigIncluded": false,
+  "courseSubmissionPerformed": false
+}

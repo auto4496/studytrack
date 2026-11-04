@@ -1,0 +1,19 @@
+
+> studytrack@0.1.0 db:test:migrate
+> node scripts/test-database.mjs
+
+Environment variables loaded from .env
+Prisma schema loaded from server\prisma\schema.prisma
+Datasource "db": PostgreSQL database "studytrack_d1_test_20261104", schema "public" at "127.0.0.1:25433"
+
+1 migration found in prisma/migrations
+
+Applying migration `202611030001_foundation`
+
+The following migration(s) have been applied:
+
+migrations/
+  └─ 202611030001_foundation/
+    └─ migration.sql
+      
+All migrations have been successfully applied.

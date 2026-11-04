@@ -1,0 +1,107 @@
+{
+  "source": "85f510f0d73b84f39c08fbf3ef36e43b232bb044",
+  "kind": "scripted local UI/API/DB verification; not independent human UAT",
+  "timestamp": "2026-11-04T08:31:59.774Z",
+  "checks": [
+    {
+      "scenario": "Invalid synthetic login leaves protected identity unavailable",
+      "expected": 401,
+      "actual": 401
+    },
+    {
+      "scenario": "Manager creates persisted template",
+      "expected": 201,
+      "actual": 201
+    },
+    {
+      "scenario": "Manager logout revokes protected access",
+      "expected": 401,
+      "actual": 401
+    },
+    {
+      "scenario": "Participant creates own goal from manager-created template",
+      "expected": 201,
+      "actual": 201
+    },
+    {
+      "scenario": "Invalid zero minutes leaves database without an entry",
+      "expected": 0,
+      "actual": 0
+    },
+    {
+      "scenario": "Participant records valid45 minutes",
+      "expected": 201,
+      "actual": 201
+    },
+    {
+      "scenario": "Reload/API retrieval preserves45/60=75% and same entry",
+      "expected": {
+        "actualMinutes": 45,
+        "targetMinutes": 60,
+        "progressPercent": 75,
+        "entryId": "77a0ca0f-95c3-452d-84ef-6ea179f47a83"
+      },
+      "actual": {
+        "actualMinutes": 45,
+        "targetMinutes": 60,
+        "progressPercent": 75,
+        "entryId": "77a0ca0f-95c3-452d-84ef-6ea179f47a83"
+      }
+    },
+    {
+      "scenario": "Duplicate entry rejects",
+      "expected": 409,
+      "actual": 409
+    },
+    {
+      "scenario": "Duplicate rejection code",
+      "expected": "ENTRY_ALREADY_EXISTS",
+      "actual": "ENTRY_ALREADY_EXISTS"
+    },
+    {
+      "scenario": "Duplicate preserves first stored value and one row",
+      "expected": {
+        "minutes": 45,
+        "rows": 1
+      },
+      "actual": {
+        "minutes": 45,
+        "rows": 1
+      }
+    },
+    {
+      "scenario": "Participant at manager create API",
+      "expected": 403,
+      "actual": 403
+    },
+    {
+      "scenario": "Mobile390 viewport has no horizontal overflow",
+      "expected": true,
+      "actual": true
+    },
+    {
+      "scenario": "Participant logout protected API",
+      "expected": 401,
+      "actual": 401
+    },
+    {
+      "scenario": "Other participant cannot read saved goal",
+      "expected": 404,
+      "actual": 404
+    },
+    {
+      "scenario": "Manager cannot read participant entries",
+      "expected": 403,
+      "actual": 403
+    }
+  ],
+  "savedProgress": {
+    "goalId": "81e76991-79ac-47c8-a2b6-54796ff30c21",
+    "date": "2026-11-04",
+    "actualMinutes": 45,
+    "targetMinutes": 60,
+    "progressPercent": 75,
+    "achieved": false,
+    "entryId": "77a0ca0f-95c3-452d-84ef-6ea179f47a83"
+  }
+}

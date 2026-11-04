@@ -1,0 +1,689 @@
+[
+  {
+    "ac": "AC-F01-01",
+    "expected": "Valid login for each role returns corresponding safe identity and rotated authenticated cookie/token; stored password is a verifiable Argon2id hash",
+    "planned": "TEST-F01-01",
+    "actual": [
+      [
+        "F-01 real PostgreSQL sessions TEST-F01-01: salted Argon2id passwords and valid role identity",
+        "server/tests/integration/auth.test.ts"
+      ]
+    ]
+  },
+  {
+    "ac": "AC-F01-02",
+    "expected": "Wrong password or unknown account gives same generic401 shape and no authenticated session; malformed/missing fields give documented validation",
+    "planned": "TEST-F01-02",
+    "actual": [
+      [
+        "F-01 real PostgreSQL sessions TEST-F01-02: wrong email/password share a generic failure and create no authenticated session",
+        "server/tests/integration/auth.test.ts"
+      ],
+      [
+        "F-01 real PostgreSQL sessions TEST-F01-02: normalized email works; missing/oversize/unknown fields reject",
+        "server/tests/integration/auth.test.ts"
+      ]
+    ]
+  },
+  {
+    "ac": "AC-F01-03",
+    "expected": "`/auth/me` returns correct session identity after reload; absent, tampered or expired session gives401 without private fields",
+    "planned": "TEST-F01-03",
+    "actual": [
+      [
+        "F-01 real PostgreSQL sessions TEST-F01-03: absent/tampered and server-expired sessions return no private data",
+        "server/tests/integration/auth.test.ts"
+      ]
+    ]
+  },
+  {
+    "ac": "AC-F01-04",
+    "expected": "Logout204 deletes/revokes current session, clears matching cookie, and replay of that token gives401; another independently logged-in session remains valid",
+    "planned": "TEST-F01-04",
+    "actual": [
+      [
+        "F-01 real PostgreSQL sessions TEST-F01-04: logout revokes the real DB session, replay fails, independent session survives",
+        "server/tests/integration/auth.test.ts"
+      ]
+    ]
+  },
+  {
+    "ac": "AC-F01-05",
+    "expected": "Anonymous protected request401 and wrong-role operation403; neither changes persistent domain data",
+    "planned": "TEST-F01-05 / TEST-F03-06; TEST-F02-05/06",
+    "actual": [
+      [
+        "F-03 persisted personal goals and backend permissions TEST-F01-05 / TEST-F03-06: role checks, ownership and collections are enforced on the real API",
+        "server/tests/integration/goals.test.ts"
+      ],
+      [
+        "F-03 persisted personal goals and backend permissions TEST-F03-06: client cannot override owner or role; malformed IDs and pagination reject",
+        "server/tests/integration/goals.test.ts"
+      ],
+      [
+        "F-02 manager templates, persistence and access TEST-F02-05/06: roles, CSRF/origin and revoked cookies are enforced before writes",
+        "server/tests/integration/templates.test.ts"
+      ]
+    ]
+  },
+  {
+    "ac": "AC-F01-06",
+    "expected": "Mutating request missing/incorrect CSRF or wrong Origin is403 without mutation, including login; authenticated session cookie has intended HttpOnly/SameSite/Path/Secure attributes",
+    "planned": "TEST-F01-06; TEST-F02-05/06; TEST-F04-12",
+    "actual": [
+      [
+        "F-01 real PostgreSQL sessions TEST-F01-06: login CSRF/origin failures do not authenticate",
+        "server/tests/integration/auth.test.ts"
+      ],
+      [
+        "F-01 real PostgreSQL sessions TEST-F01-06: absent, cross-session and wrong CSRF/origin cannot revoke a session",
+        "server/tests/integration/auth.test.ts"
+      ],
+      [
+        "F-01 real PostgreSQL sessions TEST-F01-06: secure production cookie and cache policy, pre-auth never identifies a user",
+        "server/tests/integration/auth.test.ts"
+      ],
+      [
+        "F-04 persisted daily entries, date-effective progress and privacy TEST-F04-12: bad CSRF/origin and logout replay cannot write or retrieve protected entries",
+        "server/tests/integration/entries.test.ts"
+      ],
+      [
+        "F-03 persisted personal goals and backend permissions TEST-F01-06: wrong CSRF/origin cannot create a persisted goal",
+        "server/tests/integration/goals.test.ts"
+      ],
+      [
+        "F-02 manager templates, persistence and access TEST-F02-05/06: roles, CSRF/origin and revoked cookies are enforced before writes",
+        "server/tests/integration/templates.test.ts"
+      ]
+    ]
+  },
+  {
+    "ac": "AC-F01-07",
+    "expected": "Login rotates pre-auth/existing session so old token no longer authenticates; expiry is fixed8h, checked server-side",
+    "planned": "TEST-F01-07",
+    "actual": [
+      [
+        "F-01 real PostgreSQL sessions TEST-F01-07: rotating login removes old pre-auth token and fixes the 8h expiry",
+        "server/tests/integration/auth.test.ts"
+      ]
+    ]
+  },
+  {
+    "ac": "AC-F01-08",
+    "expected": "Login, logout, reload, error recovery and role navigation work in selected browser journey; credentials/tokens are not rendered/logged",
+    "planned": "TEST-F01-08",
+    "actual": [
+      [
+        "TEST-F01-08: invalid login, keyboard recovery, reload and logout revoke browser access",
+        "member-a.spec.ts"
+      ],
+      [
+        "TEST-F01-08: invalid login, keyboard recovery, reload and logout revoke browser access",
+        "member-a.spec.ts"
+      ]
+    ]
+  },
+  {
+    "ac": "AC-F02-01",
+    "expected": "Manager create201, normalized allowlisted DTO, one persisted row owned by session",
+    "planned": "TEST-F02-01/07",
+    "actual": [
+      [
+        "F-02 manager templates, persistence and access TEST-F02-01/07: manager creates normalized template and a fresh app reads the committed row",
+        "server/tests/integration/templates.test.ts"
+      ]
+    ]
+  },
+  {
+    "ac": "AC-F02-02",
+    "expected": "Invalid fields/ranges/types422/no writes; exact bounds accepted",
+    "planned": "TEST-F02-02/03",
+    "actual": [
+      [
+        "TEST-F02-02: template validation boundaries normalizes whitespace, defaults description, and counts Unicode code points",
+        "server/tests/unit/template-rules.test.ts"
+      ],
+      [
+        "TEST-F02-02: template validation boundaries rejects invalid lower bound 0 without coercion",
+        "server/tests/unit/template-rules.test.ts"
+      ],
+      [
+        "TEST-F02-02: template validation boundaries rejects invalid lower bound -1 without coercion",
+        "server/tests/unit/template-rules.test.ts"
+      ],
+      [
+        "TEST-F02-02: template validation boundaries rejects invalid lower bound 1441 without coercion",
+        "server/tests/unit/template-rules.test.ts"
+      ],
+      [
+        "TEST-F02-02: template validation boundaries rejects invalid lower bound 1.5 without coercion",
+        "server/tests/unit/template-rules.test.ts"
+      ],
+      [
+        "TEST-F02-02: template validation boundaries rejects invalid lower bound 60 without coercion",
+        "server/tests/unit/template-rules.test.ts"
+      ],
+      [
+        "TEST-F02-02: template validation boundaries rejects invalid lower bound true without coercion",
+        "server/tests/unit/template-rules.test.ts"
+      ],
+      [
+        "TEST-F02-02: template validation boundaries rejects invalid lower bound null without coercion",
+        "server/tests/unit/template-rules.test.ts"
+      ],
+      [
+        "TEST-F02-02: template validation boundaries rejects invalid lower bound undefined without coercion",
+        "server/tests/unit/template-rules.test.ts"
+      ],
+      [
+        "TEST-F02-02: template validation boundaries accepts inclusive endpoints and rejects reversed range/unknown server fields",
+        "server/tests/unit/template-rules.test.ts"
+      ]
+    ]
+  },
+  {
+    "ac": "AC-F02-03",
+    "expected": "Active/paged/detail/empty catalog, manager inactive only; safe DTO",
+    "planned": "TEST-F02-04",
+    "actual": [
+      [
+        "F-02 manager templates, persistence and access TEST-F02-04: active catalog/detail are paginated and inactive templates remain manager-only",
+        "server/tests/integration/templates.test.ts"
+      ]
+    ]
+  },
+  {
+    "ac": "AC-F02-04",
+    "expected": "Anonymous401 and Participant create403 even forged role, no mutation",
+    "planned": "TEST-F02-05/06",
+    "actual": [
+      [
+        "F-02 manager templates, persistence and access TEST-F02-05/06: roles, CSRF/origin and revoked cookies are enforced before writes",
+        "server/tests/integration/templates.test.ts"
+      ]
+    ]
+  },
+  {
+    "ac": "AC-F02-05",
+    "expected": "CSRF/origin reject403; revoked session401",
+    "planned": "TEST-F02-05/06",
+    "actual": [
+      [
+        "F-02 manager templates, persistence and access TEST-F02-05/06: roles, CSRF/origin and revoked cookies are enforced before writes",
+        "server/tests/integration/templates.test.ts"
+      ]
+    ]
+  },
+  {
+    "ac": "AC-F02-06",
+    "expected": "Fresh API/new app instance/reload retrieve DB-backed result",
+    "planned": "TEST-F02-01/07; TEST-F02-10",
+    "actual": [
+      [
+        "F-02 manager templates, persistence and access TEST-F02-01/07: manager creates normalized template and a fresh app reads the committed row",
+        "server/tests/integration/templates.test.ts"
+      ],
+      [
+        "TEST-F02-10: real manager creation → persisted catalog → participant goal selection",
+        "member-b.spec.ts"
+      ],
+      [
+        "TEST-F02-10: real manager creation → persisted catalog → participant goal selection",
+        "member-b.spec.ts"
+      ]
+    ]
+  },
+  {
+    "ac": "AC-F02-07",
+    "expected": "Unknown fields422; errors and DTO never leak DB/credentials/private records",
+    "planned": "TEST-F02-08",
+    "actual": [
+      [
+        "F-02 manager templates, persistence and access TEST-F02-08: server-owned fields are rejected; failed database insert produces only safe errors",
+        "server/tests/integration/templates.test.ts"
+      ]
+    ]
+  },
+  {
+    "ac": "AC-F02-08",
+    "expected": "Loading/empty/validation/saving/error/unknown outcome recover visibly, keyboard usable",
+    "planned": "TEST-F02-09",
+    "actual": [
+      [
+        "TEST-F02-09: validation, pending and unknown POST outcome preserve input without automatic retry",
+        "member-b.spec.ts"
+      ],
+      [
+        "TEST-F02-09: catalog read failure retries, then empty state is distinct from loading",
+        "member-b.spec.ts"
+      ],
+      [
+        "TEST-F02-09: validation, pending and unknown POST outcome preserve input without automatic retry",
+        "member-b.spec.ts"
+      ],
+      [
+        "TEST-F02-09: catalog read failure retries, then empty state is distinct from loading",
+        "member-b.spec.ts"
+      ]
+    ]
+  },
+  {
+    "ac": "AC-F02-09",
+    "expected": "Manager-created template can be selected by Participant to create own goal",
+    "planned": "TEST-F02-10",
+    "actual": [
+      [
+        "TEST-F02-10: real manager creation → persisted catalog → participant goal selection",
+        "member-b.spec.ts"
+      ],
+      [
+        "TEST-F02-10: real manager creation → persisted catalog → participant goal selection",
+        "member-b.spec.ts"
+      ]
+    ]
+  },
+  {
+    "ac": "AC-F03-01",
+    "expected": "Participant creates goal from active template with valid target/today-or-tomorrow date;201 returns goal and DB contains goal+initial target version owned by session user",
+    "planned": "TEST-F03-01",
+    "actual": [
+      [
+        "F-03 persisted personal goals and backend permissions TEST-F03-01/07: creates goal and initial version atomically with immutable snapshots",
+        "server/tests/integration/goals.test.ts"
+      ],
+      [
+        "F-03 persisted personal goals and backend permissions TEST-F03-01/07: accepts tomorrow start and returns initial target for a future-start goal",
+        "server/tests/integration/goals.test.ts"
+      ]
+    ]
+  },
+  {
+    "ac": "AC-F03-02",
+    "expected": "Own list/detail retrieve the saved goal after new request and application restart using same durable DB; empty list is valid200",
+    "planned": "TEST-F03-02; restart",
+    "actual": [
+      [
+        "F-03 persisted personal goals and backend permissions TEST-F03-02: reload and new application instance retrieve committed data",
+        "server/tests/integration/goals.test.ts"
+      ]
+    ]
+  },
+  {
+    "ac": "AC-F03-03",
+    "expected": "Out-of-range/fractional target, invalid/past/day-after-tomorrow date and unknown fields rejected; no partial goal/version rows",
+    "planned": "TEST-F03-03",
+    "actual": [
+      [
+        "F-03 persisted personal goals and backend permissions TEST-F03-03: rejects invalid target 0 without partial records",
+        "server/tests/integration/goals.test.ts"
+      ],
+      [
+        "F-03 persisted personal goals and backend permissions TEST-F03-03: rejects invalid target 1441 without partial records",
+        "server/tests/integration/goals.test.ts"
+      ],
+      [
+        "F-03 persisted personal goals and backend permissions TEST-F03-03: rejects invalid target 1.5 without partial records",
+        "server/tests/integration/goals.test.ts"
+      ],
+      [
+        "F-03 persisted personal goals and backend permissions TEST-F03-03: validates date 2026-11-02 at API boundary",
+        "server/tests/integration/goals.test.ts"
+      ],
+      [
+        "F-03 persisted personal goals and backend permissions TEST-F03-03: validates date 2026-11-05 at API boundary",
+        "server/tests/integration/goals.test.ts"
+      ],
+      [
+        "F-03 persisted personal goals and backend permissions TEST-F03-03: validates date 2026-02-30 at API boundary",
+        "server/tests/integration/goals.test.ts"
+      ],
+      [
+        "F-03 persisted personal goals and backend permissions TEST-F03-03: validates date 03/11/2026 at API boundary",
+        "server/tests/integration/goals.test.ts"
+      ],
+      [
+        "F-03 persisted personal goals and backend permissions TEST-F03-03: a database target-insert error rolls back the whole goal",
+        "server/tests/integration/goals.test.ts"
+      ]
+    ]
+  },
+  {
+    "ac": "AC-F03-04",
+    "expected": "Missing/inactive template yields404/422 respectively and no goal created",
+    "planned": "TEST-F03-04",
+    "actual": [
+      [
+        "F-03 persisted personal goals and backend permissions TEST-F03-04: missing and inactive templates create no goal",
+        "server/tests/integration/goals.test.ts"
+      ]
+    ]
+  },
+  {
+    "ac": "AC-F03-05",
+    "expected": "Serial and competing requests for same owner/template produce exactly one ACTIVE goal and one initial target; losers409; different participants may use same template",
+    "planned": "TEST-F03-05",
+    "actual": [
+      [
+        "F-03 persisted personal goals and backend permissions TEST-F03-05: simultaneous requests store one ACTIVE goal and one target version",
+        "server/tests/integration/goals.test.ts"
+      ]
+    ]
+  },
+  {
+    "ac": "AC-F03-06",
+    "expected": "Anonymous401, Manager403, other Participant detail404; lists contain only own goals; client-supplied ownerId cannot assign another owner",
+    "planned": "TEST-F03-06",
+    "actual": [
+      [
+        "F-03 persisted personal goals and backend permissions TEST-F01-05 / TEST-F03-06: role checks, ownership and collections are enforced on the real API",
+        "server/tests/integration/goals.test.ts"
+      ],
+      [
+        "F-03 persisted personal goals and backend permissions TEST-F03-06: client cannot override owner or role; malformed IDs and pagination reject",
+        "server/tests/integration/goals.test.ts"
+      ]
+    ]
+  },
+  {
+    "ac": "AC-F03-07",
+    "expected": "Goal snapshot matches template at creation and initial target is effective on startDate; future-start goal DTO valid; target lookup before start rejects rather than using an unrelated version",
+    "planned": "TEST-F03-07; TEST-F04-14",
+    "actual": [
+      [
+        "F-04 persisted daily entries, date-effective progress and privacy TEST-F04-14: effective targets and immutable snapshot ranges preserve historical progress",
+        "server/tests/integration/entries.test.ts"
+      ],
+      [
+        "F-04 persisted daily entries, date-effective progress and privacy TEST-F04-14: archived goal accepts historical dates through endDate, rejects later dates",
+        "server/tests/integration/entries.test.ts"
+      ],
+      [
+        "F-04 persisted daily entries, date-effective progress and privacy TEST-F04-14: missing effective target rejects rather than falling back to current/client target",
+        "server/tests/integration/entries.test.ts"
+      ],
+      [
+        "F-03 persisted personal goals and backend permissions TEST-F03-07: targetForDate retains historical values after a future target version",
+        "server/tests/integration/goals.test.ts"
+      ],
+      [
+        "TEST-F03-07: Bangkok date boundaries and goal rules accepts today/tomorrow including year rollover",
+        "server/tests/unit/goal-rules.test.ts"
+      ],
+      [
+        "TEST-F03-07: Bangkok date boundaries and goal rules rejects invalid calendar dates, past/far-future dates and fractional/out-of-range targets",
+        "server/tests/unit/goal-rules.test.ts"
+      ],
+      [
+        "TEST-F03-07: Bangkok date boundaries and goal rules uses Bangkok midnight, leap day and UTC date arithmetic without host timezone",
+        "server/tests/unit/goal-rules.test.ts"
+      ]
+    ]
+  },
+  {
+    "ac": "AC-F03-08",
+    "expected": "UI creation/list/detail, validation, empty/error/session states work at required viewports and integrate with B's template/entry boundaries",
+    "planned": "TEST-F03-08; TEST-F02-10; TEST-F04-16",
+    "actual": [
+      [
+        "TEST-F03-08: create, reload and retrieve a real persisted goal; duplicate is rejected",
+        "member-a.spec.ts"
+      ],
+      [
+        "TEST-F03-08: create, reload and retrieve a real persisted goal; duplicate is rejected",
+        "member-a.spec.ts"
+      ],
+      [
+        "TEST-F02-10: real manager creation → persisted catalog → participant goal selection",
+        "member-b.spec.ts"
+      ],
+      [
+        "TEST-F04-16: full manager→goal→daily entry→persisted progress with rejection, privacy and logout",
+        "member-b.spec.ts"
+      ],
+      [
+        "TEST-F02-10: real manager creation → persisted catalog → participant goal selection",
+        "member-b.spec.ts"
+      ],
+      [
+        "TEST-F04-16: full manager→goal→daily entry→persisted progress with rejection, privacy and logout",
+        "member-b.spec.ts"
+      ]
+    ]
+  },
+  {
+    "ac": "AC-F04-01",
+    "expected": "Own valid entry201, exactly one persisted row with authoritative target/calculation",
+    "planned": "TEST-F04-01/02",
+    "actual": [
+      [
+        "F-04 persisted daily entries, date-effective progress and privacy TEST-F04-01/02: committed entry and progress survive a fresh request/app; empty day has no phantom row",
+        "server/tests/integration/entries.test.ts"
+      ]
+    ]
+  },
+  {
+    "ac": "AC-F04-02",
+    "expected": "Fresh app/GET/reload returns same entry; no entry returns null identity/zero without mutation; list paged",
+    "planned": "TEST-F04-01/02; TEST-F04-16",
+    "actual": [
+      [
+        "F-04 persisted daily entries, date-effective progress and privacy TEST-F04-01/02: committed entry and progress survive a fresh request/app; empty day has no phantom row",
+        "server/tests/integration/entries.test.ts"
+      ],
+      [
+        "TEST-F04-16: full manager→goal→daily entry→persisted progress with rejection, privacy and logout",
+        "member-b.spec.ts"
+      ],
+      [
+        "TEST-F04-16: full manager→goal→daily entry→persisted progress with rejection, privacy and logout",
+        "member-b.spec.ts"
+      ]
+    ]
+  },
+  {
+    "ac": "AC-F04-03",
+    "expected": "45/60=75,75/60=125,60/60=100,1/32=3.13; achieved exact",
+    "planned": "TEST-F04-03/04",
+    "actual": [
+      [
+        "F-04 daily rules TEST-F04-03: 45/60 gives 75 percent with achieved=false",
+        "server/tests/unit/entry-rules.test.ts"
+      ],
+      [
+        "F-04 daily rules TEST-F04-03: 75/60 gives 125 percent with achieved=true",
+        "server/tests/unit/entry-rules.test.ts"
+      ],
+      [
+        "F-04 daily rules TEST-F04-03: 60/60 gives 100 percent with achieved=true",
+        "server/tests/unit/entry-rules.test.ts"
+      ],
+      [
+        "F-04 daily rules TEST-F04-03: 1/32 gives 3.13 percent with achieved=false",
+        "server/tests/unit/entry-rules.test.ts"
+      ],
+      [
+        "F-04 daily rules TEST-F04-03: 59/60 gives 98.33 percent with achieved=false",
+        "server/tests/unit/entry-rules.test.ts"
+      ],
+      [
+        "F-04 daily rules TEST-F04-03: 0/60 gives 0 percent with achieved=false",
+        "server/tests/unit/entry-rules.test.ts"
+      ],
+      [
+        "F-04 daily rules TEST-F04-03: 1440/1 gives 144000 percent with achieved=true",
+        "server/tests/unit/entry-rules.test.ts"
+      ],
+      [
+        "F-04 daily rules TEST-F04-03: corrupt target cannot produce a default percentage",
+        "server/tests/unit/entry-rules.test.ts"
+      ]
+    ]
+  },
+  {
+    "ac": "AC-F04-04",
+    "expected": "Date syntax400/calendar/range422; start/today included; Bangkok midnight/month/year correct",
+    "planned": "TEST-F04-05/06",
+    "actual": [
+      [
+        "F-04 daily rules TEST-F04-05: calendar validation includes leap/month/year transitions and correct field names",
+        "server/tests/unit/entry-rules.test.ts"
+      ]
+    ]
+  },
+  {
+    "ac": "AC-F04-05",
+    "expected": "Snapshot range/min/max/integer only; invalid422 and no writes",
+    "planned": "TEST-F04-07/08",
+    "actual": [
+      [
+        "F-04 daily rules TEST-F04-07: invalid minutes 29 reject without coercion",
+        "server/tests/unit/entry-rules.test.ts"
+      ],
+      [
+        "F-04 daily rules TEST-F04-07: invalid minutes 121 reject without coercion",
+        "server/tests/unit/entry-rules.test.ts"
+      ],
+      [
+        "F-04 daily rules TEST-F04-07: invalid minutes 0 reject without coercion",
+        "server/tests/unit/entry-rules.test.ts"
+      ],
+      [
+        "F-04 daily rules TEST-F04-07: invalid minutes -1 reject without coercion",
+        "server/tests/unit/entry-rules.test.ts"
+      ],
+      [
+        "F-04 daily rules TEST-F04-07: invalid minutes 1.5 reject without coercion",
+        "server/tests/unit/entry-rules.test.ts"
+      ],
+      [
+        "F-04 daily rules TEST-F04-07: invalid minutes 60 reject without coercion",
+        "server/tests/unit/entry-rules.test.ts"
+      ],
+      [
+        "F-04 daily rules TEST-F04-07: invalid minutes true reject without coercion",
+        "server/tests/unit/entry-rules.test.ts"
+      ],
+      [
+        "F-04 daily rules TEST-F04-07: invalid minutes null reject without coercion",
+        "server/tests/unit/entry-rules.test.ts"
+      ],
+      [
+        "F-04 daily rules TEST-F04-07: invalid minutes undefined reject without coercion",
+        "server/tests/unit/entry-rules.test.ts"
+      ],
+      [
+        "F-04 daily rules TEST-F04-07: exact snapshot endpoints are accepted",
+        "server/tests/unit/entry-rules.test.ts"
+      ]
+    ]
+  },
+  {
+    "ac": "AC-F04-06",
+    "expected": "Duplicate409/no overwrite; another own goal can record same date",
+    "planned": "TEST-F04-09",
+    "actual": [
+      [
+        "F-04 persisted daily entries, date-effective progress and privacy TEST-F04-09: serial duplicate never overwrites and another participant can record the same day",
+        "server/tests/integration/entries.test.ts"
+      ]
+    ]
+  },
+  {
+    "ac": "AC-F04-07",
+    "expected": "Simultaneous requests yield one201/rest409 with exactly one stored row",
+    "planned": "TEST-F04-10",
+    "actual": [
+      [
+        "F-04 persisted daily entries, date-effective progress and privacy TEST-F04-10: competing API writes get one201/one409 backed by exactly one database row",
+        "server/tests/integration/entries.test.ts"
+      ]
+    ]
+  },
+  {
+    "ac": "AC-F04-08",
+    "expected": "Anonymous/revoked401,manager403,other/absent404; no private data/write",
+    "planned": "TEST-F04-11/12",
+    "actual": [
+      [
+        "F-04 persisted daily entries, date-effective progress and privacy TEST-F04-11: all entry/progress routes reject anonymous/manager/cross-owner without revealing private data",
+        "server/tests/integration/entries.test.ts"
+      ]
+    ]
+  },
+  {
+    "ac": "AC-F04-09",
+    "expected": "Bad CSRF/origin403,unknown422, safe errors/DTO allowlist",
+    "planned": "TEST-F04-12/13",
+    "actual": [
+      [
+        "F-04 persisted daily entries, date-effective progress and privacy TEST-F04-12: bad CSRF/origin and logout replay cannot write or retrieve protected entries",
+        "server/tests/integration/entries.test.ts"
+      ]
+    ]
+  },
+  {
+    "ac": "AC-F04-10",
+    "expected": "Initial/effective target and goal range snapshots govern history; archived date bounds respected",
+    "planned": "TEST-F04-14",
+    "actual": [
+      [
+        "F-04 persisted daily entries, date-effective progress and privacy TEST-F04-14: effective targets and immutable snapshot ranges preserve historical progress",
+        "server/tests/integration/entries.test.ts"
+      ],
+      [
+        "F-04 persisted daily entries, date-effective progress and privacy TEST-F04-14: archived goal accepts historical dates through endDate, rejects later dates",
+        "server/tests/integration/entries.test.ts"
+      ],
+      [
+        "F-04 persisted daily entries, date-effective progress and privacy TEST-F04-14: missing effective target rejects rather than falling back to current/client target",
+        "server/tests/integration/entries.test.ts"
+      ]
+    ]
+  },
+  {
+    "ac": "AC-F04-11",
+    "expected": "UI states/reconcile/date race/125%/session expiry work without duplicate POST",
+    "planned": "TEST-F04-15",
+    "actual": [
+      [
+        "TEST-F04-15: validation and committed-but-lost response reconcile before any retry",
+        "member-b.spec.ts"
+      ],
+      [
+        "TEST-F04-15: stale date responses cannot replace the selected day; uncapped125% and read recovery",
+        "member-b.spec.ts"
+      ],
+      [
+        "TEST-F04-15: tomorrow goal never fetches an invalid daily date and logout clears its private view",
+        "member-b.spec.ts"
+      ],
+      [
+        "TEST-F04-15: validation and committed-but-lost response reconcile before any retry",
+        "member-b.spec.ts"
+      ],
+      [
+        "TEST-F04-15: stale date responses cannot replace the selected day; uncapped125% and read recovery",
+        "member-b.spec.ts"
+      ],
+      [
+        "TEST-F04-15: tomorrow goal never fetches an invalid daily date and logout clears its private view",
+        "member-b.spec.ts"
+      ]
+    ]
+  },
+  {
+    "ac": "AC-F04-12",
+    "expected": "Real manager-create→participant-goal→entry45→persisted75%→rejection/logout journey",
+    "planned": "TEST-F04-16",
+    "actual": [
+      [
+        "TEST-F04-16: full manager→goal→daily entry→persisted progress with rejection, privacy and logout",
+        "member-b.spec.ts"
+      ],
+      [
+        "TEST-F04-16: full manager→goal→daily entry→persisted progress with rejection, privacy and logout",
+        "member-b.spec.ts"
+      ]
+    ]
+  }
+]

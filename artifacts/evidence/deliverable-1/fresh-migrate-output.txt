@@ -1,0 +1,29 @@
+
+> studytrack@0.1.0 db:migrate
+> prisma migrate deploy --schema server/prisma/schema.prisma
+
+Environment variables loaded from .env
+Prisma schema loaded from server\prisma\schema.prisma
+Datasource "db": PostgreSQL database "studytrack_d1_dev_20261104", schema "public" at "127.0.0.1:25433"
+
+1 migration found in prisma/migrations
+
+Applying migration `202611030001_foundation`
+
+┌─────────────────────────────────────────────────────────┐
+│  Update available 6.19.3 -> 8.0.0-rc.30                 │
+│                                                         │
+│  This is a major update - please follow the guide at    │
+│  https://pris.ly/d/major-version-upgrade                │
+│                                                         │
+│  Run the following to update                            │
+│    npm i --save-dev prisma@latest                       │
+│    npm i @prisma/client@latest                          │
+└─────────────────────────────────────────────────────────┘
+The following migration(s) have been applied:
+
+migrations/
+  └─ 202611030001_foundation/
+    └─ migration.sql
+      
+All migrations have been successfully applied.
