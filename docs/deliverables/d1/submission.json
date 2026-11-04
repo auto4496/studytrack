@@ -1,0 +1,21 @@
+{
+  "members": [
+    {
+      "name": "Phanuwit Butchari",
+      "studentId": "67070501070",
+      "github": "auto4496"
+    },
+    {
+      "name": "Pitchai Chadchuangchot",
+      "studentId": "67070501068",
+      "github": "Datakung"
+    }
+  ],
+  "acceptedMainCommit": "df08ec19cdeb0efcfbfbee92f3d385d87059528c",
+  "releaseTag": "v0.1.0-sprint1",
+  "releasePullRequest": "https://github.com/auto4496/studytrack/pull/9",
+  "preparedDate": "2026-11-04",
+  "timezone": "Asia/Bangkok",
+  "coverPage": false,
+  "submissionScheduleStatus": "Original handout:8Nov2026; user reports no LEB2 submission slot visible4Nov. Combining withLab5 is unconfirmed; no official cancellation/extension supplied."
+}

@@ -1,0 +1,306 @@
+{
+  "capturedAt": "2026-11-04T08:37:22.6207161Z",
+  "pullRequests": [
+    {
+      "author": {
+        "id": "U_kgDOCDaVug",
+        "is_bot": false,
+        "login": "auto4496",
+        "name": ""
+      },
+      "baseRefName": "codex/sprint-1-staging",
+      "headRefName": "codex/member-a-sprint1",
+      "headRefOid": "94156cf230d9de0783170047078d6cdcd539524f",
+      "mergeCommit": {
+        "oid": "1a4b74b8373999dd969a17400f649113596b649e"
+      },
+      "mergedAt": "2026-11-04T07:03:34Z",
+      "number": 3,
+      "reviews": [
+        {
+          "id": "PRR_kwDOVhEgZM8AAAABVtkIeg",
+          "author": {
+            "login": "Datakung"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "Codex-assisted review requested by member B, pinned to 2370df9d760862a2c96aead7c70eb63762bb7192.\n\nIndependently checked this PR in a separate checkout (without B feature changes): 38 API/unit tests and 10 desktop/mobile browser cases pass, production build passes, and the real API restart check passes. Reviewed session hashing/rotation/expiry/logout, CSRF/Origin, role/ownership, atomic goal+target creation, snapshots, date rules, unique protection and the pre-code/red/green history.\n\nRequesting one correction before foundation acceptance: the test database isolation guard accepts equivalent localhost spellings. Two new guard regression cases fail, and read-only PostgreSQL queries confirm both aliases reach the same isolated database. Details are attached to scripts/test-env.mjs. The reproduction did not delete or modify data; normal suites used only the dedicated B test database. The configured development database was not touched.\n\nPRs #6 and #7 remain draft and dependent on this PR. After the guard correction, rerun the new cases and affected suite, review the new head, accept #3 into codex/sprint-1-staging, then update/review #6 followed by #7. No approval, merge, full Sprint1 acceptance, CI/GCP or UAT is claimed by this review.\n\nRecorded evidence: https://github.com/auto4496/studytrack/blob/codex/f04-entries-progress/artifacts/evidence/member-b/pr3-review/execution.json (B evidence branch will be updated with this review record).",
+          "submittedAt": "2026-11-03T12:19:17Z",
+          "includesCreatedEdit": false,
+          "reactionGroups": [],
+          "state": "CHANGES_REQUESTED",
+          "commit": {
+            "oid": "2370df9d760862a2c96aead7c70eb63762bb7192"
+          }
+        },
+        {
+          "id": "PRR_kwDOVhEgZM8AAAABV5Y0zA",
+          "author": {
+            "login": "Datakung"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "Re-review of commit 94156cf230d9de0783170047078d6cdcd539524f following the P2 finding on 2370df9.\n\nThe requested correction is complete: normalizedHost lowercases the hostname and removes its trailing DNS root dot before mapping loopback aliases. The comparison applies this normalization to both database URLs. LOCALHOST and localhost. are now included in the regression suite. I reviewed the full correction delta; the executable changes are confined to the guard and its tests.\n\nIndependent verification on this exact head on 3 November: the submitted guard suite passed 9/9, and my two previously failing alias regression probes both passed. The head remains unchanged at this re-review. The original independent 38 API/unit checks, 10 browser checks, build and restart checks were on 2370df9 and remain historical results, not new full-suite runs on the correction.\n\nI also inspected A's correction evidence: 7-pass/2-fail red, 9-pass green, 40 API/unit passes, 10 browser passes, build and process-restart passes, anchored to d2efada. Those correction full-suite results are the author's runs, not additional independent reruns by B.\n\nNo outstanding blocking findings remain within the reviewed PR3 scope. Approved. This Codex-assisted review is submitted as Datakung at member B's explicit request. F02/F04 integration and Sprint 1 release acceptance remain separate work.",
+          "submittedAt": "2026-11-04T06:55:06Z",
+          "includesCreatedEdit": false,
+          "reactionGroups": [],
+          "state": "APPROVED",
+          "commit": {
+            "oid": "94156cf230d9de0783170047078d6cdcd539524f"
+          }
+        }
+      ],
+      "state": "MERGED",
+      "title": "Add member A authentication and personal reading goals"
+    },
+    {
+      "author": {
+        "id": "U_kgDOBmf9mg",
+        "is_bot": false,
+        "login": "Datakung",
+        "name": "Data"
+      },
+      "baseRefName": "codex/sprint-1-staging",
+      "headRefName": "codex/f02-templates",
+      "headRefOid": "ec681e9c93e9baff10879c1564957e5221d7605d",
+      "mergeCommit": {
+        "oid": "18e58829d917903b6f2a567304aa7ddebf01ed8d"
+      },
+      "mergedAt": "2026-11-04T07:31:04Z",
+      "number": 6,
+      "reviews": [
+        {
+          "id": "PRR_kwDOVhEgZM8AAAABV5vGjA",
+          "author": {
+            "login": "auto4496"
+          },
+          "authorAssociation": "OWNER",
+          "body": "## Review outcome\n\nNo blocking defects identified in the reviewed F02 changes at `ec681e9c93e9baff10879c1564957e5221d7605d`. Approved for integration into `codex/sprint-1-staging`.\n\n## Scope inspected\n\n- Contract and AC alignment, actual diff and assertions.\n- Manager-only template creation; strict Unicode/title/description/range validation; server-owned creator, unit and status.\n- Session/role/CSRF/origin enforcement and participant catalog-to-goal integration.\n- UI pending, validation, read recovery and unknown POST outcome without automatic write retries.\n- Existing A regressions retained; no package, schema, migration or auth implementation changes.\n\n## Independent reviewer verification\n\nExecuted on an exported snapshot of this exact head with existing installed dependencies and guarded PostgreSQL test database, separate from development:\n\n| Check | Actual result |\n|---|---|\n| API/unit suite | 66 passed, 0 failed, 0 skipped |\n| Desktop/mobile browser suite | 16 passed, 0 failed, 0 skipped |\n| Production build | PASS |\n\nCommands: `npm test -- --reporter=default --reporter=json --outputFile=../f02-api-results.json`, `npx playwright test --config playwright.member-b.config.ts`, `npm run build`. Browser viewports: 1440x900 and 390x844. Generated screenshots and source/assertions were inspected. Local outputs retained in the member A review workspace.\n\nThis review uses Codex-assisted code inspection and automated execution authorized by member A; it does not claim independent human UAT, GCP/CI completion or a complete Sprint 1 release. PR7 remains a separate dependent review.",
+          "submittedAt": "2026-11-04T07:30:48Z",
+          "includesCreatedEdit": false,
+          "reactionGroups": [],
+          "state": "APPROVED",
+          "commit": {
+            "oid": "ec681e9c93e9baff10879c1564957e5221d7605d"
+          }
+        }
+      ],
+      "state": "MERGED",
+      "title": "Add manager-created activity templates and persisted catalog"
+    },
+    {
+      "author": {
+        "id": "U_kgDOBmf9mg",
+        "is_bot": false,
+        "login": "Datakung",
+        "name": "Data"
+      },
+      "baseRefName": "codex/sprint-1-staging",
+      "headRefName": "codex/f04-entries-progress",
+      "headRefOid": "36fc9b69a26ba714e818febfd555ae033277024f",
+      "mergeCommit": {
+        "oid": "85f510f0d73b84f39c08fbf3ef36e43b232bb044"
+      },
+      "mergedAt": "2026-11-04T07:36:15Z",
+      "number": 7,
+      "reviews": [
+        {
+          "id": "PRR_kwDOVhEgZM8AAAABV5yv_w",
+          "author": {
+            "login": "auto4496"
+          },
+          "authorAssociation": "OWNER",
+          "body": "## Review outcome\n\nNo blocking defects identified. Approved for integration into `codex/sprint-1-staging` at `36fc9b69a26ba714e818febfd555ae033277024f`. PR6 has already been accepted and merged.\n\n## Scope inspected\n\nReviewed the F04 contract/AC, actual diff and assertions, owner/role/CSRF/origin guards, strict payload and Bangkok date validation, immutable bounds, historical target selection, transaction/row locks and concurrent duplicate handling, uncapped HALF_UP progress, paged reads and the GoalDetail integration. Inspected stale-read protection, lost-write-response reconciliation, error recovery and session clearing.\n\n## Independent reviewer execution\n\n| Check | Actual result |\n|---|---|\n| API/unit | 117 passed, 0 failed, 0 skipped |\n| Desktop/mobile browser | 24 passed, 0 failed, 0 skipped |\n| Production build | PASS |\n| Actual API process restart | PASS: session, manager-created template, goal, entry and 45/60=75% persisted |\n\nExecuted on merged candidate `f1577ea`, after incorporating accepted staging `18e5882`. That merge changed no tracked file content from inspected/tested `cb52f39`. Final head `36fc9b6` adds only the reviewer record and actual execution reports; application/test source equivalence was checked. The retained original-head run also passed 117 API/unit and 24 browser checks.\n\nCommands: `npm test -- --reporter=default --reporter=json --outputFile=../integration-api-results.json`, `npx playwright test --config playwright.member-b.config.ts`, `npm run build`, `npx tsx scripts/member-b-restart.ts`. Real guarded PostgreSQL test database, sequential DB suites, 1440x900 and 390x844 browser viewports; dependencies reused from the installed locked version.\n\n[Review and exact-source evidence](https://github.com/auto4496/studytrack/blob/36fc9b69a26ba714e818febfd555ae033277024f/docs/reviews/pr-6-and-7-member-a.md) includes raw result JSON and logs. This is Codex-assisted inspection and actual automated reviewer execution authorized by member A, not independent human UAT. Main release, D1 PDF, CI and GCP remain pending.",
+          "submittedAt": "2026-11-04T07:35:58Z",
+          "includesCreatedEdit": false,
+          "reactionGroups": [],
+          "state": "APPROVED",
+          "commit": {
+            "oid": "36fc9b69a26ba714e818febfd555ae033277024f"
+          }
+        }
+      ],
+      "state": "MERGED",
+      "title": "Record daily reading and retrieve date-effective progress"
+    },
+    {
+      "author": {
+        "id": "U_kgDOBmf9mg",
+        "is_bot": false,
+        "login": "Datakung",
+        "name": "Data"
+      },
+      "baseRefName": "codex/sprint-1-staging",
+      "headRefName": "codex/sprint-1-release-handoff",
+      "headRefOid": "d9889e72c754ed65b43c9ead2b433814633bb8bb",
+      "mergeCommit": {
+        "oid": "0c0915e2f7f0e7587c029e451ddc788413243030"
+      },
+      "mergedAt": "2026-11-04T08:29:44Z",
+      "number": 8,
+      "reviews": [
+        {
+          "id": "PRR_kwDOVhEgZM8AAAABV6Za4Q",
+          "author": {
+            "login": "auto4496"
+          },
+          "authorAssociation": "OWNER",
+          "body": "Reviewed the complete documentation diff and readiness manifest at d9889e7. PR3/6/7 review IDs, reviewed heads, staging merge commits, issue closure and source/evidence attribution agree with GitHub and retained actual reports. The proposed handoff distinguishes feature acceptance, pending main release, final-main checks, the self-contained D1 PDF and later CI/GCP/UAT. Verified that server/client/e2e/scripts/packages/Compose are unchanged from accepted 85f510f. No blocking defects found. Approved for staging.\n\nSeparately, A's D1 preparation has now exercised a fresh npm ci (229 installed, 0 vulnerabilities), new isolated dev/test databases, migrations and idempotent seed (3 users/2 templates), 117 API/unit and 24 browser checks with zero failures/skips, production build and actual process-restart persistence on the identical application source. These are A's new executions, not attributed to B's docs-only verification. Codex-assisted inspection and actual automated execution are disclosed; no independent human UAT/cloud or completed PDF submission is claimed.",
+          "submittedAt": "2026-11-04T08:29:41Z",
+          "includesCreatedEdit": false,
+          "reactionGroups": [],
+          "state": "APPROVED",
+          "commit": {
+            "oid": "d9889e72c754ed65b43c9ead2b433814633bb8bb"
+          }
+        }
+      ],
+      "state": "MERGED",
+      "title": "docs: record accepted Sprint1 features and release readiness"
+    },
+    {
+      "author": {
+        "id": "U_kgDOBmf9mg",
+        "is_bot": false,
+        "login": "Datakung",
+        "name": "Data"
+      },
+      "baseRefName": "main",
+      "headRefName": "codex/sprint-1-staging",
+      "headRefOid": "0c0915e2f7f0e7587c029e451ddc788413243030",
+      "mergeCommit": {
+        "oid": "df08ec19cdeb0efcfbfbee92f3d385d87059528c"
+      },
+      "mergedAt": "2026-11-04T08:31:33Z",
+      "number": 9,
+      "reviews": [
+        {
+          "id": "PRR_kwDOVhEgZM8AAAABV6aptQ",
+          "author": {
+            "login": "auto4496"
+          },
+          "authorAssociation": "OWNER",
+          "body": "## Release review\n\nApproved for main at 0c0915e2f7f0e7587c029e451ddc788413243030. PR8 is now reviewed/merged and this final release head includes that handoff. Inspected the staging-to-main scope and the accepted F01/F03 and F02/F04 contract, implementation, assertions and peer-review chain. The Sprint1 journey is manager template -> participant goal -> daily entry -> retrieved persisted progress, with real authentication/logout, role/ownership and domain/concurrency enforcement. No blocking finding remains.\n\n## Actual verification\n\nA independently performed fresh npm ci (229 packages installed, audit0), generated private configuration, migrated new isolated PostgreSQL dev/test databases and seeded twice (3 users/2 templates). Application source85f510f passed117 API/unit and24 desktop/mobile browser checks with0 failures/skips, production build and actual API process-restart persistence. A further15 scripted local UI/API/database demonstration checks passed, including invalid login, zero-minute rejection,45/60=75%,409 duplicate preserving the row, participant403/other-owner404/manager403 and logout401. These are actual executions, not independent human UAT.\n\nVerified no application/test/package/Compose changes between85f510f and this release head; PR8 changes only docs/evidence. Relevant source equivalence and the prior raw reviewer reports were inspected. Commands include npm ci, db:generate/migrate/seed/test:migrate, npm test, npm run build, playwright.member-b.config.ts and member-b-restart.ts.\n\nFinal-main verification and immutable tag recording follow the merge. D1 PDF finalization/full student identities remain submission work; CI/GCP, independent UAT and later features are later checkpoints. Codex-assisted review/execution is disclosed; this does not certify those unfinished deliverables.",
+          "submittedAt": "2026-11-04T08:31:30Z",
+          "includesCreatedEdit": false,
+          "reactionGroups": [],
+          "state": "APPROVED",
+          "commit": {
+            "oid": "0c0915e2f7f0e7587c029e451ddc788413243030"
+          }
+        }
+      ],
+      "state": "MERGED",
+      "title": "Sprint 1 release candidate: auth, templates, goals and daily progress"
+    }
+  ],
+  "board": {
+    "items": [
+      {
+        "assignees": [
+          "auto4496"
+        ],
+        "content": {
+          "body": "Implement member A's Sprint 1 foundation and F-01 identity/access according to the pre-code contract in `docs/sprints/sprint-1/f01-auth.md` (baseline commit 11cdfe5).\n\nIncludes project scaffold, database migrations/seed/test isolation, real session login/logout/current-user, CSRF/role middleware and login UI. Link FR-01..FR-04, AC-F01-01..08 and planned TEST-F01 IDs to actual results. Keep meaningful TDD red/green evidence and run DB integration/browser checks. Member B must review before integration into sprint staging; do not self-approve or mark accepted before that review.\n\nBranch: codex/member-a-sprint1. F-03 will share this bounded member A integration branch because it depends on this foundation; separate commits/contracts/results preserve each feature. No F-02 manager UI/create endpoint or F-04 entry/progress feature implementation is included.\n",
+          "number": 1,
+          "repository": "auto4496/studytrack",
+          "title": "F-01: project foundation and real identity/access",
+          "type": "Issue",
+          "url": "https://github.com/auto4496/studytrack/issues/1"
+        },
+        "id": "PVTI_lAHOCDaVus4Bp9uEzhFnuB8",
+        "repository": "https://github.com/auto4496/studytrack",
+        "status": "Done",
+        "title": "F-01: project foundation and real identity/access"
+      },
+      {
+        "assignees": [
+          "auto4496"
+        ],
+        "content": {
+          "body": "Implement member A's F-03 personal goals according to `docs/sprints/sprint-1/f03-goals.md` (pre-code baseline 11cdfe5).\n\nLink FR-07/08, BR-02/03/07, AC-F03-01..08 and TEST-F03 cases to real results. Create/read own goals, immutable snapshots, effective target lookup, date/range validation, concurrent active-goal uniqueness and participant-only backend protection. Needs F-01 foundation and B's F-02 integration; use actual DB fixtures for A verification and explicitly defer the full manager-created-template journey until B's feature is integrated.\n\nBranch codex/member-a-sprint1, shared with F-01 foundation but feature-specific commits/TDD/evidence. Teammate review and accepted release still required. A minimal read-only template adapter may be supplied for goal selection and handed to B; manager template creation and entries/progress remain B's work.\n",
+          "number": 2,
+          "repository": "auto4496/studytrack",
+          "title": "F-03: own goals, validation and persisted target versions",
+          "type": "Issue",
+          "url": "https://github.com/auto4496/studytrack/issues/2"
+        },
+        "id": "PVTI_lAHOCDaVus4Bp9uEzhFnuFA",
+        "repository": "https://github.com/auto4496/studytrack",
+        "status": "Done",
+        "title": "F-03: own goals, validation and persisted target versions"
+      },
+      {
+        "content": {
+          "body": "Participants can now sign in, sign out, create personal reading goals, and retrieve saved goals from PostgreSQL. This PR covers member A's Sprint 1 implementation.\n\n## Changes\n\n- **Authentication:** Sign-in, sign-out, session expiry, and session revocation.\n- **Access control:** Backend checks for participant roles, record ownership, CSRF tokens, and request origins.\n- **Personal goals:** Create, list, and view saved reading goals, with validation and protection against duplicate active goals under concurrent requests.\n- **User interface:** Login and goal screens for desktop and mobile.\n- **Shared foundation:** Project, database, and test setup, plus a read-only template adapter for the goal picker.\n\n## Validation\n\n| Check | Result |\n|---|---|\n| API and unit tests | 40 passed |\n| Browser tests — desktop and mobile | 10 passed |\n| Build | Passed |\n| API restart and data persistence | Passed |\n| `npm audit` | 0 reported vulnerabilities |\n\nNo failed or skipped tests in the final validation runs.\n\n## Review and remaining work\n\nThe database isolation guard has been corrected after Datakung's review: hostname case and a trailing DNS root dot are normalized before loopback comparison. Regression cases for `LOCALHOST` and `localhost.` now pass. Teammate re-review of the updated head is still required.\n\n- Teammate review is required before merging into `codex/sprint-1-staging`.\n- Member B owns manager template creation and daily entries/progress.\n- The complete manager-created-template → recorded-activity journey still needs integration and verification.\n\nFull Sprint 1 acceptance, independent UAT, and GCP deployment remain pending.\n\n## Review resources\n\n- [Review correction: localhost alias guard and new regression evidence](https://github.com/auto4496/studytrack/blob/codex/member-a-sprint1/docs/verification/pr3-review-fix.md)\n\n- [Verification results, AC mapping, and red/green history](https://github.com/auto4496/studytrack/blob/codex/member-a-sprint1/docs/verification/member-a.md)\n- [Teammate review checklist](https://github.com/auto4496/studytrack/blob/codex/member-a-sprint1/docs/reviews/member-a-review-guide.md)\n- [Member B handoff and integration points](https://github.com/auto4496/studytrack/blob/codex/member-a-sprint1/docs/handoffs/member-a-implementation.md)\n\n<details>\n<summary>Tested versions and execution evidence</summary>\n\n- Current verified source after the review correction: `d2efada` (40 API/unit tests, 10 browser cases, build and restart checks passed).\n- Baseline UI and browser source before this correction: `016daba`.\n- Baseline API/restart source: `c059044`; backend equivalence with the original UI version was verified before the guard correction.\n- [Full commit hashes, commands, and results](https://github.com/auto4496/studytrack/blob/codex/member-a-sprint1/artifacts/evidence/member-a/execution.json).\n\n- [Latest review-fix execution record](https://github.com/auto4496/studytrack/blob/codex/member-a-sprint1/artifacts/evidence/member-a/pr3-review-fix/execution.json).\n\n</details>\n\nRelated issues: #1 and #2.\n",
+          "number": 3,
+          "repository": "auto4496/studytrack",
+          "title": "Add member A authentication and personal reading goals",
+          "type": "PullRequest",
+          "url": "https://github.com/auto4496/studytrack/pull/3"
+        },
+        "id": "PVTI_lAHOCDaVus4Bp9uEzhFoGl8",
+        "repository": "https://github.com/auto4496/studytrack",
+        "status": "Done",
+        "title": "Add member A authentication and personal reading goals"
+      },
+      {
+        "content": {
+          "body": "Member B: F-02 manager-created activity templates and catalog integration.\n\nContract recorded before implementation at ee14477: docs/sprints/sprint-1/f02-templates.md; SRS FR-04/05/06/19, BR-01/07/10, applicable NFRs.\n\nTemporary dependency: member A PR #3 (2370df9), not yet approved or merged. Extend the existing template read adapter and shared auth/client; no duplicate scaffold/schema/lockfile changes. API/database validation/role/CSRF/persistence tests, manager form/catalog states and selected browser journey. Preserve real red/green and results. A peer review required before accepted staging/release.\r\n",
+          "number": 4,
+          "repository": "auto4496/studytrack",
+          "title": "F-02: manager templates, validation and persisted catalog",
+          "type": "Issue",
+          "url": "https://github.com/auto4496/studytrack/issues/4"
+        },
+        "id": "PVTI_lAHOCDaVus4Bp9uEzhF6Hpw",
+        "repository": "https://github.com/auto4496/studytrack",
+        "status": "Done",
+        "title": "F-02: manager templates, validation and persisted catalog"
+      },
+      {
+        "content": {
+          "body": "Member B: F-04 daily activity records and date-effective progress.\n\nContract recorded before implementation at ee14477: docs/sprints/sprint-1/f04-entries-progress.md; SRS FR-04/11/12/19, BR-04/05/06/07/08/10/11 and applicable NFRs.\n\nTemporary dependencies: member A PR #3 and B F-02 branch. Own-goal entry/progress/list API, Bangkok date and snapshot validation, DB-backed concurrent duplicate rejection, correct unbounded percentage and persisted retrieval; UI uses A GoalDetail integration slot. Real unit/API/DB/concurrency/browser regression and red/green evidence. No schema/auth replacement; no accepted-release claim before teammate review and staging integration.\r\n",
+          "number": 5,
+          "repository": "auto4496/studytrack",
+          "title": "F-04: daily entries, concurrent duplicate protection and progress",
+          "type": "Issue",
+          "url": "https://github.com/auto4496/studytrack/issues/5"
+        },
+        "id": "PVTI_lAHOCDaVus4Bp9uEzhF6Huw",
+        "repository": "https://github.com/auto4496/studytrack",
+        "status": "Done",
+        "title": "F-04: daily entries, concurrent duplicate protection and progress"
+      },
+      {
+        "content": {
+          "body": "Managers can create persisted minute-based activity templates, and participants can select the catalog when creating reading goals. This extends A's existing adapter and authentication with strict validation, role/CSRF enforcement, server-owned fields, and form recovery when a POST response is lost.\n\nRelated issue: #4. PR #3 is now merged into `codex/sprint-1-staging` at `1a4b74b`. The existing F02 branch incorporates that accepted staging through a normal merge; this PR targets staging directly and contains no F04 implementation.\n\nValidation on source `5e340f8a111579dbd2c5ef5e0767086ae4a1475b`: **66 API/unit checks (A40+B26), 16 browser checks (A10+B6), 0 failures/skips**, production build, and the real API restart smoke passed. Browser checks cover desktop 1440x900 and mobile 390x844. Suites ran sequentially against the isolated B test database. Subsequent evidence/docs commits do not change the tested application source. The restart smoke verifies A's session/goal/initial-target persistence; F02 persistence is additionally exercised by real API/browser flows.\n\nReview contract/AC alignment, assertions, manager-only creation, Unicode/range validation, participant catalog/goal selection, shared adapter integration, and pending/unknown-outcome handling. No package, lockfile, schema, migration or auth implementation changes. A's review/approval and full Sprint1 acceptance are pending.\n\n- [Review handoff and current evidence](https://github.com/auto4496/studytrack/blob/codex/f02-templates/docs/handoffs/f02-review-ready.md)\n- [Contract](https://github.com/auto4496/studytrack/blob/codex/f02-templates/docs/sprints/sprint-1/f02-templates.md)\n- [AC mapping and historical red/green](https://github.com/auto4496/studytrack/blob/codex/f02-templates/docs/verification/member-b.md)\n",
+          "number": 6,
+          "repository": "auto4496/studytrack",
+          "title": "Add manager-created activity templates and persisted catalog",
+          "type": "PullRequest",
+          "url": "https://github.com/auto4496/studytrack/pull/6"
+        },
+        "id": "PVTI_lAHOCDaVus4Bp9uEzhF6HzE",
+        "repository": "https://github.com/auto4496/studytrack",
+        "status": "Done",
+        "title": "Add manager-created activity templates and persisted catalog"
+      },
+      {
+        "content": {
+          "body": "Participants can record daily reading minutes and retrieve saved, date-effective progress. For example, 45/60 displays 75%, and 75/60 displays 125%. Duplicate requests cannot overwrite an existing daily record.\n\n## Changes\n\n- Add own-goal entry, list and progress APIs with session, role, ownership, CSRF and origin checks.\n- Enforce Bangkok dates, immutable goal bounds and historical targets; use PostgreSQL uniqueness for competing writes.\n- Connect the daily activity screen to the existing goal detail page, including loading, validation, stale-response handling and lost-response recovery.\n- Retain contracts, AC mapping, red/green history and actual test reports.\n\n## Integration and review\n\nPR #3 and PR #6 are merged into `codex/sprint-1-staging`. This branch incorporated accepted staging at `18e5882` through `f1577ea` and now targets staging directly. The integration merge changed no tracked file content from the previously inspected head `cb52f39`.\n\nMember A inspected contracts, diff, assertions, ownership, transactions, date-effective calculations and UI recovery, and reran the suites below on `f1577ea`. The subsequent commit `36fc9b6` adds reviewer evidence only; application and test sources are unchanged. Formal review/merge state is recorded by GitHub.\n\n## Reviewer validation\n\n| Check | Actual result |\n|---|---|\n| API/unit | 117 passed, 0 failed, 0 skipped |\n| Desktop/mobile browser | 24 passed, 0 failed, 0 skipped |\n| Production build | PASS |\n| Actual API process restart and persisted retrieval | PASS |\n\nTests ran sequentially against a dedicated PostgreSQL test database. Browser viewports: 1440x900 and 390x844. Normal journeys use real API/database; selected error and race tests intercept responses. Existing installed dependencies were reused.\n\n## Evidence and remaining work\n\n- [Member A review record](https://github.com/auto4496/studytrack/blob/36fc9b69a26ba714e818febfd555ae033277024f/docs/reviews/pr-6-and-7-member-a.md)\n- [Actual reviewer reports and metadata](https://github.com/auto4496/studytrack/tree/36fc9b69a26ba714e818febfd555ae033277024f/artifacts/evidence/member-a/pr6-pr7-review)\n- [Feature contract](https://github.com/auto4496/studytrack/blob/codex/f04-entries-progress/docs/sprints/sprint-1/f04-entries-progress.md)\n- [Member B verification and AC mapping](https://github.com/auto4496/studytrack/blob/codex/f04-entries-progress/docs/verification/member-b.md)\n\nRelated issue: #5. This PR accepts a feature increment into sprint staging. Reviewed release to main, the D1 PDF, CI/GCP and independent UAT remain separate work. Codex-assisted review and automated execution do not establish independent human UAT.\n",
+          "number": 7,
+          "repository": "auto4496/studytrack",
+          "title": "Record daily reading and retrieve date-effective progress",
+          "type": "PullRequest",
+          "url": "https://github.com/auto4496/studytrack/pull/7"
+        },
+        "id": "PVTI_lAHOCDaVus4Bp9uEzhF6H2A",
+        "repository": "https://github.com/auto4496/studytrack",
+        "status": "Done",
+        "title": "Record daily reading and retrieve date-effective progress"
+      }
+    ],
+    "totalCount": 7
+  },
+  "contractHistory": "11cdfe5 2026-11-03T14:38:13+07:00 docs: record StudyTrack pre-implementation baseline\n2fc6252 2026-11-03T15:11:13+07:00 test: add member A scaffold and failing logout and goal-rule specifications\na13858f 2026-11-03T15:14:16+07:00 feat: pass logout revocation and goal-date rules with persisted auth and goal APIs\nee14477 2026-11-03T18:23:51+07:00 docs: reconcile B feature contracts with A foundation before implementation\n0e1ca17 2026-11-03T18:25:21+07:00 test: specify F02 manager creation, validation and access before implementation (#4)\na3769d4 2026-11-03T18:29:02+07:00 feat: add manager activity templates and catalog recovery (#4)\nd709741 2026-11-03T18:32:48+07:00 test: specify F04 dates, progress, ownership and concurrent entries before code (#5)\n0b51571 2026-11-03T18:45:20+07:00 test: await completed logout and verify entry persistence across real process restart (#5)\ndb199eb 2026-11-03T20:17:43+07:00 test: reproduce PR review localhost-alias isolation bypass\nd2efada 2026-11-03T20:19:29+07:00 fix: normalize localhost case and trailing DNS dot in test isolation guard",
+  "mainRelease": "df08ec19cdeb0efcfbfbee92f3d385d87059528c"
+}

@@ -1,39 +1,14 @@
-# Member B increment — templates and daily reading
+# StudyTrack
 
-ขั้นตอนส่งตรวจร่วมกัน: [Review workflow ตาม TokTickIT](docs/review-workflow.md) — feature PR เข้า sprint staging, คู่ทีม review/merge, release PR เข้า main และตรวจ final-main ก่อนสรุปรายงาน
+A CPE 334 reading habit tracker, theme 8. Managers create activity templates; participants set personal reading goals, record daily minutes and retrieve saved progress. Participant histories remain private from other participants and managers.
 
-สถานะ 4 Nov2026 หลัง A review: PR3/6/7 approvedและmergedเข้าstagingแล้ว; accepted integration85f510f. F02มี66API/unit+16browser และงานรวมมี117API/unit+24browser/build/restartผ่านทั้งหลักฐานBและA reviewer. ตรวจsourceของstagingตรงกับapplication/testsที่ผ่านแล้ว. ขั้นถัดไปคือreviewเอกสารสถานะและrelease PRจากstagingเข้าmain ก่อนfinal-main verification/D1PDF; CI/GCP/independent human UATยังpending. [Release readiness](docs/handoffs/sprint-1-release-readiness.md) / [B handoff](docs/handoffs/member-b-status.md) / [verification](docs/verification/member-b.md)
+## Current increment
 
-F02: manager creates templates, participant selects persisted catalog. F04: participant records minutes per goal/date, retrieves persisted progress (45/60=75%,75/60=125%), duplicate/concurrent/date/range/ownership enforced by API/PostgreSQL. Unknown POST outcome reconciles saved state before retry
+F-01 authentication/access, F-02 templates, F-03 goals and F-04 entries/progress are reviewed and integrated into `codex/sprint-1-staging` through PR3/6/7. Baseline: `85f510f0d73b84f39c08fbf3ef36e43b232bb044`. Latest feature verification: 117 API/unit and 24 desktop/mobile browser checks passed, zero failed/skipped; build and real API process restart passed. See [review/evidence](docs/reviews/pr-6-and-7-member-a.md). Reviewed main release and D1 PDF finalization are separate gates.
 
-## Reproduce B verification
+## Local setup
 
-Follow the original setup below with a private development database and a **different** TEST_DATABASE_URL marked test. Then run sequentially (both suites reset the guarded test DB):
-
-```sh
-npm run db:generate
-npm run db:test:migrate
-npm test
-npx playwright test --config playwright.member-b.config.ts
-npx tsx scripts/member-b-restart.ts
-npm run build
-```
-
-B browser config uses isolated3310/5310 ports; Windows uses installed Edge as the A config does. Other platforms need Playwright Chromium installed. No package/lockfile/schema/auth changes are required by B features. Do not point tests at development/A databases
-
-On this machine only: B dev DB is separate from test, ignored .env uses API5300/UI3300 and loopback26433. Start API with `npm run dev:server`; start UI with `API_PROXY_TARGET=http://127.0.0.1:5300` and `npm run dev:client -- --port 3300`. Windows PowerShell: set `$env:API_PROXY_TARGET='http://127.0.0.1:5300'` before the UI command. Seed accounts manager@studytrack.test/student1@studytrack.test/student2@studytrack.test use generated passwords from private .env; never print/commit them
-
-## Original A setup and historical verification
-
-# StudyTrack — CPE 334 reading goals
-
-สถานะ: มี implementation ฝั่ง A (foundation, F-01 authentication และ F-03 personal goals) บน `codex/member-a-sprint1` พร้อมหลักฐาน local tests; ยังรอ teammate review และรวม F-02/F-04 จาก B จึงยังไม่ใช่ accepted Sprint 1 release
-
-ชื่อ StudyTrack เป็นชื่อทำงานชั่วคราว หัวข้อที่เสนอคือหัวข้อ 8: Habit and Activity Tracking System ในบริบทการติดตามเป้าหมายอ่านหนังสือ
-
-## เริ่มรันในเครื่อง
-
-Prerequisites: Node.js 22.12+ (พัฒนารอบนี้ด้วย 24.14), npm, Git, Docker Desktop ที่เปิด Linux engine. PostgreSQL 17 ใช้ container แยก dev/test บน loopback ports 25432/25433; ไม่มีการใช้ database ของ TokTickIT
+Prerequisites: Git, Node.js >=22.12, npm, Docker Desktop Linux engine, and a browser for Playwright. Default loopback ports: DB25432/25433, UI3000, API5000.
 
 ```sh
 npm ci
@@ -45,83 +20,50 @@ npm run db:seed
 npm run dev
 ```
 
-เปิด UI ตาม `APP_ORIGIN` ใน `.env` (ค่าเริ่มต้น **http://localhost:3000**), API health ที่ http://127.0.0.1:5000/api/health. เครื่อง A รอบนี้ใช้ **http://127.0.0.1:3000** เพื่อแยกจาก service ที่ฟัง wildcard localhost อยู่แล้ว Origin ต้องตรงกับค่าที่ตั้ง. `setup:local` สร้าง `.env`/`.env.test.local` พร้อม generated passwords โดยไม่พิมพ์ค่าออกมาและไม่เขียนทับไฟล์เดิม ถ้าตั้งค่าเองให้เริ่มจาก `.env.example`/`.env.test.example`; อย่าใช้ CHANGE_ME จริง
+Open APP_ORIGIN in private `.env` (default http://localhost:3000). API health: http://127.0.0.1:5000/api/health. Setup generates ignored `.env`/`.env.test.local` with random passwords, prints no values and preserves existing files. Manual configuration uses `.env.example`/`.env.test.example`; replace placeholders.
 
-| Local synthetic account | Password source (private .env) | Role |
+If UI/API ports are occupied, set APP_ORIGIN=http://127.0.0.1:3400 and PORT=5400 in `.env`, start `npm run dev:server`, and in a second PowerShell terminal:
+
+```powershell
+$env:API_PROXY_TARGET='http://127.0.0.1:5400'
+npm run dev:client -- --port 3400
+```
+
+Use exactly the configured origin. If DB ports are occupied, update Compose port mappings and matching URLs consistently, or configure a separate PostgreSQL instance. Never reuse another project's database.
+
+| Synthetic account | Role | Private password source |
 |---|---|---|
-| manager@studytrack.test | SEED_MANAGER_PASSWORD | PROGRAM_MANAGER |
-| student1@studytrack.test | SEED_PARTICIPANT_PASSWORD | PARTICIPANT |
-| student2@studytrack.test | SEED_PARTICIPANT_PASSWORD | PARTICIPANT |
+| manager@studytrack.test | PROGRAM_MANAGER | SEED_MANAGER_PASSWORD in .env |
+| student1@studytrack.test | PARTICIPANT | SEED_PARTICIPANT_PASSWORD in .env |
+| student2@studytrack.test | PARTICIPANT | SEED_PARTICIPANT_PASSWORD in .env |
 
-Seed ทำซ้ำไม่สร้างบัญชีซ้ำและไม่เปลี่ยนรหัสผ่านของบัญชีที่มีอยู่แล้ว มีสองแม่แบบสำหรับทดสอบ goal picker อย่านำรหัสผ่าน/DB credentials/session tokens ไปใส่รายงาน Git หรือ screenshot
+Seed creates three accounts/two templates. Reruns preserve existing records and passwords without duplicates. Read passwords privately; never put them in Git/reports. No self-registration/recovery in Sprint1.
 
-## Build และทดสอบ
+## Build and verification
 
 ```sh
 npm run db:test:migrate
 npm test
 npm run build
-npm run verify:restart
-npm run test:e2e
+npx playwright test --config playwright.member-b.config.ts
+npx tsx scripts/member-b-restart.ts
 ```
 
-Vitest/API tests และ Playwright ใช้ `TEST_DATABASE_URL` ที่มี database test marker และแยกจาก dev เท่านั้น รวมการตรวจ localhost/127.0.0.1 aliases. Test setup ล้างข้อมูลใน test database เพื่อให้แต่ละรอบทำซ้ำได้ อย่ารัน Vitest กับ browser suite พร้อมกันบน test DB เดียว
+Run DB suites sequentially. They reset only TEST_DATABASE_URL, which must have a test marker and differ from development. The guard normalizes localhost case/root dot/loopback aliases. Never point tests at dev/production.
 
-Browser suite ใช้ Microsoft Edge ที่ติดตั้งไว้บน Windows; บน Linux/macOS ใช้ `npx playwright install chromium` ก่อนรัน หรือกำหนด `PLAYWRIGHT_CHANNEL` ตาม browser ที่ติดตั้ง ทดสอบ UI/API จริงที่ ports 3100/5100 พร้อม CSRF/Origin config แยกจาก dev. หลักฐานอยู่ใน `artifacts/evidence/member-a/` และรายละเอียด/coverage gaps ใน [verification record](docs/verification/member-a.md)
+Combined browser config runs all A+B journeys at 1440x900 and 390x844, on 3310/5310, using installed Edge on Windows. Linux/macOS: `npx playwright install chromium`, or set PLAYWRIGHT_CHANNEL for an installed supported browser. `npm run test:e2e` also discovers all journeys, using 3100/5100 and the historical A output path. Runs may overwrite generated screenshots/JSON; committed evidence identifies recorded runs.
 
-`verify:restart` ใช้ guarded test DB สร้างข้อมูลสังเคราะห์เฉพาะรอบ หยุดและเริ่ม API process จริง ตรวจ session/goal/target persistence แล้วลบเฉพาะข้อมูลของรอบนั้น ไม่ใช่หลักฐาน GCP redeployment ซึ่งยังเป็น Lab 5
+B restart smoke actually stops/starts the API and checks saved session/template/goal/entry/progress, then removes only its own synthetic rows. `npm run verify:restart` is the earlier A session/goal/target smoke. Neither proves cloud redeployment.
 
-ผล local verification รอบนี้: API/unit38 ผ่าน, browser10 ผ่าน, failed/skipped0; build และ real process restart ผ่าน; npm audit0 vulnerabilities. Source/command versions ระบุใน `artifacts/evidence/member-a/execution.json` รวมการตรวจว่า backend ไม่เปลี่ยนหลัง API run; ยังไม่ใช่ teammate approval หรือ full Sprint1 acceptance
+Production: build, then `npm start` with NODE_ENV=production, durable PostgreSQL, HTTPS ingress and configured environment. Express serves built UI and API; production cookies require HTTPS. Docker app packaging/CI/GCP is Lab5 work.
 
-## ขอบเขตที่มีใน branch นี้
+## Domain demonstration
 
-- login/logout/current user, rotated DB sessions, Argon2id, CSRF/Origin checks, server-side role/ownership
-- own goals create/list/detail, initial target version, immutable template snapshots, date/range validation, concurrent active-goal protection
-- React login/goals/catalog read views พร้อม loading/empty/errors/retry และ layouts desktop/mobile
-- read-only template API/selector เป็น integration adapter ให้ F-03; B เป็นเจ้าของ manager-create/UI และ F-04 entries/progress ซึ่งยังไม่ได้รวม ไม่มีการอ้างว่าทำ full Sprint 1 journey ครบแล้ว
+Manager creates template1..1440 and signs out. Student1 selects it, sets target60/start today (Bangkok), records45 and retrieves75% after reload. Duplicate goal/date entry409 preserves the first row; future/out-of-range values reject. Student2 cannot read student1's goal/entries404; manager cannot use participant APIs403. Logout revokes the session401.
 
-ดู [handoff ฝั่ง A](docs/handoffs/member-a-implementation.md) สำหรับไฟล์/shared interfaces ที่ B ใช้ต่อได้
+## Engineering and team
 
-โฟลเดอร์นี้แยกจาก TokTickIT เดิม เอกสารเป็นข้อเสนอการวางแผน ยังไม่ใช่การอนุมัติจากเพื่อน อาจารย์ หรือ TA
+[SRS](docs/srs.md), [inventory](docs/features.md), [traceability](docs/traceability.md), [SDS](docs/system-sds.md), [plan](docs/sprints/plan.md), [contracts](docs/sprints/sprint-1/), [review workflow](docs/review-workflow.md), [team plan](docs/team-plan.md), [AI use](docs/ai-use.md). A=auto4496 (F01/F03/foundation); B=Datakung (F02/F04); both review the other and share design/testing/integration. [Board](https://github.com/users/auto4496/projects/2). Historical documents retain source-specific snapshots; use latest review/release records for current acceptance.
 
-Repository กลาง (private): [auto4496/studytrack](https://github.com/auto4496/studytrack). สมาชิก A คือ auto4496, B คือ Datakung (ส่งคำเชิญ repository แบบ Write แล้ว). [Project board](https://github.com/users/auto4496/projects/2) แยกจาก TokTickIT และให้ Datakung เป็น writer แล้ว
+D1: one self-contained A-F PDF with reviewed main release/local evidence, due 8 Nov2026 23:59 Asia/Bangkok. Docker/CI/GCP:15Nov; UAT:22Nov; D2/Lab7:29Nov; Final:13Dec. F05..08/cloud/UAT remain later work.
 
-ตรวจงานฝั่ง A ที่ [PR #3](https://github.com/auto4496/studytrack/pull/3) → `codex/sprint-1-staging`; ยังเปิดรอ peer review และยังไม่ได้ merge เข้า staging/main
-
-บันทึก pre-code documents ครั้งแรกที่ `11cdfe5`; TDD red ที่ `2fc6252` และ initial green ที่ `a13858f`. [Issue #1 F-01](https://github.com/auto4496/studytrack/issues/1), [Issue #2 F-03](https://github.com/auto4496/studytrack/issues/2). Initial docs บน main ไม่ใช่ product release. Feature PR ต้องให้คู่ทีม review ก่อนรวมเข้า `codex/sprint-1-staging` และ release ไป main
-
-สำหรับส่งต่อเพื่อนที่ใช้ Codex อีกเครื่อง อ่าน [ข้อความเริ่มงานฝั่งสมาชิก B](docs/friend-handoff.md) มี prompt พร้อมคัดลอกและรูปแบบส่งสถานะกลับ สมาชิก A/B ไม่เปลี่ยนตามผู้ที่เปิดไฟล์
-
-## เอกสารฝั่ง A ที่พร้อมตรวจ
-
-- [สถานะส่งต่อ A และงานถัดไปของ B](docs/handoffs/member-a-status.md)
-- [SRS: FR/BR/NFR และ scope ทั้งสาม Sprint](docs/srs.md)
-- [System-Level SDS: architecture/data/auth/permissions](docs/system-sds.md)
-- [ข้อเสนอ integration contract: APIs/DTOs/shared services](docs/integration-contract.md)
-- [F-01 Auth contract / AC / STS](docs/sprints/sprint-1/f01-auth.md)
-- [F-03 Goals contract / AC / STS](docs/sprints/sprint-1/f03-goals.md)
-- [Decision/open-item log](docs/decisions.md)
-- [AI-use record](docs/ai-use.md)
-
-Contracts เริ่มก่อน implementation; ผลทดสอบจริงอยู่ใน verification record และ artifacts แยกจากสเปก ยังไม่มีการอ้าง teammate approval ฝั่ง B ยังเป็นเจ้าของ features/traceability/sprint plan/UI conventions และ F-02/F-04 contracts
-
-## กำหนดส่ง
-
-ทุกเวลาเป็น Asia/Bangkok และกำหนดส่งภายนอกคือ 23:59 น.
-
-| งาน | วันส่ง 2026 |
-|---|---|
-| Deliverable 1 | 8 พฤศจิกายน |
-| Lab 5 | 15 พฤศจิกายน |
-| Lab 6 | 22 พฤศจิกายน |
-| Deliverable 2 และ Lab 7 | 29 พฤศจิกายน |
-| Final Delivery | 13 ธันวาคม |
-
-## เอกสารต้นทาง
-
-- `sources/group_work_specs_v1.pdf`
-- `sources/project_deliverable_1_v1.pdf`
-- `sources/project_deliverable_2_v1.pdf`
-- `sources/project_final_delivery_v1.pdf`
-
-เอกสารเหล่านี้ใช้เป็นข้อกำหนดของการส่งงาน ไม่ใช่หลักฐานว่าทีมได้ลงมือทำหรือผ่านการทดสอบแล้ว คำถามเรื่องความยาววิดีโอ Final (4 หรือ 10 นาที) และ rubric Final ที่ไม่ตรงกันต้องยืนยันกับอาจารย์/TA ก่อนจัดทำงานส่ง
