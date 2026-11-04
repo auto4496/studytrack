@@ -1,0 +1,19 @@
+
+ RUN  v5.1.0 C:/CPE/CPE334/Project/studytrack-f02-review-ready
+
+ ✓ server/tests/integration/goals.test.ts (19 tests) 2302ms
+ ✓ server/tests/integration/auth.test.ts (9 tests) 1083ms
+ ✓ server/tests/integration/templates.test.ts (16 tests) 1849ms
+ ✓ server/tests/unit/goal-rules.test.ts (3 tests) 4ms
+ ✓ server/tests/unit/template-rules.test.ts (10 tests) 6ms
+ ✓ server/tests/unit/test-db-guard.test.ts (9 tests) 4ms
+
+ Test Files  6 passed (6)
+      Tests  66 passed (66)
+   Start at  14:07:19
+   Duration  7.33s (tests 79%, import 17%, transform 3%, setup 1%)
+
+    Isolate  6 workers spawned · ~109ms startup each (spawn + environment, per file)
+             at least ~546ms faster with isolate: false — reuses workers across files instead of one per file
+
+JSON report written to C:/CPE/CPE334/Project/studytrack-f02-review-ready/artifacts/evidence/member-b/post-pr3-merge/f02/api-results.json

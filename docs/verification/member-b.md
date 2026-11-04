@@ -1,6 +1,10 @@
 # Member B verification ledger
 
-**Current:** source0b51571 verified locally:115 API/unit +24 browser checks, real process restart and build PASS; human review/accepted release/CI/GCP/UAT pending. The pre-implementation note below is historical.
+## Current F02 verification after PR3 merge — 4 November 2026
+
+Accepted staging1a4b74b merged into F02 without conflicts. Tested source5e340f8: **66 API/unit passes (A40+B26), 16 browser passes (A10+B6), 0 failures/skips, build and real API restart pass**. All DB-resetting checks ran sequentially against isolated studytrack_b_test. Current commands/results/screenshots and reviewer scope are in [F02 review handoff](../handoffs/f02-review-ready.md) and [execution metadata](../../artifacts/evidence/member-b/post-pr3-merge/f02/execution.json). A review/acceptance is pending; F04 and full Sprint1 release are separate. The earlier counts and temporary-dependency descriptions below are historical records from before PR3 acceptance.
+
+F04 prior-base verification at0b51571 (115 API/unit +24 browser, real restart/build PASS) is retained below. F04 checks on the updated dependency are recorded separately after execution; peer acceptance/release/CI/GCP/UAT remain pending.
 
 Pre-implementation: NOT RUN. Specs align A foundation2370df9. F02 depends temporarily on unmerged A PR3; F04 will depend on F02. No peer approval/accepted release/CI/GCP claims. Tests use isolated PostgreSQL studytrack_b_test on loopback26433, not A/dev DB. Runtime secrets in ignored env only. Actual evidence will be appended after execution with source commits/commands/counts/results and AC mapping
 
