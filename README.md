@@ -67,3 +67,7 @@ Manager creates template1..1440 and signs out. Student1 selects it, sets target6
 
 D1: one self-contained A-F PDF with reviewed main release/local evidence, due 8 Nov2026 23:59 Asia/Bangkok. Docker/CI/GCP:15Nov; UAT:22Nov; D2/Lab7:29Nov; Final:13Dec. F05..08/cloud/UAT remain later work.
 
+
+## Application Docker packaging (Lab 5)
+
+See [container quick start, environment and verification](docs/labs/lab-05/container.md). This is an isolated production-mode app/PostgreSQL/HTTPS stack; it preserves existing authentication and does not modify the development databases. CI/GCP remain separate work. Initial packaging validation is recorded after actual execution.
