@@ -1,0 +1,31 @@
+services:
+  db:
+    image: postgres:17-alpine3.22
+    environment:
+      POSTGRES_USER: studytrack
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+      POSTGRES_DB: studytrack_dev
+    ports: ["127.0.0.1:25432:5432"]
+    volumes: ["studytrack-dev-data:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U studytrack -d studytrack_dev"]
+      interval: 3s
+      timeout: 3s
+      retries: 30
+  db-test:
+    image: postgres:17-alpine3.22
+    profiles: [test]
+    environment:
+      POSTGRES_USER: studytrack
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+      POSTGRES_DB: studytrack_test
+    ports: ["127.0.0.1:25433:5432"]
+    volumes: ["studytrack-test-data:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U studytrack -d studytrack_test"]
+      interval: 3s
+      timeout: 3s
+      retries: 30
+volumes:
+  studytrack-dev-data:
+  studytrack-test-data:

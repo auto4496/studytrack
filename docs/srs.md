@@ -2,7 +2,7 @@
 
 Version: 0.1 — member A draft, 3 November 2026 (Asia/Bangkok)
 
-สถานะ: requirements baseline ที่เสนอเพื่อพัฒนาร่วมกัน ยังไม่มี teammate review, implementation, test execution หรือ accepted release เอกสารนี้เป็นรายละเอียดต่อจาก [project brief](project-brief.md); การตัดสินใจของทีมแยกจากข้อกำหนดรายวิชาใน [decision log](decisions.md)
+สถานะ ณ baseline v0.1: requirements ที่เสนอเพื่อพัฒนาร่วมกันก่อน implementation. อัปเดต 3 พฤศจิกายน: F-01/F-03 ฝั่ง A มี implementation/local verification แล้ว แต่ยังไม่มี teammate acceptance หรือ accepted product release ดู [ผลปัจจุบันและข้อจำกัด](verification/member-a.md). เอกสารนี้เป็นรายละเอียดต่อจาก [project brief](project-brief.md); การตัดสินใจของทีมแยกจากข้อกำหนดรายวิชาใน [decision log](decisions.md)
 
 ## 1. Purpose and context
 
@@ -28,7 +28,7 @@ Version: 0.1 — member A draft, 3 November 2026 (Asia/Bangkok)
 
 ## 4. Functional requirements
 
-ทุกข้อด้านล่างสถานะ PLANNED ผลจริงต้องเติมเมื่อมี implementation และ execution evidence แล้ว รหัสไม่เปลี่ยนเมื่อย้ายข้อความ/จัดหน้า
+ทุกข้อด้านล่างเป็น allocation ที่ PLANNED ณ ตอนเขียน baseline ผลจริงของ A increment อยู่ใน verification record ส่วน B จัดทำ full product traceability ต่อโดยไม่ถือว่า A pass หมายถึงทั้งผลิตภัณฑ์เสร็จ รหัสไม่เปลี่ยนเมื่อย้ายข้อความ/จัดหน้า
 
 | ID | Observable requirement | Feature / sprint |
 |---|---|---|
@@ -87,7 +87,7 @@ BR-01 ถึง BR-10 รักษาความหมายจาก project b
 | NFR-07 | repository/report/logs ไม่บันทึก real secrets, plaintext password หรือ session/CSRF tokens; config ใช้ env examples ที่เป็น placeholders | diff/config/log inspection ทุก release |
 | NFR-08 | local-date validation/progress ใช้ clock/timezone เดียวกัน; test ที่กำหนด clock ตรวจ 23:59/00:00 Bangkok, invalid dates, month/year transitions ให้ได้ expected results | unit + API cases Sprint 1; streak/summary extension S2/3 |
 
-ยังไม่มี PASS/measurement จริงทุกข้อ ไม่ได้กำหนด arbitrary performance SLA ที่ทีมไม่ได้วัด
+ผลจริงเฉพาะ A increment ดู verification record ข้อที่ยังรอ B/CI/GCP/UAT ยังคง incomplete ไม่ได้กำหนด arbitrary performance SLA ที่ทีมไม่ได้วัด
 
 ## 7. Assumptions and constraints
 

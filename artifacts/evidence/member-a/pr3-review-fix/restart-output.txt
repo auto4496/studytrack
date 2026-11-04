@@ -1,0 +1,5 @@
+
+> studytrack@0.1.0 verify:restart
+> tsx scripts/restart-smoke.ts
+
+PASS TEST-F03-02 / NFR-03: real API process stopped and restarted; session, goal and initial target persisted in PostgreSQL.

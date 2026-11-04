@@ -1,0 +1,77 @@
+{
+  "scope": "Member A foundation + F-01/F-03, not full accepted Sprint 1",
+  "sourceCommit": "016daba0aee6fb5a1361bb799dc7485faa6076c8",
+  "branch": "codex/member-a-sprint1",
+  "recordedAtUTC": "2026-11-03T08:51:24.301813+00:00",
+  "timezone": "Asia/Bangkok",
+  "preCodeCommit": "11cdfe5",
+  "redCommit": "2fc6252",
+  "initialGreenCommit": "a13858f",
+  "longTitleRedCommit": "e06f4e4",
+  "commands": [
+    {
+      "command": "npm test -- --reporter=verbose --reporter=json --outputFile=artifacts/evidence/member-a/final-results.json",
+      "sourceCommit": "c059044599287e2712527cd1864562a7ec109c0b",
+      "exitCode": 0,
+      "passed": 38,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "command": "npm run build",
+      "sourceCommit": "016daba0aee6fb5a1361bb799dc7485faa6076c8",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run test:e2e",
+      "sourceCommit": "016daba0aee6fb5a1361bb799dc7485faa6076c8",
+      "exitCode": 0,
+      "passed": 10,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "command": "npm run verify:restart",
+      "sourceCommit": "c059044599287e2712527cd1864562a7ec109c0b",
+      "exitCode": 0,
+      "result": "real API process restart preserves PostgreSQL session/goal/target"
+    },
+    {
+      "command": "npm audit --json",
+      "sourceCommit": "c059044599287e2712527cd1864562a7ec109c0b",
+      "exitCode": 0,
+      "vulnerabilities": 0
+    }
+  ],
+  "backendEquivalence": {
+    "from": "c059044599287e2712527cd1864562a7ec109c0b",
+    "to": "016daba0aee6fb5a1361bb799dc7485faa6076c8",
+    "unchangedPaths": [
+      "server",
+      "scripts",
+      "package.json",
+      "package-lock.json",
+      "vitest.config.ts",
+      "compose.yaml"
+    ],
+    "verification": "git diff --exit-code passed; subsequent changes were UI/e2e/docs only"
+  },
+  "browserViewports": [
+    [
+      1440,
+      900
+    ],
+    [
+      390,
+      844
+    ]
+  ],
+  "notYetVerified": [
+    "B manager template creation and entries/progress",
+    "independent B review/fresh checkout",
+    "accepted staging/main product release",
+    "GCP redeployment",
+    "independent UAT"
+  ],
+  "evidenceCommitPolicy": "subsequent changes may add docs/artifacts only; application/test/config source remains identical to sourceCommit"
+}

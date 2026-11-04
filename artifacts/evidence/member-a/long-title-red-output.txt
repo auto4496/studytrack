@@ -1,0 +1,67 @@
+
+> studytrack@0.1.0 test:e2e
+> playwright test --grep valid long activity --reporter=line
+
+
+[WebServer] (node:26920) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:17784) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:39940) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Environment variables loaded from .env
+Prisma schema loaded from server\prisma\schema.prisma
+Datasource "db": PostgreSQL database "studytrack_test", schema "public" at "127.0.0.1:25433"
+
+1 migration found in prisma/migrations
+
+
+No pending migrations to apply.
+
+Running 2 tests using 1 worker
+
+(node:16448) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[1/2] [desktop] › e2e\member-a.spec.ts:137:1 › NFR-06: a valid long activity title stays inside the goal detail viewport
+  1) [desktop] › e2e\member-a.spec.ts:137:1 › NFR-06: a valid long activity title stays inside the goal detail viewport 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      145 |   await page.goto(`/goals/${goal.id}`);
+      146 |   await expect(page.getByRole("heading", { name: "Reading".repeat(14), exact: true })).toBeVisible();
+    > 147 |   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+          |                                                                                                ^
+      148 | });
+      149 |
+        at C:\Users\User\studytrack\e2e\member-a.spec.ts:147:96
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\member-a-NFR-06-a-valid-lo-e1721-de-the-goal-detail-viewport-desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\member-a-NFR-06-a-valid-lo-e1721-de-the-goal-detail-viewport-desktop\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\member-a-NFR-06-a-valid-lo-e1721-de-the-goal-detail-viewport-desktop\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\member-a-NFR-06-a-valid-lo-e1721-de-the-goal-detail-viewport-desktop\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+(node:37248) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[2/2] [mobile] › e2e\member-a.spec.ts:137:1 › NFR-06: a valid long activity title stays inside the goal detail viewport
+  1 failed
+    [desktop] › e2e\member-a.spec.ts:137:1 › NFR-06: a valid long activity title stays inside the goal detail viewport 
+  1 passed (11.2s)

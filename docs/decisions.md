@@ -32,3 +32,8 @@ Version 0.1, 3 November 2026. ผู้ร่าง: member A assisted by Codex.
 ## Actual infrastructure events
 
 - 3 November 2026: ใช้ existing authenticated GitHub account `auto4496` สร้าง private repository `https://github.com/auto4496/studytrack` และ push initial pre-code documentation commit `11cdfe5` ไป main สำเร็จ เป็นการตั้งต้น repository ไม่ใช่ teammate-reviewed feature release; ไม่มีการเพิ่ม B เพราะยังไม่ทราบ username
+- Later 3 November: ผู้ใช้ระบุ B คือ Datakung และสั่งให้เชิญ; ส่ง repository Write invitation จริงแล้ว ต่อมาสร้าง private project board #2 และให้ Datakung project WRITER เพื่อใช้ติดตามงานร่วมกัน
+- Implementation round: A ใช้ `codex/member-a-sprint1` จาก sprint staging สำหรับ shared scaffold/F-01/F-03 ตาม Issues #1/#2 เนื่องจาก F-03 พึ่ง foundation ยังไม่ merge/release ไป main และไม่อ้าง self-review เป็น B approval
+- Read-only GET template adapter และ catalog selector ถูกทำเป็น dependency ของ F-03; B ยังเป็น owner ของ complete F-02 manager create/UI/tests และ F-04 entries/progress
+- Prisma 6.19.3 ใช้ `deepmerge-ts` override 8.0.0 เพื่อแก้ npm advisory ของ transitive config dependency โดยไม่ย้าย ORM major; migrate/generate/tests/build ต้องผ่านจริงหลังเปลี่ยน ไม่ใช้ audit fix --force
+- Database ports เปลี่ยนเป็น25432/25433 หลังตรวจพบ Windows reserved554xx ranges; ใช้ PostgreSQL17-alpine3.22 ที่มีบนเครื่อง สร้าง volumes/containers StudyTrack แยกจากงานเดิม

@@ -1,0 +1,89 @@
+
+> studytrack@0.1.0 test
+> vitest run --reporter=verbose --reporter=json --outputFile=artifacts/evidence/member-a/red-results.json
+
+
+ RUN  v5.1.0 C:/Users/User/studytrack
+
+ ✓ server/tests/integration/auth.test.ts > F-01 real PostgreSQL sessions > TEST-F01-01: salted Argon2id passwords and valid role identity 410ms
+ × server/tests/integration/auth.test.ts > F-01 real PostgreSQL sessions > TEST-F01-04: logout revokes the real DB session, replay fails, independent session survives 187ms
+   → expected 204 "No Content", got 501 "Not Implemented"
+ ✓ server/tests/integration/auth.test.ts > F-01 real PostgreSQL sessions > TEST-F01-03: absent/tampered and server-expired sessions return no private data 254ms
+ × server/tests/unit/goal-rules.test.ts > TEST-F03-07: Bangkok date boundaries and goal rules > accepts today/tomorrow including year rollover 7ms
+   → expected [Function] to not throw an error but 'Error: Goal rules are not implemented…' was thrown
+ × server/tests/unit/goal-rules.test.ts > TEST-F03-07: Bangkok date boundaries and goal rules > rejects invalid calendar dates, past/far-future dates and fractional/out-of-range targets 3ms
+   → expected error to match asymmetric matcher
+ ✓ server/tests/unit/goal-rules.test.ts > TEST-F03-07: Bangkok date boundaries and goal rules > uses Bangkok midnight, leap day and UTC date arithmetic without host timezone 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  server/tests/integration/auth.test.ts > F-01 real PostgreSQL sessions > TEST-F01-04: logout revokes the real DB session, replay fails, independent session survives
+Error: expected 204 "No Content", got 501 "Not Implemented"
+ ❯ server/tests/integration/auth.test.ts:28:120
+     26|     const token = decodeURIComponent(raw.split('=')[1]);
+     27|     expect(await db.session.findUnique({ where: { tokenHash: digestTok…
+     28|     const loggedOut = await first.agent.post('/api/auth/logout').set('…
+       |                                                                                                                        ^
+     29|     expect(loggedOut.headers['set-cookie'][0]).toContain('Expires=Thu,…
+     30|     expect(await db.session.findUnique({ where: { tokenHash: digestTok…
+ ❯ Test._assertStatus node_modules/supertest/lib/test.js:404:14
+ ❯ node_modules/supertest/lib/test.js:460:13
+ ❯ Test._assertFunction node_modules/supertest/lib/test.js:437:13
+ ❯ Test.assert node_modules/supertest/lib/test.js:302:23
+ ❯ localAssert node_modules/supertest/lib/test.js:220:38
+ ❯ Server.<anonymous> node_modules/supertest/lib/test.js:227:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  server/tests/unit/goal-rules.test.ts > TEST-F03-07: Bangkok date boundaries and goal rules > accepts today/tomorrow including year rollover
+AssertionError: expected [Function] to not throw an error but 'Error: Goal rules are not implemented…' was thrown
+
+- Expected:
+undefined
+
++ Received:
+"Error: Goal rules are not implemented yet."
+
+ ❯ server/tests/unit/goal-rules.test.ts:8:116
+      6|   const bounds = { minMinutes: 1, maxMinutes: 1440 };
+      7|   it('accepts today/tomorrow including year rollover', () => {
+      8|     expect(() => validateGoalRules({ dailyTargetMinutes: 60, startDate…
+       |                                                                                                                    ^
+      9|     expect(() => validateGoalRules({ dailyTargetMinutes: 60, startDate…
+     10|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  server/tests/unit/goal-rules.test.ts > TEST-F03-07: Bangkok date boundaries and goal rules > rejects invalid calendar dates, past/far-future dates and fractional/out-of-range targets
+AssertionError: expected error to match asymmetric matcher
+
+- Expected
++ Received
+
+- ObjectContaining {
+-   "code": "VALIDATION_ERROR",
+-   "status": 422,
++ ApiError {
++   "message": "Goal rules are not implemented yet.",
++   "status": 501,
++   "code": "NOT_IMPLEMENTED",
++   "fields": undefined,
+  }
+
+ ❯ server/tests/unit/goal-rules.test.ts:13:106
+     11|   it('rejects invalid calendar dates, past/far-future dates and fracti…
+     12|     for (const date of ['2026-02-30', '2026-11-02', '2026-11-05']) {
+     13|       expect(() => validateGoalRules({ dailyTargetMinutes: 60, startDa…
+       |                                                                                                          ^
+     14|     }
+     15|     for (const target of [0, 1441, 1.5]) {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  3 failed | 3 passed (6)
+   Start at  15:10:30
+   Duration  2.84s (import 51%, tests 38%, transform 8%, setup 2%, worker 1%)
+
+JSON report written to C:/Users/User/studytrack/artifacts/evidence/member-a/red-results.json
