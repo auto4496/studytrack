@@ -30,6 +30,8 @@ PR เข้า staging ต้องเชื่อม Issue อย่างช�
 
 ## 3. พา PR ปัจจุบันกลับเข้า flow
 
+**อัปเดต 4 พ.ย. 2026:** B ส่ง [APPROVED ของ PR3](https://github.com/auto4496/studytrack/pull/3#pullrequestreview-5764429004) ที่94156cfหลังตรวจ P2 correction แล้ว PR3ยังOPEN/ไม่merge จึงยังรอmergeเข้าstagingก่อนปรับฐาน PR6/7. ตารางด้านล่างเก็บ snapshot วันที่3พ.ย.ก่อนการแก้และอนุมัติไว้ ดู [review ล่าสุด](reviews/pr-3-member-b.md)
+
 สถานะต่อไปนี้ตรวจ GitHub วันที่ 3 พฤศจิกายน 2026; เป็น snapshot ไม่ใช่สถานะสดตลอดเวลา
 
 | PR | สถานะและ base ที่ตรวจพบ | ขั้นตอนต่อไป |

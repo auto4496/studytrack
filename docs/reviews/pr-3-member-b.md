@@ -1,5 +1,19 @@
 # PR #3 — B independent review
 
+## Re-review — 4 พฤศจิกายน 2026
+
+ส่ง [APPROVED review ของ B](https://github.com/auto4496/studytrack/pull/3#pullrequestreview-5764429004) ด้วยบัญชี Datakung ตามคำสั่งผู้ใช้แล้ว ที่ exact head `94156cf230d9de0783170047078d6cdcd539524f`. P2 เดิมแก้ครบใน d2efada: normalize hostname เป็น lowercase และตัด trailing DNS dot ก่อน map loopback ทั้งสอง URL พร้อมเพิ่ม regression cases. ตรวจ correction delta แล้วไม่พบ blocking finding ค้างในขอบเขต PR3
+
+B ทดสอบบน head นี้วันที่ 3 พ.ย.: guard suite 9/9 ผ่าน และ alias probes เดิม 2/2 ผ่าน; ยืนยัน head ไม่เปลี่ยนก่อนส่ง review วันที่ 4 พ.ย. จึงใช้ผลเดิมโดยไม่อ้างว่ารันใหม่ เก็บ [guard JSON](../../artifacts/evidence/member-b/pr3-rereview/guard-results.json) และ [execution/review metadata](../../artifacts/evidence/member-b/pr3-rereview/execution.json)
+
+ตรวจหลักฐานที่ A แนบเพิ่มด้วย: red 7pass/2fail → green9pass, API/unit40pass, browser10pass, build/restartผ่านที่ source d2efada. ผลชุดเต็มเหล่านี้เป็นการรันของ A; B ไม่ได้รัน full suites บน correction ซ้ำ ส่วน B original38 API/unit+10browser/build/restartด้านล่างเป็นผลบน2370df9. การ review ใช้ Codex ช่วยตามคำสั่ง B และระบุขอบเขตนี้ใน review จริงแล้ว
+
+สถานะหลังส่ง: PR3 OPEN / APPROVED / mergedAt=null. รอ merge เข้า sprint staging ก่อน sync/retarget PR6 และ PR7; รอบนี้ส่ง review เท่านั้น ไม่ merge หรือเปลี่ยนฐาน PR ใด และยังไม่ใช่ Sprint1 accepted release
+
+## ประวัติ review รอบแรก — 3 พฤศจิกายน 2026
+
+ข้อความต่อไปนี้เป็นบันทึกก่อน A แก้และก่อน approval ข้างต้น เก็บผล fail และ Request changes เดิมไว้เป็นหลักฐาน
+
 วันที่ 3 พฤศจิกายน 2026 (Asia/Bangkok). Review source `2370df9d760862a2c96aead7c70eb63762bb7192`, base `codex/sprint-1-staging` at42b9eb2. Codex-assisted review ตามคำสั่งสมาชิก B; ไม่ใช่ approval หรือ accepted release
 
 **ส่ง [Request changes review จริง](https://github.com/auto4496/studytrack/pull/3#pullrequestreview-5752031354) ด้วย Datakung แล้ว** พร้อม inline findingที่ scripts/test-env.mjs line37. PR6/F02 และ PR7/F04ยังเป็นdraft; ต้องแก้/review PR3ก่อนรับ foundation และ retarget/rebase Bงานไปaccepted stagingตามลำดับ

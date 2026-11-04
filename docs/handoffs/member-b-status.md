@@ -2,7 +2,7 @@
 
 > Workflow ตาม TokTickIT: อ่าน flow และตรวจประวัติ contract PR45/release PR51 แล้ว เพิ่ม [ขั้นตอนส่งตรวจร่วมกัน](../review-workflow.md). A เขียนให้ B review และ B เขียนให้ A review ใน repo เดียว; feature PR ต้องเข้า sprint staging แล้วค่อย reviewed release ไป main. ใช้ PR6/7 เดิมได้ แต่หลัง dependency ผ่านต้อง sync/retarget ไป staging, รันทดสอบบน SHA ใหม่ และให้ A review ก่อน merge. ผลเดิมไม่ใช่ผลตรวจฐานใหม่ และยังไม่มี A approval ของ B contracts/implementation
 
-> อัปเดตลำดับ review: [PR3 review ของ B](https://github.com/auto4496/studytrack/pull/3#pullrequestreview-5752031354) เป็น CHANGES_REQUESTED ที่2370df9 เนื่องจากP2 test-DB guardไม่normalize LOCALHOST/localhost.; original38 API+10browser/build/restartผ่าน แต่2guard regressionsเพิ่มเติมfail. ดู [reviewพร้อมหลักฐาน](../reviews/pr-3-member-b.md). ต้องแก้และรับPR3ก่อนreview/integrate PR6→PR7; ทั้งคู่ยังdraft ไม่มีmergeใดในรอบreviewนี้
+> อัปเดต 4 พ.ย. 2026: B ส่ง [APPROVED re-review ของ PR3](https://github.com/auto4496/studytrack/pull/3#pullrequestreview-5764429004) ที่94156cfแล้ว; P2 localhost aliases แก้ครบในd2efada. B focused verification บนheadนี้วันที่3พ.ย.ผ่าน9guard testsและ2alias probes; ตรวจheadยังเดิมก่อนส่งreview. หลักฐานชุดเต็ม40API/unit+10browser/build/restartที่เพื่อนแนบเป็นผลของ A ไม่ใช่ B รันซ้ำ ดู [reviewพร้อมหลักฐานและประวัติเดิม](../reviews/pr-3-member-b.md). PR3ยังOPEN/ไม่merge; รอmergeเข้าstagingก่อนsync/retarget PR6→PR7ซึ่งยังdraft
 
 
 วันที่ 3 พฤศจิกายน 2026 (Asia/Bangkok) | Revision B-implementation-01
