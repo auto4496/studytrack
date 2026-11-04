@@ -34,5 +34,9 @@ export function validateTestDatabaseUrl(value, developmentValue) {
 }
 
 function normalizedHost(host) {
-  return ["localhost", "127.0.0.1", "[::1]"].includes(host) ? "loopback" : host;
+  // DNS hostnames are case-insensitive; a terminal root dot names the same host.
+  const normalized = host.toLowerCase().replace(/\.$/, "");
+  return ["localhost", "127.0.0.1", "[::1]"].includes(normalized)
+    ? "loopback"
+    : normalized;
 }
