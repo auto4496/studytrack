@@ -1,0 +1,140 @@
+
+> studytrack@0.1.0 test
+> vitest run server/tests/integration/entries.test.ts server/tests/unit/entry-rules.test.ts --reporter=default --reporter=json --outputFile=artifacts/evidence/member-b/f04-green-results.json
+
+
+ RUN  v5.1.0 C:/CPE/CPE334/Project/studytrack-member-b
+
+ ❯ server/tests/integration/entries.test.ts (30 tests | 5 failed) 3539ms
+   ❯ F-04 persisted daily entries, date-effective progress and privacy (30)
+     × TEST-F04-01/02: committed entry and progress survive a fresh request/app; empty day has no phantom row 207ms
+     ✓ TEST-F04-04: API computes 45/60 = 75 percent, achieved=false 110ms
+     ✓ TEST-F04-04: API computes 75/60 = 125 percent, achieved=true 117ms
+     ✓ TEST-F04-04: API computes 60/60 = 100 percent, achieved=true 111ms
+     ✓ TEST-F04-04: API computes 1/32 = 3.13 percent, achieved=false 108ms
+     ✓ TEST-F04-06: invalid date 2026-11-02 rejects with 422 and no write 111ms
+     ✓ TEST-F04-06: invalid date 2026-11-04 rejects with 422 and no write 108ms
+     ✓ TEST-F04-06: invalid date 2026-02-30 rejects with 422 and no write 108ms
+     ✓ TEST-F04-06: invalid date 2026-02-29 rejects with 422 and no write 104ms
+     ✓ TEST-F04-06: invalid date 03/11/2026 rejects with 400 and no write 113ms
+     ✓ TEST-F04-06: invalid date 2026-11-03T00:00:00Z rejects with 400 and no write 102ms
+     × TEST-F04-06: query/missing dates and Bangkok midnight obey inclusive start/today bounds 95ms
+     ✓ TEST-F04-08: invalid minutes 0 reject using snapshot bounds 91ms
+     ✓ TEST-F04-08: invalid minutes -1 reject using snapshot bounds 92ms
+     ✓ TEST-F04-08: invalid minutes 29 reject using snapshot bounds 93ms
+     ✓ TEST-F04-08: invalid minutes 121 reject using snapshot bounds 94ms
+     ✓ TEST-F04-08: invalid minutes 1441 reject using snapshot bounds 107ms
+     ✓ TEST-F04-08: invalid minutes 1.5 reject using snapshot bounds 90ms
+     ✓ TEST-F04-08: invalid minutes 60 reject using snapshot bounds 91ms
+     ✓ TEST-F04-08: invalid minutes true reject using snapshot bounds 90ms
+     ✓ TEST-F04-08: invalid minutes null reject using snapshot bounds 94ms
+     ✓ TEST-F04-08: invalid minutes undefined reject using snapshot bounds 90ms
+     × TEST-F04-08: snapshot endpoints 1 and 1440 are accepted 104ms
+     ✓ TEST-F04-09: serial duplicate never overwrites and another participant can record the same day 175ms
+     ✓ TEST-F04-10: competing API writes get one201/one409 backed by exactly one database row 119ms
+     ✓ TEST-F04-11: all entry/progress routes reject anonymous/manager/cross-owner without revealing private data 318ms
+     ✓ TEST-F04-12: bad CSRF/origin and logout replay cannot write or retrieve protected entries 130ms
+     ✓ TEST-F04-13: unknown derived/owner fields reject; database failure safely rolls back 167ms
+     × TEST-F04-14: effective targets and immutable snapshot ranges preserve historical progress 96ms
+     × TEST-F04-14: archived goal accepts historical dates through endDate, rejects later dates 100ms
+ ✓ server/tests/unit/entry-rules.test.ts (19 tests) 6ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 5 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  server/tests/integration/entries.test.ts > F-04 persisted daily entries, date-effective progress and privacy > TEST-F04-01/02: committed entry and progress survive a fresh request/app; empty day has no phantom row
+Error: expected 200 "OK", got 401 "Unauthorized"
+ ❯ server/tests/integration/entries.test.ts:99:8
+     97|     const empty = await session.agent
+     98|       .get(`/api/goals/${own.id}/progress?date=2026-11-04`)
+     99|       .expect(200);
+       |        ^
+    100|     expect(empty.body.data).toMatchObject({
+    101|       actualMinutes: 0,
+ ❯ Test._assertStatus node_modules/supertest/lib/test.js:404:14
+ ❯ node_modules/supertest/lib/test.js:460:13
+ ❯ Test._assertFunction node_modules/supertest/lib/test.js:437:13
+ ❯ Test.assert node_modules/supertest/lib/test.js:302:23
+ ❯ localAssert node_modules/supertest/lib/test.js:220:38
+ ❯ Server.<anonymous> node_modules/supertest/lib/test.js:227:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/5]⎯
+
+ FAIL  server/tests/integration/entries.test.ts > F-04 persisted daily entries, date-effective progress and privacy > TEST-F04-06: query/missing dates and Bangkok midnight obey inclusive start/today bounds
+Error: expected 422 "Unprocessable Entity", got 401 "Unauthorized"
+ ❯ server/tests/integration/entries.test.ts:177:51
+    175|         .expect(422);
+    176|     clock.instant = new Date("2026-11-03T16:59:59.999Z");
+    177|     await post(session, own.id, 45, "2026-11-04").expect(422);
+       |                                                   ^
+    178|     clock.instant = new Date("2026-11-03T17:00:00.000Z");
+    179|     await post(session, own.id, 45, "2026-11-04").expect(201);
+ ❯ Test._assertStatus node_modules/supertest/lib/test.js:404:14
+ ❯ node_modules/supertest/lib/test.js:460:13
+ ❯ Test._assertFunction node_modules/supertest/lib/test.js:437:13
+ ❯ Test.assert node_modules/supertest/lib/test.js:302:23
+ ❯ localAssert node_modules/supertest/lib/test.js:220:38
+ ❯ Server.<anonymous> node_modules/supertest/lib/test.js:227:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/5]⎯
+
+ FAIL  server/tests/integration/entries.test.ts > F-04 persisted daily entries, date-effective progress and privacy > TEST-F04-08: snapshot endpoints 1 and 1440 are accepted
+Error: expected 201 "Created", got 401 "Unauthorized"
+ ❯ server/tests/integration/entries.test.ts:204:53
+    202|     await post(session, own.id, 1).expect(201);
+    203|     clock.instant = new Date("2026-11-04T05:00:00Z");
+    204|     await post(session, own.id, 1440, "2026-11-04").expect(201);
+       |                                                     ^
+    205|   });
+    206|
+ ❯ Test._assertStatus node_modules/supertest/lib/test.js:404:14
+ ❯ node_modules/supertest/lib/test.js:460:13
+ ❯ Test._assertFunction node_modules/supertest/lib/test.js:437:13
+ ❯ Test.assert node_modules/supertest/lib/test.js:302:23
+ ❯ localAssert node_modules/supertest/lib/test.js:220:38
+ ❯ Server.<anonymous> node_modules/supertest/lib/test.js:227:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/5]⎯
+
+ FAIL  server/tests/integration/entries.test.ts > F-04 persisted daily entries, date-effective progress and privacy > TEST-F04-14: effective targets and immutable snapshot ranges preserve historical progress
+Error: expected 201 "Created", got 401 "Unauthorized"
+ ❯ server/tests/integration/entries.test.ts:371:40
+    369|     clock.instant = new Date("2026-11-04T05:00:00Z");
+    370|     expect(
+    371|       (await post(session, own.id, 75).expect(201)).body.data,
+       |                                        ^
+    372|     ).toMatchObject({ targetMinutes: 60, progressPercent: 125 });
+    373|     expect(
+ ❯ Test._assertStatus node_modules/supertest/lib/test.js:404:14
+ ❯ node_modules/supertest/lib/test.js:460:13
+ ❯ Test._assertFunction node_modules/supertest/lib/test.js:437:13
+ ❯ Test.assert node_modules/supertest/lib/test.js:302:23
+ ❯ localAssert node_modules/supertest/lib/test.js:220:38
+ ❯ Server.<anonymous> node_modules/supertest/lib/test.js:227:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/5]⎯
+
+ FAIL  server/tests/integration/entries.test.ts > F-04 persisted daily entries, date-effective progress and privacy > TEST-F04-14: archived goal accepts historical dates through endDate, rejects later dates
+Error: expected 201 "Created", got 401 "Unauthorized"
+ ❯ server/tests/integration/entries.test.ts:390:37
+    388|     });
+    389|     clock.instant = new Date("2026-11-04T05:00:00Z");
+    390|     await post(session, own.id, 45).expect(201);
+       |                                     ^
+    391|     await post(session, own.id, 45, "2026-11-04").expect(422);
+    392|     await session.agent
+ ❯ Test._assertStatus node_modules/supertest/lib/test.js:404:14
+ ❯ node_modules/supertest/lib/test.js:460:13
+ ❯ Test._assertFunction node_modules/supertest/lib/test.js:437:13
+ ❯ Test.assert node_modules/supertest/lib/test.js:302:23
+ ❯ localAssert node_modules/supertest/lib/test.js:220:38
+ ❯ Server.<anonymous> node_modules/supertest/lib/test.js:227:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/5]⎯
+
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  5 failed | 44 passed (49)
+   Start at  18:35:06
+   Duration  4.27s (tests 88%, import 9%, transform 3%)
+
+JSON report written to C:/CPE/CPE334/Project/studytrack-member-b/artifacts/evidence/member-b/f04-green-results.json

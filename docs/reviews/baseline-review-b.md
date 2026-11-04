@@ -75,3 +75,7 @@ B จะตรวจ SRS ของ A โดยเทียบ scope/exclusions �
 ## Updated review from central source — 3 November 2026
 
 User authorized B implementation. Read A SRS/System SDS/integration/F01/F03 contracts and implementation handoff at2370df9. Adopt source SRS IDs and A's actual /api, MINUTES, title100/description500, UUID, startDate, DTO/envelope/pagination and cookie/CSRF. B draft01 API differences reconciled in v0.2 before code; do not create auth/schema scaffold again. F04 follows SRS BR11 for historical archived bounds rather than draft01 active-only behavior. PR3 still pending human review; this document is specific AI-assisted interface/source review, not approval submitted as A/B on GitHub. No full code-security approval implied
+
+## B integration review evidence
+
+B reran A's38 API/unit and10 browser cases as part of final115/24 suite on0b51571; no A regression found in these executed cases. Inspected shared guards, error/validation shapes, snapshot/target lookup, transaction types and integration slots while adding B endpoints. Human B approval of A PR3 remains pending. Specific follow-ups for A: public health currently queries DB and uses data envelope; Lab5 readiness/smoke predicates need adaptation; clarify SystemSDS wording on malformed JSON (global parser400 before auth) versus well-formed unauthenticated protected requests401. These are scoped observations, not a complete security signoff. No auth/schema/lockfile changes by B

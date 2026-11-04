@@ -2,7 +2,7 @@
 
 วันที่: 3 พฤศจิกายน 2026 (Asia/Bangkok) | ผู้ร่าง: สมาชิก B | รุ่น: B-draft-01
 
-สถานะ: **PROPOSED / docs-only** ทุกช่วงและงานด้านล่างเป็นแผน ยังไม่มี release/test/review ที่ยืนยันแล้ว A = ผู้ร่าง SRS/data/auth/F-01/F-03; B = ผู้รับ handoff/F-02/F-04 ตาม [team-plan](../team-plan.md) ไม่สลับ A/B ตามผู้เปิดไฟล์
+สถานะ: **PROPOSED PLAN / local increment verified** ตารางวันและงานเป็นแผน; F01–04 มี local verificationแล้วตามหัวข้อ10 แต่ยังไม่มี accepted release/peer approval A = ผู้ร่าง SRS/data/auth/F-01/F-03; B = ผู้รับ handoff/F-02/F-04 ตาม [team-plan](../team-plan.md) ไม่สลับ A/B ตามผู้เปิดไฟล์
 
 ## 1. ฐานแผนและกำหนดส่งภายนอก
 
@@ -114,3 +114,7 @@ B ทำ contract/tests/implementation F-02/F-04 และช่วย F-01/F-03
 - WIF, image digest, migration job แยก, read-only smoke และ rollback เป็น recommended practices; หากใช้ kit ต้องปรับ paths/commands/cookie+CSRF ให้ตรง StudyTrack
 
 ส่วนเพิ่มนี้เป็นแผนและผลอ่านเอกสาร/metadata ยังไม่ใช่หลักฐานว่า Lab5 หรือ Sprint1 เสร็จแล้ว กำหนดส่ง D1 วันที่ 8 พ.ย. และ Lab5 วันที่ 15 พ.ย. เวลา 23:59 Asia/Bangkok คงตามโจทย์
+
+## 10. Implementation update — B
+
+3 Nov2026: F02/F04 are implemented locally on A PR3 foundation. Contract revision ee14477 preceded B code; Issues4/5 and branches codex/f02-templates → codex/f04-entries-progress track dependencies. Final source0b51571:115 API/unit +24 desktop/mobile checks pass; real process restart preserves entry/progress/session and build passes. Current dependency chain is temporary until A PR3 and B PRs are peer-reviewed/integrated into codex/sprint-1-staging, then reviewed release to main. Sprint1 is not accepted yet; D1PDF/CI/GCP/UAT remain separate pending work. See updated B handoff/verification for real references

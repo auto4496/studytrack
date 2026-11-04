@@ -1,0 +1,17 @@
+{
+  "dateBangkok": "2026-11-04",
+  "feature": "F02+F04",
+  "issue": 5,
+  "pullRequest": 7,
+  "testedSource": "afca38f99507f1fa7558f0070c154b4209410339",
+  "acceptedStaging": "1a4b74b8373999dd969a17400f649113596b649e",
+  "f02Dependency": "ec681e9c93e9baff10879c1564957e5221d7605d",
+  "integrationMethod": "Merged accepted staging via F02 into the existing F04 branch, then merged F02 evidence/docs. Two documentation conflicts resolved preserving F04 history and new F02 results; no application conflicts or code fixes needed.",
+  "database": {"host": "127.0.0.1", "port": 26433, "name": "studytrack_b_test", "separateDevelopmentDatabase": "studytrack_b_dev"},
+  "results": {"apiUnit": {"passed": 117, "failed": 0, "skipped": 0, "aRegression": 40, "bChecks": 77}, "browser": {"passed": 24, "failed": 0, "skipped": 0, "aRegression": 10, "bChecks": 14}, "build": "PASS", "restart": "PASS: session, manager-created template, goal, daily entry and 45/60=75% progress persisted"},
+  "commands": ["node node_modules/vitest/vitest.mjs run --reporter=default --reporter=json --outputFile=artifacts/evidence/member-b/post-pr3-merge/f04/api-results.json", "node node_modules/@playwright/test/cli.js test --config tmp/post-pr3-merge/playwright.config.ts", "npm run build", "node --import tsx scripts/member-b-restart.ts"],
+  "browserHarness": "Copy retained playwright-config.txt to ignored tmp/post-pr3-merge/playwright.config.ts. It extends normal B config, retains all tests/projects/webServers, and changes report/output locations with explicit absolute paths.",
+  "executionOrder": "API/unit, browser, build, then restart sequentially; no concurrent DB-resetting suites",
+  "historicalEvidence": "Current progress/recovery screenshots stored in screenshots/. Generated replacements of previously committed A/B screenshots restored to their original bytes.",
+  "status": "Local validation complete on accepted A foundation. PR6 awaits A review; PR7 remains draft based on F02 until PR6 is accepted. No accepted full Sprint1 release."
+}

@@ -1,0 +1,36 @@
+
+> studytrack@0.1.0 test
+> vitest run --reporter=default --reporter=json --outputFile=../integration-api-results.json
+
+
+ RUN  v5.1.0 C:/Users/User/toktickit/tmp/studytrack-b-review-20261104/integration
+
+ ✓ server/tests/integration/entries.test.ts (32 tests) 5925ms
+   ✓ F-04 persisted daily entries, date-effective progress and privacy (32)
+     ✓ TEST-F04-01/02: committed entry and progress survive a fresh request/app; empty day has no phantom row 413ms
+     ✓ TEST-F04-11: all entry/progress routes reject anonymous/manager/cross-owner without revealing private data 342ms
+ ✓ server/tests/integration/goals.test.ts (19 tests) 3628ms
+   ✓ F-03 persisted personal goals and backend permissions (19)
+     ✓ TEST-F03-01/07: creates goal and initial version atomically with immutable snapshots 350ms
+     ✓ TEST-F03-05: simultaneous requests store one ACTIVE goal and one target version 310ms
+     ✓ TEST-F01-05 / TEST-F03-06: role checks, ownership and collections are enforced on the real API 305ms
+ ✓ server/tests/integration/templates.test.ts (16 tests) 2395ms
+   ✓ F-02 manager templates, persistence and access (16)
+     ✓ TEST-F02-01/07: manager creates normalized template and a fresh app reads the committed row 325ms
+ ✓ server/tests/integration/auth.test.ts (9 tests) 1353ms
+   ✓ F-01 real PostgreSQL sessions (9)
+     ✓ TEST-F01-01: salted Argon2id passwords and valid role identity 303ms
+ ✓ server/tests/unit/entry-rules.test.ts (19 tests) 7ms
+ ✓ server/tests/unit/template-rules.test.ts (10 tests) 7ms
+ ✓ server/tests/unit/test-db-guard.test.ts (9 tests) 4ms
+ ✓ server/tests/unit/goal-rules.test.ts (3 tests) 4ms
+
+ Test Files  8 passed (8)
+      Tests  117 passed (117)
+   Start at  14:32:19
+   Duration  17.76s (tests 81%, import 16%, transform 2%, setup 1%)
+
+    Isolate  8 workers spawned · ~156ms startup each (spawn + environment, per file)
+             at least ~1.09s faster with isolate: false — reuses workers across files instead of one per file
+
+JSON report written to C:/Users/User/toktickit/tmp/studytrack-b-review-20261104/integration-api-results.json

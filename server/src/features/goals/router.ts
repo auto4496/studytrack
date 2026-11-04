@@ -10,6 +10,7 @@ import {
 import { todayBangkok } from "../../clock.js";
 import { pagination, parseUuid } from "../../validation.js";
 import { createGoal, goalDTO, requireOwnedGoal } from "./service.js";
+import { entriesRouter } from "../entries/router.js";
 
 const createInput = z.strictObject({
   templateId: z.string(),
@@ -62,5 +63,6 @@ export function goalsRouter(deps: Dependencies) {
     );
     res.json({ data: goalDTO(goal, todayBangkok(deps.clock)) });
   });
+  router.use("/:goalId", entriesRouter(deps));
   return router;
 }

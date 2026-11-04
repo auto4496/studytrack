@@ -32,7 +32,7 @@ export function goalDTO(goal: GoalWithTargets, today: string) {
 }
 
 export async function requireOwnedGoal(
-  db: PrismaClient,
+  db: Pick<PrismaClient, "goal">,
   goalId: string,
   userId: string,
 ) {
@@ -46,7 +46,7 @@ export async function requireOwnedGoal(
 
 // Call only after the feature has authorized access to the goal.
 export async function targetForDate(
-  db: PrismaClient,
+  db: Pick<PrismaClient, "goalTargetVersion">,
   goalId: string,
   date: string,
 ) {

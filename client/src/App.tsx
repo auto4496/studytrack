@@ -14,6 +14,7 @@ import { GoalForm } from "./features/goals/GoalForm";
 import { GoalDetail } from "./features/goals/GoalDetail";
 import { TemplateCatalog } from "./features/templates/TemplateCatalog";
 import { TemplateForm } from "./features/templates/TemplateForm";
+import { DailyActivity } from "./features/entries/DailyActivity";
 import type { Role } from "./api";
 
 function Protected({ role }: { role?: Role }) {
@@ -56,7 +57,10 @@ function AppRoutes() {
           <Route element={<Protected role="PARTICIPANT" />}>
             <Route path="goals" element={<GoalList />} />
             <Route path="goals/new" element={<GoalForm />} />
-            <Route path="goals/:goalId" element={<GoalDetail />} />
+            <Route
+              path="goals/:goalId"
+              element={<GoalDetail ActivityComponent={DailyActivity} />}
+            />
             <Route path="templates" element={<TemplateCatalog />} />
           </Route>
           <Route element={<Protected role="PROGRAM_MANAGER" />}>
