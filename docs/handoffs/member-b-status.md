@@ -1,23 +1,23 @@
 # Member B status — implementation handoff
 
-> อัปเดต 4 พฤศจิกายน 2026: PR3 merge เข้า staging1a4b74bแล้ว. PR6/F02 ปรับเข้า staging และ ready for A review: source5e340f8ผ่าน66API/unit+16browser/build/restart ดู [F02 ส่ง A ตรวจ](f02-review-ready.md). PR7/F04 sync dependencyแล้ว sourceafca38fผ่าน117API/unit+24browser/build/restart แต่ยังdraft/base F02จนกว่าPR6ผ่านและmerge. [ผลใหม่และหลักฐาน](../verification/member-b.md)
+> อัปเดตหลัง A review 4 พฤศจิกายน 2026: PR6และPR7 APPROVED/ MERGEDแล้ว ไม่มีblocking findings; stagingล่าสุด85f510f. Issue4/5 CLOSED. Bตรวจsourceตรงกับที่ผ่าน117API/unit+24browser/build/restartและตรวจraw reportsของAแล้ว. ขั้นต่อไปคือ [release readiness](sprint-1-release-readiness.md), reviewเอกสารรอบนี้และrelease PRเข้าmain; ยังไม่accepted main release
 
-> Workflow ตาม TokTickIT: อ่าน flow และตรวจประวัติ contract PR45/release PR51 แล้ว เพิ่ม [ขั้นตอนส่งตรวจร่วมกัน](../review-workflow.md). A เขียนให้ B review และ B เขียนให้ A review ใน repo เดียว; feature PR ต้องเข้า sprint staging แล้วค่อย reviewed release ไป main. ใช้ PR6/7 เดิมได้ แต่หลัง dependency ผ่านต้อง sync/retarget ไป staging, รันทดสอบบน SHA ใหม่ และให้ A review ก่อน merge. ผลเดิมไม่ใช่ผลตรวจฐานใหม่ และยังไม่มี A approval ของ B contracts/implementation
+> Workflow ตาม TokTickIT: Aเขียนให้B review และBเขียนให้A reviewในrepoเดียว. PR3/6/7เดินครบ review/mergeเข้าstagingแล้ว; releaseจากstagingไปmainยังต้องได้รับreviewแยก ดู [workflow](../review-workflow.md)
 
 > ประวัติ PR3: B ส่ง [APPROVED re-review](https://github.com/auto4496/studytrack/pull/3#pullrequestreview-5764429004) ที่94156cfหลังแก้P2 แล้ว PR3 mergeเมื่อ4พ.ย.เข้าstagingที่1a4b74b. ผลก่อนmergeและขอบเขตการตรวจแยกจากผลทดสอบงาน B บนฐานใหม่ใน [review history](../reviews/pr-3-member-b.md)
 
 
-วันที่ 4 พฤศจิกายน 2026 (Asia/Bangkok) | Revision B-after-PR3-merge
+วันที่ 4 พฤศจิกายน 2026 (Asia/Bangkok) | Revision B-after-peer-acceptance
 
-**สมาชิก B = ผู้ใช้/Datakung, A = เพื่อนร่วมทีม/auto4496.** F02/F04 มี implementation และ local verification แล้ว พร้อมให้ A review; ยังไม่ใช่ accepted release และยังไม่ได้รวมเข้า main
+**สมาชิก B = ผู้ใช้/Datakung, A = เพื่อนร่วมทีม/auto4496.** F02/F04มีimplementation/testsและ A review/approvalแล้ว รวมเข้าsprint stagingเรียบร้อย; ยังไม่accepted main release
 
 ## 1. เริ่มจากและ branches
 
-ใช้ central repository https://github.com/auto4496/studytrack และ accepted A PR3/staging1a4b74b. Checkout F04 คือ `C:/CPE/CPE334/Project/studytrack-member-b`; F02 คือ `C:/CPE/CPE334/Project/studytrack-f02-review-ready`. แยกจาก snapshotเอกสารเดิม ไม่สร้าง auth/schema/scaffold ซ้ำ
+ใช้ central repository https://github.com/auto4496/studytrack และ accepted staging85f510f. เตรียมเอกสารreleaseใน `C:/CPE/CPE334/Project/studytrack-sprint1-release`, branch `codex/sprint-1-release-handoff` จากstaging. Checkout F04เดิมและF02ยังเก็บประวัติแยกจากsnapshot ไม่แก้merged feature branchเพิ่มในรอบนี้
 
 - Issue #4: F02, branch `codex/f02-templates` รวม accepted staging แล้ว
-- Issue #5: F04, branch `codex/f04-entries-progress` อาศัย F02 branch
-- [PR #6 F02](https://github.com/auto4496/studytrack/pull/6) base `codex/sprint-1-staging`, ready for A review; [draft PR #7 F04](https://github.com/auto4496/studytrack/pull/7) base `codex/f02-templates` ซึ่งยังรอรับงาน. ทั้งสองเป็นงาน Datakung ยังไม่มี A approval/merge; หลังPR6mergeจึงปรับPR7เข้าstagingและทวนผลบนฐานรับจริง
+- Issue #5: F04, branch `codex/f04-entries-progress` รับF02/stagingและmergeแล้ว
+- [PR6](https://github.com/auto4496/studytrack/pull/6) ผ่าน [A approval](https://github.com/auto4496/studytrack/pull/6#pullrequestreview-5764793996) แล้วmerge18e5882; [PR7](https://github.com/auto4496/studytrack/pull/7) ผ่าน [A approval](https://github.com/auto4496/studytrack/pull/7#pullrequestreview-5764853759) แล้วmerge85f510f. ทั้งสองbaseเป็นstagingก่อนรับงานและIssues4/5ปิดแล้ว
 - Contracts เดิม e3714d0, reconcileกับ A ee14477 ก่อน B implementation; F02 red0e1ca17/greena3769d4; F04 redd709741. ผลฐานเดิม0b51571เก็บไว้ในverification; tested sourceใหม่ F02=5e340f8 และ F04=afca38f
 
 ## 2. ทำแล้ว
@@ -49,16 +49,16 @@ Shared files ที่แตะ: App route/ActivityComponent, styles, template r
 
 ## 5. ให้ A ตรวจและประสาน
 
-1. Review F02/F04 contracts+diff/assertions/resultsจริง โดยเฉพาะ middleware chain, transaction lock/unique error, date-effective target, snapshotและ archived bounds, UI unknown-outcome flow
-2. ตรวจการต่อ goal router/reader types/ActivityComponent และ ownership/auth ที่ใช้ร่วมกัน ไม่มีการเพิ่ม schema/migration แต่ shared integrationยังต้อง peer review
-3. A review PR6/F02 ที่เข้าstagingแล้ว; หลังแก้/อนุมัติ/mergeจึง syncและretarget PR7/F04เข้าstagingและทวนผลก่อน A review. รันintegrationบนacceptedmergedcandidateก่อนreviewedrelease PRไปmain. PR3ผ่านreviewและmergeแล้ว ไม่ต้องเปิดPRใหม่หรือสร้างfoundationซ้ำ
+1. F02/F04 contract/diff/assertions/shared integration ผ่าน A reviewแล้ว ดู [review record](../reviews/pr-6-and-7-member-a.md) ไม่พบข้อแก้ค้าง
+2. A review PRเอกสารrelease handoffรอบนี้เข้าstaging โดยตรวจสถานะ/links/source equivalenceและreadiness criteria ไม่มีapplication changes
+3. Bเตรียมrelease PRจากstagingไปmain ให้A reviewตาม [readiness](sprint-1-release-readiness.md); หลังmergeให้Bตรวจclean mainและบันทึกaccepted SHA ก่อนใช้ในD1 PDF
 4. Ownerจัด repo publicตาม Lab5 R12หลังตรวจ secrets/history; เพิ่ม CI/required-check proof/Docker/GCP/deployment.md/C01–06ตาม [Lab5 review](../labs/lab-05/gap-review-b.md). รอบนี้ไม่เปลี่ยนvisibility/billing/IAM/databaseบนcloud
 
 ## 6. ยังไม่ทำ / งานต่อ
 
-A peer review/accepted staging+main release, D1 self-contained PDFที่รวม A–F, GitHub CI/required gate, Docker/GCP/redeploy evidence, independent UATและ Sprint2/3ยัง pending. Local greenของF02/F04ไม่เท่ากับงานเหล่านี้เสร็จแล้ว
+A reviewเอกสารสถานะรอบนี้และmain release, final-main verification, D1 self-contained PDFที่รวม A–F, GitHub CI/required gate, Docker/GCP/redeploy evidence, independent UATและSprint2/3ยังpending. Feature peer approvalและintegrationที่stagingเสร็จแล้ว
 
-สำหรับรันทวนใช้ READMEและ B verification; ไม่ส่ง env/password/session tokensเข้า Gitหรือแชต. ใช้ seed-generated demo credentialsจาก private .envบนเครื่องเท่านั้น. AI-use declarationอยู่ docs/ai-use.md; Bต้องอ่านและอธิบายงานที่รับ ส่วน A reviewยังไม่ถูกสร้างแทนเพื่อน
+สำหรับรันทวนใช้ READMEและB verification; ไม่ส่งenv/password/session tokensเข้าGitหรือแชต. ใช้seed-generated demo credentialsจากprivate .envบนเครื่องเท่านั้น. AI-use declarationอยู่docs/ai-use.md; reviewของAอ้างจากGitHubและผลรันจริงตามขอบเขตที่Aระบุ ไม่ใช่หลักฐานindependent human UAT
 
 ## ลองบนเครื่องนี้
 
