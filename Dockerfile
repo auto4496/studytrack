@@ -25,8 +25,9 @@ USER node
 CMD ["npm", "run", "db:migrate"]
 
 FROM build AS production-dependencies
-# Prisma CLI is an optional peer of @prisma/client and otherwise survives a dev-only prune.
-RUN npm prune --omit=dev --omit=peer
+# Prisma's CLI is classified devOptional via the client's optional peer.
+# Omit both optional and development peers; keep the generated runtime engine below.
+RUN npm prune --omit=dev --omit=peer --omit=optional
 
 FROM base AS runtime
 ARG VCS_REF=unknown
