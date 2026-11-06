@@ -8,6 +8,8 @@ The PDF includes complete A-F, page ranges, all37ACs and plannedSTS/DoD, selecte
 
 User supplied Phanuwit Butchari67070501070 and Pitchai Chadchuangchot67070501068. No separate cover page; names/IDs appear in the opening project information. Remaining document gate: both members review the PDF and preparation PR. Never self-approve the A-authored report PR as B.
 
-Schedule note: original handout says8Nov2026 23:59; user reports no LEB2 submission slot visible4Nov and suspects combination withLab5. No official cancellation/extension was supplied. Confirm the actual course channel/deadline with instructor; keep this PDF separately reusable. No LEB2 submission was made.
+Current submission instructions (6 November 2026): submit one self-contained PDF per team through LEB2 by **8 November 2026 at 23:59 Asia/Bangkok**, as stated in the README and reviewed report. Course submission is still pending.
+
+Historical schedule note (4 November 2026): submission-slot availability had not yet been confirmed at that time. This is a superseded planning snapshot retained for chronology, not a current blocker, changed deadline or combined Lab 5 submission instruction.
 
 Lab5 Docker/CI/GCP, Lab6 independent UAT, Lab7 approved maintenance and F05..08 remain later work. No cloud/billing/visibility operation is performed here. The original checkout's existing edits were preserved; all preparation is in an isolated checkout.
