@@ -70,4 +70,4 @@ Manager creates template1..1440 and signs out. Student1 selects it, sets target6
 D1: one self-contained A-F PDF with reviewed main release/local evidence, due 8 Nov2026 23:59 Asia/Bangkok. Docker/CI/GCP:15Nov; UAT:22Nov; D2/Lab7:29Nov; Final:13Dec. F05..08/cloud/UAT remain later work.
 
 
-The dates above come from the supplied handouts. The user reports no visible D1 submission slot in LEB2; any combined Lab 5 submission or changed deadline remains unconfirmed.
+Deliverable 1 is submitted as one self-contained team PDF through LEB2 by 8 November 2026 at 23:59 Asia/Bangkok. Docker, CI/CD and GCP deployment remain separate Lab 5 work.
