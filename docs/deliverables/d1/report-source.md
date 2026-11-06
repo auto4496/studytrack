@@ -10,8 +10,8 @@ Submitted main commit: df08ec19cdeb0efcfbfbee92f3d385d87059528c; tag: v0.1.0-spr
 
 | Member | Student name / ID | GitHub |
 |---|---|---|
-| 1 | Phanuwit Butchari / 67070501070 | auto4496 |
-| 2 | Pitchai Chadchuangchot / 67070501068 | Datakung |
+| 1 | Pitchai Chadchuangchot / 67070501068 | Datakung |
+| 2 | Phanuwit Butchari / 67070501070 | auto4496 |
 
 Student names and full IDs are supplied by the team. The report begins with project information and navigation, followed immediately by Part A.
 

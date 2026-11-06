@@ -1,14 +1,14 @@
 {
   "members": [
     {
-      "name": "Phanuwit Butchari",
-      "studentId": "67070501070",
-      "github": "auto4496"
-    },
-    {
       "name": "Pitchai Chadchuangchot",
       "studentId": "67070501068",
       "github": "Datakung"
+    },
+    {
+      "name": "Phanuwit Butchari",
+      "studentId": "67070501070",
+      "github": "auto4496"
     }
   ],
   "acceptedMainCommit": "df08ec19cdeb0efcfbfbee92f3d385d87059528c",

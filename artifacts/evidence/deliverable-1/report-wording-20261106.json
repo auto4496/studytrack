@@ -4,7 +4,7 @@
   "baselineStaging": "fbf4153c2b07803baab6eeb3ea3fac4de65087c9",
   "applicationRelease": "df08ec19cdeb0efcfbfbee92f3d385d87059528c",
   "releaseTag": "v0.1.0-sprint1",
-  "pdfSha256": "14064f46824dccf0554fef0b4ae7ed3b083c96b849e87601e5368f7750f33ef7",
+  "pdfSha256": "87d3020f82a6f6093341105c505a01766dddb76b7955645a5c9bf49713cc2647",
   "pdfPages": 32,
   "acCount": 37,
   "allPartsRetained": true,
@@ -17,5 +17,12 @@
   "historicalSourceContractsUnchanged": true,
   "applicationAndTestSourceUnchanged": true,
   "runtimeTestsRerun": false,
-  "retainedTestEvidence": "Original 117 API/unit and 24 browser results on accepted release are unchanged; not new runs."
+  "retainedTestEvidence": "Original 117 API/unit and 24 browser results on accepted release are unchanged; not new runs.",
+  "openingMemberOrder": [
+    "Pitchai Chadchuangchot / 67070501068",
+    "Phanuwit Butchari / 67070501070"
+  ],
+  "memberRolesUnchanged": true,
+  "memberOrderOpeningPageVisuallyInspected": true,
+  "pages2Through32TextUnchangedAfterMemberSort": true
 }
