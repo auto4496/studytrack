@@ -1,0 +1,5 @@
+
+> studytrack@0.1.0 db:seed
+> tsx server/prisma/seed.ts
+
+Synthetic demo accounts and two templates ready; existing records preserved. Passwords are not printed.
