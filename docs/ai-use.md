@@ -1,4 +1,16 @@
-# AI-use declaration — working record
+# AI-use declaration
+
+## Current assessed-release statement - 6 November 2026
+
+AI-assisted engineering: both members used Codex within a requirements-driven workflow. Work requests defined feature scope, shared interfaces, business rules, acceptance criteria and expected verification. Codex assisted with design, implementation, test preparation, execution and documentation. Generated changes were checked against versioned contracts, test assertions and actual build/test results; recorded failures and teammate-review findings guided corrections. Work remained traceable through Issues, feature branches, commits and reviewed integration. Acceptance relied on observable behavior and retained evidence rather than generated completion claims. AI-assisted review and execution are disclosed. Both members remain responsible for understanding and explaining the design, tests and released behavior.
+
+Evidence: pre-code contracts in `docs/sprints/sprint-1/`; actual AC/test mapping and execution in `docs/deliverables/d1/ac-results.json` and `artifacts/evidence/deliverable-1/`; peer findings and accepted integration through PRs #3, #6, #7 and #9. This wording does not assert independent human UAT or completed cloud deployment.
+
+## Historical working records
+
+The dated entries below retain the scope and status at their original dates; they are not the current release status.
+
+### Original working record
 
 Date: 3 November 2026. Tool: Codex, used by member A in the current chat
 
