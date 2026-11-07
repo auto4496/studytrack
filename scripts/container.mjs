@@ -17,9 +17,12 @@ if (action === "up") {
   compose("run", "--rm", "seed");
   compose("up", "-d", "--wait", "app", "proxy");
   console.log("Local production stack ready. Database and local CA are stored in named volumes.");
+} else if (action === "check") {
+  compose("config", "--quiet");
+  console.log("Compose config accepted.");
 } else if (action === "stop") {
   compose("stop", "proxy", "app", "db");
   console.log("Dedicated local stack stopped; named volumes and records retained.");
 } else if (action === "status") {
   compose("ps");
-} else throw new Error("Use up, stop or status.");
+} else throw new Error("Use check, up, stop or status.");
