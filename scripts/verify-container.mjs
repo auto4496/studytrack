@@ -5,6 +5,7 @@ import { request } from "node:https";
 import { randomUUID } from "node:crypto";
 import { setTimeout as delay } from "node:timers/promises";
 import assert from "node:assert/strict";
+import { resolveLocalContainerConfig } from "./container-config.mjs";
 
 const args = process.argv.slice(2);
 const option = (name, fallback) => args.includes(name) ? args[args.indexOf(name) + 1] : fallback;
@@ -12,20 +13,26 @@ const project = option("--project", "studytrack-container-review");
 const envFile = option("--env-file", ".env.container.local");
 const evidence = resolve(option("--evidence", "artifacts/evidence/lab5-container"));
 if (!/^studytrack-container(?:-[a-z0-9-]+)?$/.test(project)) throw new Error("Use a dedicated studytrack-container project.");
-const env = Object.fromEntries(readFileSync(envFile, "utf8").split(/\r?\n/).filter(l => l && !l.startsWith("#")).map(l => [l.slice(0, l.indexOf("=")), l.slice(l.indexOf("=") + 1)]));
+// Use the same environment snapshot and resolved config as the startup wrapper.
+const executionEnvironment = { ...process.env };
+const run = (command, argv) => execFileSync(command, argv, { encoding: "utf8", windowsHide: true, maxBuffer: 8 * 1024 * 1024, env: executionEnvironment, stdio: ["ignore", "pipe", "pipe"] }).trim();
+const compose = (...argv) => run("docker", ["compose", "--env-file", envFile, "-f", "compose.container.yaml", "-p", project, ...argv]);
+const config = resolveLocalContainerConfig(compose);
+const env = {
+  CONTAINER_APP_ORIGIN: config.services.app.environment.APP_ORIGIN,
+  CONTAINER_HTTPS_PORT: String(config.services.proxy.ports.find(port => port.target === 443).published),
+  CONTAINER_VCS_REF: config.services.app.build.args.VCS_REF,
+  CONTAINER_MANAGER_PASSWORD: config.services.seed.environment.SEED_MANAGER_PASSWORD,
+  CONTAINER_PARTICIPANT_PASSWORD: config.services.seed.environment.SEED_PARTICIPANT_PASSWORD,
+};
 const origin = env.CONTAINER_APP_ORIGIN;
 const originURL = new URL(origin);
-const dbURL = new URL(env.CONTAINER_DATABASE_URL);
 assert.equal(originURL.protocol, "https:");
 assert.equal(originURL.hostname, "localhost");
 assert.equal(originURL.port, env.CONTAINER_HTTPS_PORT);
-assert.equal(dbURL.hostname, "db");
-assert.equal(dbURL.pathname, "/studytrack_container");
 assert(!Object.values(env).some(v => v.includes("CHANGE_ME")), "Replace example placeholders.");
-const run = (command, argv) => execFileSync(command, argv, { encoding: "utf8", windowsHide: true, maxBuffer: 8 * 1024 * 1024 }).trim();
 const source = run("git", ["rev-parse", "HEAD"]);
 assert.equal(env.CONTAINER_VCS_REF, source, "Run setup:container after checking out the tested revision.");
-const compose = (...argv) => run("docker", ["compose", "--env-file", envFile, "-f", "compose.container.yaml", "-p", project, ...argv]);
 const inspect = id => JSON.parse(run("docker", ["inspect", id]))[0];
 const checks = [];
 mkdirSync(evidence, { recursive: true });

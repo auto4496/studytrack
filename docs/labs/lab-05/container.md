@@ -8,6 +8,7 @@ Docker Desktop/Linux containers, Git and Node>=22.12. No local PostgreSQL or app
 
 ```sh
 node scripts/setup-container.mjs
+node scripts/container.mjs check
 node scripts/container.mjs up
 ```
 
@@ -24,7 +25,7 @@ node scripts/verify-container.mjs --project studytrack-container --browser --lif
 node scripts/container.mjs stop
 ```
 
-`--lifecycle` restarts the named app, recreates its container, restarts the dedicated database and checks that the same saved IDs/values/session remain. It never removes volumes or resets records. `stop` retains all data; `up` resumes with idempotent migrations/seed. Verification creates synthetic domain records and intentionally retains them as before/after evidence. It refuses a project outside the studytrack-container namespace and requires the isolated `db/studytrack_container` URL.
+`--lifecycle` restarts the named app, recreates its container, restarts the dedicated database and checks that the same saved IDs/values/session remain. It never removes volumes or resets records. `stop` retains all data; `up` resumes with idempotent migrations/seed. Verification creates synthetic domain records and intentionally retains them as before/after evidence. It refuses a project outside the studytrack-container namespace. Before startup or verification, a shared preflight resolves the effective Compose config with tools included and checks app/migrate/seed against the dedicated `db:5432/studytrack_container` service and matching database credentials. Inherited overrides are included in the check; external targets, other databases/users/ports, URL query overrides and fragments are rejected before startup operations. The verifier uses effective settings for origin, seed credentials and image revision as well.
 
 ## Targets and layout
 
@@ -49,7 +50,7 @@ Dockerfile pins Node24 Debian, PostgreSQL17 and Caddy image digests. Dockerignor
 | DATABASE_URL / APP_ORIGIN / PORT / NODE_ENV | Standard runtime interface injected into app; NODE_ENV=production, PORT=8080 in local Compose; no new application policy |
 | SEED_MANAGER_PASSWORD / SEED_PARTICIPANT_PASSWORD | Standard seed interface injected only into tools seed job |
 
-The serving app receives no seed passwords. PostgreSQL is internal to the Compose network with a named data volume; it has no published host port. Root `.env.example` still documents existing application settings; `.env.container.example` documents all wrapper settings. Never run `docker compose config` without `--quiet` when capturing output, because interpolation can expose private values.
+The serving app receives no seed passwords. PostgreSQL is internal to the Compose network with a named data volume; it has no published host port. Root `.env.example` still documents existing application settings; `.env.container.example` documents all wrapper settings. Never print or capture raw `docker compose config` output, because interpolation can expose private values. The helper captures resolved JSON privately in memory, emits only sanitized errors, and uses one inherited-environment snapshot for both preflight and execution. `node scripts/container.mjs check` performs this read-only preflight without starting services. For the inherited-override regression suite, run `npm run test:container-config` (Node and Docker Compose required; no database or application start).
 
 ## B integration and release
 
@@ -76,3 +77,7 @@ Final tested source: `ee56d91dd4abf52f4c6bf13c5080c0f289620cc7`. Clean tracked s
 Initial source0575518 and peer-only correction089b6ac each stopped at the same runtime-containment assertion (4 passed,1 failed); Prisma CLI was classified devOptional. The final Dockerfile also omits optional dependencies, while the same assertion and Argon2/Prisma runtime behavior remain enabled. Raw failed reports and a successful isolated dependency probe are retained; no failing assertion was removed. One stale-checkout build was interrupted and is separately identified. These are packaging failures, not domain-TDD claims.
 
 This supports local R01/R02 and C03 plus a local persistence rehearsal. Public GCP workflow/restart/redeploy, CI passing/blocked-required-check runs, public visibility and pipeline C04-C06 are still pending. B peer review/staging acceptance of this packaging PR is pending; passing local automation is not independent human UAT.
+
+## PR #15 review correction - 7 November 2026
+
+Datakung independently passed the original 35 production-container checks and a Compose stop/start persistence rehearsal, then requested an effective database target guard (review comment4490582650). A safe read-only preflight reproduction recorded1pass/2fail: Compose accepted inherited external and wrong-database targets despite a safe env file. The same three assertions pass after the correction; the expanded suite covers21checks including both entry points, independent consumer drift, credential/schema/port boundaries and secret-free errors. Actual versioned logs and final runtime results are recorded after execution in the review-fix evidence. The current D1 README instructions and local Docker runbook are both retained in the staging merge. Re-review of the correction remains required before integration.
