@@ -29,3 +29,13 @@ API checks use an explicit exported local root CA; selected real browser checks 
 Actual executions/source versions are added only after running. B reviews implementation and assertions before staging acceptance. CI should consume runtime/tools targets and root scripts; cloud deployment injects DATABASE_URL/APP_ORIGIN/PORT and executes controlled migrations separately. Existing Sprint1 tests remain enabled. Original main/tag/PDF are not rewritten by packaging work. Pending cloud resource names, public URL, CI run/gate and GCP persistence remain explicitly unverified.
 
 Primary implementation references: [Docker startup dependencies](https://docs.docker.com/compose/how-tos/startup-order/), [Prisma Docker deployment](https://docs.prisma.io/docs/guides/deployment/docker), [Caddy internal TLS](https://caddyserver.com/docs/caddyfile/directives/tls). Course source:01_SE_Lab_5_updated.pdf, R01/R02/R04/R08 and C03; local verification does not complete the cloud checks.
+
+## Review correction contract - 7 November 2026
+
+PR #15 review 4490582650 identified that inherited CONTAINER_DATABASE_URL overrides the private env file. Compose syntax validation alone does not constrain where migration/seed run.
+
+| ID | Preconditions / action | Expected result / evidence |
+|---|---|---|
+| AC-CTR-08 | Resolve tools/app Compose config with the exact execution environment; inherited external or wrong-database URL; run preflight, startup or verifier | Reject before build, container start, migration, seed, API requests or lifecycle changes. App/migrate/seed must all target the dedicated db:5432/studytrack_container service with matching db credentials; override options cannot redirect it. Never print the resolved secret-bearing config. |
+
+Add a read-only check command to expose the existing config check for a safe regression reproduction. Retain the actual failing inherited-override assertions before correction, then rerun the unchanged cases. Use effective Compose settings in the verifier so origin, credentials and image revision cannot diverge from what execution receives. Keep the current D1 README paragraph and the container runbook section when syncing staging. This is local-wrapper protection; controlled cloud jobs remain separate.

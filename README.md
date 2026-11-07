@@ -4,7 +4,9 @@ A CPE 334 reading habit tracker, theme 8. Managers create activity templates; pa
 
 ## Current increment
 
-F-01 authentication/access, F-02 templates, F-03 goals and F-04 entries/progress are reviewed and integrated into `codex/sprint-1-staging` through PR3/6/7. Baseline: `85f510f0d73b84f39c08fbf3ef36e43b232bb044`. Latest feature verification: 117 API/unit and 24 desktop/mobile browser checks passed, zero failed/skipped; build and real API process restart passed. See [review/evidence](docs/reviews/pr-6-and-7-member-a.md). Reviewed main release and D1 PDF finalization are separate gates.
+F-01 authentication/access, F-02 templates, F-03 goals and F-04 entries/progress are released on `main` through reviewed [PR #9](https://github.com/auto4496/studytrack/pull/9). Accepted application commit: `df08ec19cdeb0efcfbfbee92f3d385d87059528c`; immutable tag: [`v0.1.0-sprint1`](https://github.com/auto4496/studytrack/tree/v0.1.0-sprint1). Clean-main verification passed 117 API/unit and 24 desktop/mobile browser checks, zero failed/skipped, plus build and real API process-restart persistence.
+
+The [32-page D1 report](output/pdf/studytrack-deliverable-1.pdf), [editable source and metadata](docs/deliverables/d1/) and [release record](docs/release/sprint-1-readiness.md) are reviewed through [PR #11](https://github.com/auto4496/studytrack/pull/11) and merged into sprint staging. The report is tied to the accepted application commit above; course submission is separate from repository acceptance. See [feature-review evidence](docs/reviews/pr-6-and-7-member-a.md) and [clean-main results](artifacts/evidence/deliverable-1/execution.json).
 
 ## Local setup
 
@@ -67,6 +69,8 @@ Manager creates template1..1440 and signs out. Student1 selects it, sets target6
 
 D1: one self-contained A-F PDF with reviewed main release/local evidence, due 8 Nov2026 23:59 Asia/Bangkok. Docker/CI/GCP:15Nov; UAT:22Nov; D2/Lab7:29Nov; Final:13Dec. F05..08/cloud/UAT remain later work.
 
+
+Deliverable 1 is submitted as one self-contained team PDF through LEB2 by 8 November 2026 at 23:59 Asia/Bangkok. Docker, CI/CD and GCP deployment remain separate Lab 5 work.
 
 ## Application Docker packaging (Lab 5)
 

@@ -1,6 +1,6 @@
 # StudyTrack | Deliverable 1
 
-CPE 334 - Engineering baseline and working Sprint 1. Theme 8: Habit and Activity Tracking System; context: personal reading habits. Prepared 4 November 2026; deadline 8 November 2026, 23:59 Asia/Bangkok.
+CPE 334 - Engineering baseline and working Sprint 1. Theme 8: Habit and Activity Tracking System; context: personal reading habits. Prepared 6 November 2026; deadline 8 November 2026, 23:59 Asia/Bangkok.
 
 DELIVERABLE 1 - VERIFIED RELEASE
 
@@ -10,12 +10,12 @@ Submitted main commit: df08ec19cdeb0efcfbfbee92f3d385d87059528c; tag: v0.1.0-spr
 
 | Member | Student name / ID | GitHub |
 |---|---|---|
-| 1 | Phanuwit Butchari / 67070501070 | auto4496 |
-| 2 | Pitchai Chadchuangchot / 67070501068 | Datakung |
+| 1 | Pitchai Chadchuangchot / 67070501068 | Datakung |
+| 2 | Phanuwit Butchari / 67070501070 | auto4496 |
 
 Student names and full IDs are supplied by the team. The report begins with project information and navigation, followed immediately by Part A.
 
-Schedule note: Original handout:8Nov2026; user reports no LEB2 submission slot visible4Nov. Combining withLab5 is unconfirmed; no official cancellation/extension supplied.
+Schedule note: Submit one self-contained PDF per team through LEB2 by 8 November 2026 at 23:59 Asia/Bangkok.
 
 [[NAV]]
 
@@ -169,7 +169,7 @@ S1 means implemented, checked and accepted through reviewed release PR9 on the n
 
 
 ## B3. Coverage and change status
-All19 FR,13 BR and8 important NFR have a feature or named system responsibility and sprint allocation. There are no intentionally uncovered baseline requirements. Later-sprint allocation does not mean implementation. BR08/10/11 have S1 read/consumer fixtures; their revision/deactivation/archive mutation workflows remain F05/F06 work. Cloud/CI/UAT/maintenance checkpoints remain pending. B's v0.2 mappings preserved A's IDs; historical draft text is not current acceptance. Scope is unchanged; final main release metadata and both student identities are now recorded. Joint PDF review and confirmation of the live course submission channel remain.
+All19 FR,13 BR and8 important NFR have a feature or named system responsibility and sprint allocation. There are no intentionally uncovered baseline requirements. Later-sprint allocation does not mean implementation. BR08/10/11 have S1 read/consumer fixtures; their revision/deactivation/archive mutation workflows remain F05/F06 work. Cloud/CI/UAT/maintenance checkpoints remain pending. B's v0.2 mappings preserved A's IDs; historical draft text is not current acceptance. Scope is unchanged; final main release metadata and both student identities are now recorded. Final PDF checking and course submission remain.
 
 
 # Part C. System-Level SDS
@@ -377,7 +377,7 @@ Contract committed before tests/implementation; feature Issue and bounded branch
 | Version | Change / reason | Acceptance |
 |---|---|---|
 | draft01 | Original standalone B proposal in e3714d0 | Historical, superseded |
-| 0.2 | Adopt A /api/templates, MINUTES, title100/description500, server-owned unit, pagination/DTO/error/CSRF/logout204; retain stable AC/test IDs | B starts per user authorization; A peer review pending |
+| 0.2 | Adopt A /api/templates, MINUTES, title100/description500, server-owned unit, pagination/DTO/error/CSRF/logout204; retain stable AC/test IDs | Implementation approved to begin; peer review pending at this contract version |
 
 
 ## F-03 engineering contract
@@ -502,7 +502,7 @@ Commit contract/test design before implementation. Meaningful API red for missin
 | Version | Change / rationale | Acceptance |
 |---|---|---|
 | draft01 | Standalone B interfaces e3714d0 | Historical |
-| 0.2 | Align A /api, EntryDTO, paginated list/progress entryId, startDate/UUID, codes and field shape; BR11 archived historical bounds replace old B active-only proposal; HALF_UP specified | User authorized B implementation; A peer review pending |
+| 0.2 | Align A /api, EntryDTO, paginated list/progress entryId, startDate/UUID, codes and field shape; BR11 archived historical bounds replace old B active-only proposal; HALF_UP specified | Implementation approved to begin; peer review pending at this contract version |
 
 
 
@@ -551,7 +551,7 @@ Two sampled completed issue chains: Issue4/F02 -> codex/f02-templates -> PR6 -> 
 | A / auto4496; ID suffix70 | Product/SRS/System SDS/data/auth foundation; F01/F03 contract/tests/implementation; guard correction; independent B verification; readiness/report assembly. | Reviewed B PR6/7 with actual66/16 and117/24 checks; integrated candidates, setup and evidence. B reviewed A PR3. |
 | B / Datakung; ID suffix68 | Feature inventory/traceability/sprint/UI conventions; F02/F04 contracts/tests/implementation; daily progress/recovery/real restart evidence. | Reviewed A PR3, identified P2 guard defect and approved corrected head; supplied integration/handoff evidence. A reviewed B PR6/7. |
 
-AI use: both members use Codex for bounded specification, implementation, test generation, inspection, execution and document preparation. Claims here are backed by retained commands/results/GitHub events. Codex-assisted review is disclosed; no invented human UAT, TA approval, equal-commit claim or deployment result is asserted. Each student remains responsible for understanding the design and accepted changes.
+AI-assisted engineering: both members used Codex within a requirements-driven workflow. Work requests defined feature scope, shared interfaces, business rules, acceptance criteria and expected verification. Codex assisted with design, implementation, test preparation, execution and documentation. Generated changes were checked against versioned contracts, test assertions and actual build/test results; recorded failures and teammate-review findings guided corrections. Work remained traceable through Issues, feature branches, commits and reviewed integration. Acceptance relied on observable behavior and retained evidence rather than generated completion claims. AI-assisted review and execution are disclosed. Both members remain responsible for understanding and explaining the design, tests and released behavior.
 
 ## F7. Reproduction and final submission gates
 Prerequisites: Node>=22.12, npm, Git, Docker Desktop/Linux PostgreSQL17 and Edge(Windows) or installed Playwright Chromium. See the commands below; environment examples contain placeholders and setup generates private random credentials.
@@ -576,7 +576,7 @@ Synthetic accounts: manager@studytrack.test uses private SEED_MANAGER_PASSWORD; 
 
 Current limitations: F05..F08 remain planned; lifecycle consumers are tested through fixtures but no revision/archive/deactivate UI/API is claimed. No independent UAT, cloud deployment, required CI gate, containerized application or final video is claimed. Main release approval/merge/tag and both full student identities are recorded. Joint review of this PDF precedes course submission. Repository accessibility must be checked for the TA; Lab5 separately requires public visibility until grading ends. No visibility/billing/IAM operation is part of this preparation.
 
-Before submission: both students review the completed PDF and its page navigation/identity/release references, then confirm the actual course submission slot and deadline. The original handout date is8Nov23:59; portal availability or any combinedLab5 submission must be confirmed with the instructor. The reviewed main merge, immutable tag, clean-main results and supplied identities are already recorded. No LEB2 submission has been performed by this preparation. Later commits must not silently replace the assessed version.
+Before submission: both students check the final PDF, including page navigation, identities and release references, and ensure the assessor can access the repository. Submit one self-contained PDF per team through LEB2 by 8 November 2026 at 23:59 Asia/Bangkok. The reviewed Sprint 1 main release, immutable tag and clean-main results are recorded above. Submission remains pending. Later commits must not silently replace the assessed version.
 
 ## F8. Source and evidence index
 Course sources: group_work_specs_v1.pdf (theme8, engineering workflow) and project_deliverable_1_v1.pdf (8 pages, PartsA-F, self-contained PDF and main-release requirements). Source documents are retained unchanged in repository sources/. Detailed baseline source files: docs/srs.md, docs/features.md, docs/traceability.md, docs/system-sds.md, docs/sprints/plan.md, docs/sprints/sprint-1/*.md and docs/integration-contract.md. Actual execution JSON/logs, selected screenshots and review manifests are under artifacts/evidence/. The engineering content required for assessment is embedded in this PDF; links support targeted verification.
