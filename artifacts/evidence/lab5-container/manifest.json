@@ -41,5 +41,11 @@
   ],
   "independentHumanUAT": false,
   "gcpVerified": false,
-  "ciGateVerified": false
+  "ciGateVerified": false,
+  "reviewCorrection": {
+    "manifest": "review-fix/manifest.json",
+    "testedSource": "f938688814f0cadc3caae2a33b58f1ba1a5cf679",
+    "guardsPassed": 21,
+    "containerChecksPassed": 35
+  }
 }

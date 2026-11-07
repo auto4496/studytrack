@@ -1,0 +1,29 @@
+✔ dedicated local Compose database passes the read-only preflight (601.0679ms)
+✔ inherited external database override is rejected despite a safe env file (629.2162ms)
+✔ inherited wrong-database override on the local service is rejected (583.7957ms)
+✔ matching inherited local credentials pass without printing resolved secrets (739.889ms)
+✔ startup rejects inherited external target before any startup command (599.0809ms)
+✔ verifier rejects effective external target before recording or lifecycle checks (675.481ms)
+✔ all consumers are checked: reject isolated app target drift (0.9532ms)
+✔ all consumers are checked: reject isolated migrate target drift (0.21ms)
+✔ all consumers are checked: reject isolated seed target drift (0.2091ms)
+✔ reject wrong port (0.279ms)
+✔ reject wrong user (0.1907ms)
+✔ reject mismatched password (0.121ms)
+✔ reject query host override (0.0821ms)
+✔ reject alternate schema (0.1027ms)
+✔ reject URL fragment (0.0871ms)
+✔ reject wrong protocol (0.1424ms)
+✔ reject missing database (0.142ms)
+✔ missing tools config fails closed (38.2748ms)
+✔ wrong underlying database identity fails closed (1.4641ms)
+✔ default port and URL-encoded matching password are allowed (1.3981ms)
+✔ Compose resolution includes tools and does not expose private error output (13.1514ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 21
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4044.0373
