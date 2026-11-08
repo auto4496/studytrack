@@ -6,7 +6,11 @@ B ตรวจซ้ำ [PR #15](https://github.com/auto4496/studytrack/pull/15)
 
 งาน B ต่อใน [Issue #18](https://github.com/auto4496/studytrack/issues/18) และ branch `codex/lab5-ci` ซึ่งรวม staging ที่รับ PR #15 แล้ว Workflow ตรวจ PR เข้า `codex/sprint-1-staging` และ `main` ด้วย job `test-and-docker` ใช้ PostgreSQL 17 ชั่วคราว รัน configuration guards, API/unit, browser desktop/mobile, build server/client, production Docker build และ offline smoke tests
 
-A ตรวจ workflow และผล GitHub Actions บน PR เข้า staging ก่อนรับงาน จากนั้น release PR จาก staging เข้า main ต้องผ่าน Actions และ peer review อีกครั้ง ก่อนเริ่ม deploy ตาม EP5 งาน `deploy/` รอบนี้มี smoke check สำหรับหน้าเว็บและ API ที่เชื่อมฐานข้อมูล ส่วน provisioning/release scripts และ GCP resource configuration อยู่ในงานขั้นต่อไป
+A อนุมัติและ merge [PR #19](https://github.com/auto4496/studytrack/pull/19) เข้า staging แล้ว B อนุมัติ release [PR #25](https://github.com/auto4496/studytrack/pull/25) หลังตรวจ source/CI และรัน 21 config + 3 smoke checks ซ้ำ จากนั้น merge เข้า main ที่ `737c591af2a56797781b18742e065cb96eb3faed` ตามคำยืนยันผู้ใช้ ตรวจ tree หลัง merge ตรงกับ release ที่ผ่าน CI แล้ว Issue #18 ปิดและ EP4 เสร็จ
+
+EP5 เตรียมใน [Issue #20](https://github.com/auto4496/studytrack/issues/20), branch `codex/lab5-gcp-bootstrap` ผู้ใช้ยืนยัน Cloud Shell clone `737c591`, project `studytrack-cpe334`, region `asia-southeast1`, billing enabled, Budget alert และสิทธิ์ A แล้ว [Cloud contract](../labs/lab-05/cloud-contract.md) บันทึกก่อน implementation และ [deployment runbook](../labs/lab-05/deployment.md) ระบุทรัพยากร/สิทธิ์ที่เสนอให้ A ตรวจ สคริปต์ใช้ runtime/tools images แยก, Cloud SQL PostgreSQL 17, APP_ORIGIN ตรง HTTPS และรัน migration/seed ก่อน service update
+
+ผลเตรียมสคริปต์ผ่าน 13 bootstrap + 3 smoke tests บน Linux และตรวจ YAML สองไฟล์ผ่าน ตัวจำลองยืนยัน dry run เรียก gcloud ศูนย์ครั้ง มี literal dry run ของ source `8299784` สำหรับโปรเจกต์จริงแล้ว ทรัพยากร cloud, URL, การเข้าใช้จริงและ C-04 ยังต้องมีหลักฐานหลัง A รีวิวและ release scripts เข้า main ผู้ใช้สามารถดูแผนด้วย DRY_RUN=1 จาก review branch ก่อนขั้นนั้น งาน pipeline อัตโนมัติและ persistence cloud อยู่ใน #21-#24
 
 เนื้อหาด้านล่างเป็นประวัติการส่งงาน Sprint 1 วันที่ 4 พฤศจิกายน 2026 สำหรับสถานะ accepted application และรายงาน D1 ให้ดู [release record](../release/sprint-1-readiness.md)
 
