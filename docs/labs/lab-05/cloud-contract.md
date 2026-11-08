@@ -24,7 +24,7 @@ The SQL size and Run scaling are proposed initial settings for teammate/user rev
 - Use the Cloud SQL Unix socket and a bounded Prisma pool. Runtime receives DATABASE_URL only. Seed passwords are injected into the separate job.
 - Give the runtime and migration identities Cloud SQL Client. Secret access is per secret. The build identity gets repository-scoped Artifact Registry Writer, project log writer and project source-object viewer. It receives no application secrets.
 - Real execution requires a clean, current `main` checkout. Dry run works on the review branch, prints the plan and invokes no gcloud command. Images build before a new billable SQL instance is created. A failed build/migration stops service deployment.
-- Preserve existing credentials and records across retries. Keep database credentials in Secret Manager before creating the DB user. Missing credentials for an existing user require explicit recovery instead of an automatic password replacement. A metadata-only secret from an interrupted run may receive its first version.
+- Preserve existing credentials and records across retries. Keep database credentials in Secret Manager before creating the DB user. Only the successful secret creator writes its first version. Missing credentials for an existing user or a metadata-only secret from an interrupted create require reviewed recovery before retrying.
 - Existing SQL must match the planned engine/region/tier and disabled storage auto-increase. Provisioning fails on incompatible resources rather than silently changing them.
 
 ## Acceptance checks

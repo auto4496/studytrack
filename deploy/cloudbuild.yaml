@@ -1,0 +1,13 @@
+steps:
+  - name: gcr.io/cloud-builders/docker
+    env: ['DOCKER_BUILDKIT=1']
+    args: ['build', '--target', 'runtime', '--build-arg', 'VCS_REF=${_VCS_REF}', '-t', '${_REGISTRY}/studytrack:${_VCS_REF}', '.']
+  - name: gcr.io/cloud-builders/docker
+    env: ['DOCKER_BUILDKIT=1']
+    args: ['build', '--target', 'tools', '-t', '${_REGISTRY}/studytrack-tools:${_VCS_REF}', '.']
+images:
+  - '${_REGISTRY}/studytrack:${_VCS_REF}'
+  - '${_REGISTRY}/studytrack-tools:${_VCS_REF}'
+options:
+  logging: CLOUD_LOGGING_ONLY
+timeout: 1200s

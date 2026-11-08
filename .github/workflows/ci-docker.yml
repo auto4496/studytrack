@@ -44,8 +44,10 @@ jobs:
         with:
           node-version: "24"
 
-      - name: Check deployment smoke script offline
-        run: python3 -B -m unittest discover -s deploy/tests -p 'test_smoke.py' -v
+      - name: Check deployment scripts offline
+        run: |
+          bash -n deploy/deploy.sh
+          python3 -B -m unittest discover -s deploy/tests -p 'test_*.py' -v
 
       - name: Install dependencies and generate Prisma client
         run: |
