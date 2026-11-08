@@ -25,7 +25,7 @@ The actual saved value is 20 minutes. The earlier checklist's 15-minute example 
 
 ## Browser figures
 
-These are original browser-content captures, without browser chrome or an address bar. The source URL observed by browser automation is recorded with each figure and in the [attributed capture record](../../../artifacts/evidence/lab5-cloud/member-a/acceptance.json). Preserve the visible source-URL captions when using these figures in the final evidence report. Capture hashes are in that record; no password, session value or connection string appears in the figures.
+Figures A1-A3 retain the original browser-content captures, without browser chrome or an address bar. B's [P2 review finding](https://github.com/auto4496/studytrack/pull/29#discussion_r4507300093) correctly identified that captions/JSON alone did not meet C-04's URL-visible screenshot requirement. Supplemental native Edge captures below address that gap. The source URL and hashes are retained in the [attributed capture record](../../../artifacts/evidence/lab5-cloud/member-a/acceptance.json). No password, session value or connection string appears in these figures.
 
 **Figure A1. C-04 / R-03: saved reading entry, 20/30 minutes, 66.67%, with success notice.** Source URL: <https://studytrack-981693883236.asia-southeast1.run.app/goals/ef016b96-0f77-4ca6-ae68-0a6d58c9877a>. User saved the entry; Codex captured the resulting browser state on 9 November 2026.
 
@@ -39,8 +39,24 @@ These are original browser-content captures, without browser chrome or an addres
 
 ![Student2 denied access to the same goal](../../../artifacts/evidence/lab5-cloud/member-a/student2-cross-owner-rejection.jpg)
 
+### Supplemental native browser captures
+
+Figures A4-A6 are supplemental full-window Edge captures showing the actual public URL in the browser's address bar, together with the saved/retrieved result or cross-owner denial. They address the URL-visible evidence gap identified in B's review of head `6958dae`. The user entered credentials directly into Edge. Codex revisited the same existing goal, repeated an actual F5 reload and checked the same URL under student2. No new save or success notice is claimed for this correction. These unaltered native screenshot bytes supplement the three unchanged original captures. Exact actors, recording times and SHA256 hashes are in the [correction record](../../../artifacts/evidence/lab5-cloud/member-a/url-capture-correction.json).
+
+**Figure A4. C-04 / R-03: existing saved 20/30 minutes and 66.67%, with the actual goal URL visible.** On 9 November 2026, the user signed in as student1 in Edge; Codex opened the existing goal, scrolled to its saved result and captured the native browser window.
+
+![Student1 saved progress and actual browser URL](../../../artifacts/evidence/lab5-cloud/member-a/student1-saved-progress-with-url.jpg)
+
+**Figure A5. C-04 / R-03: the same saved 20/30 minutes after Codex pressed F5, with the actual goal URL visible.** Codex waited for the reloaded document, dismissed the translation prompt, scrolled and captured the resulting state. This independently repeated page-reload retrieval and does not establish application restart/redeploy persistence.
+
+![Student1 progress after actual reload with browser URL](../../../artifacts/evidence/lab5-cloud/member-a/student1-progress-after-refresh-with-url.jpg)
+
+**Figure A6. C-04 / R-03: student2 denied direct access to the same student1 goal, with the actual goal URL visible.** The user signed in as student2. Codex entered the known student1 goal URL into Edge's address bar and observed `ไม่พบรายการที่ต้องการ` with no owner goal details or saved minutes. The native capture includes the student2 identity and browser address bar; an HTTP status is not inferred from the message.
+
+![Student2 denial with actual browser URL](../../../artifacts/evidence/lab5-cloud/member-a/student2-cross-owner-denial-with-url.jpg)
+
 ## Review and remaining work
 
 The [A live review](https://github.com/auto4496/studytrack/pull/28#pullrequestreview-5819008256) records the observed workflow; the [final approval](https://github.com/auto4496/studytrack/pull/28#pullrequestreview-5819022400) supersedes the earlier request to wait for B's entire private bundle. B's Console/build/resource observations retain their B-side attribution. A does not claim to have independently inspected those private originals, authenticated GCP settings or the serving revision during this browser round.
 
-This follow-up evidence is authored by A and requires B's review before staging acceptance. The reviewed documentation release to main is still pending. Keep #20 open for that handoff/release; do not block the independently reproduced domain workflow on receipt of duplicate B screenshots. Required-check/WIF work [#21](https://github.com/auto4496/studytrack/issues/21), the main deployment pipeline [#22](https://github.com/auto4496/studytrack/issues/22), actual cloud restart/redeploy persistence [#23](https://github.com/auto4496/studytrack/issues/23), and the final Lab5 PDF [#24](https://github.com/auto4496/studytrack/issues/24) remain separate. This record is not instructor acceptance or independent partner-team UAT.
+This follow-up evidence is authored by A. B requested changes on PR #29 at `6958dae` because the original content captures omitted the URL. Figures A4-A6 and the correction record address that specific finding; B must re-review the corrected head before staging acceptance. The reviewed documentation release to main is still pending. Keep #20 open for that handoff/release; do not block the independently reproduced domain workflow on receipt of duplicate B screenshots. Required-check/WIF work [#21](https://github.com/auto4496/studytrack/issues/21), the main deployment pipeline [#22](https://github.com/auto4496/studytrack/issues/22), actual cloud restart/redeploy persistence [#23](https://github.com/auto4496/studytrack/issues/23), and the final Lab5 PDF [#24](https://github.com/auto4496/studytrack/issues/24) remain separate. This record is not instructor acceptance or independent partner-team UAT.
