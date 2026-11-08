@@ -1,5 +1,9 @@
 # AI-use declaration
 
+## Member A live verification - 9 November 2026
+
+Phanuwit entered the privately shared demo credentials directly into the deployed application and performed the manager/participant, goal/save and refresh actions. Codex inspected the resulting browser states, directly checked the known student1 goal URL under the student2 session, captured three screenshots and recorded actual actors, outcomes and limitations in [A's live evidence](labs/lab-05/member-a-live-acceptance.md). Codex also performed separate public HTTP smoke checks. The actual entry was 20/30 minutes = 66.67%; no invalid-zero test, authenticated cloud administration, current-revision inspection or restart/redeploy is claimed for this round. A reviewed and approved B's PR #28; A's follow-up evidence is sent to B for peer review. No password or chat transcript is included in the evidence.
+
 ## Lab 5 cloud evidence update - 8 November 2026
 
 Codex assisted B with the reviewed bootstrap and its offline verification, then guided the user through Cloud Shell deployment, diagnostics and manual browser/Console checks. The user executed authenticated Google Cloud commands and browser actions. Codex compared the supplied outputs/screenshots, independently fetched public health/root HTTP200 and prepared the [EP5 evidence](labs/lab-05/ep5-evidence.md), runbook and handoff update. All seven bootstrap APIs appear in the user's enabled-service output. A's pre-deployment script approval is recorded separately from pending post-deployment peer acceptance. No authenticated cloud mutation was executed by Codex during evidence collection, and no new product tests, cloud restart/redeploy or later-episode completion is claimed for this documentation update.

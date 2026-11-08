@@ -1,0 +1,72 @@
+{
+  "dateBangkok": "2026-11-09",
+  "origin": "https://studytrack-981693883236.asia-southeast1.run.app",
+  "goalPath": "/goals/ef016b96-0f77-4ca6-ae68-0a6d58c9877a",
+  "templateTitle": "ทดสอบ Cloud โดย Phanuwit",
+  "participantDisplayName": "นักอ่านคนที่หนึ่ง",
+  "targetMinutes": 30,
+  "savedMinutes": 20,
+  "displayedPercent": 66.67,
+  "goalStartDate": "2026-11-09",
+  "entryDate": "2026-11-09",
+  "attribution": {
+    "managerSignIn": "User reported successful sign-in; Codex observed manager template creation form on GCP.",
+    "creationAndSave": "User performed domain actions. Codex observed resulting participant goal, distinct A template title and saved 20/30 progress, with save-success notice.",
+    "reload": "User confirmed refreshing the page; Codex observed same goal, date, 20/30 and 66.67%, with save-success notice absent."
+  },
+  "pending": [
+    "B peer review of A evidence",
+    "Reviewed staging-to-main documentation release"
+  ],
+  "crossOwner": {
+    "accountDisplayName": "นักอ่านคนที่สอง",
+    "goalPath": "/goals/ef016b96-0f77-4ca6-ae68-0a6d58c9877a",
+    "observedText": "ไม่พบรายการที่ต้องการ",
+    "otherUserGoalDetailsVisible": false,
+    "attribution": "User reported not found after switching accounts. Codex observed student2 role on the goal list, then navigated directly to the known student1 goal URL and observed not-found text with no goal details or saved minutes.",
+    "httpStatus": "Not established by browser observation",
+    "screenshot": "student2-cross-owner-rejection.jpg"
+  },
+  "notPerformed": [
+    "Invalid-zero validation in the A browser round",
+    "Independent inspection of B private Console originals and live infrastructure settings",
+    "Independent inspection of current serving revision or runtime OCI label",
+    "Cloud restart/redeploy persistence"
+  ],
+  "reportedDeployedSource": {
+    "commit": "807ed0806a84f39e88e0ba8f8fa5e658f41fe97f",
+    "revision": "studytrack-00001-rtr",
+    "source": "B deployment log and reviewed PR26/27/28 records",
+    "independentlyVerifiedRunningVersion": false
+  },
+  "c04": {
+    "businessWorkflow": "Saved entry and retrieval observed",
+    "ruleOrAccessRestriction": "Student2 direct access to student1 goal denied",
+    "rawBrowserCaptureContainsAddressBar": false,
+    "observedSourceUrl": "https://studytrack-981693883236.asia-southeast1.run.app/goals/ef016b96-0f77-4ca6-ae68-0a6d58c9877a",
+    "urlCaption": "Recorded with each figure in docs/labs/lab-05/member-a-live-acceptance.md"
+  },
+  "screenshots": [
+    {
+      "file": "student1-saved-20-of-30.jpg",
+      "bytes": 29850,
+      "sha256": "28ae97442b6d957fcbeb89cb7bb107d8041a8dff5d4be19008c38ced0e2206d7",
+      "originalFileWrittenUtc": "2026-11-08T17:59:03.144Z",
+      "sourceUrl": "https://studytrack-981693883236.asia-southeast1.run.app/goals/ef016b96-0f77-4ca6-ae68-0a6d58c9877a"
+    },
+    {
+      "file": "student1-progress-after-user-refresh.jpg",
+      "bytes": 30434,
+      "sha256": "dac3fefc6d16940f5d86ba691057cadc511285b9e897a507de7d9029f472bd7c",
+      "originalFileWrittenUtc": "2026-11-08T18:02:03.309Z",
+      "sourceUrl": "https://studytrack-981693883236.asia-southeast1.run.app/goals/ef016b96-0f77-4ca6-ae68-0a6d58c9877a"
+    },
+    {
+      "file": "student2-cross-owner-rejection.jpg",
+      "bytes": 14669,
+      "sha256": "a924cb2de8454923d9e770929f207f2bf174f9bfa81423f611e15808243a8b11",
+      "originalFileWrittenUtc": "2026-11-08T18:03:54.149Z",
+      "sourceUrl": "https://studytrack-981693883236.asia-southeast1.run.app/goals/ef016b96-0f77-4ca6-ae68-0a6d58c9877a"
+    }
+  ]
+}

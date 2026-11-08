@@ -1,6 +1,6 @@
 # EP5 deployment evidence and teammate handoff
 
-8 November 2026 (Asia/Bangkok). [Issue #20](https://github.com/auto4496/studytrack/issues/20). B-side live checks passed; A's independent cloud acceptance and this evidence review remain pending. This record supplements the [deployment runbook](deployment.md) and [pre-code contract](cloud-contract.md).
+8 November 2026 (Asia/Bangkok). [Issue #20](https://github.com/auto4496/studytrack/issues/20). This record preserves B's deployment observations. **Update, 9 November:** A independently verified the public workflow, persisted retrieval and cross-owner restriction, then approved PR #28; it merged into staging as `0bceb1a`. A's [own captures and attributed results](member-a-live-acceptance.md) are now available without waiting for B's private screenshot bundle. Peer review of that follow-up evidence and the documentation release remain pending. This record supplements the [deployment runbook](deployment.md) and [pre-code contract](cloud-contract.md).
 
 ## Source and running version
 
@@ -32,7 +32,7 @@ These mappings come from the user's successful bootstrap log. Source code and re
 
 ## Actual execution and attribution
 
-The user executed Google Cloud commands in Cloud Shell and manually used the authenticated browser. Codex assisted B with instructions, compared the supplied results/screenshots to the checklist and independently fetched the public root/health endpoints. A reviewed the scripts before deployment; no independent A post-deployment check has yet been supplied. Existing CI counts above are pre-cloud results, not new authenticated cloud tests or human UAT.
+For this 8 November B-side record, the user executed Google Cloud commands in Cloud Shell and manually used the authenticated browser. Codex assisted B with instructions, compared the supplied results/screenshots to the checklist and independently fetched the public root/health endpoints. A had reviewed the scripts before deployment; the independent A browser round occurred on 9 November and is recorded separately in [A's evidence](member-a-live-acceptance.md). Existing CI counts above are pre-cloud results, not new authenticated cloud tests or human UAT.
 
 The accepted-main preview ended with `Dry-run plan complete`. The first real run stopped at Cloud Build submission with `PERMISSION_DENIED`, before its SQL/database/secret/job/service steps. Regional build listing was empty and the queried denial audit records returned `[]`. Direct permission tests then confirmed all five tested caller permissions: `cloudbuild.builds.create`, `cloudbuild.builds.get`, `serviceusage.services.use`, `iam.serviceAccounts.actAs` and `iam.serviceAccounts.get`.
 
@@ -70,7 +70,7 @@ The actual enabled-service output supplied by the user includes every API reques
 
 ## Screenshot inventory
 
-The user supplied these screenshots in the B chat. Fifteen originals and a provenance index are retained locally in the `studytrack-ep5-evidence` folder for private teammate review and the later report. They have not been uploaded to this repository. A must receive the originals privately from B or independently reproduce the checks; this table is an index, not public screenshot access. Some Console originals include account email addresses. No password/token/connection-string payload is included in this document.
+The user supplied these screenshots in the B chat. Fifteen originals and a provenance index are retained locally in the `studytrack-ep5-evidence` folder for private teammate review and the later report. They have not been uploaded to this repository. This table is an index, not public screenshot access. A independently reproduced the domain workflow and retained [separate browser captures](member-a-live-acceptance.md); A has not independently inspected these B Console originals. Some Console originals include account email addresses. No password/token/connection-string payload is included in this document.
 
 | Retained filename | Evidence |
 | --- | --- |
@@ -92,12 +92,14 @@ The user supplied these screenshots in the B chat. Fifteen originals and a prove
 
 ## A acceptance handoff
 
+The following checklist was prepared on 8 November. On 9 November, A completed the domain verification using 20/30 minutes (66.67%) and the cross-owner restriction, reviewed and accepted PR #28, and prepared the separate A evidence above. Invalid-zero validation was not repeated by A; cross-owner denial supplies C-04's required rule rejection or access restriction. Private B originals are not a prerequisite for the independently reproduced workflow. B's review of A's new evidence and the reviewed documentation release remain outstanding.
+
 1. Review this documentation diff and match the source SHA, images, revision, resource names and outcomes to #20 and the reviewed PR #26/#27. Keep documentation review and deployed-source acceptance distinct.
-2. Receive the screenshot set and demo credentials privately from B. Use the existing live origin. If access is missing, report the specific limitation; this checklist does not require new IAM grants or a bootstrap rerun.
-3. Independently exercise manager template -> student goal starting today -> invalid 0 minutes -> valid 15 / target 30 -> reload 50% -> other student denied that goal. Use a distinct A test-template name so established B evidence is retained. Record actual account roles, date, result and serving revision without password/session values.
+2. Receive demo credentials privately from B and use the existing live origin. Review B originals where available or independently reproduce the domain checks with A's own captures. If access is missing, report the specific limitation; this checklist does not require new IAM grants or a bootstrap rerun.
+3. Independently exercise manager template -> student goal starting today -> saved entry -> reload -> one rule rejection or access restriction. Use a distinct A test-template name so established B evidence is retained. Record actual account roles, date, values and results without password/session values. A's actual run used20/30=66.67% and the cross-owner restriction; only B's earlier run included invalid0. Attribute the serving-version evidence separately from browser behavior.
 4. Record who performed each check and any finding in the evidence PR / #20. Script approval before deployment is not post-deployment acceptance. Compare existing SQL/Run/IAM settings with the runbook; do not change cloud resources just to review these documents.
 5. A reviews the docs PR into staging; follow the team's reviewed release flow for documentation to main. Close #20 and set its board item Done only after A's live acceptance, evidence review and recorded handoff are complete.
 
-EP5 B-side checklist5.0-5.7 is supported by the results above; step5.8 is pending A's acceptance. The final evidence/PDF is still tracked in #24. Refresh persistence does not prove container restart/redeploy; that cloud exercise remains #23. GitHub required gate/WIF and the main deployment pipeline remain #21/#22.
+EP5 B-side checklist5.0-5.7 is supported by the B-side results above. A's subsequent workflow check and approval are recorded separately; the evidence handoff and documentation release still precede closing #20. The final evidence/PDF is still tracked in #24. Refresh persistence does not prove container restart/redeploy; that cloud exercise remains #23. GitHub required gate/WIF and the main deployment pipeline remain #21/#22.
 
 The SQL instance-list screenshot reports health recommendations without their details. They have not been diagnosed or resolved in this record. No cloud restart, SQL upgrade, password rotation, resource deletion, later-episode completion or instructor acceptance is claimed. Keep the service available for grading as required by the handout.
