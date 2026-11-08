@@ -170,8 +170,9 @@ exec /bin/bash deploy/deploy.sh
         self.assertFalse(self.state().get("instance"))
 
     def test_migration_failure_stops_before_service_update(self):
-        self.run_deploy(expected=1, TEST_MODE="job-fail")
+        result = self.run_deploy(expected=1, TEST_MODE="job-fail")
         self.assertFalse(self.state().get("service"))
+        self.assertIn("gcloud run jobs logs read studytrack-migrate", result.stderr)
 
     def test_wrong_existing_sql_settings_are_preserved_and_rejected(self):
         state = self.state()

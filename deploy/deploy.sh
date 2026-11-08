@@ -175,6 +175,7 @@ run_cmd gcloud run jobs deploy studytrack-migrate --image="$tools_image" --regio
   --tasks=1 --parallelism=1 --max-retries=0 --task-timeout=300s --memory=512Mi --cpu=1 --quiet
 if ! run_cmd gcloud run jobs execute studytrack-migrate --region="$REGION" --project="$PROJECT_ID" --wait; then
   echo 'Migration/seed job failed. Inspect its execution logs before retrying.' >&2
+  printf 'gcloud run jobs logs read studytrack-migrate --region=%s --project=%s --limit=50\n' "$REGION" "$PROJECT_ID" >&2
   exit 1
 fi
 run_cmd gcloud run deploy studytrack --image="$runtime_image" --region="$REGION" --project="$PROJECT_ID" \

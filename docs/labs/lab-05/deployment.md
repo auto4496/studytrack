@@ -9,6 +9,41 @@
 - The user confirmed the budget alert and teammate IAM access. Trial credit balance and the eventual resource settings still need a Console check before the real run.
 - [EP4 release PR #25](https://github.com/auto4496/studytrack/pull/25) is merged. Cloud SQL/Run resources, image digests, serving revision and public URL are pending actual execution.
 
+## Episode checklist
+
+Cross-checked against Student Guide V1.1, EP4 pages 38-43 and EP5 pages 44-55, and the Lab5 handout. The handout controls assessed requirements when reference materials differ. Complete each row using its stated evidence before declaring the episode complete.
+
+| Step | StudyTrack action and expected evidence | Current checkpoint |
+| --- | --- | --- |
+| EP4 file preparation | CI and adapted deployment files are on reviewed main. The reference copies the whole starter deploy/ folder during EP4. StudyTrack initially published CI/smoke in PR #25; PR #26 supplies the first-deploy script and Cloud Build configuration. | Script correction awaits A review, staging acceptance and release to main. |
+| 5.0 Adapt | A reviews resource names, SQL 17/edition/tier/storage, port 8080, origin, runtime/tools, IAM and secret/migration behavior in PR #26. | CI and offline checks pass on the prepared version; peer acceptance pending. |
+| 5.1 Cloud Shell | Correct active Google account, studytrack-cpe334, asia-southeast1, enabled billing, budget, teammate access and clean accepted main. Confirm active trial/credits in Console. | User supplied the project/billing output, clone737c591 and budget/IAM confirmation. Refresh main after the script release. |
+| 5.2 Preview | Run DRY_RUN=1 from the repository root and inspect every proposed resource and permission with A. Repeat after script changes and on the final accepted main. | User completed preview30653d8; final-main preview remains a pre-deployment check. |
+| 5.3 Deploy | Run the accepted main script after the reviewed plan and billing/credit check. Retain source SHA, image digests, migration outcome, revision and URL. Inspect failures before retrying. | Actual resource creation and deployment pending. |
+| 5.4 Storage | Verify studytrack-pg has storageAutoResize=false and the expected size/edition/tier. Creation already supplies --no-storage-auto-increase. | Verify the real instance after 5.3. |
+| 5.5 Health and UI | Use the script's printed HTTPS origin. Verify /api/health returns data.status=ok, run the read-only smoke and open the built UI publicly. The StudyTrack health route queries the DB. | Actual public checks pending. |
+| 5.6 Sign-in | Retrieve the manager/student password privately using the selected secret version referenced by the migration job. Use manager@studytrack.test and student1@studytrack.test / student2@studytrack.test. The existing StudyTrack seed preserves established passwords/accounts on rerun. | Actual sign-in and domain journey pending. |
+| 5.7 Console | Check enabled APIs, registry runtime/tools images, all three service identities/grants, PostgreSQL17 studytrack-pg/studytrack, three named secrets, Cloud Run origin/DB secret/port and scaling min0/max3. | Actual Console evidence pending. |
+| 5.8 Acceptance | Both members check manager template -> participant goal -> saved entry/progress and a rule/access rejection. Link the public URL, SHA/revision, outcomes and safe screenshots in #20 and this record. Close #20 only after these criteria hold. | Keep #20 open for actual cloud evidence. |
+
+Initial build runs before SQL creation in this adaptation, reducing the time a new SQL instance exists if the build fails. The separate builder/migrator identities and extra failure tests are design choices to review with A. Generating and retaining the configuration preview is preparation for the real cloud checks.
+
+For step5.4, inspect the actual settings after deployment:
+
+```bash
+gcloud sql instances describe studytrack-pg --project=studytrack-cpe334 \
+  --format='yaml(databaseVersion,region,settings.edition,settings.tier,settings.dataDiskSizeGb,settings.storageAutoResize)'
+```
+
+If migration/seed fails at step5.3, the script prints this diagnostic command. Inspect the relevant execution before another attempt:
+
+```bash
+gcloud run jobs logs read studytrack-migrate \
+  --region=asia-southeast1 --project=studytrack-cpe334 --limit=50
+```
+
+Files for the later episodes also need explicit acceptance. `deploy/release.sh` and `.github/workflows/deploy.yml` are tracked in #22 with the reviewed identity/gate setup in #21. The cloud restart/redeploy proof is #23 and the evidence PDF is #24. A teardown script/resource cleanup belongs to the post-grading lifecycle after the instructor confirms service availability is no longer required. Recheck the next episode's complete prerequisites before starting it.
+
 ## Stack and reference adaptations
 
 React and Express share one production runtime, Node 24 and Prisma 6.19.3. PostgreSQL 17 stores users, sessions, templates, goals and entries. Cloud Run listens on injected PORT 8080 and serves the UI/API over one public HTTPS origin. Cloud SQL Enterprise is proposed with db-f1-micro, zonal availability, 10 GB SSD and disabled storage auto-increase. Run uses one CPU, 512 MiB, minimum 0 and maximum 3 instances. Teammate/user review of the dry-run plan precedes billable execution.
