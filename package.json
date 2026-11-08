@@ -24,7 +24,13 @@
     "test:integration": "vitest run server/tests/integration",
     "test:e2e": "playwright test",
     "verify:restart": "tsx scripts/restart-smoke.ts",
-    "setup:local": "node scripts/setup-local.mjs"
+    "setup:local": "node scripts/setup-local.mjs",
+    "setup:container": "node scripts/setup-container.mjs",
+    "verify:container": "node scripts/verify-container.mjs",
+    "container:up": "node scripts/container.mjs up",
+    "container:stop": "node scripts/container.mjs stop",
+    "container:status": "node scripts/container.mjs status",
+    "test:container-config": "node --test scripts/tests/container-config.test.mjs"
   },
   "dependencies": {
     "@prisma/client": "6.19.3",

@@ -1,5 +1,15 @@
 # Member B status — implementation handoff
 
+## อัปเดต Lab 5 วันที่ 8 พฤศจิกายน 2026
+
+B ตรวจซ้ำ [PR #15](https://github.com/auto4496/studytrack/pull/15) ที่ `4ff9baa332b9b580d09f504f88caa74997e823b2` แล้วผ่าน 21 configuration checks และ 35 HTTPS/API/browser/lifecycle checks บนชุด Docker แยก ข้อมูล 45/60=75% และ session อยู่หลัง app restart, container recreation และ DB restart ตรวจภาพ desktop/mobile แล้ว ผล build ใช้ cache ที่มีอยู่ บันทึก [APPROVED review](https://github.com/auto4496/studytrack/pull/15#pullrequestreview-5816774539) และ merge เข้า staging ที่ `637468da8e537eaf15ed892f22c9c34c27ac0304` แล้ว
+
+งาน B ต่อใน [Issue #18](https://github.com/auto4496/studytrack/issues/18) และ branch `codex/lab5-ci` ซึ่งรวม staging ที่รับ PR #15 แล้ว Workflow ตรวจ PR เข้า `codex/sprint-1-staging` และ `main` ด้วย job `test-and-docker` ใช้ PostgreSQL 17 ชั่วคราว รัน configuration guards, API/unit, browser desktop/mobile, build server/client, production Docker build และ offline smoke tests
+
+A ตรวจ workflow และผล GitHub Actions บน PR เข้า staging ก่อนรับงาน จากนั้น release PR จาก staging เข้า main ต้องผ่าน Actions และ peer review อีกครั้ง ก่อนเริ่ม deploy ตาม EP5 งาน `deploy/` รอบนี้มี smoke check สำหรับหน้าเว็บและ API ที่เชื่อมฐานข้อมูล ส่วน provisioning/release scripts และ GCP resource configuration อยู่ในงานขั้นต่อไป
+
+เนื้อหาด้านล่างเป็นประวัติการส่งงาน Sprint 1 วันที่ 4 พฤศจิกายน 2026 สำหรับสถานะ accepted application และรายงาน D1 ให้ดู [release record](../release/sprint-1-readiness.md)
+
 > อัปเดตหลัง A review 4 พฤศจิกายน 2026: PR6และPR7 APPROVED/ MERGEDแล้ว ไม่มีblocking findings; stagingล่าสุด85f510f. Issue4/5 CLOSED. Bตรวจsourceตรงกับที่ผ่าน117API/unit+24browser/build/restartและตรวจraw reportsของAแล้ว. ขั้นต่อไปคือ [release readiness](sprint-1-release-readiness.md), reviewเอกสารรอบนี้และrelease PRเข้าmain; ยังไม่accepted main release
 
 > Workflow ตาม TokTickIT: Aเขียนให้B review และBเขียนให้A reviewในrepoเดียว. PR3/6/7เดินครบ review/mergeเข้าstagingแล้ว; releaseจากstagingไปmainยังต้องได้รับreviewแยก ดู [workflow](../review-workflow.md)

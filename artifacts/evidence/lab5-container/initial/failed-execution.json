@@ -1,0 +1,34 @@
+{
+  "sourceCommit": "05755182a9f3a2a3f414315241282f788b3e2a38",
+  "startedAt": "2026-11-04T09:34:20.749Z",
+  "finishedAt": "2026-11-04T09:34:24.206Z",
+  "passed": 4,
+  "failed": 1,
+  "checks": [
+    {
+      "name": "runtime uses non-root node user",
+      "expected": "node",
+      "actual": "node",
+      "result": "PASS"
+    },
+    {
+      "name": "runtime root filesystem is read-only",
+      "expected": true,
+      "actual": true,
+      "result": "PASS"
+    },
+    {
+      "name": "database is not published to host",
+      "expected": true,
+      "actual": true,
+      "result": "PASS"
+    },
+    {
+      "name": "OCI revision matches tested commit",
+      "expected": "05755182a9f3a2a3f414315241282f788b3e2a38",
+      "actual": "05755182a9f3a2a3f414315241282f788b3e2a38",
+      "result": "PASS"
+    }
+  ],
+  "failure": "private files and Prisma CLI excluded from runtime\n+ actual - expected\n\n  {\n+   devCLI: true,\n-   devCLI: false,\n    env: false,\n    git: false,\n    privateContainerEnv: false\n  }\n"
+}

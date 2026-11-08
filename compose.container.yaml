@@ -1,0 +1,78 @@
+name: studytrack-container
+
+x-tools: &tools
+  image: studytrack-tools:${CONTAINER_IMAGE_TAG:-local}
+  build:
+    context: .
+    target: tools
+  profiles: [tools]
+  environment: &tool-env
+    NODE_ENV: production
+    DATABASE_URL: ${CONTAINER_DATABASE_URL:?Generate .env.container.local first}
+  depends_on:
+    db:
+      condition: service_healthy
+
+services:
+  db:
+    image: postgres:17-alpine3.22@sha256:d5914d9850b32edc53951703b334538a777f48e8ba7555a17748642433f39b63
+    environment:
+      POSTGRES_USER: studytrack
+      POSTGRES_PASSWORD: ${CONTAINER_DB_PASSWORD:?Generate .env.container.local first}
+      POSTGRES_DB: studytrack_container
+    volumes: [container-db-data:/var/lib/postgresql/data]
+    healthcheck:
+      test: [CMD-SHELL, pg_isready -U studytrack -d studytrack_container]
+      interval: 3s
+      timeout: 3s
+      retries: 30
+
+  app:
+    image: studytrack:${CONTAINER_IMAGE_TAG:-local}
+    build:
+      context: .
+      target: runtime
+      args:
+        VCS_REF: ${CONTAINER_VCS_REF:-unknown}
+    environment:
+      NODE_ENV: production
+      PORT: "8080"
+      APP_ORIGIN: ${CONTAINER_APP_ORIGIN:?Generate .env.container.local first}
+      DATABASE_URL: ${CONTAINER_DATABASE_URL:?Generate .env.container.local first}
+    init: true
+    read_only: true
+    tmpfs: [/tmp]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    stop_grace_period: 30s
+    depends_on:
+      db:
+        condition: service_healthy
+
+  proxy:
+    image: caddy:2-alpine@sha256:e70b164da81ef698b3ad19af799ea6086ce6d9e48ed4079eb9fe26f6fbf14ee5
+    ports: ["127.0.0.1:${CONTAINER_HTTPS_PORT:-3443}:443"]
+    volumes:
+      - ./docker/Caddyfile.local:/etc/caddy/Caddyfile:ro
+      - container-caddy-data:/data
+      - container-caddy-config:/config
+    depends_on:
+      app:
+        condition: service_healthy
+
+  migrate:
+    <<: *tools
+    command: [npm, run, db:migrate]
+
+  seed:
+    <<: *tools
+    environment:
+      <<: *tool-env
+      SEED_MANAGER_PASSWORD: ${CONTAINER_MANAGER_PASSWORD:?Generate private seed passwords}
+      SEED_PARTICIPANT_PASSWORD: ${CONTAINER_PARTICIPANT_PASSWORD:?Generate private seed passwords}
+    command: [npm, run, db:seed]
+
+volumes:
+  container-db-data:
+  container-caddy-data:
+  container-caddy-config:

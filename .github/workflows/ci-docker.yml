@@ -1,0 +1,76 @@
+name: CI & Docker Build
+
+on:
+  workflow_call:
+  pull_request:
+    branches: [main, codex/sprint-1-staging]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test-and-docker:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    services:
+      postgres:
+        image: postgres:17-alpine3.22
+        env:
+          POSTGRES_USER: studytrack
+          POSTGRES_PASSWORD: ep4_ci_fixture
+          POSTGRES_DB: studytrack_test
+        ports:
+          - 5432/tcp
+        options: >-
+          --health-cmd "pg_isready -h 127.0.0.1 -U studytrack -d studytrack_test"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js 24
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "24"
+
+      - name: Check deployment smoke script offline
+        run: python3 -B -m unittest discover -s deploy/tests -p 'test_smoke.py' -v
+
+      - name: Install dependencies and generate Prisma client
+        run: |
+          npm ci
+          npm run db:generate
+
+      - name: Check local container database isolation
+        run: npm run test:container-config
+
+      - name: Migrate test database and run API and unit tests
+        env:
+          TEST_DATABASE_URL: postgresql://studytrack:ep4_ci_fixture@127.0.0.1:${{ job.services.postgres.ports[5432] }}/studytrack_test
+        run: |
+          npm run db:test:migrate
+          npm test
+
+      - name: Run desktop and mobile browser tests
+        env:
+          TEST_DATABASE_URL: postgresql://studytrack:ep4_ci_fixture@127.0.0.1:${{ job.services.postgres.ports[5432] }}/studytrack_test
+        run: |
+          npx playwright install --with-deps chromium
+          npm run test:e2e
+
+      - name: Build server and client
+        run: npm run build
+
+      - name: Build production Docker image
+        run: docker build --target runtime --build-arg VCS_REF="$GITHUB_SHA" -t studytrack:ci .

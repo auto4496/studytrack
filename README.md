@@ -71,3 +71,7 @@ D1: one self-contained A-F PDF with reviewed main release/local evidence, due 8 
 
 
 Deliverable 1 is submitted as one self-contained team PDF through LEB2 by 8 November 2026 at 23:59 Asia/Bangkok. Docker, CI/CD and GCP deployment remain separate Lab 5 work.
+
+## Application Docker packaging (Lab 5)
+
+See [container quick start, environment and verification](docs/labs/lab-05/container.md). This is an isolated production-mode app/PostgreSQL/HTTPS stack; it preserves existing authentication and does not modify the development databases. CI/GCP remain separate work. Local production packaging and its effective-database-target review correction passed35 API/browser/lifecycle checks plus21 configuration guards at f938688, including secure cookies, non-root runtime and persisted records/session after restart and container recreation. See the linked runbook for actual source/results and the remaining CI/GCP work.
