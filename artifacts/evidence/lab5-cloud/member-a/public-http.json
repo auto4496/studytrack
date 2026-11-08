@@ -1,0 +1,34 @@
+{
+  "executedAtUtc": "2026-11-08T18:12:30.243Z",
+  "origin": "https://studytrack-981693883236.asia-southeast1.run.app",
+  "performer": "Codex, unauthenticated HTTP requests",
+  "changesDomainData": false,
+  "checks": [
+    {
+      "route": "/",
+      "status": 200,
+      "expectedStatus": 200,
+      "passed": true,
+      "hasStudyTrackMarkup": true
+    },
+    {
+      "route": "/api/health",
+      "status": 200,
+      "expectedStatus": 200,
+      "passed": true,
+      "response": {
+        "data": {
+          "status": "ok",
+          "service": "StudyTrack API"
+        }
+      }
+    },
+    {
+      "route": "/api/goals",
+      "status": 401,
+      "expectedStatus": 401,
+      "passed": true
+    }
+  ],
+  "passed": true
+}

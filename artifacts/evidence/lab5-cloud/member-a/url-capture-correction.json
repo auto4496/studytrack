@@ -1,0 +1,50 @@
+{
+  "dateBangkok": "2026-11-09",
+  "finding": "https://github.com/auto4496/studytrack/pull/29#discussion_r4507300093",
+  "originalCapturesPreserved": true,
+  "captures": [
+    {
+      "file": "student1-saved-progress-with-url.jpg",
+      "recordedAtUtc": "2026-11-08T18:39:22.942Z",
+      "accountDisplayName": "นักอ่านคนที่หนึ่ง",
+      "sourceUrl": "https://studytrack-981693883236.asia-southeast1.run.app/goals/ef016b96-0f77-4ca6-ae68-0a6d58c9877a",
+      "browser": "Microsoft Edge native window",
+      "addressBarVisible": true,
+      "result": "Existing saved20/30minutes,66.67%; no new save or save-success notice claimed",
+      "actor": "User signed in; Codex opened the existing goal, scrolled and captured the native browser window",
+      "unalteredCapture": true,
+      "bytes": 74731,
+      "sha256": "52cbd104854be2c061b67b899047722d3380ab605d95611fb7406260d742d88d"
+    },
+    {
+      "file": "student1-progress-after-refresh-with-url.jpg",
+      "recordedAtUtc": "2026-11-08T18:40:14.865Z",
+      "accountDisplayName": "นักอ่านคนที่หนึ่ง",
+      "sourceUrl": "https://studytrack-981693883236.asia-southeast1.run.app/goals/ef016b96-0f77-4ca6-ae68-0a6d58c9877a",
+      "browser": "Microsoft Edge native window",
+      "addressBarVisible": true,
+      "result": "20/30minutes,66.67% still present after actual F5 reload by Codex",
+      "actor": "Codex pressed F5, observed the reloaded document and scrolled to saved progress; user had signed in",
+      "unalteredCapture": true,
+      "bytes": 74802,
+      "sha256": "cad7e57248fa20dd35c1c9bbda36803fac4e95b0d20f0bde9c93ab9e056cce90"
+    },
+    {
+      "file": "student2-cross-owner-denial-with-url.jpg",
+      "recordedAtUtc": "2026-11-08T18:43:03.710Z",
+      "accountDisplayName": "นักอ่านคนที่สอง",
+      "sourceUrl": "https://studytrack-981693883236.asia-southeast1.run.app/goals/ef016b96-0f77-4ca6-ae68-0a6d58c9877a",
+      "browser": "Microsoft Edge native window",
+      "addressBarVisible": true,
+      "result": "ไม่พบรายการที่ต้องการ; no owner goal details or saved minutes displayed",
+      "actor": "User signed in as student2; Codex entered the known student1 goal URL into the address bar, navigated and captured the denial",
+      "httpStatus": "Not independently captured",
+      "unalteredCapture": true,
+      "bytes": 49575,
+      "sha256": "151d2e551dc077415176eed67f04782b41d788530602cf42ef932da40606d8d9"
+    }
+  ],
+  "pending": [
+    "B re-review of correction"
+  ]
+}

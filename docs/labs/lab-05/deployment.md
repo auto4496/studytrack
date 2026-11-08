@@ -5,9 +5,10 @@
 ## Confirmed setup
 
 - Project ID `studytrack-cpe334`, region `asia-southeast1`.
-- User's Cloud Shell clone is accepted main `737c591af2a56797781b18742e065cb96eb3faed`. The user's command output shows `billingEnabled: true`.
-- The user confirmed the budget alert and teammate IAM access. Trial credit balance and the eventual resource settings still need a Console check before the real run.
-- [EP4 release PR #25](https://github.com/auto4496/studytrack/pull/25) is merged. Cloud SQL/Run resources, image digests, serving revision and public URL are pending actual execution.
+- Deployed source is accepted main `807ed0806a84f39e88e0ba8f8fa5e658f41fe97f`, released through [PR #27](https://github.com/auto4496/studytrack/pull/27) after A's bootstrap review in [PR #26](https://github.com/auto4496/studytrack/pull/26).
+- The user confirmed enabled billing, the budget alert and teammate IAM access, showed an active trial, completed the final-main preview and executed the real bootstrap in Cloud Shell.
+- Public origin: <https://studytrack-981693883236.asia-southeast1.run.app>. Ready revision `studytrack-00001-rtr` serves 100% of traffic. The user's deployment log, SQL describe output, browser/Console screenshots and enabled-API output establish the results below.
+- [EP5 evidence and A acceptance checklist](ep5-evidence.md) records the immutable image digests, command outcomes and evidence attribution. A's [9 November live verification](member-a-live-acceptance.md) separately records saved20/30, refresh persistence and cross-owner denial, with A's own captures. PR #28 has been approved and merged into staging; peer review of the A evidence and the documentation release remain pending. This documentation branch has not been deployed.
 
 ## Episode checklist
 
@@ -15,16 +16,16 @@ Cross-checked against Student Guide V1.1, EP4 pages 38-43 and EP5 pages 44-55, a
 
 | Step | StudyTrack action and expected evidence | Current checkpoint |
 | --- | --- | --- |
-| EP4 file preparation | CI and adapted deployment files are on reviewed main. The reference copies the whole starter deploy/ folder during EP4. StudyTrack initially published CI/smoke in PR #25; PR #26 supplies the first-deploy script and Cloud Build configuration. | Script correction awaits A review, staging acceptance and release to main. |
-| 5.0 Adapt | A reviews resource names, SQL 17/edition/tier/storage, port 8080, origin, runtime/tools, IAM and secret/migration behavior in PR #26. | CI and offline checks pass on the prepared version; peer acceptance pending. |
-| 5.1 Cloud Shell | Correct active Google account, studytrack-cpe334, asia-southeast1, enabled billing, budget, teammate access and clean accepted main. Confirm active trial/credits in Console. | User supplied the project/billing output, clone737c591 and budget/IAM confirmation. Refresh main after the script release. |
-| 5.2 Preview | Run DRY_RUN=1 from the repository root and inspect every proposed resource and permission with A. Repeat after script changes and on the final accepted main. | User completed preview30653d8; final-main preview remains a pre-deployment check. |
-| 5.3 Deploy | Run the accepted main script after the reviewed plan and billing/credit check. Retain source SHA, image digests, migration outcome, revision and URL. Inspect failures before retrying. | Actual resource creation and deployment pending. |
-| 5.4 Storage | Verify studytrack-pg has storageAutoResize=false and the expected size/edition/tier. Creation already supplies --no-storage-auto-increase. | Verify the real instance after 5.3. |
-| 5.5 Health and UI | Use the script's printed HTTPS origin. Verify /api/health returns data.status=ok, run the read-only smoke and open the built UI publicly. The StudyTrack health route queries the DB. | Actual public checks pending. |
-| 5.6 Sign-in | Retrieve the manager/student password privately using the selected secret version referenced by the migration job. Use manager@studytrack.test and student1@studytrack.test / student2@studytrack.test. The existing StudyTrack seed preserves established passwords/accounts on rerun. | Actual sign-in and domain journey pending. |
-| 5.7 Console | Check enabled APIs, registry runtime/tools images, all three service identities/grants, PostgreSQL17 studytrack-pg/studytrack, three named secrets, Cloud Run origin/DB secret/port and scaling min0/max3. | Actual Console evidence pending. |
-| 5.8 Acceptance | Both members check manager template -> participant goal -> saved entry/progress and a rule/access rejection. Link the public URL, SHA/revision, outcomes and safe screenshots in #20 and this record. Close #20 only after these criteria hold. | Keep #20 open for actual cloud evidence. |
+| EP4 file preparation | CI and adapted deployment files are on reviewed main. The reference copies the whole starter deploy/ folder during EP4. StudyTrack initially published CI/smoke in PR #25; PR #26 supplies the first-deploy script and Cloud Build configuration. | PR #26 accepted into staging; PR #27 released the scripts to main807ed08. |
+| 5.0 Adapt | A reviews resource names, SQL 17/edition/tier/storage, port 8080, origin, runtime/tools, IAM and secret/migration behavior in PR #26. | A approved source3664535; release CI passed 16 offline, 21 config, 117 API/unit and 24 browser checks plus app/runtime-image builds. These are pre-cloud results. |
+| 5.1 Cloud Shell | Correct active Google account, studytrack-cpe334, asia-southeast1, enabled billing, budget, teammate access and clean accepted main. Confirm active trial/credits in Console. | User supplied the account/project/billing results and active-trial screenshot, confirmed budget/teammate access and updated to main807ed08. |
+| 5.2 Preview | Run DRY_RUN=1 from the repository root and inspect every proposed resource and permission with A. Repeat after script changes and on the final accepted main. | User's final-main preview807ed08 completed; B also ran literal preview on that source. |
+| 5.3 Deploy | Run the accepted main script after the reviewed plan and billing/credit check. Retain source SHA, image digests, migration outcome, revision and URL. Inspect failures before retrying. | Build59d938a8 succeeded; migration/seed execution studytrack-migrate-6qs4x completed; revision studytrack-00001-rtr deployed. First permission-denied attempt and the controlled successful retry are retained in the evidence record. |
+| 5.4 Storage | Verify studytrack-pg has storageAutoResize=false and the expected size/edition/tier. Creation already supplies --no-storage-auto-increase. | Actual describe confirms POSTGRES_17 / ENTERPRISE / db-f1-micro / 10GB / storageAutoResize=false; Console shows PostgreSQL17.11, Singapore, Single zone and database studytrack. |
+| 5.5 Health and UI | Use the script's printed HTTPS origin. Verify /api/health returns data.status=ok, run the read-only smoke and open the built UI publicly. The StudyTrack health route queries the DB. | Script smoke passed both routes. B independently fetched health/root HTTP200; the user's browser screenshots show the live UI. |
+| 5.6 Sign-in | Retrieve the manager/student password privately using the selected secret version referenced by the migration job. Use manager@studytrack.test and student1@studytrack.test / student2@studytrack.test. The existing StudyTrack seed preserves established passwords/accounts on rerun. | User signed in as manager and both students, created a template/30-minute goal, observed invalid0 rejection, saved15/30=50%, reloaded the saved result and observed student2 denied student1's goal. |
+| 5.7 Console | Check enabled APIs, registry runtime/tools images, all three service identities/grants, PostgreSQL17 studytrack-pg/studytrack, three named secrets, Cloud Run origin/DB secret/port and scaling min0/max3. | User screenshots show Run/resources/scaling, Registry images, secret names, project IAM and SQL/database. Enabled-API output contains all7 script APIs. Resource-scoped IAM bindings are evidenced by the bootstrap log; the full origin/secret name is clipped in the Console screenshot. |
+| 5.8 Acceptance | Both members check manager template -> participant goal -> saved entry/progress and a rule/access rejection. Link the public URL, SHA/revision, outcomes and safe screenshots in #20 and this record. Close #20 only after these criteria hold. | B-side user checks passed. A independently verified the domain workflow on 9 November: target30, saved20/30=66.67%, persisted retrieval and student2 denial. PR #28 accepted into staging; [A evidence](member-a-live-acceptance.md) awaits B review and the documentation release. Keep #20 open for that handoff/release. |
 
 Initial build runs before SQL creation in this adaptation, reducing the time a new SQL instance exists if the build fails. The separate builder/migrator identities and extra failure tests are design choices to review with A. Generating and retaining the configuration preview is preparation for the real cloud checks.
 
@@ -56,7 +57,7 @@ The [contract resource table](cloud-contract.md) lists the proposed names. Runti
 
 `studytrack-runner` receives Cloud SQL Client and accessor on studytrack-database-url. `studytrack-migrator` receives Cloud SQL Client and accessor on the database and both seed-password secrets. `studytrack-builder` receives Artifact Registry Writer on the studytrack repository, project Logs Writer and project Storage Object Viewer for uploaded build source. Build has no application-secret grant. The caller needs permission to enable APIs, create these resources and act as their service accounts.
 
-These are planned IAM changes requiring review of the dry-run output. No cloud IAM or database change is established by the offline tests.
+The successful bootstrap log records these grants and resource creation. Project IAM screenshots independently confirm the project roles. Repository/secret bindings are resource-scoped and are not established by the project IAM screenshot. Offline tests remain separate from this live evidence.
 
 ## Environment and build settings
 
@@ -89,6 +90,8 @@ DRY_RUN=1 PROJECT_ID=studytrack-cpe334 REGION=asia-southeast1 bash deploy/deploy
 Read the proposed SQL machine/storage, service identities/grants, image targets, migration and service settings with A. The plan builds images before creating a new SQL instance. It keeps migration/seed as a waited job before updating the public service. Preview success records a plan; the resource/deployment acceptance requires the next section.
 
 ## First real deployment after reviewed main release
+
+The first deployment below has already completed on main807ed08. Preserve this procedure for reference; repeating it is not required to review this documentation. A reviews the existing live deployment and evidence using [the acceptance checklist](ep5-evidence.md#a-acceptance-handoff).
 
 Confirm the Console's selected project, active trial/credits and budget alert first. Pull the reviewed main containing these scripts, check its SHA, and keep the checkout clean. Actual execution requires HEAD to match origin's latest main and the gcloud project to match PROJECT_ID.
 
@@ -126,8 +129,8 @@ The bootstrap prints the accepted SHA, immutable runtime/tools image URIs and la
 | --- | --- |
 | R-01/R-02 local packaging | Accepted in PR #15 and published through PR #25 |
 | C-01 PR CI | Accepted staging/main runs linked in PR #19/#25 |
-| Bootstrap offline guards | Execution results recorded in the bootstrap PR after testing |
-| Public resources/URL and C-04 | Pending user cloud execution and real domain verification |
+| Bootstrap offline guards | 16 offline checks passed in PR #26/#27; hosted release CI42484888811 succeeded |
+| Public resources/URL and C-04 | B's deployment record identifies main807ed08; A independently verified the public domain workflow and access restriction on 9 November. See [A evidence](member-a-live-acceptance.md) for captures and version-provenance limits. Documentation handoff/release remains pending. |
 | C-02/C-05/C-06 | Tracked in #21/#23/#22 |
 
 Keep source/review/CI/deployment evidence and the public service available for assessment as required by the handout. The Lab5 evidence index and PDF are tracked in #24.
