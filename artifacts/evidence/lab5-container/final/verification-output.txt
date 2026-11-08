@@ -1,0 +1,48 @@
+PASS runtime uses non-root node user
+PASS runtime root filesystem is read-only
+PASS database is not published to host
+PASS OCI revision matches tested commit
+PASS private files and Prisma CLI excluded from runtime
+ studytrack-container-review-proxy-1 Copying studytrack-container-review-proxy-1:/data/caddy/pki/authorities/local/root.crt to C:\Users\User\toktickit\tmp\studytrack-container-work\fresh\tmp\studytrack-container-review-root.crt
+ studytrack-container-review-proxy-1 Copied studytrack-container-review-proxy-1:/data/caddy/pki/authorities/local/root.crt to C:\Users\User\toktickit\tmp\studytrack-container-work\fresh\tmp\studytrack-container-review-root.crt
+PASS production serves built SPA over HTTPS
+PASS built JavaScript asset is served
+PASS anonymous goal API denied
+PASS invalid login rejects
+PASS production cookie keeps intended flags
+PASS manager creates template
+PASS participant cannot create manager template
+PASS participant creates own goal from new template
+PASS wrong Origin rejects container mutation
+PASS bad CSRF rejects container mutation
+PASS invalid minutes reject without activity
+PASS rejected requests create no entry
+PASS valid45-minute entry persists
+PASS saved45/60=75% retrieves from production container
+PASS duplicate entry returns409
+PASS duplicate preserves one original row
+PASS cross-owner API denies without data
+PASS manager cannot access participant progress
+ Container studytrack-container-review-app-1 Restarting 
+ Container studytrack-container-review-app-1 Started 
+PASS record and DB session survive actual app restart
+ Container studytrack-container-review-app-1 Recreate 
+ Container studytrack-container-review-app-1 Recreated 
+ Container studytrack-container-review-app-1 Starting 
+ Container studytrack-container-review-app-1 Started 
+ Container studytrack-container-review-app-1 Waiting 
+ Container studytrack-container-review-app-1 Healthy 
+PASS application container was actually recreated
+PASS record and DB session survive local container recreation
+ Container studytrack-container-review-db-1 Restarting 
+ Container studytrack-container-review-db-1 Started 
+PASS record and session survive database restart
+PASS desktop actual HTTPS browser reload shows saved75%
+PASS desktop has no horizontal page overflow
+PASS desktop logout revokes protected browser access
+PASS mobile actual HTTPS browser reload shows saved75%
+PASS mobile has no horizontal page overflow
+PASS mobile logout revokes protected browser access
+PASS API logout succeeds
+PASS revoked cookie replay denied
+PASS 35 local container checks; evidence saved without credentials/cookie/CSRF values.

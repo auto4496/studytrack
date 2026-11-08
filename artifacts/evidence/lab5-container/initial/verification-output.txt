@@ -1,0 +1,33 @@
+PASS runtime uses non-root node user
+PASS runtime root filesystem is read-only
+PASS database is not published to host
+PASS OCI revision matches tested commit
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: private files and Prisma CLI excluded from runtime
++ actual - expected
+
+  {
++   devCLI: true,
+-   devCLI: false,
+    env: false,
+    git: false,
+    privateContainerEnv: false
+  }
+
+    at record (file:///C:/Users/User/toktickit/tmp/studytrack-container-work/fresh/scripts/verify-container.mjs:37:10)
+    at file:///C:/Users/User/toktickit/tmp/studytrack-container-work/fresh/scripts/verify-container.mjs:98:3
+    at ModuleJob.run (node:internal/modules/esm/module_job:430:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:661:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: { env: false, privateContainerEnv: false, git: false, devCLI: true },
+  expected: { env: false, privateContainerEnv: false, git: false, devCLI: false },
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.14.0
