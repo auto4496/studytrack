@@ -8,7 +8,7 @@
 - Deployed source is accepted main `807ed0806a84f39e88e0ba8f8fa5e658f41fe97f`, released through [PR #27](https://github.com/auto4496/studytrack/pull/27) after A's bootstrap review in [PR #26](https://github.com/auto4496/studytrack/pull/26).
 - The user confirmed enabled billing, the budget alert and teammate IAM access, showed an active trial, completed the final-main preview and executed the real bootstrap in Cloud Shell.
 - Public origin: <https://studytrack-981693883236.asia-southeast1.run.app>. Ready revision `studytrack-00001-rtr` serves 100% of traffic. The user's deployment log, SQL describe output, browser/Console screenshots and enabled-API output establish the results below.
-- [EP5 evidence and A acceptance checklist](ep5-evidence.md) records the immutable image digests, command outcomes and evidence attribution. B's user completed the live checks; A's independent cloud acceptance remains pending. This documentation branch has not been deployed.
+- [EP5 evidence and A acceptance checklist](ep5-evidence.md) records the immutable image digests, command outcomes and evidence attribution. A's [9 November live verification](member-a-live-acceptance.md) separately records saved20/30, refresh persistence and cross-owner denial, with A's own captures. PR #28 has been approved and merged into staging; peer review of the A evidence and the documentation release remain pending. This documentation branch has not been deployed.
 
 ## Episode checklist
 
@@ -25,7 +25,7 @@ Cross-checked against Student Guide V1.1, EP4 pages 38-43 and EP5 pages 44-55, a
 | 5.5 Health and UI | Use the script's printed HTTPS origin. Verify /api/health returns data.status=ok, run the read-only smoke and open the built UI publicly. The StudyTrack health route queries the DB. | Script smoke passed both routes. B independently fetched health/root HTTP200; the user's browser screenshots show the live UI. |
 | 5.6 Sign-in | Retrieve the manager/student password privately using the selected secret version referenced by the migration job. Use manager@studytrack.test and student1@studytrack.test / student2@studytrack.test. The existing StudyTrack seed preserves established passwords/accounts on rerun. | User signed in as manager and both students, created a template/30-minute goal, observed invalid0 rejection, saved15/30=50%, reloaded the saved result and observed student2 denied student1's goal. |
 | 5.7 Console | Check enabled APIs, registry runtime/tools images, all three service identities/grants, PostgreSQL17 studytrack-pg/studytrack, three named secrets, Cloud Run origin/DB secret/port and scaling min0/max3. | User screenshots show Run/resources/scaling, Registry images, secret names, project IAM and SQL/database. Enabled-API output contains all7 script APIs. Resource-scoped IAM bindings are evidenced by the bootstrap log; the full origin/secret name is clipped in the Console screenshot. |
-| 5.8 Acceptance | Both members check manager template -> participant goal -> saved entry/progress and a rule/access rejection. Link the public URL, SHA/revision, outcomes and safe screenshots in #20 and this record. Close #20 only after these criteria hold. | B-side user checks passed. Keep #20 open for A's independent acceptance and reviewed evidence handoff. Screenshot originals are retained locally for private teammate review and the later evidence report. |
+| 5.8 Acceptance | Both members check manager template -> participant goal -> saved entry/progress and a rule/access rejection. Link the public URL, SHA/revision, outcomes and safe screenshots in #20 and this record. Close #20 only after these criteria hold. | B-side user checks passed. A independently verified the domain workflow on 9 November: target30, saved20/30=66.67%, persisted retrieval and student2 denial. PR #28 accepted into staging; [A evidence](member-a-live-acceptance.md) awaits B review and the documentation release. Keep #20 open for that handoff/release. |
 
 Initial build runs before SQL creation in this adaptation, reducing the time a new SQL instance exists if the build fails. The separate builder/migrator identities and extra failure tests are design choices to review with A. Generating and retaining the configuration preview is preparation for the real cloud checks.
 
@@ -130,7 +130,7 @@ The bootstrap prints the accepted SHA, immutable runtime/tools image URIs and la
 | R-01/R-02 local packaging | Accepted in PR #15 and published through PR #25 |
 | C-01 PR CI | Accepted staging/main runs linked in PR #19/#25 |
 | Bootstrap offline guards | 16 offline checks passed in PR #26/#27; hosted release CI42484888811 succeeded |
-| Public resources/URL and C-04 | Live deployment and B-side user browser journey passed on main807ed08; A acceptance pending. See [EP5 evidence](ep5-evidence.md). |
+| Public resources/URL and C-04 | B's deployment record identifies main807ed08; A independently verified the public domain workflow and access restriction on 9 November. See [A evidence](member-a-live-acceptance.md) for captures and version-provenance limits. Documentation handoff/release remains pending. |
 | C-02/C-05/C-06 | Tracked in #21/#23/#22 |
 
 Keep source/review/CI/deployment evidence and the public service available for assessment as required by the handout. The Lab5 evidence index and PDF are tracked in #24.
