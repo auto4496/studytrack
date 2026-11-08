@@ -1,0 +1,11 @@
+✔ dedicated local Compose database passes the read-only preflight (580.95ms)
+✔ inherited external database override is rejected despite a safe env file (531.6093ms)
+✔ inherited wrong-database override on the local service is rejected (537.5158ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1762.683

@@ -1,0 +1,339 @@
+{
+  "sourceCommit": "ee56d91dd4abf52f4c6bf13c5080c0f289620cc7",
+  "startedAt": "2026-11-04T09:50:26.273Z",
+  "finishedAt": "2026-11-04T09:50:58.584Z",
+  "project": "studytrack-container-review",
+  "origin": "https://localhost:3443",
+  "imageId": "sha256:e52904966e3e70d76136c9d6af013548d2f6d9e2fa345568639604b6506bc2d1",
+  "runtimeRevision": "ee56d91dd4abf52f4c6bf13c5080c0f289620cc7",
+  "lifecycle": true,
+  "browser": true,
+  "checks": [
+    {
+      "name": "runtime uses non-root node user",
+      "expected": "node",
+      "actual": "node",
+      "result": "PASS"
+    },
+    {
+      "name": "runtime root filesystem is read-only",
+      "expected": true,
+      "actual": true,
+      "result": "PASS"
+    },
+    {
+      "name": "database is not published to host",
+      "expected": true,
+      "actual": true,
+      "result": "PASS"
+    },
+    {
+      "name": "OCI revision matches tested commit",
+      "expected": "ee56d91dd4abf52f4c6bf13c5080c0f289620cc7",
+      "actual": "ee56d91dd4abf52f4c6bf13c5080c0f289620cc7",
+      "result": "PASS"
+    },
+    {
+      "name": "private files and Prisma CLI excluded from runtime",
+      "expected": {
+        "env": false,
+        "privateContainerEnv": false,
+        "git": false,
+        "devCLI": false
+      },
+      "actual": {
+        "env": false,
+        "privateContainerEnv": false,
+        "git": false,
+        "devCLI": false
+      },
+      "result": "PASS"
+    },
+    {
+      "name": "production serves built SPA over HTTPS",
+      "expected": true,
+      "actual": true,
+      "result": "PASS"
+    },
+    {
+      "name": "built JavaScript asset is served",
+      "expected": 200,
+      "actual": 200,
+      "result": "PASS"
+    },
+    {
+      "name": "anonymous goal API denied",
+      "expected": 401,
+      "actual": 401,
+      "result": "PASS"
+    },
+    {
+      "name": "invalid login rejects",
+      "expected": 401,
+      "actual": 401,
+      "result": "PASS"
+    },
+    {
+      "name": "production cookie keeps intended flags",
+      "expected": {
+        "secure": true,
+        "httpOnly": true,
+        "sameSiteLax": true
+      },
+      "actual": {
+        "secure": true,
+        "httpOnly": true,
+        "sameSiteLax": true
+      },
+      "result": "PASS"
+    },
+    {
+      "name": "manager creates template",
+      "expected": 201,
+      "actual": 201,
+      "result": "PASS"
+    },
+    {
+      "name": "participant cannot create manager template",
+      "expected": 403,
+      "actual": 403,
+      "result": "PASS"
+    },
+    {
+      "name": "participant creates own goal from new template",
+      "expected": 201,
+      "actual": 201,
+      "result": "PASS"
+    },
+    {
+      "name": "wrong Origin rejects container mutation",
+      "expected": 403,
+      "actual": 403,
+      "result": "PASS"
+    },
+    {
+      "name": "bad CSRF rejects container mutation",
+      "expected": 403,
+      "actual": 403,
+      "result": "PASS"
+    },
+    {
+      "name": "invalid minutes reject without activity",
+      "expected": 422,
+      "actual": 422,
+      "result": "PASS"
+    },
+    {
+      "name": "rejected requests create no entry",
+      "expected": 0,
+      "actual": 0,
+      "result": "PASS"
+    },
+    {
+      "name": "valid45-minute entry persists",
+      "expected": 201,
+      "actual": 201,
+      "result": "PASS"
+    },
+    {
+      "name": "saved45/60=75% retrieves from production container",
+      "expected": {
+        "goalId": "661d03ae-aff2-444f-9595-e901d851b86c",
+        "date": "2026-11-04",
+        "actualMinutes": 45,
+        "targetMinutes": 60,
+        "progressPercent": 75,
+        "achieved": false,
+        "entryId": "69838e4b-a530-4efb-962d-4341507cb406"
+      },
+      "actual": {
+        "goalId": "661d03ae-aff2-444f-9595-e901d851b86c",
+        "date": "2026-11-04",
+        "actualMinutes": 45,
+        "targetMinutes": 60,
+        "progressPercent": 75,
+        "achieved": false,
+        "entryId": "69838e4b-a530-4efb-962d-4341507cb406"
+      },
+      "result": "PASS"
+    },
+    {
+      "name": "duplicate entry returns409",
+      "expected": {
+        "status": 409,
+        "code": "ENTRY_ALREADY_EXISTS"
+      },
+      "actual": {
+        "status": 409,
+        "code": "ENTRY_ALREADY_EXISTS"
+      },
+      "result": "PASS"
+    },
+    {
+      "name": "duplicate preserves one original row",
+      "expected": {
+        "total": 1,
+        "minutes": 45,
+        "id": "69838e4b-a530-4efb-962d-4341507cb406"
+      },
+      "actual": {
+        "total": 1,
+        "minutes": 45,
+        "id": "69838e4b-a530-4efb-962d-4341507cb406"
+      },
+      "result": "PASS"
+    },
+    {
+      "name": "cross-owner API denies without data",
+      "expected": {
+        "status": 404,
+        "hasData": false
+      },
+      "actual": {
+        "status": 404,
+        "hasData": false
+      },
+      "result": "PASS"
+    },
+    {
+      "name": "manager cannot access participant progress",
+      "expected": 403,
+      "actual": 403,
+      "result": "PASS"
+    },
+    {
+      "name": "record and DB session survive actual app restart",
+      "expected": {
+        "goalId": "661d03ae-aff2-444f-9595-e901d851b86c",
+        "date": "2026-11-04",
+        "actualMinutes": 45,
+        "targetMinutes": 60,
+        "progressPercent": 75,
+        "achieved": false,
+        "entryId": "69838e4b-a530-4efb-962d-4341507cb406"
+      },
+      "actual": {
+        "goalId": "661d03ae-aff2-444f-9595-e901d851b86c",
+        "date": "2026-11-04",
+        "actualMinutes": 45,
+        "targetMinutes": 60,
+        "progressPercent": 75,
+        "achieved": false,
+        "entryId": "69838e4b-a530-4efb-962d-4341507cb406"
+      },
+      "result": "PASS"
+    },
+    {
+      "name": "application container was actually recreated",
+      "expected": true,
+      "actual": true,
+      "result": "PASS"
+    },
+    {
+      "name": "record and DB session survive local container recreation",
+      "expected": {
+        "goalId": "661d03ae-aff2-444f-9595-e901d851b86c",
+        "date": "2026-11-04",
+        "actualMinutes": 45,
+        "targetMinutes": 60,
+        "progressPercent": 75,
+        "achieved": false,
+        "entryId": "69838e4b-a530-4efb-962d-4341507cb406"
+      },
+      "actual": {
+        "goalId": "661d03ae-aff2-444f-9595-e901d851b86c",
+        "date": "2026-11-04",
+        "actualMinutes": 45,
+        "targetMinutes": 60,
+        "progressPercent": 75,
+        "achieved": false,
+        "entryId": "69838e4b-a530-4efb-962d-4341507cb406"
+      },
+      "result": "PASS"
+    },
+    {
+      "name": "record and session survive database restart",
+      "expected": {
+        "goalId": "661d03ae-aff2-444f-9595-e901d851b86c",
+        "date": "2026-11-04",
+        "actualMinutes": 45,
+        "targetMinutes": 60,
+        "progressPercent": 75,
+        "achieved": false,
+        "entryId": "69838e4b-a530-4efb-962d-4341507cb406"
+      },
+      "actual": {
+        "goalId": "661d03ae-aff2-444f-9595-e901d851b86c",
+        "date": "2026-11-04",
+        "actualMinutes": 45,
+        "targetMinutes": 60,
+        "progressPercent": 75,
+        "achieved": false,
+        "entryId": "69838e4b-a530-4efb-962d-4341507cb406"
+      },
+      "result": "PASS"
+    },
+    {
+      "name": "desktop actual HTTPS browser reload shows saved75%",
+      "expected": "75%",
+      "actual": "75%",
+      "result": "PASS"
+    },
+    {
+      "name": "desktop has no horizontal page overflow",
+      "expected": true,
+      "actual": true,
+      "result": "PASS"
+    },
+    {
+      "name": "desktop logout revokes protected browser access",
+      "expected": 401,
+      "actual": 401,
+      "result": "PASS"
+    },
+    {
+      "name": "mobile actual HTTPS browser reload shows saved75%",
+      "expected": "75%",
+      "actual": "75%",
+      "result": "PASS"
+    },
+    {
+      "name": "mobile has no horizontal page overflow",
+      "expected": true,
+      "actual": true,
+      "result": "PASS"
+    },
+    {
+      "name": "mobile logout revokes protected browser access",
+      "expected": 401,
+      "actual": 401,
+      "result": "PASS"
+    },
+    {
+      "name": "API logout succeeds",
+      "expected": 204,
+      "actual": 204,
+      "result": "PASS"
+    },
+    {
+      "name": "revoked cookie replay denied",
+      "expected": 401,
+      "actual": 401,
+      "result": "PASS"
+    }
+  ],
+  "retained": {
+    "templateId": "d16557c5-58de-4c85-a06b-8065e0a42068",
+    "goalId": "661d03ae-aff2-444f-9595-e901d851b86c",
+    "entryId": "69838e4b-a530-4efb-962d-4341507cb406",
+    "date": "2026-11-04",
+    "minutes": 45,
+    "targetMinutes": 60,
+    "progressPercent": 75
+  },
+  "passed": 35,
+  "failed": 0,
+  "independentHumanUAT": false,
+  "gcpRestartRedeployVerified": false,
+  "tls": "API verifies the exported local CA; scoped browser context accepts this local certificate only and blocks external requests; no system trust changes"
+}

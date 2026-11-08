@@ -1,0 +1,20 @@
+# Allow only build inputs. In particular .env*, .git, host dependencies,
+# reports, test evidence and local certificates never enter the context.
+**
+!Dockerfile
+!package.json
+!package-lock.json
+!vite.config.ts
+!client/
+!client/**
+!server/
+!server/src/
+!server/src/**
+!server/prisma/
+!server/prisma/**
+!server/tsconfig.json
+**/node_modules
+**/.env
+**/.env.*
+**/dist
+**/*.log
