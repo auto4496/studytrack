@@ -1,5 +1,9 @@
 # AI-use declaration
 
+## Lab 5 cloud evidence update - 8 November 2026
+
+Codex assisted B with the reviewed bootstrap and its offline verification, then guided the user through Cloud Shell deployment, diagnostics and manual browser/Console checks. The user executed authenticated Google Cloud commands and browser actions. Codex compared the supplied outputs/screenshots, independently fetched public health/root HTTP200 and prepared the [EP5 evidence](labs/lab-05/ep5-evidence.md), runbook and handoff update. All seven bootstrap APIs appear in the user's enabled-service output. A's pre-deployment script approval is recorded separately from pending post-deployment peer acceptance. No authenticated cloud mutation was executed by Codex during evidence collection, and no new product tests, cloud restart/redeploy or later-episode completion is claimed for this documentation update.
+
 ## Current assessed-release statement - 6 November 2026
 
 AI-assisted engineering: both members used Codex within a requirements-driven workflow. Work requests defined feature scope, shared interfaces, business rules, acceptance criteria and expected verification. Codex assisted with design, implementation, test preparation, execution and documentation. Generated changes were checked against versioned contracts, test assertions and actual build/test results; recorded failures and teammate-review findings guided corrections. Work remained traceable through Issues, feature branches, commits and reviewed integration. Acceptance relied on observable behavior and retained evidence rather than generated completion claims. AI-assisted review and execution are disclosed. Both members remain responsible for understanding and explaining the design, tests and released behavior.

@@ -2,6 +2,22 @@
 
 ## อัปเดต Lab 5 วันที่ 8 พฤศจิกายน 2026
 
+**EP5 deploy จริงและรายการตรวจฝั่ง B ผ่านแล้ว รอ A ตรวจรับบน Cloud และรีวิวเอกสารรอบนี้ก่อนปิด [Issue #20](https://github.com/auto4496/studytrack/issues/20).** รายละเอียดและลำดับตรวจอยู่ใน [EP5 evidence](../labs/lab-05/ep5-evidence.md) และ [deployment runbook](../labs/lab-05/deployment.md)
+
+- Source ที่ deploy: main `807ed0806a84f39e88e0ba8f8fa5e658f41fe97f` จาก PR #27 หลัง A รับ bootstrap PR #26; revision `studytrack-00001-rtr` รับ traffic 100% เอกสาร branch นี้ยังไม่ได้ deploy
+- เว็บ: <https://studytrack-981693883236.asia-southeast1.run.app>. Build สำเร็จ, migration/seed สำเร็จ, smoke หน้าแรกและ health ผ่าน B ดึงทั้งสอง URL จากภายนอกได้ HTTP200 และ health status ok
+- ผู้ใช้ฝั่ง B ทำ manager template → student1 goal30นาที → invalid0ถูกปฏิเสธ → บันทึก15นาที/50% → รีเฟรชยังอยู่ → student2เปิด goalเดิมแล้วไม่พบรายการ ภาพแสดงพฤติกรรมจริง; ไม่อ้าง HTTP status จากภาพหรือ server validation จากการกรอก0ที่หน้าเว็บ
+- Console/คำสั่งยืนยัน Run CPU1/512MiB/8080/min0/max3, SQL17/Enterprise/db-f1-micro/10GB/ปิดauto-increase/Single zone, database studytrack, runtime/tools images, secret3ชื่อ และ project IAMตามแผน รายชื่อ enabled APIsมีครบ7ตัวที่สคริปต์ใช้
+- ครั้งแรก Build submission ถูกปฏิเสธ หลังตรวจสิทธิ์ผู้เรียก5รายการผ่านจึงลองซ้ำหนึ่งครั้งและสำเร็จ โดยไม่เพิ่ม roleแก้ปัญหา สาเหตุครั้งแรกยังไม่พิสูจน์; IAM propagationเป็นเพียงข้อสันนิษฐาน
+
+**ประสาน A:** อ่าน diff เอกสารและเทียบ SHA/digests/revision, รับ demo credentials ผ่านช่องทางส่วนตัวของทีม แล้วตรวจ workflow บน URL จริงด้วยตนเอง บันทึกว่าใครตรวจอะไรและผลเป็นอย่างไรใน #20/PR เอกสาร ห้ามถือว่า approvalของPR #26/#27คือการตรวจCloudหลังdeployแล้ว เมื่อเอกสารและlive acceptanceครบจึงรับเข้าstagingและเดินreleaseเอกสารตาม [workflow](../review-workflow.md) ก่อนปิดIssue #20 ไม่มีการรันdeployซ้ำเพื่อรับเอกสาร
+
+เก็บภาพต้นฉบับ15ภาพและดัชนีไว้ในโฟลเดอร์ local `studytrack-ep5-evidence` สำหรับส่งให้ A แบบส่วนตัวและทำรายงาน ภาพยังไม่ได้เผยแพร่ในrepoและบางภาพมีอีเมลบัญชี Google; ข้อเท็จจริงที่ปลอดภัยและชื่อภาพอยู่ในEP5 evidence งานrequired gate/WIF #21, main deployment pipeline #22, cloud restart/redeploy #23 และรายงาน/PDF #24ยังแยกติดตามอยู่ รีเฟรชหน้าเว็บไม่ใช่หลักฐานrestart/redeploy
+
+### ประวัติเตรียม EP4/EP5 ก่อน deploy จริง
+
+ย่อหน้าต่อไปนี้เป็น snapshot ระหว่างเตรียมสคริปต์ สถานะปัจจุบันอยู่ด้านบน
+
 B ตรวจซ้ำ [PR #15](https://github.com/auto4496/studytrack/pull/15) ที่ `4ff9baa332b9b580d09f504f88caa74997e823b2` แล้วผ่าน 21 configuration checks และ 35 HTTPS/API/browser/lifecycle checks บนชุด Docker แยก ข้อมูล 45/60=75% และ session อยู่หลัง app restart, container recreation และ DB restart ตรวจภาพ desktop/mobile แล้ว ผล build ใช้ cache ที่มีอยู่ บันทึก [APPROVED review](https://github.com/auto4496/studytrack/pull/15#pullrequestreview-5816774539) และ merge เข้า staging ที่ `637468da8e537eaf15ed892f22c9c34c27ac0304` แล้ว
 
 งาน B ต่อใน [Issue #18](https://github.com/auto4496/studytrack/issues/18) และ branch `codex/lab5-ci` ซึ่งรวม staging ที่รับ PR #15 แล้ว Workflow ตรวจ PR เข้า `codex/sprint-1-staging` และ `main` ด้วย job `test-and-docker` ใช้ PostgreSQL 17 ชั่วคราว รัน configuration guards, API/unit, browser desktop/mobile, build server/client, production Docker build และ offline smoke tests
