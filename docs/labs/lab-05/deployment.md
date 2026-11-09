@@ -49,6 +49,8 @@ gcloud run jobs logs read studytrack-migrate \
 
 Files for the later episodes also need explicit acceptance. `deploy/release.sh` and `.github/workflows/deploy.yml` are tracked in #22 with the reviewed identity/gate setup in #21. The cloud restart/redeploy proof is #23 and the evidence PDF is #24. A teardown script/resource cleanup belongs to the post-grading lifecycle after the instructor confirms service availability is no longer required. Recheck the next episode's complete prerequisites before starting it.
 
+EP8 preparation,9November: A has drafted the [shared cloud persistence test plan](persistence-test-plan.md) and [unexecuted record template](persistence-record.template.json) for B review. They define the before/restart/redeploy comparisons and concrete A/B contributions without changing the issue owner. Execution awaits the reviewed EP7 workflow and exact operation plan. No cloud restart/redeploy result is established by these preparation files.
+
 ## Stack and reference adaptations
 
 React and Express share one production runtime, Node 24 and Prisma 6.19.3. PostgreSQL 17 stores users, sessions, templates, goals and entries. Cloud Run listens on injected PORT 8080 and serves the UI/API over one public HTTPS origin. Cloud SQL Enterprise is proposed with db-f1-micro, zonal availability, 10 GB SSD and disabled storage auto-increase. Run uses one CPU, 512 MiB, minimum 0 and maximum 3 instances. Teammate/user review of the dry-run plan precedes billable execution.

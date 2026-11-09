@@ -1,0 +1,42 @@
+{
+  "planVersion": "0.1",
+  "status": "NOT_RUN",
+  "issue": "https://github.com/auto4496/studytrack/issues/23",
+  "requirements": ["C-05", "R-04"],
+  "instructions": "Copy into a run-specific evidence record only when executing the reviewed plan. Null fields are unknown, not evidence. Record actual actors and observed data; never include credentials, cookies, CSRF tokens or connection strings.",
+  "plannedEnvironment": {
+    "project": "studytrack-cpe334",
+    "region": "asia-southeast1",
+    "service": "studytrack",
+    "origin": "https://studytrack-981693883236.asia-southeast1.run.app",
+    "mustVerifyBeforeExecution": true
+  },
+  "runId": null,
+  "baselineEntryDate": null,
+  "expectedAssertions": {
+    "sameGoalAndEntryIds": true,
+    "sameEntryDateAndStoredMinutes": true,
+    "sameStoredTimestamps": true,
+    "sameGoalSnapshotsAndStatus": true,
+    "dateEffectiveTargetAndProgressMatchBaseline": true,
+    "noRecordRecreationOrDatabaseReset": true
+  },
+  "requiredCheckpointFields": [
+    "observedAtUtc", "bangkokDate", "actor", "independentReviewer",
+    "accountRole", "goalDto", "entryDto", "progressDto",
+    "sourceSha", "runtimeDigest", "readyRevision", "traffic",
+    "persistentDatabaseReferenceWithoutSecret", "operationActor",
+    "operationStartUtc", "operationEndUtc", "operationReference",
+    "startupEvidenceReference", "instanceId", "pipelineRunUrl",
+    "nativeUrlVisibleScreenshot", "safeApiEvidenceReference", "comparisonResult"
+  ],
+  "baseline": {"status": "NOT_RUN", "observations": null},
+  "afterApplicationReplacement": {"status": "NOT_RUN", "observations": null},
+  "afterNextMainPipelineRelease": {"status": "NOT_RUN", "observations": null},
+  "optionalRollback": {"status": "NOT_RUN", "observations": null},
+  "optionalRollForward": {"status": "NOT_RUN", "observations": null},
+  "observedResults": [],
+  "evidenceFilesWithSha256": [],
+  "defectsOrLimitations": [],
+  "peerAcceptance": null
+}
