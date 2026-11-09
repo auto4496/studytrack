@@ -1,5 +1,25 @@
 import { test, expect, type Page } from "@playwright/test";
 import { browserPassword } from "./fixtures";
+import { PrismaClient } from "@prisma/client";
+import { testDatabaseUrl } from "../scripts/test-env.mjs";
+
+let createdTemplates: string[] = [];
+test.beforeEach(() => {
+  createdTemplates = [];
+});
+test.afterEach(async () => {
+  const db = new PrismaClient({ datasourceUrl: testDatabaseUrl() });
+  try {
+    await db.goal.deleteMany({
+      where: { templateId: { in: createdTemplates } },
+    });
+    await db.activityTemplate.deleteMany({
+      where: { id: { in: createdTemplates } },
+    });
+  } finally {
+    await db.$disconnect();
+  }
+});
 
 async function login(page: Page, email: string) {
   await page.goto("/login");
@@ -29,8 +49,9 @@ async function fixture(page: Page, tag: string) {
   });
   expect(r.status()).toBe(201);
   const template = (await r.json()).data;
+  createdTemplates.push(template.id);
   await page.getByRole("button", { name: "ออกจากระบบ", exact: true }).click();
-  await login(page, "reader@browser.test");
+  await login(page, `reader-f05-${test.info().project.name}@browser.test`);
   await page.goto(`/goals/new?template=${template.id}`);
   await page.getByLabel("เป้าหมายต่อวัน (นาที)", { exact: true }).fill("30");
   await page.getByRole("button", { name: "สร้างเป้าหมาย →" }).click();
@@ -114,11 +135,9 @@ test("TEST-F05-16 metadata/deactivation UI retains existing active goal snapshot
   const { id, template } = await fixture(page, `catalog ${info.project.name}`);
   await page.getByRole("button", { name: "ออกจากระบบ", exact: true }).click();
   await login(page, "manager@browser.test");
-  const card = page
-    .locator("article")
-    .filter({
-      has: page.getByRole("heading", { name: template.title, exact: true }),
-    });
+  const card = page.locator("article").filter({
+    has: page.getByRole("heading", { name: template.title, exact: true }),
+  });
   await card
     .getByRole("button", { name: "แก้ไขข้อมูลกิจกรรม", exact: true })
     .click();
@@ -133,14 +152,12 @@ test("TEST-F05-16 metadata/deactivation UI retains existing active goal snapshot
   await card
     .getByRole("button", { name: "บันทึกข้อมูลกิจกรรม", exact: true })
     .click();
-  const edited = page
-    .locator("article")
-    .filter({
-      has: page.getByRole("heading", {
-        name: template.title + " edited",
-        exact: true,
-      }),
-    });
+  const edited = page.locator("article").filter({
+    has: page.getByRole("heading", {
+      name: template.title + " edited",
+      exact: true,
+    }),
+  });
   await edited
     .getByRole("button", { name: "ปิดใช้กิจกรรม", exact: true })
     .click();
@@ -156,7 +173,7 @@ test("TEST-F05-16 metadata/deactivation UI retains existing active goal snapshot
     fullPage: true,
   });
   await page.getByRole("button", { name: "ออกจากระบบ", exact: true }).click();
-  await login(page, "reader@browser.test");
+  await login(page, `reader-f05-${info.project.name}@browser.test`);
   await page.goto(`/goals/${id}`);
   await expect(
     page.getByRole("heading", { name: template.title, exact: true }),
@@ -306,8 +323,9 @@ test("TEST-F05-16 expired/revoked session clears lifecycle controls without repl
   page,
 }, info) => {
   const { id } = await fixture(page, `session ${info.project.name}`);
-  expect((await write(page, "POST", "/auth/logout", {})).status()).toBe(204);
+  await expect(page.getByTestId("progress-percent")).toHaveText("0%");
   await lifecycle(page).getByLabel("เป้าหมายรายวันใหม่ (นาที)").fill("45");
+  expect((await write(page, "POST", "/auth/logout", {})).status()).toBe(204);
   await lifecycle(page)
     .getByRole("button", { name: "บันทึกเป้าหมายใหม่" })
     .click();
@@ -315,7 +333,7 @@ test("TEST-F05-16 expired/revoked session clears lifecycle controls without repl
   await expect(
     page.getByRole("region", { name: "จัดการเป้าหมาย" }),
   ).toHaveCount(0);
-  await login(page, "reader@browser.test");
+  await login(page, `reader-f05-${info.project.name}@browser.test`);
   const r = await page.request.get(`/api/goals/${id}`);
   expect((await r.json()).data.pendingTarget).toBeNull();
 });
