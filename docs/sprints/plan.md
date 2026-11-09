@@ -1,5 +1,9 @@
 # StudyTrack - แผนสาม Sprint
 
+## Current checkpoint - 9 November 2026
+
+Sprint1 dependencies are accepted. Reviewed EP5 documentation release PR30 is merged into main `5c04cd4` (tree equal to staging `e16b0af`); Issue20 is closed. A has opened [F-05 Issue31](https://github.com/auto4496/studytrack/issues/31) and prepared the [Sprint2 lifecycle contract](sprint-2/f05-lifecycle.md) for Datakung's pre-code review. F-05 is specified/proposed, not implemented or tested. B may draft F-06 against the proposed target-history/stop boundary; agreement is required before dependent implementation. Lab5 EP6-EP8 remain B-led with both members participating. The dated draft plan below is retained as historical planning, not a current release-status claim.
+
 วันที่: 3 พฤศจิกายน 2026 (Asia/Bangkok) | ผู้ร่าง: สมาชิก B | รุ่น: B-draft-01
 
 สถานะ: **PROPOSED PLAN / local increment verified** ตารางวันและงานเป็นแผน; F01–04 มี local verificationแล้วตามหัวข้อ10 แต่ยังไม่มี accepted release/peer approval A = ผู้ร่าง SRS/data/auth/F-01/F-03; B = ผู้รับ handoff/F-02/F-04 ตาม [team-plan](../team-plan.md) ไม่สลับ A/B ตามผู้เปิดไฟล์
