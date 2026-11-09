@@ -1,0 +1,247 @@
+{
+  "schemaVersion": 1,
+  "feature": "F-05",
+  "issue": "https://github.com/auto4496/studytrack/issues/31",
+  "recordedOn": "2026-11-09",
+  "timezone": "Asia/Bangkok",
+  "actor": {
+    "member": "A / Phanuwit / auto4496",
+    "assistance": "Codex",
+    "independentPeerExecution": false
+  },
+  "status": "LOCALLY_VERIFIED_IMPLEMENTATION_PEER_REVIEW_PENDING",
+  "source": {
+    "acceptedBaseline": "001bdb0872174b39a8edc08a6e08fe8ff7a4cc46",
+    "acceptedContract": "4ba7c768bf0d6e245387d9ebaa499fbbcd0ac933",
+    "meaningfulRed": "fe396c9ac7e1fcfe1b92d0d929a07f183dab421c",
+    "productAndApiTests": "806c58a31ca7ec72f436442937c6134c63922352",
+    "correctedBrowserHarness": "18a21ffb61799878d885728433a9befcd73f9e27",
+    "productEquivalentBetweenProductAndHarnessCommits": true,
+    "note": "API regression ran on the working content committed as productAndApiTests. Build and local process-restart ran on that product source. Corrected full browser run uses correctedBrowserHarness. Subsequent evidence/docs changes do not claim new product execution.",
+    "files": [
+      {
+        "path": "client/src/api.ts",
+        "sha256": "4d0697f5105b4e85b25fec574e8d1498956b85f69225b9c4acd188529fb2f2b7"
+      },
+      {
+        "path": "client/src/components/useVerifiedMutation.ts",
+        "sha256": "629fa93db91dca4c4463135e6539c88b91321ca037a449b748ae5e0fa6e952d7"
+      },
+      {
+        "path": "client/src/features/goals/GoalDetail.tsx",
+        "sha256": "4308a47a3e70fc9e7b37d17d4d56fafaebbd016c61e5ec4f6baa8a284ff7e75b"
+      },
+      {
+        "path": "client/src/features/goals/GoalLifecycle.tsx",
+        "sha256": "31d4700c7e7ed8c06cdcb2e8d9be05b844f5813fe95e0b55c6f9233956e56c1d"
+      },
+      {
+        "path": "client/src/features/goals/GoalList.tsx",
+        "sha256": "022952eb7095e711a40b5e2723503ceeaaaf63ac8cf55f331fd23281bace3cb9"
+      },
+      {
+        "path": "client/src/features/templates/TemplateCatalog.tsx",
+        "sha256": "d308e2d5b52535f29289d0e24c2c69b3fd0cc9f7fe11cf07291f045c243342b1"
+      },
+      {
+        "path": "client/src/features/templates/TemplateLifecycle.tsx",
+        "sha256": "16aee0c71af9bcabb0e9d43ebe7ced8931c25f328205550b4b8b28d6e38f3777"
+      },
+      {
+        "path": "client/src/styles.css",
+        "sha256": "6c84fe62ca319ddbcd1524cad0d8061eeabd687259f106dfe1f5ce5bc9b3dcea"
+      },
+      {
+        "path": "e2e/lifecycle.spec.ts",
+        "sha256": "6791805853f36e371687f151e6c49e2a11f53e3a06a616fc67009dc6a6e686da"
+      },
+      {
+        "path": "e2e/setup.ts",
+        "sha256": "e540d08627faa5a7a561cdedcd76de22996afb219ea18e4a199f20b342718135"
+      },
+      {
+        "path": "scripts/restart-smoke.ts",
+        "sha256": "b8614d9ae90260c5f7fab43bce44fbe27df43b84b9f705451903ddf328e8d211"
+      },
+      {
+        "path": "server/src/features/goals/lifecycle.ts",
+        "sha256": "b7104bcd2772d1d2b3f1f8069386e2f594449f0a050b89637616579e3bc7bed5"
+      },
+      {
+        "path": "server/src/features/goals/router.ts",
+        "sha256": "3eacdfe72813862fb96ac067807870cabf768395971b471656a411c845e40b09"
+      },
+      {
+        "path": "server/src/features/goals/service.ts",
+        "sha256": "dad6df47238b4f31e50dcfd8266d89bba4d108ab2b28ba2e694b73d9498d0bb1"
+      },
+      {
+        "path": "server/src/features/templates/lifecycle.ts",
+        "sha256": "dda6e833460fc17e25bdd8eafab260969b00854d027976836404e16c713f6dba"
+      },
+      {
+        "path": "server/src/features/templates/read-router.ts",
+        "sha256": "d5309b27bc5fd2247ada1c763f18f2e73c59760e3465620fe44db55104d73498"
+      },
+      {
+        "path": "server/src/features/templates/rules.ts",
+        "sha256": "3efcac520bfb1f3e03d174f040bb2317fb666c6828a4a50e8b7c47be5ab90b2c"
+      },
+      {
+        "path": "server/tests/integration/lifecycle-boundaries.test.ts",
+        "sha256": "5cb05a805905184094b7df4e7b9d937504f1079faf508e0179a5116480e3aff3"
+      },
+      {
+        "path": "server/tests/integration/lifecycle.test.ts",
+        "sha256": "5081e068aac553ef6bf97cb8352ab6f9693a0451b55f1b54dc8fe76a5e7cf68c"
+      }
+    ]
+  },
+  "environment": {
+    "kind": "LOCAL_ISOLATED_TEST_ONLY",
+    "os": "Windows",
+    "node": "v24.14.0",
+    "database": {
+      "engine": "PostgreSQL 17",
+      "image": "postgres:17-alpine3.22",
+      "container": "studytrack-f05-test",
+      "host": "127.0.0.1",
+      "port": 25435,
+      "name": "studytrack_f05_test",
+      "credentials": "Ignored private .env.test.local; not recorded"
+    },
+    "browser": {
+      "channel": "msedge",
+      "desktopViewport": "1440x900",
+      "mobileViewport": "390x844",
+      "mobileDeviceScaleFactor": 3,
+      "retries": 0
+    },
+    "existingDevelopmentAndCloudDataChanged": false
+  },
+  "runs": {
+    "red": {
+      "command": "npx vitest run server/tests/integration/lifecycle.test.ts --reporter=verbose --reporter=json --outputFile=artifacts/evidence/f05/red.json",
+      "passed": 0,
+      "failed": 3,
+      "reason": "Expected 200 but got 404: lifecycle routes absent; migration/setup succeeded",
+      "startedAtRawUtc": "2026-11-09T14:18:44.640Z",
+      "report": "artifacts/evidence/f05/red.json"
+    },
+    "apiUnit": {
+      "command": "npm test -- --reporter=verbose --reporter=json --outputFile=artifacts/evidence/f05/regression.json",
+      "passed": 152,
+      "failed": 0,
+      "skipped": 0,
+      "f05IntegrationCases": 35,
+      "baselineCases": 117,
+      "startedAtRawUtc": "2026-11-09T14:31:44.034Z",
+      "report": "artifacts/evidence/f05/regression.json"
+    },
+    "initialBrowserRegression": {
+      "command": "npx playwright test --reporter=list,json",
+      "passed": 35,
+      "failed": 3,
+      "skipped": 0,
+      "flaky": 0,
+      "startedAtRawUtc": "2026-11-09T14:33:06.160Z",
+      "report": "artifacts/evidence/f05/browser-regression-initial.json",
+      "correction": "Dedicated per-viewport F05 readers and cleanup by exact test-created template IDs; session probe waits for initial progress and fills input before revocation. Product assertions/retry count unchanged."
+    },
+    "correctedBrowserRegression": {
+      "command": "PLAYWRIGHT_JSON_OUTPUT_NAME=artifacts/evidence/f05/browser-results.json npx playwright test --reporter=list,json (environment set in PowerShell)",
+      "passed": 38,
+      "failed": 0,
+      "skipped": 0,
+      "flaky": 0,
+      "f05Cases": 14,
+      "baselineCases": 24,
+      "startedAtRawUtc": "2026-11-09T14:36:30.624Z",
+      "durationMs": 120756.343,
+      "report": "artifacts/evidence/f05/browser-results.json"
+    },
+    "build": {
+      "command": "npm run build",
+      "result": "PASS",
+      "source": "806c58a31ca7ec72f436442937c6134c63922352",
+      "retainedRawLog": false
+    },
+    "persistence": {
+      "command": "npm run verify:restart",
+      "result": "PASS",
+      "source": "806c58a31ca7ec72f436442937c6134c63922352",
+      "report": "artifacts/evidence/f05/restart-output.txt",
+      "observation": "Actual API process stopped and spawned with a different PID. Same database-backed sessions, archived goal/endDate, retained current/pending target rows and changed/deactivated template state retrieved.",
+      "cloudRestartOrRedeploy": false
+    }
+  },
+  "visualReview": {
+    "result": "PASS",
+    "reviewedBy": "A/Codex",
+    "screenshots": [
+      "artifacts/evidence/f05/desktop-archived.png",
+      "artifacts/evidence/f05/desktop-inactive.png",
+      "artifacts/evidence/f05/desktop-pending.png",
+      "artifacts/evidence/f05/mobile-archived.png",
+      "artifacts/evidence/f05/mobile-inactive.png",
+      "artifacts/evidence/f05/mobile-pending.png"
+    ],
+    "nativeBrowserChromeIncluded": false,
+    "independentHumanUat": false
+  },
+  "artifacts": [
+    {
+      "path": "artifacts/evidence/f05/browser-regression-initial.json",
+      "sha256": "1f3c9f28a58858659f796f227a42f18af299a51665e3ad91a65e7d3382d276cb"
+    },
+    {
+      "path": "artifacts/evidence/f05/browser-results.json",
+      "sha256": "038d761ed2e5e5d701fe89667940788d2595d54d496c9d64f291c2a6907d33d9"
+    },
+    {
+      "path": "artifacts/evidence/f05/desktop-archived.png",
+      "sha256": "5f4a0da01c48e260701741b439aa92fbb32491eacf7ee9b5ff11f7658fcea2d1"
+    },
+    {
+      "path": "artifacts/evidence/f05/desktop-inactive.png",
+      "sha256": "1fbbbb7da56dcd8d00761f1d1af130befeeea9f3e9e0b54b24d3c1f8dd93db81"
+    },
+    {
+      "path": "artifacts/evidence/f05/desktop-pending.png",
+      "sha256": "01547abc2dd912566c29e23eb65af204d2cb20c3d387cdb17eb49cdc2cb8a6cf"
+    },
+    {
+      "path": "artifacts/evidence/f05/mobile-archived.png",
+      "sha256": "ce9f4ad29a7fc4c68e27012234cc138989a1c631ab6024f3e5bf0489dd82d23a"
+    },
+    {
+      "path": "artifacts/evidence/f05/mobile-inactive.png",
+      "sha256": "2519e8031d31e6f3dad9f7c21823f8daf1b13c72db89d27e70daec4039ed2ca2"
+    },
+    {
+      "path": "artifacts/evidence/f05/mobile-pending.png",
+      "sha256": "9f3ca3bb712b20a1d45af7d25bba1c96cf608495f0bfdd2f88933cd55da18664"
+    },
+    {
+      "path": "artifacts/evidence/f05/red.json",
+      "sha256": "fdedc8af12b4a27deffe90f57856f35fdd8db7b1f9c74cc407a464e1f738af14"
+    },
+    {
+      "path": "artifacts/evidence/f05/regression.json",
+      "sha256": "407089e914323ef869428d0b20c5567228d483e095c335785909d1132de4cae8"
+    },
+    {
+      "path": "artifacts/evidence/f05/restart-output.txt",
+      "sha256": "c2a5958dc761b9bfd359c53f16d057a1e512a7bfee6cbddb2539dac1246b3074"
+    }
+  ],
+  "pending": [
+    "Implementation review by Datakung",
+    "Reviewed staging integration and release",
+    "Independent acceptance where required"
+  ],
+  "cloudEp8": {
+    "status": "NOT_RUN",
+    "note": "Separate accepted preparation record only; no GCP operation or deployment performed for this F05 increment"
+  }
+}

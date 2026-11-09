@@ -1,5 +1,9 @@
 # AI-use declaration
 
+## F-05 implementation candidate - 9 November 2026
+
+After B approved contract PR32, A used Codex to implement lifecycle API/UI behavior, prepare and run real PostgreSQL/browser tests, inspect screenshots and retain actual red/green/regression/restart evidence. The meaningful initial red is three 404 failures for absent lifecycle routes. A later full browser run exposed shared-fixture and session-probe timing failures; Codex corrected test isolation/synchronization without changing product assertions. Final local results are 152 API/unit and 38 browser cases passing, plus build and actual local API-process restart. [Verification](verification/f05.md) distinguishes product source, test correction and evidence versions. These are A/Codex checks, not B implementation approval, independent human UAT, deployed-main acceptance or cloud restart/redeploy. No real credentials or chat transcript are included.
+
 ## Member A live verification - 9 November 2026
 
 Phanuwit entered the privately shared demo credentials directly into the deployed application and performed the manager/participant, goal/save and refresh actions. Codex inspected the resulting browser states, directly checked the known student1 goal URL under the student2 session, captured three screenshots and recorded actual actors, outcomes and limitations in [A's live evidence](labs/lab-05/member-a-live-acceptance.md). Codex also performed separate public HTTP smoke checks. The actual entry was 20/30 minutes = 66.67%; no invalid-zero test, authenticated cloud administration, current-revision inspection or restart/redeploy is claimed for this round. A reviewed and approved B's PR #28; A's follow-up evidence is sent to B for peer review. No password or chat transcript is included in the evidence.
