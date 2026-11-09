@@ -2,6 +2,24 @@ import { z } from "zod";
 
 const lengthAtMost = (limit: number) => (value: string) =>
   [...value].length <= limit;
+const title = z
+  .string()
+  .trim()
+  .min(1, "กรุณาระบุชื่อกิจกรรม")
+  .refine(lengthAtMost(100), "ชื่อกิจกรรมยาวได้ไม่เกิน 100 ตัวอักษร");
+const description = z
+  .string()
+  .trim()
+  .refine(lengthAtMost(500), "คำอธิบายยาวได้ไม่เกิน 500 ตัวอักษร");
+export const templateMetadataInput = z
+  .strictObject({
+    title: title.optional(),
+    description: description.optional(),
+  })
+  .refine(
+    (value) => Object.keys(value).length > 0,
+    "ระบุข้อมูลที่ต้องการแก้ไข",
+  );
 export const templateInput = z
   .strictObject({
     title: z

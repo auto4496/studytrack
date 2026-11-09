@@ -140,6 +140,88 @@ try {
   console.log(
     "PASS TEST-F03-02 / NFR-03: real API process stopped and restarted; session, goal and initial target persisted in PostgreSQL.",
   );
+  const mutate = async (
+    path: string,
+    method: string,
+    body: object,
+    sid = cookie,
+    csrf = identity.data.csrfToken,
+  ) => {
+    const result = await fetch(`${origin}/api${path}`, {
+      method,
+      headers: {
+        Origin: origin,
+        Cookie: sid,
+        "Content-Type": "application/json",
+        "X-CSRF-Token": csrf,
+      },
+      body: JSON.stringify(body),
+    });
+    assert.equal(result.status, 200);
+    return (await result.json()).data;
+  };
+  await mutate(`/goals/${goal.data.id}/target`, "PATCH", {
+    dailyTargetMinutes: 120,
+  });
+  const stoppedGoal = await mutate(`/goals/${goal.data.id}/stop`, "POST", {});
+  const managerBoot = await fetch(`${origin}/api/auth/csrf`);
+  const managerLogin = await fetch(`${origin}/api/auth/login`, {
+    method: "POST",
+    headers: {
+      Origin: origin,
+      Cookie: cookieOf(managerBoot),
+      "Content-Type": "application/json",
+      "X-CSRF-Token": (await managerBoot.json()).data.csrfToken,
+    },
+    body: JSON.stringify({ email: `manager-${id}@restart.test`, password }),
+  });
+  assert.equal(managerLogin.status, 200);
+  const managerCookie = cookieOf(managerLogin),
+    managerCsrf = (await managerLogin.json()).data.csrfToken;
+  await mutate(
+    `/templates/${templateId}`,
+    "PATCH",
+    { title: "Persisted lifecycle title" },
+    managerCookie,
+    managerCsrf,
+  );
+  const inactiveTemplate = await mutate(
+    `/templates/${templateId}/deactivate`,
+    "POST",
+    {},
+    managerCookie,
+    managerCsrf,
+  );
+  const beforeVersions = await db.goalTargetVersion.findMany({
+    where: { goalId: goal.data.id },
+    orderBy: { effectiveFrom: "asc" },
+  });
+  assert.equal(beforeVersions.length, 2);
+  const oldPid = processHandle?.pid;
+  await stop();
+  await start();
+  assert.notEqual(processHandle?.pid, oldPid);
+  const restoredGoal = await fetch(`${origin}/api/goals/${goal.data.id}`, {
+    headers: { Cookie: cookie },
+  });
+  assert.equal(restoredGoal.status, 200);
+  assert.deepEqual((await restoredGoal.json()).data, stoppedGoal);
+  const restoredTemplate = await fetch(
+    `${origin}/api/templates/${templateId}`,
+    { headers: { Cookie: managerCookie } },
+  );
+  assert.equal(restoredTemplate.status, 200);
+  assert.deepEqual((await restoredTemplate.json()).data, inactiveTemplate);
+  assert.deepEqual(
+    await db.goalTargetVersion.findMany({
+      where: { goalId: goal.data.id },
+      orderBy: { effectiveFrom: "asc" },
+    }),
+    beforeVersions,
+  );
+  console.log(
+    "PASS TEST-F05-15 / NFR-03: distinct API process after restart retrieves the same archived goal/endDate, retained current/pending target rows, updated metadata, inactive template and DB-backed sessions. Local dedicated test DB only; no GCP restart claimed.",
+  );
 } finally {
   await stop();
   await db.goal.deleteMany({ where: { ownerId: userId } });

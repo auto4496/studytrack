@@ -28,6 +28,7 @@ export interface Goal {
   status: "ACTIVE" | "ARCHIVED";
   targetMinutes: number;
   targetEffectiveFrom: string;
+  pendingTarget: { effectiveFrom: string; targetMinutes: number } | null;
   createdAt: string;
 }
 export interface Collection<T> {

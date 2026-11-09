@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { api, errorMessage, type Collection, type Template } from "../../api";
 import { useAuth } from "../../auth/AuthProvider";
 import { Empty, ErrorNotice, Loading } from "../../components/States";
+import { TemplateLifecycle } from "./TemplateLifecycle";
 
 export function TemplateCatalog() {
   const { user } = useAuth();
@@ -91,6 +92,12 @@ export function TemplateCatalog() {
                 >
                   ตั้งเป้าหมาย →
                 </Link>
+              )}
+              {user?.role === "PROGRAM_MANAGER" && (
+                <TemplateLifecycle
+                  template={t}
+                  onChanged={() => setRetry((v) => v + 1)}
+                />
               )}
             </article>
           ))}
