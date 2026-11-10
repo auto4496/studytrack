@@ -1,5 +1,9 @@
 # StudyTrack deployment
 
+## Current checkpoint - 9 November 2026
+
+EP5 documentation release [PR #30](https://github.com/auto4496/studytrack/pull/30) is merged into main5c04cd4 and #20 is closed. B begins [EP6 gate/identity preparation](ep6-gate-identity.md) under #21; its settings and C-02 proof remain NOT RUN. PR #32's F05 specification and PR #33's EP8 preparation were B-reviewed separately and do not block starting EP6. The dated EP5 writing-time checkpoints below retain their evidence provenance; the later PR30/#20 record establishes acceptance. No documentation merge establishes a new running application revision.
+
 8 November 2026. Issue #20. B prepares the bootstrap and A reviews it through staging and a main release. This document records planned infrastructure and actual evidence separately. [First-cloud contract](cloud-contract.md) defines acceptance.
 
 ## Confirmed setup
