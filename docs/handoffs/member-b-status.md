@@ -1,6 +1,14 @@
 # Member B status — implementation handoff
 
-## สถานะปัจจุบัน 9 พฤศจิกายน 2026: เริ่ม EP6
+## สถานะปัจจุบัน 10 พฤศจิกายน 2026: EP6 ผ่านการพิสูจน์ failing gate รอรับหลักฐาน
+
+B ตรวจ environment `demo`, ตัวแปร4ตัว, deploy เฉพาะ branch main และ active ruleset26925123 บน main/staging ตรงตามแผนแล้ว GraphQL ยืนยัน Bypass list ว่าง A ตั้งค่า GitHub และอนุมัติ exact probe f6330b8 ใน [PR36](https://github.com/auto4496/studytrack/pull/36#pullrequestreview-5838791656) ผู้ใช้ฝั่ง B รัน GCP commands และส่ง CLI readback ว่า deployer/WIF สร้างแล้ว, provider ACTIVE และไม่มี user-managed key; ยังต้องเก็บ scoped-role readbacks/ภาพ Console เพิ่ม รายละเอียดแยกที่มาใน [EP6 evidence](../labs/lab-05/ep6-evidence.md)
+
+เทสต์ฐานเดิม19ผ่าน; probe ตั้งใจคาดหวัง74แทน75 ทำให้18ผ่าน/1ล้ม ส่วน [CI42781653763](https://github.com/auto4496/studytrack/actions/runs/42781653763) ผ่าน116/ล้ม1ตรง assertion นี้ หลัง A อนุมัติ B อ่านกลับว่า APPROVED + BLOCKED + required check FAILURE และผู้ใช้ส่งภาพเห็น URL/approval/Required/ปุ่ม Merge ใช้ไม่ได้ครบแล้ว เก็บภาพต้นฉบับและ hash ก่อนปิด PR36 โดยไม่ merge เมื่อ15:30:58น.ไทย ลบเฉพาะ probe branch local/remote หลังตรวจSHA และยืนยัน main ยัง5c04cd4 ประวัติ PR/run/commit และ patch ยังอยู่ Development PR36 <-> #21 ตรวจทั้งสองฝั่งแล้ว
+
+**ประสาน A:** รีวิวเอกสาร/record/ภาพ/ผลจริงในรอบนี้ เก็บ GCP scoped-role readbacks และ safe Console evidence ให้ครบ แล้วใช้ PR เอกสารที่ CI ผ่านและ A อนุมัติพิสูจน์ protected green path ก่อนรับเข้าstagingและreleaseตาม workflow ยังไม่ปิด #21 และยังไม่ถือว่า WIF token exchange สำเร็จจากการตั้งค่า; ทดสอบจริงใน #22 EP7 จากนั้น #23 EP8 และ #24 รายงาน F05 PR35 รับเข้าstagingf21e561แล้ว; เอกสาร merge ไม่ใช่ deploy ใหม่
+
+## ประวัติเตรียม EP6 วันที่ 9 พฤศจิกายน 2026
 
 Datakung คือสมาชิก B; auto4496 คือสมาชิก A และเจ้าของ repo EP5 ผ่านการตรวจทั้งคู่แล้ว release PR #30 merge เข้า main `5c04cd4` และ Issue #20 ปิดแล้ว แอปที่ deploy ตามหลักฐานเดิมยังอ้าง source `807ed08` ไม่อนุมานว่า merge เอกสารคือ deploy ใหม่
 

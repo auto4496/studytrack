@@ -1,0 +1,53 @@
+{
+  "source": "User-pasted human-operated Cloud Shell output in the conversation on 10 November 2026; structured transcription, not an independently authenticated GCP read or an original terminal log",
+  "projectId": "studytrack-cpe334",
+  "projectNumber": "981693883236",
+  "projectState": "ACTIVE",
+  "apiEnableOperationReportedSuccess": [
+    "iam.googleapis.com",
+    "iamcredentials.googleapis.com",
+    "sts.googleapis.com"
+  ],
+  "deployer": "studytrack-deployer@studytrack-cpe334.iam.gserviceaccount.com",
+  "scopedGrantOperationsReportedSuccess": [
+    {
+      "role": "roles/run.developer",
+      "scope": "project studytrack-cpe334"
+    },
+    {
+      "role": "roles/artifactregistry.writer",
+      "scope": "repository studytrack in asia-southeast1"
+    },
+    {
+      "role": "roles/iam.serviceAccountUser",
+      "scope": "serviceAccount studytrack-runner"
+    },
+    {
+      "role": "roles/iam.serviceAccountUser",
+      "scope": "serviceAccount studytrack-migrator"
+    }
+  ],
+  "userManagedKeys": [],
+  "pool": {
+    "state": "ACTIVE",
+    "name": "projects/981693883236/locations/global/workloadIdentityPools/github-actions"
+  },
+  "provider": {
+    "state": "ACTIVE",
+    "attributeMapping": {
+      "attribute.repository_id": "assertion.repository_id",
+      "google.subject": "assertion.sub"
+    },
+    "attributeCondition": "assertion.repository_id == '1443962980' && assertion.repository_owner_id == '137795002' && assertion.ref == 'refs/heads/main' && assertion.workflow_ref == 'auto4496/studytrack/.github/workflows/deploy.yml@refs/heads/main' && assertion.sub == 'repo:auto4496@137795002/studytrack@1443962980:environment:demo'",
+    "name": "projects/981693883236/locations/global/workloadIdentityPools/github-actions/providers/github-main",
+    "issuerUri": "https://token.actions.githubusercontent.com/"
+  },
+  "deployerPolicy": {
+    "role": "roles/iam.workloadIdentityUser",
+    "member": "principalSet://iam.googleapis.com/projects/981693883236/locations/global/workloadIdentityPools/github-actions/attribute.repository_id/1443962980"
+  },
+  "independentGcpConnection": false,
+  "rolePoliciesReadBack": false,
+  "consoleEvidence": "PENDING",
+  "actualCredentialExchange": "NOT_RUN (EP7)"
+}

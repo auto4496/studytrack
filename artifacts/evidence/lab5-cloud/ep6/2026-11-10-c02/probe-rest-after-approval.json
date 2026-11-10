@@ -1,0 +1,12 @@
+{
+  "capturedAtUtc": "2026-11-10T08:28:21.4473845Z",
+  "number": 36,
+  "state": "open",
+  "merged": false,
+  "mergedAt": null,
+  "autoMerge": null,
+  "mergeable": true,
+  "mergeableState": "blocked",
+  "head": "f6330b82a325c119e23d0704565dbdf223377d0e",
+  "base": "5c04cd4bf7a7a28ff5c429f3770efc42da6bd7e0"
+}

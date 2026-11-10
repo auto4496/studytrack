@@ -1,0 +1,564 @@
+test-and-docker	Set up job	﻿2026-11-10T08:18:57.0702919Z Current runner version: '2.338.2'
+test-and-docker	Set up job	2026-11-10T08:18:57.0729345Z ##[group]Runner Image Provisioner
+test-and-docker	Set up job	2026-11-10T08:18:57.0730820Z Hosted Compute Agent
+test-and-docker	Set up job	2026-11-10T08:18:57.0731464Z Version: 20261028.624
+test-and-docker	Set up job	2026-11-10T08:18:57.0732186Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+test-and-docker	Set up job	2026-11-10T08:18:57.0732904Z Build Date: 2026-10-28T21:51:42Z
+test-and-docker	Set up job	2026-11-10T08:18:57.0733618Z Worker ID: {8d552cde-de95-48c7-8308-ab3ea99c4716}
+test-and-docker	Set up job	2026-11-10T08:18:57.0734343Z Region: westus2
+test-and-docker	Set up job	2026-11-10T08:18:57.0734945Z Cloud: Azure
+test-and-docker	Set up job	2026-11-10T08:18:57.0735541Z ##[endgroup]
+test-and-docker	Set up job	2026-11-10T08:18:57.0737134Z ##[group]Operating System
+test-and-docker	Set up job	2026-11-10T08:18:57.0737840Z Ubuntu
+test-and-docker	Set up job	2026-11-10T08:18:57.0738386Z 26.04.1
+test-and-docker	Set up job	2026-11-10T08:18:57.0738933Z LTS
+test-and-docker	Set up job	2026-11-10T08:18:57.0739502Z ##[endgroup]
+test-and-docker	Set up job	2026-11-10T08:18:57.0740049Z ##[group]Runner Image
+test-and-docker	Set up job	2026-11-10T08:18:57.0740803Z Image: ubuntu-26.04
+test-and-docker	Set up job	2026-11-10T08:18:57.0741456Z Version: 20261101.186.1
+test-and-docker	Set up job	2026-11-10T08:18:57.0742599Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261101.186/images/ubuntu/Ubuntu2604-Readme.md
+test-and-docker	Set up job	2026-11-10T08:18:57.0744359Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261101.186
+test-and-docker	Set up job	2026-11-10T08:18:57.0745303Z ##[endgroup]
+test-and-docker	Set up job	2026-11-10T08:18:57.0746506Z ##[group]GITHUB_TOKEN Permissions
+test-and-docker	Set up job	2026-11-10T08:18:57.0748670Z Contents: read
+test-and-docker	Set up job	2026-11-10T08:18:57.0749318Z Metadata: read
+test-and-docker	Set up job	2026-11-10T08:18:57.0749873Z ##[endgroup]
+test-and-docker	Set up job	2026-11-10T08:18:57.0752439Z Secret source: Actions
+test-and-docker	Set up job	2026-11-10T08:18:57.0753426Z Cache mode: write
+test-and-docker	Set up job	2026-11-10T08:18:57.0754211Z Prepare workflow directory
+test-and-docker	Set up job	2026-11-10T08:18:57.1256923Z Prepare all required actions
+test-and-docker	Set up job	2026-11-10T08:18:57.1304015Z Getting action download info
+test-and-docker	Set up job	2026-11-10T08:18:57.4503939Z Download action repository 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+test-and-docker	Set up job	2026-11-10T08:18:57.5713481Z Download action repository 'actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1' (SHA:949feb2413d6458794dcd2491c4babbbce0c15c1)
+test-and-docker	Set up job	2026-11-10T08:18:57.7737083Z Complete job name: test-and-docker
+test-and-docker	Initialize containers	﻿2026-11-10T08:18:57.8405192Z ##[group]Checking docker version
+test-and-docker	Initialize containers	2026-11-10T08:18:57.8418399Z ##[command]/usr/bin/docker version --format '{{.Server.APIVersion}}'
+test-and-docker	Initialize containers	2026-11-10T08:18:57.9503100Z '1.54'
+test-and-docker	Initialize containers	2026-11-10T08:18:57.9522784Z Docker daemon API version: '1.54'
+test-and-docker	Initialize containers	2026-11-10T08:18:57.9523606Z ##[command]/usr/bin/docker version --format '{{.Client.APIVersion}}'
+test-and-docker	Initialize containers	2026-11-10T08:18:57.9715072Z '1.54'
+test-and-docker	Initialize containers	2026-11-10T08:18:57.9731648Z Docker client API version: '1.54'
+test-and-docker	Initialize containers	2026-11-10T08:18:57.9737175Z ##[endgroup]
+test-and-docker	Initialize containers	2026-11-10T08:18:57.9740040Z ##[group]Clean up resources from previous jobs
+test-and-docker	Initialize containers	2026-11-10T08:18:57.9746019Z ##[command]/usr/bin/docker ps --all --quiet --no-trunc --filter "label=89e2d2"
+test-and-docker	Initialize containers	2026-11-10T08:18:57.9909703Z ##[command]/usr/bin/docker network prune --force --filter "label=89e2d2"
+test-and-docker	Initialize containers	2026-11-10T08:18:58.0088523Z ##[endgroup]
+test-and-docker	Initialize containers	2026-11-10T08:18:58.0089466Z ##[group]Create local container network
+test-and-docker	Initialize containers	2026-11-10T08:18:58.0104009Z ##[command]/usr/bin/docker network create --label 89e2d2 github_network_126642cd980e4a35ba87941e1a1c583a
+test-and-docker	Initialize containers	2026-11-10T08:18:58.0589591Z 641c048151c6d6e842168c8ef02e79fcf30ffa18ea55552637f589d097e27b40
+test-and-docker	Initialize containers	2026-11-10T08:18:58.0613588Z ##[endgroup]
+test-and-docker	Initialize containers	2026-11-10T08:18:58.0637952Z ##[group]Starting postgres service container
+test-and-docker	Initialize containers	2026-11-10T08:18:58.0660809Z ##[command]/usr/bin/docker pull postgres:17-alpine3.22
+test-and-docker	Initialize containers	2026-11-10T08:18:58.8787116Z 17-alpine3.22: Pulling from library/postgres
+test-and-docker	Initialize containers	2026-11-10T08:18:59.1159215Z f5fac7966362: Pulling fs layer
+test-and-docker	Initialize containers	2026-11-10T08:18:59.1161003Z d2241a140499: Pulling fs layer
+test-and-docker	Initialize containers	2026-11-10T08:18:59.1162053Z 583ac709d94d: Pulling fs layer
+test-and-docker	Initialize containers	2026-11-10T08:18:59.1163020Z 7515b9e4e085: Pulling fs layer
+test-and-docker	Initialize containers	2026-11-10T08:18:59.1165287Z 84f5eff04246: Pulling fs layer
+test-and-docker	Initialize containers	2026-11-10T08:18:59.1166425Z c33341e81d56: Pulling fs layer
+test-and-docker	Initialize containers	2026-11-10T08:18:59.1167377Z cd53c771c75c: Pulling fs layer
+test-and-docker	Initialize containers	2026-11-10T08:18:59.1168279Z 821b5a60dbcc: Pulling fs layer
+test-and-docker	Initialize containers	2026-11-10T08:18:59.1169274Z 5f542ca77777: Pulling fs layer
+test-and-docker	Initialize containers	2026-11-10T08:18:59.1170013Z 1db2a369ff51: Pulling fs layer
+test-and-docker	Initialize containers	2026-11-10T08:18:59.3841468Z 7515b9e4e085: Download complete
+test-and-docker	Initialize containers	2026-11-10T08:18:59.3843761Z d2241a140499: Download complete
+test-and-docker	Initialize containers	2026-11-10T08:18:59.3845433Z c33341e81d56: Download complete
+test-and-docker	Initialize containers	2026-11-10T08:18:59.3852870Z f5fac7966362: Download complete
+test-and-docker	Initialize containers	2026-11-10T08:18:59.3880178Z 583ac709d94d: Download complete
+test-and-docker	Initialize containers	2026-11-10T08:18:59.3893347Z 1db2a369ff51: Download complete
+test-and-docker	Initialize containers	2026-11-10T08:18:59.3898527Z 821b5a60dbcc: Download complete
+test-and-docker	Initialize containers	2026-11-10T08:18:59.4831705Z 5f542ca77777: Download complete
+test-and-docker	Initialize containers	2026-11-10T08:18:59.4843305Z 84f5eff04246: Download complete
+test-and-docker	Initialize containers	2026-11-10T08:18:59.5830437Z 22ee59c43275: Download complete
+test-and-docker	Initialize containers	2026-11-10T08:18:59.5833361Z fc7545405b24: Download complete
+test-and-docker	Initialize containers	2026-11-10T08:18:59.5942074Z f5fac7966362: Pull complete
+test-and-docker	Initialize containers	2026-11-10T08:18:59.5973367Z 5f542ca77777: Pull complete
+test-and-docker	Initialize containers	2026-11-10T08:18:59.5987926Z 84f5eff04246: Pull complete
+test-and-docker	Initialize containers	2026-11-10T08:18:59.6837054Z cd53c771c75c: Download complete
+test-and-docker	Initialize containers	2026-11-10T08:18:59.6855364Z d2241a140499: Pull complete
+test-and-docker	Initialize containers	2026-11-10T08:19:01.1836381Z 7515b9e4e085: Pull complete
+test-and-docker	Initialize containers	2026-11-10T08:19:01.1875605Z 583ac709d94d: Pull complete
+test-and-docker	Initialize containers	2026-11-10T08:19:01.1892527Z 821b5a60dbcc: Pull complete
+test-and-docker	Initialize containers	2026-11-10T08:19:01.1911393Z cd53c771c75c: Pull complete
+test-and-docker	Initialize containers	2026-11-10T08:19:01.2177949Z c33341e81d56: Pull complete
+test-and-docker	Initialize containers	2026-11-10T08:19:01.2222949Z 1db2a369ff51: Pull complete
+test-and-docker	Initialize containers	2026-11-10T08:19:01.2224070Z Digest: sha256:b02d9b5bcf608c2719da32cdabee274a33841202487fd5dc9b065b63f886753f
+test-and-docker	Initialize containers	2026-11-10T08:19:01.2225149Z Status: Downloaded newer image for postgres:17-alpine3.22
+test-and-docker	Initialize containers	2026-11-10T08:19:01.2225611Z docker.io/library/postgres:17-alpine3.22
+test-and-docker	Initialize containers	2026-11-10T08:19:01.2318548Z ##[command]/usr/bin/docker create --name 2fa2c10c0f7f4e9fbda7cc3f06474c78_postgres17alpine322_747766 --label 89e2d2 --network github_network_126642cd980e4a35ba87941e1a1c583a --network-alias postgres -p 5432/tcp --health-cmd "pg_isready -h 127.0.0.1 -U studytrack -d studytrack_test" --health-interval 5s --health-timeout 5s --health-retries 10 -e "POSTGRES_USER=studytrack" -e "POSTGRES_PASSWORD=ep4_ci_fixture" -e "POSTGRES_DB=studytrack_test" -e GITHUB_ACTIONS=true -e CI=true postgres:17-alpine3.22
+test-and-docker	Initialize containers	2026-11-10T08:19:01.9367015Z ee2df4b456ab130d6a37d53f0e02b812f9fc47c5d3061c8ecc4f3434cacb1f70
+test-and-docker	Initialize containers	2026-11-10T08:19:01.9409215Z ##[command]/usr/bin/docker start ee2df4b456ab130d6a37d53f0e02b812f9fc47c5d3061c8ecc4f3434cacb1f70
+test-and-docker	Initialize containers	2026-11-10T08:19:02.2905931Z ee2df4b456ab130d6a37d53f0e02b812f9fc47c5d3061c8ecc4f3434cacb1f70
+test-and-docker	Initialize containers	2026-11-10T08:19:02.2930899Z ##[command]/usr/bin/docker ps --all --filter id=ee2df4b456ab130d6a37d53f0e02b812f9fc47c5d3061c8ecc4f3434cacb1f70 --filter status=running --no-trunc --format "{{.ID}} {{.Status}}"
+test-and-docker	Initialize containers	2026-11-10T08:19:02.3225060Z ee2df4b456ab130d6a37d53f0e02b812f9fc47c5d3061c8ecc4f3434cacb1f70 Up Less than a second (health: starting)
+test-and-docker	Initialize containers	2026-11-10T08:19:02.3252205Z ##[command]/usr/bin/docker port ee2df4b456ab130d6a37d53f0e02b812f9fc47c5d3061c8ecc4f3434cacb1f70
+test-and-docker	Initialize containers	2026-11-10T08:19:02.3426296Z 5432/tcp -> 0.0.0.0:32768
+test-and-docker	Initialize containers	2026-11-10T08:19:02.3427097Z 5432/tcp -> [::]:32768
+test-and-docker	Initialize containers	2026-11-10T08:19:02.3477823Z ##[endgroup]
+test-and-docker	Initialize containers	2026-11-10T08:19:02.3486621Z ##[group]Waiting for all services to be ready
+test-and-docker	Initialize containers	2026-11-10T08:19:02.3500435Z ##[command]/usr/bin/docker inspect --format="{{if .Config.Healthcheck}}{{print .State.Health.Status}}{{end}}" ee2df4b456ab130d6a37d53f0e02b812f9fc47c5d3061c8ecc4f3434cacb1f70
+test-and-docker	Initialize containers	2026-11-10T08:19:02.3663599Z starting
+test-and-docker	Initialize containers	2026-11-10T08:19:02.3700057Z postgres service is starting, waiting 2 seconds before checking again.
+test-and-docker	Initialize containers	2026-11-10T08:19:04.3693096Z ##[command]/usr/bin/docker inspect --format="{{if .Config.Healthcheck}}{{print .State.Health.Status}}{{end}}" ee2df4b456ab130d6a37d53f0e02b812f9fc47c5d3061c8ecc4f3434cacb1f70
+test-and-docker	Initialize containers	2026-11-10T08:19:04.3830155Z starting
+test-and-docker	Initialize containers	2026-11-10T08:19:04.3846899Z postgres service is starting, waiting 4 seconds before checking again.
+test-and-docker	Initialize containers	2026-11-10T08:19:08.4178304Z ##[command]/usr/bin/docker inspect --format="{{if .Config.Healthcheck}}{{print .State.Health.Status}}{{end}}" ee2df4b456ab130d6a37d53f0e02b812f9fc47c5d3061c8ecc4f3434cacb1f70
+test-and-docker	Initialize containers	2026-11-10T08:19:08.4326294Z healthy
+test-and-docker	Initialize containers	2026-11-10T08:19:08.4349291Z postgres service is healthy.
+test-and-docker	Initialize containers	2026-11-10T08:19:08.4349948Z ##[endgroup]
+test-and-docker	Check out source	﻿2026-11-10T08:19:08.4729693Z ##[group]Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+test-and-docker	Check out source	2026-11-10T08:19:08.4730403Z with:
+test-and-docker	Check out source	2026-11-10T08:19:08.4730914Z   persist-credentials: false
+test-and-docker	Check out source	2026-11-10T08:19:08.4731213Z   repository: auto4496/studytrack
+test-and-docker	Check out source	2026-11-10T08:19:08.4733815Z   token: ***
+test-and-docker	Check out source	2026-11-10T08:19:08.4734022Z   ssh-strict: true
+test-and-docker	Check out source	2026-11-10T08:19:08.4734225Z   ssh-user: git
+test-and-docker	Check out source	2026-11-10T08:19:08.4734411Z   clean: true
+test-and-docker	Check out source	2026-11-10T08:19:08.4734622Z   sparse-checkout-cone-mode: true
+test-and-docker	Check out source	2026-11-10T08:19:08.4734877Z   fetch-depth: 1
+test-and-docker	Check out source	2026-11-10T08:19:08.4735075Z   fetch-tags: false
+test-and-docker	Check out source	2026-11-10T08:19:08.4735282Z   show-progress: true
+test-and-docker	Check out source	2026-11-10T08:19:08.4735484Z   lfs: false
+test-and-docker	Check out source	2026-11-10T08:19:08.4735704Z   submodules: false
+test-and-docker	Check out source	2026-11-10T08:19:08.4735912Z   set-safe-directory: true
+test-and-docker	Check out source	2026-11-10T08:19:08.4736155Z   allow-unsafe-pr-checkout: false
+test-and-docker	Check out source	2026-11-10T08:19:08.4736705Z ##[endgroup]
+test-and-docker	Check out source	2026-11-10T08:19:08.7626402Z Syncing repository: auto4496/studytrack
+test-and-docker	Check out source	2026-11-10T08:19:08.7628383Z ##[group]Getting Git version info
+test-and-docker	Check out source	2026-11-10T08:19:08.7629200Z Working directory is '/home/runner/work/studytrack/studytrack'
+test-and-docker	Check out source	2026-11-10T08:19:08.7630141Z [command]/usr/bin/git version
+test-and-docker	Check out source	2026-11-10T08:19:08.7631037Z git version 2.56.0
+test-and-docker	Check out source	2026-11-10T08:19:08.7651118Z ##[endgroup]
+test-and-docker	Check out source	2026-11-10T08:19:08.7662284Z Temporarily overriding HOME='/home/runner/work/_temp/0b927b3b-36cf-44bc-a595-1aff87a11b70' before making global git config changes
+test-and-docker	Check out source	2026-11-10T08:19:08.7663793Z Adding repository directory to the temporary git global config as a safe directory
+test-and-docker	Check out source	2026-11-10T08:19:08.7667048Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/studytrack/studytrack
+test-and-docker	Check out source	2026-11-10T08:19:08.7769366Z Deleting the contents of '/home/runner/work/studytrack/studytrack'
+test-and-docker	Check out source	2026-11-10T08:19:08.7772680Z ##[group]Determining repository object format
+test-and-docker	Check out source	2026-11-10T08:19:08.7774288Z ##[endgroup]
+test-and-docker	Check out source	2026-11-10T08:19:08.7775034Z ##[group]Initializing the repository
+test-and-docker	Check out source	2026-11-10T08:19:08.7778873Z [command]/usr/bin/git init /home/runner/work/studytrack/studytrack
+test-and-docker	Check out source	2026-11-10T08:19:08.7902264Z hint: Using 'master' as the name for the initial branch. This default branch name
+test-and-docker	Check out source	2026-11-10T08:19:08.7903293Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+test-and-docker	Check out source	2026-11-10T08:19:08.7904180Z hint: to use in all of your new repositories, which will suppress this warning,
+test-and-docker	Check out source	2026-11-10T08:19:08.7904821Z hint: call:
+test-and-docker	Check out source	2026-11-10T08:19:08.7905024Z hint:
+test-and-docker	Check out source	2026-11-10T08:19:08.7905337Z hint: 	git config --global init.defaultBranch <name>
+test-and-docker	Check out source	2026-11-10T08:19:08.7905677Z hint:
+test-and-docker	Check out source	2026-11-10T08:19:08.7905993Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+test-and-docker	Check out source	2026-11-10T08:19:08.7907065Z hint: 'development'. The just-created branch can be renamed via this command:
+test-and-docker	Check out source	2026-11-10T08:19:08.7907804Z hint:
+test-and-docker	Check out source	2026-11-10T08:19:08.7908158Z hint: 	git branch -m <name>
+test-and-docker	Check out source	2026-11-10T08:19:08.7908576Z hint:
+test-and-docker	Check out source	2026-11-10T08:19:08.7909182Z hint: Disable this message with "git config set advice.defaultBranchName false"
+test-and-docker	Check out source	2026-11-10T08:19:08.7929608Z Initialized empty Git repository in /home/runner/work/studytrack/studytrack/.git/
+test-and-docker	Check out source	2026-11-10T08:19:08.7949790Z [command]/usr/bin/git remote add origin https://github.com/auto4496/studytrack
+test-and-docker	Check out source	2026-11-10T08:19:08.7995798Z ##[endgroup]
+test-and-docker	Check out source	2026-11-10T08:19:08.7996612Z ##[group]Disabling automatic garbage collection
+test-and-docker	Check out source	2026-11-10T08:19:08.7999840Z [command]/usr/bin/git config --local gc.auto 0
+test-and-docker	Check out source	2026-11-10T08:19:08.8035700Z ##[endgroup]
+test-and-docker	Check out source	2026-11-10T08:19:08.8036819Z ##[group]Setting up auth
+test-and-docker	Check out source	2026-11-10T08:19:08.8037633Z Removing SSH command configuration
+test-and-docker	Check out source	2026-11-10T08:19:08.8043948Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+test-and-docker	Check out source	2026-11-10T08:19:08.8079764Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+test-and-docker	Check out source	2026-11-10T08:19:08.8545930Z Removing HTTP extra header
+test-and-docker	Check out source	2026-11-10T08:19:08.8551828Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+test-and-docker	Check out source	2026-11-10T08:19:08.8586994Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+test-and-docker	Check out source	2026-11-10T08:19:08.8861038Z Removing includeIf entries pointing to credentials config files
+test-and-docker	Check out source	2026-11-10T08:19:08.8866916Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+test-and-docker	Check out source	2026-11-10T08:19:08.8901688Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+test-and-docker	Check out source	2026-11-10T08:19:08.9186679Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-0386c921-5159-446d-87d4-51e52325c202.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+test-and-docker	Check out source	2026-11-10T08:19:08.9226230Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/studytrack/studytrack/.git.path /home/runner/work/_temp/git-credentials-0386c921-5159-446d-87d4-51e52325c202.config
+test-and-docker	Check out source	2026-11-10T08:19:08.9258877Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/studytrack/studytrack/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-0386c921-5159-446d-87d4-51e52325c202.config
+test-and-docker	Check out source	2026-11-10T08:19:08.9294875Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-0386c921-5159-446d-87d4-51e52325c202.config
+test-and-docker	Check out source	2026-11-10T08:19:08.9326954Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-0386c921-5159-446d-87d4-51e52325c202.config
+test-and-docker	Check out source	2026-11-10T08:19:08.9356677Z ##[endgroup]
+test-and-docker	Check out source	2026-11-10T08:19:08.9357251Z ##[group]Fetching the repository
+test-and-docker	Check out source	2026-11-10T08:19:08.9363511Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +3f001eef799de4beb0317149d1735cacbbe5907d:refs/remotes/pull/36/merge
+test-and-docker	Check out source	2026-11-10T08:19:09.4544952Z From https://github.com/auto4496/studytrack
+test-and-docker	Check out source	2026-11-10T08:19:09.4546151Z  * [new ref]         3f001eef799de4beb0317149d1735cacbbe5907d -> pull/36/merge
+test-and-docker	Check out source	2026-11-10T08:19:09.4553474Z ##[endgroup]
+test-and-docker	Check out source	2026-11-10T08:19:09.4554328Z ##[group]Determining the checkout info
+test-and-docker	Check out source	2026-11-10T08:19:09.4555249Z ##[endgroup]
+test-and-docker	Check out source	2026-11-10T08:19:09.4559674Z [command]/usr/bin/git sparse-checkout disable
+test-and-docker	Check out source	2026-11-10T08:19:09.4616494Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+test-and-docker	Check out source	2026-11-10T08:19:09.4651936Z ##[group]Checking out the ref
+test-and-docker	Check out source	2026-11-10T08:19:09.4657514Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/36/merge
+test-and-docker	Check out source	2026-11-10T08:19:09.5166514Z Note: switching to 'refs/remotes/pull/36/merge'.
+test-and-docker	Check out source	2026-11-10T08:19:09.5167020Z 
+test-and-docker	Check out source	2026-11-10T08:19:09.5167660Z You are in 'detached HEAD' state. You can look around, make experimental
+test-and-docker	Check out source	2026-11-10T08:19:09.5168512Z changes and commit them, and you can discard any commits you make in this
+test-and-docker	Check out source	2026-11-10T08:19:09.5169136Z state without impacting any branches by switching back to a branch.
+test-and-docker	Check out source	2026-11-10T08:19:09.5169550Z 
+test-and-docker	Check out source	2026-11-10T08:19:09.5170008Z If you want to create a new branch to retain commits you create, you may
+test-and-docker	Check out source	2026-11-10T08:19:09.5171030Z do so (now or later) by using -c with the switch command. Example:
+test-and-docker	Check out source	2026-11-10T08:19:09.5171509Z 
+test-and-docker	Check out source	2026-11-10T08:19:09.5171684Z   git switch -c <new-branch-name>
+test-and-docker	Check out source	2026-11-10T08:19:09.5171993Z 
+test-and-docker	Check out source	2026-11-10T08:19:09.5172156Z Or undo this operation with:
+test-and-docker	Check out source	2026-11-10T08:19:09.5172432Z 
+test-and-docker	Check out source	2026-11-10T08:19:09.5172573Z   git switch -
+test-and-docker	Check out source	2026-11-10T08:19:09.5172859Z 
+test-and-docker	Check out source	2026-11-10T08:19:09.5173246Z Turn off this advice by setting config variable advice.detachedHead to false
+test-and-docker	Check out source	2026-11-10T08:19:09.5173794Z 
+test-and-docker	Check out source	2026-11-10T08:19:09.5174360Z HEAD is now at 3f001ee Merge f6330b82a325c119e23d0704565dbdf223377d0e into 5c04cd4bf7a7a28ff5c429f3770efc42da6bd7e0
+test-and-docker	Check out source	2026-11-10T08:19:09.5187326Z ##[endgroup]
+test-and-docker	Check out source	2026-11-10T08:19:09.5239822Z [command]/usr/bin/git log -1 --format=%H
+test-and-docker	Check out source	2026-11-10T08:19:09.5265522Z 3f001eef799de4beb0317149d1735cacbbe5907d
+test-and-docker	Check out source	2026-11-10T08:19:09.5279081Z ##[group]Removing auth
+test-and-docker	Check out source	2026-11-10T08:19:09.5279642Z Removing SSH command configuration
+test-and-docker	Check out source	2026-11-10T08:19:09.5280228Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+test-and-docker	Check out source	2026-11-10T08:19:09.5313123Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+test-and-docker	Check out source	2026-11-10T08:19:09.5585432Z Removing HTTP extra header
+test-and-docker	Check out source	2026-11-10T08:19:09.5589815Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+test-and-docker	Check out source	2026-11-10T08:19:09.5624859Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+test-and-docker	Check out source	2026-11-10T08:19:09.5892406Z Removing includeIf entries pointing to credentials config files
+test-and-docker	Check out source	2026-11-10T08:19:09.5896516Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+test-and-docker	Check out source	2026-11-10T08:19:09.5924374Z includeif.gitdir:/home/runner/work/studytrack/studytrack/.git.path
+test-and-docker	Check out source	2026-11-10T08:19:09.5925361Z includeif.gitdir:/home/runner/work/studytrack/studytrack/.git/worktrees/*.path
+test-and-docker	Check out source	2026-11-10T08:19:09.5926132Z includeif.gitdir:/github/workspace/.git.path
+test-and-docker	Check out source	2026-11-10T08:19:09.5926773Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+test-and-docker	Check out source	2026-11-10T08:19:09.5936918Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/studytrack/studytrack/.git.path
+test-and-docker	Check out source	2026-11-10T08:19:09.5960451Z /home/runner/work/_temp/git-credentials-0386c921-5159-446d-87d4-51e52325c202.config
+test-and-docker	Check out source	2026-11-10T08:19:09.5974362Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/studytrack/studytrack/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-0386c921\-5159\-446d\-87d4\-51e52325c202\.config
+test-and-docker	Check out source	2026-11-10T08:19:09.6014058Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/studytrack/studytrack/.git/worktrees/*.path
+test-and-docker	Check out source	2026-11-10T08:19:09.6037989Z /home/runner/work/_temp/git-credentials-0386c921-5159-446d-87d4-51e52325c202.config
+test-and-docker	Check out source	2026-11-10T08:19:09.6047110Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/studytrack/studytrack/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-0386c921\-5159\-446d\-87d4\-51e52325c202\.config
+test-and-docker	Check out source	2026-11-10T08:19:09.6086099Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+test-and-docker	Check out source	2026-11-10T08:19:09.6109747Z /github/runner_temp/git-credentials-0386c921-5159-446d-87d4-51e52325c202.config
+test-and-docker	Check out source	2026-11-10T08:19:09.6117309Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-0386c921\-5159\-446d\-87d4\-51e52325c202\.config
+test-and-docker	Check out source	2026-11-10T08:19:09.6155714Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+test-and-docker	Check out source	2026-11-10T08:19:09.6179643Z /github/runner_temp/git-credentials-0386c921-5159-446d-87d4-51e52325c202.config
+test-and-docker	Check out source	2026-11-10T08:19:09.6190075Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-0386c921\-5159\-446d\-87d4\-51e52325c202\.config
+test-and-docker	Check out source	2026-11-10T08:19:09.6226093Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+test-and-docker	Check out source	2026-11-10T08:19:09.6493346Z Removing credentials config '/home/runner/work/_temp/git-credentials-0386c921-5159-446d-87d4-51e52325c202.config'
+test-and-docker	Check out source	2026-11-10T08:19:09.6501890Z ##[endgroup]
+test-and-docker	Set up Node.js 24	﻿2026-11-10T08:19:09.6756977Z ##[group]Run actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
+test-and-docker	Set up Node.js 24	2026-11-10T08:19:09.6757387Z with:
+test-and-docker	Set up Node.js 24	2026-11-10T08:19:09.6757578Z   node-version: 24
+test-and-docker	Set up Node.js 24	2026-11-10T08:19:09.6757785Z   check-latest: false
+test-and-docker	Set up Node.js 24	2026-11-10T08:19:09.6760282Z   token: ***
+test-and-docker	Set up Node.js 24	2026-11-10T08:19:09.6760512Z   package-manager-cache: true
+test-and-docker	Set up Node.js 24	2026-11-10T08:19:09.6760994Z ##[endgroup]
+test-and-docker	Set up Node.js 24	2026-11-10T08:19:09.8065910Z Found in cache @ /opt/hostedtoolcache/node/24.22.2/x64
+test-and-docker	Set up Node.js 24	2026-11-10T08:19:09.8952628Z ##[group]Environment details
+test-and-docker	Set up Node.js 24	2026-11-10T08:19:10.2688270Z node: v24.22.2
+test-and-docker	Set up Node.js 24	2026-11-10T08:19:10.2688705Z npm: 11.19.1
+test-and-docker	Set up Node.js 24	2026-11-10T08:19:10.2689021Z yarn: 1.22.22
+test-and-docker	Set up Node.js 24	2026-11-10T08:19:10.2689781Z ##[endgroup]
+test-and-docker	Check deployment scripts offline	﻿2026-11-10T08:19:10.2834488Z ##[group]Run bash -n deploy/deploy.sh
+test-and-docker	Check deployment scripts offline	2026-11-10T08:19:10.2834915Z ^[[36;1mbash -n deploy/deploy.sh^[[0m
+test-and-docker	Check deployment scripts offline	2026-11-10T08:19:10.2835332Z ^[[36;1mpython3 -B -m unittest discover -s deploy/tests -p 'test_*.py' -v^[[0m
+test-and-docker	Check deployment scripts offline	2026-11-10T08:19:10.2909784Z shell: /usr/bin/bash -e {0}
+test-and-docker	Check deployment scripts offline	2026-11-10T08:19:10.2910064Z ##[endgroup]
+test-and-docker	Check deployment scripts offline	2026-11-10T08:19:10.9184308Z test_build_failure_stops_before_database_creation (test_bootstrap.BootstrapTests.test_build_failure_stops_before_database_creation) ... ok
+test-and-docker	Check deployment scripts offline	2026-11-10T08:19:10.9293580Z test_dry_run_makes_no_gcloud_calls (test_bootstrap.BootstrapTests.test_dry_run_makes_no_gcloud_calls) ... ok
+test-and-docker	Check deployment scripts offline	2026-11-10T08:19:11.6658376Z test_existing_user_without_secret_requires_recovery (test_bootstrap.BootstrapTests.test_existing_user_without_secret_requires_recovery) ... ok
+test-and-docker	Check deployment scripts offline	2026-11-10T08:19:12.8943036Z test_failed_public_smoke_fails_the_deployment_result (test_bootstrap.BootstrapTests.test_failed_public_smoke_fails_the_deployment_result) ... ok
+test-and-docker	Check deployment scripts offline	2026-11-10T08:19:14.1474677Z test_first_run_preserves_runtime_and_migration_boundaries (test_bootstrap.BootstrapTests.test_first_run_preserves_runtime_and_migration_boundaries) ... ok
+test-and-docker	Check deployment scripts offline	2026-11-10T08:19:14.8979448Z test_interrupted_empty_secret_requires_recovery (test_bootstrap.BootstrapTests.test_interrupted_empty_secret_requires_recovery) ... ok
+test-and-docker	Check deployment scripts offline	2026-11-10T08:19:16.0408574Z test_migration_failure_stops_before_service_update (test_bootstrap.BootstrapTests.test_migration_failure_stops_before_service_update) ... ok
+test-and-docker	Check deployment scripts offline	2026-11-10T08:19:16.5722195Z test_missing_digest_stops_before_database_creation (test_bootstrap.BootstrapTests.test_missing_digest_stops_before_database_creation) ... ok
+test-and-docker	Check deployment scripts offline	2026-11-10T08:19:16.6995212Z test_release_and_billing_preconditions_block_cloud_mutations (test_bootstrap.BootstrapTests.test_release_and_billing_preconditions_block_cloud_mutations) ... ok
+test-and-docker	Check deployment scripts offline	2026-11-10T08:19:18.9469592Z test_rerun_preserves_credentials (test_bootstrap.BootstrapTests.test_rerun_preserves_credentials) ... ok
+test-and-docker	Check deployment scripts offline	2026-11-10T08:19:20.8394669Z test_retry_after_user_creation_failure_reuses_saved_password (test_bootstrap.BootstrapTests.test_retry_after_user_creation_failure_reuses_saved_password) ... ok
+test-and-docker	Check deployment scripts offline	2026-11-10T08:19:21.4298246Z test_wrong_existing_sql_settings_are_preserved_and_rejected (test_bootstrap.BootstrapTests.test_wrong_existing_sql_settings_are_preserved_and_rejected) ... ok
+test-and-docker	Check deployment scripts offline	2026-11-10T08:19:22.1985034Z test_wrong_saved_connection_is_rejected_without_logging_value (test_bootstrap.BootstrapTests.test_wrong_saved_connection_is_rejected_without_logging_value) ... ok
+test-and-docker	Check deployment scripts offline	2026-11-10T08:19:22.2000908Z test_checks_health_and_ui_after_retrying_connection (test_smoke.SmokeTests.test_checks_health_and_ui_after_retrying_connection) ... ok
+test-and-docker	Check deployment scripts offline	2026-11-10T08:19:22.2006379Z test_rejects_default_page_even_if_health_passes (test_smoke.SmokeTests.test_rejects_default_page_even_if_health_passes) ... ok
+test-and-docker	Check deployment scripts offline	2026-11-10T08:19:22.2014058Z test_rejects_unhealthy_database_even_if_endpoint_answers (test_smoke.SmokeTests.test_rejects_unhealthy_database_even_if_endpoint_answers) ... ok
+test-and-docker	Check deployment scripts offline	2026-11-10T08:19:22.2015272Z 
+test-and-docker	Check deployment scripts offline	2026-11-10T08:19:22.2015591Z PASS /api/health
+test-and-docker	Check deployment scripts offline	2026-11-10T08:19:22.2016432Z ----------------------------------------------------------------------
+test-and-docker	Check deployment scripts offline	2026-11-10T08:19:22.2017108Z PASS /
+test-and-docker	Check deployment scripts offline	2026-11-10T08:19:22.2017657Z Ran 16 tests in 11.778s
+test-and-docker	Check deployment scripts offline	2026-11-10T08:19:22.2018079Z PASS /api/health
+test-and-docker	Check deployment scripts offline	2026-11-10T08:19:22.2018359Z 
+test-and-docker	Check deployment scripts offline	2026-11-10T08:19:22.2018678Z OK
+test-and-docker	Install dependencies and generate Prisma client	﻿2026-11-10T08:19:22.2199875Z ##[group]Run npm ci
+test-and-docker	Install dependencies and generate Prisma client	2026-11-10T08:19:22.2200163Z ^[[36;1mnpm ci^[[0m
+test-and-docker	Install dependencies and generate Prisma client	2026-11-10T08:19:22.2200374Z ^[[36;1mnpm run db:generate^[[0m
+test-and-docker	Install dependencies and generate Prisma client	2026-11-10T08:19:22.2250953Z shell: /usr/bin/bash -e {0}
+test-and-docker	Install dependencies and generate Prisma client	2026-11-10T08:19:22.2251230Z ##[endgroup]
+test-and-docker	Install dependencies and generate Prisma client	2026-11-10T08:19:31.2864802Z 
+test-and-docker	Install dependencies and generate Prisma client	2026-11-10T08:19:31.2865564Z added 231 packages, and audited 232 packages in 9s
+test-and-docker	Install dependencies and generate Prisma client	2026-11-10T08:19:31.2870732Z 
+test-and-docker	Install dependencies and generate Prisma client	2026-11-10T08:19:31.2871399Z 68 packages are looking for funding
+test-and-docker	Install dependencies and generate Prisma client	2026-11-10T08:19:31.2872041Z   run `npm fund` for details
+test-and-docker	Install dependencies and generate Prisma client	2026-11-10T08:19:31.2879649Z 
+test-and-docker	Install dependencies and generate Prisma client	2026-11-10T08:19:31.2879969Z found 0 vulnerabilities
+test-and-docker	Install dependencies and generate Prisma client	2026-11-10T08:19:31.2891812Z npm warn install-scripts 5 packages have install scripts not yet covered by allowScripts:
+test-and-docker	Install dependencies and generate Prisma client	2026-11-10T08:19:31.2893393Z npm warn install-scripts   @prisma/client@6.19.3 (postinstall: node scripts/postinstall.js)
+test-and-docker	Install dependencies and generate Prisma client	2026-11-10T08:19:31.2894833Z npm warn install-scripts   @prisma/engines@6.19.3 (postinstall: node scripts/postinstall.js)
+test-and-docker	Install dependencies and generate Prisma client	2026-11-10T08:19:31.2896416Z npm warn install-scripts   argon2@0.45.2 (install: cross-env ZERO_AR_DATE=1 node-gyp-build)
+test-and-docker	Install dependencies and generate Prisma client	2026-11-10T08:19:31.2897731Z npm warn install-scripts   esbuild@0.28.2 (postinstall: node install.js)
+test-and-docker	Install dependencies and generate Prisma client	2026-11-10T08:19:31.2899048Z npm warn install-scripts   prisma@6.19.3 (preinstall: node scripts/preinstall-entry.js)
+test-and-docker	Install dependencies and generate Prisma client	2026-11-10T08:19:31.2899946Z npm warn install-scripts
+test-and-docker	Install dependencies and generate Prisma client	2026-11-10T08:19:31.2901310Z npm warn install-scripts Run `npm install-scripts ls` to review, or `npm install-scripts approve <pkg>` to allow.
+test-and-docker	Install dependencies and generate Prisma client	2026-11-10T08:19:31.4572739Z 
+test-and-docker	Install dependencies and generate Prisma client	2026-11-10T08:19:31.4573401Z > studytrack@0.1.0 db:generate
+test-and-docker	Install dependencies and generate Prisma client	2026-11-10T08:19:31.4574206Z > prisma generate --schema server/prisma/schema.prisma
+test-and-docker	Install dependencies and generate Prisma client	2026-11-10T08:19:31.4574747Z 
+test-and-docker	Install dependencies and generate Prisma client	2026-11-10T08:19:32.3122346Z Prisma schema loaded from server/prisma/schema.prisma
+test-and-docker	Install dependencies and generate Prisma client	2026-11-10T08:19:32.5158342Z 
+test-and-docker	Install dependencies and generate Prisma client	2026-11-10T08:19:32.5160357Z ✔ Generated Prisma Client (v6.19.3) to ./node_modules/@prisma/client in 79ms
+test-and-docker	Install dependencies and generate Prisma client	2026-11-10T08:19:32.5162460Z 
+test-and-docker	Install dependencies and generate Prisma client	2026-11-10T08:19:32.5163348Z Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+test-and-docker	Install dependencies and generate Prisma client	2026-11-10T08:19:32.5164166Z 
+test-and-docker	Install dependencies and generate Prisma client	2026-11-10T08:19:32.5164808Z Tip: Want to turn off tips and other hints? https://pris.ly/tip-4-nohints
+test-and-docker	Install dependencies and generate Prisma client	2026-11-10T08:19:32.5165478Z 
+test-and-docker	Check local container database isolation	﻿2026-11-10T08:19:32.5572858Z ##[group]Run npm run test:container-config
+test-and-docker	Check local container database isolation	2026-11-10T08:19:32.5573676Z ^[[36;1mnpm run test:container-config^[[0m
+test-and-docker	Check local container database isolation	2026-11-10T08:19:32.5636724Z shell: /usr/bin/bash -e {0}
+test-and-docker	Check local container database isolation	2026-11-10T08:19:32.5637093Z ##[endgroup]
+test-and-docker	Check local container database isolation	2026-11-10T08:19:32.6851799Z 
+test-and-docker	Check local container database isolation	2026-11-10T08:19:32.6852339Z > studytrack@0.1.0 test:container-config
+test-and-docker	Check local container database isolation	2026-11-10T08:19:32.6853088Z > node --test scripts/tests/container-config.test.mjs
+test-and-docker	Check local container database isolation	2026-11-10T08:19:32.6853519Z 
+test-and-docker	Check local container database isolation	2026-11-10T08:19:33.5285267Z ✔ dedicated local Compose database passes the read-only preflight (200.877094ms)
+test-and-docker	Check local container database isolation	2026-11-10T08:19:33.5288077Z ✔ inherited external database override is rejected despite a safe env file (106.242859ms)
+test-and-docker	Check local container database isolation	2026-11-10T08:19:33.5289816Z ✔ inherited wrong-database override on the local service is rejected (128.128287ms)
+test-and-docker	Check local container database isolation	2026-11-10T08:19:33.5307248Z ✔ matching inherited local credentials pass without printing resolved secrets (102.38837ms)
+test-and-docker	Check local container database isolation	2026-11-10T08:19:33.5309113Z ✔ startup rejects inherited external target before any startup command (93.688067ms)
+test-and-docker	Check local container database isolation	2026-11-10T08:19:33.5310519Z ✔ verifier rejects effective external target before recording or lifecycle checks (114.391475ms)
+test-and-docker	Check local container database isolation	2026-11-10T08:19:33.5312224Z ✔ all consumers are checked: reject isolated app target drift (0.914748ms)
+test-and-docker	Check local container database isolation	2026-11-10T08:19:33.5313170Z ✔ all consumers are checked: reject isolated migrate target drift (0.217809ms)
+test-and-docker	Check local container database isolation	2026-11-10T08:19:33.5313969Z ✔ all consumers are checked: reject isolated seed target drift (0.245772ms)
+test-and-docker	Check local container database isolation	2026-11-10T08:19:33.5314731Z ✔ reject wrong port (0.47377ms)
+test-and-docker	Check local container database isolation	2026-11-10T08:19:33.5322881Z ✔ reject wrong user (0.244299ms)
+test-and-docker	Check local container database isolation	2026-11-10T08:19:33.5323841Z ✔ reject mismatched password (0.177032ms)
+test-and-docker	Check local container database isolation	2026-11-10T08:19:33.5324780Z ✔ reject query host override (0.173105ms)
+test-and-docker	Check local container database isolation	2026-11-10T08:19:33.5330307Z ✔ reject alternate schema (0.195778ms)
+test-and-docker	Check local container database isolation	2026-11-10T08:19:33.5336593Z ✔ reject URL fragment (0.171141ms)
+test-and-docker	Check local container database isolation	2026-11-10T08:19:33.5353205Z ✔ reject wrong protocol (0.158097ms)
+test-and-docker	Check local container database isolation	2026-11-10T08:19:33.5354596Z ✔ reject missing database (0.123001ms)
+test-and-docker	Check local container database isolation	2026-11-10T08:19:33.5355495Z ✔ missing tools config fails closed (0.299142ms)
+test-and-docker	Check local container database isolation	2026-11-10T08:19:33.5356616Z ✔ wrong underlying database identity fails closed (0.181682ms)
+test-and-docker	Check local container database isolation	2026-11-10T08:19:33.5357663Z ✔ default port and URL-encoded matching password are allowed (0.207189ms)
+test-and-docker	Check local container database isolation	2026-11-10T08:19:33.5359056Z ✔ Compose resolution includes tools and does not expose private error output (1.330098ms)
+test-and-docker	Check local container database isolation	2026-11-10T08:19:33.5484787Z ℹ tests 21
+test-and-docker	Check local container database isolation	2026-11-10T08:19:33.5485819Z ℹ suites 0
+test-and-docker	Check local container database isolation	2026-11-10T08:19:33.5486607Z ℹ pass 21
+test-and-docker	Check local container database isolation	2026-11-10T08:19:33.5487320Z ℹ fail 0
+test-and-docker	Check local container database isolation	2026-11-10T08:19:33.5487710Z ℹ cancelled 0
+test-and-docker	Check local container database isolation	2026-11-10T08:19:33.5488084Z ℹ skipped 0
+test-and-docker	Check local container database isolation	2026-11-10T08:19:33.5488426Z ℹ todo 0
+test-and-docker	Check local container database isolation	2026-11-10T08:19:33.5488831Z ℹ duration_ms 829.544091
+test-and-docker	Migrate test database and run API and unit tests	﻿2026-11-10T08:19:33.5696380Z ##[group]Run npm run db:test:migrate
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:33.5696721Z ^[[36;1mnpm run db:test:migrate^[[0m
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:33.5696970Z ^[[36;1mnpm test^[[0m
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:33.5746274Z shell: /usr/bin/bash -e {0}
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:33.5746527Z env:
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:33.5747034Z   TEST_DATABASE_URL: ***127.0.0.1:32768/studytrack_test
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:33.5747344Z ##[endgroup]
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:33.6803147Z 
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:33.6803562Z > studytrack@0.1.0 db:test:migrate
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:33.6804153Z > node scripts/test-database.mjs
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:33.6804503Z 
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:34.5527379Z Prisma schema loaded from server/prisma/schema.prisma
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:34.5582025Z Datasource "db": PostgreSQL database "studytrack_test", schema "public" at "127.0.0.1:32768"
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:34.6045198Z 
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:34.6045824Z 1 migration found in prisma/migrations
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:34.6046271Z 
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:34.6525518Z Applying migration `202611030001_foundation`
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:34.6872347Z 
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:34.6878790Z The following migration(s) have been applied:
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:34.6879302Z 
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:34.6879454Z migrations/
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:34.6880062Z   └─ 202611030001_foundation/
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:34.6880557Z     └─ migration.sql
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:34.6881376Z       
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:34.6881878Z All migrations have been successfully applied.
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:34.8340953Z 
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:34.8341558Z > studytrack@0.1.0 test
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:34.8342031Z > vitest run
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:34.8342188Z 
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:35.1371277Z 
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:35.1382433Z ^[[1m^[[30m^[[46m RUN ^[[49m^[[39m^[[22m ^[[36mv5.1.0 ^[[39m^[[90m/home/runner/work/studytrack/studytrack^[[39m
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:35.1383176Z 
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:38.4990979Z  ^[[32m✓^[[39m server/tests/integration/entries.test.ts ^[[2m(^[[22m^[[2m32 tests^[[22m^[[2m)^[[22m^[[33m 2894^[[2mms^[[22m^[[39m
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:40.4301613Z  ^[[32m✓^[[39m server/tests/integration/goals.test.ts ^[[2m(^[[22m^[[2m19 tests^[[22m^[[2m)^[[22m^[[33m 1589^[[2mms^[[22m^[[39m
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:41.5851917Z  ^[[32m✓^[[39m server/tests/integration/auth.test.ts ^[[2m(^[[22m^[[2m9 tests^[[22m^[[2m)^[[22m^[[33m 817^[[2mms^[[22m^[[39m
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:43.4706740Z  ^[[32m✓^[[39m server/tests/integration/templates.test.ts ^[[2m(^[[22m^[[2m16 tests^[[22m^[[2m)^[[22m^[[33m 1555^[[2mms^[[22m^[[39m
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:43.6929794Z  ^[[31m❯^[[39m server/tests/unit/entry-rules.test.ts ^[[2m(^[[22m^[[2m19 tests^[[22m^[[2m | ^[[22m^[[31m1 failed^[[39m^[[2m)^[[22m^[[32m 16^[[2mms^[[22m^[[39m
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:43.6931418Z    ^[[31m❯^[[39m F-04 daily rules ^[[2m(19)^[[22m
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:43.6932550Z ^[[31m     ^[[31m×^[[31m TEST-F04-03: 45/60 gives 74 percent with achieved=false^[[39m^[[32m 8^[[2mms^[[22m^[[39m
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:43.6933749Z      ^[[32m✓^[[39m TEST-F04-03: 75/60 gives 125 percent with achieved=true^[[32m 0^[[2mms^[[22m^[[39m
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:43.6935065Z      ^[[32m✓^[[39m TEST-F04-03: 60/60 gives 100 percent with achieved=true^[[32m 0^[[2mms^[[22m^[[39m
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:43.6936458Z      ^[[32m✓^[[39m TEST-F04-03: 1/32 gives 3.13 percent with achieved=false^[[32m 0^[[2mms^[[22m^[[39m
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:43.6937878Z      ^[[32m✓^[[39m TEST-F04-03: 59/60 gives 98.33 percent with achieved=false^[[32m 0^[[2mms^[[22m^[[39m
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:43.6939175Z      ^[[32m✓^[[39m TEST-F04-03: 0/60 gives 0 percent with achieved=false^[[32m 0^[[2mms^[[22m^[[39m
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:43.6940446Z      ^[[32m✓^[[39m TEST-F04-03: 1440/1 gives 144000 percent with achieved=true^[[32m 0^[[2mms^[[22m^[[39m
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:43.6942055Z      ^[[32m✓^[[39m TEST-F04-03: corrupt target cannot produce a default percentage^[[32m 1^[[2mms^[[22m^[[39m
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:43.6943396Z      ^[[32m✓^[[39m TEST-F04-07: invalid minutes 29 reject without coercion^[[32m 0^[[2mms^[[22m^[[39m
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:43.6945002Z      ^[[32m✓^[[39m TEST-F04-07: invalid minutes 121 reject without coercion^[[32m 0^[[2mms^[[22m^[[39m
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:43.6946254Z      ^[[32m✓^[[39m TEST-F04-07: invalid minutes 0 reject without coercion^[[32m 0^[[2mms^[[22m^[[39m
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:43.6947619Z      ^[[32m✓^[[39m TEST-F04-07: invalid minutes -1 reject without coercion^[[32m 0^[[2mms^[[22m^[[39m
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:43.6948506Z      ^[[32m✓^[[39m TEST-F04-07: invalid minutes 1.5 reject without coercion^[[32m 0^[[2mms^[[22m^[[39m
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:43.6949482Z      ^[[32m✓^[[39m TEST-F04-07: invalid minutes 60 reject without coercion^[[32m 0^[[2mms^[[22m^[[39m
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:43.6950193Z      ^[[32m✓^[[39m TEST-F04-07: invalid minutes true reject without coercion^[[32m 0^[[2mms^[[22m^[[39m
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:43.6952441Z      ^[[32m✓^[[39m TEST-F04-07: invalid minutes null reject without coercion^[[32m 0^[[2mms^[[22m^[[39m
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:43.6953857Z      ^[[32m✓^[[39m TEST-F04-07: invalid minutes undefined reject without coercion^[[32m 0^[[2mms^[[22m^[[39m
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:43.6955243Z      ^[[32m✓^[[39m TEST-F04-07: exact snapshot endpoints are accepted^[[32m 0^[[2mms^[[22m^[[39m
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:43.6956576Z      ^[[32m✓^[[39m TEST-F04-05: calendar validation includes leap/month/year transitions and correct field names^[[32m 2^[[2mms^[[22m^[[39m
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:43.8845163Z  ^[[32m✓^[[39m server/tests/unit/goal-rules.test.ts ^[[2m(^[[22m^[[2m3 tests^[[22m^[[2m)^[[22m^[[32m 6^[[2mms^[[22m^[[39m
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:44.0707897Z  ^[[32m✓^[[39m server/tests/unit/template-rules.test.ts ^[[2m(^[[22m^[[2m10 tests^[[22m^[[2m)^[[22m^[[32m 9^[[2mms^[[22m^[[39m
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:44.1952335Z  ^[[32m✓^[[39m server/tests/unit/test-db-guard.test.ts ^[[2m(^[[22m^[[2m9 tests^[[22m^[[2m)^[[22m^[[32m 7^[[2mms^[[22m^[[39m
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:44.2016314Z 
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:44.2017185Z ^[[31m⎯⎯⎯⎯⎯⎯⎯^[[39m^[[1m^[[41m Failed Tests 1 ^[[49m^[[22m^[[31m⎯⎯⎯⎯⎯⎯⎯^[[39m
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:44.2018046Z 
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:44.2026663Z ^[[41m^[[1m FAIL ^[[22m^[[49m server/tests/unit/entry-rules.test.ts^[[2m > ^[[22mF-04 daily rules^[[2m > ^[[22mTEST-F04-03: 45/60 gives 74 percent with achieved=false
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:44.2034831Z ^[[31m^[[1mAssertionError^[[22m: expected { Object (progressPercent, achieved) } to deeply equal { Object (progressPercent, achieved) }^[[39m
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:44.2035512Z 
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:44.2035840Z ^[[32m- Expected^[[39m
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:44.2036176Z ^[[31m+ Received^[[39m
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:44.2036313Z 
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:44.2036620Z ^[[2m  {^[[22m
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:44.2037043Z ^[[2m    "achieved": false,^[[22m
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:44.2037638Z ^[[32m-   "progressPercent": 74,^[[39m
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:44.2038584Z ^[[31m+   "progressPercent": 75,^[[39m
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:44.2039283Z ^[[2m  }^[[22m
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:44.2039664Z 
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:44.2040724Z ^[[36m ^[[2m❯^[[22m server/tests/unit/entry-rules.test.ts:^[[2m21:63^[[22m^[[39m
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:44.2077580Z     ^[[90m 19|^[[39m     ^[[32m"TEST-F04-03: %s/%s gives %s percent with achieved=%s"^[[39m^[[33m,^[[39m
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:44.2078639Z     ^[[90m 20|^[[39m     (actual^[[33m,^[[39m target^[[33m,^[[39m percent^[[33m,^[[39m achieved) ^[[33m=>^[[39m {
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:44.2079645Z     ^[[90m 21|^[[39m       ^[[34mexpect^[[39m(^[[34mprogressFor^[[39m(actual ^[[35mas^[[39m number^[[33m,^[[39m target ^[[35mas^[[39m number))^[[33m.^[[39m^[[34mtoEqual^[[39m({
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:44.2080472Z     ^[[90m   |^[[39m                                                               ^[[31m^^[[39m
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:44.2081720Z     ^[[90m 22|^[[39m         progressPercent^[[33m:^[[39m percent^[[33m,^[[39m
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:44.2082516Z     ^[[90m 23|^[[39m         achieved^[[33m,^[[39m
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:44.2082871Z 
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:44.2083290Z ^[[31m^[[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯^[[22m^[[39m
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:44.2083658Z 
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:44.2086200Z 
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:44.2091983Z ^[[2m Test Files ^[[22m ^[[1m^[[31m1 failed^[[39m^[[22m^[[2m | ^[[22m^[[1m^[[32m7 passed^[[39m^[[22m^[[90m (8)^[[39m
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:44.2093989Z ^[[2m      Tests ^[[22m ^[[1m^[[31m1 failed^[[39m^[[22m^[[2m | ^[[22m^[[1m^[[32m116 passed^[[39m^[[22m^[[90m (117)^[[39m
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:44.2094919Z ^[[2m   Start at ^[[22m 08:19:35
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:44.2100143Z ^[[2m   Duration ^[[22m 9.06s^[[2m (tests 84%, import 13%, transform 2%, setup 1%)^[[22m
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:44.2111936Z 
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:44.2112904Z ^[[2m    Isolate ^[[22m ^[[33m8 workers spawned^[[39m^[[2m · ~96ms startup each (spawn + environment, per file)^[[22m
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:44.2114014Z ^[[2m            ^[[22m ^[[2mat least ~669ms faster with ^[[22m^[[33misolate: false^[[39m^[[2m — reuses workers across files instead of one per file^[[22m
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:44.2114755Z 
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:44.2124296Z 
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:44.2145895Z ##[error]AssertionError: expected { Object (progressPercent, achieved) } to deeply equal { Object (progressPercent, achieved) }
+test-and-docker	Migrate test database and run API and unit tests	
+test-and-docker	Migrate test database and run API and unit tests	- Expected
+test-and-docker	Migrate test database and run API and unit tests	+ Received
+test-and-docker	Migrate test database and run API and unit tests	
+test-and-docker	Migrate test database and run API and unit tests	  {
+test-and-docker	Migrate test database and run API and unit tests	    "achieved": false,
+test-and-docker	Migrate test database and run API and unit tests	-   "progressPercent": 74,
+test-and-docker	Migrate test database and run API and unit tests	+   "progressPercent": 75,
+test-and-docker	Migrate test database and run API and unit tests	  }
+test-and-docker	Migrate test database and run API and unit tests	
+test-and-docker	Migrate test database and run API and unit tests	 ❯ server/tests/unit/entry-rules.test.ts:21:63
+test-and-docker	Migrate test database and run API and unit tests	
+test-and-docker	Migrate test database and run API and unit tests	
+test-and-docker	Migrate test database and run API and unit tests	2026-11-10T08:19:44.2517377Z ##[error]Process completed with exit code 1.
+test-and-docker	Post Check out source	﻿2026-11-10T08:19:44.2653174Z Post job cleanup.
+test-and-docker	Post Check out source	2026-11-10T08:19:44.3506074Z [command]/usr/bin/git version
+test-and-docker	Post Check out source	2026-11-10T08:19:44.3555400Z git version 2.56.0
+test-and-docker	Post Check out source	2026-11-10T08:19:44.3596186Z Temporarily overriding HOME='/home/runner/work/_temp/861f5d75-fa68-4133-be38-2b6839b8be96' before making global git config changes
+test-and-docker	Post Check out source	2026-11-10T08:19:44.3597818Z Adding repository directory to the temporary git global config as a safe directory
+test-and-docker	Post Check out source	2026-11-10T08:19:44.3602448Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/studytrack/studytrack
+test-and-docker	Post Check out source	2026-11-10T08:19:44.3637527Z Removing SSH command configuration
+test-and-docker	Post Check out source	2026-11-10T08:19:44.3645641Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+test-and-docker	Post Check out source	2026-11-10T08:19:44.3685541Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+test-and-docker	Post Check out source	2026-11-10T08:19:44.3974625Z Removing HTTP extra header
+test-and-docker	Post Check out source	2026-11-10T08:19:44.3981939Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+test-and-docker	Post Check out source	2026-11-10T08:19:44.4027506Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+test-and-docker	Post Check out source	2026-11-10T08:19:44.4398197Z Removing includeIf entries pointing to credentials config files
+test-and-docker	Post Check out source	2026-11-10T08:19:44.4408187Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+test-and-docker	Post Check out source	2026-11-10T08:19:44.4487645Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+test-and-docker	Stop containers	﻿2026-11-10T08:19:44.4889941Z Print service container logs: 2fa2c10c0f7f4e9fbda7cc3f06474c78_postgres17alpine322_747766
+test-and-docker	Stop containers	2026-11-10T08:19:44.4895180Z ##[command]/usr/bin/docker logs --details ee2df4b456ab130d6a37d53f0e02b812f9fc47c5d3061c8ecc4f3434cacb1f70
+test-and-docker	Stop containers	2026-11-10T08:19:44.5079225Z  The files belonging to this database system will be owned by user "postgres".
+test-and-docker	Stop containers	2026-11-10T08:19:44.5081567Z  sh: locale: not found
+test-and-docker	Stop containers	2026-11-10T08:19:44.5082118Z  This user must also own the server process.
+test-and-docker	Stop containers	2026-11-10T08:19:44.5083333Z  2026-11-10 08:19:02.743 UTC [35] WARNING:  no usable system locales were found
+test-and-docker	Stop containers	2026-11-10T08:19:44.5084056Z  
+test-and-docker	Stop containers	2026-11-10T08:19:44.5085051Z  initdb: warning: enabling "trust" authentication for local connections
+test-and-docker	Stop containers	2026-11-10T08:19:44.5085736Z  The database cluster will be initialized with locale "en_US.utf8".
+test-and-docker	Stop containers	2026-11-10T08:19:44.5086663Z  initdb: hint: You can change this by editing pg_hba.conf or using the option -A, or --auth-local and --auth-host, the next time you run initdb.
+test-and-docker	Stop containers	2026-11-10T08:19:44.5087458Z  The default database encoding has accordingly been set to "UTF8".
+test-and-docker	Stop containers	2026-11-10T08:19:44.5088250Z  2026-11-10 08:19:03.569 UTC [1] LOG:  starting PostgreSQL 17.10 on x86_64-pc-linux-musl, compiled by gcc (Alpine 14.2.0) 14.2.0, 64-bit
+test-and-docker	Stop containers	2026-11-10T08:19:44.5088984Z  The default text search configuration will be set to "english".
+test-and-docker	Stop containers	2026-11-10T08:19:44.5089556Z  2026-11-10 08:19:03.570 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+test-and-docker	Stop containers	2026-11-10T08:19:44.5090286Z  
+test-and-docker	Stop containers	2026-11-10T08:19:44.5090863Z  2026-11-10 08:19:03.570 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+test-and-docker	Stop containers	2026-11-10T08:19:44.5091354Z  Data page checksums are disabled.
+test-and-docker	Stop containers	2026-11-10T08:19:44.5091876Z  2026-11-10 08:19:03.571 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+test-and-docker	Stop containers	2026-11-10T08:19:44.5092380Z  
+test-and-docker	Stop containers	2026-11-10T08:19:44.5092775Z  2026-11-10 08:19:03.573 UTC [57] LOG:  database system was shut down at 2026-11-10 08:19:03 UTC
+test-and-docker	Stop containers	2026-11-10T08:19:44.5093381Z  fixing permissions on existing directory /var/lib/postgresql/data ... ok
+test-and-docker	Stop containers	2026-11-10T08:19:44.5093983Z  2026-11-10 08:19:03.578 UTC [1] LOG:  database system is ready to accept connections
+test-and-docker	Stop containers	2026-11-10T08:19:44.5094512Z  creating subdirectories ... ok
+test-and-docker	Stop containers	2026-11-10T08:19:44.5095111Z  2026-11-10 08:19:37.690 UTC [106] ERROR:  duplicate key value violates unique constraint "daily_entries_goal_id_entry_date_key"
+test-and-docker	Stop containers	2026-11-10T08:19:44.5095786Z  selecting dynamic shared memory implementation ... posix
+test-and-docker	Stop containers	2026-11-10T08:19:44.5096470Z  2026-11-10 08:19:37.690 UTC [106] DETAIL:  Key (goal_id, entry_date)=(e82bcbc4-a479-4180-9e65-8bc882cc8771, 2026-11-03) already exists.
+test-and-docker	Stop containers	2026-11-10T08:19:44.5097118Z  selecting default "max_connections" ... 100
+test-and-docker	Stop containers	2026-11-10T08:19:44.5098583Z  2026-11-10 08:19:37.690 UTC [106] STATEMENT:  INSERT INTO "public"."daily_entries" ("id","goal_id","entry_date","minutes","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6) RETURNING "public"."daily_entries"."id", "public"."daily_entries"."goal_id", "public"."daily_entries"."entry_date", "public"."daily_entries"."minutes", "public"."daily_entries"."created_at", "public"."daily_entries"."updated_at"
+test-and-docker	Stop containers	2026-11-10T08:19:44.5100385Z  selecting default "shared_buffers" ... 128MB
+test-and-docker	Stop containers	2026-11-10T08:19:44.5101468Z  2026-11-10 08:19:37.841 UTC [114] ERROR:  duplicate key value violates unique constraint "daily_entries_goal_id_entry_date_key"
+test-and-docker	Stop containers	2026-11-10T08:19:44.5111292Z  selecting default time zone ... UTC
+test-and-docker	Stop containers	2026-11-10T08:19:44.5111868Z  creating configuration files ... ok
+test-and-docker	Stop containers	2026-11-10T08:19:44.5112411Z  running bootstrap script ... ok
+test-and-docker	Stop containers	2026-11-10T08:19:44.5112938Z  performing post-bootstrap initialization ... ok
+test-and-docker	Stop containers	2026-11-10T08:19:44.5113496Z  syncing data to disk ... ok
+test-and-docker	Stop containers	2026-11-10T08:19:44.5113891Z  
+test-and-docker	Stop containers	2026-11-10T08:19:44.5114380Z  
+test-and-docker	Stop containers	2026-11-10T08:19:44.5114849Z  Success. You can now start the database server using:
+test-and-docker	Stop containers	2026-11-10T08:19:44.5115649Z  
+test-and-docker	Stop containers	2026-11-10T08:19:44.5116044Z      pg_ctl -D /var/lib/postgresql/data -l logfile start
+test-and-docker	Stop containers	2026-11-10T08:19:44.5116510Z  
+test-and-docker	Stop containers	2026-11-10T08:19:44.5117208Z  waiting for server to start....2026-11-10 08:19:03.299 UTC [41] LOG:  starting PostgreSQL 17.10 on x86_64-pc-linux-musl, compiled by gcc (Alpine 14.2.0) 14.2.0, 64-bit
+test-and-docker	Stop containers	2026-11-10T08:19:44.5118461Z  2026-11-10 08:19:03.299 UTC [41] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+test-and-docker	Stop containers	2026-11-10T08:19:44.5119273Z  2026-11-10 08:19:03.302 UTC [44] LOG:  database system was shut down at 2026-11-10 08:19:03 UTC
+test-and-docker	Stop containers	2026-11-10T08:19:44.5119957Z  2026-11-10 08:19:03.306 UTC [41] LOG:  database system is ready to accept connections
+test-and-docker	Stop containers	2026-11-10T08:19:44.5120475Z   done
+test-and-docker	Stop containers	2026-11-10T08:19:44.5121013Z  server started
+test-and-docker	Stop containers	2026-11-10T08:19:44.5121307Z  CREATE DATABASE
+test-and-docker	Stop containers	2026-11-10T08:19:44.5121710Z  
+test-and-docker	Stop containers	2026-11-10T08:19:44.5121969Z  
+test-and-docker	Stop containers	2026-11-10T08:19:44.5122474Z  /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+test-and-docker	Stop containers	2026-11-10T08:19:44.5122976Z  
+test-and-docker	Stop containers	2026-11-10T08:19:44.5135888Z  waiting for server to shut down...2026-11-10 08:19:03.448 UTC [41] LOG:  received fast shutdown request
+test-and-docker	Stop containers	2026-11-10T08:19:44.5136511Z  .2026-11-10 08:19:03.449 UTC [41] LOG:  aborting any active transactions
+test-and-docker	Stop containers	2026-11-10T08:19:44.5137145Z  2026-11-10 08:19:03.452 UTC [41] LOG:  background worker "logical replication launcher" (PID 47) exited with exit code 1
+test-and-docker	Stop containers	2026-11-10T08:19:44.5137703Z  2026-11-10 08:19:03.452 UTC [42] LOG:  shutting down
+test-and-docker	Stop containers	2026-11-10T08:19:44.5138102Z  2026-11-10 08:19:03.453 UTC [42] LOG:  checkpoint starting: shutdown immediate
+test-and-docker	Stop containers	2026-11-10T08:19:44.5139479Z  2026-11-10 08:19:03.471 UTC [42] LOG:  checkpoint complete: wrote 925 buffers (5.6%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.013 s, sync=0.005 s, total=0.019 s; sync files=301, longest=0.004 s, average=0.001 s; distance=4255 kB, estimate=4255 kB; lsn=0/19150E0, redo lsn=0/19150E0
+test-and-docker	Stop containers	2026-11-10T08:19:44.5140901Z  2026-11-10 08:19:03.478 UTC [41] LOG:  database system is shut down
+test-and-docker	Stop containers	2026-11-10T08:19:44.5141280Z   done
+test-and-docker	Stop containers	2026-11-10T08:19:44.5141458Z  server stopped
+test-and-docker	Stop containers	2026-11-10T08:19:44.5141644Z  
+test-and-docker	Stop containers	2026-11-10T08:19:44.5141954Z  PostgreSQL init process complete; ready for start up.
+test-and-docker	Stop containers	2026-11-10T08:19:44.5142259Z  
+test-and-docker	Stop containers	2026-11-10T08:19:44.5142734Z  2026-11-10 08:19:37.841 UTC [114] DETAIL:  Key (goal_id, entry_date)=(696ad840-fc52-4d4b-b599-f2a007e38f89, 2026-11-03) already exists.
+test-and-docker	Stop containers	2026-11-10T08:19:44.5144402Z  2026-11-10 08:19:37.841 UTC [114] STATEMENT:  INSERT INTO "public"."daily_entries" ("id","goal_id","entry_date","minutes","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6) RETURNING "public"."daily_entries"."id", "public"."daily_entries"."goal_id", "public"."daily_entries"."entry_date", "public"."daily_entries"."minutes", "public"."daily_entries"."created_at", "public"."daily_entries"."updated_at"
+test-and-docker	Stop containers	2026-11-10T08:19:44.5145867Z  2026-11-10 08:19:38.188 UTC [114] ERROR:  Controlled private entry failure
+test-and-docker	Stop containers	2026-11-10T08:19:44.5146427Z  2026-11-10 08:19:38.188 UTC [114] CONTEXT:  PL/pgSQL function test_reject_entry_b() line 1 at RAISE
+test-and-docker	Stop containers	2026-11-10T08:19:44.5147951Z  2026-11-10 08:19:38.188 UTC [114] STATEMENT:  INSERT INTO "public"."daily_entries" ("id","goal_id","entry_date","minutes","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6) RETURNING "public"."daily_entries"."id", "public"."daily_entries"."goal_id", "public"."daily_entries"."entry_date", "public"."daily_entries"."minutes", "public"."daily_entries"."created_at", "public"."daily_entries"."updated_at"
+test-and-docker	Stop containers	2026-11-10T08:19:44.5149394Z  2026-11-10 08:19:39.693 UTC [115] ERROR:  Controlled target insert failure
+test-and-docker	Stop containers	2026-11-10T08:19:44.5149908Z  2026-11-10 08:19:39.693 UTC [115] CONTEXT:  PL/pgSQL function test_reject_target() line 1 at RAISE
+test-and-docker	Stop containers	2026-11-10T08:19:44.5151015Z  2026-11-10 08:19:39.693 UTC [115] STATEMENT:  INSERT INTO "public"."goal_target_versions" ("id","goal_id","effective_from","target_minutes","created_at") VALUES ($1,$2,$3,$4,$5) RETURNING "public"."goal_target_versions"."id"
+test-and-docker	Stop containers	2026-11-10T08:19:44.5152140Z  2026-11-10 08:19:39.851 UTC [118] ERROR:  duplicate key value violates unique constraint "goals_one_active_per_owner_template"
+test-and-docker	Stop containers	2026-11-10T08:19:44.5153060Z  2026-11-10 08:19:39.851 UTC [118] DETAIL:  Key (owner_id, template_id)=(abb8efe3-8898-4230-9be1-1df82307c99e, 9e33b00d-8bf4-4d22-9064-d78783e375a8) already exists.
+test-and-docker	Stop containers	2026-11-10T08:19:44.5154846Z  2026-11-10 08:19:39.851 UTC [118] STATEMENT:  INSERT INTO "public"."goals" ("id","owner_id","template_id","template_title_snapshot","unit","min_minutes_snapshot","max_minutes_snapshot","start_date","status","created_at") VALUES ($1,$2,$3,$4,CAST($5::text AS "public"."ActivityUnit"),$6,$7,$8,CAST($9::text AS "public"."GoalStatus"),$10) RETURNING "public"."goals"."id"
+test-and-docker	Stop containers	2026-11-10T08:19:44.5156361Z  2026-11-10 08:19:39.852 UTC [116] ERROR:  duplicate key value violates unique constraint "goals_one_active_per_owner_template"
+test-and-docker	Stop containers	2026-11-10T08:19:44.5157272Z  2026-11-10 08:19:39.852 UTC [116] DETAIL:  Key (owner_id, template_id)=(abb8efe3-8898-4230-9be1-1df82307c99e, 9e33b00d-8bf4-4d22-9064-d78783e375a8) already exists.
+test-and-docker	Stop containers	2026-11-10T08:19:44.5158875Z  2026-11-10 08:19:39.852 UTC [116] STATEMENT:  INSERT INTO "public"."goals" ("id","owner_id","template_id","template_title_snapshot","unit","min_minutes_snapshot","max_minutes_snapshot","start_date","status","created_at") VALUES ($1,$2,$3,$4,CAST($5::text AS "public"."ActivityUnit"),$6,$7,$8,CAST($9::text AS "public"."GoalStatus"),$10) RETURNING "public"."goals"."id"
+test-and-docker	Stop containers	2026-11-10T08:19:44.5160380Z  2026-11-10 08:19:39.854 UTC [117] ERROR:  duplicate key value violates unique constraint "goals_one_active_per_owner_template"
+test-and-docker	Stop containers	2026-11-10T08:19:44.5161515Z  2026-11-10 08:19:39.854 UTC [117] DETAIL:  Key (owner_id, template_id)=(abb8efe3-8898-4230-9be1-1df82307c99e, 9e33b00d-8bf4-4d22-9064-d78783e375a8) already exists.
+test-and-docker	Stop containers	2026-11-10T08:19:44.5163311Z  2026-11-10 08:19:39.854 UTC [117] STATEMENT:  INSERT INTO "public"."goals" ("id","owner_id","template_id","template_title_snapshot","unit","min_minutes_snapshot","max_minutes_snapshot","start_date","status","created_at") VALUES ($1,$2,$3,$4,CAST($5::text AS "public"."ActivityUnit"),$6,$7,$8,CAST($9::text AS "public"."GoalStatus"),$10) RETURNING "public"."goals"."id"
+test-and-docker	Stop containers	2026-11-10T08:19:44.5164814Z  2026-11-10 08:19:39.863 UTC [117] ERROR:  duplicate key value violates unique constraint "goals_one_active_per_owner_template"
+test-and-docker	Stop containers	2026-11-10T08:19:44.5165758Z  2026-11-10 08:19:39.863 UTC [117] DETAIL:  Key (owner_id, template_id)=(abb8efe3-8898-4230-9be1-1df82307c99e, 9e33b00d-8bf4-4d22-9064-d78783e375a8) already exists.
+test-and-docker	Stop containers	2026-11-10T08:19:44.5167388Z  2026-11-10 08:19:39.863 UTC [117] STATEMENT:  INSERT INTO "public"."goals" ("id","owner_id","template_id","template_title_snapshot","unit","min_minutes_snapshot","max_minutes_snapshot","start_date","status","created_at") VALUES ($1,$2,$3,$4,CAST($5::text AS "public"."ActivityUnit"),$6,$7,$8,CAST($9::text AS "public"."GoalStatus"),$10) RETURNING "public"."goals"."id"
+test-and-docker	Stop containers	2026-11-10T08:19:44.5168739Z  2026-11-10 08:19:43.458 UTC [120] ERROR:  Controlled private template failure
+test-and-docker	Stop containers	2026-11-10T08:19:44.5169301Z  2026-11-10 08:19:43.458 UTC [120] CONTEXT:  PL/pgSQL function test_reject_template_b() line 1 at RAISE
+test-and-docker	Stop containers	2026-11-10T08:19:44.5171971Z  2026-11-10 08:19:43.458 UTC [120] STATEMENT:  INSERT INTO "public"."activity_templates" ("id","title","description","unit","min_minutes","max_minutes","is_active","created_by_id","created_at","updated_at") VALUES ($1,$2,$3,CAST($4::text AS "public"."ActivityUnit"),$5,$6,$7,$8,$9,$10) RETURNING "public"."activity_templates"."id", "public"."activity_templates"."title", "public"."activity_templates"."description", "public"."activity_templates"."unit"::text, "public"."activity_templates"."min_minutes", "public"."activity_templates"."max_minutes", "public"."activity_templates"."is_active", "public"."activity_templates"."created_by_id", "public"."activity_templates"."created_at", "public"."activity_templates"."updated_at"
+test-and-docker	Stop containers	2026-11-10T08:19:44.5179712Z Stop and remove container: 2fa2c10c0f7f4e9fbda7cc3f06474c78_postgres17alpine322_747766
+test-and-docker	Stop containers	2026-11-10T08:19:44.5184381Z ##[command]/usr/bin/docker rm --force ee2df4b456ab130d6a37d53f0e02b812f9fc47c5d3061c8ecc4f3434cacb1f70
+test-and-docker	Stop containers	2026-11-10T08:19:44.6752911Z ee2df4b456ab130d6a37d53f0e02b812f9fc47c5d3061c8ecc4f3434cacb1f70
+test-and-docker	Stop containers	2026-11-10T08:19:44.6782841Z Remove container network: github_network_126642cd980e4a35ba87941e1a1c583a
+test-and-docker	Stop containers	2026-11-10T08:19:44.6787453Z ##[command]/usr/bin/docker network rm github_network_126642cd980e4a35ba87941e1a1c583a
+test-and-docker	Stop containers	2026-11-10T08:19:44.7436137Z github_network_126642cd980e4a35ba87941e1a1c583a
+test-and-docker	Complete job	﻿2026-11-10T08:19:44.7510030Z Cleaning up orphan processes

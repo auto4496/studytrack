@@ -1,0 +1,21 @@
+{
+  "verifiedAtUtc": "2026-11-10T08:32:49.7747989Z",
+  "pr": 36,
+  "state": "CLOSED",
+  "merged": false,
+  "mergedAt": null,
+  "closedAt": "2026-11-10T08:30:58Z",
+  "probeCommit": "f6330b82a325c119e23d0704565dbdf223377d0e",
+  "mainAfterCleanup": "5c04cd4bf7a7a28ff5c429f3770efc42da6bd7e0",
+  "remoteProbeBranch": "ABSENT",
+  "localProbeBranch": "ABSENT",
+  "deletedRef": "refs/heads/codex/prove-gate-c02",
+  "expectedDeletedSha": "f6330b82a325c119e23d0704565dbdf223377d0e",
+  "deletionUsedExactShaLease": true,
+  "history": "Closed PR, failed Actions run, commit and saved patch retained",
+  "imageSource": "User attachment codex-clipboard-3d4a33e6-3b64-491c-8951-eb61ce0d1928.png; copied byte-for-byte",
+  "imageSha256": "c3014d2c6c2e7da337c7d2dbdaa5b30f3d74f33925900e3279387f29b25c6f46",
+  "screenshotObservation": "URL /pull/36, exact probe SHA in approval, Changes approved, failing test-and-docker Required check, disabled Merge pull request button",
+  "normalProtectedGreenPr": "PENDING",
+  "issue21": "OPEN"
+}

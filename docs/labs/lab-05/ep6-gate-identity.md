@@ -1,5 +1,7 @@
 # EP6: merge gate and keyless deployment contract
 
+Execution update, 10 November 2026: this document retains the pre-execution proposal and dated baseline below. See [actual EP6 evidence](ep6-evidence.md) and [partial execution record](ep6-record.json) for configured GitHub settings, human-reported GCP setup, completed C-02 probe/cleanup and remaining acceptance work. The original NOT_RUN template is deliberately unchanged.
+
 Version 0.1, 9 November 2026 (Asia/Bangkok). Owner/coordinator: B / Datakung; reviewer: A / auto4496. [Issue #21](https://github.com/auto4496/studytrack/issues/21). **PROPOSED; configuration and C-02 execution have not been performed.** A reviews this exact configuration before human-operated IAM changes. B can prepare/review PRs with the current WRITE access; the repository owner performs administrative settings. This record does not grant new access.
 
 ## 1. Sources, prerequisite and observed baseline
