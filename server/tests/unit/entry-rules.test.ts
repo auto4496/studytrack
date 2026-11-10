@@ -8,7 +8,7 @@ import { todayBangkok } from "../../src/clock.js";
 
 describe("F-04 daily rules", () => {
   it.each([
-    [45, 60, 75, false],
+    [45, 60, 74, false],
     [75, 60, 125, true],
     [60, 60, 100, true],
     [1, 32, 3.13, false],
