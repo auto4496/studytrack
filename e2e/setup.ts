@@ -48,6 +48,8 @@ export default async function setup() {
       "reader-f04-mobile@browser.test",
       "reader-history-desktop@browser.test",
       "reader-history-mobile@browser.test",
+      "reader-f05-desktop@browser.test",
+      "reader-f05-mobile@browser.test",
     ]) {
       await db.user.create({
         data: {

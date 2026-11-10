@@ -2,7 +2,7 @@
 
 Version 0.1, 9 November 2026 (Asia/Bangkok). Owner: Phanuwit / A / `auto4496`; reviewer: Pitchai / B / `Datakung`. [Issue #31](https://github.com/auto4496/studytrack/issues/31).
 
-**Status: proposed before implementation; peer review pending. No F-05 product code, migration, new automated test or cloud action has been performed.** This contract can be reviewed while B continues Lab5. Product implementation waits for contract/interface review; integration and deployment have their own later gates.
+**Original creation status: proposed before implementation. Update 9 November:** B explicitly approved all lifecycle/F06 decisions at `4ba7c76` in [PR32](https://github.com/auto4496/studytrack/pull/32), before A's implementation branch. Implementation/local results are now recorded in [F05 verification](../../verification/f05.md); implementation peer acceptance, staging/release and cloud actions are separate gates. The original decisions and test specification below are retained as the reviewed contract.
 
 ## 1. Baseline and scope
 
@@ -37,7 +37,7 @@ Use the existing `{data: DTO}` / `{error:{code,message,fields?,requestId}}` enve
 | PATCH `/api/templates/:templateId` | Manager; nonempty subset `{title?:string,description?:string}` | 200 existing TemplateDTO;404 absent;422 empty patch, unknown fields or invalid normalized metadata |
 | POST `/api/templates/:templateId/deactivate` | Manager; `{}` | 200 existing TemplateDTO with isActive=false, also when already inactive;404 absent |
 
-All new endpoints: anonymous/expired/revoked401; wrong role403; bad CSRF/origin403; malformed UUID/JSON400; non-JSON415; validation/unknown fields422. Unexpected persistence errors remain safe500 with rollback. Metadata normalization follows F-02: trim title (1-100 characters), description at most500, omitted description preserves its current value, empty description is valid. An unchanged request preserves domain values and does not need to manufacture a new updatedAt.
+All new endpoints: anonymous/expired/revoked401; wrong role403; bad CSRF/origin403; malformed UUID/JSON400; non-JSON415; validation/unknown fields422. Unexpected persistence errors remain safe 500 with rollback. Metadata normalization follows F-02: trim title (1-100 characters), description at most500, omitted description preserves its current value, empty description is valid. An unchanged request preserves domain values and does not need to manufacture a new updatedAt.
 
 ### Additive goal read shape
 
@@ -72,7 +72,7 @@ Reuse Goal, GoalTargetVersion, ActivityTemplate and existing indexes/checks. No 
 
 ## 6. Acceptance criteria and test specification
 
-**Every result below is NOT RUN / NOT IMPLEMENTED.** IDs specify required behavior, not pre-written PASS claims. Use isolated real PostgreSQL fixtures for integration/concurrency; injected Clock for temporal cases. Proposed test files: `server/tests/integration/lifecycle.test.ts`, `server/tests/unit/lifecycle-rules.test.ts`, `e2e/lifecycle.spec.ts`; actual names may be recorded at implementation without changing assertions.
+**At specification creation, every case below was NOT RUN / NOT IMPLEMENTED.** These rows retain the reviewed assertions. Actual results/names are mapped in [verification](../../verification/f05.md); date/rule tests are consolidated into real-PostgreSQL lifecycle integration cases with an injected Clock rather than duplicating them in a separate unit file. Proposed filenames below do not replace the actual execution ledger.
 
 | AC / test ID | Preconditions and action | Expected observable result |
 | --- | --- | --- |

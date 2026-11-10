@@ -1,5 +1,9 @@
 # AI-use declaration
 
+## F-05 implementation candidate - 9 November 2026
+
+After B approved contract PR32, A used Codex to implement lifecycle API/UI behavior, prepare and run real PostgreSQL/browser tests, inspect screenshots and retain actual red/green/regression/restart evidence. The meaningful initial red is three 404 failures for absent lifecycle routes. A later full browser run exposed shared-fixture and session-probe timing failures; Codex corrected test isolation/synchronization without changing product assertions. Final local results are 152 API/unit and 38 browser cases passing, plus build and actual local API-process restart. [Verification](verification/f05.md) distinguishes product source, test correction and evidence versions. These are A/Codex checks, not B implementation approval, independent human UAT, deployed-main acceptance or cloud restart/redeploy. No real credentials or chat transcript are included.
+
 ## Member B EP6 preparation and peer review - 9 November 2026
 
 Codex assisted Datakung with review of A's F05 contract PR32 and EP8 test-plan PR33 against the SRS, accepted code/interfaces, official platform docs and planned-test attribution, then submitted scoped specification/preparation approvals. Actual Development links were added and verified. For B's #21 work, Codex read all guide EP6 pages56-80 and starter release/workflow files, queried read-only GitHub IDs/OIDC/settings/check-source metadata, and prepared the EP6 contract, proposed ruleset and NOT_RUN record. No GitHub administration setting, GCP resource/IAM change, deployment, failing probe or new product test was executed in this preparation. The current connection has WRITE rather than repository ADMIN; applying the reviewed settings requires the appropriate human operator.

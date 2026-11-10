@@ -1,0 +1,6 @@
+
+> studytrack@0.1.0 verify:restart
+> tsx scripts/restart-smoke.ts
+
+PASS TEST-F03-02 / NFR-03: real API process stopped and restarted; session, goal and initial target persisted in PostgreSQL.
+PASS TEST-F05-15 / NFR-03: distinct API process after restart retrieves the same archived goal/endDate, retained current/pending target rows, updated metadata, inactive template and DB-backed sessions. Local dedicated test DB only; no GCP restart claimed.

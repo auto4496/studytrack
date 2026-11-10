@@ -1,4 +1,5 @@
-import { useEffect, useState, type ComponentType } from "react";
+import { useEffect, useRef, useState, type ComponentType } from "react";
+import { GoalLifecycle } from "./GoalLifecycle";
 import { Link, useParams } from "react-router-dom";
 import {
   api,
@@ -20,6 +21,9 @@ export function GoalDetail({
   ActivityComponent?: ComponentType<GoalActivityProps>;
 }) {
   const { goalId } = useParams();
+  const currentId = useRef(goalId);
+  currentId.current = goalId;
+  const [activityRevision, setActivityRevision] = useState(0);
   const [goal, setGoal] = useState<Goal | null>(null);
   const [error, setError] = useState("");
   const [retry, setRetry] = useState(0);
@@ -90,7 +94,21 @@ export function GoalDetail({
               คุณจะเริ่มบันทึกกิจกรรมได้ในวันนั้น
             </div>
           )}
-          {ActivityComponent && <ActivityComponent goal={goal} />}
+          <GoalLifecycle
+            key={goal.id}
+            goal={goal}
+            onUpdated={(updated) => {
+              if (updated.id !== currentId.current) return;
+              setGoal(updated);
+              setActivityRevision((v) => v + 1);
+            }}
+          />
+          {ActivityComponent && (
+            <ActivityComponent
+              key={`${goal.id}:${activityRevision}`}
+              goal={goal}
+            />
+          )}
         </>
       )}
     </>

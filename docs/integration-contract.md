@@ -30,6 +30,7 @@ type GoalDTO = {
   minMinutes: number; maxMinutes: number; startDate: string;
   endDate: string | null; status: 'ACTIVE' | 'ARCHIVED';
   targetMinutes: number; targetEffectiveFrom: string; createdAt: string;
+  pendingTarget: { effectiveFrom: string; targetMinutes: number } | null;
 };
 type EntryDTO = {
   id: string; goalId: string; entryDate: string; minutes: number;
@@ -38,7 +39,7 @@ type EntryDTO = {
 };
 ```
 
-GoalDTO target หมายถึง target ปัจจุบัน ณ today; future-start goal ใช้ initial version ณ startDate. หลัง S2 เพิ่ม pendingTarget object ผ่าน versioned change ถ้าจำเป็น ห้ามแทน historical target ใน EntryDTO ด้วย goal ปัจจุบัน
+GoalDTO target หมายถึง target ปัจจุบัน ณ today; future-start goal ใช้ initial version ณ startDate. F05 adds pendingTarget under the approved contract; archived display uses the last eligible date and returns no pending target. ห้ามแทน historical target ใน EntryDTO ด้วย goal ปัจจุบัน
 
 ## 3. F-01 auth — owner A
 
@@ -93,3 +94,18 @@ No entry: actual=0/progress=0/achieved=false/entryId=null. Retrieval recomputes 
 | API client/AuthProvider/layout | cookie+CSRF handling/navigation | agree with B before code |
 
 Feature branch examples: `codex/f01-auth`, `codex/f02-templates`, `codex/f03-goals`, `codex/f04-entries-progress` from `codex/sprint-1-staging`. Actual A implementation uses `codex/member-a-sprint1` for shared foundation/F-01/F-03 under Issues #1/#2, with separate TDD/feature commits and one reviewed integration PR; this dependency choice is recorded in decisions. B features remain separate. Actual PRs/releases only recorded after creation
+
+## 8. F-05 lifecycle addendum
+
+9 November 2026. B accepted [contract PR32](https://github.com/auto4496/studytrack/pull/32) at `4ba7c76` before A wrote product code. The [implementation candidate/evidence](verification/f05.md) is locally verified and awaits implementation peer acceptance; this addendum describes that branch, not an already deployed main release.
+
+| Method/path | Strict body / role | Success / domain behavior |
+| --- | --- | --- |
+| PATCH `/api/goals/:goalId/target` | `{dailyTargetMinutes:integer}` / Participant owner | 200 GoalDTO; server selects tomorrow, replaces only its pending row; snapshot bounds422; future-start409 GOAL_NOT_STARTED; archived409 GOAL_ARCHIVED |
+| POST `/api/goals/:goalId/stop` | `{}` / Participant owner | 200 GoalDTO; inclusive Bangkok endDate; repeated stop retains original date; first stop before start409 |
+| PATCH `/api/templates/:templateId` | nonempty subset `{title?,description?}` / any Manager | 200 TemplateDTO; normalized metadata only; omitted values preserved; existing snapshots unchanged |
+| POST `/api/templates/:templateId/deactivate` | `{}` / Manager | 200 TemplateDTO, also if inactive; blocks only new goals; no reactivation/deletion |
+
+All existing authentication, role, owner, CSRF/origin, strict-body/query and safe-error rules apply. Goal mutations authorize/lock their own goal FOR UPDATE, capture one post-lock time and then change versions/status. Template lifecycle locks the same row that goal creation reads FOR SHARE. No source of identity or effective date is accepted from mutation payloads.
+
+Pending target is null for future-start/archived goals, otherwise tomorrow's committed pending version if present. Historical reads keep using targetForDate after ownership and date-bound checks. Stop retains entries and versions; post-end pending rows remain stored but are not eligible history/progress or an archived display target. F-06 must honor these same bounds and denominators. No migration, new auth surface or workflow change is introduced.
