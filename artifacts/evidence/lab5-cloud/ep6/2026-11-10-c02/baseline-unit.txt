@@ -1,0 +1,15 @@
+
+> studytrack@0.1.0 test
+> vitest run server/tests/unit/entry-rules.test.ts --reporter=default --reporter=json --outputFile=C:\CPE\CPE334\Project\studytrack-ep6-gate-evidence\baseline-unit.json
+
+
+ RUN  v5.1.0 C:/CPE/CPE334/Project/studytrack-ep6-gate-probe
+
+ ✓ server/tests/unit/entry-rules.test.ts (19 tests) 6ms
+
+ Test Files  1 passed (1)
+      Tests  19 passed (19)
+   Start at  15:16:05
+   Duration  314ms (import 52%, transform 36%, setup 6%, tests 4%, worker 3%)
+
+JSON report written to C:/CPE/CPE334/Project/studytrack-ep6-gate-evidence/baseline-unit.json

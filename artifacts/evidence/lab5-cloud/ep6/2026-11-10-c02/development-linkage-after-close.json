@@ -1,0 +1,1 @@
+{"data":{"repository":{"pullRequest":{"number":36,"state":"CLOSED","merged":false,"closingIssuesReferences":{"nodes":[{"number":21,"state":"OPEN"}]}},"issue":{"number":21,"state":"OPEN","closedByPullRequestsReferences":{"nodes":[{"number":34,"state":"MERGED"},{"number":36,"state":"CLOSED"}]}}}}}

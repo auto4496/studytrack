@@ -1,0 +1,60 @@
+
+> studytrack@0.1.0 test
+> vitest run server/tests/unit/entry-rules.test.ts --reporter=default --reporter=json --outputFile=C:\CPE\CPE334\Project\studytrack-ep6-gate-evidence\probe-unit.json
+
+
+ RUN  v5.1.0 C:/CPE/CPE334/Project/studytrack-ep6-gate-probe
+
+ ❯ server/tests/unit/entry-rules.test.ts (19 tests | 1 failed) 11ms
+   ❯ F-04 daily rules (19)
+     × TEST-F04-03: 45/60 gives 74 percent with achieved=false 6ms
+     ✓ TEST-F04-03: 75/60 gives 125 percent with achieved=true 0ms
+     ✓ TEST-F04-03: 60/60 gives 100 percent with achieved=true 0ms
+     ✓ TEST-F04-03: 1/32 gives 3.13 percent with achieved=false 0ms
+     ✓ TEST-F04-03: 59/60 gives 98.33 percent with achieved=false 0ms
+     ✓ TEST-F04-03: 0/60 gives 0 percent with achieved=false 0ms
+     ✓ TEST-F04-03: 1440/1 gives 144000 percent with achieved=true 0ms
+     ✓ TEST-F04-03: corrupt target cannot produce a default percentage 1ms
+     ✓ TEST-F04-07: invalid minutes 29 reject without coercion 0ms
+     ✓ TEST-F04-07: invalid minutes 121 reject without coercion 0ms
+     ✓ TEST-F04-07: invalid minutes 0 reject without coercion 0ms
+     ✓ TEST-F04-07: invalid minutes -1 reject without coercion 0ms
+     ✓ TEST-F04-07: invalid minutes 1.5 reject without coercion 0ms
+     ✓ TEST-F04-07: invalid minutes 60 reject without coercion 0ms
+     ✓ TEST-F04-07: invalid minutes true reject without coercion 0ms
+     ✓ TEST-F04-07: invalid minutes null reject without coercion 0ms
+     ✓ TEST-F04-07: invalid minutes undefined reject without coercion 0ms
+     ✓ TEST-F04-07: exact snapshot endpoints are accepted 0ms
+     ✓ TEST-F04-05: calendar validation includes leap/month/year transitions and correct field names 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  server/tests/unit/entry-rules.test.ts > F-04 daily rules > TEST-F04-03: 45/60 gives 74 percent with achieved=false
+AssertionError: expected { Object (progressPercent, achieved) } to deeply equal { Object (progressPercent, achieved) }
+
+- Expected
++ Received
+
+  {
+    "achieved": false,
+-   "progressPercent": 74,
++   "progressPercent": 75,
+  }
+
+ ❯ server/tests/unit/entry-rules.test.ts:21:63
+     19|     "TEST-F04-03: %s/%s gives %s percent with achieved=%s",
+     20|     (actual, target, percent, achieved) => {
+     21|       expect(progressFor(actual as number, target as number)).toEqual({
+       |                                                               ^
+     22|         progressPercent: percent,
+     23|         achieved,
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 18 passed (19)
+   Start at  15:16:23
+   Duration  253ms (import 59%, transform 23%, tests 8%, setup 7%, worker 3%)
+
+JSON report written to C:/CPE/CPE334/Project/studytrack-ep6-gate-evidence/probe-unit.json

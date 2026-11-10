@@ -1,0 +1,126 @@
+{
+  "planVersion": "0.1",
+  "status": "IN_PROGRESS",
+  "issue": "https://github.com/auto4496/studytrack/issues/21",
+  "requirements": [
+    "R-05",
+    "R-06",
+    "C-02"
+  ],
+  "runId": "2026-11-10-c02",
+  "peerReviewedPlanCommit": "80de8df05f7d535e777c971805ac2f6c42eff7bb",
+  "gcpOperator": "B-side human operator; commands/results supplied through user conversation",
+  "githubAdminOperator": "A / auto4496",
+  "githubReadbackAndProbeOperator": "B / Datakung tooling",
+  "sourceStaging": "f21e561a32f4414b72c38abb9cf197e1ac46fef8",
+  "identity": {
+    "consoleEvidence": "PENDING",
+    "actualExchange": "NOT_RUN",
+    "scopedPolicyReadback": "PENDING",
+    "observationsFile": "gcp-operator-observations.json",
+    "status": "OPERATOR_REPORTED_CONFIGURED"
+  },
+  "environment": {
+    "variableCount": 4,
+    "branch": "main",
+    "branchType": "branch",
+    "name": "demo",
+    "status": "VERIFIED_READBACK"
+  },
+  "gate": {
+    "requiredCheck": "test-and-docker",
+    "status": "VERIFIED_READBACK",
+    "branches": [
+      "main",
+      "codex/sprint-1-staging"
+    ],
+    "strict": true,
+    "appId": 15368,
+    "requiredApprovals": 1,
+    "bypassActorCount": 0,
+    "rulesetId": 26925123
+  },
+  "failingPrProof": {
+    "hostedTests": {
+      "passed": 116,
+      "failed": 1
+    },
+    "approval": "https://github.com/auto4496/studytrack/pull/36#pullrequestreview-5838791656",
+    "status": "PASS",
+    "commit": "f6330b82a325c119e23d0704565dbdf223377d0e",
+    "pr": 36,
+    "hostedRun": 42781653763,
+    "localProbe": {
+      "passed": 18,
+      "failed": 1
+    },
+    "postApproval": "APPROVED + BLOCKED + required FAILURE",
+    "localBaseline": {
+      "passed": 19,
+      "failed": 0
+    },
+    "screenshot": "pr36-approved-required-failure-blocked.png",
+    "baseMain": "5c04cd4bf7a7a28ff5c429f3770efc42da6bd7e0",
+    "assertion": {
+      "expected": 74,
+      "received": 75
+    }
+  },
+  "probeCleanup": {
+    "remoteBranch": "ABSENT",
+    "merged": false,
+    "closedAtUtc": "2026-11-10T08:30:58Z",
+    "mainUnchanged": "5c04cd4bf7a7a28ff5c429f3770efc42da6bd7e0",
+    "status": "PASS",
+    "localBranch": "ABSENT",
+    "historyRetained": true
+  },
+  "normalProtectedPr": {
+    "observations": null,
+    "status": "PENDING"
+  },
+  "actualKeylessExchangeReference": null,
+  "cases": [
+    {
+      "id": "EP6-G01",
+      "status": "VERIFIED_READBACK"
+    },
+    {
+      "id": "EP6-G02",
+      "status": "OPERATOR_REPORTED; exact-scope policy readback/Console evidence pending"
+    },
+    {
+      "id": "EP6-G03",
+      "status": "OPERATOR_CLI_READBACK_MATCHES_CONTRACT; no exchange claimed"
+    },
+    {
+      "id": "EP6-G04",
+      "status": "VERIFIED_READBACK"
+    },
+    {
+      "id": "EP6-G05",
+      "status": "VERIFIED_READBACK"
+    },
+    {
+      "id": "EP6-G06",
+      "status": "PASS"
+    },
+    {
+      "id": "EP6-G07",
+      "status": "PARTIAL: cleanup/main unchanged PASS; normal protected green PR pending"
+    },
+    {
+      "id": "EP6-G08",
+      "status": "PENDING_EVIDENCE_REVIEW_AND_RELEASE"
+    }
+  ],
+  "evidenceRoot": "artifacts/evidence/lab5-cloud/ep6/2026-11-10-c02",
+  "evidenceManifest": "sha256.json",
+  "limitations": [
+    "No independent B GCP connection; human-supplied observations distinguished from live GitHub reads",
+    "Exact-scope GCP policies/Console evidence pending",
+    "Normal protected green-PR path, joint evidence review and release pending",
+    "Actual keyless exchange belongs to EP7; EP6/Issue21 not complete"
+  ],
+  "peerAcceptance": null
+}

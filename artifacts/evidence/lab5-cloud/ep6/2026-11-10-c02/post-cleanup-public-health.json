@@ -1,0 +1,14 @@
+{
+  "observationDateBangkok": "2026-11-10",
+  "source": "B-side tooling independent HTTP GET after probe cleanup",
+  "origin": "https://studytrack-981693883236.asia-southeast1.run.app",
+  "rootStatus": 200,
+  "healthStatus": 200,
+  "healthBody": {
+    "data": {
+      "status": "ok",
+      "service": "StudyTrack API"
+    }
+  },
+  "limitation": "Read-only availability/DB-backed health only; no new authenticated journey or independent cloud image/revision read"
+}
