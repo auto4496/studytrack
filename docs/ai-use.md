@@ -1,5 +1,9 @@
 # AI-use declaration
 
+## Member B EP6 preparation and peer review - 9 November 2026
+
+Codex assisted Datakung with review of A's F05 contract PR32 and EP8 test-plan PR33 against the SRS, accepted code/interfaces, official platform docs and planned-test attribution, then submitted scoped specification/preparation approvals. Actual Development links were added and verified. For B's #21 work, Codex read all guide EP6 pages56-80 and starter release/workflow files, queried read-only GitHub IDs/OIDC/settings/check-source metadata, and prepared the EP6 contract, proposed ruleset and NOT_RUN record. No GitHub administration setting, GCP resource/IAM change, deployment, failing probe or new product test was executed in this preparation. The current connection has WRITE rather than repository ADMIN; applying the reviewed settings requires the appropriate human operator.
+
 ## Member A live verification - 9 November 2026
 
 Phanuwit entered the privately shared demo credentials directly into the deployed application and performed the manager/participant, goal/save and refresh actions. Codex inspected the resulting browser states, directly checked the known student1 goal URL under the student2 session, captured three screenshots and recorded actual actors, outcomes and limitations in [A's live evidence](labs/lab-05/member-a-live-acceptance.md). Codex also performed separate public HTTP smoke checks. The actual entry was 20/30 minutes = 66.67%; no invalid-zero test, authenticated cloud administration, current-revision inspection or restart/redeploy is claimed for this round. A reviewed and approved B's PR #28; A's follow-up evidence is sent to B for peer review. No password or chat transcript is included in the evidence.

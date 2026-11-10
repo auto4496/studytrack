@@ -1,5 +1,17 @@
 # Member B status — implementation handoff
 
+## สถานะปัจจุบัน 9 พฤศจิกายน 2026: เริ่ม EP6
+
+Datakung คือสมาชิก B; auto4496 คือสมาชิก A และเจ้าของ repo EP5 ผ่านการตรวจทั้งคู่แล้ว release PR #30 merge เข้า main `5c04cd4` และ Issue #20 ปิดแล้ว แอปที่ deploy ตามหลักฐานเดิมยังอ้าง source `807ed08` ไม่อนุมานว่า merge เอกสารคือ deploy ใหม่
+
+B รีวิวและ APPROVED [PR #32 สัญญา F05](https://github.com/auto4496/studytrack/pull/32#pullrequestreview-5821596719) และ [PR #33 แผน EP8](https://github.com/auto4496/studytrack/pull/33#pullrequestreview-5821597081) พร้อมเชื่อม Development กับ #31/#23 และตรวจทั้งสองฝั่ง รับเฉพาะสัญญาและแผน งาน implementation/ทดสอบจริงยังไม่เสร็จ PR #33 ไม่ใช่ dependency ที่ต้องรอก่อนเริ่ม EP6
+
+งานถัดไปฝั่ง B คือ #21 EP6 → #22 EP7 → #23 EP8 → #24 รายงาน โดยทั้งคู่ร่วมทดสอบ/รีวิวตาม team plan เตรียม [EP6 contract และขั้นตอน 6.1-6.7](../labs/lab-05/ep6-gate-identity.md), payload merge gate และ record template จาก guide หน้า56-80 พร้อม ID/OIDC format จริงแล้ว การตั้งค่าและ failing-PR proof ยัง NOT RUN; ไม่ได้เปลี่ยน IAM/GitHub settings หรือ deploy ในรอบนี้
+
+**ประสาน A:** รีวิวค่าที่เสนอให้ครบ โดยเฉพาะสิทธิ์ actAs บน runner/migrator, immutable subject/main/deploy.yml/demo และ gate ครอบคลุม main+staging เมื่อรับแผนแล้ว A ใช้สิทธิ์ admin ตั้ง environment/gate; ผู้มีสิทธิ์ GCP เป็นผู้ดำเนินการ IAM/WIF ส่วน B ประสานและตรวจกลับ บัญชีที่เครื่องมือนี้ใช้มี WRITE แต่ไม่มี ADMIN จึงไม่สามารถตั้งกฎแทน A ได้ ไม่ต้องเพิ่ม bypass หรือส่ง JSON key/รหัสผ่านให้เครื่องมือ หลัง gate เปิดจริง B จึงทำ normal failing PR และเก็บภาพ Required check/blocked merge ก่อนปิด probe โดยไม่ merge
+
+หัวข้อวันที่8พฤศจิกายนด้านล่างเป็นประวัติ checkpoints ก่อน release ไม่ใช่สถานะปัจจุบัน
+
 ## อัปเดต Lab 5 วันที่ 8 พฤศจิกายน 2026
 
 **EP5 deploy จริงและรายการตรวจฝั่ง B ผ่านแล้ว รอ A ตรวจรับบน Cloud และรีวิวเอกสารรอบนี้ก่อนปิด [Issue #20](https://github.com/auto4496/studytrack/issues/20).** รายละเอียดและลำดับตรวจอยู่ใน [EP5 evidence](../labs/lab-05/ep5-evidence.md) และ [deployment runbook](../labs/lab-05/deployment.md)
