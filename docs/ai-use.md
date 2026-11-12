@@ -1,5 +1,9 @@
 # AI-use declaration
 
+## Member B EP7 release preparation - 12 November 2026
+
+At B's instruction to continue, Codex fetched A's accepted combined PR41/reviews/checks, verified full-tree equality with staging845bfee, and read current GitHub environment/branch-rule values. It found four historical main merges absent from staging and confirmed a conflict-free merge with identical accepted content. The first direct-main sync PR42 was itself BEHIND under the strict gate; Codex disclosed that wrong head choice and closed it unmerged, then created a dedicated sync branch containing both tips and verified that history-only commit2c3f055 has exactly the accepted staging tree. PR44 carries that history plus four proposed handoff documents; draft main release PR43 awaits its peer acceptance and fresh required checks. No application/workflow/script/test/evidence changes, protected direct push, bypass, permission expansion, main merge, GCP command, live exchange/deployment, rollback or future episode completion is claimed. New PRs and issue links/check outcomes are recorded on GitHub; those do not turn NOT_RUN live records into results.
+
 ## Member B EP7 implementation candidate - 12 November 2026
 
 The first final-head hosted attempt43182692859 passed offline/config/API checks but failed the existing mobile uncertain-PATCH browser test before any image build. Codex inspected the actual37-pass/1-timeout log and the fixture/route order, then added an explicit form-ready assertion before interception so the intended recovery-read failure cannot race the initial detail GET. Product code and the original domain/recovery assertions are unchanged; no retry or timeout increase was added. This correction and the failed attempt remain disclosed; only a subsequent complete hosted pass establishes image-build verification.

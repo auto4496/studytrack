@@ -2,6 +2,8 @@
 
 ## Current checkpoint - 12 November 2026
 
+Latest release preparation: A accepted combined EP7/wording PR41 head313b4fb into staging845bfee; B verified identical full trees and the accepted combined CI43186936178. [Sync PR44](https://github.com/auto4496/studytrack/pull/44) reconciles the missing main history through a dedicated reviewed branch and adds only four handoff documents. [Draft release PR43](https://github.com/auto4496/studytrack/pull/43) waits for that acceptance before its separate main review. Main remains5c04cd4; no live EP7 exchange/deployment has been performed. [Release readiness](ep7-release-readiness.md) records the exact ancestry/tree checks, superseded unmerged PR42, actual GitHub preflight, next steps and EP6 closure checkpoint. PR40 is already included in release A; the later visible-change release B needs a different agreed change and an EP8 baseline captured before it. Earlier paragraphs below preserve their writing-time states.
+
 Later checkpoint: A approved PR38 exact741a6a4 and merged its EP6 finalization into protected staging86b0b3e. B verified complete tree equality66a70afd8140e67d9516ea16ffb62de13f3f3c91; main remains5c04cd4. B is preparing the [EP7 update-only workflow/release script](ep7-release.md), with [contract](ep7-release-contract.md) and [offline verification](ep7-verification.md), for A review. Combine EP6's accepted documentation with the first separately reviewed EP7 main release, then verify the accepted tree before closing Issue21. This code increment is not a live cloud release; Issue22 stays open through both real pipeline releases and evidence.
 
 The following paragraph is the earlier pre-PR38 acceptance checkpoint.
