@@ -1,0 +1,7 @@
+attributeCondition: assertion.repository_id == '1443962980' && assertion.repository_owner_id
+  == '137795002' && assertion.ref == 'refs/heads/main' && assertion.workflow_ref ==
+  'auto4496/studytrack/.github/workflows/deploy.yml@refs/heads/main' && assertion.sub
+  == 'repo:auto4496@137795002/studytrack@1443962980:environment:demo'
+attributeMapping:
+  attribute.repository_id: assertion.repository_id
+  google.subject: assertion.sub

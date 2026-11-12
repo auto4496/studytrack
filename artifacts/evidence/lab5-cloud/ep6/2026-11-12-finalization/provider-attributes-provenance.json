@@ -1,0 +1,18 @@
+{
+  "source": "Human screenshot supplied through B-side user",
+  "sourceFilename": "codex-clipboard-124d97d1-cd50-4c84-b9a3-2479bc334b45.png",
+  "sha256": "f78019174daf3f9277c8f9678401244a2d86b5c70bb8f5de5aaf98fccbfa8a5f",
+  "preservation": "Original PNG copied byte-for-byte; no redaction needed because no GCP Project Number is visible",
+  "visible": [
+    "Provider URL identifies pool github-actions/provider github-main",
+    "google.subject mapped to assertion.sub",
+    "attribute.repository_id mapped to assertion.repository_id",
+    "Condition field shows assertion.sub and immutable repository/environment subject tail"
+  ],
+  "notEstablished": [
+    "Complete five-part condition cannot be verified from this viewport",
+    "Edit form view alone does not attest a newly saved change or successful token exchange"
+  ],
+  "interpretation": "Do not infer that earlier condition clauses were removed; the field viewport may be scrolled. Re-read the persisted provider attributeCondition before final acceptance.",
+  "resolution": "Latest operator-persisted-provider-readback.yaml confirms all five saved guards and both mappings; prior viewport ambiguity resolved without changing IAM"
+}

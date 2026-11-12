@@ -1,6 +1,18 @@
 # Member B status — implementation handoff
 
-## สถานะปัจจุบัน 10 พฤศจิกายน 2026: EP6 ผ่านการพิสูจน์ failing gate รอรับหลักฐาน
+## สถานะปัจจุบัน 12 พฤศจิกายน 2026: หลักฐาน EP6 ครบ พร้อม A รีวิวรอบสุดท้าย
+
+A อนุมัติ exact69e117f ใน [review5843891205](https://github.com/auto4496/studytrack/pull/37#pullrequestreview-5843891205) และ merge [PR37](https://github.com/auto4496/studytrack/pull/37) เมื่อ10พฤศจิกายน21:54:19น.ไทย เข้า protected staging6274b17891e304b3ba315c2ed033213837f78d1d หลัง CI42784299461 ผ่าน B เทียบทั้ง tree ของ reviewed head/merged staging ได้ a839838cf6d306ba5288649ae67196781a53fa4f ตรงกัน จึงมีหลักฐาน protected green path แยกจาก failing probePR36 ซึ่งปิดแบบไม่mergeและลบเฉพาะbranchทดสอบแล้ว mainยัง5c04cd4
+
+ผู้ใช้ฝั่ง B รัน read-only GCP commands และส่งผลจริง: project Run Developer, repository Writer, actAsบนrunner/migrator, WIF memberตรงrepo และ user-managed keys=[] ตรงแผน ผล describe ล่าสุดยืนยัน persisted condition ครบ5ข้อและmapping2ค่าตรง contract ภาพConditionก่อนหน้าเห็นเฉพาะท้าย ไม่ได้แสดงว่าเงื่อนไขอื่นหาย ไม่ต้องแก้ IAM หรือสร้างอะไรซ้ำ Agentไม่ได้เชื่อมGCPโดยตรง; แยก human CLI evidence จาก GitHub API ที่ tooling อ่านเองชัดเจน
+
+เก็บภาพของA(environment/ruleset), ภาพproviderส่วนบนและmapping/condition และภาพblockedPR36ครบแล้ว ค่าWIFที่ตัดปลาย/controlsนอกframeใช้full API/CLIผลจริงประกอบ ผู้ใช้ขอปิดเลขGCP Project NumberจึงจัดPDFที่ปิดเลขโดยไม่มีoriginalฝังใต้สี่เหลี่ยม พร้อมsource/output hashesและprovenance เก็บoriginalที่มีเลขไว้นอกrepo รายละเอียดใน [EP6 evidence](../labs/lab-05/ep6-evidence.md) และ [record](../labs/lab-05/ep6-record.json)
+
+**ประสาน A ต่อ:** รีวิว finalization increment ที่แตกจาก accepted staging6274b17 เทียบภาพ/CLI/API/manifest/ที่มาของหลักฐานและremaining-workให้ครบ เมื่อ CI/peer approvalผ่านให้Aรับเข้าstagingตามworkflow แล้วBเตรียมreviewed releaseเข้าmainและตรวจaccepted tree ก่อนปิดIssue21 ตอนนี้ยังOPEN ไม่อ้างว่าEP6ผ่านfinal acceptanceหรือmainreleaseแล้ว การยืนยันตัวตนและdeployผ่านGitHubจริงเป็นงาน #22 EP7; ต่อด้วย #23 EP8 และ #24 รายงาน ไม่ต้องรันdeployเพื่อรับเอกสาร
+
+รอบนี้แก้เฉพาะเอกสาร/หลักฐาน ไม่มีproduct/workflow/schema/dependency/deploy-script change ไม่รันproduct suitesซ้ำในเครื่องสำหรับเอกสาร; CIของPRจะตรวจsourceจริง บอร์ดยังตรวจ/อัปเดตไม่ได้เพราะtokenไม่มีread:project จึงไม่อ้างว่าเปลี่ยนการ์ดแล้วและไม่ขยายสิทธิ์ บันทึกcheckpointในIssue21ได้ตามปกติ
+
+ประวัติ 10 พฤศจิกายน 2026: EP6 ผ่านการพิสูจน์ failing gate รอรับหลักฐาน
 
 B ตรวจ environment `demo`, ตัวแปร4ตัว, deploy เฉพาะ branch main และ active ruleset26925123 บน main/staging ตรงตามแผนแล้ว GraphQL ยืนยัน Bypass list ว่าง A ตั้งค่า GitHub และอนุมัติ exact probe f6330b8 ใน [PR36](https://github.com/auto4496/studytrack/pull/36#pullrequestreview-5838791656) ผู้ใช้ฝั่ง B รัน GCP commands และส่ง CLI readback ว่า deployer/WIF สร้างแล้ว, provider ACTIVE และไม่มี user-managed key; ยังต้องเก็บ scoped-role readbacks/ภาพ Console เพิ่ม รายละเอียดแยกที่มาใน [EP6 evidence](../labs/lab-05/ep6-evidence.md)
 

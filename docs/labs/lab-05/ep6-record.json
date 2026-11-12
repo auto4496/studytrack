@@ -1,6 +1,6 @@
 {
   "planVersion": "0.1",
-  "status": "IN_PROGRESS",
+  "status": "READY_FOR_FINAL_PEER_REVIEW",
   "issue": "https://github.com/auto4496/studytrack/issues/21",
   "requirements": [
     "R-05",
@@ -14,18 +14,30 @@
   "githubReadbackAndProbeOperator": "B / Datakung tooling",
   "sourceStaging": "f21e561a32f4414b72c38abb9cf197e1ac46fef8",
   "identity": {
-    "consoleEvidence": "PENDING",
+    "consoleEvidence": "CAPTURED: provider upper details/mappings/subject-tail and GitHub settings images; clipped values/controls corroborated by complete persisted CLI/API readbacks",
     "actualExchange": "NOT_RUN",
-    "scopedPolicyReadback": "PENDING",
+    "scopedPolicyReadback": "MATCH: project Run Developer, repository Writer, actAs on runner/migrator, exact repo-scoped WIF member; user-managed keys=[]; human-provided output12November",
     "observationsFile": "gcp-operator-observations.json",
-    "status": "OPERATOR_REPORTED_CONFIGURED"
+    "status": "CONFIGURED_OPERATOR_READBACK_MATCHES_CONTRACT",
+    "finalizationEvidenceRoot": "artifacts/evidence/lab5-cloud/ep6/2026-11-12-finalization",
+    "providerDetailsEvidence": "artifacts/evidence/lab5-cloud/ep6/2026-11-12-finalization/provider-details-redacted.pdf",
+    "providerAttributesEvidence": "artifacts/evidence/lab5-cloud/ep6/2026-11-12-finalization/provider-attributes-visible.png",
+    "currentSavedConditionVerification": "MATCH: latest human-operated persisted provider describe has all five approved guards and both mappings; no IAM change required",
+    "completeSavedProviderReadback": "artifacts/evidence/lab5-cloud/ep6/2026-11-12-finalization/operator-persisted-provider-readback.yaml",
+    "latestStateFields": "state/disabled requested but absent in latest pasted output; Enabled provider screenshot and dated earlier state retained; no new state inferred"
   },
   "environment": {
     "variableCount": 4,
     "branch": "main",
     "branchType": "branch",
     "name": "demo",
-    "status": "VERIFIED_READBACK"
+    "status": "VERIFIED_READBACK",
+    "screenshotEvidence": {
+      "limitation": "demo name identified by environment ID/API; WIF values truncated in frame",
+      "page": 1,
+      "status": "CAPTURED_WITH_API_CORROBORATION",
+      "artifact": "github-settings-redacted.pdf"
+    }
   },
   "gate": {
     "requiredCheck": "test-and-docker",
@@ -38,7 +50,13 @@
     "appId": 15368,
     "requiredApprovals": 1,
     "bypassActorCount": 0,
-    "rulesetId": 26925123
+    "rulesetId": 26925123,
+    "screenshotEvidence": {
+      "limitation": "lower approval/check controls not in frame; confirmed by existing rule API and Required failed-check proof",
+      "page": 2,
+      "status": "UPPER_SETTINGS_CAPTURED_WITH_API_C02_CORROBORATION",
+      "artifact": "github-settings-redacted.pdf"
+    }
   },
   "failingPrProof": {
     "hostedTests": {
@@ -76,8 +94,21 @@
     "historyRetained": true
   },
   "normalProtectedPr": {
-    "observations": null,
-    "status": "PENDING"
+    "observations": {
+      "readbackDateBangkok": "2026-11-12",
+      "pr": 37,
+      "reviewedHead": "69e117f81eb7dc67a92925fc5fff329ef4ec041d",
+      "approval": "https://github.com/auto4496/studytrack/pull/37#pullrequestreview-5843891205",
+      "requiredCi": 42784299461,
+      "conclusion": "SUCCESS",
+      "mergedBy": "auto4496",
+      "mergedAtUtc": "2026-11-10T14:54:19Z",
+      "mergeCommit": "6274b17891e304b3ba315c2ed033213837f78d1d",
+      "verifiedTree": "a839838cf6d306ba5288649ae67196781a53fa4f",
+      "mainUnchanged": "5c04cd4bf7a7a28ff5c429f3770efc42da6bd7e0",
+      "mainRelease": "PENDING"
+    },
+    "status": "STAGING_PASS_MAIN_RELEASE_PENDING"
   },
   "actualKeylessExchangeReference": null,
   "cases": [
@@ -87,11 +118,11 @@
     },
     {
       "id": "EP6-G02",
-      "status": "OPERATOR_REPORTED; exact-scope policy readback/Console evidence pending"
+      "status": "PASS_OPERATOR_SCOPED_POLICY_READBACK; zero keys; screenshots collected"
     },
     {
       "id": "EP6-G03",
-      "status": "OPERATOR_CLI_READBACK_MATCHES_CONTRACT; no exchange claimed"
+      "status": "PASS_OPERATOR_PERSISTED_READBACK_AND_SCREENSHOTS; five guards/two mappings match; real exchange belongs to EP7"
     },
     {
       "id": "EP6-G04",
@@ -107,20 +138,28 @@
     },
     {
       "id": "EP6-G07",
-      "status": "PARTIAL: cleanup/main unchanged PASS; normal protected green PR pending"
+      "status": "PASS: probe cleanup/main unchanged and legitimate protected staging PR37 accepted; main release pending under G08"
     },
     {
       "id": "EP6-G08",
-      "status": "PENDING_EVIDENCE_REVIEW_AND_RELEASE"
+      "status": "READY_FOR_FINAL_PEER_REVIEW; PR37 increment accepted; finalization acceptance/main release pending"
     }
   ],
   "evidenceRoot": "artifacts/evidence/lab5-cloud/ep6/2026-11-10-c02",
   "evidenceManifest": "sha256.json",
   "limitations": [
-    "No independent B GCP connection; human-supplied observations distinguished from live GitHub reads",
-    "Exact-scope GCP policies/Console evidence pending",
-    "Normal protected green-PR path, joint evidence review and release pending",
-    "Actual keyless exchange belongs to EP7; EP6/Issue21 not complete"
+    "GCP observations supplied by human operator; agent independently authenticated only to GitHub",
+    "Cropped screenshot fields/controls corroborated by full persisted CLI/API readbacks; no unseen UI or new state value claimed",
+    "Protected staging PR37 accepted; finalization peer acceptance and reviewed main release pending",
+    "Actual credential exchange/deployment belongs to EP7 and is not required to be invented for EP6 configuration acceptance"
   ],
-  "peerAcceptance": null
+  "peerAcceptance": {
+    "status": "PARTIAL_EVIDENCE_INCREMENT_ACCEPTED",
+    "pr": 37,
+    "exactHead": "69e117f81eb7dc67a92925fc5fff329ef4ec041d",
+    "reviewId": 5843891205,
+    "remaining": "Finalization evidence peer acceptance and reviewed main release; observation collection complete"
+  },
+  "finalizationRunId": "2026-11-12-finalization",
+  "finalizationSourceStaging": "6274b17891e304b3ba315c2ed033213837f78d1d"
 }
