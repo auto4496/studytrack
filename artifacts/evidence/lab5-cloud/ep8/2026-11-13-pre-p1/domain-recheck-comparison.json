@@ -1,0 +1,11 @@
+{
+  "observedAtUtc": "2026-11-12T18:28:49.462Z",
+  "bangkokDate": "2026-11-13",
+  "baselineEntryDate": "2026-11-12",
+  "goalAllFieldsMatch": true,
+  "entryListAllFieldsAndMetaMatch": true,
+  "progressAllFieldsMatch": true,
+  "entryCount": 1,
+  "operationPerformed": false,
+  "scope": "Read-only pre-P1 comparison after Bangkok midnight; does not claim P1 or P2 persistence."
+}

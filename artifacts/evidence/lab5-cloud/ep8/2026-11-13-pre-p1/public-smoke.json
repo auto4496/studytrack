@@ -1,0 +1,12 @@
+{
+  "status": "PASS_PRE_OPERATION_ONLY",
+  "startUtc": "2026-11-12T18:34:19.4241710Z",
+  "endUtc": "2026-11-12T18:34:20.7749367Z",
+  "actor": "Codex assisting member A, read-only unauthenticated HTTP smoke",
+  "script": "deploy/smoke_test.py",
+  "scriptBlob": "4b248a244876af29748d2f687d3d98d411afbf2e",
+  "origin": "https://studytrack-981693883236.asia-southeast1.run.app",
+  "exitCode": 0,
+  "retention": "Actual selected stdout, UTF-8/LF-normalized; no response headers or credentials",
+  "operationPerformed": false
+}

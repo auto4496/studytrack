@@ -1,0 +1,23 @@
+{
+  "observedAtUtc": "2026-11-12T18:24:41.714Z",
+  "bangkokDate": "2026-11-13",
+  "source": "authenticated native Edge GCP Console; expanded existing startup log, safe selected fields",
+  "url": "https://console.cloud.google.com/run/detail/asia-southeast1/studytrack/observability/logs?project=studytrack-cpe334",
+  "filter": "Starting new instance",
+  "event": {
+    "insertId": "6af5fceb00042871b2739adf",
+    "instanceId": "00e8a408bd4fee0ef6f12109ee560f6cbe0208eac16149795fe0855a9293468a60fb2c87ddec3c59f88f9f3794a6dcfe197731b93ef989edd943c95a301072c293876e183a065d3ec562ffc3dab0840f260c30b12ac1d2976d1169ca",
+    "scaling_reason": "AUTOSCALING",
+    "logName": "projects/studytrack-cpe334/logs/run.googleapis.com%2Fvarlog%2Fsystem",
+    "receiveTimestamp": "2026-11-12T17:52:43.281982548Z",
+    "configuration_name": "studytrack",
+    "location": "asia-southeast1",
+    "project_id": "studytrack-cpe334",
+    "revision_name": "studytrack-g3570cd4a7bca-r43233683592-1",
+    "service_name": "studytrack",
+    "timestamp": "2026-11-12T17:52:43.272497Z"
+  },
+  "eventKind": "Existing release-A instance started by AUTOSCALING; before any P1 operation",
+  "operationPerformed": false,
+  "limitation": "This is the original serving revision instance baseline, not evidence that the planned same-image P1 replacement has run."
+}

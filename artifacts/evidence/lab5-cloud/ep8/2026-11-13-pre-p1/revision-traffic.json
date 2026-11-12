@@ -1,0 +1,18 @@
+{
+  "observedAtUtc": "2026-11-12T18:20:55.968Z",
+  "bangkokDate": "2026-11-13",
+  "source": "A assisted by Codex reading the authenticated native Edge GCP Console",
+  "url": "https://console.cloud.google.com/run/detail/asia-southeast1/studytrack/revisions?project=studytrack-cpe334",
+  "project": "studytrack-cpe334",
+  "region": "asia-southeast1",
+  "service": "studytrack",
+  "publicOrigin": "https://studytrack-981693883236.asia-southeast1.run.app",
+  "serviceHealthy": true,
+  "servingRevision": "studytrack-g3570cd4a7bca-r43233683592-1",
+  "trafficPercent": 100,
+  "otherDisplayedRevisionTrafficPercent": [
+    0,
+    0
+  ],
+  "operationPerformed": false
+}

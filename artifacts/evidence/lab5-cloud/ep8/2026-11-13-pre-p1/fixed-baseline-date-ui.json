@@ -1,0 +1,19 @@
+{
+  "observedAtUtc": "2026-11-12T18:30:04.574Z",
+  "bangkokDate": "2026-11-13",
+  "actor": "Codex assisting member A through the already authenticated Edge session",
+  "url": "https://studytrack-981693883236.asia-southeast1.run.app/goals/1da44fc2-a956-421d-88a9-8c876adc38c1",
+  "accountDisplayName": "นักอ่านคนที่หนึ่ง",
+  "roleLabel": "นักศึกษา",
+  "defaultViewDate": "2026-11-13",
+  "defaultViewActualMinutes": 0,
+  "defaultViewTargetMinutes": 30,
+  "selectedBaselineEntryDate": "2026-11-12",
+  "actualMinutes": 20,
+  "targetMinutes": 30,
+  "progressPercent": 66.67,
+  "achieved": false,
+  "dateSelectionMethod": "Changed the read-only date filter day from 13 to 12; no reading entry or goal update submitted.",
+  "operationPerformed": false,
+  "scope": "Pre-P1 fixed-date handling and data recheck after Bangkok midnight. P1/P2 have not run."
+}
