@@ -1,0 +1,16 @@
+{
+  "observedAtUtc": "2026-11-12T14:44:07.625Z",
+  "source": "authenticated normal Edge GET response body",
+  "path": "/api/goals/1da44fc2-a956-421d-88a9-8c876adc38c1/progress?date=2026-11-12",
+  "response": {
+    "data": {
+      "goalId": "1da44fc2-a956-421d-88a9-8c876adc38c1",
+      "date": "2026-11-12",
+      "actualMinutes": 20,
+      "targetMinutes": 30,
+      "progressPercent": 66.67,
+      "achieved": false,
+      "entryId": "f1146358-2b3a-4aa6-9033-b2d0d95fc542"
+    }
+  }
+}
