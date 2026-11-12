@@ -1,5 +1,15 @@
 # Member B status — implementation handoff
 
+## สถานะล่าสุด 12 พฤศจิกายน 2026: release A สำเร็จ เก็บหลักฐานและรอ A ยืนยัน P0
+
+A รับfixPR45และreleasePR46แล้ว mainจริง3570cd4มีtreeตรงreview3e76a55bfdac1ccd3c0ae7ecaa5cc551a98ffa23 [Deploy43233683592](https://github.com/auto4496/studytrack/actions/runs/43233683592) SUCCESS รวมWIF/build/push/migration/revision/traffic/smoke Bอ่านrun/logจริงและเก็บข้อมูลที่เลือกไว้ใน [release A evidence](../labs/lab-05/ep7-release-a-evidence.md) กับ [actual record](../labs/lab-05/ep7-record.json) แยกจากtemplateNOT_RUNและrunแรกที่ล้ม
+
+ผู้ใช้ฝั่งBรันread-onlyCloudShellและส่งผลตรงกัน: revision studytrack-g3570cd4a7bca-r43233683592-1 Ready/Active=True, traffic100%, runner/CloudSQLเดิม, serviceหนึ่งcontainerใช้index3e4e18fd… และrevisionหนึ่งcontainerใช้platform6127e4e… ตรงrunจริง ข้อมูลนี้เป็นhuman-operatedCLI ไม่ใช่agentเชื่อมGCPเองหรือภาพConsole Bแก้คำสั่งprojectionที่ตอนแรกไม่แสดงimageจากarrayโดยอ่านเฉพาะimage/countเพิ่ม ไม่เปลี่ยนระบบ และตรวจpublichealth/UIแยกได้HTTP200
+
+**ส่งต่อ A:** เริ่มEP8 P0ได้ และส่งconfirmation/หลักฐานauthenticatedbaselineเมื่อเก็บครบ เราจะรอก่อนrestart/replacementหรือvisible-change release B ซึ่งยังไม่ได้ทำ หลักฐานdomainจากP0ของAต้องอ้างactor/date/outcomeจริง ไม่ใช้HTTPหรือCLIแทนhumanUI acceptance #22/#23ยังOPENตามAC งานเอกสารหลักฐานนี้รับเข้าstagingได้โดยไม่deploy แต่ยังไม่releaseเข้าmainก่อนประสานP0 เพราะmainmergeจะเริ่มpipelineอีกรอบ รายละเอียดและขอบเขตที่ยังpendingอยู่ในactualrecord
+
+ส่วนด้านล่างเป็นcheckpointก่อนrelease Aสำเร็จ เก็บไว้เป็นประวัติ ไม่ใช่งานที่ต้องเริ่มใหม่
+
 ## สถานะล่าสุด 12 พฤศจิกายน 2026: PR41 accepted แล้ว เตรียม release A
 
 A อนุมัติ combined head313b4fb และ merge [PR41](https://github.com/auto4496/studytrack/pull/41) เข้า staging845bfee แล้ว B ตรวจทั้งtreeตรงca1dfe1ed01b854674607058c1dd7aa2b2362b8c รวมwordingPR40ที่Bอนุมัติแล้วไว้ด้วย CI43186936178 ของcombinedsourceผ่าน29offline/152API-unit/38browser/buildและDockerทั้งสองtarget ยังไม่มีmainmergeหรือliveEP7deploy

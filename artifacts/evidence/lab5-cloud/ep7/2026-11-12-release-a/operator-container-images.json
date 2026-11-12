@@ -1,0 +1,16 @@
+[
+  {
+    "resource": "studytrack",
+    "containerCount": 1,
+    "images": [
+      "asia-southeast1-docker.pkg.dev/studytrack-cpe334/studytrack/studytrack@sha256:3e4e18fd392de678076ebec06464a61eca4912b49f783a418c99abf3b3fb26a3"
+    ]
+  },
+  {
+    "resource": "studytrack-g3570cd4a7bca-r43233683592-1",
+    "containerCount": 1,
+    "images": [
+      "asia-southeast1-docker.pkg.dev/studytrack-cpe334/studytrack/studytrack@sha256:6127e4e53c2b9b8a747fd8af42216cb7879b4d5175c5f5178d4bc33f0bb18f7d"
+    ]
+  }
+]

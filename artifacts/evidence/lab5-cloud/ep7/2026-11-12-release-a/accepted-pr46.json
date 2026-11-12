@@ -1,0 +1,17 @@
+{
+  "base": {
+    "ref": "main",
+    "sha": "d92f945016087452e146e53c91044860279a5610"
+  },
+  "head": {
+    "ref": "codex/sprint-1-staging",
+    "sha": "25b97ae6add9690ee60726e3827179430b106e87"
+  },
+  "html_url": "https://github.com/auto4496/studytrack/pull/46",
+  "merge_commit_sha": "3570cd4a7bca17567d30817565d5bb3aa107a672",
+  "merged": true,
+  "merged_at": "2026-11-12T14:05:51Z",
+  "merged_by": "auto4496",
+  "number": 46,
+  "state": "closed"
+}
