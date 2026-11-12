@@ -1,0 +1,10 @@
+{
+  "observedAtUtc": "2026-11-12T14:42:54.426Z",
+  "actor": "Codex acting for member A through the existing authenticated Edge UI",
+  "publicUrl": "https://studytrack-981693883236.asia-southeast1.run.app/goals/1da44fc2-a956-421d-88a9-8c876adc38c1",
+  "accountDisplayName": "นักอ่านคนที่หนึ่ง",
+  "entryDate": "2026-11-12",
+  "actualMinutes": 20,
+  "targetMinutes": 30,
+  "progressPercent": 66.67
+}
