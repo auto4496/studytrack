@@ -1,5 +1,17 @@
 # Member B status — implementation handoff
 
+## สถานะล่าสุด 12 พฤศจิกายน 2026: PR41 accepted แล้ว เตรียม release A
+
+A อนุมัติ combined head313b4fb และ merge [PR41](https://github.com/auto4496/studytrack/pull/41) เข้า staging845bfee แล้ว B ตรวจทั้งtreeตรงca1dfe1ed01b854674607058c1dd7aa2b2362b8c รวมwordingPR40ที่Bอนุมัติแล้วไว้ด้วย CI43186936178 ของcombinedsourceผ่าน29offline/152API-unit/38browser/buildและDockerทั้งสองtarget ยังไม่มีmainmergeหรือliveEP7deploy
+
+เตรียม [PR44 sync](https://github.com/auto4496/studytrack/pull/44) และ [draft release PR43](https://github.com/auto4496/studytrack/pull/43) แล้ว mainยัง5c04cd4 ขั้นsyncจำเป็นเพราะstagingขาดประวัติmain merge4commit กฎstrictกำหนดให้up-to-date ก่อนrelease Bแก้การเลือกheadที่ไม่เหมาะสมโดยปิดdirect-main PR42แบบไม่merge แล้วใช้branchsyncแยกที่มีทั้งสองtip ซึ่งcommit2c3f055มีtreeเดิมทุกไฟล์ จากนั้นเพิ่มเพียงเอกสารส่งต่องาน4ไฟล์ในPR44เดียว ไม่แก้app/workflow/scripts/testsเพิ่ม
+
+**ส่ง A ตรวจตามลำดับ:** PR44พร้อมCIheadล่าสุด -> mergeเข้าstaging -> Bตรวจaccepted tree/main ancestry -> PR43CIheadใหม่ครบและเอาdraftออก -> Aรีวิวreleaseแยกก่อนmainmerge ซึ่งจะเริ่มDeploy demoจริง หลังmain treeตรงreviewจึงปิด#21ได้ รวมเอกสารEP6ในreleaseนี้ ไม่มีEP6-only mainreleaseเพิ่ม #22ยังต้องเก็บจริงทั้งrelease A/B; #23/#24ยังรอเกณฑ์ของตนเอง ถ้าGitHubauto-close#22จากDevelopmentlinkให้เปิดกลับจนACครบ
+
+PR40รวมอยู่ในrelease Aแล้ว จึงต้องตกลงvisible changeรอบถัดไปกับAสำหรับrelease B และเก็บbaselineEP8หลังAสำเร็จแต่ก่อนB รายละเอียดแหล่งข้อมูล/ข้อจำกัดและลำดับตรวจใน [release readiness](../labs/lab-05/ep7-release-readiness.md) ค่าlive recordยังNOT_RUN รอบนี้ไม่มีGCP/IAM operationหรือdeploy บอร์ดProjectยังขาดread:projectจึงไม่อ้างว่าอัปเดตการ์ดแล้ว
+
+ส่วนด้านล่างเป็นcheckpointก่อน PR41 ได้รับการรับงาน ไม่ใช่งานที่ต้องให้Aรีวิวซ้ำ
+
 ## สถานะล่าสุด 12 พฤศจิกายน 2026: เตรียม EP7 pipeline ให้ A รีวิว
 
 ส่ง [PR41](https://github.com/auto4496/studytrack/pull/41) เข้า `codex/sprint-1-staging` และขอAรีวิวแล้ว เชื่อมDevelopmentกับ [Issue22](https://github.com/auto4496/studytrack/issues/22) จริงและตรวจทั้งPR.closingIssuesReferences / Issue.closedByPullRequestsReferencesตรงกัน IssueยังOPEN ผลทดสอบในเครื่อง29ผ่าน; ตรวจworkflow/shellและ15manifest hashesผ่าน ให้ตรวจhostedCIของheadล่าสุดจากหน้าPRก่อนAรับงาน ไม่มีการmergePRของตนเอง
