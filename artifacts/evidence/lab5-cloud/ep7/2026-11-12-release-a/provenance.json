@@ -1,0 +1,11 @@
+{
+  "actor": "B / Datakung assisted by Codex",
+  "run_url": "https://github.com/auto4496/studytrack/actions/runs/43233683592",
+  "source_sha": "3570cd4a7bca17567d30817565d5bb3aa107a672",
+  "accepted_tree": "3e76a55bfdac1ccd3c0ae7ecaa5cc551a98ffa23",
+  "source_script_blob": "f2995401af3593e470100cde4a9730ec7a6da9c6",
+  "retention": "Whitelisted GitHub metadata and the nine actual helper output fields plus actual smoke lines; full downloaded logs remain outside this evidence folder. Text is LF-normalized.",
+  "member_a_comment": "Attributed to A; independent public HTTP checks by B are separate.",
+  "gcp_console_or_cli": "Human operator CLI readbacks received/assessed; no direct agent GCP session or native Console screenshot.",
+  "operator_readbacks": "Safe output only, prompt/commands omitted, LF-normalized; command execution time not supplied; transition timestamps retain their actual meaning."
+}

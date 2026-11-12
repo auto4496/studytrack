@@ -1,0 +1,72 @@
+{
+  "source_sha": "3570cd4a7bca17567d30817565d5bb3aa107a672",
+  "hash_algorithm": "SHA256",
+  "scope": "Exact retained UTF-8/LF bytes, excluding manifest; selected safe output only, not private original screenshots/full debug logs.",
+  "files": [
+    {
+      "path": "accepted-pr46.json",
+      "bytes": 452,
+      "sha256": "cf9002e038e9c9d742ddbab7d3e02dc8d95be5080ed5db83f8b63ffb9ac7ea10"
+    },
+    {
+      "path": "automated-smoke.txt",
+      "bytes": 192,
+      "sha256": "768a20d4f80ed982cb3403dc8d90c1916791d00072fee2279ebe57dee9c9d851"
+    },
+    {
+      "path": "ci-summary-excerpt.txt",
+      "bytes": 346,
+      "sha256": "c7aab46e9d5acfdf4168ca15716f6b6ca6312752204a76c03c3d7e72e424b90f"
+    },
+    {
+      "path": "jobs.json",
+      "bytes": 8708,
+      "sha256": "cd0729bb882648e761115aadf7245321828f3c5e21b606c1e1f8a89308fa5717"
+    },
+    {
+      "path": "member-a-success-comment.json",
+      "bytes": 2909,
+      "sha256": "f0f1cadce6f5e9a6acd734db4bc0ce259101f54bcd8b734b0d761964947b41ae"
+    },
+    {
+      "path": "member-b-public-http.json",
+      "bytes": 983,
+      "sha256": "d887f4572336ede5077f263d48714f5fba95357850f1814d14a8a3a443d890d5"
+    },
+    {
+      "path": "operator-assessment.json",
+      "bytes": 2046,
+      "sha256": "2957f86e242a72fbaee6d5181e2362a08e336e54a5a979694691967c7711cbf0"
+    },
+    {
+      "path": "operator-container-images.json",
+      "bytes": 506,
+      "sha256": "dc54be8630f4a9a278cac7f86c1078fdb9eaa6e493c62af58d39ceff848fc9f7"
+    },
+    {
+      "path": "operator-service-revision-readback.txt",
+      "bytes": 1673,
+      "sha256": "77cad795123e09a9fecc8151d498eda5bdfa4777faf5cb0e58bee7f31a3c8ff8"
+    },
+    {
+      "path": "peer-reviews.json",
+      "bytes": 282,
+      "sha256": "038f8138dbf79a8a42a30a32fd81f6be4824ac0cbcfcaae506e88e56a056a30f"
+    },
+    {
+      "path": "provenance.json",
+      "bytes": 910,
+      "sha256": "476fbf4ab5bb65c2e9c44ba82b439e3082da7dce60b7ffe1beb93001bef5c41f"
+    },
+    {
+      "path": "release-helper-output.json",
+      "bytes": 1245,
+      "sha256": "fb6ec4553513de2028328b04910f58056184d0025023b3b69bb9161a80ad1a15"
+    },
+    {
+      "path": "run.json",
+      "bytes": 445,
+      "sha256": "8444a4af56e54b67939497c23aa337ce770e462aed2db003a9a22df43ca85e69"
+    }
+  ]
+}
