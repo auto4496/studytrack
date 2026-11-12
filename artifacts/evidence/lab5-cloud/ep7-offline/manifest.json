@@ -66,12 +66,29 @@
       "bytes": 423,
       "path": "artifacts/evidence/lab5-cloud/ep7-offline/static-checks.txt",
       "sha256": "263e54e75e9425907fe4fd1144e0239012cd42a41119ad9af829eb0e9fc3b46a"
+    },
+    {
+      "path": "e2e/lifecycle.spec.ts",
+      "bytes": 14800,
+      "sha256": "aeb2cd1ec4f8d5dd538bc9abf03306d5a8a48b40cf78bc64f1adce9961985d48"
+    },
+    {
+      "path": "artifacts/evidence/lab5-cloud/ep7-offline/ci-browser-failure.txt",
+      "bytes": 5570,
+      "sha256": "1d9db349d37f566be3c9a3c3499472f3019d10a69ff446cbf66c3410b53209f8"
     }
   ],
   "initial_red": "3 actual assertion failures before implementation; no separately committed initial scaffold",
   "local_result": "29 offline tests passed",
   "live_ep7": "NOT_RUN",
   "actor": "Member B / Datakung assisted by Codex",
-  "evidence_text_note": "Retained console text is normalized to LF for repository attributes; no assertion/result text is changed.",
-  "original_red_sha256": "04dbe4ff1df8e4dffc3e984ce287e51428c139464448d347e52bfbca793846d7"
+  "evidence_text_note": "Retained console text uses LF; trailing whitespace in the hosted failure excerpt is trimmed. Assertion/result text is unchanged.",
+  "original_red_sha256": "04dbe4ff1df8e4dffc3e984ce287e51428c139464448d347e52bfbca793846d7",
+  "hosted_initial_attempt": {
+    "run": "https://github.com/auto4496/studytrack/actions/runs/43182692859",
+    "head": "ab49347f2dc6c3dc971e3b4918ff99bc3abc934b",
+    "browser": "37 passed / 1 initial-form timeout",
+    "docker": "SKIPPED after browser failure",
+    "correction": "Wait for initial detail form before intercepting recovery GET; assertions unchanged; fresh hosted run required."
+  }
 }
