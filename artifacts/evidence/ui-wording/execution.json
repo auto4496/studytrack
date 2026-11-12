@@ -1,0 +1,142 @@
+{
+  "recordedAt": "2026-11-12T08:07:43.150Z",
+  "actor": "Member A / Codex",
+  "issue": "https://github.com/auto4496/studytrack/issues/39",
+  "acceptedBase": "86b0b3e222b364a7ad4e2ea2fae20ed7148073b2",
+  "specificationCommit": "c4c5f62",
+  "testedSource": "bc2e93b25c1784a62e262416641d95d61bd0224d",
+  "nodeVersion": "v24.14.0",
+  "database": {
+    "kind": "isolated PostgreSQL 17 test container",
+    "host": "127.0.0.1",
+    "port": 25436,
+    "name": "studytrack_wording_test",
+    "fixtures": "synthetic e2e/setup.ts; no development/demo records"
+  },
+  "build": {
+    "command": "npm run build",
+    "exitCode": 0,
+    "source": "Identical product files immediately before testedSource commit"
+  },
+  "browser": {
+    "command": "npx playwright test --reporter=list,json",
+    "reportEnvironment": {
+      "PLAYWRIGHT_JSON_OUTPUT_NAME": "artifacts/evidence/ui-wording/browser-results.json"
+    },
+    "exitCode": 0,
+    "report": "browser-results.json",
+    "stats": {
+      "startTime": "2026-11-12T08:03:13.391Z",
+      "duration": 167625.65,
+      "expected": 38,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "errors": [],
+    "retries": 0,
+    "engine": "Installed Microsoft Edge / Chromium on Windows",
+    "viewports": [
+      {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      {
+        "name": "mobile",
+        "width": 390,
+        "height": 844,
+        "device": "iPhone 13 emulation"
+      }
+    ],
+    "existingScenariosPerViewport": 19,
+    "specificationScenarioCounts": {
+      "member-a.spec.ts": 5,
+      "member-b.spec.ts": 7,
+      "lifecycle.spec.ts": 7
+    }
+  },
+  "scope": {
+    "onlyDisplayCopyIn10ProductFiles": true,
+    "threeExistingSpecsOnlyApprovedCopyScreenshotPathsAndFormatting": true,
+    "serverApiSchemaAuthDependenciesWorkflowsDeploymentUnchanged": true,
+    "historicalEvidenceUnchanged": true
+  },
+  "visualInspection": {
+    "actor": "Member A / Codex",
+    "files": [
+      "f05/desktop-pending.png",
+      "f05/desktop-inactive.png",
+      "f05/desktop-archived.png",
+      "member-b/desktop-template-form.png",
+      "member-a/desktop-goal-form.png",
+      "member-b/desktop-progress-125.png",
+      "f05/mobile-pending.png",
+      "f05/mobile-inactive.png",
+      "f05/mobile-archived.png",
+      "member-b/mobile-template-form.png",
+      "member-a/mobile-goal-form.png",
+      "member-b/mobile-progress-125.png"
+    ],
+    "findings": "New glossary, status/result labels and longer actions remain readable on desktop/mobile; no clipping observed in these images. Existing overflow checks passed."
+  },
+  "sourceFiles": [
+    {
+      "path": "client/src/components/Layout.tsx",
+      "gitNormalizedSha256": "631c5737363a0201773a87a7651cefb0e6b0bd7a89bfbf9ca4ddb6c827e19876"
+    },
+    {
+      "path": "client/src/components/useVerifiedMutation.ts",
+      "gitNormalizedSha256": "0ebdb60a7d0902ce877cba94c3082bd175fe2987d52611704f9f0373c10797df"
+    },
+    {
+      "path": "client/src/features/entries/DailyActivity.tsx",
+      "gitNormalizedSha256": "3ff3158d46ed4030a9cff936bafd670ca330df6491ac81d11b2b63a3d62cc704"
+    },
+    {
+      "path": "client/src/features/goals/GoalDetail.tsx",
+      "gitNormalizedSha256": "c4a14a7ec9a7f993659c26539fd62de355d1a7e78292666c6b1808ee4cac09ef"
+    },
+    {
+      "path": "client/src/features/goals/GoalForm.tsx",
+      "gitNormalizedSha256": "248b3d19c9e147f80b89017bbcb857a15933a4519f70598cd9142b79122488a1"
+    },
+    {
+      "path": "client/src/features/goals/GoalLifecycle.tsx",
+      "gitNormalizedSha256": "d5f42b00ea5522103907d3a94b1aafe88bd61b8c93587a20e9ed14bb2cc47fe9"
+    },
+    {
+      "path": "client/src/features/goals/GoalList.tsx",
+      "gitNormalizedSha256": "20201d3b438dc2de8d4d11db2f7cf6170812d6895ef333bf3cd51dc629994417"
+    },
+    {
+      "path": "client/src/features/templates/TemplateCatalog.tsx",
+      "gitNormalizedSha256": "084aa0e850d732f603863d5474482579da073f45077df0a398b771c78ee93e80"
+    },
+    {
+      "path": "client/src/features/templates/TemplateForm.tsx",
+      "gitNormalizedSha256": "9c0ca3a423c3e9171b073053638adfb0a019ba5ffcb72ce30229a845088a82b1"
+    },
+    {
+      "path": "client/src/features/templates/TemplateLifecycle.tsx",
+      "gitNormalizedSha256": "728bc29e7a598bd3ccdd7f1fc585b168d4c5547ae2595c881cf70891907c81d1"
+    },
+    {
+      "path": "e2e/lifecycle.spec.ts",
+      "gitNormalizedSha256": "cd29c49c990f9f7d6220b382da495009f209d7dc8d85c97fc21f7655cb03bbd4"
+    },
+    {
+      "path": "e2e/member-a.spec.ts",
+      "gitNormalizedSha256": "5392c6f2521f02fcccf8f7e1cf71de4342cf25e542480a6095eaa7401f4f4285"
+    },
+    {
+      "path": "e2e/member-b.spec.ts",
+      "gitNormalizedSha256": "9e11664c883c18b32816acf6be298bfdf6dadd197ba302679c17b61608d80b19"
+    }
+  ],
+  "hostedCI": "See submitted PR checks for actual run/result; not claimed by this local execution record.",
+  "independentPeerReview": "PENDING",
+  "publicDeployment": "NOT_PERFORMED",
+  "independentHumanUAT": "NOT_CLAIMED",
+  "localApiSuite": "Not rerun for copy-only change; required hosted CI performs regression checks."
+}

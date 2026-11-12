@@ -53,7 +53,7 @@ async function fixture(page: Page, tag: string) {
   await page.getByRole("button", { name: "ออกจากระบบ", exact: true }).click();
   await login(page, `reader-f05-${test.info().project.name}@browser.test`);
   await page.goto(`/goals/new?template=${template.id}`);
-  await page.getByLabel("เป้าหมายต่อวัน (นาที)", { exact: true }).fill("30");
+  await page.getByLabel("เป้าหมายรายวัน (นาที)", { exact: true }).fill("30");
   await page.getByRole("button", { name: "สร้างเป้าหมาย →" }).click();
   await expect(page).toHaveURL(/\/goals\/[\w-]+$/);
   const id = page.url().split("/").at(-1)!;
@@ -100,14 +100,14 @@ test("TEST-F05-16 full target/save/reload/stop/filter journey", async ({
   await expect(page.getByTestId("progress-amount")).toContainText("20 / 30");
   await noOverflow(page);
   await page.screenshot({
-    path: `artifacts/evidence/f05/${info.project.name}-pending.png`,
+    path: `artifacts/evidence/ui-wording/f05/${info.project.name}-pending.png`,
     fullPage: true,
   });
   await lifecycle(page)
-    .getByRole("button", { name: "หยุดเป้าหมาย", exact: true })
+    .getByRole("button", { name: "หยุดติดตามเป้าหมาย", exact: true })
     .click();
   await lifecycle(page)
-    .getByRole("button", { name: "ยืนยันหยุดเป้าหมาย", exact: true })
+    .getByRole("button", { name: "ยืนยันหยุดติดตามเป้าหมาย", exact: true })
     .click();
   await expect(lifecycle(page)).toContainText("เป้าหมายสิ้นสุด");
   await expect(
@@ -115,7 +115,7 @@ test("TEST-F05-16 full target/save/reload/stop/filter journey", async ({
   ).toHaveCount(0);
   await expect(page.getByTestId("progress-amount")).toContainText("20 / 30");
   await page.screenshot({
-    path: `artifacts/evidence/f05/${info.project.name}-archived.png`,
+    path: `artifacts/evidence/ui-wording/f05/${info.project.name}-archived.png`,
     fullPage: true,
   });
   await page.goto("/goals");
@@ -159,17 +159,17 @@ test("TEST-F05-16 metadata/deactivation UI retains existing active goal snapshot
     }),
   });
   await edited
-    .getByRole("button", { name: "ปิดใช้กิจกรรม", exact: true })
+    .getByRole("button", { name: "ปิดรับเป้าหมายใหม่", exact: true })
     .click();
   await edited
-    .getByRole("button", { name: "ยืนยันปิดใช้กิจกรรม", exact: true })
+    .getByRole("button", { name: "ยืนยันปิดรับเป้าหมายใหม่", exact: true })
     .click();
   await expect(edited).toHaveCount(0);
-  await page.getByLabel("รวมแม่แบบที่ปิดใช้").check();
-  await expect(edited).toContainText("ปิดใช้แล้ว");
+  await page.getByLabel("แสดงรายการที่ปิดใช้ด้วย").check();
+  await expect(edited).toContainText("Inactive");
   await noOverflow(page);
   await page.screenshot({
-    path: `artifacts/evidence/f05/${info.project.name}-inactive.png`,
+    path: `artifacts/evidence/ui-wording/f05/${info.project.name}-inactive.png`,
     fullPage: true,
   });
   await page.getByRole("button", { name: "ออกจากระบบ", exact: true }).click();
@@ -216,7 +216,7 @@ test("TEST-F05-08/16 future-start goal explains boundary without lifecycle write
   const goal = (await result.json()).data;
   await page.goto(`/goals/${goal.id}`);
   await expect(lifecycle(page)).toContainText(
-    "เปลี่ยนหรือหยุดเป้าหมายได้ตั้งแต่",
+    "เปลี่ยนหรือหยุดติดตามเป้าหมายได้ตั้งแต่",
   );
   await expect(lifecycle(page).getByRole("button")).toHaveCount(0);
   await noOverflow(page);

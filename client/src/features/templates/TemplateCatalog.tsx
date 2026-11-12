@@ -36,7 +36,7 @@ export function TemplateCatalog() {
           <p className="eyebrow">FIND YOUR NEXT CHAPTER</p>
           <h1>
             {user?.role === "PROGRAM_MANAGER"
-              ? "แม่แบบกิจกรรม"
+              ? "Activity Templates"
               : "กิจกรรมการอ่าน"}
           </h1>
           <p className="muted">
@@ -47,7 +47,7 @@ export function TemplateCatalog() {
         </div>
         {user?.role === "PROGRAM_MANAGER" && (
           <Link className="button primary" to="/manager/templates/new">
-            ＋ สร้างแม่แบบ
+            ＋ สร้าง Template
           </Link>
         )}
       </section>
@@ -61,7 +61,7 @@ export function TemplateCatalog() {
               setPage(1);
             }}
           />
-          รวมแม่แบบที่ปิดใช้
+          แสดงรายการที่ปิดใช้ด้วย
         </label>
       )}
       {error ? (
@@ -69,7 +69,7 @@ export function TemplateCatalog() {
       ) : !result ? (
         <Loading />
       ) : !result.data.length ? (
-        <Empty title="ยังไม่มีแม่แบบกิจกรรม">
+        <Empty title="ยังไม่มี Template">
           <p>กิจกรรมที่พร้อมใช้จะแสดงที่นี่</p>
         </Empty>
       ) : (
@@ -80,7 +80,7 @@ export function TemplateCatalog() {
                 ▤
               </span>
               <h2>{t.title}</h2>
-              {!t.isActive && <span className="pill">ปิดใช้แล้ว</span>}
+              {!t.isActive && <span className="pill">Inactive</span>}
               <p className="muted">{t.description}</p>
               <p>
                 {t.minMinutes}–{t.maxMinutes} นาทีต่อวัน
