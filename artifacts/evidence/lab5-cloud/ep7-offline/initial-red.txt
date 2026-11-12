@@ -1,0 +1,33 @@
+test_invalid_tag_stops_before_any_command (deploy.tests.test_release.ReleaseTests.test_invalid_tag_stops_before_any_command) ... FAIL
+test_normal_migrates_tools_before_traffic (deploy.tests.test_release.ReleaseTests.test_normal_migrates_tools_before_traffic) ... FAIL
+test_rollback_reuses_image_without_tools_or_jobs (deploy.tests.test_release.ReleaseTests.test_rollback_reuses_image_without_tools_or_jobs) ... FAIL
+
+======================================================================
+FAIL: test_invalid_tag_stops_before_any_command (deploy.tests.test_release.ReleaseTests.test_invalid_tag_stops_before_any_command)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\CPE\CPE334\Project\studytrack-ep7-pipeline\deploy\tests\test_release.py", line 145, in test_invalid_tag_stops_before_any_command
+    with self.assertRaises(release.ReleaseError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ReleaseError not raised
+
+======================================================================
+FAIL: test_normal_migrates_tools_before_traffic (deploy.tests.test_release.ReleaseTests.test_normal_migrates_tools_before_traffic)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\CPE\CPE334\Project\studytrack-ep7-pipeline\deploy\tests\test_release.py", line 116, in test_normal_migrates_tools_before_traffic
+    self.assertIn(["run", "jobs", "execute"], ops)
+AssertionError: ['run', 'jobs', 'execute'] not found in []
+
+======================================================================
+FAIL: test_rollback_reuses_image_without_tools_or_jobs (deploy.tests.test_release.ReleaseTests.test_rollback_reuses_image_without_tools_or_jobs)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\CPE\CPE334\Project\studytrack-ep7-pipeline\deploy\tests\test_release.py", line 138, in test_rollback_reuses_image_without_tools_or_jobs
+    self.assertIn(["run", "services", "update"], self.cloud.operations())
+AssertionError: ['run', 'services', 'update'] not found in []
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+FAILED (failures=3)

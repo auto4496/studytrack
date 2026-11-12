@@ -251,6 +251,8 @@ test("TEST-F05-16 uncertain committed PATCH blocks replay until authoritative re
   page,
 }, info) => {
   const { id } = await fixture(page, `uncertain ${info.project.name}`);
+  // Let the initial detail GET render before blocking recovery reads.
+  await expect(lifecycle(page).getByLabel("เป้าหมายรายวันใหม่ (นาที)")).toBeVisible();
   let blockRead = true,
     count = 0;
   await page.route(`**/api/goals/${id}`, async (route) => {

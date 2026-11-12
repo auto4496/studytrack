@@ -1,0 +1,94 @@
+{
+  "base": "86b0b3e222b364a7ad4e2ea2fae20ed7148073b2",
+  "date": "2026-11-12",
+  "files": [
+    {
+      "bytes": 4504,
+      "path": ".github/workflows/deploy.yml",
+      "sha256": "9d560b93ff85e58ee5494fb04aa79df1476fc7ed60e8b7304484da2cb1b8b2ca"
+    },
+    {
+      "bytes": 2654,
+      "path": ".github/workflows/ci-docker.yml",
+      "sha256": "3b7875e68960030d9fd7a4d8b48323a4052b97e6cfe21fe8a90b6bddbb745342"
+    },
+    {
+      "bytes": 171,
+      "path": ".gitignore",
+      "sha256": "60b28ffaacdfcb83c2be3f62cc35066c66c191b86454c11c1a5378fd275d1b96"
+    },
+    {
+      "bytes": 374,
+      "path": ".dockerignore",
+      "sha256": "cfbf11f7985d64f419eab5cf2d1669976ba91f1bf311de224d33c5d9d4a5027e"
+    },
+    {
+      "bytes": 2209,
+      "path": "Dockerfile",
+      "sha256": "9eaed33f47025bc644fa088a8c734090bafed43350c9a1affa5e97cc0352aac4"
+    },
+    {
+      "bytes": 11203,
+      "path": "deploy/release.py",
+      "sha256": "7e5f9c7e44c46106f0016cf65b00e03a74c54b90d55ebca2dded0cb8430ab5a8"
+    },
+    {
+      "bytes": 163,
+      "path": "deploy/release.sh",
+      "sha256": "32c67f25ba614754ebaf43d435805913352ffbebce88b3372e6f5073c5229cfc"
+    },
+    {
+      "bytes": 15718,
+      "path": "deploy/tests/test_release.py",
+      "sha256": "1f3617753acb0d04e46fe27792556dd28ae94e0e857f2995d6ee0d2ba5b5d9af"
+    },
+    {
+      "bytes": 12021,
+      "path": "deploy/deploy.sh",
+      "sha256": "699369cf7a8d76b3c1e1533b6de2114baf68d0079febb87665bb6026726f4be0"
+    },
+    {
+      "bytes": 1341,
+      "path": "deploy/smoke_test.py",
+      "sha256": "32a23455c73ce819aa6fa28916f72126ba8bcb54a94bd0c9e23d56f7d1e6cd88"
+    },
+    {
+      "bytes": 2284,
+      "path": "artifacts/evidence/lab5-cloud/ep7-offline/initial-red.txt",
+      "sha256": "b85667c2484a1c48d09b03b60e0b4017a666acc8a7f4b76c4a3e421c3fe5bf9f"
+    },
+    {
+      "bytes": 4244,
+      "path": "artifacts/evidence/lab5-cloud/ep7-offline/final-green.txt",
+      "sha256": "48c7b7d9781d7bd73e9af9f49c75e1f8d90a5d20b5ed882afe80c15693551816"
+    },
+    {
+      "bytes": 423,
+      "path": "artifacts/evidence/lab5-cloud/ep7-offline/static-checks.txt",
+      "sha256": "263e54e75e9425907fe4fd1144e0239012cd42a41119ad9af829eb0e9fc3b46a"
+    },
+    {
+      "path": "e2e/lifecycle.spec.ts",
+      "bytes": 14800,
+      "sha256": "aeb2cd1ec4f8d5dd538bc9abf03306d5a8a48b40cf78bc64f1adce9961985d48"
+    },
+    {
+      "path": "artifacts/evidence/lab5-cloud/ep7-offline/ci-browser-failure.txt",
+      "bytes": 5570,
+      "sha256": "1d9db349d37f566be3c9a3c3499472f3019d10a69ff446cbf66c3410b53209f8"
+    }
+  ],
+  "initial_red": "3 actual assertion failures before implementation; no separately committed initial scaffold",
+  "local_result": "29 offline tests passed",
+  "live_ep7": "NOT_RUN",
+  "actor": "Member B / Datakung assisted by Codex",
+  "evidence_text_note": "Retained console text uses LF; trailing whitespace in the hosted failure excerpt is trimmed. Assertion/result text is unchanged.",
+  "original_red_sha256": "04dbe4ff1df8e4dffc3e984ce287e51428c139464448d347e52bfbca793846d7",
+  "hosted_initial_attempt": {
+    "run": "https://github.com/auto4496/studytrack/actions/runs/43182692859",
+    "head": "ab49347f2dc6c3dc971e3b4918ff99bc3abc934b",
+    "browser": "37 passed / 1 initial-form timeout",
+    "docker": "SKIPPED after browser failure",
+    "correction": "Wait for initial detail form before intercepting recovery GET; assertions unchanged; fresh hosted run required."
+  }
+}
