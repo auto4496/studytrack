@@ -1,6 +1,6 @@
 # UI wording specification and verification
 
-12 November 2026. Owner A / auto4496; reviewer B / Datakung. The user approved both surveyed wording lists before implementation. Base: accepted staging `86b0b3e222b364a7ad4e2ea2fae20ed7148073b2`. This is a UI copy update; implementation review and release remain pending.
+12 November 2026. [Issue #39](https://github.com/auto4496/studytrack/issues/39). Owner A / auto4496; reviewer B / Datakung. The user approved both surveyed wording lists before implementation. Base: accepted staging `86b0b3e222b364a7ad4e2ea2fae20ed7148073b2`. This is a UI copy update; independent review and release remain pending.
 
 ## Approved wording
 
@@ -39,4 +39,18 @@ Contextual variants of Template navigation, empty states and helper text use the
 
 ## Execution
 
-Implementation and actual result/source links will be recorded after execution. No PASS is claimed by this specification checkpoint. Current UI images will belong to this increment; older reports/screenshots retain their original version and provenance.
+Specification checkpoint: `c4c5f62`. Product/browser source: `bc2e93b25c1784a62e262416641d95d61bd0224d`. The build ran on the identical product files immediately before that source commit. Later changes are documentation/evidence only.
+
+| Actual check | Result |
+| --- | --- |
+| `npm run build` | Server/client TypeScript and production Vite build passed |
+| `npx playwright test --reporter=list,json` with `PLAYWRIGHT_JSON_OUTPUT_NAME=artifacts/evidence/ui-wording/browser-results.json` | 38 passed, 0 failed/skipped/flaky, no retries; 19 existing scenarios on each viewport |
+| Browser selector scope | The three specs equal accepted-base specs after only the approved wording/screenshot-path replacements and Prettier formatting; all scenario bodies and business assertions are retained |
+| Current screenshot review by A/Codex | Inspected 12 actual images: desktop/mobile goal form, template form, pending target, archived goal, inactive catalog and historical 125% progress. New labels wrap and remain readable; existing overflow checks passed |
+| Change boundary | No server, API model, schema, authentication, deployment, workflow, dependency or global Playwright configuration edits |
+
+Execution used installed Edge on Windows, the existing 1440×900 desktop and 390×844 mobile configurations, and a dedicated loopback PostgreSQL test database with synthetic fixtures. It did not use the development/demo database. Build and all 38 browser cases passed on the first run for this wording increment; no artificial red/TDD claim is made.
+
+Actual [browser report](../artifacts/evidence/ui-wording/browser-results.json), [execution record](../artifacts/evidence/ui-wording/execution.json) and [file hashes](../artifacts/evidence/ui-wording/manifest.json) belong to this source. The 30 generated screenshots remain in this increment's `member-a/`, `member-b/` and `f05/` evidence subfolders; accepted historical reports/images are unchanged. The inspected 125% screenshot is a synthetic historical-date case, not today's reading or a new UAT claim.
+
+Hosted `test-and-docker` must pass on the submitted PR; its checks/run link is recorded on GitHub after execution. API/unit tests were not rerun locally for this copy-only change; required hosted CI runs the existing regression/build/Docker checks. Datakung must independently review the copy and scope before integration. Review the changed labels and confirmations against the table above, and verify that Inactive still excludes new goals while existing goals work. This PR targets `codex/sprint-1-staging`; public wording changes require the separate reviewed main release and deployment.
