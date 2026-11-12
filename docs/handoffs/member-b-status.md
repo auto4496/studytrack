@@ -2,6 +2,8 @@
 
 ## สถานะล่าสุด 12 พฤศจิกายน 2026: เตรียม EP7 pipeline ให้ A รีวิว
 
+ส่ง [PR41](https://github.com/auto4496/studytrack/pull/41) เข้า `codex/sprint-1-staging` และขอAรีวิวแล้ว เชื่อมDevelopmentกับ [Issue22](https://github.com/auto4496/studytrack/issues/22) จริงและตรวจทั้งPR.closingIssuesReferences / Issue.closedByPullRequestsReferencesตรงกัน IssueยังOPEN ผลทดสอบในเครื่อง29ผ่าน; ตรวจworkflow/shellและ13manifest hashesผ่าน ให้ตรวจhostedCIของheadล่าสุดจากหน้าPRก่อนAรับงาน ไม่มีการmergePRของตนเอง
+
 A อนุมัติ exact741a6a4 และ merge [PR38](https://github.com/auto4496/studytrack/pull/38) เข้า protected staging86b0b3e แล้ว B เทียบ tree ทั้งชุดตรง66a70afd8140e67d9516ea16ffb62de13f3f3c91; mainยัง5c04cd4 เริ่มงาน #22 จาก accepted staging บน branch `codex/lab5-ep7-pipeline` ตาม interface ที่อนุมัติในPR34 และเขียน [contract/test plan](../labs/lab-05/ep7-release-contract.md) ก่อน implementation รอบนี้
 
 เพิ่ม workflow main -> CI -> runtime/tools full-SHA images -> keyless WIF -> digest -> ตรวจทรัพยากรเดิม -> migration-only -> revisionไม่รับtraffic -> ตรวจReady/digest -> traffic100%ตรงrevision -> DB-health/UI smoke และsummary พร้อมทางrollbackใช้runtimeเก่าโดยไม่migration/seed สคริปต์ไม่สร้างCloud/IAM/SQL/secretsและไม่อ่านsecret payload เพิ่มOCI revision labelของtoolsและให้CIbuildทั้งสองtarget รายละเอียดการใช้/หลักฐานใน [EP7 runbook](../labs/lab-05/ep7-release.md) และ [verification](../labs/lab-05/ep7-verification.md)
