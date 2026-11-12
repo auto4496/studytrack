@@ -1,0 +1,25 @@
+From f6330b82a325c119e23d0704565dbdf223377d0e Mon Sep 17 00:00:00 2001
+From: Datakung <datatpitchai@gmail.com>
+Date: Tue, 10 Nov 2026 15:17:00 +0700
+Subject: [PATCH] test: prove EP6 merge gate with intentional assertion failure
+
+---
+ server/tests/unit/entry-rules.test.ts | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/server/tests/unit/entry-rules.test.ts b/server/tests/unit/entry-rules.test.ts
+index 2256028..03f4379 100644
+--- a/server/tests/unit/entry-rules.test.ts
++++ b/server/tests/unit/entry-rules.test.ts
+@@ -8,7 +8,7 @@ import { todayBangkok } from "../../src/clock.js";
+ 
+ describe("F-04 daily rules", () => {
+   it.each([
+-    [45, 60, 75, false],
++    [45, 60, 74, false],
+     [75, 60, 125, true],
+     [60, 60, 100, true],
+     [1, 32, 3.13, false],
+-- 
+2.51.2.windows.1
+

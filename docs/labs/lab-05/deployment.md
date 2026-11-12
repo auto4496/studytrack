@@ -1,5 +1,15 @@
 # StudyTrack deployment
 
+## Current checkpoint - 12 November 2026
+
+Latest release preparation: A accepted combined EP7/wording PR41 head313b4fb into staging845bfee; B verified identical full trees and the accepted combined CI43186936178. [Sync PR44](https://github.com/auto4496/studytrack/pull/44) reconciles the missing main history through a dedicated reviewed branch and adds only four handoff documents. [Draft release PR43](https://github.com/auto4496/studytrack/pull/43) waits for that acceptance before its separate main review. Main remains5c04cd4; no live EP7 exchange/deployment has been performed. [Release readiness](ep7-release-readiness.md) records the exact ancestry/tree checks, superseded unmerged PR42, actual GitHub preflight, next steps and EP6 closure checkpoint. PR40 is already included in release A; the later visible-change release B needs a different agreed change and an EP8 baseline captured before it. Earlier paragraphs below preserve their writing-time states.
+
+Later checkpoint: A approved PR38 exact741a6a4 and merged its EP6 finalization into protected staging86b0b3e. B verified complete tree equality66a70afd8140e67d9516ea16ffb62de13f3f3c91; main remains5c04cd4. B is preparing the [EP7 update-only workflow/release script](ep7-release.md), with [contract](ep7-release-contract.md) and [offline verification](ep7-verification.md), for A review. Combine EP6's accepted documentation with the first separately reviewed EP7 main release, then verify the accepted tree before closing Issue21. This code increment is not a live cloud release; Issue22 stays open through both real pipeline releases and evidence.
+
+The following paragraph is the earlier pre-PR38 acceptance checkpoint.
+
+EP5 documentation release [PR #30](https://github.com/auto4496/studytrack/pull/30) is merged into main5c04cd4 and #20 is closed. EP6's required main/staging gate, normal failing PR36 refusal/cleanup, legitimate protected PR37 staging merge, human-operated GCP scoped-policy/zero-key readbacks and complete persisted WIF condition/mappings now have retained evidence. All requested image types are collected; clipped values/controls are corroborated by real API/CLI evidence. See [EP6 execution evidence](ep6-evidence.md) and [execution record](ep6-record.json). Finalization is ready for A review and the reviewed main release; keep Issue21 open until those acceptance steps finish. No actual keyless credential exchange or new cloud deployment is established; those belong to EP7. The dated EP5 writing-time checkpoints below retain their evidence provenance; the later PR30/#20 record establishes acceptance. No documentation merge establishes a new running application revision.
+
 8 November 2026. Issue #20. B prepares the bootstrap and A reviews it through staging and a main release. This document records planned infrastructure and actual evidence separately. [First-cloud contract](cloud-contract.md) defines acceptance.
 
 ## Confirmed setup
@@ -44,6 +54,8 @@ gcloud run jobs logs read studytrack-migrate \
 ```
 
 Files for the later episodes also need explicit acceptance. `deploy/release.sh` and `.github/workflows/deploy.yml` are tracked in #22 with the reviewed identity/gate setup in #21. The cloud restart/redeploy proof is #23 and the evidence PDF is #24. A teardown script/resource cleanup belongs to the post-grading lifecycle after the instructor confirms service availability is no longer required. Recheck the next episode's complete prerequisites before starting it.
+
+EP8 preparation,9November: A has drafted the [shared cloud persistence test plan](persistence-test-plan.md) and [unexecuted record template](persistence-record.template.json) for B review. They define the before/restart/redeploy comparisons and concrete A/B contributions without changing the issue owner. Execution awaits the reviewed EP7 workflow and exact operation plan. No cloud restart/redeploy result is established by these preparation files.
 
 ## Stack and reference adaptations
 

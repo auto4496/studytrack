@@ -1,0 +1,165 @@
+{
+  "planVersion": "0.1",
+  "status": "READY_FOR_FINAL_PEER_REVIEW",
+  "issue": "https://github.com/auto4496/studytrack/issues/21",
+  "requirements": [
+    "R-05",
+    "R-06",
+    "C-02"
+  ],
+  "runId": "2026-11-10-c02",
+  "peerReviewedPlanCommit": "80de8df05f7d535e777c971805ac2f6c42eff7bb",
+  "gcpOperator": "B-side human operator; commands/results supplied through user conversation",
+  "githubAdminOperator": "A / auto4496",
+  "githubReadbackAndProbeOperator": "B / Datakung tooling",
+  "sourceStaging": "f21e561a32f4414b72c38abb9cf197e1ac46fef8",
+  "identity": {
+    "consoleEvidence": "CAPTURED: provider upper details/mappings/subject-tail and GitHub settings images; clipped values/controls corroborated by complete persisted CLI/API readbacks",
+    "actualExchange": "NOT_RUN",
+    "scopedPolicyReadback": "MATCH: project Run Developer, repository Writer, actAs on runner/migrator, exact repo-scoped WIF member; user-managed keys=[]; human-provided output12November",
+    "observationsFile": "gcp-operator-observations.json",
+    "status": "CONFIGURED_OPERATOR_READBACK_MATCHES_CONTRACT",
+    "finalizationEvidenceRoot": "artifacts/evidence/lab5-cloud/ep6/2026-11-12-finalization",
+    "providerDetailsEvidence": "artifacts/evidence/lab5-cloud/ep6/2026-11-12-finalization/provider-details-redacted.pdf",
+    "providerAttributesEvidence": "artifacts/evidence/lab5-cloud/ep6/2026-11-12-finalization/provider-attributes-visible.png",
+    "currentSavedConditionVerification": "MATCH: latest human-operated persisted provider describe has all five approved guards and both mappings; no IAM change required",
+    "completeSavedProviderReadback": "artifacts/evidence/lab5-cloud/ep6/2026-11-12-finalization/operator-persisted-provider-readback.yaml",
+    "latestStateFields": "state/disabled requested but absent in latest pasted output; Enabled provider screenshot and dated earlier state retained; no new state inferred"
+  },
+  "environment": {
+    "variableCount": 4,
+    "branch": "main",
+    "branchType": "branch",
+    "name": "demo",
+    "status": "VERIFIED_READBACK",
+    "screenshotEvidence": {
+      "limitation": "demo name identified by environment ID/API; WIF values truncated in frame",
+      "page": 1,
+      "status": "CAPTURED_WITH_API_CORROBORATION",
+      "artifact": "github-settings-redacted.pdf"
+    }
+  },
+  "gate": {
+    "requiredCheck": "test-and-docker",
+    "status": "VERIFIED_READBACK",
+    "branches": [
+      "main",
+      "codex/sprint-1-staging"
+    ],
+    "strict": true,
+    "appId": 15368,
+    "requiredApprovals": 1,
+    "bypassActorCount": 0,
+    "rulesetId": 26925123,
+    "screenshotEvidence": {
+      "limitation": "lower approval/check controls not in frame; confirmed by existing rule API and Required failed-check proof",
+      "page": 2,
+      "status": "UPPER_SETTINGS_CAPTURED_WITH_API_C02_CORROBORATION",
+      "artifact": "github-settings-redacted.pdf"
+    }
+  },
+  "failingPrProof": {
+    "hostedTests": {
+      "passed": 116,
+      "failed": 1
+    },
+    "approval": "https://github.com/auto4496/studytrack/pull/36#pullrequestreview-5838791656",
+    "status": "PASS",
+    "commit": "f6330b82a325c119e23d0704565dbdf223377d0e",
+    "pr": 36,
+    "hostedRun": 42781653763,
+    "localProbe": {
+      "passed": 18,
+      "failed": 1
+    },
+    "postApproval": "APPROVED + BLOCKED + required FAILURE",
+    "localBaseline": {
+      "passed": 19,
+      "failed": 0
+    },
+    "screenshot": "pr36-approved-required-failure-blocked.png",
+    "baseMain": "5c04cd4bf7a7a28ff5c429f3770efc42da6bd7e0",
+    "assertion": {
+      "expected": 74,
+      "received": 75
+    }
+  },
+  "probeCleanup": {
+    "remoteBranch": "ABSENT",
+    "merged": false,
+    "closedAtUtc": "2026-11-10T08:30:58Z",
+    "mainUnchanged": "5c04cd4bf7a7a28ff5c429f3770efc42da6bd7e0",
+    "status": "PASS",
+    "localBranch": "ABSENT",
+    "historyRetained": true
+  },
+  "normalProtectedPr": {
+    "observations": {
+      "readbackDateBangkok": "2026-11-12",
+      "pr": 37,
+      "reviewedHead": "69e117f81eb7dc67a92925fc5fff329ef4ec041d",
+      "approval": "https://github.com/auto4496/studytrack/pull/37#pullrequestreview-5843891205",
+      "requiredCi": 42784299461,
+      "conclusion": "SUCCESS",
+      "mergedBy": "auto4496",
+      "mergedAtUtc": "2026-11-10T14:54:19Z",
+      "mergeCommit": "6274b17891e304b3ba315c2ed033213837f78d1d",
+      "verifiedTree": "a839838cf6d306ba5288649ae67196781a53fa4f",
+      "mainUnchanged": "5c04cd4bf7a7a28ff5c429f3770efc42da6bd7e0",
+      "mainRelease": "PENDING"
+    },
+    "status": "STAGING_PASS_MAIN_RELEASE_PENDING"
+  },
+  "actualKeylessExchangeReference": null,
+  "cases": [
+    {
+      "id": "EP6-G01",
+      "status": "VERIFIED_READBACK"
+    },
+    {
+      "id": "EP6-G02",
+      "status": "PASS_OPERATOR_SCOPED_POLICY_READBACK; zero keys; screenshots collected"
+    },
+    {
+      "id": "EP6-G03",
+      "status": "PASS_OPERATOR_PERSISTED_READBACK_AND_SCREENSHOTS; five guards/two mappings match; real exchange belongs to EP7"
+    },
+    {
+      "id": "EP6-G04",
+      "status": "VERIFIED_READBACK"
+    },
+    {
+      "id": "EP6-G05",
+      "status": "VERIFIED_READBACK"
+    },
+    {
+      "id": "EP6-G06",
+      "status": "PASS"
+    },
+    {
+      "id": "EP6-G07",
+      "status": "PASS: probe cleanup/main unchanged and legitimate protected staging PR37 accepted; main release pending under G08"
+    },
+    {
+      "id": "EP6-G08",
+      "status": "READY_FOR_FINAL_PEER_REVIEW; PR37 increment accepted; finalization acceptance/main release pending"
+    }
+  ],
+  "evidenceRoot": "artifacts/evidence/lab5-cloud/ep6/2026-11-10-c02",
+  "evidenceManifest": "sha256.json",
+  "limitations": [
+    "GCP observations supplied by human operator; agent independently authenticated only to GitHub",
+    "Cropped screenshot fields/controls corroborated by full persisted CLI/API readbacks; no unseen UI or new state value claimed",
+    "Protected staging PR37 accepted; finalization peer acceptance and reviewed main release pending",
+    "Actual credential exchange/deployment belongs to EP7 and is not required to be invented for EP6 configuration acceptance"
+  ],
+  "peerAcceptance": {
+    "status": "PARTIAL_EVIDENCE_INCREMENT_ACCEPTED",
+    "pr": 37,
+    "exactHead": "69e117f81eb7dc67a92925fc5fff329ef4ec041d",
+    "reviewId": 5843891205,
+    "remaining": "Finalization evidence peer acceptance and reviewed main release; observation collection complete"
+  },
+  "finalizationRunId": "2026-11-12-finalization",
+  "finalizationSourceStaging": "6274b17891e304b3ba315c2ed033213837f78d1d"
+}

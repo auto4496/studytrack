@@ -1,5 +1,5 @@
 import { Prisma, type PrismaClient } from "@prisma/client";
-import { dateString, todayBangkok } from "../../clock.js";
+import { addDays, dateString, todayBangkok } from "../../clock.js";
 import type { Dependencies } from "../../auth/context.js";
 import { ApiError } from "../../errors.js";
 import { parseUuid } from "../../validation.js";
@@ -9,7 +9,9 @@ type GoalWithTargets = Prisma.GoalGetPayload<{ include: { targets: true } }>;
 
 export function goalDTO(goal: GoalWithTargets, today: string) {
   const startDate = dateString(goal.startDate);
-  const effectiveOn = today < startDate ? startDate : today;
+  const lastDate = goal.endDate ? dateString(goal.endDate) : null;
+  const displayDate = lastDate && lastDate < today ? lastDate : today;
+  const effectiveOn = displayDate < startDate ? startDate : displayDate;
   const target = goal.targets
     .filter((v) => dateString(v.effectiveFrom) <= effectiveOn)
     .sort((a, b) => b.effectiveFrom.getTime() - a.effectiveFrom.getTime())[0];
@@ -27,6 +29,20 @@ export function goalDTO(goal: GoalWithTargets, today: string) {
     status: goal.status,
     targetMinutes: target.targetMinutes,
     targetEffectiveFrom: dateString(target.effectiveFrom),
+    pendingTarget:
+      goal.status === "ACTIVE" && startDate <= today
+        ? (() => {
+            const pending = goal.targets.find(
+              (v) => dateString(v.effectiveFrom) === addDays(today, 1),
+            );
+            return pending
+              ? {
+                  effectiveFrom: dateString(pending.effectiveFrom),
+                  targetMinutes: pending.targetMinutes,
+                }
+              : null;
+          })()
+        : null,
     createdAt: goal.createdAt.toISOString(),
   };
 }

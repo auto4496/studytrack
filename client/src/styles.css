@@ -1029,3 +1029,27 @@ dd {
     transition: none !important;
   }
 }
+.lifecycle-panel,
+.template-lifecycle {
+  margin-block: 1rem;
+  overflow-wrap: anywhere;
+}
+.lifecycle-panel form,
+.template-lifecycle form {
+  display: grid;
+  gap: 0.65rem;
+  margin-block: 0.8rem;
+}
+.lifecycle-panel input,
+.template-lifecycle input,
+.template-lifecycle textarea {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+.lifecycle-panel .button,
+.template-lifecycle .button {
+  margin: 0.3rem 0.3rem 0.3rem 0;
+  white-space: normal;
+  max-width: 100%;
+}

@@ -1,0 +1,52 @@
+Source: result section copied from the human operator's Cloud Shell output pasted in this conversation on 12 November 2026. This is not an independently authenticated GCP read by the agent. The command filtered role bindings to serviceAccount:studytrack-deployer@studytrack-cpe334.iam.gserviceaccount.com; condition fields were requested and absent in the returned grants.
+
+Project permissions
+[
+  {
+    "bindings": {
+      "role": "roles/run.developer"
+    }
+  }
+]
+
+Artifact Registry permissions
+[
+  {
+    "bindings": {
+      "role": "roles/artifactregistry.writer"
+    }
+  }
+]
+
+Service account: studytrack-runner
+[
+  {
+    "bindings": {
+      "role": "roles/iam.serviceAccountUser"
+    }
+  }
+]
+
+Service account: studytrack-migrator
+[
+  {
+    "bindings": {
+      "role": "roles/iam.serviceAccountUser"
+    }
+  }
+]
+
+Deployer WIF binding
+{
+  "bindings": [
+    {
+      "members": [
+        "principalSet://iam.googleapis.com/projects/981693883236/locations/global/workloadIdentityPools/github-actions/attribute.repository_id/1443962980"
+      ],
+      "role": "roles/iam.workloadIdentityUser"
+    }
+  ]
+}
+
+User-managed keys
+[]

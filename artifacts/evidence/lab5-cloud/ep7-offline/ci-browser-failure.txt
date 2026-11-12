@@ -1,0 +1,36 @@
+test-and-docker	Run desktop and mobile browser tests	2026-11-12T08:28:42.5492651Z   1) [mobile] › e2e/lifecycle.spec.ts:250:1 › TEST-F05-16 uncertain committed PATCH blocks replay until authoritative read succeeds
+test-and-docker	Run desktop and mobile browser tests	2026-11-12T08:28:42.5493675Z
+test-and-docker	Run desktop and mobile browser tests	2026-11-12T08:28:42.5493967Z     Test timeout of 30000ms exceeded.
+test-and-docker	Run desktop and mobile browser tests	2026-11-12T08:28:42.5494308Z
+test-and-docker	Run desktop and mobile browser tests	2026-11-12T08:28:42.5494704Z     Error: locator.fill: Test timeout of 30000ms exceeded.
+test-and-docker	Run desktop and mobile browser tests	2026-11-12T08:28:42.5495321Z     Call log:
+test-and-docker	Run desktop and mobile browser tests	2026-11-12T08:28:42.5496500Z       - waiting for getByRole('region', { name: 'จัดการเป้าหมาย' }).getByLabel('เป้าหมายรายวันใหม่ (นาที)')
+test-and-docker	Run desktop and mobile browser tests	2026-11-12T08:28:42.5497195Z
+test-and-docker	Run desktop and mobile browser tests	2026-11-12T08:28:42.5497215Z
+test-and-docker	Run desktop and mobile browser tests	2026-11-12T08:28:42.5497517Z       264 |     await route.abort();
+test-and-docker	Run desktop and mobile browser tests	2026-11-12T08:28:42.5498000Z       265 |   });
+test-and-docker	Run desktop and mobile browser tests	2026-11-12T08:28:42.5498910Z     > 266 |   await lifecycle(page).getByLabel("เป้าหมายรายวันใหม่ (นาที)").fill("45");
+test-and-docker	Run desktop and mobile browser tests	2026-11-12T08:28:42.5499974Z           |                                                                 ^
+test-and-docker	Run desktop and mobile browser tests	2026-11-12T08:28:42.5500565Z       267 |   await lifecycle(page)
+test-and-docker	Run desktop and mobile browser tests	2026-11-12T08:28:42.5501400Z       268 |     .getByRole("button", { name: "บันทึกเป้าหมายใหม่" })
+test-and-docker	Run desktop and mobile browser tests	2026-11-12T08:28:42.5501994Z       269 |     .click();
+test-and-docker	Run desktop and mobile browser tests	2026-11-12T08:28:42.5503257Z         at /home/runner/work/studytrack/studytrack/e2e/lifecycle.spec.ts:266:65
+test-and-docker	Run desktop and mobile browser tests	2026-11-12T08:28:42.5503928Z
+test-and-docker	Run desktop and mobile browser tests	2026-11-12T08:28:42.5504801Z     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+test-and-docker	Run desktop and mobile browser tests	2026-11-12T08:28:42.5506250Z     test-results/lifecycle-TEST-F05-16-unce-aeb3f-authoritative-read-succeeds-mobile/test-failed-1.png
+test-and-docker	Run desktop and mobile browser tests	2026-11-12T08:28:42.5507773Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+test-and-docker	Run desktop and mobile browser tests	2026-11-12T08:28:42.5508265Z
+test-and-docker	Run desktop and mobile browser tests	2026-11-12T08:28:42.5509057Z     Error Context: test-results/lifecycle-TEST-F05-16-unce-aeb3f-authoritative-read-succeeds-mobile/error-context.md
+test-and-docker	Run desktop and mobile browser tests	2026-11-12T08:28:42.5510111Z
+test-and-docker	Run desktop and mobile browser tests	2026-11-12T08:28:42.5510869Z     attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+test-and-docker	Run desktop and mobile browser tests	2026-11-12T08:28:42.5512522Z     test-results/lifecycle-TEST-F05-16-unce-aeb3f-authoritative-read-succeeds-mobile/trace.zip
+test-and-docker	Run desktop and mobile browser tests	2026-11-12T08:28:42.5513417Z     Usage:
+test-and-docker	Run desktop and mobile browser tests	2026-11-12T08:28:42.5513603Z
+test-and-docker	Run desktop and mobile browser tests	2026-11-12T08:28:42.5514495Z         npx playwright show-trace test-results/lifecycle-TEST-F05-16-unce-aeb3f-authoritative-read-succeeds-mobile/trace.zip
+test-and-docker	Run desktop and mobile browser tests	2026-11-12T08:28:42.5515357Z
+test-and-docker	Run desktop and mobile browser tests	2026-11-12T08:28:42.5516086Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+test-and-docker	Run desktop and mobile browser tests	2026-11-12T08:28:42.5516632Z
+test-and-docker	Run desktop and mobile browser tests	2026-11-12T08:28:42.5516795Z   1 failed
+test-and-docker	Run desktop and mobile browser tests	2026-11-12T08:28:42.5518046Z     [mobile] › e2e/lifecycle.spec.ts:250:1 › TEST-F05-16 uncertain committed PATCH blocks replay until authoritative read succeeds
+test-and-docker	Run desktop and mobile browser tests	2026-11-12T08:28:42.5519077Z   37 passed (1.9m)
+test-and-docker	Run desktop and mobile browser tests	2026-11-12T08:28:42.5907885Z ##[error]Process completed with exit code 1.

@@ -15,12 +15,15 @@ export function GoalList() {
   const [result, setResult] = useState<Collection<Goal> | null>(null);
   const [error, setError] = useState("");
   const [page, setPage] = useState(1);
+  const [status, setStatus] = useState("");
   const [retry, setRetry] = useState(0);
   useEffect(() => {
     let active = true;
     setError("");
     setResult(null);
-    api<Collection<Goal>>(`/goals?page=${page}&pageSize=12`)
+    api<Collection<Goal>>(
+      `/goals?page=${page}&pageSize=12${status ? `&status=${status}` : ""}`,
+    )
       .then((data) => {
         if (active) setResult(data);
       })
@@ -30,7 +33,7 @@ export function GoalList() {
     return () => {
       active = false;
     };
-  }, [page, retry]);
+  }, [page, retry, status]);
   return (
     <>
       <section className="page-heading">
@@ -68,6 +71,21 @@ export function GoalList() {
         <h2>เป้าหมายของฉัน</h2>
         {result && <span>{result.meta.total} เป้าหมาย</span>}
       </div>
+      <label className="catalog-filter">
+        สถานะเป้าหมาย{" "}
+        <select
+          aria-label="สถานะเป้าหมาย"
+          value={status}
+          onChange={(e) => {
+            setStatus(e.target.value);
+            setPage(1);
+          }}
+        >
+          <option value="">ทั้งหมด</option>
+          <option value="ACTIVE">Active</option>
+          <option value="ARCHIVED">Archived</option>
+        </select>
+      </label>
       {error ? (
         <ErrorNotice message={error} retry={() => setRetry((n) => n + 1)} />
       ) : !result ? (
@@ -90,10 +108,16 @@ export function GoalList() {
                 <span
                   className={`status ${goal.status === "ARCHIVED" ? "muted" : ""}`}
                 >
-                  {goal.status === "ACTIVE" ? "กำลังทำ" : "สิ้นสุดแล้ว"}
+                  {goal.status === "ACTIVE" ? "Active" : "Archived"}
                 </span>
               </div>
               <h3>{goal.templateTitle}</h3>
+              {goal.pendingTarget && (
+                <p>
+                  ตั้งแต่ {displayDate(goal.pendingTarget.effectiveFrom)}:{" "}
+                  {goal.pendingTarget.targetMinutes} นาที
+                </p>
+              )}
               <div className="goal-number">
                 {goal.targetMinutes}
                 <span>นาที / วัน</span>

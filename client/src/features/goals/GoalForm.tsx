@@ -97,7 +97,7 @@ export function GoalForm() {
         <Loading />
       ) : templates.length === 0 ? (
         <Empty title="ยังไม่มีกิจกรรมให้เลือก">
-          <p>เมื่อผู้ดูแลเพิ่มแม่แบบกิจกรรม คุณจะตั้งเป้าหมายได้ที่นี่</p>
+          <p>เมื่อ Program Manager เพิ่ม Template คุณจะตั้งเป้าหมายได้ที่นี่</p>
           <Link className="button secondary" to="/goals">
             กลับไปยังเป้าหมาย
           </Link>
@@ -116,7 +116,7 @@ export function GoalForm() {
               </>
             )}
             <div className="field">
-              <label htmlFor="templateId">กิจกรรมที่อยากทำ</label>
+              <label htmlFor="templateId">กิจกรรมการอ่าน</label>
               <select
                 id="templateId"
                 value={templateId}
@@ -140,7 +140,7 @@ export function GoalForm() {
               )}
             </div>
             <div className="field">
-              <label htmlFor="dailyTargetMinutes">เป้าหมายต่อวัน (นาที)</label>
+              <label htmlFor="dailyTargetMinutes">เป้าหมายรายวัน (นาที)</label>
               <input
                 id="dailyTargetMinutes"
                 type="number"
@@ -198,7 +198,7 @@ export function GoalForm() {
               เลือกเวลาที่เข้ากับชีวิตประจำวัน
               ความสม่ำเสมอสำคัญกว่าการเริ่มต้นด้วยเป้าหมายที่ใหญ่เกินไป
             </p>
-            <small>หนึ่งกิจกรรมมีเป้าหมายที่กำลังทำได้หนึ่งรายการ</small>
+            <small>แต่ละกิจกรรมมีเป้าหมาย Active ได้หนึ่งรายการ</small>
           </aside>
         </div>
       )}

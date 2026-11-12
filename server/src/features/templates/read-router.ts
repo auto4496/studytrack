@@ -9,12 +9,43 @@ import {
 } from "../../auth/middleware.js";
 import { ApiError } from "../../errors.js";
 import { pagination, parseUuid } from "../../validation.js";
-import { templateInput } from "./rules.js";
+import { templateInput, templateMetadataInput } from "./rules.js";
+import { updateTemplate } from "./lifecycle.js";
 
 // F-02 extends the F-03 read adapter; both features share one catalog and DTO.
 export function templateReadRouter(deps: Dependencies) {
   const router = Router();
   router.use(requireUser(deps));
+  router.patch(
+    "/:templateId",
+    requireRole("PROGRAM_MANAGER"),
+    requireCsrf(deps),
+    requireJson,
+    async (req, res) => {
+      z.strictObject({}).parse(req.query);
+      const input = templateMetadataInput.parse(req.body);
+      res.json({
+        data: templateDTO(
+          await updateTemplate(deps, parseUuid(req.params.templateId), input),
+        ),
+      });
+    },
+  );
+  router.post(
+    "/:templateId/deactivate",
+    requireRole("PROGRAM_MANAGER"),
+    requireCsrf(deps),
+    requireJson,
+    async (req, res) => {
+      z.strictObject({}).parse(req.query);
+      z.strictObject({}).parse(req.body);
+      res.json({
+        data: templateDTO(
+          await updateTemplate(deps, parseUuid(req.params.templateId), null),
+        ),
+      });
+    },
+  );
   router.post(
     "/",
     requireRole("PROGRAM_MANAGER"),

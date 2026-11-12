@@ -11,6 +11,7 @@ import { todayBangkok } from "../../clock.js";
 import { pagination, parseUuid } from "../../validation.js";
 import { createGoal, goalDTO, requireOwnedGoal } from "./service.js";
 import { entriesRouter } from "../entries/router.js";
+import { changeTarget, stopGoal } from "./lifecycle.js";
 
 const createInput = z.strictObject({
   templateId: z.string(),
@@ -21,6 +22,41 @@ const createInput = z.strictObject({
 export function goalsRouter(deps: Dependencies) {
   const router = Router();
   router.use(requireUser(deps), requireRole("PARTICIPANT"));
+  router.patch(
+    "/:goalId/target",
+    requireCsrf(deps),
+    requireJson,
+    async (req, res) => {
+      z.strictObject({}).parse(req.query);
+      const input = z
+        .strictObject({ dailyTargetMinutes: z.number().int() })
+        .parse(req.body);
+      res.json({
+        data: await changeTarget(
+          deps,
+          req.principal!.user.id,
+          parseUuid(req.params.goalId),
+          input.dailyTargetMinutes,
+        ),
+      });
+    },
+  );
+  router.post(
+    "/:goalId/stop",
+    requireCsrf(deps),
+    requireJson,
+    async (req, res) => {
+      z.strictObject({}).parse(req.query);
+      z.strictObject({}).parse(req.body);
+      res.json({
+        data: await stopGoal(
+          deps,
+          req.principal!.user.id,
+          parseUuid(req.params.goalId),
+        ),
+      });
+    },
+  );
   router.post("/", requireCsrf(deps), requireJson, async (req, res) => {
     const input = createInput.parse(req.body);
     input.templateId = parseUuid(input.templateId);

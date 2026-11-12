@@ -1,0 +1,54 @@
+{
+  "source": "Human-operated Cloud Shell readback pasted in conversation; agent compared with approved plan",
+  "dateBangkok": "2026-11-12",
+  "subject": "serviceAccount:studytrack-deployer@studytrack-cpe334.iam.gserviceaccount.com",
+  "project": "studytrack-cpe334",
+  "region": "asia-southeast1",
+  "scopeChecks": [
+    {
+      "scope": "project studytrack-cpe334",
+      "conditionsReturned": false,
+      "expected": "roles/run.developer",
+      "observed": [
+        "roles/run.developer"
+      ]
+    },
+    {
+      "scope": "repository studytrack in asia-southeast1",
+      "conditionsReturned": false,
+      "expected": "roles/artifactregistry.writer",
+      "observed": [
+        "roles/artifactregistry.writer"
+      ]
+    },
+    {
+      "scope": "serviceAccount studytrack-runner",
+      "conditionsReturned": false,
+      "expected": "roles/iam.serviceAccountUser",
+      "observed": [
+        "roles/iam.serviceAccountUser"
+      ]
+    },
+    {
+      "scope": "serviceAccount studytrack-migrator",
+      "conditionsReturned": false,
+      "expected": "roles/iam.serviceAccountUser",
+      "observed": [
+        "roles/iam.serviceAccountUser"
+      ]
+    }
+  ],
+  "deployerPolicy": {
+    "role": "roles/iam.workloadIdentityUser",
+    "members": [
+      "principalSet://iam.googleapis.com/projects/981693883236/locations/global/workloadIdentityPools/github-actions/attribute.repository_id/1443962980"
+    ]
+  },
+  "userManagedKeys": [],
+  "result": "MATCHES_REVIEWED_SCOPES",
+  "limitation": "These specific filtered bindings do not inventory all inherited or organization-level permissions; no token exchange or deployment was performed",
+  "remainingEvidence": [],
+  "probeScreenshot": "Already retained in the accepted 2026-11-10-c02 evidence",
+  "actualCredentialExchange": "NOT_RUN (EP7)",
+  "remainingAcceptance": "Final peer acceptance and reviewed main release; actual EP7 exchange remains separate"
+}

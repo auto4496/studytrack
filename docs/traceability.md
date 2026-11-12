@@ -1,5 +1,9 @@
 # Requirements → features → sprint → verification — B v0.2
 
+## F-05 candidate update - 9 November 2026
+
+FR09/FR10 and the F05 portions of BR03/05/06/07/08/10/11 are now implemented and locally verified under the B-approved contract PR32. See [AC-to-actual-test mapping and source/results](verification/f05.md): 152 API/unit tests and 38 browser cases pass after the retained browser-harness correction; build and real local process restart pass. **Implementation peer acceptance, integration/release and cloud deployment remain pending.** F06 corrections/history/streak and EP8 cloud persistence are not completed by this candidate. The dated B ledger below is historical and its PLANNED rows are superseded only for the F05 scope mapped in that verification record.
+
 3 November 2026. Source [SRS](srs.md) from A PR3; all19 FR/13 BR/8 NFR mapped below without inventing new IDs. A local artifacts are source evidence only, not B-run or CI PASS. Future contracts remain planned; no silent scope deletion. B F02/F04 stable AC/test IDs in their contracts; actual names/results/source commits recorded in [B verification](verification/member-b.md); final local source0b51571:115 unit/API +24 browser checks pass; no accepted release/CI/cloud implied
 
 ## Functional baseline mapping

@@ -216,7 +216,7 @@ export function DailyActivity({ goal, onSessionExpired }: GoalActivityProps) {
         </div>
       )}
       {loading ? (
-        <Loading>กำลังอ่านความคืบหน้า…</Loading>
+        <Loading>กำลังโหลดผลการอ่าน…</Loading>
       ) : (
         progress && (
           <>
@@ -234,10 +234,10 @@ export function DailyActivity({ goal, onSessionExpired }: GoalActivityProps) {
                 </strong>
                 <span className="pill">
                   {progress.achieved
-                    ? "บรรลุเป้าหมายแล้ว"
+                    ? "อ่านครบเป้าหมายแล้ว"
                     : saved
-                      ? "เริ่มต้นได้ดีแล้ว"
-                      : "ยังไม่ได้บันทึกวันที่เลือก"}
+                      ? "ยังไม่ครบเป้าหมาย"
+                      : "ยังไม่มีบันทึกสำหรับวันที่เลือก"}
                 </span>
               </div>
             </div>
