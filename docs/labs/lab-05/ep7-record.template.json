@@ -1,0 +1,43 @@
+{
+  "status": "NOT_RUN",
+  "issue": "https://github.com/auto4496/studytrack/issues/22",
+  "release_a": {
+    "staging_pr": null,
+    "staging_review": null,
+    "main_release_pr": null,
+    "main_review": null,
+    "accepted_main_sha": null,
+    "accepted_tree": null,
+    "actions_run": null,
+    "wif_exchange_result": "NOT_RUN",
+    "runtime_digest": null,
+    "tools_digest": null,
+    "migration_execution": null,
+    "serving_revision": null,
+    "traffic_percent": null,
+    "public_origin": null,
+    "automated_smoke": "NOT_RUN",
+    "human_domain_checks": [],
+    "console_corroboration": []
+  },
+  "release_b": {
+    "visible_change_issue": null,
+    "staging_pr": null,
+    "main_release_pr": null,
+    "accepted_main_sha": null,
+    "actions_run": null,
+    "runtime_digest": null,
+    "tools_digest": null,
+    "migration_execution": null,
+    "serving_revision": null,
+    "automated_smoke": "NOT_RUN",
+    "before_after_ui_evidence": [],
+    "ep8_baseline_recorded_before_release_b": false,
+    "ep8_record": null
+  },
+  "peer_acceptance": "PENDING",
+  "limitations": [
+    "Template only; offline tests do not establish a successful cloud exchange/deployment.",
+    "Record original evidence provenance; never include tokens, passwords or secret payloads."
+  ]
+}

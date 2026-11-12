@@ -47,6 +47,7 @@ jobs:
       - name: Check deployment scripts offline
         run: |
           bash -n deploy/deploy.sh
+          bash -n deploy/release.sh
           python3 -B -m unittest discover -s deploy/tests -p 'test_*.py' -v
 
       - name: Install dependencies and generate Prisma client
@@ -59,14 +60,14 @@ jobs:
 
       - name: Migrate test database and run API and unit tests
         env:
-          TEST_DATABASE_URL: postgresql://studytrack:ep4_ci_fixture@127.0.0.1:${{ job.services.postgres.ports[5432] }}/studytrack_test
+          TEST_DATABASE_URL: postgresql://studytrack:ep4_ci_fixture@127.0.0.1:${{ job.services.postgres.ports['5432'] }}/studytrack_test
         run: |
           npm run db:test:migrate
           npm test
 
       - name: Run desktop and mobile browser tests
         env:
-          TEST_DATABASE_URL: postgresql://studytrack:ep4_ci_fixture@127.0.0.1:${{ job.services.postgres.ports[5432] }}/studytrack_test
+          TEST_DATABASE_URL: postgresql://studytrack:ep4_ci_fixture@127.0.0.1:${{ job.services.postgres.ports['5432'] }}/studytrack_test
         run: |
           npx playwright install --with-deps chromium
           npm run test:e2e
@@ -74,5 +75,10 @@ jobs:
       - name: Build server and client
         run: npm run build
 
-      - name: Build production Docker image
-        run: docker build --target runtime --build-arg VCS_REF="$GITHUB_SHA" -t studytrack:ci .
+      - name: Build runtime and migration Docker images
+        run: |
+          docker build --target runtime --build-arg VCS_REF="$GITHUB_SHA" -t studytrack:ci .
+          docker build --target tools --build-arg VCS_REF="$GITHUB_SHA" -t studytrack-tools:ci .
+          for IMAGE in studytrack:ci studytrack-tools:ci; do
+            test "$(docker image inspect --format '{{ index .Config.Labels "org.opencontainers.image.revision" }}' "$IMAGE")" = "$GITHUB_SHA"
+          done

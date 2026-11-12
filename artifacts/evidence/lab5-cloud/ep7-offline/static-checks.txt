@@ -1,0 +1,8 @@
+actionlint v1.7.12 exit=0 (all repository workflows)
+Official Windows amd64 zip SHA256=6e7241b51e6817ea6a047693d8e6fed13b31819c9a0dd6c5a726e1592d22f6e9; matched upstream checksums.
+bash syntax exit=0
+git diff --check exit=0
+git check-ignore=gha-creds-example.json
+User reports Docker Desktop is closed; no local image build or live cloud call was attempted.
+bash -n deploy/deploy.sh exit=0
+bash -n deploy/release.sh exit=0

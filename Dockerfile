@@ -20,6 +20,10 @@ RUN npm run build
 
 # Explicit one-off migration/seed image; never used as the serving container.
 FROM build AS tools
+ARG VCS_REF=unknown
+LABEL org.opencontainers.image.title="StudyTrack migration tools" \
+      org.opencontainers.image.source="https://github.com/auto4496/studytrack" \
+      org.opencontainers.image.revision="${VCS_REF}"
 ENV NODE_ENV=production
 USER node
 CMD ["npm", "run", "db:migrate"]

@@ -1,5 +1,19 @@
 # Member B status — implementation handoff
 
+## สถานะล่าสุด 12 พฤศจิกายน 2026: เตรียม EP7 pipeline ให้ A รีวิว
+
+A อนุมัติ exact741a6a4 และ merge [PR38](https://github.com/auto4496/studytrack/pull/38) เข้า protected staging86b0b3e แล้ว B เทียบ tree ทั้งชุดตรง66a70afd8140e67d9516ea16ffb62de13f3f3c91; mainยัง5c04cd4 เริ่มงาน #22 จาก accepted staging บน branch `codex/lab5-ep7-pipeline` ตาม interface ที่อนุมัติในPR34 และเขียน [contract/test plan](../labs/lab-05/ep7-release-contract.md) ก่อน implementation รอบนี้
+
+เพิ่ม workflow main -> CI -> runtime/tools full-SHA images -> keyless WIF -> digest -> ตรวจทรัพยากรเดิม -> migration-only -> revisionไม่รับtraffic -> ตรวจReady/digest -> traffic100%ตรงrevision -> DB-health/UI smoke และsummary พร้อมทางrollbackใช้runtimeเก่าโดยไม่migration/seed สคริปต์ไม่สร้างCloud/IAM/SQL/secretsและไม่อ่านsecret payload เพิ่มOCI revision labelของtoolsและให้CIbuildทั้งสองtarget รายละเอียดการใช้/หลักฐานใน [EP7 runbook](../labs/lab-05/ep7-release.md) และ [verification](../labs/lab-05/ep7-verification.md)
+
+**ประสาน A:** ตรวจcode/contractและCIก่อนรับเข้าstaging จากนั้นBเตรียมrelease PR staging->main ให้Aรีวิวแยก โดยรวมเอกสารEP6ที่ผ่านแล้วไปกับreleaseแรกของEP7 ไม่ต้องreleaseเอกสารEP6แยกอีกหนึ่งรอบ หลังmainmergeจึงตรวจpipelineจริงและaccepted treeก่อนปิด#21 ส่วน#22ต้องเก็บrelease A และvisible-change release Bให้ครบ ประสานbaselineEP8หลังrelease Aแต่ก่อนrelease B เพื่อใช้redeployเดียวกันตรวจpersistenceได้ ส่วนrestartยังต้องตกลงoperationตามแผนของA
+
+Docker Desktopในเครื่องยังไม่ได้เปิด จึงไม่อ้างlocalimagebuild; offline testsใช้ตัวจำลองและให้hostedCIbuildจริง ไม่มีการเรียกGCP/deploy/mainmergeในรอบimplementationนี้ ค่าใน [live record template](../labs/lab-05/ep7-record.template.json) ยังNOT_RUN บอร์ดProjectยังขาดread:projectจึงไม่อ้างว่าเปลี่ยนการ์ดแล้ว ต้องตรวจDevelopment linkageของPRกับ#22ทั้งสองฝั่งก่อนส่งงาน
+
+พบ [PR40](https://github.com/auto4496/studytrack/pull/40) งานwordingของAเปิดแยกอยู่ ยังไม่ได้รีวิวในงานEP7นี้ หากจะใช้เป็นvisible-change release B ต้องให้Bรีวิวและเก็บไว้นอกrelease Aจนเก็บbaselineEP8แล้ว ถ้ารวมเข้าrelease Aให้เลือกการเปลี่ยนแปลงที่มองเห็นได้รอบถัดไปแทน ไม่ถือว่าdeployซ้ำsourceเดิมเป็นvisible-change release
+
+ส่วนถัดไปเก็บประวัติก่อน PR38 ผ่าน review/merge
+
 ## สถานะปัจจุบัน 12 พฤศจิกายน 2026: หลักฐาน EP6 ครบ พร้อม A รีวิวรอบสุดท้าย
 
 A อนุมัติ exact69e117f ใน [review5843891205](https://github.com/auto4496/studytrack/pull/37#pullrequestreview-5843891205) และ merge [PR37](https://github.com/auto4496/studytrack/pull/37) เมื่อ10พฤศจิกายน21:54:19น.ไทย เข้า protected staging6274b17891e304b3ba315c2ed033213837f78d1d หลัง CI42784299461 ผ่าน B เทียบทั้ง tree ของ reviewed head/merged staging ได้ a839838cf6d306ba5288649ae67196781a53fa4f ตรงกัน จึงมีหลักฐาน protected green path แยกจาก failing probePR36 ซึ่งปิดแบบไม่mergeและลบเฉพาะbranchทดสอบแล้ว mainยัง5c04cd4

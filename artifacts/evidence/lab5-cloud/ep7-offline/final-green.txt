@@ -1,0 +1,37 @@
+test_build_failure_stops_before_database_creation (test_bootstrap.BootstrapTests.test_build_failure_stops_before_database_creation) ... ok
+test_dry_run_makes_no_gcloud_calls (test_bootstrap.BootstrapTests.test_dry_run_makes_no_gcloud_calls) ... ok
+test_existing_user_without_secret_requires_recovery (test_bootstrap.BootstrapTests.test_existing_user_without_secret_requires_recovery) ... ok
+test_failed_public_smoke_fails_the_deployment_result (test_bootstrap.BootstrapTests.test_failed_public_smoke_fails_the_deployment_result) ... ok
+test_first_run_preserves_runtime_and_migration_boundaries (test_bootstrap.BootstrapTests.test_first_run_preserves_runtime_and_migration_boundaries) ... ok
+test_interrupted_empty_secret_requires_recovery (test_bootstrap.BootstrapTests.test_interrupted_empty_secret_requires_recovery) ... ok
+test_migration_failure_stops_before_service_update (test_bootstrap.BootstrapTests.test_migration_failure_stops_before_service_update) ... ok
+test_missing_digest_stops_before_database_creation (test_bootstrap.BootstrapTests.test_missing_digest_stops_before_database_creation) ... ok
+test_release_and_billing_preconditions_block_cloud_mutations (test_bootstrap.BootstrapTests.test_release_and_billing_preconditions_block_cloud_mutations) ... ok
+test_rerun_preserves_credentials (test_bootstrap.BootstrapTests.test_rerun_preserves_credentials) ... ok
+test_retry_after_user_creation_failure_reuses_saved_password (test_bootstrap.BootstrapTests.test_retry_after_user_creation_failure_reuses_saved_password) ... ok
+test_wrong_existing_sql_settings_are_preserved_and_rejected (test_bootstrap.BootstrapTests.test_wrong_existing_sql_settings_are_preserved_and_rejected) ... ok
+test_wrong_saved_connection_is_rejected_without_logging_value (test_bootstrap.BootstrapTests.test_wrong_saved_connection_is_rejected_without_logging_value) ... ok
+test_dirty_stale_and_non_ancestor_sources_stop_before_cloud (test_release.ReleaseTests.test_dirty_stale_and_non_ancestor_sources_stop_before_cloud) ... ok
+test_environment_export_happens_only_after_success (test_release.ReleaseTests.test_environment_export_happens_only_after_success) ... ok
+test_existing_configuration_drift_stops_before_any_write (test_release.ReleaseTests.test_existing_configuration_drift_stops_before_any_write) ... ok
+test_invalid_tag_stops_before_any_command (test_release.ReleaseTests.test_invalid_tag_stops_before_any_command) ... ok
+test_job_update_or_migration_failure_never_updates_service (test_release.ReleaseTests.test_job_update_or_migration_failure_never_updates_service) ... ok
+test_missing_or_cross_repository_digest_never_writes (test_release.ReleaseTests.test_missing_or_cross_repository_digest_never_writes) ... ok
+test_normal_migrates_tools_before_traffic (test_release.ReleaseTests.test_normal_migrates_tools_before_traffic) ... ok
+test_only_reviewed_update_operations_and_no_config_reset_flags (test_release.ReleaseTests.test_only_reviewed_update_operations_and_no_config_reset_flags) ... ok
+test_rollback_reuses_image_without_tools_or_jobs (test_release.ReleaseTests.test_rollback_reuses_image_without_tools_or_jobs) ... ok
+test_traffic_or_post_update_drift_never_reports_success (test_release.ReleaseTests.test_traffic_or_post_update_drift_never_reports_success) ... ok
+test_unready_or_wrong_digest_revision_never_switches_traffic (test_release.ReleaseTests.test_unready_or_wrong_digest_revision_never_switches_traffic) ... ok
+test_untrusted_settings_and_non_main_context_never_call_cloud (test_release.ReleaseTests.test_untrusted_settings_and_non_main_context_never_call_cloud) ... ok
+test_validate_only_never_calls_cloud (test_release.ReleaseTests.test_validate_only_never_calls_cloud) ... ok
+test_checks_health_and_ui_after_retrying_connection (test_smoke.SmokeTests.test_checks_health_and_ui_after_retrying_connection) ... ok
+test_rejects_default_page_even_if_health_passes (test_smoke.SmokeTests.test_rejects_default_page_even_if_health_passes) ... ok
+test_rejects_unhealthy_database_even_if_endpoint_answers (test_smoke.SmokeTests.test_rejects_unhealthy_database_even_if_endpoint_answers) ... ok
+
+----------------------------------------------------------------------
+Ran 29 tests in 85.543s
+
+OK
+PASS /api/health
+PASS /
+PASS /api/health

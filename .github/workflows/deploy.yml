@@ -1,0 +1,116 @@
+name: Deploy demo
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      image_tag:
+        description: "Rollback: existing accepted full commit SHA. Empty = test/build/deploy current main."
+        type: string
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-demo
+  cancel-in-progress: false
+
+jobs:
+  test:
+    if: github.ref == 'refs/heads/main' && !inputs.image_tag
+    uses: ./.github/workflows/ci-docker.yml
+
+  deploy:
+    needs: test
+    if: >-
+      always() && !cancelled() && github.ref == 'refs/heads/main' &&
+      (needs.test.result == 'success' ||
+       (github.event_name == 'workflow_dispatch' && inputs.image_tag != '' && needs.test.result == 'skipped'))
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    environment: demo
+    permissions:
+      contents: read
+      id-token: write
+    env:
+      PROJECT_ID: ${{ vars.GCP_PROJECT_ID }}
+      REGION: ${{ vars.GCP_REGION }}
+      WIF_PROVIDER: ${{ vars.WIF_PROVIDER }}
+      WIF_SERVICE_ACCOUNT: ${{ vars.WIF_SERVICE_ACCOUNT }}
+      IMAGE_TAG: ${{ inputs.image_tag || github.sha }}
+      ROLLBACK: ${{ github.event_name == 'workflow_dispatch' && inputs.image_tag != '' }}
+    steps:
+      - name: Check out accepted source and rollback history
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.14"
+
+      - name: Validate settings and current main before cloud authentication
+        run: python3 deploy/release.py --validate-only
+
+      # Compile before requesting the short-lived GitHub OIDC credential.
+      - name: Build runtime and migration images
+        if: env.ROLLBACK != 'true'
+        run: |
+          REGISTRY="$REGION-docker.pkg.dev/$PROJECT_ID/studytrack"
+          docker build --target runtime --build-arg VCS_REF="$IMAGE_TAG" --tag "$REGISTRY/studytrack:$IMAGE_TAG" .
+          docker build --target tools --build-arg VCS_REF="$IMAGE_TAG" --tag "$REGISTRY/studytrack-tools:$IMAGE_TAG" .
+          for IMAGE in studytrack studytrack-tools; do
+            test "$(docker image inspect --format '{{ index .Config.Labels "org.opencontainers.image.revision" }}' "$REGISTRY/$IMAGE:$IMAGE_TAG")" = "$IMAGE_TAG"
+          done
+
+      - name: Authenticate to Google Cloud without a key
+        id: auth
+        uses: google-github-actions/auth@7c6bc770dae815cd3e89ee6cdf493a5fab2cc093 # v3
+        with:
+          project_id: ${{ vars.GCP_PROJECT_ID }}
+          workload_identity_provider: ${{ vars.WIF_PROVIDER }}
+          service_account: ${{ vars.WIF_SERVICE_ACCOUNT }}
+          token_format: access_token
+          access_token_lifetime: 3600s
+
+      - name: Set up gcloud
+        uses: google-github-actions/setup-gcloud@aa5489c8933f4cc7a4f7d45035b3b1440c9c10db # v3.0.1
+
+      - name: Push both immutable-source tags
+        if: env.ROLLBACK != 'true'
+        env:
+          CLOUDSDK_AUTH_ACCESS_TOKEN: ${{ steps.auth.outputs.access_token }}
+        run: |
+          gcloud auth configure-docker "$REGION-docker.pkg.dev" --quiet
+          REGISTRY="$REGION-docker.pkg.dev/$PROJECT_ID/studytrack"
+          docker push "$REGISTRY/studytrack:$IMAGE_TAG"
+          docker push "$REGISTRY/studytrack-tools:$IMAGE_TAG"
+
+      - name: Verify digests, migrate and route the checked revision
+        env:
+          CLOUDSDK_AUTH_ACCESS_TOKEN: ${{ steps.auth.outputs.access_token }}
+        run: bash deploy/release.sh
+
+      - name: Smoke test public UI and database-backed health
+        run: python3 deploy/smoke_test.py "$SERVICE_URL"
+
+      - name: Record successful deployment
+        run: |
+          {
+            echo '### StudyTrack demo deployment'
+            echo "- Released source: $RELEASE_SOURCE_SHA"
+            echo "- Workflow source: $WORKFLOW_SOURCE_SHA"
+            echo "- Runtime digest: $DEPLOYED_IMAGE"
+            echo "- Tools digest: $TOOLS_IMAGE"
+            echo "- Migration execution: $MIGRATION_EXECUTION"
+            echo "- Serving revision: $DEPLOYED_REVISION"
+            echo "- Rollback: $RELEASE_ROLLBACK"
+            echo "- URL: $SERVICE_URL"
+            echo '- Smoke: passed /api/health (DB) and / (built UI).'
+            echo '- Optional authenticated login smoke: deliberately not configured.'
+          } >> "$GITHUB_STEP_SUMMARY"
