@@ -6,7 +6,9 @@ from pathlib import Path
 import re
 import subprocess
 import sys
-from urllib.parse import urlsplit
+from urllib.error import URLError
+from urllib.parse import quote, urlsplit
+from urllib.request import Request, urlopen
 
 
 class ReleaseError(RuntimeError):
@@ -105,6 +107,44 @@ def service_config(resource, s):
         raise ReleaseError("Unexpected existing service configuration.") from error
 
 
+def platform_image(runtime, s, env, runner):
+    """Resolve only the pinned index's unique linux/amd64 manifest, never a tag."""
+    token = env.get("CLOUDSDK_AUTH_ACCESS_TOKEN") or command(
+        ["gcloud", "auth", "print-access-token"], runner)
+    if not token or "\n" in token or "\r" in token:
+        raise ReleaseError("Could not obtain the registry read credential.")
+    image_id = quote(runtime.rsplit("/", 1)[1], safe="")
+    url = ("https://artifactregistry.googleapis.com/v1/"
+           f"projects/{s['PROJECT_ID']}/locations/{s['REGION']}/"
+           f"repositories/studytrack/dockerImages/{image_id}")
+    request = Request(url, headers={"Authorization": "Bearer " + token})
+    try:
+        with urlopen(request, timeout=30) as response:
+            image = json.load(response)
+    except (URLError, OSError, ValueError) as error:
+        # Neither the token nor arbitrary HTTP response bodies belong in logs.
+        raise ReleaseError("Could not read pinned runtime image metadata; no cloud updates made.") from error
+    if not isinstance(image, dict) or image.get("uri") != runtime:
+        raise ReleaseError("Registry metadata does not identify the pinned runtime image.")
+    media_type = image.get("mediaType")
+    if media_type in ("application/vnd.oci.image.manifest.v1+json",
+                      "application/vnd.docker.distribution.manifest.v2+json"):
+        return runtime
+    if media_type not in ("application/vnd.oci.image.index.v1+json",
+                          "application/vnd.docker.distribution.manifest.list.v2+json"):
+        raise ReleaseError("Unsupported runtime manifest type; no cloud updates made.")
+    manifests = image.get("imageManifests")
+    if not isinstance(manifests, list) or any(not isinstance(item, dict) for item in manifests):
+        raise ReleaseError("Runtime index has no verifiable platform manifests.")
+    candidates = [item for item in manifests
+                  if item.get("os") == "linux" and item.get("architecture") == "amd64"]
+    if (len(candidates) != 1 or
+            not isinstance(candidates[0].get("digest"), str) or
+            not re.fullmatch(r"sha256:[0-9a-f]{64}", candidates[0]["digest"])):
+        raise ReleaseError("Runtime index must identify exactly one linux/amd64 digest.")
+    return runtime.split("@", 1)[0] + "@" + candidates[0]["digest"]
+
+
 def execute(env, runner):
     s = settings(env, runner)
     common = [f"--project={s['PROJECT_ID']}", f"--region={s['REGION']}", "--quiet"]
@@ -127,6 +167,9 @@ def execute(env, runner):
 
     runtime = digest("studytrack")
     tools = digest("studytrack-tools") if s["ROLLBACK"] == "false" else "not-used"
+    resolved_runtime = platform_image(runtime, s, env, runner)
+    # Cloud Run may retain the index in spec or normalize it to its platform image.
+    expected_images = (runtime, resolved_runtime)
     before = cloud(["run", "services", "describe", "studytrack"])
     origin, values = service_config(before, s)
     if s["ROLLBACK"] == "false":
@@ -162,7 +205,8 @@ def execute(env, runner):
                     for x in revision.get("status", {}).get("conditions", []))
         if (not ready or revision["metadata"]["name"].split("/")[-1] != revision_name or
                 len(revision["spec"]["containers"]) != 1 or
-                revision["spec"]["containers"][0]["image"] != runtime):
+                revision["spec"]["containers"][0]["image"] not in expected_images or
+                revision["status"].get("imageDigest") != resolved_runtime):
             raise ReleaseError("Created revision is not Ready with the expected immutable image; traffic unchanged.")
     except (KeyError, TypeError) as error:
         raise ReleaseError("Could not verify the created revision; traffic unchanged.") from error
@@ -172,9 +216,10 @@ def execute(env, runner):
     traffic = [x for x in after.get("status", {}).get("traffic", []) if x.get("percent", 0)]
     if (after_origin != origin or after_values != values or len(traffic) != 1 or
             traffic[0].get("revisionName") != revision_name or traffic[0].get("percent") != 100 or
-            after["spec"]["template"]["spec"]["containers"][0]["image"] != runtime):
+            after["spec"]["template"]["spec"]["containers"][0]["image"] not in expected_images):
         raise ReleaseError("Serving traffic/image/configuration does not match this release; success not recorded.")
-    return {"SERVICE_URL": origin, "DEPLOYED_IMAGE": runtime, "TOOLS_IMAGE": tools,
+    return {"SERVICE_URL": origin, "DEPLOYED_IMAGE": runtime,
+            "DEPLOYED_PLATFORM_IMAGE": resolved_runtime, "TOOLS_IMAGE": tools,
             "DEPLOYED_REVISION": revision_name, "MIGRATION_EXECUTION": execution_name,
             "RELEASE_SOURCE_SHA": s["IMAGE_TAG"], "WORKFLOW_SOURCE_SHA": s["GITHUB_SHA"],
             "RELEASE_ROLLBACK": s["ROLLBACK"]}

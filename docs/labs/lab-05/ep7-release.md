@@ -30,6 +30,14 @@ gcloud run revisions describe "$REVISION" \
   --format='yaml(metadata.name,spec.containers.image,status.imageDigest,status.conditions)'
 ```
 
+## Index and platform digest verification
+
+Artifact Registry can identify the pushed runtime by an OCI index digest while Cloud Run records its `linux/amd64` manifest digest. These are different identifiers for the index and its runnable image, not necessarily different builds. Before any cloud update, the release helper reads the exact pinned image's registry metadata and requires its URI to match. For an OCI index or Docker manifest list it requires exactly one valid `linux/amd64` child; unknown-platform attestations are not runtime candidates. Missing, ambiguous or unreadable metadata stops the release rather than accepting any digest.
+
+The no-traffic update still uses the pinned runtime reference. Before routing, the named revision must be Ready, have one container, use the pinned reference or its verified child in spec, and report exactly the expected platform reference in `status.imageDigest`. The post-routing service spec must also identify the pinned runtime or verified child; identity, environment and 100% exact-revision traffic checks remain. Single-image OCI/Docker manifests require the original digest in both revision fields.
+
+The Actions summary records both **Runtime digest** (`DEPLOYED_IMAGE`, the pinned registry reference, possibly an index) and **Verified runtime platform digest** (`DEPLOYED_PLATFORM_IMAGE`). Keep both in the live evidence record. See [the first failed-run diagnosis](ep7-oci-digest-fix.md); a code fix or offline test does not establish a successful retry. No IAM expansion, deploy rerun or manual traffic override is part of this correction.
+
 ## Visible-change release B and EP8
 
 After release A succeeds, agree with A on the exact [EP8 persistence operation plan](persistence-test-plan.md) and capture its baseline **before** the second release. Take a small labelled visible change through its Issue, feature branch, A-reviewed staging PR and separately reviewed main release. The same repeatable pipeline must deploy release B; retain before/after UI, source/digest/revision/run and domain-smoke evidence. Compare the same persisted records after that redeploy for EP8, plus its separately agreed restart operation. This combines evidence collection without removing either episode's acceptance criteria. Do not close Issue22 or23 from code/CI alone.
