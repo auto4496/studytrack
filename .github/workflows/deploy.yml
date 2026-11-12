@@ -106,6 +106,7 @@ jobs:
             echo "- Released source: $RELEASE_SOURCE_SHA"
             echo "- Workflow source: $WORKFLOW_SOURCE_SHA"
             echo "- Runtime digest: $DEPLOYED_IMAGE"
+            echo "- Verified runtime platform digest: $DEPLOYED_PLATFORM_IMAGE"
             echo "- Tools digest: $TOOLS_IMAGE"
             echo "- Migration execution: $MIGRATION_EXECUTION"
             echo "- Serving revision: $DEPLOYED_REVISION"
