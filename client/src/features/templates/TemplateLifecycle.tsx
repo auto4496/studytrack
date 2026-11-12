@@ -97,10 +97,10 @@ export function TemplateLifecycle({
             disabled={disabled}
             onClick={() => setConfirm(true)}
           >
-            ปิดใช้กิจกรรม
+            ปิดรับเป้าหมายใหม่
           </button>
         ) : (
-          <div role="group" aria-label="ยืนยันการปิดใช้กิจกรรม">
+          <div role="group" aria-label="ยืนยันการปิดรับเป้าหมายใหม่">
             <p>จะไม่รับเป้าหมายใหม่ เป้าหมายเดิมยังบันทึกได้ตามปกติ</p>
             <button
               className="button secondary"
@@ -115,18 +115,18 @@ export function TemplateLifecycle({
                         { method: "POST", body: "{}" },
                       )
                     ).data,
-                  "ปิดใช้กิจกรรมแล้ว",
+                  "ปิดรับเป้าหมายใหม่แล้ว",
                 )
               }
             >
-              ยืนยันปิดใช้กิจกรรม
+              ยืนยันปิดรับเป้าหมายใหม่
             </button>
             <button
               className="button secondary"
               disabled={disabled}
               onClick={() => setConfirm(false)}
             >
-              ยกเลิกการปิดใช้
+              ยกเลิกการปิดรับเป้าหมายใหม่
             </button>
           </div>
         ))}

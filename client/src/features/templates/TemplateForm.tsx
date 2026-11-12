@@ -65,12 +65,12 @@ export function TemplateForm() {
   return (
     <>
       <Link className="back-link" to="/manager/templates">
-        ← แม่แบบกิจกรรม
+        ← Activity Templates
       </Link>
       <section className="page-heading">
         <div>
           <p className="eyebrow">MAKE ROOM FOR READING</p>
-          <h1>สร้างแม่แบบกิจกรรม</h1>
+          <h1>สร้าง Template</h1>
           <p className="muted">
             กำหนดกิจกรรมและช่วงนาทีที่เหมาะสมสำหรับการตั้งเป้าหมาย
           </p>
@@ -90,7 +90,7 @@ export function TemplateForm() {
                   target="_blank"
                   rel="noopener"
                 >
-                  เปิดรายการแม่แบบ
+                  เปิดรายการ Template
                 </Link>
                 <button
                   type="button"
@@ -133,7 +133,7 @@ export function TemplateForm() {
             <small id="description-help">ไม่เกิน 500 ตัวอักษร</small>
           </div>
           <div className="field">
-            <label htmlFor="minMinutes">เวลาต่ำสุด (นาที)</label>
+            <label htmlFor="minMinutes">เวลาอ่านขั้นต่ำ (นาที)</label>
             <input
               id="minMinutes"
               type="number"
@@ -150,7 +150,7 @@ export function TemplateForm() {
             {fieldError("minMinutes")}
           </div>
           <div className="field">
-            <label htmlFor="maxMinutes">เวลาสูงสุด (นาที)</label>
+            <label htmlFor="maxMinutes">เวลาอ่านสูงสุด (นาที)</label>
             <input
               id="maxMinutes"
               type="number"
@@ -171,7 +171,7 @@ export function TemplateForm() {
               ยกเลิก
             </Link>
             <button className="button primary" disabled={pending || uncertain}>
-              {pending ? "กำลังบันทึก…" : "สร้างแม่แบบ →"}
+              {pending ? "กำลังบันทึก…" : "สร้าง Template →"}
             </button>
           </div>
         </form>
@@ -183,7 +183,7 @@ export function TemplateForm() {
             ตั้งค่าระหว่าง 1–1440 นาที
           </p>
           <small>
-            ข้อมูลเป้าหมายและประวัติส่วนตัวของนักศึกษาแยกจากการดูแลแม่แบบ
+            ข้อมูลเป้าหมายและประวัติส่วนตัวของนักศึกษาแยกจากการจัดการ Template
           </small>
         </aside>
       </div>

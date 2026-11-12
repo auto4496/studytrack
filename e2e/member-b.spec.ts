@@ -17,19 +17,21 @@ async function fillTemplate(page: Page, title: string) {
   await page
     .getByLabel("คำอธิบาย (ไม่บังคับ)", { exact: true })
     .fill("อ่านทบทวนและจดแนวคิดสำคัญ");
-  await page.getByLabel("เวลาต่ำสุด (นาที)", { exact: true }).fill("1");
-  await page.getByLabel("เวลาสูงสุด (นาที)", { exact: true }).fill("1440");
+  await page.getByLabel("เวลาอ่านขั้นต่ำ (นาที)", { exact: true }).fill("1");
+  await page.getByLabel("เวลาอ่านสูงสุด (นาที)", { exact: true }).fill("1440");
 }
 
 test("TEST-F02-10: real manager creation → persisted catalog → participant goal selection", async ({
   page,
 }, info) => {
   await login(page, "manager@browser.test");
-  await page.getByRole("link", { name: "＋ สร้างแม่แบบ", exact: true }).click();
+  await page
+    .getByRole("link", { name: "＋ สร้าง Template", exact: true })
+    .click();
   const title = `อ่านร่วมกัน B ${info.project.name}`;
   await fillTemplate(page, title);
   await page.screenshot({
-    path: `artifacts/evidence/member-b/${info.project.name}-template-form.png`,
+    path: `artifacts/evidence/ui-wording/member-b/${info.project.name}-template-form.png`,
     fullPage: true,
   });
   const created = page.waitForResponse(
@@ -37,7 +39,7 @@ test("TEST-F02-10: real manager creation → persisted catalog → participant g
       r.url().endsWith("/api/templates") && r.request().method() === "POST",
   );
   await page
-    .getByRole("button", { name: "สร้างแม่แบบ →", exact: true })
+    .getByRole("button", { name: "สร้าง Template →", exact: true })
     .click();
   const response = await created;
   expect(response.status()).toBe(201);
@@ -48,7 +50,7 @@ test("TEST-F02-10: real manager creation → persisted catalog → participant g
     page.getByRole("heading", { name: title, exact: true }),
   ).toBeVisible();
   await page.screenshot({
-    path: `artifacts/evidence/member-b/${info.project.name}-catalog.png`,
+    path: `artifacts/evidence/ui-wording/member-b/${info.project.name}-catalog.png`,
     fullPage: true,
   });
   await page.getByRole("button", { name: "ออกจากระบบ", exact: true }).click();
@@ -56,17 +58,17 @@ test("TEST-F02-10: real manager creation → persisted catalog → participant g
   await login(page, `reader-f02-${info.project.name}@browser.test`);
   await page.goto("/templates");
   await expect(
-    page.getByRole("link", { name: "＋ สร้างแม่แบบ", exact: true }),
+    page.getByRole("link", { name: "＋ สร้าง Template", exact: true }),
   ).toHaveCount(0);
   await page
     .locator("article")
     .filter({ has: page.getByRole("heading", { name: title, exact: true }) })
     .getByRole("link", { name: "ตั้งเป้าหมาย →", exact: true })
     .click();
-  await expect(
-    page.getByLabel("กิจกรรมที่อยากทำ", { exact: true }),
-  ).toHaveValue(template.id);
-  await page.getByLabel("เป้าหมายต่อวัน (นาที)", { exact: true }).fill("60");
+  await expect(page.getByLabel("กิจกรรมการอ่าน", { exact: true })).toHaveValue(
+    template.id,
+  );
+  await page.getByLabel("เป้าหมายรายวัน (นาที)", { exact: true }).fill("60");
   await page
     .getByRole("button", { name: "สร้างเป้าหมาย →", exact: true })
     .click();
@@ -85,7 +87,7 @@ test("TEST-F02-09: validation, pending and unknown POST outcome preserve input w
   await login(page, "manager@browser.test");
   await page.goto("/manager/templates/new");
   await page
-    .getByRole("button", { name: "สร้างแม่แบบ →", exact: true })
+    .getByRole("button", { name: "สร้าง Template →", exact: true })
     .click();
   await expect(page.getByLabel("ชื่อกิจกรรม", { exact: true })).toBeFocused();
   await expect(page.locator("#title-error")).toContainText("1–100");
@@ -112,7 +114,7 @@ test("TEST-F02-09: validation, pending and unknown POST outcome preserve input w
     });
   });
   await page
-    .getByRole("button", { name: "สร้างแม่แบบ →", exact: true })
+    .getByRole("button", { name: "สร้าง Template →", exact: true })
     .click();
   await expect(
     page.getByRole("button", { name: "กำลังบันทึก…", exact: true }),
@@ -128,18 +130,18 @@ test("TEST-F02-09: validation, pending and unknown POST outcome preserve input w
     await route.abort();
   });
   await page
-    .getByRole("button", { name: "สร้างแม่แบบ →", exact: true })
+    .getByRole("button", { name: "สร้าง Template →", exact: true })
     .click();
   await expect(page.getByRole("status")).toContainText("ยังไม่ทราบผลการบันทึก");
   await expect(
-    page.getByRole("button", { name: "สร้างแม่แบบ →", exact: true }),
+    page.getByRole("button", { name: "สร้าง Template →", exact: true }),
   ).toBeDisabled();
   expect(posts).toBe(2);
   expect(
     await page.evaluate(() => document.documentElement.scrollWidth),
   ).toBeLessThanOrEqual(page.viewportSize()!.width);
   await page.screenshot({
-    path: `artifacts/evidence/member-b/${info.project.name}-template-recovery.png`,
+    path: `artifacts/evidence/ui-wording/member-b/${info.project.name}-template-recovery.png`,
     fullPage: true,
   });
 });
@@ -168,10 +170,10 @@ test("TEST-F02-09: catalog read failure retries, then empty state is distinct fr
   );
   await page.reload();
   await expect(
-    page.getByRole("heading", { name: "ยังไม่มีแม่แบบกิจกรรม", exact: true }),
+    page.getByRole("heading", { name: "ยังไม่มี Template", exact: true }),
   ).toBeVisible();
   await expect(
-    page.getByRole("link", { name: "＋ สร้างแม่แบบ", exact: true }),
+    page.getByRole("link", { name: "＋ สร้าง Template", exact: true }),
   ).toBeVisible();
 });
 
@@ -216,7 +218,7 @@ test("TEST-F04-16: full manager→goal→daily entry→persisted progress with r
   const title = `เวลาอ่าน B ${info.project.name}`;
   await fillTemplate(page, title);
   await page
-    .getByRole("button", { name: "สร้างแม่แบบ →", exact: true })
+    .getByRole("button", { name: "สร้าง Template →", exact: true })
     .click();
   await expect(page).toHaveURL(/\/manager\/templates$/);
   await expect(
@@ -231,7 +233,7 @@ test("TEST-F04-16: full manager→goal→daily entry→persisted progress with r
     .filter({ has: page.getByRole("heading", { name: title, exact: true }) })
     .getByRole("link", { name: "ตั้งเป้าหมาย →", exact: true })
     .click();
-  await page.getByLabel("เป้าหมายต่อวัน (นาที)", { exact: true }).fill("60");
+  await page.getByLabel("เป้าหมายรายวัน (นาที)", { exact: true }).fill("60");
   await page
     .getByRole("button", { name: "สร้างเป้าหมาย →", exact: true })
     .click();
@@ -263,7 +265,7 @@ test("TEST-F04-16: full manager→goal→daily entry→persisted progress with r
     await page.evaluate(() => document.documentElement.scrollWidth),
   ).toBeLessThanOrEqual(page.viewportSize()!.width);
   await page.screenshot({
-    path: `artifacts/evidence/member-b/${info.project.name}-daily-progress.png`,
+    path: `artifacts/evidence/ui-wording/member-b/${info.project.name}-daily-progress.png`,
     fullPage: true,
   });
   await page.getByRole("button", { name: "ออกจากระบบ", exact: true }).click();
@@ -369,7 +371,7 @@ test("TEST-F04-15: validation and committed-but-lost response reconcile before a
   const list = await page.request.get(`/api/goals/${own.id}/entries`);
   expect((await list.json()).meta.total).toBe(1);
   await page.screenshot({
-    path: `artifacts/evidence/member-b/${info.project.name}-entry-recovery.png`,
+    path: `artifacts/evidence/ui-wording/member-b/${info.project.name}-entry-recovery.png`,
     fullPage: true,
   });
 });
@@ -480,7 +482,7 @@ test("TEST-F04-15: stale date responses cannot replace the selected day; uncappe
     await page.evaluate(() => document.documentElement.scrollWidth),
   ).toBeLessThanOrEqual(page.viewportSize()!.width);
   await page.screenshot({
-    path: `artifacts/evidence/member-b/${info.project.name}-progress-125.png`,
+    path: `artifacts/evidence/ui-wording/member-b/${info.project.name}-progress-125.png`,
     fullPage: true,
   });
 });

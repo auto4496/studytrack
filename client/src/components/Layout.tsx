@@ -43,7 +43,7 @@ export function Layout() {
             </>
           ) : (
             <NavLink to="/manager/templates">
-              ▤ <span>แม่แบบกิจกรรม</span>
+              ▤ <span>Activity Templates</span>
             </NavLink>
           )}
         </nav>
@@ -52,7 +52,7 @@ export function Layout() {
           <div>
             <strong>{user?.displayName}</strong>
             <small>
-              {user?.role === "PARTICIPANT" ? "นักศึกษา" : "ผู้ดูแลแม่แบบ"}
+              {user?.role === "PARTICIPANT" ? "นักศึกษา" : "Program Manager"}
             </small>
           </div>
           <button
@@ -67,7 +67,7 @@ export function Layout() {
       </aside>
       <main className="main-content">
         <header className="topbar">
-          <span>พื้นที่เล็ก ๆ สำหรับเป้าหมายที่สำคัญ</span>
+          <span>ติดตามการอ่านในแต่ละวัน</span>
           <span className="timezone">เวลาไทย · GMT+7</span>
         </header>
         {error && <ErrorNotice message={error} />}
