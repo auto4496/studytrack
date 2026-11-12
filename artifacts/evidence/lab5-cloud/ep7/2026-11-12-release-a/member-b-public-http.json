@@ -1,0 +1,27 @@
+{
+  "actor": "B / Datakung assisted by Codex",
+  "kind": "Independent unauthenticated public HTTP reads; no browser sign-in or Console access",
+  "checks": [
+    {
+      "observed_at_utc": "2026-11-12T14:35:06.225367+00:00",
+      "url": "https://studytrack-981693883236.asia-southeast1.run.app/api/health",
+      "final_url": "https://studytrack-981693883236.asia-southeast1.run.app/api/health",
+      "http_status": 200,
+      "body": {
+        "data": {
+          "status": "ok",
+          "service": "StudyTrack API"
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-11-12T14:35:06.574258+00:00",
+      "url": "https://studytrack-981693883236.asia-southeast1.run.app/",
+      "final_url": "https://studytrack-981693883236.asia-southeast1.run.app/",
+      "http_status": 200,
+      "studytrack_marker": true,
+      "root_element": true
+    }
+  ],
+  "limits": "Does not independently establish serving source/digests/traffic, private domain data or EP8 persistence."
+}

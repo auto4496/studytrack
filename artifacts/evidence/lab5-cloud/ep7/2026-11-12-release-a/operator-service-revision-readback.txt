@@ -1,0 +1,43 @@
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/maxScale: '3'
+        run.googleapis.com/client-name: gcloud
+        run.googleapis.com/client-version: 591.0.0
+        run.googleapis.com/cloudsql-instances: studytrack-cpe334:asia-southeast1:studytrack-pg
+        run.googleapis.com/execution-environment: gen2
+        run.googleapis.com/startup-cpu-boost: 'true'
+    spec:
+      serviceAccountName: studytrack-runner@studytrack-cpe334.iam.gserviceaccount.com
+status:
+  traffic:
+  - percent: 100
+    revisionName: studytrack-g3570cd4a7bca-r43233683592-1
+metadata:
+  name: studytrack-g3570cd4a7bca-r43233683592-1
+status:
+  conditions:
+  - lastTransitionTime: '2026-11-12T14:11:22.948231Z'
+    message: Deploying revision succeeded in 5.26s.
+    status: 'True'
+    type: Ready
+  - lastTransitionTime: '2026-11-12T14:11:23.044724Z'
+    severity: Info
+    status: 'True'
+    type: Active
+  - lastTransitionTime: '2026-11-12T14:11:22.894248Z'
+    message: Containers became healthy in 2.89s.
+    status: 'True'
+    type: ContainerHealthy
+  - lastTransitionTime: '2026-11-12T14:11:18.098657Z'
+    message: Container image import completed.
+    status: 'True'
+    type: ContainerReady
+  - lastTransitionTime: '2026-11-12T14:11:19.618768Z'
+    message: Provisioning imported containers completed in 1.93s. Checking container
+      health. This will wait for up to 4m for the configured startup probe, including
+      an initial delay of 0s.
+    status: 'True'
+    type: ResourcesAvailable
+  imageDigest: asia-southeast1-docker.pkg.dev/studytrack-cpe334/studytrack/studytrack@sha256:6127e4e53c2b9b8a747fd8af42216cb7879b4d5175c5f5178d4bc33f0bb18f7d
