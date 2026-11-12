@@ -17,7 +17,7 @@ test("TEST-F01-08: invalid login, keyboard recovery, reload and logout revoke br
   await page.goto("/login");
   await expect(page.getByLabel("อีเมล", { exact: true })).toBeVisible();
   await page.screenshot({
-    path: `artifacts/evidence/member-a/${info.project.name}-login.png`,
+    path: `artifacts/evidence/ui-wording/member-a/${info.project.name}-login.png`,
     fullPage: true,
   });
   await page.getByLabel("อีเมล", { exact: true }).fill("reader@browser.test");
@@ -49,11 +49,11 @@ test("TEST-F03-08: create, reload and retrieve a real persisted goal; duplicate 
     .getByRole("link", { name: "＋ ตั้งเป้าหมายใหม่", exact: true })
     .click();
   await page
-    .getByLabel("กิจกรรมที่อยากทำ", { exact: true })
+    .getByLabel("กิจกรรมการอ่าน", { exact: true })
     .selectOption({ label: "อ่านทบทวน CPE 334" });
-  await page.getByLabel("เป้าหมายต่อวัน (นาที)", { exact: true }).fill("60");
+  await page.getByLabel("เป้าหมายรายวัน (นาที)", { exact: true }).fill("60");
   await page.screenshot({
-    path: `artifacts/evidence/member-a/${info.project.name}-goal-form.png`,
+    path: `artifacts/evidence/ui-wording/member-a/${info.project.name}-goal-form.png`,
     fullPage: true,
   });
   const creation = page.waitForResponse(
@@ -74,17 +74,17 @@ test("TEST-F03-08: create, reload and retrieve a real persisted goal; duplicate 
   expect(saved.status()).toBe(200);
   expect((await saved.json()).data.targetMinutes).toBe(60);
   await page.screenshot({
-    path: `artifacts/evidence/member-a/${info.project.name}-goal-detail.png`,
+    path: `artifacts/evidence/ui-wording/member-a/${info.project.name}-goal-detail.png`,
     fullPage: true,
   });
   await page.goto("/goals/new");
   await page
-    .getByLabel("กิจกรรมที่อยากทำ", { exact: true })
+    .getByLabel("กิจกรรมการอ่าน", { exact: true })
     .selectOption({ label: "อ่านทบทวน CPE 334" });
   await page.getByRole("button", { name: "สร้างเป้าหมาย →" }).click();
   await expect(page.getByRole("alert")).toContainText("คุณมีเป้าหมาย");
   await page.screenshot({
-    path: `artifacts/evidence/member-a/${info.project.name}-duplicate.png`,
+    path: `artifacts/evidence/ui-wording/member-a/${info.project.name}-duplicate.png`,
     fullPage: true,
   });
   await page.goto("/goals");
@@ -92,7 +92,7 @@ test("TEST-F03-08: create, reload and retrieve a real persisted goal; duplicate 
     page.getByRole("heading", { name: "เป้าหมายการอ่าน", exact: true }),
   ).toBeVisible();
   await page.screenshot({
-    path: `artifacts/evidence/member-a/${info.project.name}-goals.png`,
+    path: `artifacts/evidence/ui-wording/member-a/${info.project.name}-goals.png`,
     fullPage: true,
   });
   expect(
@@ -105,7 +105,7 @@ test("manager sees catalog but cannot read participant goals via the backend", a
 }) => {
   await login(page, "manager@browser.test");
   await expect(
-    page.getByRole("heading", { name: "แม่แบบกิจกรรม", exact: true }),
+    page.getByRole("heading", { name: "Activity Templates", exact: true }),
   ).toBeVisible();
   const response = await page.request.get("/api/goals");
   expect(response.status()).toBe(403);
@@ -165,7 +165,7 @@ test("NFR-06: a valid long activity title stays inside the goal detail viewport"
     await page.evaluate(() => document.documentElement.scrollWidth),
   ).toBeLessThanOrEqual(page.viewportSize()!.width);
   await page.screenshot({
-    path: `artifacts/evidence/member-a/${info.project.name}-long-title.png`,
+    path: `artifacts/evidence/ui-wording/member-a/${info.project.name}-long-title.png`,
     fullPage: true,
   });
 });

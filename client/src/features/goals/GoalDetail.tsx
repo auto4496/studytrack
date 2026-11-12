@@ -60,7 +60,7 @@ export function GoalDetail({
               <p className="muted">เป้าหมายส่วนตัวของคุณ</p>
             </div>
             <span className="pill">
-              {goal.status === "ACTIVE" ? "กำลังทำ" : "สิ้นสุดแล้ว"}
+              {goal.status === "ACTIVE" ? "Active" : "Archived"}
             </span>
           </section>
           <section className="panel goal-detail">
@@ -77,13 +77,13 @@ export function GoalDetail({
                 <dd>{displayDate(goal.startDate)}</dd>
               </div>
               <div>
-                <dt>ช่วงเวลาที่บันทึกได้</dt>
+                <dt>เวลาอ่านขั้นต่ำ–สูงสุด</dt>
                 <dd>
                   {goal.minMinutes}–{goal.maxMinutes} นาที
                 </dd>
               </div>
               <div>
-                <dt>หน่วยกิจกรรม</dt>
+                <dt>หน่วยเวลา</dt>
                 <dd>นาที</dd>
               </div>
             </dl>

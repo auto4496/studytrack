@@ -24,7 +24,7 @@ export function useVerifiedMutation<T>(
       const current = await read();
       if (!mounted.current) return;
       setUncertain(false);
-      setNotice("อ่านสถานะล่าสุดแล้ว กรุณาตรวจข้อมูลก่อนส่งใหม่");
+      setNotice("โหลดข้อมูลล่าสุดแล้ว กรุณาตรวจสอบก่อนลองอีกครั้ง");
       accept(current);
     } catch (e) {
       if (mounted.current) {

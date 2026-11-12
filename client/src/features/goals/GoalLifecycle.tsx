@@ -58,7 +58,9 @@ export function GoalLifecycle({
           ประวัติเดิมยังอยู่ และบันทึกย้อนหลังได้ภายในช่วงเป้าหมาย
         </p>
       ) : goal.startDate > localToday() ? (
-        <p>เปลี่ยนหรือหยุดเป้าหมายได้ตั้งแต่ {displayDate(goal.startDate)}</p>
+        <p>
+          เปลี่ยนหรือหยุดติดตามเป้าหมายได้ตั้งแต่ {displayDate(goal.startDate)}
+        </p>
       ) : (
         <>
           <form onSubmit={change} noValidate>
@@ -106,16 +108,16 @@ export function GoalLifecycle({
               disabled={disabled}
               onClick={() => setConfirm(true)}
             >
-              หยุดเป้าหมาย
+              หยุดติดตามเป้าหมาย
             </button>
           ) : (
             <div
               className="notice"
               role="group"
-              aria-label="ยืนยันการหยุดเป้าหมาย"
+              aria-label="ยืนยันการหยุดติดตามเป้าหมาย"
             >
               <p>
-                หยุดตั้งแต่วันนี้ โดยวันนี้ยังนับเป็นวันสุดท้าย
+                หยุดติดตามตั้งแต่วันนี้ โดยวันนี้ยังนับเป็นวันสุดท้าย
                 ประวัติเดิมยังอยู่ และไม่เปิดเป้าหมายนี้ใหม่
               </p>
               <button
@@ -131,11 +133,11 @@ export function GoalLifecycle({
                           body: "{}",
                         })
                       ).data,
-                    "หยุดเป้าหมายแล้ว ประวัติเดิมยังอยู่",
+                    "หยุดติดตามเป้าหมายแล้ว ประวัติเดิมยังอยู่",
                   )
                 }
               >
-                ยืนยันหยุดเป้าหมาย
+                ยืนยันหยุดติดตามเป้าหมาย
               </button>
               <button
                 className="button secondary"

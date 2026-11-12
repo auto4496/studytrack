@@ -82,8 +82,8 @@ export function GoalList() {
           }}
         >
           <option value="">ทั้งหมด</option>
-          <option value="ACTIVE">กำลังทำ</option>
-          <option value="ARCHIVED">สิ้นสุดแล้ว</option>
+          <option value="ACTIVE">Active</option>
+          <option value="ARCHIVED">Archived</option>
         </select>
       </label>
       {error ? (
@@ -108,7 +108,7 @@ export function GoalList() {
                 <span
                   className={`status ${goal.status === "ARCHIVED" ? "muted" : ""}`}
                 >
-                  {goal.status === "ACTIVE" ? "กำลังทำ" : "สิ้นสุดแล้ว"}
+                  {goal.status === "ACTIVE" ? "Active" : "Archived"}
                 </span>
               </div>
               <h3>{goal.templateTitle}</h3>
