@@ -1,0 +1,22 @@
+{
+  "source": "User-pasted actual output from read-only gcloud iam workload-identity-pools providers describe github-main --project=studytrack-cpe334 --location=global --workload-identity-pool=github-actions",
+  "observationDateBangkok": "2026-11-12",
+  "rawResultExcerpt": "operator-persisted-provider-readback.yaml",
+  "attributeCondition": "assertion.repository_id == '1443962980' && assertion.repository_owner_id == '137795002' && assertion.ref == 'refs/heads/main' && assertion.workflow_ref == 'auto4496/studytrack/.github/workflows/deploy.yml@refs/heads/main' && assertion.sub == 'repo:auto4496@137795002/studytrack@1443962980:environment:demo'",
+  "attributeMapping": {
+    "google.subject": "assertion.sub",
+    "attribute.repository_id": "assertion.repository_id"
+  },
+  "comparison": "All five approved guards and both mappings match after whitespace normalization",
+  "guards": [
+    "numeric repository ID",
+    "numeric repository owner ID",
+    "refs/heads/main",
+    "exact main deploy.yml workflow_ref",
+    "immutable repo/environment demo subject"
+  ],
+  "stateAndDisabledFields": "Requested but not present in supplied result; no new ACTIVE/disabled=false value is inferred. Existing Enabled provider screenshot and dated prior provider readback retained.",
+  "viewportResolution": "New persisted readback confirms the earlier Condition screenshot showed only the tail of the complete condition; no configuration update was necessary",
+  "independentlyAuthenticatedAgentGcpConnection": false,
+  "credentialExchange": "NOT_RUN (EP7)"
+}

@@ -1,0 +1,36 @@
+{
+  "source": "Two human-supplied screenshots sent as items1,2 through the B-side user; A settings images per conversation",
+  "sourceFiles": [
+    "environment-demo-original.png",
+    "ruleset-active-original.png"
+  ],
+  "originalSha256": [
+    "ea4c1d4d9aa799455e56821b05552aeb13c4ef1520654b7ca4cd1db7ca13b8ff",
+    "74eb052660645c3148a0a8f7a7105a06f8b632459af2a489df34f301b7bff032"
+  ],
+  "originalStorage": "Private directory outside repository; unredacted environment image not embedded in final PDF",
+  "artifact": "github-settings-redacted.pdf",
+  "artifactSha256": "e2e9f40ee3cadf0d0045a8763643f7152bd89834f766df77dc95b743135d0f0d",
+  "pages": [
+    {
+      "page": 1,
+      "redactionRectTopLeftImagePixels": [
+        723,
+        606,
+        786,
+        622
+      ],
+      "visible": "URL environment26803236956; one main branch and zero tags allowed; zero environment secrets; four named variables; projectId/region visible",
+      "limits": "Environment name heading not in frame; environment ID matches independent API readback of demo. Provider and service-account values are visibly truncated; exact full values are established by accepted API readbacks, not inferred from this image.",
+      "redaction": "Project number hidden in flattened document page; no original environment screenshot embedded beneath a rectangle"
+    },
+    {
+      "page": 2,
+      "redaction": null,
+      "visible": "URL ruleset26925123; Active enforcement; empty bypass list; main and codex/sprint-1-staging targets",
+      "limits": "Lower review/status-check controls are below the screenshot. Existing live rules readbacks and accepted failing-PR Required-check proof establish those controls; not claimed visible in this frame."
+    }
+  ],
+  "captureTimestamp": "Not inferred from file name or relative UI dates",
+  "remaining": "Finalization peer acceptance and reviewed main release; provider attributes image and full persisted readback now collected"
+}

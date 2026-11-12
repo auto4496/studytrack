@@ -1,0 +1,20 @@
+{
+  "source": "Human-supplied screenshot codex-clipboard-c3faf2e6-8076-4d35-9fcb-d711790c4e77.png",
+  "originalSha256": "eb8e8b286fa16b983d58b513b8632ef2f1f2807f4b37f676d4df818be6d5332e",
+  "originalLocation": "Retained outside repository in private evidence directory; not embedded in deliverable",
+  "artifact": "provider-details-redacted.pdf",
+  "artifactSha256": "8293c6eb05404fe15ab1f7b31642a893654b740d2c68ef61336caac51b1f9b28",
+  "redactionRectangleTopLeftImagePixels": [
+    708,
+    794,
+    830,
+    818
+  ],
+  "redaction": "Opaque project-number redaction in document layout, flattened into the final PDF; only the flattened redacted page image is embedded, not the original screenshot or a recoverable cover rectangle",
+  "observed": "Provider github-main; issuer GitHub Actions; default audience selected; provider enabled",
+  "notVisibleYet": [
+    "Attribute mappings",
+    "Attribute condition"
+  ],
+  "actualExchange": "No data shown in selected Usage metric interval; this does not prove successful token exchange"
+}
