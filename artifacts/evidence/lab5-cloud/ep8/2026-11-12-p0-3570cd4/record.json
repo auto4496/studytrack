@@ -285,7 +285,7 @@
     }
   ],
   "defectsOrLimitations": [
-    "P0 domain data was captured before independent Console/CLI corroboration of the current serving configuration/database; the expected contract and successful pipeline readback are identified separately. Resolve this entry gate with B before any operation.",
+    "P0 domain data preceded receipt/review of the B operator corroboration in PR47. That later evidence matches revision/images/traffic/SQL attachment but has no command execution time or exact database/secret binding/version and startup/instance proof. These remaining gates and mutual P0 review must be resolved before any operation.",
     "No same-image application replacement, release B, instance-startup proof, post-operation smoke, student2 denial or independent human UAT is claimed.",
     "The preferred activity name/bounds example was varied as described in dataSelection; B must review this concrete fresh-data choice.",
     "Keep the stored entryDate 2026-11-12 even if Bangkok today changes. Do not edit/recreate the test goal, entry, target or template to repair a failed comparison."
@@ -313,6 +313,34 @@
     "oldGoalsNotModified": [
       "ef016b96-0f77-4ca6-ae68-0a6d58c9877a",
       "d7d28f92-fbd7-4b27-8169-c2ec066236a8"
+    ]
+  },
+  "postCapturePeerRuntimeEvidence": {
+    "recordedInP0PackageAtUtc": "2026-11-12T14:55:41.598425+00:00",
+    "sourcePr": "https://github.com/auto4496/studytrack/pull/47",
+    "sourceCommit": "cf037e4f64f299f36a44ece208a63d7694de72bc",
+    "aReview": "https://github.com/auto4496/studytrack/pull/47#pullrequestreview-5876536728",
+    "stagingMerge": "919a8a3c205ab08c9026a37a7c055e6b93a833fb",
+    "sourceRepositoryPath": "artifacts/evidence/lab5-cloud/ep7/2026-11-12-release-a/operator-assessment.json",
+    "sourceSha256": "2957f86e242a72fbaee6d5181e2362a08e336e54a5a979694691967c7711cbf0",
+    "provenance": "B human-operated CLI output assessed by Codex, then independently reviewed by A tooling after P0 capture. Command execution time was not supplied; this is not a direct P0 Console observation or B acceptance of the P0 data.",
+    "matchedFields": {
+      "service_revision": "studytrack-g3570cd4a7bca-r43233683592-1",
+      "traffic_percent": 100,
+      "runtime_service_account": "studytrack-runner@studytrack-cpe334.iam.gserviceaccount.com",
+      "cloudsql_connection": "studytrack-cpe334:asia-southeast1:studytrack-pg",
+      "ready": true,
+      "active": true,
+      "service_spec_image": "asia-southeast1-docker.pkg.dev/studytrack-cpe334/studytrack/studytrack@sha256:3e4e18fd392de678076ebec06464a61eca4912b49f783a418c99abf3b3fb26a3",
+      "revision_spec_image": "asia-southeast1-docker.pkg.dev/studytrack-cpe334/studytrack/studytrack@sha256:6127e4e53c2b9b8a747fd8af42216cb7879b4d5175c5f5178d4bc33f0bb18f7d",
+      "revision_status_image_digest": "asia-southeast1-docker.pkg.dev/studytrack-cpe334/studytrack/studytrack@sha256:6127e4e53c2b9b8a747fd8af42216cb7879b4d5175c5f5178d4bc33f0bb18f7d",
+      "service_container_count": 1,
+      "revision_container_count": 1
+    },
+    "stillPending": [
+      "current exact database/secret reference and version",
+      "baseline instance/startup evidence before P1",
+      "B independent P0/data-selection and operation-parameter acceptance"
     ]
   }
 }
