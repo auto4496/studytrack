@@ -41,7 +41,7 @@ IDs เป็น UUID strings; DB names ใช้ snake_case, JSON ใช้ cam
 | Goal | id, ownerId, templateId, templateTitleSnapshot, unit, minMinutesSnapshot, maxMinutesSnapshot, startDate, endDate nullable, status, createdAt | FK owner/template; status ACTIVE/ARCHIVED; partial unique(ownerId,templateId) WHERE status=ACTIVE; bounds snapshots immutable |
 | GoalTargetVersion | id, goalId, effectiveFrom, targetMinutes, createdAt | unique(goalId,effectiveFrom); target>0; initial effectiveFrom=startDate; effective version query ordered descending <= requested date |
 | DailyEntry | id, goalId, entryDate, minutes, createdAt, updatedAt | unique(goalId,entryDate); minutes 1..1440 and service checks goal snapshot range/date; no client owner field |
-| GoalSchedule (S3) | goalId, weekday, localTime | weekday 1..7; unique(goalId,weekday); validate HH:mm; details refined in F-07 contract |
+| GoalSchedule (S3, planned logical model) | goalId, weekday, localTime | weekday1..7 and local HH:mm; proposed current-config/weekday-child normalization, reminder fields and locking are specified in the [F07 pre-code contract](sprints/sprint-3/f07-schedule.md); no schedule migration/model exists yet |
 
 ```mermaid
 erDiagram

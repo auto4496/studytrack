@@ -1,5 +1,9 @@
 # Member A handoff — baseline v0.1
 
+## Current A handoff - 13 November 2026
+
+A completed the [F05 release/acceptance audit and F06 handoff](../verification/f05.md#current-acceptance---13-november-2026): accepted PR35 is in deployed main6d30aef and actual Deploy43410699104/regression passed. Issue31's remaining release gate is met; F06 still belongs to B and Sprint2 is incomplete without it. A opened Issue54 and prepared the [F07 schedule/reminder contract](../sprints/sprint-3/f07-schedule.md) with18 planned AC/test IDs for Datakung's pre-code review. No F07 schema/API/UI/migration/test was implemented or executed. B should review the explicit per-day time/reminder/state/stop/locking decisions before implementation. A will then address findings under the agreed Sprint entry flow, and continues peer-review duty for B's F06/F08 and Lab5 report. B retains Issue24/report coordination; EP7/EP8 technical results are accepted, with final report/index/joint acceptance still open. The original baseline handoff below is historical.
+
 Date: 3 November 2026. Status: DOCUMENT DRAFTS READY FOR B REVIEW; no application implementation or executed feature tests
 
 Historical baseline note above describes the initial handoff. **Current state:** A has implemented foundation/F-01/F-03 on `codex/member-a-sprint1`; read [latest implementation handoff](member-a-implementation.md) and [verification](../verification/member-a.md) before starting B work. Keep this original baseline chronology; do not interpret it as current absence of code
