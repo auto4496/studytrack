@@ -1,0 +1,14 @@
+{
+  "observedAt": "2026-11-13T09:41:25.339Z",
+  "url": "https://studytrack-981693883236.asia-southeast1.run.app/goals/1da44fc2-a956-421d-88a9-8c876adc38c1",
+  "accountDisplay": "นักอ่านคนที่หนึ่ง",
+  "date": "2026-11-12",
+  "actualMinutes": 20,
+  "targetMinutes": 30,
+  "progressPercent": 66.67,
+  "entryAlreadyRecorded": true,
+  "changePerformed": "Date filter only; no form submission or record update",
+  "evidence": "p1-fixed-date-ui.jpg",
+  "workflowRun": 43402554551,
+  "attribution": "Native UI controlled by Codex for member A; not independent human UAT"
+}

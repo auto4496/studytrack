@@ -1,0 +1,65 @@
+{
+  "status": "RELEASE_A_AUTOMATION_AND_OPERATOR_READBACK_VERIFIED_DOMAIN_RELEASE_B_PENDING",
+  "issue": "https://github.com/auto4496/studytrack/issues/22",
+  "release_a": {
+    "staging_pr": "https://github.com/auto4496/studytrack/pull/45",
+    "staging_review": "https://github.com/auto4496/studytrack/pull/45#pullrequestreview-5875512970",
+    "main_release_pr": "https://github.com/auto4496/studytrack/pull/46",
+    "main_review": "https://github.com/auto4496/studytrack/pull/46#pullrequestreview-5875786295",
+    "accepted_main_sha": "3570cd4a7bca17567d30817565d5bb3aa107a672",
+    "accepted_tree": "3e76a55bfdac1ccd3c0ae7ecaa5cc551a98ffa23",
+    "actions_run": "https://github.com/auto4496/studytrack/actions/runs/43233683592",
+    "wif_exchange_result": "PASS_IN_ACTUAL_ACTIONS_RUN",
+    "runtime_digest": "asia-southeast1-docker.pkg.dev/studytrack-cpe334/studytrack/studytrack@sha256:3e4e18fd392de678076ebec06464a61eca4912b49f783a418c99abf3b3fb26a3",
+    "runtime_platform_digest": "asia-southeast1-docker.pkg.dev/studytrack-cpe334/studytrack/studytrack@sha256:6127e4e53c2b9b8a747fd8af42216cb7879b4d5175c5f5178d4bc33f0bb18f7d",
+    "tools_digest": "asia-southeast1-docker.pkg.dev/studytrack-cpe334/studytrack/studytrack-tools@sha256:d827dc9492e3c01f7892ef89e03edca23a1784fb066b78aa2610c414d0d505c9",
+    "migration_execution": "studytrack-migrate-rlh7z",
+    "serving_revision": "studytrack-g3570cd4a7bca-r43233683592-1",
+    "traffic_percent": 100,
+    "public_origin": "https://studytrack-981693883236.asia-southeast1.run.app",
+    "automated_smoke": "PASS_IN_ACTUAL_ACTIONS_RUN",
+    "human_domain_checks": [],
+    "console_corroboration": [
+      {
+        "kind": "HUMAN_OPERATOR_CLI",
+        "actor": "B human operator; assessed by Codex",
+        "assessment": "../../../artifacts/evidence/lab5-cloud/ep7/2026-11-12-release-a/operator-assessment.json",
+        "status": "MATCHED",
+        "native_console_screenshot": false
+      }
+    ],
+    "traffic_provenance": "Actual helper post-routing verification on the named source/run; not a later independently authenticated Console/CLI read.",
+    "member_b_public_http": "../../../artifacts/evidence/lab5-cloud/ep7/2026-11-12-release-a/member-b-public-http.json"
+  },
+  "release_b": {
+    "visible_change_issue": null,
+    "staging_pr": null,
+    "main_release_pr": null,
+    "accepted_main_sha": null,
+    "actions_run": null,
+    "runtime_digest": null,
+    "runtime_platform_digest": null,
+    "tools_digest": null,
+    "migration_execution": null,
+    "serving_revision": null,
+    "automated_smoke": "NOT_RUN",
+    "before_after_ui_evidence": [],
+    "ep8_baseline_recorded_before_release_b": false,
+    "ep8_record": null
+  },
+  "peer_acceptance": "PENDING_FOR_THIS_EVIDENCE_INCREMENT",
+  "limitations": [
+    "Actual release A automation is verified from GitHub run/logs; independent public HTTP200 checks were made by B tooling.",
+    "Authenticated GCP observations were run and pasted by B human operator; the agent did not authenticate directly to GCP or capture a native Console screenshot.",
+    "New authenticated human domain acceptance and peer acceptance of this evidence remain pending; existing EP5 evidence is historical, and A's separate HTTP checks are not new human UI acceptance.",
+    "EP8 P0 confirmation is not recorded in Issues22/23 at this checkpoint; wait for A before restart/replacement or a later distinct visible-change release B.",
+    "Release B/persistence remain unexecuted here. The master NOT_RUN template and original failed attempt are unchanged."
+  ],
+  "failed_previous_attempt": {
+    "source_sha": "d92f945016087452e146e53c91044860279a5610",
+    "run": "https://github.com/auto4496/studytrack/actions/runs/43197450278",
+    "attempt": 1,
+    "conclusion": "FAILURE",
+    "diagnosis": "ep7-oci-digest-fix.md"
+  }
+}

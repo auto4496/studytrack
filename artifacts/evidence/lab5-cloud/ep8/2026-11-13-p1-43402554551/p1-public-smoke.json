@@ -1,0 +1,12 @@
+{
+  "startedAt": "2026-11-13T09:39:37.3077460Z",
+  "endedAt": "2026-11-13T09:39:39.4855102Z",
+  "origin": "https://studytrack-981693883236.asia-southeast1.run.app",
+  "script": "deploy/smoke_test.py",
+  "scriptGitBlob": "4b248a244876af29748d2f687d3d98d411afbf2e",
+  "exitCode": 0,
+  "stdoutFile": "p1-public-smoke.txt",
+  "authentication": "Unauthenticated GET only",
+  "execution": "Codex for member A after P1",
+  "workflowRun": 43402554551
+}

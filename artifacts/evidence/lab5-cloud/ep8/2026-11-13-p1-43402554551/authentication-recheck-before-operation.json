@@ -1,0 +1,11 @@
+{
+  "observedAtUtc": "2026-11-13T07:46:10.231Z",
+  "bangkokDate": "2026-11-13",
+  "source": "normal native Edge authenticated GET attempt before any P1 operation",
+  "path": "/api/goals/1da44fc2-a956-421d-88a9-8c876adc38c1",
+  "errorCode": "UNAUTHENTICATED",
+  "message": "กรุณาเข้าสู่ระบบ",
+  "interpretation": "The current browser session cannot retrieve private data. Re-login is required; no domain-data loss or exact expiry/revocation cause is inferred.",
+  "operationPerformed": false,
+  "credentialsCollected": false
+}

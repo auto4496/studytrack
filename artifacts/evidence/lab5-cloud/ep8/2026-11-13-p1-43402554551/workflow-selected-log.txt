@@ -1,0 +1,13 @@
+deploy	Verify digests, migrate and route the checked revision	2026-11-13T09:36:00.3169872Z {
+deploy	Verify digests, migrate and route the checked revision	2026-11-13T09:36:00.3170844Z   "SERVICE_URL": "https://studytrack-981693883236.asia-southeast1.run.app",
+deploy	Verify digests, migrate and route the checked revision	2026-11-13T09:36:00.3172246Z   "DEPLOYED_IMAGE": "asia-southeast1-docker.pkg.dev/studytrack-cpe334/studytrack/studytrack@sha256:3e4e18fd392de678076ebec06464a61eca4912b49f783a418c99abf3b3fb26a3",
+deploy	Verify digests, migrate and route the checked revision	2026-11-13T09:36:00.3174142Z   "DEPLOYED_PLATFORM_IMAGE": "asia-southeast1-docker.pkg.dev/studytrack-cpe334/studytrack/studytrack@sha256:6127e4e53c2b9b8a747fd8af42216cb7879b4d5175c5f5178d4bc33f0bb18f7d",
+deploy	Verify digests, migrate and route the checked revision	2026-11-13T09:36:00.3175327Z   "TOOLS_IMAGE": "not-used",
+deploy	Verify digests, migrate and route the checked revision	2026-11-13T09:36:00.3175851Z   "DEPLOYED_REVISION": "studytrack-g3570cd4a7bca-r43402554551-1",
+deploy	Verify digests, migrate and route the checked revision	2026-11-13T09:36:00.3176429Z   "MIGRATION_EXECUTION": "skipped-rollback",
+deploy	Verify digests, migrate and route the checked revision	2026-11-13T09:36:00.3176989Z   "RELEASE_SOURCE_SHA": "3570cd4a7bca17567d30817565d5bb3aa107a672",
+deploy	Verify digests, migrate and route the checked revision	2026-11-13T09:36:00.3177690Z   "WORKFLOW_SOURCE_SHA": "3570cd4a7bca17567d30817565d5bb3aa107a672",
+deploy	Verify digests, migrate and route the checked revision	2026-11-13T09:36:00.3178231Z   "RELEASE_ROLLBACK": "true"
+deploy	Verify digests, migrate and route the checked revision	2026-11-13T09:36:00.3178585Z }
+deploy	Smoke test public UI and database-backed health	2026-11-13T09:36:01.2759233Z PASS /api/health
+deploy	Smoke test public UI and database-backed health	2026-11-13T09:36:01.2759611Z PASS /

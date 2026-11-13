@@ -1,0 +1,18 @@
+{
+  "observedAtUtc": "2026-11-12T14:16:13.360Z",
+  "actor": "Member A / Codex, independent unauthenticated HTTP reads",
+  "origin": "https://studytrack-981693883236.asia-southeast1.run.app",
+  "healthStatus": 200,
+  "health": {
+    "data": {
+      "status": "ok",
+      "service": "StudyTrack API"
+    }
+  },
+  "uiStatus": 200,
+  "builtUiPresent": true,
+  "clientAsset": "/assets/index-BbfIMKsm.js",
+  "clientAssetSha256": "db9edd3d75fa54f9fd0d0a0db56509da9cf5ad30a401411ce6ffcd26bcbfd742",
+  "approvedActivityTemplatesCopyPresent": true,
+  "limitation": "HTTP/bundle checks only; no new authenticated domain flow, native screenshot, Console readback or EP8 baseline."
+}

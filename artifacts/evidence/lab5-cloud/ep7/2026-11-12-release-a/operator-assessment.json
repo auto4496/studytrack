@@ -1,0 +1,25 @@
+{
+  "status": "MATCHED_OPERATOR_CLI_READBACK",
+  "actor": "B human operator / user; compared by Codex",
+  "received_date_local": "2026-11-12",
+  "timezone": "Asia/Bangkok",
+  "exact_command_execution_time": "Not supplied; condition transition timestamps are not readback timestamps.",
+  "source": "Selected safe output pasted by the user after requested read-only Cloud Shell commands; terminal prompt/commands omitted from retained outputs. Text normalized to LF; no original-file byte identity is claimed.",
+  "service_revision": "studytrack-g3570cd4a7bca-r43233683592-1",
+  "traffic_percent": 100,
+  "runtime_service_account": "studytrack-runner@studytrack-cpe334.iam.gserviceaccount.com",
+  "cloudsql_connection": "studytrack-cpe334:asia-southeast1:studytrack-pg",
+  "ready": true,
+  "active": true,
+  "service_spec_image": "asia-southeast1-docker.pkg.dev/studytrack-cpe334/studytrack/studytrack@sha256:3e4e18fd392de678076ebec06464a61eca4912b49f783a418c99abf3b3fb26a3",
+  "revision_spec_image": "asia-southeast1-docker.pkg.dev/studytrack-cpe334/studytrack/studytrack@sha256:6127e4e53c2b9b8a747fd8af42216cb7879b4d5175c5f5178d4bc33f0bb18f7d",
+  "revision_status_image_digest": "asia-southeast1-docker.pkg.dev/studytrack-cpe334/studytrack/studytrack@sha256:6127e4e53c2b9b8a747fd8af42216cb7879b4d5175c5f5178d4bc33f0bb18f7d",
+  "service_container_count": 1,
+  "revision_container_count": 1,
+  "projection_correction": "Initial gcloud projection omitted images from the container arrays. A second read-only Python projection over gcloud JSON supplied explicit images/counts; omitted first-round fields are not treated as empty containers.",
+  "limits": [
+    "These are human-operated authenticated CLI observations, not a direct agent GCP session or native Console screenshot.",
+    "Source/tree/run/index-child lineage is correlated with the actual Actions evidence; no independent raw registry-manifest/hash audit is claimed.",
+    "No restart/replacement, release B, private domain mutation or EP8 baseline was performed by these reads."
+  ]
+}

@@ -182,13 +182,17 @@ export function DailyActivity({ goal, onSessionExpired }: GoalActivityProps) {
             }}
             disabled={pending || uncertain}
             aria-invalid={!!(fields.entryDate || fields.date)}
-            aria-describedby="entryDate-error"
+            aria-describedby="entry-date-help entryDate-error"
           />
           <small id="entryDate-error" className="field-error">
             {fields.entryDate || fields.date}
           </small>
         </div>
       </div>
+      <p id="entry-date-help" className="muted">
+        ผลการอ่านแสดงตามวันที่เลือก หากต้องการดูบันทึกย้อนหลัง
+        ให้เลือกวันที่ที่บันทึกไว้
+      </p>
       {error && (
         <ErrorNotice
           message={error}

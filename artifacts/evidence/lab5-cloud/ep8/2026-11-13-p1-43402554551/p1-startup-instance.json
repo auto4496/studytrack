@@ -1,0 +1,18 @@
+{
+  "observedAt": "2026-11-13T09:37:37.431Z",
+  "source": "Native Edge expanded Cloud Run system log, selected non-secret fields",
+  "insertId": "6af6d9fa0006d74a526367a5",
+  "instanceId": "00e8a408bdcfa2380a4b8de2363a5397f2eb52ba3678168f582d94b682eaec6c1431968743cff31eabbaea4c05d8c3d0dc640cd6f31328da51b383ea3fed958f0394699ec3ae227cdc4f5fe47e550410a9c633ceda9a61201b7f41",
+  "scaling_reason": "DEPLOYMENT_ROLLOUT",
+  "logName": "projects/studytrack-cpe334/logs/run.googleapis.com%2Fvarlog%2Fsystem",
+  "receiveTimestamp": "2026-11-13T09:35:54.452025876Z",
+  "location": "asia-southeast1",
+  "project_id": "studytrack-cpe334",
+  "revision_name": "studytrack-g3570cd4a7bca-r43402554551-1",
+  "service_name": "studytrack",
+  "textPayload": "Starting new instance. Reason: DEPLOYMENT_ROLLOUT - Instance started due to traffic shifting between revisions due to deployment, traffic split adjustment, or deployment health check.",
+  "timestamp": "2026-11-13T09:35:54.448330Z",
+  "originalInstanceId": "00e8a408bd4fee0ef6f12109ee560f6cbe0208eac16149795fe0855a9293468a60fb2c87ddec3c59f88f9f3794a6dcfe197731b93ef989edd943c95a301072c293876e183a065d3ec562ffc3dab0840f260c30b12ac1d2976d1169ca",
+  "newInstanceDiffersFromOriginal": true,
+  "limitation": "Establishes a new-revision startup, not old-instance termination time"
+}

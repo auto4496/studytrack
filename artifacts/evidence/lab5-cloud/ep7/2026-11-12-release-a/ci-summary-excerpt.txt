@@ -1,0 +1,4 @@
+test / test-and-docker	UNKNOWN STEP	2026-11-12T14:06:19.3853111Z Ran 41 tests in 7.770s
+test / test-and-docker	UNKNOWN STEP	2026-11-12T14:06:25.9303007Z ℹ tests 21
+test / test-and-docker	UNKNOWN STEP	2026-11-12T14:06:36.7584334Z       Tests  152 passed (152)
+test / test-and-docker	UNKNOWN STEP	2026-11-12T14:07:50.7674861Z   38 passed (55.4s)

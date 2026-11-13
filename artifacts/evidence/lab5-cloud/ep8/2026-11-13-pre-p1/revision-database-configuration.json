@@ -1,0 +1,21 @@
+{
+  "observedAtUtc": "2026-11-12T18:22:14.452Z",
+  "secretReferenceObservedAtUtc": "2026-11-12T18:21:31.923Z",
+  "bangkokDate": "2026-11-13",
+  "source": "authenticated native Edge GCP Console revision Containers view",
+  "url": "https://console.cloud.google.com/run/detail/asia-southeast1/studytrack/revisions/studytrack-g3570cd4a7bca-r43233683592-1?project=studytrack-cpe334",
+  "revision": "studytrack-g3570cd4a7bca-r43233683592-1",
+  "revisionImage": "asia-southeast1-docker.pkg.dev/studytrack-cpe334/studytrack/studytrack@sha256:6127e4e53c2b9b8a747fd8af42216cb7879b4d5175c5f5178d4bc33f0bb18f7d",
+  "environment": {
+    "NODE_ENV": "production",
+    "APP_ORIGIN": "https://studytrack-981693883236.asia-southeast1.run.app",
+    "TZ": "Asia/Bangkok",
+    "DATABASE_URL": {
+      "secretName": "studytrack-database-url",
+      "secretVersion": "1",
+      "payloadRead": false
+    }
+  },
+  "cloudSqlConnection": "studytrack-cpe334:asia-southeast1:studytrack-pg",
+  "operationPerformed": false
+}
