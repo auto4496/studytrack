@@ -1,0 +1,11 @@
+{
+  "observedAt": "2026-11-13T10:47:14.670Z",
+  "source": "Native Edge Cloud Run selected new revision",
+  "revision": "studytrack-g6d30aefece55-r43410699104-1",
+  "healthy": true,
+  "trafficPercent": 100,
+  "priorP1TrafficPercent": 0,
+  "otherDisplayedRevisionsTrafficPercent": 0,
+  "platformDigest": "sha256:e311c6c11c71d51921464217ec498eef2708ccafa1d4d6f346aaec2b40a15cca",
+  "revisionSecretBinding": "studytrack-database-url:1"
+}

@@ -1,0 +1,12 @@
+{
+  "observedAt": "2026-11-13T10:56:23.730Z",
+  "source": "Normal authenticated /api/auth/me GET; public user projection only, expiry/session values omitted",
+  "user": {
+    "id": "1526ed3e-2934-412d-a8de-570980bd47cf",
+    "email": "student2@studytrack.test",
+    "displayName": "นักอ่านคนที่สอง",
+    "role": "PARTICIPANT"
+  },
+  "signInActor": "User entered existing credentials directly; Codex observed authenticated result",
+  "homeObservedAt": "2026-11-13T10:56:10.932Z"
+}

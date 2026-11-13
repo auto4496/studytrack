@@ -1,0 +1,36 @@
+{
+  "status": "PASS_OBSERVED_PENDING_PEER_REVIEW",
+  "principalEmail": "student2@studytrack.test",
+  "source": "Normal authenticated Edge GET response error projections; request IDs omitted",
+  "reads": [
+    {
+      "observedAt": "2026-11-13T10:56:39.516Z",
+      "path": "/api/goals/1da44fc2-a956-421d-88a9-8c876adc38c1",
+      "error": {
+        "code": "NOT_FOUND",
+        "message": "ไม่พบรายการที่ต้องการ"
+      },
+      "domainDataReturned": false
+    },
+    {
+      "observedAt": "2026-11-13T10:56:50.805Z",
+      "path": "/api/goals/1da44fc2-a956-421d-88a9-8c876adc38c1/entries?page=1&pageSize=20",
+      "error": {
+        "code": "NOT_FOUND",
+        "message": "ไม่พบรายการที่ต้องการ"
+      },
+      "domainDataReturned": false
+    },
+    {
+      "observedAt": "2026-11-13T10:57:03.137Z",
+      "path": "/api/goals/1da44fc2-a956-421d-88a9-8c876adc38c1/progress?date=2026-11-12",
+      "error": {
+        "code": "NOT_FOUND",
+        "message": "ไม่พบรายการที่ต้องการ"
+      },
+      "domainDataReturned": false
+    }
+  ],
+  "recordWrites": false,
+  "httpStatusAttribution": "NOT_FOUND corresponds to404 in unchanged reviewed server contract; network status was not separately measured"
+}
