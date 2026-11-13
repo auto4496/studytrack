@@ -1,0 +1,100 @@
+{
+  "observedAtUtc": "2026-11-13T13:31:32.0086870Z",
+  "actor": "Codex assisting member B / Datakung",
+  "repository": {
+    "visibility": "public",
+    "url": "https://github.com/auto4496/studytrack",
+    "private": false
+  },
+  "main": {
+    "sha": "6d30aefece55b3a83194010a2e0e62c9b8b1dbfc",
+    "tree": "59ca1b1113958c7f6fc14d999fb4ea8ed84cffab"
+  },
+  "staging": {
+    "sha": "c6b63f733489b8390c9b278351944b67937f0d84",
+    "tree": "847ff0261047569ebd10da19772149202c25fde3"
+  },
+  "releaseRun": {
+    "conclusion": "success",
+    "event": "push",
+    "headSha": "6d30aefece55b3a83194010a2e0e62c9b8b1dbfc",
+    "url": "https://github.com/auto4496/studytrack/actions/runs/43410699104"
+  },
+  "releasePrCi": {
+    "conclusion": "success",
+    "event": "pull_request",
+    "headSha": "b8eb8c9a0504991d9b34a33c73317ccd0c8d3548",
+    "url": "https://github.com/auto4496/studytrack/actions/runs/43409691975"
+  },
+  "ruleset": {
+    "id": 26925123,
+    "rules": [
+      {
+        "type": "deletion"
+      },
+      {
+        "type": "non_fast_forward"
+      },
+      {
+        "type": "pull_request",
+        "parameters": {
+          "required_approving_review_count": 1,
+          "dismiss_stale_reviews_on_push": true,
+          "required_reviewers": [],
+          "require_code_owner_review": false,
+          "require_last_push_approval": false,
+          "required_review_thread_resolution": true,
+          "require_extra_approval_for_unattributed_changes": true,
+          "allowed_merge_methods": [
+            "merge",
+            "squash",
+            "rebase"
+          ]
+        }
+      },
+      {
+        "type": "required_status_checks",
+        "parameters": {
+          "strict_required_status_checks_policy": true,
+          "do_not_enforce_on_create": false,
+          "required_status_checks": [
+            {
+              "context": "test-and-docker",
+              "integration_id": 15368
+            }
+          ]
+        }
+      }
+    ],
+    "targets": [
+      "refs/heads/main",
+      "refs/heads/codex/sprint-1-staging"
+    ],
+    "bypassObservation": "REST response not used to infer empty bypass; earlier owner capture/readback retained",
+    "enforcement": "active"
+  },
+  "publicSmoke": {
+    "exitCode": 0,
+    "selectedOutput": [
+      "PASS /api/health",
+      "PASS /"
+    ],
+    "command": "python deploy/smoke_test.py PUBLIC_ORIGIN"
+  },
+  "limits": [
+    "No new authenticated browser or GCP readback",
+    "No cloud mutation or Docker execution",
+    "Board current fields and LEB2 deadline/upload not verified",
+    "No claim of future uptime"
+  ],
+  "selectedCiSummary": {
+    "run": "https://github.com/auto4496/studytrack/actions/runs/43409691975",
+    "source": "Selected actual run-log summary lines read during report preparation; no other log/auth blocks retained",
+    "lines": [
+      "Ran 41 tests in 8.491s",
+      " Test Files  10 passed (10)",
+      "      Tests  152 passed (152)",
+      "38 passed (1.1m)"
+    ]
+  }
+}

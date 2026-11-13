@@ -1,0 +1,294 @@
+{
+  "scope": "Exact current report bytes plus pinned original evidence Git blobs; excludes manifest itself",
+  "status": "DRAFT_FOR_PEER_REVIEW_NOT_SUBMITTED",
+  "applicationCommit": "6d30aefece55b3a83194010a2e0e62c9b8b1dbfc",
+  "evidenceCommit": "c6b63f733489b8390c9b278351944b67937f0d84",
+  "pages": 8,
+  "links": 101,
+  "figures": [
+    {
+      "file": "artifacts/evidence/lab5-cloud/ep6/2026-11-12-finalization/github-settings-redacted.pdf#page=2",
+      "panels": [
+        [
+          490,
+          165,
+          900,
+          44,
+          1
+        ],
+        [
+          490,
+          500,
+          900,
+          81,
+          1
+        ],
+        [
+          490,
+          712,
+          900,
+          106,
+          1
+        ]
+      ],
+      "caption": "Figure1. C-02 / R-06: owner settings capture shows Active ruleset26925123, empty bypass and main/staging targets. Source: accepted EP6 finalization,12Nov; document panels omit intervening whitespace.",
+      "url": "https://github.com/auto4496/studytrack/blob/c6b63f733489b8390c9b278351944b67937f0d84/artifacts/evidence/lab5-cloud/ep6/2026-11-12-finalization/github-settings-redacted.pdf#page=2"
+    },
+    {
+      "file": "artifacts/evidence/lab5-cloud/ep6/2026-11-10-c02/pr36-approved-required-failure-blocked.png",
+      "panels": [
+        [
+          100,
+          5,
+          950,
+          38,
+          1
+        ],
+        [
+          406,
+          750,
+          775,
+          295,
+          1
+        ]
+      ],
+      "caption": "Figure2. C-02 / R-06: native PR36 URL, Changes approved, failed Required test-and-docker and disabled Merge. Exact probe f6330b8; run42781653763. Closed unmerged after capture; no bypass, main change or auto-merge.",
+      "url": "https://github.com/auto4496/studytrack/blob/c6b63f733489b8390c9b278351944b67937f0d84/artifacts/evidence/lab5-cloud/ep6/2026-11-10-c02/pr36-approved-required-failure-blocked.png"
+    },
+    {
+      "file": "artifacts/evidence/lab5-cloud/ep8/2026-11-12-p0-3570cd4/p0-entry-saved.jpg",
+      "panels": [
+        [
+          80,
+          43,
+          780,
+          32,
+          1
+        ],
+        [
+          319,
+          362,
+          850,
+          428,
+          1
+        ]
+      ],
+      "caption": "Figure3. C-04 / R-03: actual public goal UI confirms saved 20 minutes against 30, 66.67%, stored 12 Nov 2026. Source: P0 on main 3570cd4; original entry saved2026-11-12T14:42:49.190Z, then DTO/refresh checks. This is cloud data, not the local rehearsal.",
+      "url": "https://github.com/auto4496/studytrack/blob/c6b63f733489b8390c9b278351944b67937f0d84/artifacts/evidence/lab5-cloud/ep8/2026-11-12-p0-3570cd4/p0-entry-saved.jpg"
+    },
+    {
+      "file": "artifacts/evidence/lab5-cloud/ep8/2026-11-13-p2-43410699104/student2-private-goal-denied-clear.jpg",
+      "panels": [
+        [
+          80,
+          43,
+          780,
+          32,
+          1
+        ],
+        [
+          330,
+          255,
+          450,
+          46,
+          1
+        ],
+        [
+          26,
+          745,
+          215,
+          58,
+          0.3
+        ]
+      ],
+      "caption": "Figure4. C-04 / R-03: same private URL denies authenticated student2 (นักอ่านคนที่สอง shown in the account panel). Source: P2 unobstructed native retake 13 Nov 11:07:20Z, after user-operated sign-in and three API denials; main 6d30aef/run43410699104.",
+      "url": "https://github.com/auto4496/studytrack/blob/c6b63f733489b8390c9b278351944b67937f0d84/artifacts/evidence/lab5-cloud/ep8/2026-11-13-p2-43410699104/student2-private-goal-denied-clear.jpg"
+    },
+    {
+      "file": "artifacts/evidence/lab5-cloud/ep8/2026-11-12-p0-3570cd4/p0-entry-saved.jpg",
+      "panels": [
+        [
+          319,
+          584,
+          850,
+          197,
+          1
+        ]
+      ],
+      "caption": "Figure5. C-05 / R-04, P0 BEFORE: original 20/30=66.67%,12Nov2026; main 3570cd4/revision studytrack-g3570cd4a7bca-r43233683592-1. Full public URL/save confirmation is Figure3; raw P0 DTOs retain identity/timestamps.",
+      "url": "https://github.com/auto4496/studytrack/blob/c6b63f733489b8390c9b278351944b67937f0d84/artifacts/evidence/lab5-cloud/ep8/2026-11-12-p0-3570cd4/p0-entry-saved.jpg"
+    },
+    {
+      "file": "artifacts/evidence/lab5-cloud/ep8/2026-11-13-p1-43402554551/p1-fixed-date-ui.jpg",
+      "panels": [
+        [
+          319,
+          555,
+          850,
+          191,
+          1
+        ]
+      ],
+      "caption": "Figure6. C-05 / R-04, P1 AFTER restart-equivalent: original saved-date 20/30=66.67%. Actual same-image run43402554551 created new 100%-serving revision studytrack-g3570cd4a7bca-r43402554551-1; full DTOs match P0.",
+      "url": "https://github.com/auto4496/studytrack/blob/c6b63f733489b8390c9b278351944b67937f0d84/artifacts/evidence/lab5-cloud/ep8/2026-11-13-p1-43402554551/p1-fixed-date-ui.jpg"
+    },
+    {
+      "file": "artifacts/evidence/lab5-cloud/ep8/2026-11-13-p2-43410699104/p2-new-guidance-saved-day.jpg",
+      "panels": [
+        [
+          319,
+          501,
+          850,
+          249,
+          1
+        ]
+      ],
+      "caption": "Figure7. C-05 / R-04, P2 AFTER distinct visible redeploy: new selected-date guidance plus original stored-date 20/30=66.67%. Source: main 6d30aef/run43410699104, native UI 13 Nov 10:53:08Z. Selecting 12 Nov changes the read date only.",
+      "url": "https://github.com/auto4496/studytrack/blob/c6b63f733489b8390c9b278351944b67937f0d84/artifacts/evidence/lab5-cloud/ep8/2026-11-13-p2-43410699104/p2-new-guidance-saved-day.jpg"
+    },
+    {
+      "file": "artifacts/evidence/lab5-cloud/ep8/2026-11-13-p2-43410699104/p2-serving-revision.jpg",
+      "panels": [
+        [
+          290,
+          184,
+          614,
+          35,
+          1
+        ],
+        [
+          276,
+          350,
+          594,
+          120,
+          1
+        ],
+        [
+          914,
+          271,
+          597,
+          61,
+          1
+        ]
+      ],
+      "caption": "Figure8. C-05 / R-04 and C-06 / R-08: native releaseB service URL, new revision studytrack-g6d30aefece55-r43410699104-1 at 100% and earlier revisions 0%. Source: P2 Console observation,13Nov, actual Deploy43410699104.",
+      "url": "https://github.com/auto4496/studytrack/blob/c6b63f733489b8390c9b278351944b67937f0d84/artifacts/evidence/lab5-cloud/ep8/2026-11-13-p2-43410699104/p2-serving-revision.jpg"
+    },
+    {
+      "file": "artifacts/evidence/lab5-cloud/ep8/2026-11-13-p2-43410699104/p2-database-binding.jpg",
+      "panels": [
+        [
+          907,
+          311,
+          550,
+          36,
+          1
+        ],
+        [
+          907,
+          409,
+          550,
+          62,
+          1
+        ],
+        [
+          907,
+          694,
+          550,
+          108,
+          1
+        ]
+      ],
+      "caption": "Figure9. C-05 / R-04: native DB secret reference version 1 and SQL attachment studytrack-cpe334:asia-southeast1:studytrack-pg after releaseB. The truncated secret name is corroborated by the exact readback/helper result; no secret value is displayed.",
+      "url": "https://github.com/auto4496/studytrack/blob/c6b63f733489b8390c9b278351944b67937f0d84/artifacts/evidence/lab5-cloud/ep8/2026-11-13-p2-43410699104/p2-database-binding.jpg"
+    }
+  ],
+  "originalEvidence": [
+    {
+      "path": "artifacts/evidence/lab5-cloud/ep6/2026-11-10-c02/pr36-approved-required-failure-blocked.png",
+      "commit": "c6b63f733489b8390c9b278351944b67937f0d84",
+      "bytes": 143528,
+      "sha256": "c3014d2c6c2e7da337c7d2dbdaa5b30f3d74f33925900e3279387f29b25c6f46"
+    },
+    {
+      "path": "artifacts/evidence/lab5-cloud/ep6/2026-11-12-finalization/github-settings-redacted.pdf",
+      "commit": "c6b63f733489b8390c9b278351944b67937f0d84",
+      "bytes": 284584,
+      "sha256": "e2e9f40ee3cadf0d0045a8763643f7152bd89834f766df77dc95b743135d0f0d"
+    },
+    {
+      "path": "artifacts/evidence/lab5-cloud/ep8/2026-11-12-p0-3570cd4/p0-entry-saved.jpg",
+      "commit": "c6b63f733489b8390c9b278351944b67937f0d84",
+      "bytes": 84077,
+      "sha256": "2c8cca26cc5179d2eec6408766c80536f37baf785c4add42f6172c9311ca3103"
+    },
+    {
+      "path": "artifacts/evidence/lab5-cloud/ep8/2026-11-13-p1-43402554551/p1-fixed-date-ui.jpg",
+      "commit": "c6b63f733489b8390c9b278351944b67937f0d84",
+      "bytes": 81451,
+      "sha256": "4a2862088eb934726e70319523ad2cd00d1cdca4e63afea7b19f5e9f78b54b4d"
+    },
+    {
+      "path": "artifacts/evidence/lab5-cloud/ep8/2026-11-13-p2-43410699104/p2-database-binding.jpg",
+      "commit": "c6b63f733489b8390c9b278351944b67937f0d84",
+      "bytes": 144878,
+      "sha256": "5a936f4363f0143a225afcfb1f482b2292edcb22f2f23a09c7396a60f4a923d1"
+    },
+    {
+      "path": "artifacts/evidence/lab5-cloud/ep8/2026-11-13-p2-43410699104/p2-new-guidance-saved-day.jpg",
+      "commit": "c6b63f733489b8390c9b278351944b67937f0d84",
+      "bytes": 83076,
+      "sha256": "2e5c08ce3f1a8bcb8588a943e6881117f15f76d19b0d31cabf9fa40a0ec978e2"
+    },
+    {
+      "path": "artifacts/evidence/lab5-cloud/ep8/2026-11-13-p2-43410699104/p2-serving-revision.jpg",
+      "commit": "c6b63f733489b8390c9b278351944b67937f0d84",
+      "bytes": 150100,
+      "sha256": "9ef0462d5edf5e977eaf0d41d2a2d3054e92e157e89d5c9432ae6570e41fc3ae"
+    },
+    {
+      "path": "artifacts/evidence/lab5-cloud/ep8/2026-11-13-p2-43410699104/student2-private-goal-denied-clear.jpg",
+      "commit": "c6b63f733489b8390c9b278351944b67937f0d84",
+      "bytes": 54096,
+      "sha256": "396405a1a8d9ad574a4dcdc6fa50ba3c5c573c508a12ee6054432659819bf9b5"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "output/pdf/lab5_secB_TH-057_P8.pdf",
+      "bytes": 1230012,
+      "sha256": "fa6029a5629a4306591ab8b2b41b241cda574fb81371b865058828da43427f93"
+    },
+    {
+      "path": "docs/deliverables/lab5/report-source.md",
+      "bytes": 24509,
+      "sha256": "650835f078ea5d5a933e6a5dc0f2b6617d2d13533888d28c37ff8bb22a7dbea8"
+    },
+    {
+      "path": "docs/deliverables/lab5/submission.json",
+      "bytes": 1041,
+      "sha256": "d67ed1e53da6fb208acc04158e040e3f284e452773fb670123fc968659be7295"
+    },
+    {
+      "path": "docs/deliverables/lab5/evidence-index.md",
+      "bytes": 9676,
+      "sha256": "18f161deb36b8609330e37fa83c710aa3a352bfc18ea74bea6ce92d36a79ba66"
+    },
+    {
+      "path": "docs/deliverables/lab5/report-preflight.json",
+      "bytes": 2970,
+      "sha256": "b011244acf320866e9ac497c32bc2f94ed67774b433f10b4a3e93479e9e1b0a1"
+    },
+    {
+      "path": "docs/labs/lab-05/deployment.md",
+      "bytes": 15975,
+      "sha256": "47ac2ae1e085988e5a7df1bcfd562bd72ea8dc07c1aa1078e2485a0e9b775547"
+    },
+    {
+      "path": "scripts/build-lab5-report.py",
+      "bytes": 12465,
+      "sha256": "b9865716736036b6a0f7847935019d34ccbb374cac352a49ab69ead4132b3ed0"
+    }
+  ],
+  "visualQa": "Separate rendering and all-page visual inspection required after build"
+}

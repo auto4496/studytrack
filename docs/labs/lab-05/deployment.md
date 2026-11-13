@@ -2,165 +2,160 @@
 
 ## Current checkpoint - 13 November 2026
 
-A separately accepted release PR52 and normally merged main6d30aefece55b3a83194010a2e0e62c9b8b1dbfc, whose full tree equals accepted release59ca1b1113958c7f6fc14d999fb4ea8ed84cffab. Actual [Deploy43410699104](https://github.com/auto4496/studytrack/actions/runs/43410699104) is SUCCESS through normal build/tools/migration/deployment/smoke. New revision studytrack-g6d30aefece55-r43410699104-1 serves100% with the same DB references. A's [P2 and student2 privacy observations](ep8-p2-2026-11-13.md) show the new guidance, complete original DTO equality with P0, fixed-date20/30=66.67%, separate public smoke PASS and all three private GETs/UI denied under authenticated student2. These actual observations await B review and final joint evidence/report integration. Keep Issues22/23 open; this staging evidence increment does not deploy again.
+A separately approved [release PR52](https://github.com/auto4496/studytrack/pull/52) and merged main **6d30aefece55b3a83194010a2e0e62c9b8b1dbfc**, tree `59ca1b1113958c7f6fc14d999fb4ea8ed84cffab` (equal reviewed staging b8eb8c9). Normal [Deploy43410699104](https://github.com/auto4496/studytrack/actions/runs/43410699104), attempt1, passed CI, both image builds, WIF authentication, waited migration, readiness/digest/configuration guards, traffic and public smoke; no seed/reset ran.
 
-The following paragraphs retain earlier writing-time checkpoints.
+Observed serving revision **studytrack-g6d30aefece55-r43410699104-1**,100% traffic. Runtime index `sha256:54dbdf5fb0fa4e6f7baec37f0568bbcff4db0fd97a0550df8c24f9923e80ba62`, platform `sha256:e311c6c11c71d51921464217ec498eef2708ccafa1d4d6f346aaec2b40a15cca`: different levels of one verified OCI lineage, not an index/platform equality requirement.
 
-B accepted PR50/P1 in [review5889128165](https://github.com/auto4496/studytrack/pull/50#pullrequestreview-5889128165), and the user merged it into staging119b701 with the full tree equal to approved d4ef836. The P1 technical result and same-data comparison are accepted. B is preparing a distinct [selected-date guidance change for release B](ep7-release-b-date-guidance.md): specification before code, production client build and four explicitly local fixture-backed desktop/mobile figures passed. It remains a feature candidate awaiting A review/required CI, then the separate reviewed main release. Main remains3570cd4; actual P1 run43402554551 is still the latest deployment. Keep the fixed EP8 data and Issues22/23 open through P2/privacy/joint report acceptance. This preparation does not deploy or mutate cloud records.
+A's [P2/privacy evidence](ep8-p2-2026-11-13.md) was accepted by B in [review5890141901](https://github.com/auto4496/studytrack/pull/53#pullrequestreview-5890141901); PR53 merged into staging c6b63f7. Full original goal/entries/progress equal P0/P1 after the distinct release; stored date2026-11-12 remains20/30=66.67%. Authenticated student2 gets no private data from three GETs or UI. Assisted observations and user-operated sign-in are not independent human UAT. Dated historical records retain writing-time pending states; this checkpoint records later acceptance.
 
-The following P1 paragraph retains its writing-time peer-review status; the acceptance above supersedes that pending state.
+The [report](../../deliverables/lab5/README.md) remains a joint-review draft. Keep Issues22/23/24 open for remaining integration/acceptance/submission. A staging documentation PR does not deploy; no extra evidence-only main release is needed to assemble this draft.
 
-A completed the [actual same-image P1 replacement and comparison](ep8-p1-2026-11-13.md) after B accepted PR48/P0 and PR49/preflight. At A's explicit start instruction, Codex dispatched [Deploy43402554551](https://github.com/auto4496/studytrack/actions/runs/43402554551) through auto4496; this is an assisted operation, not a human button click. The run succeeded with unchanged main3570cd4/index3e4e18fd/platform6127e4e and no build/push/tools/migration/seed. New revision studytrack-g3570cd4a7bca-r43402554551-1 serves100%; a DEPLOYMENT_ROLLOUT startup event identifies a different instance. SQL attachment and versioned DB binding remain the same. Complete original goal/entry/progress responses equal P0 for stored date2026-11-12; native UI shows20/30=66.67%, and actual pipeline plus separate public smoke pass. No private record was changed/recreated. B's review of the P1 result/operator variation, distinct visible-change release B/P2, privacy check and final joint evidence/report acceptance remain pending; keep Issues22/23 open.
+## Stack and starter adaptations
 
-The paragraphs below retain earlier writing-time checkpoints.
+React/Vite assets and Express/Node24 share one production image; Prisma6/PostgreSQL17 persist records and sessions. StudyTrack uses Secure cookies, CSRF and exact HTTPS APP_ORIGIN, not starter bearer-auth/routes/database assumptions. `Dockerfile` separates non-root production `runtime` from migration/seed `tools`. Runtime startup never migrates/seeds. `.dockerignore` allowlists inputs and excludes private env, Git, evidence/reports and host dependencies.
 
-EP8 has begun with A's assisted [fresh P0 baseline](ep8-baseline-2026-11-12.md): new goal/entry, original URL-visible captures and stored DTOs agree on20/30=66.67% for2026-11-12. B's PR47 corroboration is now peer-reviewed in staging; exact database binding/version, operation/startup evidence and independent P0/parameter acceptance remain pending. No P1 replacement, P2 redeploy or post-operation persistence PASS is claimed. Keep Issues22/23 open and coordinate before any main release or runtime operation.
+Local production [Compose](../../../compose.container.yaml) uses Caddy/internal CA for HTTPS and an isolated named PostgreSQL volume; dev/test Compose is separate. Cloud Run supplies public HTTPS, so cloud has no Caddy container. Test databases never target cloud.
 
-Latest actual execution: corrective main release PR46 is accepted at3570cd4, full tree3e76a55bfdac1ccd3c0ae7ecaa5cc551a98ffa23, and [Deploy43233683592](https://github.com/auto4496/studytrack/actions/runs/43233683592) is SUCCESS. B independently retained the actual run/helper/smoke evidence, made separate public HTTP reads, and assessed the B-side human's read-only service/revision/image/traffic/DB-attachment outputs. See [release A evidence](ep7-release-a-evidence.md) and [actual record](ep7-record.json). The master template and first failed run remain unchanged. Native Console screenshot/new authenticated human domain acceptance/evidence peer acceptance and later release B/EP8 results are not implied. Wait for A's P0 confirmation before restart/replacement or another deployment; documentation PRs into staging do not deploy, while main merges do. Earlier paragraphs below are dated writing-time checkpoints.
-
-Latest release preparation: A accepted combined EP7/wording PR41 head313b4fb into staging845bfee; B verified identical full trees and the accepted combined CI43186936178. [Sync PR44](https://github.com/auto4496/studytrack/pull/44) reconciles the missing main history through a dedicated reviewed branch and adds only four handoff documents. [Draft release PR43](https://github.com/auto4496/studytrack/pull/43) waits for that acceptance before its separate main review. Main remains5c04cd4; no live EP7 exchange/deployment has been performed. [Release readiness](ep7-release-readiness.md) records the exact ancestry/tree checks, superseded unmerged PR42, actual GitHub preflight, next steps and EP6 closure checkpoint. PR40 is already included in release A; the later visible-change release B needs a different agreed change and an EP8 baseline captured before it. Earlier paragraphs below preserve their writing-time states.
-
-Later checkpoint: A approved PR38 exact741a6a4 and merged its EP6 finalization into protected staging86b0b3e. B verified complete tree equality66a70afd8140e67d9516ea16ffb62de13f3f3c91; main remains5c04cd4. B is preparing the [EP7 update-only workflow/release script](ep7-release.md), with [contract](ep7-release-contract.md) and [offline verification](ep7-verification.md), for A review. Combine EP6's accepted documentation with the first separately reviewed EP7 main release, then verify the accepted tree before closing Issue21. This code increment is not a live cloud release; Issue22 stays open through both real pipeline releases and evidence.
-
-The following paragraph is the earlier pre-PR38 acceptance checkpoint.
-
-EP5 documentation release [PR #30](https://github.com/auto4496/studytrack/pull/30) is merged into main5c04cd4 and #20 is closed. EP6's required main/staging gate, normal failing PR36 refusal/cleanup, legitimate protected PR37 staging merge, human-operated GCP scoped-policy/zero-key readbacks and complete persisted WIF condition/mappings now have retained evidence. All requested image types are collected; clipped values/controls are corroborated by real API/CLI evidence. See [EP6 execution evidence](ep6-evidence.md) and [execution record](ep6-record.json). Finalization is ready for A review and the reviewed main release; keep Issue21 open until those acceptance steps finish. No actual keyless credential exchange or new cloud deployment is established; those belong to EP7. The dated EP5 writing-time checkpoints below retain their evidence provenance; the later PR30/#20 record establishes acceptance. No documentation merge establishes a new running application revision.
-
-8 November 2026. Issue #20. B prepares the bootstrap and A reviews it through staging and a main release. This document records planned infrastructure and actual evidence separately. [First-cloud contract](cloud-contract.md) defines acceptance.
-
-## Confirmed setup
-
-- Project ID `studytrack-cpe334`, region `asia-southeast1`.
-- Deployed source is accepted main `807ed0806a84f39e88e0ba8f8fa5e658f41fe97f`, released through [PR #27](https://github.com/auto4496/studytrack/pull/27) after A's bootstrap review in [PR #26](https://github.com/auto4496/studytrack/pull/26).
-- The user confirmed enabled billing, the budget alert and teammate IAM access, showed an active trial, completed the final-main preview and executed the real bootstrap in Cloud Shell.
-- Public origin: <https://studytrack-981693883236.asia-southeast1.run.app>. Ready revision `studytrack-00001-rtr` serves 100% of traffic. The user's deployment log, SQL describe output, browser/Console screenshots and enabled-API output establish the results below.
-- [EP5 evidence and A acceptance checklist](ep5-evidence.md) records the immutable image digests, command outcomes and evidence attribution. A's [9 November live verification](member-a-live-acceptance.md) separately records saved20/30, refresh persistence and cross-owner denial, with A's own captures. PR #28 has been approved and merged into staging; peer review of the A evidence and the documentation release remain pending. This documentation branch has not been deployed.
-
-## Episode checklist
-
-Cross-checked against Student Guide V1.1, EP4 pages 38-43 and EP5 pages 44-55, and the Lab5 handout. The handout controls assessed requirements when reference materials differ. Complete each row using its stated evidence before declaring the episode complete.
-
-| Step | StudyTrack action and expected evidence | Current checkpoint |
-| --- | --- | --- |
-| EP4 file preparation | CI and adapted deployment files are on reviewed main. The reference copies the whole starter deploy/ folder during EP4. StudyTrack initially published CI/smoke in PR #25; PR #26 supplies the first-deploy script and Cloud Build configuration. | PR #26 accepted into staging; PR #27 released the scripts to main807ed08. |
-| 5.0 Adapt | A reviews resource names, SQL 17/edition/tier/storage, port 8080, origin, runtime/tools, IAM and secret/migration behavior in PR #26. | A approved source3664535; release CI passed 16 offline, 21 config, 117 API/unit and 24 browser checks plus app/runtime-image builds. These are pre-cloud results. |
-| 5.1 Cloud Shell | Correct active Google account, studytrack-cpe334, asia-southeast1, enabled billing, budget, teammate access and clean accepted main. Confirm active trial/credits in Console. | User supplied the account/project/billing results and active-trial screenshot, confirmed budget/teammate access and updated to main807ed08. |
-| 5.2 Preview | Run DRY_RUN=1 from the repository root and inspect every proposed resource and permission with A. Repeat after script changes and on the final accepted main. | User's final-main preview807ed08 completed; B also ran literal preview on that source. |
-| 5.3 Deploy | Run the accepted main script after the reviewed plan and billing/credit check. Retain source SHA, image digests, migration outcome, revision and URL. Inspect failures before retrying. | Build59d938a8 succeeded; migration/seed execution studytrack-migrate-6qs4x completed; revision studytrack-00001-rtr deployed. First permission-denied attempt and the controlled successful retry are retained in the evidence record. |
-| 5.4 Storage | Verify studytrack-pg has storageAutoResize=false and the expected size/edition/tier. Creation already supplies --no-storage-auto-increase. | Actual describe confirms POSTGRES_17 / ENTERPRISE / db-f1-micro / 10GB / storageAutoResize=false; Console shows PostgreSQL17.11, Singapore, Single zone and database studytrack. |
-| 5.5 Health and UI | Use the script's printed HTTPS origin. Verify /api/health returns data.status=ok, run the read-only smoke and open the built UI publicly. The StudyTrack health route queries the DB. | Script smoke passed both routes. B independently fetched health/root HTTP200; the user's browser screenshots show the live UI. |
-| 5.6 Sign-in | Retrieve the manager/student password privately using the selected secret version referenced by the migration job. Use manager@studytrack.test and student1@studytrack.test / student2@studytrack.test. The existing StudyTrack seed preserves established passwords/accounts on rerun. | User signed in as manager and both students, created a template/30-minute goal, observed invalid0 rejection, saved15/30=50%, reloaded the saved result and observed student2 denied student1's goal. |
-| 5.7 Console | Check enabled APIs, registry runtime/tools images, all three service identities/grants, PostgreSQL17 studytrack-pg/studytrack, three named secrets, Cloud Run origin/DB secret/port and scaling min0/max3. | User screenshots show Run/resources/scaling, Registry images, secret names, project IAM and SQL/database. Enabled-API output contains all7 script APIs. Resource-scoped IAM bindings are evidenced by the bootstrap log; the full origin/secret name is clipped in the Console screenshot. |
-| 5.8 Acceptance | Both members check manager template -> participant goal -> saved entry/progress and a rule/access rejection. Link the public URL, SHA/revision, outcomes and safe screenshots in #20 and this record. Close #20 only after these criteria hold. | B-side user checks passed. A independently verified the domain workflow on 9 November: target30, saved20/30=66.67%, persisted retrieval and student2 denial. PR #28 accepted into staging; [A evidence](member-a-live-acceptance.md) awaits B review and the documentation release. Keep #20 open for that handoff/release. |
-
-Initial build runs before SQL creation in this adaptation, reducing the time a new SQL instance exists if the build fails. The separate builder/migrator identities and extra failure tests are design choices to review with A. Generating and retaining the configuration preview is preparation for the real cloud checks.
-
-For step5.4, inspect the actual settings after deployment:
-
-```bash
-gcloud sql instances describe studytrack-pg --project=studytrack-cpe334 \
-  --format='yaml(databaseVersion,region,settings.edition,settings.tier,settings.dataDiskSizeGb,settings.storageAutoResize)'
-```
-
-If migration/seed fails at step5.3, the script prints this diagnostic command. Inspect the relevant execution before another attempt:
-
-```bash
-gcloud run jobs logs read studytrack-migrate \
-  --region=asia-southeast1 --project=studytrack-cpe334 --limit=50
-```
-
-Files for the later episodes also need explicit acceptance. `deploy/release.sh` and `.github/workflows/deploy.yml` are tracked in #22 with the reviewed identity/gate setup in #21. The cloud restart/redeploy proof is #23 and the evidence PDF is #24. A teardown script/resource cleanup belongs to the post-grading lifecycle after the instructor confirms service availability is no longer required. Recheck the next episode's complete prerequisites before starting it.
-
-EP8 preparation,9November: A has drafted the [shared cloud persistence test plan](persistence-test-plan.md) and [unexecuted record template](persistence-record.template.json) for B review. They define the before/restart/redeploy comparisons and concrete A/B contributions without changing the issue owner. Execution awaits the reviewed EP7 workflow and exact operation plan. No cloud restart/redeploy result is established by these preparation files.
-
-## Stack and reference adaptations
-
-React and Express share one production runtime, Node 24 and Prisma 6.19.3. PostgreSQL 17 stores users, sessions, templates, goals and entries. Cloud Run listens on injected PORT 8080 and serves the UI/API over one public HTTPS origin. Cloud SQL Enterprise is proposed with db-f1-micro, zonal availability, 10 GB SSD and disabled storage auto-increase. Run uses one CPU, 512 MiB, minimum 0 and maximum 3 instances. Teammate/user review of the dry-run plan precedes billable execution.
-
-The starter's port 3000, PostgreSQL 16, ADMIN_PASSWORD, bearer-token login and /api/ready/categories do not describe StudyTrack. Here the tools target runs `npm run db:migrate && npm run db:seed`. The serving target receives DATABASE_URL only. Cloud Run's deterministic HTTPS URL supplies the exact APP_ORIGIN on the first deployment. The existing DB-backed /api/health plus built UI form the read-only smoke check. The full C-04 domain journey is checked separately by the team.
-
-## Resources and permissions
-
-The [contract resource table](cloud-contract.md) lists the proposed names. Runtime and tools images are tagged with the full accepted main SHA and resolved to digests before use. Cloud Build uploads only the inputs allowed by `.dockerignore`, using `--ignore-file=.dockerignore`; its configuration is read locally from deploy/cloudbuild.yaml.
-
-`studytrack-runner` receives Cloud SQL Client and accessor on studytrack-database-url. `studytrack-migrator` receives Cloud SQL Client and accessor on the database and both seed-password secrets. `studytrack-builder` receives Artifact Registry Writer on the studytrack repository, project Logs Writer and project Storage Object Viewer for uploaded build source. Build has no application-secret grant. The caller needs permission to enable APIs, create these resources and act as their service accounts.
-
-The successful bootstrap log records these grants and resource creation. Project IAM screenshots independently confirm the project roles. Repository/secret bindings are resource-scoped and are not established by the project IAM screenshot. Offline tests remain separate from this live evidence.
-
-## Environment and build settings
-
-| Name | Purpose | Secret | Value source |
-| --- | --- | --- | --- |
-| PROJECT_ID | Bootstrap target project | No | User-confirmed studytrack-cpe334 |
-| REGION | Build/registry/Run/SQL region | No | User-confirmed asia-southeast1 |
-| DRY_RUN | 1 prints the plan; 0 executes it | No | Explicit caller selection; default 0 follows the starter |
-| SQL_TIER | Proposed SQL machine | No | db-f1-micro default; changes require plan review |
-| DATABASE_URL | Prisma database connection | Yes | Selected enabled version of studytrack-database-url in Secret Manager |
-| SEED_MANAGER_PASSWORD | Synthetic manager password, tools job only | Yes | Selected version of studytrack-manager-password |
-| SEED_PARTICIPANT_PASSWORD | Synthetic student passwords, tools job only | Yes | Selected version of studytrack-participant-password |
-| APP_ORIGIN | Exact same-origin and CSRF contract | No | https://studytrack-PROJECT_NUMBER.asia-southeast1.run.app, using the queried project number |
-| NODE_ENV | Production configuration | No | production in job and service |
-| PORT | HTTP listen port | No | Cloud Run injection from --port=8080 |
-| TZ | Process timezone | No | Asia/Bangkok on the serving service; domain dates remain explicit Bangkok dates |
-| _REGISTRY | Cloud Build repository prefix | No | Region/project/studytrack from bootstrap |
-| _VCS_REF / VCS_REF | Image tags and runtime OCI revision label | No | Full accepted main Git SHA |
-
-The script generates 48-character hexadecimal passwords. Existing secret versions and DB passwords are preserved on rerun. A DB user with no saved secret, an empty/interrupted secret or a changed connection requires reviewed recovery. The script never resets an existing user's password. Keep a single manual bootstrap in progress and inspect a failure before retrying.
-
-## Preview on the review branch
-
-Run from the repository root in Cloud Shell. This prints the proposed gcloud commands and invokes zero gcloud calls. It uses a clearly identified simulated project number and secret versions until the actual run can query them.
-
-```bash
-DRY_RUN=1 PROJECT_ID=studytrack-cpe334 REGION=asia-southeast1 bash deploy/deploy.sh
-```
-
-Read the proposed SQL machine/storage, service identities/grants, image targets, migration and service settings with A. The plan builds images before creating a new SQL instance. It keeps migration/seed as a waited job before updating the public service. Preview success records a plan; the resource/deployment acceptance requires the next section.
-
-## First real deployment after reviewed main release
-
-The first deployment below has already completed on main807ed08. Preserve this procedure for reference; repeating it is not required to review this documentation. A reviews the existing live deployment and evidence using [the acceptance checklist](ep5-evidence.md#a-acceptance-handoff).
-
-Confirm the Console's selected project, active trial/credits and budget alert first. Pull the reviewed main containing these scripts, check its SHA, and keep the checkout clean. Actual execution requires HEAD to match origin's latest main and the gcloud project to match PROJECT_ID.
-
-```bash
-git switch main
-git pull --ff-only origin main
-git rev-parse HEAD
-DRY_RUN=1 PROJECT_ID=studytrack-cpe334 REGION=asia-southeast1 bash deploy/deploy.sh
-# After the team has reviewed this exact plan, run the real first deployment.
-DRY_RUN=0 PROJECT_ID=studytrack-cpe334 REGION=asia-southeast1 bash deploy/deploy.sh
-```
-
-The script enables APIs, prepares registry/identities, builds and resolves runtime/tools images, creates/reuses SQL/database/secrets/user, runs migration and idempotent seed, deploys the service and runs the public smoke. A build or migration failure stops before a service update. A smoke failure reports deployment failure for investigation and retains the deployed resources for diagnosis.
-
-It prints only source SHA, images, revision, URL and account names. Retrieve manager/student passwords privately from their named secrets. Sign in as manager@studytrack.test or student1@studytrack.test / student2@studytrack.test using the corresponding generated password. The app's existing seed preserves the initial accounts and records on rerun.
-
-## Commands and verification
-
-Local packaging uses the [container runbook](container.md). Root CI uses `npm ci`, `npm run db:generate`, `npm run test:container-config`, guarded `npm run db:test:migrate`, `npm test`, `npm run test:e2e` and `npm run build`. The cloud build configuration builds `runtime` and `tools`; the job migrates and seeds explicitly. The bootstrap's public smoke runs `python3 deploy/smoke_test.py SERVICE_URL`.
-
-Offline script checks require Bash and Python 3 and use local executable fixtures for every gcloud call.
-
-```bash
-bash -n deploy/deploy.sh
-python3 -B -m unittest discover -s deploy/tests -p 'test_*.py' -v
-```
-
-After cloud deployment, use the printed deterministic URL for login and browser actions so APP_ORIGIN matches. Verify manager template -> student goal -> daily minutes -> persisted progress, a duplicate/invalid rejection, cross-owner access and logout. Capture the public URL, source SHA and actual outcome. Cloud restart/redeploy belongs to #23. GitHub identity, required gate and the reusable main deployment pipeline continue in #21/#22.
-
-## Running revision and evidence
-
-The bootstrap prints the accepted SHA, immutable runtime/tools image URIs and latest ready service revision. Find the serving image/revision again with `gcloud run services describe studytrack --region=asia-southeast1 --project=studytrack-cpe334`. Match its digest to the SHA-tagged Artifact Registry image and its OCI org.opencontainers.image.revision label. Keep the resulting mapping with the public URL and release PR.
-
-| Evidence | Current result |
+| Resource | Actual observed value / source |
 | --- | --- |
-| R-01/R-02 local packaging | Accepted in PR #15 and published through PR #25 |
-| C-01 PR CI | Accepted staging/main runs linked in PR #19/#25 |
-| Bootstrap offline guards | 16 offline checks passed in PR #26/#27; hosted release CI42484888811 succeeded |
-| Public resources/URL and C-04 | B's deployment record identifies main807ed08; A independently verified the public domain workflow and access restriction on 9 November. See [A evidence](member-a-live-acceptance.md) for captures and version-provenance limits. Documentation handoff/release remains pending. |
-| C-02/C-05/C-06 | Tracked in #21/#23/#22 |
+| Project / region | studytrack-cpe334 / asia-southeast1 |
+| Service / public origin | studytrack / <https://studytrack-981693883236.asia-southeast1.run.app> |
+| Runtime | CPU1,512MiB,port8080,gen2,request-based,min0,max3 |
+| Migration job / releaseB execution | studytrack-migrate / studytrack-migrate-cq47b |
+| SQL | studytrack-pg,POSTGRES_17,Enterprise,db-f1-micro,single zone,10GB,storageAutoResize=false; [EP5 human readback](ep5-evidence.md) |
+| Database | studytrack (contract-derived; P2 did not inspect SQL or secret payload) |
+| SQL attachment | studytrack-cpe334:asia-southeast1:studytrack-pg |
+| Artifact Registry | repository studytrack; image names studytrack and studytrack-tools, same project/region |
+| Runtime secret | studytrack-database-url:1; reference unchanged P0/P1/P2 |
+| Initial seed secrets | studytrack-manager-password and studytrack-participant-password; tools only |
 
-Keep source/review/CI/deployment evidence and the public service available for assessment as required by the handout. The Lab5 evidence index and PDF are tracked in #24.
+Evidence: [EP5](ep5-evidence.md), [EP6](ep6-evidence.md), [releaseA](ep7-release-a-evidence.md), [P1](ep8-p1-2026-11-13.md), [P2](ep8-p2-2026-11-13.md). These are dated observations, not a guarantee future configuration cannot change.
 
-References include [Cloud Build service accounts](https://docs.cloud.google.com/build/docs/securing-builds/configure-user-specified-service-accounts), [Cloud SQL settings](https://docs.cloud.google.com/sql/docs/postgres/create-instance), [Cloud Run SQL connections](https://docs.cloud.google.com/sql/docs/postgres/connect-run), [Cloud Run URLs](https://docs.cloud.google.com/run/docs/triggering/https-request), and [gcloud source uploads](https://docs.cloud.google.com/sdk/gcloud/reference/builds/submit).
+## Identities and protections
+
+All accounts below use `@studytrack-cpe334.iam.gserviceaccount.com`.
+
+| Account | Reviewed scope |
+| --- | --- |
+| studytrack-runner | Cloud SQL Client; accessor on DB secret only |
+| studytrack-migrator | Cloud SQL Client; DB and initial seed-password secret accessors |
+| studytrack-builder | Initial Cloud Build: repository Writer, project Logs Writer/Storage Object Viewer; no application-secret grant |
+| studytrack-deployer | GitHub: project Run Developer, repository Writer, Service Account User on runner/migrator only; zero user-managed keys |
+
+Resource-scoped grants come from scoped policy readbacks, not the project IAM image alone. GitHub environment `demo` permits main only. WIF pool github-actions/provider github-main trusts exact repository ID, owner ID, main ref, deploy workflow ref and environment subject, with google.subject=assertion.sub and attribute.repository_id=assertion.repository_id. Deployer's workloadIdentityUser binding is attribute-scoped. See [EP6 record](ep6-record.json) for the full condition and retained human observations. No long-lived JSON key is stored in GitHub; do not weaken trust to resolve a failed authentication.
+
+Active ruleset26925123 protects main and codex/sprint-1-staging: strict required test-and-docker from GitHub Actions, one peer approval, stale-review dismissal, resolved threads, force-push/deletion protection. Empty bypass is owner-confirmed and captured; B's REST omission of bypass fields is not proof. [C02](ep6-evidence.md) retains peer-approved PR36 with required failed CI/disabled merge and later unmerged cleanup. No bypass/rule change was attempted.
+
+## Settings: purpose, secrecy and source
+
+Examples are placeholders, ignored private files are not evidence. Never retain real connection strings, passwords, cookies, CSRF values, tokens or credential JSON.
+
+| Name | Purpose | Secret? | Source / scope |
+| --- | --- | --- | --- |
+| DATABASE_URL | Prisma DB connection | Yes | Local private .env; cloud selected studytrack-database-url version, runtime/tools |
+| APP_ORIGIN | Exact allowed origin / CSRF | No | Local UI/container origin; cloud public HTTPS URL above |
+| PORT | HTTP listener | No | Local example5000; cloud/production container8080, Run injection |
+| NODE_ENV | Runtime mode | No | Local development; production in service/tools |
+| TZ | Process timezone | No | Cloud Asia/Bangkok; domain dates explicitly Bangkok |
+| SEED_MANAGER_PASSWORD / SEED_PARTICIPANT_PASSWORD | Synthetic seed credentials | Yes | Private local env or named Secret Manager versions; explicit seed tools only |
+| POSTGRES_PASSWORD | Local DB bootstrap | Yes | Private local env; CI fixture is disposable, not production |
+| TEST_DATABASE_URL | Isolated test target | Yes | Private .env.test.local / ephemeral CI DB; guard rejects development equality/unsafe target |
+| API_PROXY_TARGET | Vite API proxy | No | Optional local API origin, development only |
+| PLAYWRIGHT_CHANNEL | Test browser | No | Optional local runner selection; not application runtime |
+| CONTAINER_DB_PASSWORD | Isolated Compose DB credential | Yes | setup-container generated ignored .env.container.local |
+| CONTAINER_DATABASE_URL | Internal Compose connection | Yes | Generated private file; effective target must be db:5432/studytrack_container |
+| CONTAINER_MANAGER_PASSWORD / CONTAINER_PARTICIPANT_PASSWORD | Local synthetic seed credentials | Yes | Generated private file; seed/verifier only |
+| CONTAINER_APP_ORIGIN / CONTAINER_HTTPS_PORT | Local HTTPS | No | Generated defaults https://localhost:3443 /3443 |
+| CONTAINER_IMAGE_TAG / CONTAINER_VCS_REF | Image tag / full OCI source label | No | setup-container from checkout; rerun setup after checkout changes |
+| PROJECT_ID / REGION | Provision/release targets | No | Human-confirmed project/region; release mapping below |
+| DRY_RUN | Bootstrap1 preview /0 execute | No | Caller selection; default0, explicitly set1 for preview |
+| SQL_TIER | Initial SQL machine | No | Bootstrap default db-f1-micro, human reviews plan |
+| _REGISTRY | Cloud Build prefix | No | Derived project/region/repository |
+| _VCS_REF / VCS_REF | SHA tag and OCI revision label | No | Full accepted main SHA, bootstrap/build workflow |
+| GCP_PROJECT_ID / GCP_REGION | GitHub environment variables | No | demo environment; mapped to PROJECT_ID / REGION |
+| WIF_PROVIDER / WIF_SERVICE_ACCOUNT | Provider path / deployer email | No | demo environment, provisioned identities; not credential payloads |
+| IMAGE_TAG | Immutable full source tag to resolve | No | Normal=GITHUB_SHA; existing-image dispatch=explicit accepted ancestor SHA |
+| ROLLBACK | Helper existing-image switch | No | Workflow false/true; same-image P1 is not an older-release rollback |
+| SERVICE_NAME / MIGRATE_JOB_NAME | Optional resource overrides | No | Guarded to studytrack / studytrack-migrate |
+| GITHUB_SHA / GITHUB_REF / GITHUB_EVENT_NAME | Source/ref/event | No | Actions; checked against clean HEAD/current remote main |
+| GITHUB_RUN_ID / GITHUB_RUN_ATTEMPT | Unique revision identity | No | Actions; attempt default1 |
+| GITHUB_ENV | Selected result export file | No | Temporary Actions runner path |
+| CLOUDSDK_AUTH_ACCESS_TOKEN | Short-lived gcloud auth | Yes | WIF/auth action; masked, never evidence |
+
+Offline fake-executable fixture controls TEST_STATE/TEST_MODE/host BASH belong to the test harness, not deployed config. Standard GitHub runner variables are supplied by Actions. Sources: [.env.example](../../../.env.example), [.env.test.example](../../../.env.test.example), [.env.container.example](../../../.env.container.example), [CI](../../../.github/workflows/ci-docker.yml), [deploy workflow](../../../.github/workflows/deploy.yml), [release helper](../../../deploy/release.py).
+
+## Local build, run, migration, seed and isolated tests
+
+Use the [README](../../../README.md) prerequisites and [container runbook](container.md). The production server requires a valid HTTPS proxy/origin for Secure-cookie login; npm start alone does not provide TLS.
+
+```sh
+# Host development, private local config (inspect privately).
+node scripts/setup-local.mjs
+npm ci
+npm run db:generate
+npm run db:up
+npm run db:migrate
+npm run db:seed
+npm run dev
+# Production build/server with production HTTPS settings already supplied.
+npm run build
+npm start
+# Guarded isolated test DB; NEVER cloud/development DB.
+npm run test:container-config
+npm run db:test:migrate
+npm test
+npm run test:e2e
+python3 -B -m unittest discover -s deploy/tests -p 'test_*.py' -v
+# Fresh local production container build (host dependencies not needed to build).
+node scripts/setup-container.mjs
+node scripts/container.mjs check --project studytrack-container-review
+node scripts/container.mjs up --project studytrack-container-review --fresh-build
+# Optional verifier needs host npm ci and its supported browser installed.
+node scripts/verify-container.mjs --project studytrack-container-review --browser --lifecycle
+node scripts/container.mjs stop --project studytrack-container-review
+```
+
+Local up explicitly migrates/idempotently seeds its isolated DB; stop retains volumes. Do not remove volumes/reset data for a persistence demonstration. Historical C03 no-cache source is ee56d91; correction f938688 used a cached build and passed 21 guards/35 lifecycle checks. Current Dockerfile additionally labels the tools image; historical no-cache proof is not relabelled as a fresh build of current source. Later CI/cloud release built both current targets.
+
+## Initial bootstrap - completed, not a normal update
+
+First accepted bootstrap main807ed08 was executed by B's human in Cloud Shell after billing/budget/teammate IAM checks. A reviewed PR26; separate PR27 released it. [EP5](ep5-evidence.md) and [A live acceptance](member-a-live-acceptance.md) retain actual initial results.
+
+Only for genuinely new infrastructure, read the [cloud contract](cloud-contract.md), review permissions/cost/resources with the human operator and preview exact accepted main:
+
+```sh
+DRY_RUN=1 PROJECT_ID=studytrack-cpe334 REGION=asia-southeast1 bash deploy/deploy.sh
+```
+
+Preview makes zero gcloud calls and declares simulated values; it is not a live check. Real DRY_RUN=0 provisioning is separately supervised and already completed here: APIs/IAM/registry/SQL/secrets, runtime/tools builds, waited migration plus initial seed, service and smoke. Do not rerun bootstrap for an update or report. Saved credentials are preserved; interrupted user/secret recovery requires inspection, not reset/blind retry.
+
+## Repeatable reviewed-main release
+
+1. Label/link the Issue in actual Development. Feature/fix branch -> other member's review -> protected staging with required CI. No self-approval.
+2. Separate staging-to-main release PR -> other member's review and fresh CI -> normal merge. Sync missing main ancestry through a reviewed branch when necessary; compare complete accepted trees.
+3. Main push runs deploy.yml: reusable CI, runtime/tools builds and pushes tagged by full main SHA, WIF/demo authentication and release.sh/release.py. No feature-branch deployment credentials.
+4. Update-only helper checks clean/current main, source labels and OCI index/platform lineage; validates existing SQL/secret/runner config; updates/waits migration with no seed; creates no-traffic revision; checks readiness/digest/config, routes traffic and smokes. It does not bootstrap IAM/SQL/secrets. Preserve failed runs and investigate guards; never bypass them.
+5. Retain source/tree, peer reviews, CI/run/attempt, digests, migration, serving revision/traffic, DB reference and actual public outcome. Compare the original IDs/date/full DTOs for persistence, not newly seeded substitutes: [P0](ep8-baseline-2026-11-12.md), [P1](ep8-p1-2026-11-13.md), [P2](ep8-p2-2026-11-13.md).
+
+Main workflow_dispatch with explicit accepted-ancestor image tag selects existing-image mode: skips CI/build/push/tools/migration/seed, retains source/lineage/config/readiness/traffic/smoke guards. Actual P1 run43402554551 used the same image/source; a different DEPLOYMENT_ROLLOUT instance plus a new 100%-serving revision establishes restart-equivalent process replacement. No VM/SQL restart or old-instance termination is claimed. Older-image rollback/roll-forward was not run. Coordinate runtime operations with the fixed baseline; documentation needs none.
+
+## Safely identify the actual serving version
+
+```sh
+gh run view 43410699104 --repo auto4496/studytrack --json headSha,event,conclusion,url
+gcloud run services describe studytrack \
+  --project=studytrack-cpe334 --region=asia-southeast1 \
+  --format='yaml(status.latestReadyRevisionName,status.traffic)'
+gcloud run revisions describe studytrack-g6d30aefece55-r43410699104-1 \
+  --project=studytrack-cpe334 --region=asia-southeast1 \
+  --format='yaml(metadata.name,status.conditions,status.imageDigest)'
+python3 deploy/smoke_test.py https://studytrack-981693883236.asia-southeast1.run.app
+```
+
+Use actual traffic, not latestReady alone. Match run headSha/helper result, registry source label and resolved platform; service may retain the index. Avoid full JSON/env dumps or secret reads for screenshots. Submitted settings captures already mask numeric project-number portions in the [EP6 PDF](../../../artifacts/evidence/lab5-cloud/ep6/2026-11-12-finalization/github-settings-redacted.pdf); public application URL remains usable.
+
+## Availability and final handoff
+
+[Evidence index](../../deliverables/lab5/evidence-index.md) maps C01-06/R01-12. C01 release CI43409691975 passed 41 offline, 152 API/unit, 38 browser cases and application/both-image builds. C02 PR36 is closed unmerged. C03 packaging, C04 domain workflow, C05 P0/P1/P2 and C06 reviewed releases retain separate provenance.
+
+Keep repo public and service available until the instructor ends grading. A dated successful read is not future uptime; check again before submission. Do not pause/delete resources or review/evidence history to finish the report. Draft metadata: SectionB / TH-057_P8 / กำลังปั้นเครดิตครับ. Handout deadline15November2026,23:59 Bangkok; current LEB2 deadline and actual upload receipt are not verified. Review together, confirm LEB2 and retain the actual receipt before completing Issue24.
