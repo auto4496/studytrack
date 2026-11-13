@@ -79,6 +79,8 @@
     "identityEvidence": "student2-identity.json",
     "apiEvidence": "student2-private-api-denials.json",
     "uiEvidence": "student2-private-goal-ui.json",
+    "clearUiRetakeEvidence": "student2-private-goal-retake.json",
+    "primaryUiFigure": "student2-private-goal-denied-clear.jpg",
     "allThreePrivateReadsDenied": true,
     "uiPrivateGoalDenied": true
   },
@@ -136,6 +138,11 @@
     },
     {
       "file": "student2-authenticated-home.jpg",
+      "width": 1536,
+      "height": 816
+    },
+    {
+      "file": "student2-private-goal-denied-clear.jpg",
       "width": 1536,
       "height": 816
     },
@@ -257,9 +264,19 @@
       "sha256": "80f0b3b853005f8d41843f796acc3ef305667204afbcf578d84aaf258334baba"
     },
     {
+      "file": "student2-private-goal-denied-clear.jpg",
+      "bytes": 54096,
+      "sha256": "396405a1a8d9ad574a4dcdc6fa50ba3c5c573c508a12ee6054432659819bf9b5"
+    },
+    {
       "file": "student2-private-goal-denied.jpg",
       "bytes": 59480,
       "sha256": "63a045b3f0c5f912bcd95f231ef5500a36249221d27e04dab628bc4935d7dedf"
+    },
+    {
+      "file": "student2-private-goal-retake.json",
+      "bytes": 695,
+      "sha256": "f9e403824cb0e6068d76d19287bf796554b623f6ff02a2bd800346fe8350e1c0"
     },
     {
       "file": "student2-private-goal-ui.json",
