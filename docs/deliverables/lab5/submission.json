@@ -1,0 +1,22 @@
+{
+  "status": "DRAFT_FOR_PEER_REVIEW_NOT_SUBMITTED",
+  "section": "B",
+  "submissionGroup": "TH-057_P8",
+  "team": "TH-057",
+  "groupName": "กำลังปั้นเครดิตครับ",
+  "project": "StudyTrack",
+  "topic": 8,
+  "topicName": "Habit and Activity Tracking System",
+  "members": [
+    {"name": "Pitchai Chadchuangchot", "studentId": "67070501068", "github": "Datakung", "role": "B"},
+    {"name": "Phanuwit Butchari", "studentId": "67070501070", "github": "auto4496", "role": "A"}
+  ],
+  "pdfFilename": "lab5_secB_TH-057_P8.pdf",
+  "preparedDate": "2026-11-13",
+  "handoutDeadline": "2026-11-15T23:59:00+07:00",
+  "currentLeb2DeadlineVerified": false,
+  "submitted": false,
+  "applicationCommit": "6d30aefece55b3a83194010a2e0e62c9b8b1dbfc",
+  "evidenceCommit": "c6b63f733489b8390c9b278351944b67937f0d84",
+  "publicOrigin": "https://studytrack-981693883236.asia-southeast1.run.app"
+}

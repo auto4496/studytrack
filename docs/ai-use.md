@@ -1,5 +1,13 @@
 # AI-use declaration
 
+## Lab5 report preparation by member B - 13 November 2026
+
+At B's request to continue Issue24, Codex read the Lab5 handout and accepted container/CI/gate/release/P0-P2 evidence, incorporated the user's corrected SectionB/submission groupTH-057_P8/friendly name **กำลังปั้นเครดิตครับ**, and prepared the Answer Part0-4 PDF draft, complete C01-06/R01-12 index, reproducible document source/generator and current deployment runbook. It made read-only GitHub/public-service checks and recorded only selected public metadata/outcomes. It did not inspect secret payloads, collect full environment/authentication logs, run Docker/tests against cloud, change product/workflow/permissions, dispatch a release or mutate domain records. Original evidence is reused with explicit source/actor/time/tested-version limits; PDF clip panels do not rewrite source screenshots. Poppler renders are visually inspected page by page before delivery; generated document checks do not substitute for teammate review. A/joint final acceptance, LEB2 current deadline and actual upload confirmation remain pending. No independent human UAT, new cloud deployment or course acceptance is claimed.
+
+---
+
+Earlier dated checkpoints below retain their writing-time status; the report handoff above is current.
+
 ## Member A EP8 P2 and privacy verification - 13 November 2026
 
 Codex separately reviewed B's feature PR51 and release PR52, verified accepted full-tree/source/CI equivalence and normally merged the release into main at A's authorized scope. It followed actual successful Deploy43410699104, retained selected safe run/helper/migration/image outputs, read new serving traffic and preserved DB references through native Edge, compared complete original goal/entries/progress responses with P0 and ran separate public smoke. After a browser URL-policy stop, the user reopened the application; Codex captured the newly deployed date guidance with the original20/30 result. The user then entered existing student2 credentials directly. Codex verified the selected public-user identity and observed all three private GETs plus the goal UI denied without domain data. The [P2 report](labs/lab-05/ep8-p2-2026-11-13.md) records exact actors/times/original captures and limitations. No private record repair/recreation, secret payload, session/CSRF value, credential or chat transcript is included. This is assisted execution, not independent human UAT or B peer approval. Original P0/P1/preflight/master template remain unchanged; P2 peer review, B release evidence/report integration and final joint acceptance are pending.

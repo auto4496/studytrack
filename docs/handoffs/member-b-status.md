@@ -1,5 +1,24 @@
 # Member B status — implementation handoff
 
+## Lab5 Issue24 - B report handoff, 13 November 2026
+
+**สมาชิก B = Datakung; A = auto4496.** รอบนี้รวบรวมรายงาน Lab5 ให้ A ตรวจ ไม่เปลี่ยน product/workflow และไม่ deploy เพิ่ม
+
+- ใช้ข้อมูลที่ผู้ใช้ยืนยันล่าสุด: **Section B**, กลุ่มส่ง **TH-057_P8**, ทีม TH-057, ชื่อ **กำลังปั้นเครดิตครับ** (ปั้น ไม่ใช่ ปั่น), หัวข้อ8 Habit and Activity Tracking System; รหัส67070501068/67070501070
+- ทำ [PDF ร่าง Answer Part0-4](../../output/pdf/lab5_secB_TH-057_P8.pdf), [source/metadata](../deliverables/lab5/README.md) และ [C01-06/R01-12 index](../deliverables/lab5/evidence-index.md) ให้ตรวจโดยตรง แยก application main6d30aef ออกจาก accepted evidence stagingc6b63f7 และ version ของเอกสาร
+- ปรับ [deployment.md](../labs/lab-05/deployment.md) ให้เป็นสถานะปัจจุบัน: resource/stack/auth adaptation, ทุก setting พร้อม purpose/secret/source, build/test/run/migrate/seed, initial bootstrap แยก normal release และ safe running-version lookup; ประวัติเดิมยังอยู่ใน dated evidence/Git history
+- B ยอมรับ P2/privacy PR53 แล้วใน review5890141901; 27 original evidence hashes/full DTO/native UI และ real run mapping ผ่านการตรวจเดิม หลักฐานใหม่รอบนี้คือ [public/GitHub preflight13:31Z](../deliverables/lab5/report-preflight.json): repo public, main6d30aef, CI/release SUCCESS, gate active, public health/UI PASS ไม่ใช่การ inspect Cloud Console/authenticated app ใหม่
+- PDF ใช้ภาพต้นฉบับที่ตัดกรอบเฉพาะตอนจัดหน้ารายงาน พร้อม caption/ลิงก์ original ไม่ลบเนื้อหาหรือแต่งภาพแทนข้อเท็จจริง; figures9ภาพ, draft8หน้า ตรวจภาพทุกหน้าก่อนส่ง PR ผล final QA อยู่ข้าง source เมื่อเสร็จ
+- Docker ไม่จำเป็นสำหรับงานเอกสารรอบนี้ จึงไม่ได้เปิด/รัน Docker และไม่ได้ seed/reset/migrate/dispatch/cloud mutation ใด ๆ
+
+**ให้ A / ทั้งทีมทำต่อ:** ตรวจชื่อ/รหัส/การมีส่วนร่วม, ความตรงของ C/R/limits และความชัดของภาพ, อนุมัติ draft ผ่าน protected staging ตามปกติ แล้วตกลง final document integration โดยไม่อ้างว่า staging merge เปลี่ยนแอปที่ deploy อยู่ ไม่ต้องทำ extra evidence-only main deploy เพื่อวนสร้างรายงานใหม่ Owner ตรวจ board fields ล่าสุด (B ไม่เพิ่ม token scope เพื่ออ่าน Project), ทีมตรวจ deadline ใน LEB2 จริง (handout15Nov2026,23:59 Bangkok) และเช็ก public repo/service อีกครั้งก่อนส่ง
+
+**ยังไม่จบ Issue24:** A/joint final acceptance, reviewed final integration, deadline LEB2 ที่ยืนยันจริง และ upload receipt ยังไม่มี ต้องคง Issues22/23/24 เปิดตาม AC ที่เหลือ Development linkage ไม่ใช่ permission ให้ปิด Issue หรือ merge/deploy รายงาน และไม่ใช่หลักฐานว่า submit แล้ว
+
+---
+
+Earlier dated checkpoints below retain their writing-time status; the report handoff above is current.
+
 ## สถานะล่าสุด 13 พฤศจิกายน 2026: P1 ผ่านรีวิว เตรียม visible change สำหรับ release B/P2
 
 B [อนุมัติ PR50/P1](https://github.com/auto4496/studytrack/pull/50#pullrequestreview-5889128165) หลังตรวจ run43402554551 จริง ภาพ startup/instance ใหม่ และ DTO เดิมตรง P0 ครบ ผู้ใช้ merge เข้า staging119b701 แล้ว โดย tree ตรงชุดที่รีวิว d4ef836. Main ยัง3570cd4; P1 ใช้ image เดิม จึงยังไม่ใช่ release B/P2.
