@@ -1,0 +1,93 @@
+{
+  "status": "PASS_LOCAL_FIXTURE_VISUAL_CHECK",
+  "startedAt": "2026-11-13T10:20:06.809Z",
+  "completedAt": "2026-11-13T10:20:08.888Z",
+  "source": "8153034d39cae76b23e89942b776c9d4991cbb7e",
+  "sourceBlob": "ff6cdbae068ffb612cc54a4a7bc1a592fc91682e",
+  "specificationCommit": "fcdbf97",
+  "origin": "http://127.0.0.1:4317",
+  "browser": "Headless installed Microsoft Edge via Playwright, isolated contexts",
+  "actor": "Codex acting for member B",
+  "fixture": "Synthetic local GET responses only; frozen Bangkok date 2026-11-13; not cloud data or an authenticated user session",
+  "writes": [],
+  "pageErrors": [],
+  "observations": [
+    {
+      "viewport": "desktop",
+      "state": "current-day",
+      "selectedDate": "2026-11-13",
+      "progressAmount": "0 / 30 นาที",
+      "progressPercent": "0%",
+      "accessibleDescription": "ผลการอ่านแสดงตามวันที่เลือก หากต้องการดูบันทึกย้อนหลัง ให้เลือกวันที่ที่บันทึกไว้",
+      "screenshot": "desktop-current-day.png",
+      "metrics": {
+        "viewportWidth": 1440,
+        "pageWidth": 1440,
+        "hintLeft": 348,
+        "hintRight": 1132,
+        "hintHeight": 24.75,
+        "panelLeft": 315,
+        "panelRight": 1165,
+        "inputRight": 1132
+      }
+    },
+    {
+      "viewport": "desktop",
+      "state": "historical-day",
+      "selectedDate": "2026-11-12",
+      "progressAmount": "20 / 30 นาที",
+      "progressPercent": "66.67%",
+      "accessibleDescription": "ผลการอ่านแสดงตามวันที่เลือก หากต้องการดูบันทึกย้อนหลัง ให้เลือกวันที่ที่บันทึกไว้",
+      "screenshot": "desktop-historical-day.png",
+      "metrics": {
+        "viewportWidth": 1440,
+        "pageWidth": 1440,
+        "hintLeft": 348,
+        "hintRight": 1132,
+        "hintHeight": 24.75,
+        "panelLeft": 315,
+        "panelRight": 1165,
+        "inputRight": 1132
+      }
+    },
+    {
+      "viewport": "mobile",
+      "state": "current-day",
+      "selectedDate": "2026-11-13",
+      "progressAmount": "0 / 30 นาที",
+      "progressPercent": "0%",
+      "accessibleDescription": "ผลการอ่านแสดงตามวันที่เลือก หากต้องการดูบันทึกย้อนหลัง ให้เลือกวันที่ที่บันทึกไว้",
+      "screenshot": "mobile-current-day.png",
+      "metrics": {
+        "viewportWidth": 390,
+        "pageWidth": 390,
+        "hintLeft": 41,
+        "hintRight": 349,
+        "hintHeight": 49.5,
+        "panelLeft": 20,
+        "panelRight": 370,
+        "inputRight": 349
+      }
+    },
+    {
+      "viewport": "mobile",
+      "state": "historical-day",
+      "selectedDate": "2026-11-12",
+      "progressAmount": "20 / 30 นาที",
+      "progressPercent": "66.67%",
+      "accessibleDescription": "ผลการอ่านแสดงตามวันที่เลือก หากต้องการดูบันทึกย้อนหลัง ให้เลือกวันที่ที่บันทึกไว้",
+      "screenshot": "mobile-historical-day.png",
+      "metrics": {
+        "viewportWidth": 390,
+        "pageWidth": 390,
+        "hintLeft": 41,
+        "hintRight": 349,
+        "hintHeight": 49.5,
+        "panelLeft": 20,
+        "panelRight": 370,
+        "inputRight": 349
+      }
+    }
+  ],
+  "limits": "Local visual/accessibility/date-read verification only. Not the real DB/browser regression suite, human UAT, deployed release B or EP8 P2 persistence."
+}

@@ -1,0 +1,36 @@
+{
+  "algorithm": "SHA256",
+  "scope": "Exact retained Git bytes; manifest excludes itself. Local synthetic fixture evidence, not cloud acceptance.",
+  "files": [
+    {
+      "file": "desktop-current-day.png",
+      "bytes": 81622,
+      "sha256": "164efc48ecf2a47a3ca4f508534491695469f095c42bfcd5a67221a70b1b9497"
+    },
+    {
+      "file": "desktop-historical-day.png",
+      "bytes": 80337,
+      "sha256": "234d4a08bd6e23f691ba244145a39cb3eeb9c45241d18194bfcb1f39fb738774"
+    },
+    {
+      "file": "mobile-current-day.png",
+      "bytes": 65327,
+      "sha256": "0e00c896e9cda5f14a67e8ec4c725f03255f7aa6d801e6cebc6589914ae28ad8"
+    },
+    {
+      "file": "mobile-historical-day.png",
+      "bytes": 63170,
+      "sha256": "4b4d7c34a3ad7199aa9bccdf48e2a183c3804591c563b5ab7afdeff6ac7395c7"
+    },
+    {
+      "file": "screenshot-hashes.json",
+      "bytes": 603,
+      "sha256": "8c65e24676b8dd35f8bbe752b99f46cf30a6dad7b8f05b1cd093b0a7193fcc7c"
+    },
+    {
+      "file": "verification.json",
+      "bytes": 3827,
+      "sha256": "5d60f3aa93b0bfe055ee944744bb302f6f27ad8686784ff67c265ad76d6fd5c4"
+    }
+  ]
+}

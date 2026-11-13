@@ -2,6 +2,10 @@
 
 ## Current checkpoint - 13 November 2026
 
+B accepted PR50/P1 in [review5889128165](https://github.com/auto4496/studytrack/pull/50#pullrequestreview-5889128165), and the user merged it into staging119b701 with the full tree equal to approved d4ef836. The P1 technical result and same-data comparison are accepted. B is preparing a distinct [selected-date guidance change for release B](ep7-release-b-date-guidance.md): specification before code, production client build and four explicitly local fixture-backed desktop/mobile figures passed. It remains a feature candidate awaiting A review/required CI, then the separate reviewed main release. Main remains3570cd4; actual P1 run43402554551 is still the latest deployment. Keep the fixed EP8 data and Issues22/23 open through P2/privacy/joint report acceptance. This preparation does not deploy or mutate cloud records.
+
+The following P1 paragraph retains its writing-time peer-review status; the acceptance above supersedes that pending state.
+
 A completed the [actual same-image P1 replacement and comparison](ep8-p1-2026-11-13.md) after B accepted PR48/P0 and PR49/preflight. At A's explicit start instruction, Codex dispatched [Deploy43402554551](https://github.com/auto4496/studytrack/actions/runs/43402554551) through auto4496; this is an assisted operation, not a human button click. The run succeeded with unchanged main3570cd4/index3e4e18fd/platform6127e4e and no build/push/tools/migration/seed. New revision studytrack-g3570cd4a7bca-r43402554551-1 serves100%; a DEPLOYMENT_ROLLOUT startup event identifies a different instance. SQL attachment and versioned DB binding remain the same. Complete original goal/entry/progress responses equal P0 for stored date2026-11-12; native UI shows20/30=66.67%, and actual pipeline plus separate public smoke pass. No private record was changed/recreated. B's review of the P1 result/operator variation, distinct visible-change release B/P2, privacy check and final joint evidence/report acceptance remain pending; keep Issues22/23 open.
 
 The paragraphs below retain earlier writing-time checkpoints.

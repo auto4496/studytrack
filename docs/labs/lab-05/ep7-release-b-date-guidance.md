@@ -30,4 +30,12 @@ After the reviewed main release, retain actual source/workflow SHA, runtime inde
 
 ## Actual results
 
-Pending implementation and verification. No local product build, screenshot, hosted CI, peer acceptance, main merge, cloud operation or P2 result is claimed by this specification checkpoint.
+Specification commit: `fcdbf97`. Product source: `8153034d39cae76b23e89942b776c9d4991cbb7e`, DailyActivity blob `ff6cdbae068ffb612cc54a4a7bc1a592fc91682e`. Production client build and Prettier check passed on these identical product files immediately before the product commit. Later evidence/handoff changes do not modify them.
+
+- `npm run build:client`: client TypeScript and production Vite build PASS. The build used dependencies installed from the unchanged lockfile with `npm ci --ignore-scripts --no-audit --no-fund`; no database or Docker was required.
+- Installed headless Edge with Playwright, isolated contexts, localhost production preview: desktop1440x900 and mobile390x844, each on current-day0/30 and historical20/30=66.67% synthetic GET responses. All4 viewport/state observations pass, the new help is visible, the date input has the expected accessible description plus existing error association, selected dates trigger the existing GET, and the saved historical day has no new-entry submit action.
+- All4 screenshots were visually inspected: text wraps legibly without crowding the date/title or overflowing the page. Measured page widths equal1440/390 respectively. No page errors and no non-GET API requests were observed. Browser time was explicitly fixed to13November2026; these observations are not cloud P0/P1/P2 data.
+
+See the [local fixture execution record](../../../artifacts/evidence/lab5-cloud/ep7/release-b-date-guidance-local/verification.json) and [screenshot hashes](../../../artifacts/evidence/lab5-cloud/ep7/release-b-date-guidance-local/screenshot-hashes.json). The [desktop historical figure](../../../artifacts/evidence/lab5-cloud/ep7/release-b-date-guidance-local/desktop-historical-day.png) and [mobile historical figure](../../../artifacts/evidence/lab5-cloud/ep7/release-b-date-guidance-local/mobile-historical-day.png) show the actual built UI with synthetic local fixtures. The current-day counterparts are retained in the same folder. These headless page captures are not native URL-visible cloud acceptance figures.
+
+The real database/browser regression suite was not rerun locally for this explanation-only increment; the unchanged required hosted CI runs it on the submitted PR. Fresh CI and A's review remain pending at this writing. Main release, actual running release-B version mapping, native cloud figures and EP8 P2/privacy/final joint acceptance remain unperformed by this preparation.
