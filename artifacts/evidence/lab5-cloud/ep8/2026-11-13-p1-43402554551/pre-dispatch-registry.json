@@ -1,0 +1,9 @@
+{
+  "observedAt": "2026-11-13T08:52:57.598Z",
+  "source": "Native Edge Artifact Registry Versions table",
+  "tag": "3570cd4a7bca17567d30817565d5bb3aa107a672",
+  "tagDigest": "sha256:3e4e18fd392de678076ebec06464a61eca4912b49f783a418c99abf3b3fb26a3",
+  "separatelyListedPlatformDigest": "sha256:6127e4e53c2b9b8a747fd8af42216cb7879b4d5175c5f5178d4bc33f0bb18f7d",
+  "lineageSource": "Accepted release A verification; no new raw-manifest inspection",
+  "cloudOperationPerformed": false
+}
