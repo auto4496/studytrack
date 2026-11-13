@@ -1,6 +1,6 @@
-# Lab5 evidence index - draft, 13 November 2026
+# Lab5 submission evidence index - 13 November 2026
 
-Team TH-057 / SectionB / LEB2 group TH-057_P8 / **กำลังปั้นเครดิตครับ**. Topic8, StudyTrack. [Issue24](https://github.com/auto4496/studytrack/issues/24). This index does not establish final joint acceptance or submission. Application source is main **6d30aefece55b3a83194010a2e0e62c9b8b1dbfc**; accepted evidence snapshot is staging **c6b63f733489b8390c9b278351944b67937f0d84** (PR53). Historical sources below retain their actual tested SHAs.
+Team TH-057 / SectionB / LEB2 group TH-057_P8 / **กำลังปั้นเครดิตครับ**. Topic8, StudyTrack. [Issue24](https://github.com/auto4496/studytrack/issues/24). The corrected technical report/index/runbook were accepted in [PR56](https://github.com/auto4496/studytrack/pull/56#pullrequestreview-5892758866) and integrated into staging311452c. This editorial submission copy is subject to the requested final file-release review; actual LEB2 upload/receipt is tracked separately. Application source is main **6d30aefece55b3a83194010a2e0e62c9b8b1dbfc**; accepted evidence snapshot is staging **c6b63f733489b8390c9b278351944b67937f0d84** (PR53). Historical sources below retain their actual tested SHAs.
 
 ## Required checks
 
@@ -15,19 +15,19 @@ Team TH-057 / SectionB / LEB2 group TH-057_P8 / **กำลังปั้นเ
 
 ## Every requirement
 
-| Requirement | Result / evidence | Remaining acceptance |
+| Requirement | Result / evidence | Acceptance / ongoing obligation |
 | --- | --- | --- |
 | R-01 clean container build | C03, pinned original no-cache output; later release CI builds both targets | No new local Docker run claimed for report |
-| R-02 env/config | C03, placeholder example files, complete settings-purpose-secret-source table in deployment.md | A review of current runbook |
+| R-02 env/config | C03, placeholder example files, complete settings-purpose-secret-source table in deployment.md | Accepted in PR56; this editorial copy receives final file review |
 | R-03 public business workflow | C04 own save/read + user-operated second account and denial | Dated observations, not independent human UAT |
-| R-04 persistence | C05 P0/P1/P2 full DTO/native UI + instance/revision/DB binding | Final joint report acceptance |
+| R-04 persistence | C05 P0/P1/P2 full DTO/native UI + instance/revision/DB binding | Technical evidence/report accepted in PR56; final file review and upload remain separate |
 | R-05 meaningful PR CI | C01 workflow + passing PR52; temporary probe also ran CI | Remains required on future PRs |
 | R-06 blocked failed check | C02 approved normal probe visibly blocked; no bypass | Complete retained observation |
 | R-07 main deployment pipeline | C06 normally merged main push -> real successful releaseB | No extra report-only deploy needed now |
-| R-08 repeatable identified release | C06 full source/tree/index/platform/revision/run; deployment.md procedure | Final integration according to reviewed flow |
-| R-09 Issue/board/peer workflow | [Issues](https://github.com/auto4496/studytrack/issues?q=label%3Alab5), [board](https://github.com/users/auto4496/projects/2), PR51->52 actual peer approvals; Development relationships recorded in Issue22/23 and PRs | Current board fields not independently inspected in this draft; owner final check, no token-scope expansion |
+| R-08 repeatable identified release | C06 full source/tree/index/platform/revision/run; deployment.md procedure | Corrected report integrated into staging311452c through PR56 |
+| R-09 Issue/board/peer workflow | [Issues](https://github.com/auto4496/studytrack/issues?q=label%3Alab5), [board](https://github.com/users/auto4496/projects/2), PR51->52 actual peer approvals; Development relationships recorded in Issue22/23 and PRs | Owner final board/label check is recorded in Issue24; B did not independently inspect Project fields or expand token scope |
 | R-10 lab5 labels/history/gate retained | Labelled Issues14/20/21/22/23/24; closed probe/run preserved, strict gate remains active | Keep history and CI mandatory |
-| R-11 both members participate | Contribution table in PDF; A packaging/F05/P0/P1/P2 and B F02/F04/CI/bootstrap/release/gate; reciprocal PR15/33/45/48/49/50/53 and PR26/34/35/38/41/51/52 reviews | Both must read/understand/explain work; AI activity is disclosed, not proof of human independence |
+| R-11 both members participate | Contribution table in PDF; A packaging/F05 (PR35)/EP8 preparation (PR33)/P0/P1/P2 and B F02/F04/CI/bootstrap/release/gate; reciprocal PR15/33/35/45/48/49/50/53 and PR26/34/38/41/51/52 reviews | Both must read/understand/explain work; AI activity is disclosed, not proof of human independence |
 | R-12 public repo through grading | Public API readback in report-preflight.json; public repository/commit links | Keep public until instructor ends grading; future availability cannot be certified now |
 
 ## Native figures and integrity
@@ -36,10 +36,10 @@ The PDF uses document-level clipping of original screenshots, with visible crop 
 
 P0/P1/P2 source manifests and B's review53 retain exact native bytes. New report manifest hashes the exact Git blobs used for selected sources, plus PDF/source/runbook bytes. No raw credential/full env dumps are copied. Record IDs, synthetic names and public URLs are evidence; real secrets are excluded. This is a focused review of selected material, not an exhaustive secret audit of all repository history.
 
-## Final steps (not completed by this draft)
+## File release and submission handoff
 
-1. A checks report/runbook/content/figure readability and team contribution attribution; both accept final EP7/EP8/report evidence.
-2. Owner verifies current board fields and team confirms current LEB2 deadline; handout says15November2026,23:59 Bangkok.
-3. Finish reviewed document integration without pretending a staging merge deployed a new app; retain the actual serving source separately from report version.
+1. PR56 already records A technical-content/artifact acceptance and staging integration. Review this editorial copy once more before file release; preserve all technical evidence/results.
+2. Owner board/protection/label checks are recorded in Issue24. The team still confirms the current LEB2 deadline; handout says15November2026,23:59 Bangkok.
+3. Integrate the final file through the agreed protected staging review. Retain the actual serving source separately from the document version; no extra report-only cloud deployment is required.
 4. Confirm public repo/service again and keep them available until grading ends.
 5. Upload the correctly named PDF through LEB2 and record actual confirmation. Only then complete Issue24; linkage alone must not close it.

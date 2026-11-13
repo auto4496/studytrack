@@ -1,7 +1,7 @@
 # Answer Part 0
 ## Team and Evidence Index
 
-**StudyTrack - Lab5 evidence-index draft | 13 November 2026**
+**StudyTrack - Lab5 Evidence Index | 13 November 2026**
 
 Team **TH-057** | Section **B** | LEB2 submission group **TH-057_P8**
 
@@ -17,7 +17,7 @@ Topic **8: Habit and Activity Tracking System**. Manager activity templates, per
 
 **Public repository:** [auto4496/studytrack](https://github.com/auto4496/studytrack). **Public application:** [open StudyTrack](https://studytrack-981693883236.asia-southeast1.run.app).
 
-Application source selected for assessment: **6d30aefece55b3a83194010a2e0e62c9b8b1dbfc** ([main release](https://github.com/auto4496/studytrack/commit/6d30aefece55b3a83194010a2e0e62c9b8b1dbfc)), observed serving via [Deploy43410699104](https://github.com/auto4496/studytrack/actions/runs/43410699104). Accepted evidence snapshot: **c6b63f733489b8390c9b278351944b67937f0d84**, after [PR53/B acceptance](https://github.com/auto4496/studytrack/pull/53#pullrequestreview-5890141901). This draft is not a final submission receipt.
+Application source selected for assessment: **6d30aefece55b3a83194010a2e0e62c9b8b1dbfc** ([main release](https://github.com/auto4496/studytrack/commit/6d30aefece55b3a83194010a2e0e62c9b8b1dbfc)), observed serving via [Deploy43410699104](https://github.com/auto4496/studytrack/actions/runs/43410699104). Accepted evidence snapshot: **c6b63f733489b8390c9b278351944b67937f0d84**, after [PR53/B acceptance](https://github.com/auto4496/studytrack/pull/53#pullrequestreview-5890141901). The corrected report, index and runbook were accepted in [PR56](https://github.com/auto4496/studytrack/pull/56#pullrequestreview-5892758866).
 
 ### Evidence index (direct checks)
 
@@ -47,7 +47,7 @@ Complete per-requirement links and evidence limits are in the [source evidence i
 | R-06 | C-02; Figures1-2 | Required failure blocked an approved normal PR; no bypass attempt. |
 | R-07 | C-06; [deploy workflow](../../../.github/workflows/deploy.yml) | Reviewed main push built/migrated/deployed/smoked real releaseB. |
 | R-08 | C-06; [procedure](../../labs/lab-05/deployment.md#repeatable-reviewed-main-release) | Full source/tree/digest/run/revision mapping and repeatable steps. |
-| R-09 | [Lab5 Issues](https://github.com/auto4496/studytrack/issues?q=label%3Alab5), [board](https://github.com/users/auto4496/projects/2), PR51/52 | Actual Issue/Development/peer paths retained. Current board fields need owner final check. |
+| R-09 | [Lab5 Issues](https://github.com/auto4496/studytrack/issues?q=label%3Alab5), [board](https://github.com/users/auto4496/projects/2), PR51/52 | Issue/Development/peer paths retained. Owner recorded the final board/label audit in Issue24. |
 | R-10 | Labelled Issues14/20/21/22/23/24; C-02/C-06 | Gate and failure/review history retained; CI remains mandatory. |
 | R-11 | Contributions below; [AI disclosure](../../ai-use.md) | Both members' linked work/reviews; AI assistance is explicit, not independent human UAT. |
 | R-12 | [Public repo](https://github.com/auto4496/studytrack), [dated preflight](report-preflight.json) | Public on13Nov. Team must retain access and service until grading ends. |
@@ -58,7 +58,7 @@ Complete per-requirement links and evidence limits are in the [source evidence i
 | Member | Engineering / preparation | Peer review / operations |
 | --- | --- | --- |
 | A | SRS/auth/goals; Docker [Issue14/PR15](https://github.com/auto4496/studytrack/pull/15); lifecycle work [PR35](https://github.com/auto4496/studytrack/pull/35); P0/P1/P2 evidence [PR48](https://github.com/auto4496/studytrack/pull/48),[PR50](https://github.com/auto4496/studytrack/pull/50),[PR53](https://github.com/auto4496/studytrack/pull/53) | B bootstrap/gate/release [PR26](https://github.com/auto4496/studytrack/pull/26),[PR34](https://github.com/auto4496/studytrack/pull/34),[PR41](https://github.com/auto4496/studytrack/pull/41),[PR51](https://github.com/auto4496/studytrack/pull/51),[PR52](https://github.com/auto4496/studytrack/pull/52) reviews; owner protections and supervised deployment/evidence. |
-| B | Feature/Sprint/UI/API contracts, templates and entries [PR6](https://github.com/auto4496/studytrack/pull/6),[PR7](https://github.com/auto4496/studytrack/pull/7); CI/bootstrap/gate/release work; date guidance PR51; Issue24 index/runbook/PDF draft | A packaging/digest/P0/preflight/P1/P2 reviews [PR15](https://github.com/auto4496/studytrack/pull/15),[PR45](https://github.com/auto4496/studytrack/pull/45),[PR48](https://github.com/auto4496/studytrack/pull/48),[PR49](https://github.com/auto4496/studytrack/pull/49),[PR50](https://github.com/auto4496/studytrack/pull/50),[PR53](https://github.com/auto4496/studytrack/pull/53); human Cloud Shell bootstrap/readbacks. |
+| B | Feature/Sprint/UI/API contracts, templates and entries [PR6](https://github.com/auto4496/studytrack/pull/6),[PR7](https://github.com/auto4496/studytrack/pull/7); CI/bootstrap/gate/release work; date guidance PR51; Issue24 index/runbook/PDF | A packaging/digest/P0/preflight/P1/P2 reviews [PR15](https://github.com/auto4496/studytrack/pull/15),[PR45](https://github.com/auto4496/studytrack/pull/45),[PR48](https://github.com/auto4496/studytrack/pull/48),[PR49](https://github.com/auto4496/studytrack/pull/49),[PR50](https://github.com/auto4496/studytrack/pull/50),[PR53](https://github.com/auto4496/studytrack/pull/53); human Cloud Shell bootstrap/readbacks. |
 
 **Attribution:** Codex assisted source/testing/reviews/document assembly. P1 was dispatched by Codex through auto4496 at A's explicit start instruction; student2 credentials were entered directly by the user. These are assisted observations. Both students must read, verify and explain their work; commit counts do not establish participation.
 
@@ -110,7 +110,7 @@ node scripts/verify-container.mjs --project studytrack-container-review --browse
 node scripts/container.mjs stop --project studytrack-container-review
 ```
 
-Build/start needs Docker and Node; optional verifier also needs host npm ci and a supported browser. Private generated credentials stay in ignored .env.container.local. Stop retains volumes; no reset/down-with-volumes is a valid persistence proof. [Host build/test/migrate/seed commands](../../labs/lab-05/deployment.md#local-build-run-migration-seed-and-isolated-tests) distinguish local tests, initial seed and normal cloud migration. No Docker/cloud mutation was run for this report draft.
+Build/start needs Docker and Node; optional verifier also needs host npm ci and a supported browser. Private generated credentials stay in ignored .env.container.local. Stop retains volumes; no reset/down-with-volumes is a valid persistence proof. [Host build/test/migrate/seed commands](../../labs/lab-05/deployment.md#local-build-run-migration-seed-and-isolated-tests) distinguish local tests, initial seed and normal cloud migration. Report preparation reused the recorded executions without additional local Docker or cloud operations.
 
 :::page
 # Answer Part 3
@@ -148,7 +148,7 @@ Build/start needs Docker and Node; optional verifier also needs host npm ci and 
 
 :::figure {"file":"artifacts/evidence/lab5-cloud/ep8/2026-11-13-p2-43410699104/p2-database-binding.jpg","panels":[[907,311,550,36,1],[907,409,550,62,1],[907,694,550,108,1]],"caption":"Figure9. C-05 / R-04: native DB secret reference version 1 and SQL attachment studytrack-cpe334:asia-southeast1:studytrack-pg after releaseB. The truncated secret name is corroborated by the exact readback/helper result; no secret value is displayed.","url":"https://github.com/auto4496/studytrack/blob/c6b63f733489b8390c9b278351944b67937f0d84/artifacts/evidence/lab5-cloud/ep8/2026-11-13-p2-43410699104/p2-database-binding.jpg"}
 
-[P2 record/manifest](../../../artifacts/evidence/lab5-cloud/ep8/2026-11-13-p2-43410699104/record.json) and [B review53](https://github.com/auto4496/studytrack/pull/53#pullrequestreview-5890141901) retain original evidence and limits. Database name studytrack is contract-derived; SQL contents/secret payload were not queried for this proof. Optional older-image rollback/roll-forward was not performed. Final joint report acceptance remains pending.
+[P2 record/manifest](../../../artifacts/evidence/lab5-cloud/ep8/2026-11-13-p2-43410699104/record.json) and [B review53](https://github.com/auto4496/studytrack/pull/53#pullrequestreview-5890141901) retain original evidence and limits. Database name studytrack is contract-derived; SQL contents/secret payload were not queried for this proof. Optional older-image rollback/roll-forward was not performed. Report content was peer-reviewed and accepted in [PR56](https://github.com/auto4496/studytrack/pull/56#pullrequestreview-5892758866).
 
 :::page
 # Answer Part 4
@@ -172,8 +172,8 @@ Runtime index **54dbdf5fb0fa4e6f7baec37f0568bbcff4db0fd97a0550df8c24f9923e80ba62
 
 Record actual run headSha, registry source/index/platform and serving traffic/revision; [safe lookup commands](../../labs/lab-05/deployment.md#safely-identify-the-actual-serving-version) avoid full env/secret dumps. Initial bootstrap was supervised in Cloud Shell; later WIF/demo uses a short-lived token with no stored service-account key. Never bypass failed CI/guards or self-approve a release.
 
-### Final submission and availability - still pending
+### Availability and submission
 
-This is an **8-page draft for A/joint review**, not a submission. At 13 Nov 2026, 13:31Z, [preflight](report-preflight.json) found repo public, main 6d30aef unchanged, strict gate active and public health/UI smoke PASS. Keep repo/service available until grading ends; that read cannot guarantee future uptime. No report-only deployment was performed.
+The report/index/runbook were accepted through [PR56](https://github.com/auto4496/studytrack/pull/56#pullrequestreview-5892758866) and integrated into protected staging311452c. At 13 Nov 2026, 13:31Z, [preflight](report-preflight.json) found repo public, main6d30aef unchanged, strict gate active and public health/UI smoke PASS. The owner's later [final-package check](https://github.com/auto4496/studytrack/issues/24) records public availability, protections and board/label verification. These are dated observations; keep the repo and service available until grading ends.
 
-Both members must accept the report/evidence, finish reviewed document integration and verify owner board fields. Handout deadline: **15 November 2026, 23:59 Bangkok**; current LEB2 deadline is not verified. Confirm it, upload **lab5_secB_TH-057_P8.pdf** and retain the actual receipt before completing Issue24. Native source images remain unchanged; cropped panels are labelled, secret payloads are absent, and AI-assisted execution/limitations are disclosed.
+Submission filename: **lab5_secB_TH-057_P8.pdf**. Handout deadline: **15 November 2026, 23:59 Bangkok**; confirm the current LEB2 activity before upload. The actual upload receipt is tracked separately in [Issue24](https://github.com/auto4496/studytrack/issues/24). Native source images remain unchanged; cropped panels are labelled, secret payloads are absent, and AI-assisted execution/limitations are disclosed.

@@ -1,5 +1,9 @@
 # AI-use declaration
 
+## Member B Lab5 submission-copy preparation - 13 November 2026
+
+At B's explicit request after A accepted PR56 and recorded the final-package check in Issue24, Codex prepared an editorial submission copy and a separate final-review PR. It removed provisional authoring labels from PDF body/footer/title, reconciled prior review-pending prose with actual PR56 acceptance, and retained the original evidence/source/actor/secret/availability limits. It records owner board/protection/label checks as A-attributed observations rather than new B inspections. Source, immutable content pin, PDF, hashes and visual/link verification are regenerated together. Actual LEB2 upload/receipt and current deadline are not asserted. No product/test/workflow/schema/cloud change or additional local Docker operation is made; historical disclosure entries remain unchanged. Final-copy peer review remains the team's final release step.
+
 ## Member B PR56 contribution correction - 13 November 2026
 
 At B's request to address A's review4564202617, Codex corrected the report's F05 lifecycle contribution from EP8-plan PR33 to implementation PR35. It integrated accepted staging14b95e7 while retaining both members' AI-use entries, then prepared an immutable corrected report-content pin and regenerated PDF/provenance for re-review. Original cloud/native evidence and application source remain unchanged. Visual/link/hash/CI results are recorded when actually checked; no Docker run, cloud operation, new F07 implementation or LEB2 submission is implied.

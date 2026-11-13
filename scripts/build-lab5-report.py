@@ -1,4 +1,4 @@
-"""Render the reviewed Lab5 Markdown draft; original evidence files stay unchanged."""
+"""Render the Lab5 submission copy; original evidence files stay unchanged."""
 
 from __future__ import annotations
 
@@ -61,7 +61,9 @@ def target_url(value: str) -> str:
     if not resolved.exists():
         raise FileNotFoundError(resolved)
     authored = path.startswith("docs/deliverables/lab5/") or path in {"docs/labs/lab-05/deployment.md", "docs/ai-use.md"}
-    ref = (META.get("reportContentCommit") or "codex/lab5-report-draft") if authored else PIN
+    ref = META.get("reportContentCommit") if authored else PIN
+    if not isinstance(ref, str) or not re.fullmatch(r"[0-9a-f]{40}", ref):
+        raise ValueError("A full immutable report-content commit is required")
     return f"{REPO}/blob/{ref}/{path}" + (f"#{fragment}" if fragment else "")
 
 
@@ -203,7 +205,7 @@ def page_decoration(canvas, doc):
     canvas.line(42, A4[1] - 26, A4[0] - 42, A4[1] - 26)
     canvas.setFont("Lab5", 7.6)
     canvas.setFillColor(MUTED)
-    canvas.drawString(42, 23, "StudyTrack | TH-057_P8 | Section B | 13 November 2026 | DRAFT - not submitted")
+    canvas.drawString(42, 23, "StudyTrack | TH-057_P8 | Section B | 13 November 2026 | Lab5")
     canvas.drawRightString(A4[0] - 42, 23, str(doc.page))
     canvas.restoreState()
 
@@ -213,7 +215,7 @@ def build():
     OUT.parent.mkdir(parents=True, exist_ok=True)
     flow, figures = parse_source()
     doc = BaseDocTemplate(str(OUT), pagesize=A4, leftMargin=42, rightMargin=42,
-                          topMargin=42, bottomMargin=42, title="StudyTrack - Lab5 evidence index - draft",
+                          topMargin=42, bottomMargin=42, title="StudyTrack - Lab5 Evidence Index",
                           author="TH-057_P8 - Pitchai Chadchuangchot and Phanuwit Butchari",
                           pageCompression=1, invariant=1)
     frame = Frame(42, 42, WIDTH, A4[1] - 84, leftPadding=0, rightPadding=0, topPadding=0, bottomPadding=0)
