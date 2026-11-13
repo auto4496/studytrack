@@ -1,10 +1,10 @@
 {
   "scope": "Exact current report bytes plus pinned original evidence Git blobs; excludes manifest itself",
-  "status": "DRAFT_FOR_PEER_REVIEW_NOT_SUBMITTED",
+  "status": "FINAL_SUBMISSION_COPY_NOT_SUBMITTED",
   "applicationCommit": "6d30aefece55b3a83194010a2e0e62c9b8b1dbfc",
   "evidenceCommit": "c6b63f733489b8390c9b278351944b67937f0d84",
   "pages": 8,
-  "links": 101,
+  "links": 106,
   "figures": [
     {
       "file": "artifacts/evidence/lab5-cloud/ep6/2026-11-12-finalization/github-settings-redacted.pdf#page=2",
@@ -256,38 +256,38 @@
   "outputs": [
     {
       "path": "output/pdf/lab5_secB_TH-057_P8.pdf",
-      "bytes": 1230012,
-      "sha256": "fa6029a5629a4306591ab8b2b41b241cda574fb81371b865058828da43427f93"
+      "bytes": 1231240,
+      "sha256": "287126a8883ec8ea630f31508cfa73f88d4d10cfd3bdff2aa23cbbd1c99bef59"
     },
     {
       "path": "docs/deliverables/lab5/report-source.md",
-      "bytes": 24509,
-      "sha256": "650835f078ea5d5a933e6a5dc0f2b6617d2d13533888d28c37ff8bb22a7dbea8"
+      "bytes": 24888,
+      "sha256": "728fb6523e07b2183ba89f0f864b8ea86f86af763006d0aa5809a6520a665f28"
     },
     {
       "path": "docs/deliverables/lab5/submission.json",
-      "bytes": 1041,
-      "sha256": "d67ed1e53da6fb208acc04158e040e3f284e452773fb670123fc968659be7295"
+      "bytes": 1466,
+      "sha256": "4f11b04ce9c2cd6b2f423b0dd190d129278855c65b06ded37e8cd4b763e4735f"
     },
     {
       "path": "docs/deliverables/lab5/evidence-index.md",
-      "bytes": 9676,
-      "sha256": "18f161deb36b8609330e37fa83c710aa3a352bfc18ea74bea6ce92d36a79ba66"
+      "bytes": 10218,
+      "sha256": "4f4e9cc73038382dd54524cb2f47c07cd65c425e0794c4f0ce612cda70171476"
     },
     {
       "path": "docs/deliverables/lab5/report-preflight.json",
-      "bytes": 2970,
-      "sha256": "b011244acf320866e9ac497c32bc2f94ed67774b433f10b4a3e93479e9e1b0a1"
+      "bytes": 4040,
+      "sha256": "f96eaadb2a7fc17ab3ad71582bd40184d0934bcb9dbfd7e9133e7676bfe32497"
     },
     {
       "path": "docs/labs/lab-05/deployment.md",
-      "bytes": 15975,
-      "sha256": "47ac2ae1e085988e5a7df1bcfd562bd72ea8dc07c1aa1078e2485a0e9b775547"
+      "bytes": 16143,
+      "sha256": "9bdc0163f44142412d154b49caa573ace3eed383d4befe7614b0e022d389c5ce"
     },
     {
       "path": "scripts/build-lab5-report.py",
-      "bytes": 12465,
-      "sha256": "b9865716736036b6a0f7847935019d34ccbb374cac352a49ab69ead4132b3ed0"
+      "bytes": 12555,
+      "sha256": "3d0d2b89f081eca5215bf357cde6a3f944fb2694016d8c02a0358c31ec12d0e2"
     }
   ],
   "visualQa": "Separate rendering and all-page visual inspection required after build"
