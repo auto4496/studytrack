@@ -1,0 +1,18 @@
+{
+  "observedAt": "2026-11-13T09:34:48.169Z",
+  "trafficObservedAt": "2026-11-13T09:34:30.276Z",
+  "main": "3570cd4a7bca17567d30817565d5bb3aa107a672",
+  "imageTag": "3570cd4a7bca17567d30817565d5bb3aa107a672",
+  "tagIndex": "sha256:3e4e18fd392de678076ebec06464a61eca4912b49f783a418c99abf3b3fb26a3",
+  "registrySource": "Native current Versions table observed in this operation turn",
+  "oldServingRevision": "studytrack-g3570cd4a7bca-r43233683592-1",
+  "oldTrafficPercent": 100,
+  "serviceImage": "asia-southeast1-docker.pkg.dev/studytrack-cpe334/studytrack/studytrack@sha256:3e4e18fd392de678076ebec06464a61eca4912b49f783a418c99abf3b3fb26a3",
+  "secretBinding": "studytrack-database-url:1",
+  "sqlAttachment": "studytrack-cpe334:asia-southeast1:studytrack-pg",
+  "configurationUiStatus": "No changes made",
+  "coordination": "A reports having notified B and instructs the assistant to start; no new B timing acknowledgement was observed in GitHub",
+  "proposedOperator": "Codex acting under A instruction using auto4496 GitHub CLI session",
+  "operationAtCapture": "NOT_STARTED",
+  "attribution": "Assisted operation; not a human button click or independent UAT"
+}

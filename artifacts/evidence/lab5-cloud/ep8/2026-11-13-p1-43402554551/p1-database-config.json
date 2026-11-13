@@ -1,0 +1,12 @@
+{
+  "observedAt": "2026-11-13T09:38:53.846Z",
+  "source": "Native Edge current service Containers UI after successful P1",
+  "image": "asia-southeast1-docker.pkg.dev/studytrack-cpe334/studytrack/studytrack@sha256:3e4e18fd392de678076ebec06464a61eca4912b49f783a418c99abf3b3fb26a3",
+  "secretBinding": "studytrack-database-url:1",
+  "cloudSqlAttachment": "studytrack-cpe334:asia-southeast1:studytrack-pg",
+  "secretPayloadOpened": false,
+  "dbName": "studytrack",
+  "dbNameAttribution": "Reviewed bootstrap contract only; payload/SQL contents not inspected",
+  "uiStatus": "No changes made",
+  "runtimeIdentityAttribution": "Accepted release helper service_config() guarded same studytrack-runner identity before and after this actual successful workflow; not a new Security-tab capture"
+}

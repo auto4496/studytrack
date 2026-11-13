@@ -1,0 +1,12 @@
+{
+  "observedAt": "2026-11-13T09:38:42.820Z",
+  "source": "Native Edge Cloud Run revision history and selected revision Containers",
+  "revision": "studytrack-g3570cd4a7bca-r43402554551-1",
+  "healthy": true,
+  "trafficPercent": 100,
+  "oldRevisionTrafficPercent": 0,
+  "otherDisplayedRevisionsTrafficPercent": 0,
+  "revisionPlatformImage": "asia-southeast1-docker.pkg.dev/studytrack-cpe334/studytrack/studytrack@sha256:6127e4e53c2b9b8a747fd8af42216cb7879b4d5175c5f5178d4bc33f0bb18f7d",
+  "revisionSecretBinding": "studytrack-database-url:1",
+  "appOrigin": "https://studytrack-981693883236.asia-southeast1.run.app"
+}

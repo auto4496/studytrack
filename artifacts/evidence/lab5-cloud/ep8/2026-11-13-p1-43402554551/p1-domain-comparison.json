@@ -1,0 +1,16 @@
+{
+  "observedAt": "2026-11-13T09:40:27.660Z",
+  "phase": "P1",
+  "baselineDate": "2026-11-12",
+  "workflowRun": 43402554551,
+  "goalReadAt": "2026-11-13T09:39:18.054Z",
+  "entriesReadAt": "2026-11-13T09:39:51.308Z",
+  "progressReadAt": "2026-11-13T09:40:27.657Z",
+  "completeGoalResponseEqualsP0": true,
+  "completeEntriesResponseEqualsP0": true,
+  "completeProgressResponseEqualsP0": true,
+  "entryCount": 1,
+  "recordWritesPerformed": false,
+  "session": "Existing reader-one session remained valid for these authenticated GETs after P1; earlier pre-operation re-login recorded separately",
+  "p2Status": "NOT_RUN"
+}
