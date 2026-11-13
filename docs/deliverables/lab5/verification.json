@@ -1,8 +1,8 @@
 {
-  "checkedAtUtc": "2026-11-13T13:47:13.962129+00:00",
+  "checkedAtUtc": "2026-11-13T14:23:48.230742+00:00",
   "actor": "Codex assisting B / Datakung; not teammate approval",
   "artifact": "output/pdf/lab5_secB_TH-057_P8.pdf",
-  "pdfSha256": "b68a2874968275a3c46e19ec2cbb850f2e7d2f359bacbe274b6c5788029f97ba",
+  "pdfSha256": "fa6029a5629a4306591ab8b2b41b241cda574fb81371b865058828da43427f93",
   "pages": 8,
   "linkAnnotations": 101,
   "uniqueUrls": 68,
@@ -15,10 +15,12 @@
   "manifestOutputBytes": "PASS",
   "deterministicRebuild": "PASS identical PDF SHA256",
   "visualQa": {
-    "method": "Poppler110dpi, every page visually inspected; final unchanged pages1,2,3,6,7,8 pixel-identical to reviewed renders; final changed pages4,5 inspected separately",
+    "method": "Old reviewed PDF and regenerated PDF rendered with Poppler110dpi; pixel comparison across all8 pages, only page2 changed; page2 visually inspected at full page for corrected PR35/Thai/table/footer/readability",
     "pagesInspected": [
+      2
+    ],
+    "unchangedPreviouslyReviewedPages": [
       1,
-      2,
       3,
       4,
       5,
@@ -26,7 +28,10 @@
       7,
       8
     ],
-    "result": "PASS - readable text/Thai/captions, no unintended overlap or clipped report content; deliberate source crop panels labelled"
+    "changedPages": [
+      2
+    ],
+    "result": "PASS - correction visible; no new overlap/clipping; other pages pixel-identical"
   },
   "focusedPrivacyReview": "Selected PDF text/docs/native figure panels reviewed; no secret payload/credential/full env logs retained. Not an exhaustive repository-history audit.",
   "notPerformed": [
@@ -36,5 +41,15 @@
     "A peer approval",
     "current LEB2 deadline confirmation",
     "LEB2 submission"
-  ]
+  ],
+  "reportContentCommit": "58a9f4b066a9993e3f7fa234d6b9d3444e7feb87",
+  "correction": {
+    "reviewComment": 4564202617,
+    "originalReviewedHead": "cc3a34ff321a8f6e8c93856dc6ac04e13fae6dd3",
+    "originalReviewedPdfSha256": "b68a2874968275a3c46e19ec2cbb850f2e7d2f359bacbe274b6c5788029f97ba",
+    "page": 2,
+    "labelAndTarget": "F05 lifecycle implementation -> PR35; no PR33 label/target on page2",
+    "result": "PASS exact displayed text and hyperlink"
+  },
+  "originalEvidenceManifestUnchanged": "PASS - all8 pinned original-evidence records equal reviewed manifest"
 }

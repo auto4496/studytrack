@@ -256,18 +256,18 @@
   "outputs": [
     {
       "path": "output/pdf/lab5_secB_TH-057_P8.pdf",
-      "bytes": 1230013,
-      "sha256": "b68a2874968275a3c46e19ec2cbb850f2e7d2f359bacbe274b6c5788029f97ba"
+      "bytes": 1230012,
+      "sha256": "fa6029a5629a4306591ab8b2b41b241cda574fb81371b865058828da43427f93"
     },
     {
       "path": "docs/deliverables/lab5/report-source.md",
       "bytes": 24509,
-      "sha256": "e11ae6855b2650aaecc15b06f7339c8b7387251894bd0d257f5ff1f832be1194"
+      "sha256": "650835f078ea5d5a933e6a5dc0f2b6617d2d13533888d28c37ff8bb22a7dbea8"
     },
     {
       "path": "docs/deliverables/lab5/submission.json",
       "bytes": 1041,
-      "sha256": "7b298a8265f682cf762ce6aa82aab6997475c64720187ce0be6ebf3d9a79f379"
+      "sha256": "d67ed1e53da6fb208acc04158e040e3f284e452773fb670123fc968659be7295"
     },
     {
       "path": "docs/deliverables/lab5/evidence-index.md",
