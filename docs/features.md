@@ -1,5 +1,7 @@
 # StudyTrack - Feature inventory
 
+Current13November2026: [F05 acceptance](verification/f05.md#current-acceptance---13-november-2026) records implementation, peer integration and actual reviewed main release. A's [F07 contract](sprints/sprint-3/f07-schedule.md), Issue54, now proposes the complete schedule/reminder API/data/UI/AC boundary for B review; no F07 code/migration/tests have run. F06 and F08 remain B-owned separate work. Earlier inventory statuses below are dated baseline history; stable feature/SRS IDs are unchanged.
+
 วันที่: 3 พฤศจิกายน 2026 (Asia/Bangkok) | ผู้ร่าง: สมาชิก B | รุ่น: B-draft-01
 
 สถานะ: **DRAFT / รอ A และ B ตรวจร่วมกัน** การแบ่ง A/B ยึด [handoff](friend-handoff.md) ไม่เปลี่ยนตามผู้เปิดไฟล์ อัปเดต: F01/F03 A foundation และ F02/F04 B increment มี code และ local verification แล้ว; peer acceptance/release ยัง pending; F05–08 ยัง planned

@@ -1,5 +1,9 @@
 # StudyTrack - แผนสาม Sprint
 
+## Current checkpoint - 13 November 2026
+
+F05 is implemented, independently accepted in PR35 and included in reviewed/deployed main6d30aef with successful Deploy43410699104; [acceptance and F06 handoff](../verification/f05.md#current-acceptance---13-november-2026) supersedes the earlier F05 pending state. F06 history/edit/streak remains B's separate Sprint2 feature, so Sprint2 is not complete. A is preparing the [F07 schedule/reminder contract](sprint-3/f07-schedule.md), Issue54, alongside B's Lab5 report work. F07 decisions/ACs are proposed; product/migration/tests remain NOT_IMPLEMENTED/NOT_RUN and contract approval plus implementation-entry agreement are still required. B retains F06/F08 and Issue24 coordination; A reviews B's work. EP7/EP8 technical evidence is accepted through PR53, while final report/index/joint acceptance in Issues22/23/24 remains open. The dated plan below preserves historical checkpoints and does not override this status.
+
 ## Current checkpoint - 9 November 2026
 
 Sprint1 dependencies are accepted. Reviewed EP5 documentation release PR30 is merged into main `5c04cd4` (tree equal to staging `e16b0af`); Issue20 is closed. A has opened [F-05 Issue31](https://github.com/auto4496/studytrack/issues/31) and prepared the [Sprint2 lifecycle contract](sprint-2/f05-lifecycle.md) for Datakung's pre-code review. F-05 is specified/proposed, not implemented or tested. B may draft F-06 against the proposed target-history/stop boundary; agreement is required before dependent implementation. Lab5 EP6-EP8 remain B-led with both members participating. The dated draft plan below is retained as historical planning, not a current release-status claim.

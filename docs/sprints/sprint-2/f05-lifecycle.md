@@ -2,6 +2,8 @@
 
 Version 0.1, 9 November 2026 (Asia/Bangkok). Owner: Phanuwit / A / `auto4496`; reviewer: Pitchai / B / `Datakung`. [Issue #31](https://github.com/auto4496/studytrack/issues/31).
 
+Current13November: implementation/staging/main release gates are satisfied; [acceptance and F06 handoff](../../verification/f05.md#current-acceptance---13-november-2026) links the independent PR35 review, actual reviewed main deployment and retained results. The original contract/AC assertions below remain unchanged. F06 and final Lab5 acceptance are separate work.
+
 **Original creation status: proposed before implementation. Update 9 November:** B explicitly approved all lifecycle/F06 decisions at `4ba7c76` in [PR32](https://github.com/auto4496/studytrack/pull/32), before A's implementation branch. Implementation/local results are now recorded in [F05 verification](../../verification/f05.md); implementation peer acceptance, staging/release and cloud actions are separate gates. The original decisions and test specification below are retained as the reviewed contract.
 
 ## 1. Baseline and scope
