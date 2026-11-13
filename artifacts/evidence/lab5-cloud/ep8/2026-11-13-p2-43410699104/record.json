@@ -1,0 +1,270 @@
+{
+  "status": "P2_AND_CROSS_OWNER_PRIVACY_PASS_PENDING_PEER_REVIEW",
+  "requirements": [
+    "C-05",
+    "R-04"
+  ],
+  "issue": "https://github.com/auto4496/studytrack/issues/23",
+  "baselineEntryDate": "2026-11-12",
+  "actor": "Codex assisting A; A/user opened browser and entered student2 credentials directly; assisted inspection, not independent human UAT",
+  "acceptedP0": "../2026-11-12-p0-3570cd4/record.json",
+  "acceptedP1": "../2026-11-13-p1-43402554551/record.json",
+  "acceptedP1Review": "https://github.com/auto4496/studytrack/pull/50#pullrequestreview-5889128165",
+  "release": {
+    "featurePr": 51,
+    "releasePr": 52,
+    "runUrl": "https://github.com/auto4496/studytrack/actions/runs/43410699104",
+    "source": "6d30aefece55b3a83194010a2e0e62c9b8b1dbfc",
+    "result": {
+      "SERVICE_URL": "https://studytrack-981693883236.asia-southeast1.run.app",
+      "DEPLOYED_IMAGE": "asia-southeast1-docker.pkg.dev/studytrack-cpe334/studytrack/studytrack@sha256:54dbdf5fb0fa4e6f7baec37f0568bbcff4db0fd97a0550df8c24f9923e80ba62",
+      "DEPLOYED_PLATFORM_IMAGE": "asia-southeast1-docker.pkg.dev/studytrack-cpe334/studytrack/studytrack@sha256:e311c6c11c71d51921464217ec498eef2708ccafa1d4d6f346aaec2b40a15cca",
+      "TOOLS_IMAGE": "asia-southeast1-docker.pkg.dev/studytrack-cpe334/studytrack/studytrack-tools@sha256:dc79f9ee06af7c005576673754ec670cefa133703bfd47040929de3057e46b1b",
+      "DEPLOYED_REVISION": "studytrack-g6d30aefece55-r43410699104-1",
+      "MIGRATION_EXECUTION": "studytrack-migrate-cq47b",
+      "RELEASE_SOURCE_SHA": "6d30aefece55b3a83194010a2e0e62c9b8b1dbfc",
+      "WORKFLOW_SOURCE_SHA": "6d30aefece55b3a83194010a2e0e62c9b8b1dbfc",
+      "RELEASE_ROLLBACK": "false"
+    },
+    "runMetadata": "release-b-run.json",
+    "releasePrProvenance": "release-pr52.json",
+    "normalBuildMigrationDeploy": true
+  },
+  "serving": {
+    "observedAt": "2026-11-13T10:47:14.670Z",
+    "source": "Native Edge Cloud Run selected new revision",
+    "revision": "studytrack-g6d30aefece55-r43410699104-1",
+    "healthy": true,
+    "trafficPercent": 100,
+    "priorP1TrafficPercent": 0,
+    "otherDisplayedRevisionsTrafficPercent": 0,
+    "platformDigest": "sha256:e311c6c11c71d51921464217ec498eef2708ccafa1d4d6f346aaec2b40a15cca",
+    "revisionSecretBinding": "studytrack-database-url:1"
+  },
+  "database": {
+    "observedAt": "2026-11-13T10:47:34.694Z",
+    "source": "Native Edge service Containers UI",
+    "indexDigest": "sha256:54dbdf5fb0fa4e6f7baec37f0568bbcff4db0fd97a0550df8c24f9923e80ba62",
+    "secretBinding": "studytrack-database-url:1",
+    "sqlAttachment": "studytrack-cpe334:asia-southeast1:studytrack-pg",
+    "secretPayloadOpened": false,
+    "dbName": "studytrack",
+    "dbNameAttribution": "Reviewed bootstrap contract, not independent SQL/payload inspection",
+    "uiStatus": "No changes made"
+  },
+  "domainComparison": {
+    "allThreeCompleteResponseObjectsEqualP0": true,
+    "includesEntryListMetadata": true,
+    "entryCount": 1,
+    "goalId": "1da44fc2-a956-421d-88a9-8c876adc38c1",
+    "entryId": "f1146358-2b3a-4aa6-9033-b2d0d95fc542",
+    "createdAt": "2026-11-12T14:42:49.190Z",
+    "updatedAt": "2026-11-12T14:42:49.190Z",
+    "minutes": 20,
+    "targetMinutes": 30,
+    "progressPercent": 66.67,
+    "achieved": false,
+    "evidence": "p2-domain-comparison.json"
+  },
+  "visibleReleaseAndFixedDate": "p2-visible-release-and-data.json",
+  "publicSmoke": "p2-public-smoke.json",
+  "privacy": {
+    "status": "PASS_OBSERVED_PENDING_PEER_REVIEW",
+    "principal": {
+      "id": "1526ed3e-2934-412d-a8de-570980bd47cf",
+      "email": "student2@studytrack.test",
+      "displayName": "นักอ่านคนที่สอง",
+      "role": "PARTICIPANT"
+    },
+    "identityEvidence": "student2-identity.json",
+    "apiEvidence": "student2-private-api-denials.json",
+    "uiEvidence": "student2-private-goal-ui.json",
+    "allThreePrivateReadsDenied": true,
+    "uiPrivateGoalDenied": true
+  },
+  "testResults": {
+    "EP8-P01": "ACCEPTED_P0",
+    "EP8-P02": "ACCEPTED_P1_RUNTIME",
+    "EP8-P03": "ACCEPTED_P1_DATA",
+    "EP8-P04": "PASS_RELEASE_B_OBSERVED",
+    "EP8-P05": "PASS_P2_DATA_OBSERVED",
+    "EP8-P06": "PASS_P1_P2_PUBLIC_SMOKE",
+    "EP8-P07": "PASS_P2_READER_ACCESS_AND_STUDENT2_DENIAL",
+    "EP8-P08": "PASS_FIXED_STORED_DATE",
+    "EP8-P09": "PARTIAL_P2_PEER_AND_FINAL_REPORT_PENDING",
+    "EP8-P10": "NOT_RUN_OPTIONAL"
+  },
+  "recordWritesPerformed": false,
+  "secretPayloadRead": false,
+  "peerAcceptance": {
+    "status": "PENDING",
+    "reviewer": "Datakung",
+    "reference": null
+  },
+  "limitations": [
+    "Earlier P2 DTO/UI metadata recorded privacy as pending at its capture time; later student2 evidence and this record establish the current observed result. Original observations are preserved.",
+    "Network status was not measured separately for private GETs; observed NOT_FOUND error codes correspond to404 in the unchanged reviewed server contract.",
+    "Database name remains contract-derived; no SQL or secret-payload introspection.",
+    "Native screenshots remain original, including browser tooltips/translation popup where present. Selected log lines are UTF-8/LF excerpts without authentication/environment blocks.",
+    "No independent human UAT, optional rollback, B-side GCP inspection or final Lab5 acceptance is inferred. P2 peer review, B release-evidence review/report integration and final joint acceptance remain pending; Issues22/23 remain open."
+  ],
+  "originalNativeImages": [
+    {
+      "file": "before-release-b-ui.jpg",
+      "width": 1536,
+      "height": 816
+    },
+    {
+      "file": "p2-database-binding.jpg",
+      "width": 1536,
+      "height": 816
+    },
+    {
+      "file": "p2-new-guidance-current-day.jpg",
+      "width": 1536,
+      "height": 816
+    },
+    {
+      "file": "p2-new-guidance-saved-day.jpg",
+      "width": 1536,
+      "height": 816
+    },
+    {
+      "file": "p2-serving-revision.jpg",
+      "width": 1536,
+      "height": 816
+    },
+    {
+      "file": "student2-authenticated-home.jpg",
+      "width": 1536,
+      "height": 816
+    },
+    {
+      "file": "student2-private-goal-denied.jpg",
+      "width": 1536,
+      "height": 816
+    }
+  ],
+  "evidenceFilesWithSha256": [
+    {
+      "file": "before-release-b-ui.jpg",
+      "bytes": 80396,
+      "sha256": "4aea17f9d50feaf6d96b50845e960de701241e6099d0beb32d7322cdb538c02e"
+    },
+    {
+      "file": "before-release-b-ui.json",
+      "bytes": 349,
+      "sha256": "5704ab8b4ce046dcefc4d60ef4e5b31f5b39e978733dc605a715d24cc8522e27"
+    },
+    {
+      "file": "p2-database-binding.jpg",
+      "bytes": 144878,
+      "sha256": "5a936f4363f0143a225afcfb1f482b2292edcb22f2f23a09c7396a60f4a923d1"
+    },
+    {
+      "file": "p2-database-config.json",
+      "bytes": 491,
+      "sha256": "91514ee83ddd503d2af2c9ae872d71f744f0feedc8999be9423cb034c616ef20"
+    },
+    {
+      "file": "p2-domain-comparison.json",
+      "bytes": 268,
+      "sha256": "d0df292cfb02913942d7bbd54b9ebdfd4c589293de9bb831bc8000af8a68debf"
+    },
+    {
+      "file": "p2-entries.json",
+      "bytes": 538,
+      "sha256": "57ef50a1ecf7753e25d75949a5292a43806a4792c5ac0477a39ce0274a2785ba"
+    },
+    {
+      "file": "p2-goal.json",
+      "bytes": 624,
+      "sha256": "c93ea20fd8c46d4853ac79ce38fa2d315b1b2b4a8f3cb2ae4247912f8af98bfc"
+    },
+    {
+      "file": "p2-new-guidance-current-day.jpg",
+      "bytes": 88519,
+      "sha256": "e5da829ebe9665674a8a2d07d812ffdd075baa72b4c8000d0d277c904b3e0fc7"
+    },
+    {
+      "file": "p2-new-guidance-saved-day.jpg",
+      "bytes": 83076,
+      "sha256": "2e5c08ce3f1a8bcb8588a943e6881117f15f76d19b0d31cabf9fa40a0ec978e2"
+    },
+    {
+      "file": "p2-progress.json",
+      "bytes": 339,
+      "sha256": "3a718fad3c9e551c2e4dc57c2ec91f183715cb8d0485d581970cfcad495b31b1"
+    },
+    {
+      "file": "p2-public-smoke.json",
+      "bytes": 286,
+      "sha256": "cd258728d0bfe5dc00d88a4a8eb1336066a580318416ed07dcb8fdccb7646773"
+    },
+    {
+      "file": "p2-public-smoke.txt",
+      "bytes": 24,
+      "sha256": "12e756a3c5e7a2572c70a0fce850d4d1b6254ff1192b71b738ad951aea461463"
+    },
+    {
+      "file": "p2-serving-revision.jpg",
+      "bytes": 150100,
+      "sha256": "9ef0462d5edf5e977eaf0d41d2a2d3054e92e157e89d5c9432ae6570e41fc3ae"
+    },
+    {
+      "file": "p2-serving-revision.json",
+      "bytes": 434,
+      "sha256": "d7a77ee4beaf73a84e69b08874190c11289ee33fa731df55fd1c1d702ad6b0a7"
+    },
+    {
+      "file": "p2-visible-release-and-data.json",
+      "bytes": 781,
+      "sha256": "fa313cb673041ea299febe7cf766741dbc1ccece8f5bbaea6fa6670295040697"
+    },
+    {
+      "file": "release-b-result.json",
+      "bytes": 1078,
+      "sha256": "dcce0d597d0d589a28556c0194d2b3ac1a336d1f46b70479c0bee95e5bb19021"
+    },
+    {
+      "file": "release-b-run.json",
+      "bytes": 8896,
+      "sha256": "d64d1ba7dee1ebce49504568869d3ccb1aff471363038cf4df4679baa2b80eba"
+    },
+    {
+      "file": "release-b-selected-log.txt",
+      "bytes": 2069,
+      "sha256": "dded9a649a3dda9b9483f98bbf7f97a1594cc6d96959cd6dda675f68046f8029"
+    },
+    {
+      "file": "release-pr52.json",
+      "bytes": 493,
+      "sha256": "7ccf215b43b8105fecec0b3b520b55e93eacffe532926397bd9a9f7b4e8ed359"
+    },
+    {
+      "file": "student2-authenticated-home.jpg",
+      "bytes": 74785,
+      "sha256": "4d583dcbb48d1db1e9c12364d131f8d89e6e02b91362001c2349b5daeb69bc97"
+    },
+    {
+      "file": "student2-identity.json",
+      "bytes": 510,
+      "sha256": "c3f7ad6431f348cda0723ce8e4fdfa4b2ebf7030389cb9978e20d31f86537742"
+    },
+    {
+      "file": "student2-private-api-denials.json",
+      "bytes": 1327,
+      "sha256": "80f0b3b853005f8d41843f796acc3ef305667204afbcf578d84aaf258334baba"
+    },
+    {
+      "file": "student2-private-goal-denied.jpg",
+      "bytes": 59480,
+      "sha256": "63a045b3f0c5f912bcd95f231ef5500a36249221d27e04dab628bc4935d7dedf"
+    },
+    {
+      "file": "student2-private-goal-ui.json",
+      "bytes": 527,
+      "sha256": "c968055cfd782891e71cae75cc99e3c367efdc23d9fdb1e336fef146f239044f"
+    }
+  ]
+}

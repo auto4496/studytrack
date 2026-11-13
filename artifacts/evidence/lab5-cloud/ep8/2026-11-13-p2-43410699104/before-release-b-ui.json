@@ -1,0 +1,10 @@
+{
+  "observedAt": "2026-11-13T10:40:24.585Z",
+  "accountDisplay": "นักอ่านคนที่หนึ่ง",
+  "date": "2026-11-12",
+  "actualMinutes": 20,
+  "targetMinutes": 30,
+  "progressPercent": 66.67,
+  "phase": "Before release B completion; existing browser view, not a new serving-version attestation",
+  "recordWrites": false
+}

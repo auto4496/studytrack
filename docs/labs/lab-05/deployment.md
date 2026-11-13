@@ -2,6 +2,10 @@
 
 ## Current checkpoint - 13 November 2026
 
+A separately accepted release PR52 and normally merged main6d30aefece55b3a83194010a2e0e62c9b8b1dbfc, whose full tree equals accepted release59ca1b1113958c7f6fc14d999fb4ea8ed84cffab. Actual [Deploy43410699104](https://github.com/auto4496/studytrack/actions/runs/43410699104) is SUCCESS through normal build/tools/migration/deployment/smoke. New revision studytrack-g6d30aefece55-r43410699104-1 serves100% with the same DB references. A's [P2 and student2 privacy observations](ep8-p2-2026-11-13.md) show the new guidance, complete original DTO equality with P0, fixed-date20/30=66.67%, separate public smoke PASS and all three private GETs/UI denied under authenticated student2. These actual observations await B review and final joint evidence/report integration. Keep Issues22/23 open; this staging evidence increment does not deploy again.
+
+The following paragraphs retain earlier writing-time checkpoints.
+
 B accepted PR50/P1 in [review5889128165](https://github.com/auto4496/studytrack/pull/50#pullrequestreview-5889128165), and the user merged it into staging119b701 with the full tree equal to approved d4ef836. The P1 technical result and same-data comparison are accepted. B is preparing a distinct [selected-date guidance change for release B](ep7-release-b-date-guidance.md): specification before code, production client build and four explicitly local fixture-backed desktop/mobile figures passed. It remains a feature candidate awaiting A review/required CI, then the separate reviewed main release. Main remains3570cd4; actual P1 run43402554551 is still the latest deployment. Keep the fixed EP8 data and Issues22/23 open through P2/privacy/joint report acceptance. This preparation does not deploy or mutate cloud records.
 
 The following P1 paragraph retains its writing-time peer-review status; the acceptance above supersedes that pending state.
