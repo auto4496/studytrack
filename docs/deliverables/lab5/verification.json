@@ -1,0 +1,40 @@
+{
+  "checkedAtUtc": "2026-11-13T13:47:13.962129+00:00",
+  "actor": "Codex assisting B / Datakung; not teammate approval",
+  "artifact": "output/pdf/lab5_secB_TH-057_P8.pdf",
+  "pdfSha256": "b68a2874968275a3c46e19ec2cbb850f2e7d2f359bacbe274b6c5788029f97ba",
+  "pages": 8,
+  "linkAnnotations": 101,
+  "uniqueUrls": 68,
+  "pinnedGitLinkTargetsVerified": 34,
+  "localMarkdownLinksVerified": 75,
+  "figureCount": 9,
+  "requiredPartsAndR01To12": "PASS",
+  "teamMetadata": "Section B / TH-057_P8 / กำลังปั้นเครดิตครับ",
+  "originalEvidenceMatchesPinnedGitBytes": "PASS during generator build",
+  "manifestOutputBytes": "PASS",
+  "deterministicRebuild": "PASS identical PDF SHA256",
+  "visualQa": {
+    "method": "Poppler110dpi, every page visually inspected; final unchanged pages1,2,3,6,7,8 pixel-identical to reviewed renders; final changed pages4,5 inspected separately",
+    "pagesInspected": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "result": "PASS - readable text/Thai/captions, no unintended overlap or clipped report content; deliberate source crop panels labelled"
+  },
+  "focusedPrivacyReview": "Selected PDF text/docs/native figure panels reviewed; no secret payload/credential/full env logs retained. Not an exhaustive repository-history audit.",
+  "notPerformed": [
+    "Docker execution",
+    "new authenticated application or GCP inspection",
+    "cloud mutation/deployment",
+    "A peer approval",
+    "current LEB2 deadline confirmation",
+    "LEB2 submission"
+  ]
+}

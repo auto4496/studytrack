@@ -8,8 +8,18 @@
   "topic": 8,
   "topicName": "Habit and Activity Tracking System",
   "members": [
-    {"name": "Pitchai Chadchuangchot", "studentId": "67070501068", "github": "Datakung", "role": "B"},
-    {"name": "Phanuwit Butchari", "studentId": "67070501070", "github": "auto4496", "role": "A"}
+    {
+      "name": "Pitchai Chadchuangchot",
+      "studentId": "67070501068",
+      "github": "Datakung",
+      "role": "B"
+    },
+    {
+      "name": "Phanuwit Butchari",
+      "studentId": "67070501070",
+      "github": "auto4496",
+      "role": "A"
+    }
   ],
   "pdfFilename": "lab5_secB_TH-057_P8.pdf",
   "preparedDate": "2026-11-13",
@@ -18,5 +28,6 @@
   "submitted": false,
   "applicationCommit": "6d30aefece55b3a83194010a2e0e62c9b8b1dbfc",
   "evidenceCommit": "c6b63f733489b8390c9b278351944b67937f0d84",
-  "publicOrigin": "https://studytrack-981693883236.asia-southeast1.run.app"
+  "publicOrigin": "https://studytrack-981693883236.asia-southeast1.run.app",
+  "reportContentCommit": "42d98e20943824458919b89f15166e11e731f93d"
 }
