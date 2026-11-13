@@ -1,6 +1,10 @@
 # StudyTrack deployment
 
-## Current checkpoint - 12 November 2026
+## Current checkpoint - 13 November 2026
+
+A captured [current pre-P1 readback](ep8-pre-p1-2026-11-13.md) through the authenticated native Console: accepted release-A revision/100% traffic, expected service/index and revision/platform, runner identity, Cloud SQL attachment, DATABASE_URL secret reference/version1, current commit-tag mapping and a selected original-revision startup/instance event. After Bangkok midnight, normal GETs still equal accepted P0 for stored date2026-11-12 and the UI shows20/30=66.67% when that date is selected; separate public DB-health/UI smoke passes. These are pre-operation observations only. B's final coordinated checkpoint, human-operated P1, later visible-change release B/P2 and joint post-operation evidence remain pending. No new deployment or private-data write was performed; keep Issues22/23 open.
+
+The paragraphs below retain earlier writing-time checkpoints.
 
 EP8 has begun with A's assisted [fresh P0 baseline](ep8-baseline-2026-11-12.md): new goal/entry, original URL-visible captures and stored DTOs agree on20/30=66.67% for2026-11-12. B's PR47 corroboration is now peer-reviewed in staging; exact database binding/version, operation/startup evidence and independent P0/parameter acceptance remain pending. No P1 replacement, P2 redeploy or post-operation persistence PASS is claimed. Keep Issues22/23 open and coordinate before any main release or runtime operation.
 

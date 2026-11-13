@@ -1,0 +1,11 @@
+{
+  "observedAtUtc": "2026-11-12T18:27:07.991Z",
+  "bangkokDate": "2026-11-13",
+  "source": "authenticated native Edge Artifact Registry Versions table",
+  "url": "https://console.cloud.google.com/artifacts/docker/studytrack-cpe334/asia-southeast1/studytrack/studytrack?project=studytrack-cpe334",
+  "tag": "3570cd4a7bca17567d30817565d5bb3aa107a672",
+  "taggedDigest": "sha256:3e4e18fd392de678076ebec06464a61eca4912b49f783a418c99abf3b3fb26a3",
+  "platformDigestAlsoListed": "sha256:6127e4e53c2b9b8a747fd8af42216cb7879b4d5175c5f5178d4bc33f0bb18f7d",
+  "comparison": "Tag currently maps to accepted release-A index. Platform lineage was verified by successful release-A helper; this UI list is not an independent raw manifest audit.",
+  "operationPerformed": false
+}

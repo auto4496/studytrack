@@ -1,0 +1,27 @@
+{
+  "observedAtUtc": "2026-11-12T18:32:12.8284261Z",
+  "source": "Authenticated GitHub CLI read-only API observations after native Console/data capture",
+  "main": {
+    "sha": "3570cd4a7bca17567d30817565d5bb3aa107a672",
+    "tree": "3e76a55bfdac1ccd3c0ae7ecaa5cc551a98ffa23"
+  },
+  "deployRuns": [
+    {
+      "conclusion": "success",
+      "createdAt": "2026-11-12T14:05:54Z",
+      "databaseId": 43233683592,
+      "headSha": "3570cd4a7bca17567d30817565d5bb3aa107a672",
+      "status": "completed",
+      "url": "https://github.com/auto4496/studytrack/actions/runs/43233683592"
+    },
+    {
+      "conclusion": "failure",
+      "createdAt": "2026-11-12T10:06:52Z",
+      "databaseId": 43197450278,
+      "headSha": "d92f945016087452e146e53c91044860279a5610",
+      "status": "completed",
+      "url": "https://github.com/auto4496/studytrack/actions/runs/43197450278"
+    }
+  ],
+  "operationPerformed": false
+}
