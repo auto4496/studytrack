@@ -2,6 +2,8 @@
 
 ## Lab5 Issue24 - B report handoff, 13 November 2026
 
+PR56 correction after A review: แก้ตารางผลงาน F05 จาก PR33 (EP8 test-plan preparation) เป็น **PR35 (F05 implementation)** ตาม [review4564202617](https://github.com/auto4496/studytrack/pull/56#discussion_r4564202617). รับ accepted staging14b95e7/PR55 โดยเก็บ AI-use ทั้ง A/B; จะ pin corrected content commit และสร้าง PDF/manifest/verification ใหม่ให้ตรงกันก่อนขอ re-review ใน PR56 เดิม ไม่เปิด PR ซ้ำ ไม่เปลี่ยน app/cloud และคง Issues22/23/24 เปิด
+
 **สมาชิก B = Datakung; A = auto4496.** รอบนี้รวบรวมรายงาน Lab5 ให้ A ตรวจ ไม่เปลี่ยน product/workflow และไม่ deploy เพิ่ม
 
 - ใช้ข้อมูลที่ผู้ใช้ยืนยันล่าสุด: **Section B**, กลุ่มส่ง **TH-057_P8**, ทีม TH-057, ชื่อ **กำลังปั้นเครดิตครับ** (ปั้น ไม่ใช่ ปั่น), หัวข้อ8 Habit and Activity Tracking System; รหัส67070501068/67070501070

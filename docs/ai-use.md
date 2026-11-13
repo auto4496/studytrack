@@ -1,5 +1,9 @@
 # AI-use declaration
 
+## Member B PR56 contribution correction - 13 November 2026
+
+At B's request to address A's review4564202617, Codex corrected the report's F05 lifecycle contribution from EP8-plan PR33 to implementation PR35. It integrated accepted staging14b95e7 while retaining both members' AI-use entries, then prepared an immutable corrected report-content pin and regenerated PDF/provenance for re-review. Original cloud/native evidence and application source remain unchanged. Visual/link/hash/CI results are recorded when actually checked; no Docker run, cloud operation, new F07 implementation or LEB2 submission is implied.
+
 ## Lab5 report preparation by member B - 13 November 2026
 
 At B's request to continue Issue24, Codex read the Lab5 handout and accepted container/CI/gate/release/P0-P2 evidence, incorporated the user's corrected SectionB/submission groupTH-057_P8/friendly name **กำลังปั้นเครดิตครับ**, and prepared the Answer Part0-4 PDF draft, complete C01-06/R01-12 index, reproducible document source/generator and current deployment runbook. It made read-only GitHub/public-service checks and recorded only selected public metadata/outcomes. It did not inspect secret payloads, collect full environment/authentication logs, run Docker/tests against cloud, change product/workflow/permissions, dispatch a release or mutate domain records. Original evidence is reused with explicit source/actor/time/tested-version limits; PDF clip panels do not rewrite source screenshots. Poppler renders are visually inspected page by page before delivery; generated document checks do not substitute for teammate review. A/joint final acceptance, LEB2 current deadline and actual upload confirmation remain pending. No independent human UAT, new cloud deployment or course acceptance is claimed.
@@ -7,6 +11,9 @@ At B's request to continue Issue24, Codex read the Lab5 handout and accepted con
 ---
 
 Earlier dated checkpoints below retain their writing-time status; the report handoff above is current.
+## Member A F05 acceptance audit and F07 pre-code specification - 13 November 2026
+
+At A's instruction, Codex read actual PR35 acceptance, source ancestry/tree equivalence, reviewed release PR52 and successful main deployment/regression metadata, then reconciled the stale F05 status and recorded the F06 integration handoff. It read the existing SRS/SDS/feature allocation and implemented clock/lifecycle boundaries, opened A-owned Issue54, and drafted the proposed F07 API/data/UI/rule/locking contract with18 planned AC/test IDs. The refinements are explicitly proposed for B review; no F07 product code, migration or executable test was created/run, no new local product suite was claimed, and no cloud data, deployment, secret, dependency or B-owned Lab5 report was changed. Retained test/deployment results are attributed to their original source/run. The engineering summary contains no private credential or chat transcript. Contract/implementation acceptance and Sprint2 completion are not inferred from this preparation.
 
 ## Member A EP8 P2 and privacy verification - 13 November 2026
 
