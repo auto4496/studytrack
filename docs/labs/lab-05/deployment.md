@@ -8,7 +8,7 @@ Observed serving revision **studytrack-g6d30aefece55-r43410699104-1**,100% traff
 
 A's [P2/privacy evidence](ep8-p2-2026-11-13.md) was accepted by B in [review5890141901](https://github.com/auto4496/studytrack/pull/53#pullrequestreview-5890141901); PR53 merged into staging c6b63f7. Full original goal/entries/progress equal P0/P1 after the distinct release; stored date2026-11-12 remains20/30=66.67%. Authenticated student2 gets no private data from three GETs or UI. Assisted observations and user-operated sign-in are not independent human UAT. Dated historical records retain writing-time pending states; this checkpoint records later acceptance.
 
-The [report](../../deliverables/lab5/README.md) remains a joint-review draft. Keep Issues22/23/24 open for remaining integration/acceptance/submission. A staging documentation PR does not deploy; no extra evidence-only main release is needed to assemble this draft.
+The corrected [report/index/runbook](../../deliverables/lab5/README.md) were accepted through PR56 and merged into staging311452c. The editorial submission copy removes provisional authoring labels and receives a final file-release review. Keep Issues22/23/24 open through the remaining final-file/submission handoff; LEB2 deadline confirmation and upload receipt are still separate. No report-only cloud deployment is required.
 
 ## Stack and starter adaptations
 
@@ -158,4 +158,4 @@ Use actual traffic, not latestReady alone. Match run headSha/helper result, regi
 
 [Evidence index](../../deliverables/lab5/evidence-index.md) maps C01-06/R01-12. C01 release CI43409691975 passed 41 offline, 152 API/unit, 38 browser cases and application/both-image builds. C02 PR36 is closed unmerged. C03 packaging, C04 domain workflow, C05 P0/P1/P2 and C06 reviewed releases retain separate provenance.
 
-Keep repo public and service available until the instructor ends grading. A dated successful read is not future uptime; check again before submission. Do not pause/delete resources or review/evidence history to finish the report. Draft metadata: SectionB / TH-057_P8 / กำลังปั้นเครดิตครับ. Handout deadline15November2026,23:59 Bangkok; current LEB2 deadline and actual upload receipt are not verified. Review together, confirm LEB2 and retain the actual receipt before completing Issue24.
+Keep repo public and service available until the instructor ends grading. A dated successful read is not future uptime; check again before submission. Do not pause/delete resources or review/evidence history to finish the report. Submission metadata: SectionB / TH-057_P8 / กำลังปั้นเครดิตครับ. Handout deadline15November2026,23:59 Bangkok; current LEB2 deadline and actual upload receipt are not verified. Review together, confirm LEB2 and retain the actual receipt before completing Issue24.

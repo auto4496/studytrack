@@ -1,5 +1,15 @@
 # Member B status — implementation handoff
 
+## Lab5 final submission copy - 13 November 2026
+
+A รับรายงานแก้แล้วใน PR56/review5892758866 และ merge เข้า staging311452c. ตามคำขอผู้ใช้ รอบนี้เอาคำสถานะร่างออกจากหัวเรื่อง/เนื้อหา/footer/metadata ของ PDF และปรับข้อความ review-pending ให้ตรงกับการรับ technical content แล้ว สร้างไฟล์พร้อมส่งเพื่อให้ A รีวิวไฟล์ครั้งสุดท้ายใน PR ใหม่ โดยคง main6d30aef, original evidencec6b63f7, PR35 contribution และข้อจำกัดหลักฐานเดิม
+
+Owner ตรวจ board/labels/protections/public availability แล้วตาม Issue24; บันทึกเป็นผลของ A ไม่อ้างว่า B inspect GCP/Project ใหม่. [Metadata](../deliverables/lab5/submission.json) ยังคง submitted=false และ currentLeb2DeadlineVerified=false จนมีข้อมูลจริง ไม่ปิด Issues22/23/24 จากการเตรียมไฟล์ ไม่ deploy เพิ่ม และไม่ต้องเปิด Docker. ขั้นต่อไปคือ A รีวิว final copy/CI จากนั้นผู้ใช้ตรวจ LEB2 และ upload พร้อมเก็บ receipt
+
+---
+
+Earlier report checkpoints below are historical.
+
 ## Lab5 Issue24 - B report handoff, 13 November 2026
 
 PR56 correction after A review: แก้ตารางผลงาน F05 จาก PR33 (EP8 test-plan preparation) เป็น **PR35 (F05 implementation)** ตาม [review4564202617](https://github.com/auto4496/studytrack/pull/56#discussion_r4564202617). รับ accepted staging14b95e7/PR55 โดยเก็บ AI-use ทั้ง A/B; จะ pin corrected content commit และสร้าง PDF/manifest/verification ใหม่ให้ตรงกันก่อนขอ re-review ใน PR56 เดิม ไม่เปิด PR ซ้ำ ไม่เปลี่ยน app/cloud และคง Issues22/23/24 เปิด

@@ -1,5 +1,5 @@
 {
-  "status": "DRAFT_FOR_PEER_REVIEW_NOT_SUBMITTED",
+  "status": "FINAL_SUBMISSION_COPY_NOT_SUBMITTED",
   "section": "B",
   "submissionGroup": "TH-057_P8",
   "team": "TH-057",
@@ -29,5 +29,12 @@
   "applicationCommit": "6d30aefece55b3a83194010a2e0e62c9b8b1dbfc",
   "evidenceCommit": "c6b63f733489b8390c9b278351944b67937f0d84",
   "publicOrigin": "https://studytrack-981693883236.asia-southeast1.run.app",
-  "reportContentCommit": "58a9f4b066a9993e3f7fa234d6b9d3444e7feb87"
+  "reportContentCommit": "8d7f6b9c1ac6807b87d7dd7034d4774279b1e60e",
+  "technicalReportAcceptance": {
+    "pullRequest": 56,
+    "reviewUrl": "https://github.com/auto4496/studytrack/pull/56#pullrequestreview-5892758866",
+    "acceptedHead": "d98d43860c0dda64491825abbdc6775cc102f7e8",
+    "stagingMerge": "311452cc2b586da60583ebfd386311a4f98ea45b"
+  },
+  "finalFileReleaseRequirement": "Peer review of the editorial submission copy before file release; LEB2 upload/receipt tracked in Issue24"
 }
