@@ -1,5 +1,15 @@
 # Member B status — implementation handoff
 
+## สถานะล่าสุด 13 พฤศจิกายน 2026: P1 ผ่านรีวิว เตรียม visible change สำหรับ release B/P2
+
+B [อนุมัติ PR50/P1](https://github.com/auto4496/studytrack/pull/50#pullrequestreview-5889128165) หลังตรวจ run43402554551 จริง ภาพ startup/instance ใหม่ และ DTO เดิมตรง P0 ครบ ผู้ใช้ merge เข้า staging119b701 แล้ว โดย tree ตรงชุดที่รีวิว d4ef836. Main ยัง3570cd4; P1 ใช้ image เดิม จึงยังไม่ใช่ release B/P2.
+
+ผู้ใช้ให้ B เริ่มงานถัดไปแล้ว จึงบันทึกสเปกก่อนโค้ดที่fcdbf97 และทำ [คำแนะนำเลือกวันที่เพื่อดูผลย้อนหลัง](../labs/lab-05/ep7-release-b-date-guidance.md) ใน source8153034. แก้เฉพาะข้อความใน DailyActivity และ aria-describedby ของช่องวันที่ ให้เข้าใจว่าหน้าวันใหม่ที่0/30 ไม่ใช่ข้อมูลวันเดิมหาย. Client build/format ผ่าน ตรวจภาพ4สถานะ desktop/mobile ด้วย GET จำลอง localhost แล้ว ไม่มี write/page error/หน้าล้น; ภาพเหล่านี้ไม่ใช่หลักฐาน Cloud/P2.
+
+ประสาน A: รีวิว feature PR เข้า staging และ release PR แยกเข้า main ตาม flow เดิม หลัง pipeline release B สำเร็จ B เก็บ source/run/digests/migration/revision/traffic/DB/smoke แล้ว A ตรวจ goal/entry/date2026-11-12/timestamps เดิมกับ privacy ของ student2. คงข้อมูลทดสอบเดิมไว้. CI/peer review ของงานใหม่, main release และ P2/final acceptance ยังรอดำเนินการ; ไม่ได้ deploy/restart/แก้ข้อมูล Cloud ในการเตรียมนี้. Issue22/23 ยังเปิดอยู่.
+
+หัวข้อด้านล่างเป็น checkpoint ตามเวลาที่เขียนเดิม.
+
 ## สถานะล่าสุด 12 พฤศจิกายน 2026: release A สำเร็จ เก็บหลักฐานและรอ A ยืนยัน P0
 
 A รับfixPR45และreleasePR46แล้ว mainจริง3570cd4มีtreeตรงreview3e76a55bfdac1ccd3c0ae7ecaa5cc551a98ffa23 [Deploy43233683592](https://github.com/auto4496/studytrack/actions/runs/43233683592) SUCCESS รวมWIF/build/push/migration/revision/traffic/smoke Bอ่านrun/logจริงและเก็บข้อมูลที่เลือกไว้ใน [release A evidence](../labs/lab-05/ep7-release-a-evidence.md) กับ [actual record](../labs/lab-05/ep7-record.json) แยกจากtemplateNOT_RUNและrunแรกที่ล้ม
