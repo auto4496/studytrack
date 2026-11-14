@@ -1,0 +1,643 @@
+{
+  "source": "fff204fd8518b1b7dc7542bdf0441c6f598c35f6",
+  "command": "PLAYWRIGHT_JSON_OUTPUT_NAME=tmp/f06-browser-final.json npx playwright test --reporter=list,json",
+  "viewports": [
+    "1440x900 desktop",
+    "390x844 mobile"
+  ],
+  "backend": "Real local Express/Prisma/PostgreSQL; interception only for controlled delay/failure/lost response, not successful mock-only persistence",
+  "stats": {
+    "startTime": "2026-11-14T17:15:06.003Z",
+    "duration": 93489.943,
+    "expected": 48,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "cases": [
+    {
+      "file": "history.spec.ts",
+      "name": "TEST-F06-20/22: real create/correction/reload, both refresh directions and unsaved input",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 2168,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "history.spec.ts",
+      "name": "TEST-F06-02/20: actual pagination, inclusive/empty range, reset, archived and goal navigation",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 2599,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "history.spec.ts",
+      "name": "TEST-F06-21: lost committed PATCH, failed safe reconciliation then competing authoritative value; no replay",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1352,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "history.spec.ts",
+      "name": "TEST-F06-21: focus refresh preserves history draft, rejects stale filtered read, and session clears private view",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1393,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "history.spec.ts",
+      "name": "TEST-F06-22: browser clock differs; history uses authoritative server date and future empty state",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1276,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "history.spec.ts",
+      "name": "TEST-F06-20/22: real create/correction/reload, both refresh directions and unsaved input",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 2316,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "history.spec.ts",
+      "name": "TEST-F06-02/20: actual pagination, inclusive/empty range, reset, archived and goal navigation",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 2588,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "history.spec.ts",
+      "name": "TEST-F06-21: lost committed PATCH, failed safe reconciliation then competing authoritative value; no replay",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1340,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "history.spec.ts",
+      "name": "TEST-F06-21: focus refresh preserves history draft, rejects stale filtered read, and session clears private view",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1372,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "history.spec.ts",
+      "name": "TEST-F06-22: browser clock differs; history uses authoritative server date and future empty state",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1357,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "lifecycle.spec.ts",
+      "name": "TEST-F05-16 full target/save/reload/stop/filter journey",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 2775,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "lifecycle.spec.ts",
+      "name": "TEST-F05-16 metadata/deactivation UI retains existing active goal snapshot and usable entries",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 3162,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "lifecycle.spec.ts",
+      "name": "TEST-F05-08/16 future-start goal explains boundary without lifecycle write controls",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 2078,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "lifecycle.spec.ts",
+      "name": "TEST-F05-16 pending request disables duplicate submission",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1502,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "lifecycle.spec.ts",
+      "name": "TEST-F05-16 uncertain committed PATCH blocks replay until authoritative read succeeds",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1571,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "lifecycle.spec.ts",
+      "name": "TEST-F05-16 old progress response cannot overwrite refreshed committed data",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 2000,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "lifecycle.spec.ts",
+      "name": "TEST-F05-16 expired/revoked session clears lifecycle controls without replay",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1948,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "lifecycle.spec.ts",
+      "name": "TEST-F05-16 full target/save/reload/stop/filter journey",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 3210,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "lifecycle.spec.ts",
+      "name": "TEST-F05-16 metadata/deactivation UI retains existing active goal snapshot and usable entries",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 3308,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "lifecycle.spec.ts",
+      "name": "TEST-F05-08/16 future-start goal explains boundary without lifecycle write controls",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 2083,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "lifecycle.spec.ts",
+      "name": "TEST-F05-16 pending request disables duplicate submission",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1542,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "lifecycle.spec.ts",
+      "name": "TEST-F05-16 uncertain committed PATCH blocks replay until authoritative read succeeds",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1640,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "lifecycle.spec.ts",
+      "name": "TEST-F05-16 old progress response cannot overwrite refreshed committed data",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1926,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "lifecycle.spec.ts",
+      "name": "TEST-F05-16 expired/revoked session clears lifecycle controls without replay",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1914,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "member-a.spec.ts",
+      "name": "TEST-F01-08: invalid login, keyboard recovery, reload and logout revoke browser access",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1232,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "member-a.spec.ts",
+      "name": "TEST-F03-08: create, reload and retrieve a real persisted goal; duplicate is rejected",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1872,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "member-a.spec.ts",
+      "name": "manager sees catalog but cannot read participant goals via the backend",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 710,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "member-a.spec.ts",
+      "name": "FR-19: a failed list request offers retry and recovers with real API data",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1016,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "member-a.spec.ts",
+      "name": "NFR-06: a valid long activity title stays inside the goal detail viewport",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1103,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "member-a.spec.ts",
+      "name": "TEST-F01-08: invalid login, keyboard recovery, reload and logout revoke browser access",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1316,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "member-a.spec.ts",
+      "name": "TEST-F03-08: create, reload and retrieve a real persisted goal; duplicate is rejected",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 2307,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "member-a.spec.ts",
+      "name": "manager sees catalog but cannot read participant goals via the backend",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 778,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "member-a.spec.ts",
+      "name": "FR-19: a failed list request offers retry and recovers with real API data",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1145,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "member-a.spec.ts",
+      "name": "NFR-06: a valid long activity title stays inside the goal detail viewport",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1379,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "member-b.spec.ts",
+      "name": "TEST-F02-10: real manager creation → persisted catalog → participant goal selection",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 2271,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "member-b.spec.ts",
+      "name": "TEST-F02-09: validation, pending and unknown POST outcome preserve input without automatic retry",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1252,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "member-b.spec.ts",
+      "name": "TEST-F02-09: catalog read failure retries, then empty state is distinct from loading",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1345,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "member-b.spec.ts",
+      "name": "TEST-F04-16: full manager→goal→daily entry→persisted progress with rejection, privacy and logout",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 3153,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "member-b.spec.ts",
+      "name": "TEST-F04-15: validation and committed-but-lost response reconcile before any retry",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1393,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "member-b.spec.ts",
+      "name": "TEST-F04-15: stale date responses cannot replace the selected day; uncapped125% and read recovery",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1457,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "member-b.spec.ts",
+      "name": "TEST-F04-15: tomorrow goal never fetches an invalid daily date and logout clears its private view",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1167,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "member-b.spec.ts",
+      "name": "TEST-F02-10: real manager creation → persisted catalog → participant goal selection",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 2544,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "member-b.spec.ts",
+      "name": "TEST-F02-09: validation, pending and unknown POST outcome preserve input without automatic retry",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1339,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "member-b.spec.ts",
+      "name": "TEST-F02-09: catalog read failure retries, then empty state is distinct from loading",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1389,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "member-b.spec.ts",
+      "name": "TEST-F04-16: full manager→goal→daily entry→persisted progress with rejection, privacy and logout",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 3501,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "member-b.spec.ts",
+      "name": "TEST-F04-15: validation and committed-but-lost response reconcile before any retry",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1677,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "member-b.spec.ts",
+      "name": "TEST-F04-15: stale date responses cannot replace the selected day; uncapped125% and read recovery",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1741,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "member-b.spec.ts",
+      "name": "TEST-F04-15: tomorrow goal never fetches an invalid daily date and logout clears its private view",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1166,
+          "errors": []
+        }
+      ]
+    }
+  ]
+}

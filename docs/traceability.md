@@ -1,5 +1,9 @@
 # Requirements → features → sprint → verification — B v0.2
 
+## F06 executed candidate checkpoint - 15 November 2026
+
+FR13/14/15/19 and retained FR04/BR04-12 now map through accepted PR59's22 AC-F06/TEST-F06 pairs to [actual assertion/source/results](verification/f06.md#accepted-ac-to-actual-test-mapping). B's local candidate passes203 unit/API (51 new F06),48 browser (10 new F06), restart/isolation/build. A implementation review/integration/release remain pending; no requirement IDs, Issue acceptance or F07/F08 completion are changed. Earlier NOT_RUN statuses are dated preparation history.
+
 ## F06 specification checkpoint - 14 November 2026
 
 FR13/14/15/19 map to B's proposed [F06 SDS/UI/API/rules and22 AC-F06/TEST-F06 pairs](sprints/sprint-2/f06-history-streak.md), [Issue58](https://github.com/auto4496/studytrack/issues/58). Preserve FR04, BR04/05/06/07/08/09/10/11/12 and applicable NFR01-08. Historical targets/snapshots/inclusive stop bounds consume accepted F05; F07 schedules never filter streak days. [F06 ledger](verification/f06.md) remains NOT_IMPLEMENTED/NOT_RUN pending A contract review and later actual execution. Existing historical PASS counts are not F06 results; no requirement IDs or implementation acceptance change.

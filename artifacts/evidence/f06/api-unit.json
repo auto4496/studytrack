@@ -1,0 +1,1025 @@
+{
+  "source": "fff204fd8518b1b7dc7542bdf0441c6f598c35f6",
+  "command": "npm test -- --reporter=json --outputFile=tmp/f06-regression-api-final.json",
+  "database": "Dedicated loopback PostgreSQL17 database studytrack_f06_test on25436; unrelated containers/cloud unchanged",
+  "passed": 203,
+  "failed": 0,
+  "skipped": 0,
+  "cases": [
+    {
+      "name": "F-04 daily rules TEST-F04-03: 45/60 gives 75 percent with achieved=false",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-04 daily rules TEST-F04-03: 75/60 gives 125 percent with achieved=true",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-04 daily rules TEST-F04-03: 60/60 gives 100 percent with achieved=true",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-04 daily rules TEST-F04-03: 1/32 gives 3.13 percent with achieved=false",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-04 daily rules TEST-F04-03: 59/60 gives 98.33 percent with achieved=false",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-04 daily rules TEST-F04-03: 0/60 gives 0 percent with achieved=false",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-04 daily rules TEST-F04-03: 1440/1 gives 144000 percent with achieved=true",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-04 daily rules TEST-F04-03: corrupt target cannot produce a default percentage",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-04 daily rules TEST-F04-07: invalid minutes 29 reject without coercion",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-04 daily rules TEST-F04-07: invalid minutes 121 reject without coercion",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-04 daily rules TEST-F04-07: invalid minutes 0 reject without coercion",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-04 daily rules TEST-F04-07: invalid minutes -1 reject without coercion",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-04 daily rules TEST-F04-07: invalid minutes 1.5 reject without coercion",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-04 daily rules TEST-F04-07: invalid minutes 60 reject without coercion",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-04 daily rules TEST-F04-07: invalid minutes true reject without coercion",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-04 daily rules TEST-F04-07: invalid minutes null reject without coercion",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-04 daily rules TEST-F04-07: invalid minutes undefined reject without coercion",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-04 daily rules TEST-F04-07: exact snapshot endpoints are accepted",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-04 daily rules TEST-F04-05: calendar validation includes leap/month/year transitions and correct field names",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "TEST-F03-07: Bangkok date boundaries and goal rules accepts today/tomorrow including year rollover",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "TEST-F03-07: Bangkok date boundaries and goal rules rejects invalid calendar dates, past/far-future dates and fractional/out-of-range targets",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "TEST-F03-07: Bangkok date boundaries and goal rules uses Bangkok midnight, leap day and UTC date arithmetic without host timezone",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F06 calendar streak rules TEST-F06-09/10/13: [] at 2026-11-09",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F06 calendar streak rules TEST-F06-09/10/13: [\"2026-11-08\",\"2026-11-09\"] at 2026-11-09",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F06 calendar streak rules TEST-F06-09/10/13: [\"2026-11-06\",\"2026-11-07\",\"2026-11-08\"] at 2026-11-09",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F06 calendar streak rules TEST-F06-09/10/13: [\"2026-11-06\",\"2026-11-07\"] at 2026-11-09",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F06 calendar streak rules TEST-F06-09/10/13: [\"2028-02-28\",\"2028-02-29\",\"2028-03-01\"] at 2028-03-01",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F06 calendar streak rules TEST-F06-09/10/13: [\"2026-12-31\",\"2027-01-01\"] at 2027-01-02",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F06 calendar streak rules TEST-F06-11: earliest tied run, unsorted duplicates and sparse centuries",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F06 calendar streak rules TEST-F06-04: target lookup respects exact effective dates and refuses a missing baseline",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "TEST-F02-02: template validation boundaries normalizes whitespace, defaults description, and counts Unicode code points",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "TEST-F02-02: template validation boundaries rejects invalid lower bound 0 without coercion",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "TEST-F02-02: template validation boundaries rejects invalid lower bound -1 without coercion",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "TEST-F02-02: template validation boundaries rejects invalid lower bound 1441 without coercion",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "TEST-F02-02: template validation boundaries rejects invalid lower bound 1.5 without coercion",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "TEST-F02-02: template validation boundaries rejects invalid lower bound 60 without coercion",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "TEST-F02-02: template validation boundaries rejects invalid lower bound true without coercion",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "TEST-F02-02: template validation boundaries rejects invalid lower bound null without coercion",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "TEST-F02-02: template validation boundaries rejects invalid lower bound undefined without coercion",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "TEST-F02-02: template validation boundaries accepts inclusive endpoints and rejects reversed range/unknown server fields",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "NFR-04: destructive test setup must target a separate test database accepts an explicit separate PostgreSQL test database",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "NFR-04: destructive test setup must target a separate test database rejects a missing or non-test PostgreSQL target",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "NFR-04: destructive test setup must target a separate test database rejects a missing or non-test PostgreSQL target",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "NFR-04: destructive test setup must target a separate test database rejects a missing or non-test PostgreSQL target",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "NFR-04: destructive test setup must target a separate test database rejects the same development database via loopback alias localhost",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "NFR-04: destructive test setup must target a separate test database rejects the same development database via loopback alias 127.0.0.1",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "NFR-04: destructive test setup must target a separate test database rejects the same development database via loopback alias [::1]",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "NFR-04: destructive test setup must target a separate test database rejects the same development database via loopback alias LOCALHOST",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "NFR-04: destructive test setup must target a separate test database rejects the same development database via loopback alias localhost.",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-01 real PostgreSQL sessions TEST-F01-01: salted Argon2id passwords and valid role identity",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-01 real PostgreSQL sessions TEST-F01-04: logout revokes the real DB session, replay fails, independent session survives",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-01 real PostgreSQL sessions TEST-F01-03: absent/tampered and server-expired sessions return no private data",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-01 real PostgreSQL sessions TEST-F01-02: wrong email/password share a generic failure and create no authenticated session",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-01 real PostgreSQL sessions TEST-F01-02: normalized email works; missing/oversize/unknown fields reject",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-01 real PostgreSQL sessions TEST-F01-06: login CSRF/origin failures do not authenticate",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-01 real PostgreSQL sessions TEST-F01-06: absent, cross-session and wrong CSRF/origin cannot revoke a session",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-01 real PostgreSQL sessions TEST-F01-07: rotating login removes old pre-auth token and fixes the 8h expiry",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-01 real PostgreSQL sessions TEST-F01-06: secure production cookie and cache policy, pre-auth never identifies a user",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-04 persisted daily entries, date-effective progress and privacy TEST-F04-01/02: committed entry and progress survive a fresh request/app; empty day has no phantom row",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-04 persisted daily entries, date-effective progress and privacy TEST-F04-04: API computes 45/60 = 75 percent, achieved=false",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-04 persisted daily entries, date-effective progress and privacy TEST-F04-04: API computes 75/60 = 125 percent, achieved=true",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-04 persisted daily entries, date-effective progress and privacy TEST-F04-04: API computes 60/60 = 100 percent, achieved=true",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-04 persisted daily entries, date-effective progress and privacy TEST-F04-04: API computes 1/32 = 3.13 percent, achieved=false",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-04 persisted daily entries, date-effective progress and privacy TEST-F04-06: invalid date 2026-11-02 rejects with 422 and no write",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-04 persisted daily entries, date-effective progress and privacy TEST-F04-06: invalid date 2026-11-04 rejects with 422 and no write",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-04 persisted daily entries, date-effective progress and privacy TEST-F04-06: invalid date 2026-02-30 rejects with 422 and no write",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-04 persisted daily entries, date-effective progress and privacy TEST-F04-06: invalid date 2026-02-29 rejects with 422 and no write",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-04 persisted daily entries, date-effective progress and privacy TEST-F04-06: invalid date 03/11/2026 rejects with 400 and no write",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-04 persisted daily entries, date-effective progress and privacy TEST-F04-06: invalid date 2026-11-03T00:00:00Z rejects with 400 and no write",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-04 persisted daily entries, date-effective progress and privacy TEST-F04-06: query/missing dates and Bangkok midnight obey inclusive start/today bounds",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-04 persisted daily entries, date-effective progress and privacy TEST-F04-08: invalid minutes 0 reject using snapshot bounds",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-04 persisted daily entries, date-effective progress and privacy TEST-F04-08: invalid minutes -1 reject using snapshot bounds",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-04 persisted daily entries, date-effective progress and privacy TEST-F04-08: invalid minutes 29 reject using snapshot bounds",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-04 persisted daily entries, date-effective progress and privacy TEST-F04-08: invalid minutes 121 reject using snapshot bounds",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-04 persisted daily entries, date-effective progress and privacy TEST-F04-08: invalid minutes 1441 reject using snapshot bounds",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-04 persisted daily entries, date-effective progress and privacy TEST-F04-08: invalid minutes 1.5 reject using snapshot bounds",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-04 persisted daily entries, date-effective progress and privacy TEST-F04-08: invalid minutes 60 reject using snapshot bounds",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-04 persisted daily entries, date-effective progress and privacy TEST-F04-08: invalid minutes true reject using snapshot bounds",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-04 persisted daily entries, date-effective progress and privacy TEST-F04-08: invalid minutes null reject using snapshot bounds",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-04 persisted daily entries, date-effective progress and privacy TEST-F04-08: invalid minutes undefined reject using snapshot bounds",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-04 persisted daily entries, date-effective progress and privacy TEST-F04-08: snapshot endpoints 1 and 1440 are accepted",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-04 persisted daily entries, date-effective progress and privacy TEST-F04-08: custom snapshot endpoints30/120 are inclusive",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-04 persisted daily entries, date-effective progress and privacy TEST-F04-09: serial duplicate never overwrites and another participant can record the same day",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-04 persisted daily entries, date-effective progress and privacy TEST-F04-10: competing API writes get one201/one409 backed by exactly one database row",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-04 persisted daily entries, date-effective progress and privacy TEST-F04-11: all entry/progress routes reject anonymous/manager/cross-owner without revealing private data",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-04 persisted daily entries, date-effective progress and privacy TEST-F04-12: bad CSRF/origin and logout replay cannot write or retrieve protected entries",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-04 persisted daily entries, date-effective progress and privacy TEST-F04-13: unknown derived/owner fields reject; database failure safely rolls back",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-04 persisted daily entries, date-effective progress and privacy TEST-F04-14: effective targets and immutable snapshot ranges preserve historical progress",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-04 persisted daily entries, date-effective progress and privacy TEST-F04-14: archived goal accepts historical dates through endDate, rejects later dates",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-04 persisted daily entries, date-effective progress and privacy TEST-F04-14: missing effective target rejects rather than falling back to current/client target",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-03 persisted personal goals and backend permissions TEST-F03-01/07: creates goal and initial version atomically with immutable snapshots",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-03 persisted personal goals and backend permissions TEST-F03-02: reload and new application instance retrieve committed data",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-03 persisted personal goals and backend permissions TEST-F03-01/07: accepts tomorrow start and returns initial target for a future-start goal",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-03 persisted personal goals and backend permissions TEST-F03-03: rejects invalid target 0 without partial records",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-03 persisted personal goals and backend permissions TEST-F03-03: rejects invalid target 1441 without partial records",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-03 persisted personal goals and backend permissions TEST-F03-03: rejects invalid target 1.5 without partial records",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-03 persisted personal goals and backend permissions TEST-F03-03: validates date 2026-11-02 at API boundary",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-03 persisted personal goals and backend permissions TEST-F03-03: validates date 2026-11-05 at API boundary",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-03 persisted personal goals and backend permissions TEST-F03-03: validates date 2026-02-30 at API boundary",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-03 persisted personal goals and backend permissions TEST-F03-03: validates date 03/11/2026 at API boundary",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-03 persisted personal goals and backend permissions TEST-F03-03: a database target-insert error rolls back the whole goal",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-03 persisted personal goals and backend permissions TEST-F03-04: missing and inactive templates create no goal",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-03 persisted personal goals and backend permissions TEST-F03-05: simultaneous requests store one ACTIVE goal and one target version",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-03 persisted personal goals and backend permissions TEST-F01-05 / TEST-F03-06: role checks, ownership and collections are enforced on the real API",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-03 persisted personal goals and backend permissions TEST-F03-06: client cannot override owner or role; malformed IDs and pagination reject",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-03 persisted personal goals and backend permissions TEST-F01-06: wrong CSRF/origin cannot create a persisted goal",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-03 persisted personal goals and backend permissions safe error handling: malformed JSON and non-JSON mutation have no database effects",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-03 persisted personal goals and backend permissions TEST-F03-07: targetForDate retains historical values after a future target version",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-03 persisted personal goals and backend permissions read-only F-02 adapter: active catalog supports real goal selection without private user fields",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F06 real PostgreSQL serialization, snapshot and rollback TEST-F06-16: same entry absolute writes serialize, reverse=false",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F06 real PostgreSQL serialization, snapshot and rollback TEST-F06-16: same entry absolute writes serialize, reverse=true",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F06 real PostgreSQL serialization, snapshot and rollback TEST-F06-16: distinct entries retain identities in either lock order, reverse=false",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F06 real PostgreSQL serialization, snapshot and rollback TEST-F06-16: distinct entries retain identities in either lock order, reverse=true",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F06 real PostgreSQL serialization, snapshot and rollback TEST-F06-17: correction coordinates with stop in both observed orders",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F06 real PostgreSQL serialization, snapshot and rollback TEST-F06-17: correction coordinates with target in both observed orders",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F06 real PostgreSQL serialization, snapshot and rollback TEST-F06-17: correction coordinates with create in both observed orders",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F06 real PostgreSQL serialization, snapshot and rollback TEST-F06-17: waiting correction uses post-lock Bangkok midnight, never pre-lock clock",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F06 real PostgreSQL serialization, snapshot and rollback TEST-F06-17: actual new-day creation and historical correction both commit, correctionFirst=false",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F06 real PostgreSQL serialization, snapshot and rollback TEST-F06-17: actual new-day creation and historical correction both commit, correctionFirst=true",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F06 real PostgreSQL serialization, snapshot and rollback TEST-F06-18: paused aggregate retains one pre-correction snapshot",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F06 real PostgreSQL serialization, snapshot and rollback TEST-F06-18: paused aggregate retains one pre-stop snapshot",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F06 real PostgreSQL serialization, snapshot and rollback TEST-F06-19: failure after real SQL update rolls back minutes and timestamps",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-06 owned history and corrections TEST-F06-01/05: reads persisted history and corrects the original entry",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-06 owned history and corrections TEST-F06-02/04/08/12: real lifecycle fixture, inclusive pages and correction join/split historical streak",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-06 owned history and corrections TEST-F06-03: rejects query from=2026-11-03 safely",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-06 owned history and corrections TEST-F06-03: rejects query to=2026-11-03 safely",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-06 owned history and corrections TEST-F06-03: rejects query from=2026-11-03&to=2026-11-02 safely",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-06 owned history and corrections TEST-F06-03: rejects query from=2026-11-02&to=2026-11-03 safely",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-06 owned history and corrections TEST-F06-03: rejects query from=2026-11-03&to=2026-11-04 safely",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-06 owned history and corrections TEST-F06-03: rejects query from=03-11-2026&to=2026-11-03 safely",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-06 owned history and corrections TEST-F06-03: rejects query from=2026-02-30&to=2026-11-03 safely",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-06 owned history and corrections TEST-F06-03: rejects query from=x&from=y&to=2026-11-03 safely",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-06 owned history and corrections TEST-F06-03: rejects query from[]=2026-11-03&to=2026-11-03 safely",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-06 owned history and corrections TEST-F06-03: rejects query page=0 safely",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-06 owned history and corrections TEST-F06-03: rejects query page=01 safely",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-06 owned history and corrections TEST-F06-03: rejects query page=1.5 safely",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-06 owned history and corrections TEST-F06-03: rejects query page=1000001 safely",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-06 owned history and corrections TEST-F06-03: rejects query pageSize=101 safely",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-06 owned history and corrections TEST-F06-03: rejects query page=1&page=2 safely",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-06 owned history and corrections TEST-F06-03: rejects query ownerId=x safely",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-06 owned history and corrections TEST-F06-06: rejects minutes 0 without writes",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-06 owned history and corrections TEST-F06-06: rejects minutes -1 without writes",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-06 owned history and corrections TEST-F06-06: rejects minutes 1441 without writes",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-06 owned history and corrections TEST-F06-06: rejects minutes 1.5 without writes",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-06 owned history and corrections TEST-F06-06: rejects minutes 30 without writes",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-06 owned history and corrections TEST-F06-06: rejects minutes true without writes",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-06 owned history and corrections TEST-F06-06: rejects minutes null without writes",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-06 owned history and corrections TEST-F06-06: rejects minutes undefined without writes",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-06 owned history and corrections TEST-F06-06/15: strict request bodies/query, snapshot endpoints and media/CSRF/IDs",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-06 owned history and corrections TEST-F06-07/10/13: future empty context, inclusive archive corrections and Bangkok midnight",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-06 owned history and corrections TEST-F06-14: roles, foreign goal, wrong-parent and missing entry are private; expired/revoked",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-06 owned history and corrections TEST-F06-04/06/09: HALF_UP, uncapped/exact achievement, snapshot custom bounds and other-goal gaps",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-05 boundaries, security, rollback and serialized requests TEST-F05-03 rejects invalid target 0 with no version write",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-05 boundaries, security, rollback and serialized requests TEST-F05-03 rejects invalid target 1441 with no version write",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-05 boundaries, security, rollback and serialized requests TEST-F05-03 rejects invalid target 1.5 with no version write",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-05 boundaries, security, rollback and serialized requests TEST-F05-03 rejects invalid target 45 with no version write",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-05 boundaries, security, rollback and serialized requests TEST-F05-03 rejects invalid target null with no version write",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-05 boundaries, security, rollback and serialized requests TEST-F05-03 rejects invalid target true with no version write",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-05 boundaries, security, rollback and serialized requests TEST-F05-03 accepts both snapshot boundaries and rejects injected fields",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-05 boundaries, security, rollback and serialized requests TEST-F05-02 reads historical and new-day denominators and the additive list shape",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-05 boundaries, security, rollback and serialized requests TEST-F05-08 rejects target on a future-start goal without mutation",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-05 boundaries, security, rollback and serialized requests TEST-F05-08 rejects stop on a future-start goal without mutation",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-05 boundaries, security, rollback and serialized requests TEST-F05-06/07 includes the end date, freezes archived display, and releases only the active slot",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-05 boundaries, security, rollback and serialized requests TEST-F05-04 computes next Bangkok date at 2028-02-28T16:59:59Z",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-05 boundaries, security, rollback and serialized requests TEST-F05-04 computes next Bangkok date at 2026-12-31T05:00Z",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-05 boundaries, security, rollback and serialized requests TEST-F05-04 computes next Bangkok date at 2028-02-29T05:00Z",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-05 boundaries, security, rollback and serialized requests TEST-F05-10/11 manager metadata is normalized/shared, no-op is stable, inactive edits retain bounds",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-05 boundaries, security, rollback and serialized requests TEST-F05-13 access/CSRF/shape matrix for target",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-05 boundaries, security, rollback and serialized requests TEST-F05-13 access/CSRF/shape matrix for stop",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-05 boundaries, security, rollback and serialized requests TEST-F05-13 access/CSRF/shape matrix for metadata",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-05 boundaries, security, rollback and serialized requests TEST-F05-13 access/CSRF/shape matrix for deactivate",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-05 boundaries, security, rollback and serialized requests TEST-F05-14 rolls back a failing target transaction",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-05 boundaries, security, rollback and serialized requests TEST-F05-14 rolls back a failing stop transaction",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-05 boundaries, security, rollback and serialized requests TEST-F05-14 rolls back a failing template transaction",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-05 boundaries, security, rollback and serialized requests TEST-F05-09 forces target/stop ordering, stopFirst=false",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-05 boundaries, security, rollback and serialized requests TEST-F05-09 forces target/stop ordering, stopFirst=true",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-05 boundaries, security, rollback and serialized requests TEST-F05-04/05 uses the post-lock clock and serializes competing targets",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-05 boundaries, security, rollback and serialized requests TEST-F05-12 forces create/deactivate ordering, deactivateFirst=false",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-05 boundaries, security, rollback and serialized requests TEST-F05-12 forces create/deactivate ordering, deactivateFirst=true",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-05 boundaries, security, rollback and serialized requests TEST-F05-09 create is rejected before stop releases the active slot, then succeeds after commit",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-05 boundaries, security, rollback and serialized requests TEST-F05-09 entry/stop coordination rechecks date bounds after lock, stopFirst=false",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-05 boundaries, security, rollback and serialized requests TEST-F05-09 entry/stop coordination rechecks date bounds after lock, stopFirst=true",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-05 boundaries, security, rollback and serialized requests TEST-F05-12 forces metadata/create snapshot ordering, metadataFirst=false",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-05 boundaries, security, rollback and serialized requests TEST-F05-12 forces metadata/create snapshot ordering, metadataFirst=true",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-05 goal and template lifecycle TEST-F05-01/02: tomorrow target replacement preserves today's recorded denominator",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-05 goal and template lifecycle TEST-F05-06: repeat stop on a later day preserves inclusive end date and pending history",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-05 goal and template lifecycle TEST-F05-10/11: deactivated template blocks new goals but retains existing snapshots and entries",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-02 manager templates, persistence and access TEST-F02-01/07: manager creates normalized template and a fresh app reads the committed row",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-02 manager templates, persistence and access TEST-F02-03: invalid template {\"title\":\" \"} is rejected without writes",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-02 manager templates, persistence and access TEST-F02-03: invalid template {\"title\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"} is rejected without writes",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-02 manager templates, persistence and access TEST-F02-03: invalid template {\"description\":\"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"} is rejected without writes",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-02 manager templates, persistence and access TEST-F02-03: invalid template {\"unit\":\"MINUTES\"} is rejected without writes",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-02 manager templates, persistence and access TEST-F02-03: invalid template {\"minMinutes\":0} is rejected without writes",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-02 manager templates, persistence and access TEST-F02-03: invalid template {\"maxMinutes\":1441} is rejected without writes",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-02 manager templates, persistence and access TEST-F02-03: invalid template {\"minMinutes\":61,\"maxMinutes\":60} is rejected without writes",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-02 manager templates, persistence and access TEST-F02-03: invalid template {\"minMinutes\":1.5} is rejected without writes",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-02 manager templates, persistence and access TEST-F02-03: invalid template {\"minMinutes\":\"60\"} is rejected without writes",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-02 manager templates, persistence and access TEST-F02-03: invalid template {\"minMinutes\":true} is rejected without writes",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-02 manager templates, persistence and access TEST-F02-03: invalid template {\"minMinutes\":null} is rejected without writes",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-02 manager templates, persistence and access TEST-F02-03/11: inclusive bounds and duplicate titles are accepted with distinct IDs",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-02 manager templates, persistence and access TEST-F02-04: active catalog/detail are paginated and inactive templates remain manager-only",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-02 manager templates, persistence and access TEST-F02-05/06: roles, CSRF/origin and revoked cookies are enforced before writes",
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "F-02 manager templates, persistence and access TEST-F02-08: server-owned fields are rejected; failed database insert produces only safe errors",
+      "status": "passed",
+      "failures": []
+    }
+  ]
+}

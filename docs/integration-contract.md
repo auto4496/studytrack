@@ -1,5 +1,9 @@
 # StudyTrack — Shared integration contract
 
+## Accepted and implemented F06 candidate - 15 November 2026
+
+A accepted the addition below in PR59 at1b6bdc5f and merged stagingd952ad6. The candidate now implements GET history `{data:HistoryDTO}`, strict minutes-only PATCH with unchanged EntryDTO and optional `entriesRevision/onEntriesChanged` at GoalActivityProps. GoalDetail hosts isolated ReadingHistory; F04 creation/reconciliation invalidates history, F06 confirmed correction/reconciliation invalidates selected-day progress without discarding unrelated draft input. Ordinary GET emits no callback and F05 lifecycle refresh remains. [Execution/review limits](verification/f06.md). Existing F04 collection/progress envelopes, shared auth/error/Clock and F07 boundary remain unchanged; the historical proposal below is accepted, not still awaiting pre-code review.
+
 ## Proposed F06 addition - 14 November 2026
 
 B proposes [F06 Issue58's history read-model and minutes-only correction](sprints/sprint-2/f06-history-streak.md#3-api-validation-and-safe-dtos) for A review before code. GET `/api/goals/:goalId/history` would return `{data:HistoryDTO}` with coherent paged entries/streak/context; existing F04 collection/progress shapes remain unchanged. PATCH `/api/goals/:goalId/entries/:entryId` would accept only minutes and return existing EntryDTO. Ownership, CSRF, historical targets/snapshots and safe errors remain authoritative. Optional invalidation props are specified in the contract; no endpoint/type/helper/prop is implemented by this update.

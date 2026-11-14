@@ -1,0 +1,15 @@
+{
+  "baseline": "d952ad63ea8aacdb7fe67fa6882501a4f78bf5d2",
+  "scope": "Baseline plus initial uncommitted history assertion, before history/correction implementation. Valid isolated PostgreSQL migration/login/goal/entry creation precede the missing-route 404. No red commit is invented.",
+  "passed": 0,
+  "failed": 1,
+  "cases": [
+    {
+      "name": "F-06 owned history and corrections TEST-F06-01/05: reads persisted history and corrects the original entry",
+      "status": "failed",
+      "failures": [
+        "Error: expected 200 \"OK\", got 404 \"Not Found\"\n    at C:/CPE/CPE334/Project/studytrack-f06-contract/server/tests/integration/history.test.ts:23:40\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)"
+      ]
+    }
+  ]
+}
