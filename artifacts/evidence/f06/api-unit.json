@@ -1,5 +1,6 @@
 {
   "source": "fff204fd8518b1b7dc7542bdf0441c6f598c35f6",
+  "equivalence": "Server, API/unit tests and restart smoke unchanged in later UI-only correction d47ea93ffbda908b0e5e924b11baa5427ef0f756",
   "command": "npm test -- --reporter=json --outputFile=tmp/f06-regression-api-final.json",
   "database": "Dedicated loopback PostgreSQL17 database studytrack_f06_test on25436; unrelated containers/cloud unchanged",
   "passed": 203,

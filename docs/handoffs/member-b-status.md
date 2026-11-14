@@ -2,7 +2,7 @@
 
 ## F06 implementation handoff - 15 November 2026
 
-A รับ contract ใน PR59 แล้ว merge stagingd952ad6; B ทำโค้ด F06 ตามข้อตกลงนั้นบน `codex/f06-history-streak` แล้ว ดู [ผลจริงและ22 AC mapping](../verification/f06.md). Sourcefff204f:203 unit/API ผ่าน (51 F06 ใหม่),48 browser ผ่าน (10 F06 ใหม่), build/isolation และ restart เซิร์ฟเวอร์จริงผ่าน เก็บ red404 และ regression selector failure/correction ตามจริง ภาพใหม่ใช้ข้อมูลทดสอบและเก็บแยก ไม่แก้หลักฐาน Lab5 เดิม
+A รับ contract ใน PR59 แล้ว merge stagingd952ad6; B ทำโค้ด F06 ตามข้อตกลงนั้นบน `codex/f06-history-streak` แล้ว ดู [ผลจริงและ22 AC mapping](../verification/f06.md). Sourced47ea93 (UI/build), fff204f (API/restart unchanged):203 unit/API ผ่าน (51 F06 ใหม่),50 browser ผ่าน (12 F06 ใหม่), build/isolation และ restart เซิร์ฟเวอร์จริงผ่าน เก็บ red404 และ regression selector failure/correction ตามจริง ภาพใหม่ใช้ข้อมูลทดสอบและเก็บแยก ไม่แก้หลักฐาน Lab5 เดิม
 
 ส่ง A รีวิว implementation ก่อน merge เข้า protected staging; Issue58 ยัง OPEN และยังไม่ถือ Sprint2/release จบ จุดตรวจสำคัญคือ historical target/archived correction, current ยึดวันนี้หรือเมื่อวาน, transaction/Goal lock/rollback, การแก้พร้อมกัน, exact-date reconciliation ไม่ส่งซ้ำ และ entriesRevision ที่รักษาวันเลือก/ค่ากรอกค้างของ F04. GoalDetail เพิ่ม ReadingHistory แยก ส่วน GoalSchedulePanel ของ A/F07 ไม่ถูกแตะ ไม่มี schema/package/workflow/deploy เปลี่ยนหรือ Cloud mutation
 
