@@ -1,0 +1,59 @@
+{
+  "source": "d47ea93ffbda908b0e5e924b11baa5427ef0f756",
+  "timezone": "Asia/Bangkok",
+  "date": "2026-11-15",
+  "actor": "B/Datakung assisted by Codex",
+  "contract": {
+    "pr": 59,
+    "head": "1b6bdc5fae4097474a16c5912ab5c4e1afad9aff",
+    "acceptedBy": "auto4496",
+    "reviewUtc": "2026-11-14T15:10:25Z",
+    "merge": "d952ad63ea8aacdb7fe67fa6882501a4f78bf5d2"
+  },
+  "apiUnit": {
+    "source": "fff204fd8518b1b7dc7542bdf0441c6f598c35f6",
+    "passed": 203,
+    "failed": 0,
+    "newF06": 51
+  },
+  "browser": {
+    "passed": 50,
+    "failed": 0,
+    "skipped": 0,
+    "newF06": 12
+  },
+  "containerIsolationChecks": {
+    "source": "fff204fd8518b1b7dc7542bdf0441c6f598c35f6",
+    "passed": 21,
+    "failed": 0
+  },
+  "build": "PASS server TypeScript and client TypeScript/Vite",
+  "restartSource": "fff204fd8518b1b7dc7542bdf0441c6f598c35f6",
+  "restart": "PASS extended scripts/restart-smoke.ts: same original corrected archived entry/createdAt/updatedAt/target versions,125 percent/history/current/best and existing session after stop/start of distinct actual API process without reseed",
+  "retainedCorrections": [
+    "Known PATCH rejection was cleared by automatic GET refresh; retained red with two browser assertion failures, separate writeError state, targeted2pass and final50pass.",
+    "Array-style from[] query expected422 for shape validation, not malformed-date400; corrected expectation to accepted contract.",
+    "Duplicate sibling React key observed in first browser pass; history key given a distinct prefix and console key/page errors now asserted absent.",
+    "First full browser46pass/2fail: scope existing F04 status locator to daily panel; same original recovery/no-replay/row-count assertions retained; subsequent48pass before adding known-write-error regression."
+  ],
+  "limits": [
+    "Local candidate verification by author; independent A implementation review/integration/release pending.",
+    "No schema/dependency/workflow/deployment/cloud/native evidence changes.",
+    "History reads all eligible persisted rows in one snapshot; no missing-day loop or N+1 target lookup. No measured production-volume SLA.",
+    "Not F07/F08 completion, human UAT or cloud runtime acceptance."
+  ],
+  "testLocatorRefinement": {
+    "source": "a4a7e432ec2b34c29dfbedb26cc53e5f1ce7155b",
+    "productSourceUnchanged": "d47ea93ffbda908b0e5e924b11baa5427ef0f756",
+    "hostedFailedRun": 43621662119,
+    "hostedBrowser": {
+      "passed": 49,
+      "failed": 1
+    },
+    "targetedLocal": {
+      "passed": 2,
+      "failed": 0
+    },
+    "scope": "Expected recovery notice selected independently from simultaneous loading status. Original progress/no-replay/one-row assertions retained. Full exact-head hosted rerun tracked on PR60."
+  }
+}

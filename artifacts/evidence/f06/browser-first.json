@@ -1,0 +1,43 @@
+{
+  "scope": "First full regression before scoping F04 status locator to .activity-panel. F06 ten cases pass; two F04 selectors match both daily recovery and new history status. No product assertion weakened.",
+  "stats": {
+    "startTime": "2026-11-14T17:12:45.630Z",
+    "duration": 104212.499,
+    "expected": 46,
+    "skipped": 0,
+    "unexpected": 2,
+    "flaky": 0
+  },
+  "cases": [
+    {
+      "file": "member-b.spec.ts",
+      "name": "TEST-F04-15: validation and committed-but-lost response reconcile before any retry",
+      "project": "desktop",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "durationMs": 1579,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('status')\nExpected substring: \u001b[32m\"พบรายการที่บันทึกแล้ว\"\u001b[39m\nError: strict mode violation: getByRole('status') resolved to 2 elements:\n    1) <div role=\"status\" class=\"notice\">พบรายการที่บันทึกแล้ว ข้อมูลเดิมยังอยู่ครบ</div> aka getByText('พบรายการที่บันทึกแล้ว ข้อมูลเดิมยังอยู่ครบ')\n    2) <p role=\"status\">พบ 1 รายการ · หน้า 1</p> aka getByText('พบ 1 รายการ · หน้า')\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" getByRole('status') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('status')\u001b[22m\n\n\n  367 |     .click();\n  368 |   await expect(page.getByTestId(\"progress-percent\")).toHaveText(\"75%\");\n> 369 |   await expect(page.getByRole(\"status\")).toContainText(\"พบรายการที่บันทึกแล้ว\");\n      |                                          ^\n  370 |   expect(posts).toBe(1);\n  371 |   const list = await page.request.get(`/api/goals/${own.id}/entries`);\n  372 |   expect((await list.json()).meta.total).toBe(1);\n    at C:\\CPE\\CPE334\\Project\\studytrack-f06-contract\\e2e\\member-b.spec.ts:369:42"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "member-b.spec.ts",
+      "name": "TEST-F04-15: validation and committed-but-lost response reconcile before any retry",
+      "project": "mobile",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "durationMs": 1474,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('status')\nExpected substring: \u001b[32m\"พบรายการที่บันทึกแล้ว\"\u001b[39m\nError: strict mode violation: getByRole('status') resolved to 2 elements:\n    1) <div role=\"status\" class=\"notice\">พบรายการที่บันทึกแล้ว ข้อมูลเดิมยังอยู่ครบ</div> aka getByText('พบรายการที่บันทึกแล้ว ข้อมูลเดิมยังอยู่ครบ')\n    2) <p role=\"status\">พบ 1 รายการ · หน้า 1</p> aka getByText('พบ 1 รายการ · หน้า')\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" getByRole('status') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('status')\u001b[22m\n\n\n  367 |     .click();\n  368 |   await expect(page.getByTestId(\"progress-percent\")).toHaveText(\"75%\");\n> 369 |   await expect(page.getByRole(\"status\")).toContainText(\"พบรายการที่บันทึกแล้ว\");\n      |                                          ^\n  370 |   expect(posts).toBe(1);\n  371 |   const list = await page.request.get(`/api/goals/${own.id}/entries`);\n  372 |   expect((await list.json()).meta.total).toBe(1);\n    at C:\\CPE\\CPE334\\Project\\studytrack-f06-contract\\e2e\\member-b.spec.ts:369:42"
+          ]
+        }
+      ]
+    }
+  ]
+}

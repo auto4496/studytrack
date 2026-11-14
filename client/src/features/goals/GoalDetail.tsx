@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, type ComponentType } from "react";
 import { GoalLifecycle } from "./GoalLifecycle";
+import { ReadingHistory } from "../entries/ReadingHistory";
 import { Link, useParams } from "react-router-dom";
 import {
   api,
@@ -14,6 +15,8 @@ import { ErrorNotice, Loading } from "../../components/States";
 export interface GoalActivityProps {
   goal: Goal;
   onSessionExpired?: () => void;
+  entriesRevision?: number;
+  onEntriesChanged?: () => void;
 }
 export function GoalDetail({
   ActivityComponent,
@@ -24,6 +27,7 @@ export function GoalDetail({
   const currentId = useRef(goalId);
   currentId.current = goalId;
   const [activityRevision, setActivityRevision] = useState(0);
+  const [entriesRevision, setEntriesRevision] = useState(0);
   const [goal, setGoal] = useState<Goal | null>(null);
   const [error, setError] = useState("");
   const [retry, setRetry] = useState(0);
@@ -101,14 +105,23 @@ export function GoalDetail({
               if (updated.id !== currentId.current) return;
               setGoal(updated);
               setActivityRevision((v) => v + 1);
+              setEntriesRevision((v) => v + 1);
             }}
           />
           {ActivityComponent && (
             <ActivityComponent
               key={`${goal.id}:${activityRevision}`}
               goal={goal}
+              entriesRevision={entriesRevision}
+              onEntriesChanged={() => setEntriesRevision((v) => v + 1)}
             />
           )}
+          <ReadingHistory
+            key={`history:${goal.id}`}
+            goal={goal}
+            entriesRevision={entriesRevision}
+            onEntriesChanged={() => setEntriesRevision((v) => v + 1)}
+          />
         </>
       )}
     </>

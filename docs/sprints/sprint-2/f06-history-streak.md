@@ -1,6 +1,6 @@
 # F-06: owned reading history, minute corrections and streaks
 
-Version0.1,14November2026, Asia/Bangkok. Owner B / Pitchai / Datakung; reviewer A / Phanuwit / auto4496. [Issue58](https://github.com/auto4496/studytrack/issues/58). **PROPOSED PRE-CODE CONTRACT. Product, schema changes and executable F06 tests: NOT_IMPLEMENTED / NOT_RUN.** A accepts/revises the proposed decisions before dependent implementation; this PR does not complete F06 or Sprint2.
+Version0.1 accepted14November2026, Asia/Bangkok. Owner B / Pitchai / Datakung; reviewer A / Phanuwit / auto4496. [Issue58](https://github.com/auto4496/studytrack/issues/58). **ACCEPTED PRE-CODE CONTRACT:** A explicitly accepted all Section2 and shared-interface decisions in [PR59's exact-head review](https://github.com/auto4496/studytrack/pull/59) at1b6bdc5fae4097474a16c5912ab5c4e1afad9aff; owner merged it as d952ad63ea8aacdb7fe67fa6882501a4f78bf5d2. Implementation now follows that accepted staging baseline. [Current execution ledger](../../verification/f06.md) distinguishes local candidate results from pending A implementation review, integration and release. The original proposed wording below records the decisions put to review; these are accepted refinements, not new instructor requirements.
 
 ## 1. Sources, baseline and scope
 
@@ -122,7 +122,7 @@ Verify390x844 and1440x900 with real API/DB, readable rows/cards, keyboard labels
 
 ## 7. Planned AC / software test specification
 
-**Every AC-F06/TEST-F06 below is planned: NOT_IMPLEMENTED / NOT_RUN.** Later ledger entries must identify actual assertion names/source/output and retained failures, not substitute this specification for execution.
+The22 AC-F06/TEST-F06 pairs below are the accepted test specification. Actual source, assertions, retained failures and execution results are mapped in the [verification ledger](../../verification/f06.md); this specification alone is not execution evidence or implementation acceptance.
 
 | AC / TEST-F06 | Preconditions and action | Required observable result |
 | --- | --- | --- |

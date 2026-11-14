@@ -1034,6 +1034,74 @@ dd {
   margin-block: 1rem;
   overflow-wrap: anywhere;
 }
+.history-panel {
+  margin-block: 1rem;
+  overflow-wrap: anywhere;
+}
+.history-filter {
+  display: flex;
+  align-items: end;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-block: 1.5rem;
+}
+.history-filter .field {
+  flex: 1 1 12rem;
+  min-width: 0;
+}
+.history-filter input,
+.history-editor input {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+.streak-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  gap: 1rem;
+}
+.streak-grid > div,
+.history-editor {
+  padding: 1rem;
+  border: 1px solid #dfe5d8;
+  border-radius: 12px;
+}
+.streak-grid strong {
+  font-size: 2rem;
+  color: #215b4b;
+}
+.history-rows {
+  list-style: none;
+  padding: 0;
+}
+.history-rows li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding-block: 1rem;
+  border-bottom: 1px solid #dfe5d8;
+}
+.history-rows h3 {
+  margin: 0;
+}
+.history-panel .button {
+  white-space: normal;
+  max-width: 100%;
+}
+.history-editor {
+  margin-block: 1rem;
+}
+.history-editor .button,
+.history-editor .text-button {
+  margin: 0.5rem;
+}
+.history-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
 .lifecycle-panel form,
 .template-lifecycle form {
   display: grid;
