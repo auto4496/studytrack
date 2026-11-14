@@ -1,5 +1,9 @@
 # StudyTrack — Shared integration contract
 
+## Proposed F06 addition - 14 November 2026
+
+B proposes [F06 Issue58's history read-model and minutes-only correction](sprints/sprint-2/f06-history-streak.md#3-api-validation-and-safe-dtos) for A review before code. GET `/api/goals/:goalId/history` would return `{data:HistoryDTO}` with coherent paged entries/streak/context; existing F04 collection/progress shapes remain unchanged. PATCH `/api/goals/:goalId/entries/:entryId` would accept only minutes and return existing EntryDTO. Ownership, CSRF, historical targets/snapshots and safe errors remain authoritative. Optional invalidation props are specified in the contract; no endpoint/type/helper/prop is implemented by this update.
+
 Version 0.1, member A proposal, 3 November 2026. เป็นข้อเสนอ interface สำหรับทั้งคู่ ยังไม่มี B review. อัปเดต: F-01/F-03 และ read-only template adapter มี A implementation แล้ว; F-02 mutations/F-04 ยังเป็น proposed surface ดู [actual signatures](handoffs/member-a-implementation.md). เปลี่ยนโดยเพิ่ม decision/version และประสานอีกฝ่ายก่อนทำโค้ดที่พึ่ง interface
 
 Sources: [SRS](srs.md), [System SDS](system-sds.md). B ยังคงเป็นเจ้าของ `ui-api-conventions.md` และ F-02/F-04 contracts; ใช้เอกสารนี้เป็นจุดตั้งต้น ไม่ใช่การอ้างว่า B ทำงานเสร็จแล้ว

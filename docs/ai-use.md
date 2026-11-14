@@ -1,5 +1,9 @@
 # AI-use declaration
 
+## Member B F06 pre-code preparation - 14 November 2026
+
+At B's explicit instruction to start F06, Codex read the accepted SRS/shared interfaces/F04/F05/F07 handoffs and current goal/entry/Clock/UI source, checked for existing F06 work, created B-owned Issue58 and prepared a proposed history/correction/streak contract with22 planned AC/test pairs. It coordinated the proposed aggregate envelope, archived/current-streak rule, writer/read consistency and optional shared invalidation boundary through an A-review handoff. Source/JSON/link/fixture-expectation checks are document checks; no F06 executable test or implementation is claimed. No product/schema/migration/dependency/workflow/cloud change, local Docker/DB/seed action or new authenticated UAT was performed. Existing evidence/disclosures remain unchanged; A contract approval and later implementation/test/release acceptance are pending.
+
 ## Member B Lab5 submission-copy preparation - 13 November 2026
 
 At B's explicit request after A accepted PR56 and recorded the final-package check in Issue24, Codex prepared an editorial submission copy and a separate final-review PR. It removed provisional authoring labels from PDF body/footer/title, reconciled prior review-pending prose with actual PR56 acceptance, and retained the original evidence/source/actor/secret/availability limits. It records owner board/protection/label checks as A-attributed observations rather than new B inspections. Source, immutable content pin, PDF, hashes and visual/link verification are regenerated together. Actual LEB2 upload/receipt and current deadline are not asserted. No product/test/workflow/schema/cloud change or additional local Docker operation is made; historical disclosure entries remain unchanged. Final-copy peer review remains the team's final release step.
