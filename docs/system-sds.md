@@ -1,5 +1,9 @@
 # StudyTrack — System-Level Software Design Specification
 
+## F06 design refinement proposed - 14 November 2026
+
+[F06 Issue58 contract](sprints/sprint-2/f06-history-streak.md) proposes a snapshot history/streak read-model and existing-entry minute correction using Goal,DailyEntry and GoalTargetVersion. There is no new table/migration/stored-streak cache. Goal-before-entry locks, date-effective targets, inclusive archived bounds and shared UI invalidation require A pre-code review; all F06 product/tests remain NOT_IMPLEMENTED/NOT_RUN. F07 schedule normalization remains a separate A-owned proposal. Original design/history below is retained.
+
 Version 0.1, 3 November 2026. Member A pre-code design; now implemented for A foundation/F-01/F-03 on `codex/member-a-sprint1`, teammate review still pending. [Current verification and gaps](verification/member-a.md). อ้างอิง [SRS](srs.md), [integration contract](integration-contract.md) และ [decisions](decisions.md)
 
 ## 1. Architecture

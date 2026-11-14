@@ -1,5 +1,17 @@
 # Member B status — implementation handoff
 
+## F06 pre-code handoff - 14 November 2026
+
+เริ่ม [Issue58](https://github.com/auto4496/studytrack/issues/58), ownerB/Datakung, reviewerA/auto4496 บน accepted staging906d1e7 หลัง PR57. ทำ [F06 contract](../sprints/sprint-2/f06-history-streak.md), [planned verification ledger](../verification/f06.md) และอัปเดต Sprint/SDS/interface/traceability ก่อนเขียนโค้ด: history ตาม goal/ช่วงวัน, แก้ minutes ของรายการเดิม, current/best streak และ22 AC/test pairs ทั้งหมด **NOT_IMPLEMENTED/NOT_RUN**
+
+ให้ A รับ/แก้ decisions ใน Section2: aggregate HistoryDTO แยกจาก F04 เดิม; paired date filter/future-empty; PATCH ไม่เปลี่ยน ID/date และ last-serialized winner/no-op; archived correction ได้แต่ current ยังยึด today/yesterday; best tie เก่าสุด; snapshot/Goal lock; optional entriesRevision/onEntriesChanged ที่ GoalDetail/DailyActivity ประสาน GoalSchedulePanel ในอนาคต ไม่แก้ shared file ก่อน contract review
+
+F05 พร้อมเป็น dependencyแล้ว; F06 ใช้ target ตามวันจริง/immutable snapshots/endDate รวมปลาย ไม่ใช้ target ปัจจุบันแทนอดีต. F07/F08 ยังแยกตามเจ้าของเดิม. Issue Lab5 #22/#23/#24 ปิดแล้วตาม GitHub ไม่เปิดงานรายงานซ้ำหรือเปลี่ยน fixed cloud record. รอบนี้ไม่ต้องเปิด Docker; รอ A review contract ผ่าน PR เข้า protected staging ก่อน implementation. Required CI เป็น baseline regression ไม่ใช่ผลทดสอบ F06
+
+---
+
+Earlier handoffs below retain their writing-time status.
+
 ## Lab5 final submission copy - 13 November 2026
 
 A รับรายงานแก้แล้วใน PR56/review5892758866 และ merge เข้า staging311452c. ตามคำขอผู้ใช้ รอบนี้เอาคำสถานะร่างออกจากหัวเรื่อง/เนื้อหา/footer/metadata ของ PDF และปรับข้อความ review-pending ให้ตรงกับการรับ technical content แล้ว สร้างไฟล์พร้อมส่งเพื่อให้ A รีวิวไฟล์ครั้งสุดท้ายใน PR ใหม่ โดยคง main6d30aef, original evidencec6b63f7, PR35 contribution และข้อจำกัดหลักฐานเดิม

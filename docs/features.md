@@ -1,5 +1,7 @@
 # StudyTrack - Feature inventory
 
+Current14November2026: B opened [F06 Issue58](https://github.com/auto4496/studytrack/issues/58) and prepared the [history/correction/streak contract](sprints/sprint-2/f06-history-streak.md) with22 planned AC/test pairs for A review. F05 dependencies are accepted; F06 product/executable tests remain NOT_IMPLEMENTED/NOT_RUN. F07 stays A-owned and F08 B-owned; no Sprint2 completion is implied. Older checkpoints retain their writing-time status.
+
 Current13November2026: [F05 acceptance](verification/f05.md#current-acceptance---13-november-2026) records implementation, peer integration and actual reviewed main release. A's [F07 contract](sprints/sprint-3/f07-schedule.md), Issue54, now proposes the complete schedule/reminder API/data/UI/AC boundary for B review; no F07 code/migration/tests have run. F06 and F08 remain B-owned separate work. Earlier inventory statuses below are dated baseline history; stable feature/SRS IDs are unchanged.
 
 วันที่: 3 พฤศจิกายน 2026 (Asia/Bangkok) | ผู้ร่าง: สมาชิก B | รุ่น: B-draft-01

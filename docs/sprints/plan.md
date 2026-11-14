@@ -1,5 +1,9 @@
 # StudyTrack - แผนสาม Sprint
 
+## F06 preparation - 14 November 2026
+
+B begins Sprint2 [F06 Issue58](https://github.com/auto4496/studytrack/issues/58) from accepted staging906d1e7 with the [pre-code contract](sprint-2/f06-history-streak.md) and [verification ledger](../verification/f06.md). A reviews API/read-model/date/archive/concurrency/UI decisions before dependent code. F05 is accepted; F06 product/tests are NOT_IMPLEMENTED/NOT_RUN and Sprint2 remains incomplete. A's F07 and B's later F08 stay separate. Lab5 Issues22/23/24 are closed on GitHub; this preparation neither changes their evidence nor asserts a new LEB2 action. Earlier checkpoints are historical.
+
 ## Current checkpoint - 13 November 2026
 
 F05 is implemented, independently accepted in PR35 and included in reviewed/deployed main6d30aef with successful Deploy43410699104; [acceptance and F06 handoff](../verification/f05.md#current-acceptance---13-november-2026) supersedes the earlier F05 pending state. F06 history/edit/streak remains B's separate Sprint2 feature, so Sprint2 is not complete. A is preparing the [F07 schedule/reminder contract](sprint-3/f07-schedule.md), Issue54, alongside B's Lab5 report work. F07 decisions/ACs are proposed; product/migration/tests remain NOT_IMPLEMENTED/NOT_RUN and contract approval plus implementation-entry agreement are still required. B retains F06/F08 and Issue24 coordination; A reviews B's work. EP7/EP8 technical evidence is accepted through PR53, while final report/index/joint acceptance in Issues22/23/24 remains open. The dated plan below preserves historical checkpoints and does not override this status.
