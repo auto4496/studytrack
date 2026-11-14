@@ -28,7 +28,12 @@ interface Entry {
   achieved: boolean;
 }
 
-export function DailyActivity({ goal, onSessionExpired }: GoalActivityProps) {
+export function DailyActivity({
+  goal,
+  onSessionExpired,
+  entriesRevision = 0,
+  onEntriesChanged,
+}: GoalActivityProps) {
   const today = localToday();
   const maxDate = goal.endDate && goal.endDate < today ? goal.endDate : today;
   const future = goal.startDate > maxDate;
@@ -44,14 +49,17 @@ export function DailyActivity({ goal, onSessionExpired }: GoalActivityProps) {
   const [retry, setRetry] = useState(0);
   const generation = useRef(0);
   const form = useRef<HTMLFormElement>(null);
+  const seenRevision = useRef(entriesRevision);
+  useEffect(() => {
+    if (seenRevision.current === entriesRevision || pending || uncertain)
+      return;
+    seenRevision.current = entriesRevision;
+    setRetry((v) => v + 1);
+  }, [entriesRevision, pending, uncertain]);
   useEffect(() => {
     const current = ++generation.current;
     setProgress(null);
     setError("");
-    setNotice("");
-    setFields({});
-    setMinutes("");
-    setUncertain(false);
     if (future) {
       setLoading(false);
       return;
@@ -90,6 +98,7 @@ export function DailyActivity({ goal, onSessionExpired }: GoalActivityProps) {
           ? "พบรายการที่บันทึกแล้ว ข้อมูลเดิมยังอยู่ครบ"
           : "ตรวจแล้วว่ายังไม่มีรายการ คุณส่งบันทึกใหม่ได้",
       );
+      if (result.data.entryId) onEntriesChanged?.();
     } catch (e) {
       if (generation.current !== current) return;
       setUncertain(true);
@@ -137,6 +146,7 @@ export function DailyActivity({ goal, onSessionExpired }: GoalActivityProps) {
         entryId: saved.id,
       });
       setNotice("บันทึกเวลาอ่านเรียบร้อยแล้ว");
+      onEntriesChanged?.();
     } catch (e) {
       if (generation.current !== current) return;
       if (e instanceof HttpError && e.status === 401) onSessionExpired?.();
@@ -178,7 +188,12 @@ export function DailyActivity({ goal, onSessionExpired }: GoalActivityProps) {
             max={maxDate}
             value={date}
             onChange={(e) => {
-              if (e.target.value) setDate(e.target.value);
+              if (e.target.value) {
+                setDate(e.target.value);
+                setMinutes("");
+                setFields({});
+                setNotice("");
+              }
             }}
             disabled={pending || uncertain}
             aria-invalid={!!(fields.entryDate || fields.date)}

@@ -4,6 +4,7 @@ import type { Dependencies } from "../../auth/context.js";
 import { requireCsrf, requireJson } from "../../auth/middleware.js";
 import { pagination, parseUuid } from "../../validation.js";
 import { createEntry, dailyProgress, listEntries } from "./service.js";
+import { correctEntry, readingHistory } from "./history.js";
 
 const entryInput = z.strictObject({
   entryDate: z.string(),
@@ -13,6 +14,46 @@ const entryInput = z.strictObject({
 // Mounted beneath goalsRouter's requireUser + Participant guard; never bypass those guards.
 export function entriesRouter(deps: Dependencies) {
   const router = Router({ mergeParams: true });
+  router.get<{ goalId: string }>("/history", async (req, res) => {
+    z.strictObject({}).parse(req.body ?? {});
+    const input = pagination(req.query, {
+      from: z.string().optional(),
+      to: z.string().optional(),
+    });
+    res.json({
+      data: await readingHistory(
+        deps,
+        req.principal!.user.id,
+        parseUuid(req.params.goalId),
+        {
+          page: input.page,
+          pageSize: input.pageSize,
+          from: input.from as string | undefined,
+          to: input.to as string | undefined,
+        },
+      ),
+    });
+  });
+  router.patch<{ goalId: string; entryId: string }>(
+    "/entries/:entryId",
+    requireCsrf(deps),
+    requireJson,
+    async (req, res) => {
+      z.strictObject({}).parse(req.query);
+      const { minutes } = z
+        .strictObject({ minutes: z.number().int() })
+        .parse(req.body);
+      res.json({
+        data: await correctEntry(
+          deps,
+          req.principal!.user.id,
+          parseUuid(req.params.goalId),
+          parseUuid(req.params.entryId),
+          minutes,
+        ),
+      });
+    },
+  );
   router.post<{ goalId: string }>(
     "/entries",
     requireCsrf(deps),

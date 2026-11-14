@@ -222,6 +222,72 @@ try {
   console.log(
     "PASS TEST-F05-15 / NFR-03: distinct API process after restart retrieves the same archived goal/endDate, retained current/pending target rows, updated metadata, inactive template and DB-backed sessions. Local dedicated test DB only; no GCP restart claimed.",
   );
+  const entryResponse = await fetch(
+    `${origin}/api/goals/${goal.data.id}/entries`,
+    {
+      method: "POST",
+      headers: {
+        Origin: origin,
+        Cookie: cookie,
+        "Content-Type": "application/json",
+        "X-CSRF-Token": identity.data.csrfToken,
+      },
+      body: JSON.stringify({ entryDate: todayBangkok(), minutes: 20 }),
+    },
+  );
+  assert.equal(entryResponse.status, 201);
+  const entry = (await entryResponse.json()).data;
+  const corrected = await mutate(
+    `/goals/${goal.data.id}/entries/${entry.id}`,
+    "PATCH",
+    { minutes: 75 },
+  );
+  assert.equal(corrected.id, entry.id);
+  assert.equal(corrected.createdAt, entry.createdAt);
+  assert.equal(corrected.targetMinutes, 60);
+  assert.equal(corrected.progressPercent, 125);
+  const readHistory = async () => {
+    const r = await fetch(`${origin}/api/goals/${goal.data.id}/history`, {
+      headers: { Cookie: cookie },
+    });
+    assert.equal(r.status, 200);
+    return (await r.json()).data;
+  };
+  const beforeHistory = await readHistory();
+  const beforeEntry = await db.dailyEntry.findUniqueOrThrow({
+    where: { id: entry.id },
+  });
+  const f06Pid = processHandle?.pid;
+  await stop();
+  await start();
+  assert.notEqual(processHandle?.pid, f06Pid);
+  const afterHistory = await readHistory();
+  for (const key of [
+    "goalId",
+    "today",
+    "eligibleRange",
+    "filter",
+    "entries",
+    "pagination",
+    "streak",
+  ])
+    assert.deepEqual(afterHistory[key], beforeHistory[key]);
+  assert.deepEqual(
+    await db.dailyEntry.findUniqueOrThrow({ where: { id: entry.id } }),
+    beforeEntry,
+  );
+  assert.equal(afterHistory.streak.current, 1);
+  assert.equal(afterHistory.streak.best, 1);
+  assert.deepEqual(
+    await db.goalTargetVersion.findMany({
+      where: { goalId: goal.data.id },
+      orderBy: { effectiveFrom: "asc" },
+    }),
+    beforeVersions,
+  );
+  console.log(
+    "PASS TEST-F06-22 / NFR-03: corrected archived entry, original identity/timestamps, per-date progress, history/streak and session survive a distinct real API process restart without reseed. Dedicated local test DB only.",
+  );
 } finally {
   await stop();
   await db.goal.deleteMany({ where: { ownerId: userId } });
