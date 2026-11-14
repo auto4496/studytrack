@@ -48,6 +48,7 @@ export function ReadingHistory({
   const [refresh, setRefresh] = useState(0);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [writeError, setWriteError] = useState("");
   const [notice, setNotice] = useState("");
   const [fields, setFields] = useState<Record<string, string>>({});
   const [editor, setEditor] = useState<{
@@ -113,7 +114,7 @@ export function ReadingHistory({
   async function reconcile() {
     if (!editor) return;
     setPending(true);
-    setError("");
+    setWriteError("");
     try {
       const params = new URLSearchParams({
         from: editor.entry.entryDate,
@@ -139,7 +140,7 @@ export function ReadingHistory({
       if (!alive.current) return;
       if (e instanceof HttpError && e.status === 401) onSessionExpired?.();
       setUncertain(true);
-      setError(`ยังตรวจสอบผลไม่ได้ ${errorMessage(e)}`);
+      setWriteError(`ยังตรวจสอบผลไม่ได้ ${errorMessage(e)}`);
     } finally {
       if (alive.current) setPending(false);
     }
@@ -161,7 +162,7 @@ export function ReadingHistory({
     }
     setPending(true);
     setFields({});
-    setError("");
+    setWriteError("");
     setNotice("");
     try {
       await api<{ data: HistoryEntry }>(
@@ -184,7 +185,7 @@ export function ReadingHistory({
         setNotice("ยังไม่ทราบผลการแก้ไข กำลังตรวจข้อมูลเดิมก่อนส่งใหม่");
         await reconcile();
       } else {
-        setError(errorMessage(e));
+        setWriteError(errorMessage(e));
         if (e instanceof HttpError) setFields(e.fields);
       }
     } finally {
@@ -281,9 +282,9 @@ export function ReadingHistory({
           ดูทุกวัน
         </button>
       </form>
-      {error && (
+      {(error || writeError) && (
         <ErrorNotice
-          message={error}
+          message={error || writeError}
           retry={!busy ? () => setRefresh((v) => v + 1) : undefined}
         />
       )}
@@ -345,6 +346,7 @@ export function ReadingHistory({
             onClick={() => {
               setEditor(null);
               setFields({});
+              setWriteError("");
             }}
           >
             ยกเลิกการแก้ไข
@@ -424,6 +426,7 @@ export function ReadingHistory({
                         setEditor({ entry, minutes: String(entry.minutes) });
                         setFields({});
                         setNotice("");
+                        setWriteError("");
                       }}
                     >
                       แก้ไขเวลา

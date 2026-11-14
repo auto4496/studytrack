@@ -408,3 +408,55 @@ test("TEST-F06-22: browser clock differs; history uses authoritative server date
   ).toBeVisible();
   await expect(page.getByTestId("streak-current")).toHaveText("0 วัน");
 });
+
+test("TEST-F06-21: known correction rejection remains visible after refresh and preserves draft", async ({
+  page,
+}) => {
+  await login(page);
+  const entry = await seed(page);
+  await open(page);
+  await edit(page);
+  await page.getByLabel("เวลาอ่านที่แก้ไข (นาที)").fill("47");
+  let writes = 0;
+  const patch = `**/api/goals/${goalId}/entries/${entry.id}`;
+  await page.route(patch, async (route) => {
+    writes++;
+    await route.fulfill({
+      status: 422,
+      json: {
+        error: {
+          code: "VALIDATION_ERROR",
+          message: "กรุณาตรวจเวลาที่แก้ไขอีกครั้ง",
+          fields: { minutes: "ตรวจข้อมูลเวลาก่อนส่งใหม่" },
+        },
+      },
+    });
+  });
+  const refreshed = page.waitForResponse(
+    (r) =>
+      r.url().includes(`/api/goals/${goalId}/history?`) &&
+      r.request().method() === "GET",
+  );
+  await page
+    .getByRole("button", { name: "บันทึกการแก้ไข", exact: true })
+    .click();
+  await refreshed;
+  await expect(row(page)).toBeVisible();
+  await expect(page.locator(".history-panel").getByRole("alert")).toContainText(
+    "กรุณาตรวจเวลาที่แก้ไขอีกครั้ง",
+  );
+  await expect(page.getByLabel("เวลาอ่านที่แก้ไข (นาที)")).toHaveValue("47");
+  expect(writes).toBe(1);
+  expect(
+    (await db.dailyEntry.findUniqueOrThrow({ where: { id: entry.id } }))
+      .minutes,
+  ).toBe(20);
+  await page.unroute(patch);
+  await page
+    .getByRole("button", { name: "บันทึกการแก้ไข", exact: true })
+    .click();
+  await expect(row(page)).toContainText("47 / 30");
+  await expect(page.locator(".history-panel").getByRole("alert")).toHaveCount(
+    0,
+  );
+});
