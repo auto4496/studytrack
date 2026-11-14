@@ -41,5 +41,19 @@
     "No schema/dependency/workflow/deployment/cloud/native evidence changes.",
     "History reads all eligible persisted rows in one snapshot; no missing-day loop or N+1 target lookup. No measured production-volume SLA.",
     "Not F07/F08 completion, human UAT or cloud runtime acceptance."
-  ]
+  ],
+  "testLocatorRefinement": {
+    "source": "a4a7e432ec2b34c29dfbedb26cc53e5f1ce7155b",
+    "productSourceUnchanged": "d47ea93ffbda908b0e5e924b11baa5427ef0f756",
+    "hostedFailedRun": 43621662119,
+    "hostedBrowser": {
+      "passed": 49,
+      "failed": 1
+    },
+    "targetedLocal": {
+      "passed": 2,
+      "failed": 0
+    },
+    "scope": "Expected recovery notice selected independently from simultaneous loading status. Original progress/no-replay/one-row assertions retained. Full exact-head hosted rerun tracked on PR60."
+  }
 }

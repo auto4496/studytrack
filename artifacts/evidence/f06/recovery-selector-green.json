@@ -1,0 +1,13 @@
+{
+  "source": "a4a7e432ec2b34c29dfbedb26cc53e5f1ce7155b",
+  "command": "npx playwright test e2e/member-b.spec.ts --grep validation-and-committed-but-lost-response [full test title] --reporter=list,json",
+  "scope": "Two real local desktop/mobile executions of TEST-F04-15 recovery. Scope status by expected recovery text; unchanged75-percent,one-POST,one-stored-entry assertions. UI/server/build source unchanged from d47ea93.",
+  "stats": {
+    "startTime": "2026-11-14T17:36:57.628Z",
+    "duration": 10880.22,
+    "expected": 2,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}
