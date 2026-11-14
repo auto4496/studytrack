@@ -367,7 +367,10 @@ test("TEST-F04-15: validation and committed-but-lost response reconcile before a
     .click();
   await expect(page.getByTestId("progress-percent")).toHaveText("75%");
   await expect(
-    page.locator(".activity-panel").getByRole("status"),
+    page
+      .locator(".activity-panel")
+      .getByRole("status")
+      .filter({ hasText: "พบรายการที่บันทึกแล้ว" }),
   ).toContainText("พบรายการที่บันทึกแล้ว");
   expect(posts).toBe(1);
   const list = await page.request.get(`/api/goals/${own.id}/entries`);
