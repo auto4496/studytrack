@@ -1,0 +1,745 @@
+{
+  "source": "2ebe12c51df08cc30eb1213792d8d6b7b0757895",
+  "command": "npm run test:e2e -- --reporter=json",
+  "viewports": [
+    "1440x900",
+    "390x844"
+  ],
+  "stats": {
+    "startTime": "2026-11-15T07:31:55.404Z",
+    "duration": 138726.75999999998,
+    "expected": 66,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "newF07": 16,
+  "cases": [
+    {
+      "name": "TEST-F06-20/22: real create/correction/reload, both refresh directions and unsaved input",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2862
+        }
+      ]
+    },
+    {
+      "name": "TEST-F06-02/20: actual pagination, inclusive/empty range, reset, archived and goal navigation",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2985
+        }
+      ]
+    },
+    {
+      "name": "TEST-F06-21: lost committed PATCH, failed safe reconciliation then competing authoritative value; no replay",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1540
+        }
+      ]
+    },
+    {
+      "name": "TEST-F06-21: focus refresh preserves history draft, rejects stale filtered read, and session clears private view",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1898
+        }
+      ]
+    },
+    {
+      "name": "TEST-F06-22: browser clock differs; history uses authoritative server date and future empty state",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1337
+        }
+      ]
+    },
+    {
+      "name": "TEST-F06-21: known correction rejection remains visible after refresh and preserves draft",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2212
+        }
+      ]
+    },
+    {
+      "name": "TEST-F06-20/22: real create/correction/reload, both refresh directions and unsaved input",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3102
+        }
+      ]
+    },
+    {
+      "name": "TEST-F06-02/20: actual pagination, inclusive/empty range, reset, archived and goal navigation",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2835
+        }
+      ]
+    },
+    {
+      "name": "TEST-F06-21: lost committed PATCH, failed safe reconciliation then competing authoritative value; no replay",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1713
+        }
+      ]
+    },
+    {
+      "name": "TEST-F06-21: focus refresh preserves history draft, rejects stale filtered read, and session clears private view",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1974
+        }
+      ]
+    },
+    {
+      "name": "TEST-F06-22: browser clock differs; history uses authoritative server date and future empty state",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1310
+        }
+      ]
+    },
+    {
+      "name": "TEST-F06-21: known correction rejection remains visible after refresh and preserves draft",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1407
+        }
+      ]
+    },
+    {
+      "name": "TEST-F05-16 full target/save/reload/stop/filter journey",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3165
+        }
+      ]
+    },
+    {
+      "name": "TEST-F05-16 metadata/deactivation UI retains existing active goal snapshot and usable entries",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3120
+        }
+      ]
+    },
+    {
+      "name": "TEST-F05-08/16 future-start goal explains boundary without lifecycle write controls",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2084
+        }
+      ]
+    },
+    {
+      "name": "TEST-F05-16 pending request disables duplicate submission",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1983
+        }
+      ]
+    },
+    {
+      "name": "TEST-F05-16 uncertain committed PATCH blocks replay until authoritative read succeeds",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1687
+        }
+      ]
+    },
+    {
+      "name": "TEST-F05-16 old progress response cannot overwrite refreshed committed data",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2369
+        }
+      ]
+    },
+    {
+      "name": "TEST-F05-16 expired/revoked session clears lifecycle controls without replay",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2171
+        }
+      ]
+    },
+    {
+      "name": "TEST-F05-16 full target/save/reload/stop/filter journey",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3515
+        }
+      ]
+    },
+    {
+      "name": "TEST-F05-16 metadata/deactivation UI retains existing active goal snapshot and usable entries",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4356
+        }
+      ]
+    },
+    {
+      "name": "TEST-F05-08/16 future-start goal explains boundary without lifecycle write controls",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2030
+        }
+      ]
+    },
+    {
+      "name": "TEST-F05-16 pending request disables duplicate submission",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1588
+        }
+      ]
+    },
+    {
+      "name": "TEST-F05-16 uncertain committed PATCH blocks replay until authoritative read succeeds",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1964
+        }
+      ]
+    },
+    {
+      "name": "TEST-F05-16 old progress response cannot overwrite refreshed committed data",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1883
+        }
+      ]
+    },
+    {
+      "name": "TEST-F05-16 expired/revoked session clears lifecycle controls without replay",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2457
+        }
+      ]
+    },
+    {
+      "name": "TEST-F01-08: invalid login, keyboard recovery, reload and logout revoke browser access",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1251
+        }
+      ]
+    },
+    {
+      "name": "TEST-F03-08: create, reload and retrieve a real persisted goal; duplicate is rejected",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2097
+        }
+      ]
+    },
+    {
+      "name": "manager sees catalog but cannot read participant goals via the backend",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 683
+        }
+      ]
+    },
+    {
+      "name": "FR-19: a failed list request offers retry and recovers with real API data",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1122
+        }
+      ]
+    },
+    {
+      "name": "NFR-06: a valid long activity title stays inside the goal detail viewport",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1424
+        }
+      ]
+    },
+    {
+      "name": "TEST-F01-08: invalid login, keyboard recovery, reload and logout revoke browser access",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1416
+        }
+      ]
+    },
+    {
+      "name": "TEST-F03-08: create, reload and retrieve a real persisted goal; duplicate is rejected",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3218
+        }
+      ]
+    },
+    {
+      "name": "manager sees catalog but cannot read participant goals via the backend",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 712
+        }
+      ]
+    },
+    {
+      "name": "FR-19: a failed list request offers retry and recovers with real API data",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1021
+        }
+      ]
+    },
+    {
+      "name": "NFR-06: a valid long activity title stays inside the goal detail viewport",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1384
+        }
+      ]
+    },
+    {
+      "name": "TEST-F02-10: real manager creation → persisted catalog → participant goal selection",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3116
+        }
+      ]
+    },
+    {
+      "name": "TEST-F02-09: validation, pending and unknown POST outcome preserve input without automatic retry",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1197
+        }
+      ]
+    },
+    {
+      "name": "TEST-F02-09: catalog read failure retries, then empty state is distinct from loading",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1318
+        }
+      ]
+    },
+    {
+      "name": "TEST-F04-16: full manager→goal→daily entry→persisted progress with rejection, privacy and logout",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4360
+        }
+      ]
+    },
+    {
+      "name": "TEST-F04-15: validation and committed-but-lost response reconcile before any retry",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2081
+        }
+      ]
+    },
+    {
+      "name": "TEST-F04-15: stale date responses cannot replace the selected day; uncapped125% and read recovery",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1815
+        }
+      ]
+    },
+    {
+      "name": "TEST-F04-15: tomorrow goal never fetches an invalid daily date and logout clears its private view",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1146
+        }
+      ]
+    },
+    {
+      "name": "TEST-F02-10: real manager creation → persisted catalog → participant goal selection",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2578
+        }
+      ]
+    },
+    {
+      "name": "TEST-F02-09: validation, pending and unknown POST outcome preserve input without automatic retry",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1225
+        }
+      ]
+    },
+    {
+      "name": "TEST-F02-09: catalog read failure retries, then empty state is distinct from loading",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1827
+        }
+      ]
+    },
+    {
+      "name": "TEST-F04-16: full manager→goal→daily entry→persisted progress with rejection, privacy and logout",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3766
+        }
+      ]
+    },
+    {
+      "name": "TEST-F04-15: validation and committed-but-lost response reconcile before any retry",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2105
+        }
+      ]
+    },
+    {
+      "name": "TEST-F04-15: stale date responses cannot replace the selected day; uncapped125% and read recovery",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1827
+        }
+      ]
+    },
+    {
+      "name": "TEST-F04-15: tomorrow goal never fetches an invalid daily date and logout clears its private view",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1184
+        }
+      ]
+    },
+    {
+      "name": "TEST-F07-01/02/16: real weekly save, reload, toggle, duplicate prevention and mobile layout",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1969
+        }
+      ]
+    },
+    {
+      "name": "TEST-F07-04/16: keyboard validation keeps input and focuses the labelled time",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1202
+        }
+      ]
+    },
+    {
+      "name": "TEST-F07-07/18: saved partial reading refreshes LOGGED without achievement or schedule writes",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2229
+        }
+      ]
+    },
+    {
+      "name": "TEST-F07-17/18: focus and minute poll preserve unsaved values with a different browser clock",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1121
+        }
+      ]
+    },
+    {
+      "name": "TEST-F07-17: uncertain committed PUT and failed reconciliation block replay then show competing configuration",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1642
+        }
+      ]
+    },
+    {
+      "name": "TEST-F07-09/10/16: future goal permits setup then archived goal is read-only",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1345
+        }
+      ]
+    },
+    {
+      "name": "TEST-F07-17: known server validation survives refresh and401 clears private panel",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1617
+        }
+      ]
+    },
+    {
+      "name": "TEST-F07-17: an aborted old status response cannot replace a newer complete configuration",
+      "project": "desktop",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1631
+        }
+      ]
+    },
+    {
+      "name": "TEST-F07-01/02/16: real weekly save, reload, toggle, duplicate prevention and mobile layout",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2499
+        }
+      ]
+    },
+    {
+      "name": "TEST-F07-04/16: keyboard validation keeps input and focuses the labelled time",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1762
+        }
+      ]
+    },
+    {
+      "name": "TEST-F07-07/18: saved partial reading refreshes LOGGED without achievement or schedule writes",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1580
+        }
+      ]
+    },
+    {
+      "name": "TEST-F07-17/18: focus and minute poll preserve unsaved values with a different browser clock",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1243
+        }
+      ]
+    },
+    {
+      "name": "TEST-F07-17: uncertain committed PUT and failed reconciliation block replay then show competing configuration",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1599
+        }
+      ]
+    },
+    {
+      "name": "TEST-F07-09/10/16: future goal permits setup then archived goal is read-only",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1826
+        }
+      ]
+    },
+    {
+      "name": "TEST-F07-17: known server validation survives refresh and401 clears private panel",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1154
+        }
+      ]
+    },
+    {
+      "name": "TEST-F07-17: an aborted old status response cannot replace a newer complete configuration",
+      "project": "mobile",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1511
+        }
+      ]
+    }
+  ]
+}

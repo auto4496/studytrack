@@ -160,6 +160,20 @@ try {
     assert.equal(result.status, 200);
     return (await result.json()).data;
   };
+  const savedSchedule = await mutate(`/goals/${goal.data.id}/schedule`, "PUT", {
+    reminderEnabled: true,
+    days: [
+      {
+        weekday: new Date(`${todayBangkok()}T00:00:00Z`).getUTCDay() || 7,
+        readingTime: "20:00",
+        reminderTime: "19:45",
+      },
+    ],
+  });
+  const originalSchedule = await db.goalSchedule.findUniqueOrThrow({
+    where: { goalId: goal.data.id },
+    include: { days: { orderBy: { weekday: "asc" } } },
+  });
   await mutate(`/goals/${goal.data.id}/target`, "PATCH", {
     dailyTargetMinutes: 120,
   });
@@ -288,8 +302,27 @@ try {
   console.log(
     "PASS TEST-F06-22 / NFR-03: corrected archived entry, original identity/timestamps, per-date progress, history/streak and session survive a distinct real API process restart without reseed. Dedicated local test DB only.",
   );
+  const scheduleResponse = await fetch(
+    `${origin}/api/goals/${goal.data.id}/schedule`,
+    { headers: { Cookie: cookie } },
+  );
+  assert.equal(scheduleResponse.status, 200);
+  const restoredSchedule = (await scheduleResponse.json()).data;
+  assert.deepEqual(restoredSchedule.config, savedSchedule.config);
+  assert.equal(restoredSchedule.evaluation.status, "GOAL_ARCHIVED");
+  assert.deepEqual(
+    await db.goalSchedule.findUniqueOrThrow({
+      where: { goalId: goal.data.id },
+      include: { days: { orderBy: { weekday: "asc" } } },
+    }),
+    originalSchedule,
+  );
+  console.log(
+    "PASS TEST-F07-15 / NFR-03: original schedule parent/day IDs, times, toggle and timestamps survive real API restart; stopping suppresses reminders and retains configuration without reseed.",
+  );
 } finally {
   await stop();
+  await db.goalSchedule.deleteMany({ where: { goal: { ownerId: userId } } });
   await db.goal.deleteMany({ where: { ownerId: userId } });
   await db.activityTemplate.deleteMany({ where: { id: templateId } });
   await db.user.deleteMany({ where: { id: { in: [userId, managerId] } } });

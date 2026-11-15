@@ -24,6 +24,7 @@ export async function resetData() {
   clock.instant = new Date("2026-11-03T05:00:00.000Z");
   await db.dailyEntry.deleteMany();
   await db.goalTargetVersion.deleteMany();
+  await db.goalSchedule.deleteMany();
   await db.goal.deleteMany();
   await db.activityTemplate.deleteMany();
   await db.session.deleteMany();

@@ -1,5 +1,9 @@
 # StudyTrack — Shared integration contract
 
+## Accepted F07 implementation candidate - 15 November 2026
+
+B accepted the [F07 contract](sprints/sprint-3/f07-schedule.md) in PR55 before code. A's candidate adds owner-only GET/PUT `/api/goals/:goalId/schedule` with the accepted ScheduleDTO and strict atomic whole-configuration replacement, server Bangkok status and additive parent/day tables. Isolated GoalSchedulePanel consumes the existing `entriesRevision` signal without changing F04/F06 callbacks, envelopes, target/stop/auth/Clock semantics or summary/streak rules. [Execution and review boundary](verification/f07.md). B independent implementation review and later release are still required.
+
 ## Accepted and implemented F06 candidate - 15 November 2026
 
 A accepted the addition below in PR59 at1b6bdc5f and merged stagingd952ad6. The candidate now implements GET history `{data:HistoryDTO}`, strict minutes-only PATCH with unchanged EntryDTO and optional `entriesRevision/onEntriesChanged` at GoalActivityProps. GoalDetail hosts isolated ReadingHistory; F04 creation/reconciliation invalidates history, F06 confirmed correction/reconciliation invalidates selected-day progress without discarding unrelated draft input. Ordinary GET emits no callback and F05 lifecycle refresh remains. [Execution/review limits](verification/f06.md). Existing F04 collection/progress envelopes, shared auth/error/Clock and F07 boundary remain unchanged; the historical proposal below is accepted, not still awaiting pre-code review.
