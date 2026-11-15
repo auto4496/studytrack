@@ -1,5 +1,9 @@
 # AI-use declaration
 
+## F08 preparation disclosure - 15 November 2026
+
+At the user's request to prepare B's next work in advance, Codex inspected the SRS/feature/plan/interface contracts and current GitHub state, then drafted Issue63, the F08 summary API/UI/calculation/snapshot contract,22 planned AC/test pairs and a preparation ledger. It proposed the ANY-goal distinct-date meaning, target denominator, weighted ratio/null behavior and366-day window explicitly for A's decision, without attributing them to the instructor or claiming acceptance. Documentation-only arithmetic/link/shape checks validate the written proposal; F08 source/tests remain NOT_IMPLEMENTED/NOT_RUN and hosted CI is baseline regression. No local Docker/DB/reset/seed, product test execution or Cloud mutation is part of this preparation. B must understand/supervise the proposal; A independently reviews before implementation.
+
 ## Member A F07 implementation candidate - 15 November 2026
 
 At the user's explicit instruction after B's PR55 contract approval, Codex implemented owner-scoped recurring reading schedules, strict weekday/time/toggle validation, additive normalized persistence and an isolated in-app status/editor. Engineering brief, paraphrased: preserve existing ownership, daily records, historical targets and streak rules; serialize whole replacements against stop; use one authoritative Bangkok clock; preserve drafts and reconcile uncertain writes without replay; demonstrate actual migration/concurrency/rollback/browser/restart behavior before peer review. This is a task summary, not a private chat transcript or a claim of a verbatim user prompt.

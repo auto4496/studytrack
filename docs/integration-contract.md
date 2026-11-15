@@ -1,5 +1,9 @@
 # StudyTrack — Shared integration contract
 
+## F08 proposed read-only summary boundary - 15 November 2026
+
+[Issue63 contract](sprints/sprint-3/f08-summary.md) proposes owner-only Participant GET /api/summary with paired inclusive period bounds/default server week, optional owned goalId and paged per-goal rows in `{data:SummaryDTO}`. Totals/daily series cover all selected eligible goal-days before paging; weighted historical target progress and distinct ANY-achieved user dates are explicit A decisions. Proposed shared edits are only server app mount plus participant App route/Layout link, with an isolated SummaryPage. Existing F04/F06/F07 DTOs/callbacks/auth/Clock/schema stay authoritative. No F08 code or shared-file implementation starts until A accepts/revises the contract; [execution states](verification/f08.md) are NOT_IMPLEMENTED/NOT_RUN.
+
 ## Accepted F07 implementation candidate - 15 November 2026
 
 B accepted the [F07 contract](sprints/sprint-3/f07-schedule.md) in PR55 before code. A's candidate adds owner-only GET/PUT `/api/goals/:goalId/schedule` with the accepted ScheduleDTO and strict atomic whole-configuration replacement, server Bangkok status and additive parent/day tables. Isolated GoalSchedulePanel consumes the existing `entriesRevision` signal without changing F04/F06 callbacks, envelopes, target/stop/auth/Clock semantics or summary/streak rules. [Execution and review boundary](verification/f07.md). B independent implementation review and later release are still required.
