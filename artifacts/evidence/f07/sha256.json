@@ -1,0 +1,50 @@
+{
+  "scope": "Selected original F07 evidence bytes; excludes this manifest",
+  "files": [
+    {
+      "path": "artifacts/evidence/f07/api-unit.json",
+      "bytes": 45809,
+      "sha256": "f6bf0bf24abd882dff08a7b2eae0b677c608fa1a99de7fa1bad5dfd4b3a8def2"
+    },
+    {
+      "path": "artifacts/evidence/f07/browser-final.json",
+      "bytes": 19383,
+      "sha256": "25b84b0e9f541dc2b84d7346203cd7566d50690870fccec4aa0a5b6c298dbfa9"
+    },
+    {
+      "path": "artifacts/evidence/f07/checks.json",
+      "bytes": 1911,
+      "sha256": "4e0ee50d75e386c1de4aaed2f5004fbb8b3808710847147488903d848acad58b"
+    },
+    {
+      "path": "artifacts/evidence/f07/desktop-schedule.png",
+      "bytes": 157200,
+      "sha256": "be023c63ebbfa8abdfab66fab937c4eaa9a258fbcc7e3b3d369ea2e22620648b"
+    },
+    {
+      "path": "artifacts/evidence/f07/domain-red.json",
+      "bytes": 2063,
+      "sha256": "fd10c922369650feae87b92132f96ded0b44365a6f3796d7ff5395055c16852d"
+    },
+    {
+      "path": "artifacts/evidence/f07/initial-checks.json",
+      "bytes": 2040,
+      "sha256": "fe8b3b5f5d8618e7b3950fb122593a5250c44d2a07690a61295a9ad209ac4c23"
+    },
+    {
+      "path": "artifacts/evidence/f07/migration-upgrade.json",
+      "bytes": 372,
+      "sha256": "27c9729c874e1aa29a41d1e15f4fc35c78b768b52391030d0f3389a00122145b"
+    },
+    {
+      "path": "artifacts/evidence/f07/mobile-schedule.png",
+      "bytes": 747912,
+      "sha256": "7b0f270c56ac41253819a87d0457a3b818f70b87e5e8adab71aa3f2f2abc6cf7"
+    },
+    {
+      "path": "artifacts/evidence/f07/poll-check.json",
+      "bytes": 536,
+      "sha256": "b02d287b3fa9a1c3f0454972c8243fd61cff90e41648d4cdce5b7f9f99421ac0"
+    }
+  ]
+}

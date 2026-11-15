@@ -1,5 +1,9 @@
 # Requirements → features → sprint → verification — B v0.2
 
+## F07 executed candidate checkpoint - 15 November 2026
+
+FR16/FR17/FR19, BR07/BR13 and applicable NFR01-08 map through the accepted [18 AC-F07/TEST-F07 groups](sprints/sprint-3/f07-schedule.md) to [actual source/assertion/results](verification/f07.md#accepted-ac-to-actual-software-assertions). Preserve FR04/BR05/06/08/09/10/11/12: schedules create no activity or achievement and never redefine streak/summary dates. Local author259 API/unit and66 browser passes include all F01-F06 baseline assertions; B independent review and release remain pending. Stable requirement IDs and other owners' acceptance are unchanged.
+
 ## F06 executed candidate checkpoint - 15 November 2026
 
 FR13/14/15/19 and retained FR04/BR04-12 now map through accepted PR59's22 AC-F06/TEST-F06 pairs to [actual assertion/source/results](verification/f06.md#accepted-ac-to-actual-test-mapping). B's local candidate passes203 unit/API (51 new F06),50 browser (12 new F06), restart/isolation/build. A implementation review/integration/release remain pending; no requirement IDs, Issue acceptance or F07/F08 completion are changed. Earlier NOT_RUN statuses are dated preparation history.

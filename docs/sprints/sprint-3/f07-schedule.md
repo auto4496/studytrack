@@ -1,6 +1,6 @@
 # F-07: reading schedules and in-app reminder contract
 
-Version0.1,13November2026, Asia/Bangkok. Owner A / Phanuwit / auto4496; reviewer B / Pitchai / Datakung. [Issue54](https://github.com/auto4496/studytrack/issues/54). **PROPOSED PRE-CODE CONTRACT: NOT IMPLEMENTED; every F07 test below is NOT_RUN.** B reviews the decisions before implementation. Preparing this contract alongside Lab5/F06 does not declare Sprint2 complete or change feature ownership.
+Version0.1 accepted13November2026, Asia/Bangkok. Owner A / Phanuwit / auto4496; reviewer B / Pitchai / Datakung. [Issue54](https://github.com/auto4496/studytrack/issues/54). **ACCEPTED PRE-CODE CONTRACT:** B approved all decisions in [PR55](https://github.com/auto4496/studytrack/pull/55) at572218872f91b82381abbc484ae5b103cbdaad92 before implementation. The user authorized implementation entry15November from accepted stagingf6a38bb. [Current verification](../../verification/f07.md) records actual candidate source/results; B implementation review/integration/release remain pending. Proposed wording below preserves the accepted design decisions and original preparation chronology, not new instructor requirements.
 
 ## 1. Sources, scope and dependencies
 
@@ -114,7 +114,7 @@ Disable duplicate Save while pending. Preserve form values on validation errors,
 
 ## 6. Planned acceptance criteria and test specification
 
-**All AC-F07/TEST-F07 cases below are NOT_IMPLEMENTED / NOT_RUN.** IDs are planned assertions, not fabricated test results. Later execution must map actual test names/results/source to these IDs, retaining meaningful red and observed failures.
+The18 AC-F07/TEST-F07 groups below are the accepted test specification. [Actual execution mapping](../../verification/f07.md#accepted-ac-to-actual-software-assertions) records source, assertions, meaningful red and retained failures. This specification alone is not test execution or independent implementation acceptance.
 
 | AC / TEST-F07 | Action / important preconditions | Required observable result |
 | --- | --- | --- |
@@ -147,4 +147,4 @@ Anticipated A files: new schedule rules/service/router/tests and GoalSchedulePan
 
 **B/F06:** consume accepted targetForDate/endDate/snapshot rules from F05; schedule days do not filter eligible history dates or streak gaps. F06 can proceed under its own reviewed contract, independently of this proposed schedule schema. **B/F08:** summaries remain based on accepted date/target/entry rules; a schedule is intention, not evidence of reading or a denominator change. Review any future use of schedule metadata explicitly rather than making F08 depend on unaccepted F07 tables. A continues to review B's implementation and Lab5 report.
 
-B's review checklist: accept/revise every Section2 refinement; API/DTO/errors; additive aggregate/day normalization; goal-lock ordering and stop suppression; clock/LOGGED precedence; per-day mobile controls and uncertainty behavior; planned AC coverage. Approval accepts a specification only. F07 product code, migration, executable tests, deployment and independent UAT remain NOT_IMPLEMENTED/NOT_RUN.
+B accepted Section2 before code. The implementation review now checks actual API/DTO/errors, additive migration safety, complete replacements/rollback/lock ordering, clock/LOGGED precedence, per-day mobile controls/recovery and executable AC mapping in the verification ledger. Author candidate results do not establish B implementation acceptance, release, cloud execution or independent human UAT.

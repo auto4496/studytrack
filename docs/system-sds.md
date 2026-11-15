@@ -1,5 +1,9 @@
 # StudyTrack — System-Level Software Design Specification
 
+## F07 normalized persistence candidate - 15 November 2026
+
+The [B-approved contract](sprints/sprint-3/f07-schedule.md) refines the logical recurring schedule into GoalSchedule (unique restrictive Goal FK/toggle/timestamps) and GoalScheduleDay (composite schedule/ISO-weekday key, local minute-of-day values). Additive SQL preserves existing tables/rows; parent deletion cascades only its children. Count/toggle consistency is enforced in one serialized service transaction, not falsely represented as cross-row CHECKs. RepeatableRead GET and Goal-first ReadCommitted PUT use the existing Clock; in-app status creates no reading activity and never changes F06/F08 denominators. [Actual author tests](verification/f07.md) precede B implementation review; no cloud migration/deployment is claimed.
+
 ## F06 implemented design candidate - 15 November 2026
 
 PR59 accepted the refinement below before code; B implemented the aggregate in one RepeatableRead transaction and corrections in ReadCommitted using owner-scoped Goal FOR UPDATE before matching entry with a post-lock Clock. The read loads eligible persisted entries and target versions once and derives filtered pages/lifetime streak without stored cache, per-missing-day loops or target N+1 calls. Existing Goal/DailyEntry/GoalTargetVersion schema is unchanged. Isolated history UI uses the accepted optional refresh props with F04. [Actual verification](verification/f06.md) distinguishes local candidate passes from pending A implementation acceptance/release; no production-volume benchmark or F07 schema work is claimed.
