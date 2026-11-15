@@ -1,20 +1,20 @@
 {
-  "scope": "Selected original F07 evidence bytes; excludes this manifest",
+  "scope": "Exact committed Git-blob bytes for selected F07 evidence; excludes this manifest. Git canonical line endings are authoritative.",
   "files": [
     {
       "path": "artifacts/evidence/f07/api-unit.json",
-      "bytes": 45809,
-      "sha256": "f6bf0bf24abd882dff08a7b2eae0b677c608fa1a99de7fa1bad5dfd4b3a8def2"
+      "bytes": 44764,
+      "sha256": "49642c17d46c8c2b07c3ee2710cc4a7c8976b78c58998ba4fff374887ce9d84c"
     },
     {
       "path": "artifacts/evidence/f07/browser-final.json",
-      "bytes": 19383,
-      "sha256": "25b84b0e9f541dc2b84d7346203cd7566d50690870fccec4aa0a5b6c298dbfa9"
+      "bytes": 18639,
+      "sha256": "bb25c155f81da4c284efd709faea8ed89621db6353e1c4a1f292ed9c16243518"
     },
     {
       "path": "artifacts/evidence/f07/checks.json",
-      "bytes": 1911,
-      "sha256": "4e0ee50d75e386c1de4aaed2f5004fbb8b3808710847147488903d848acad58b"
+      "bytes": 1865,
+      "sha256": "e0b6d71d6e35af531151e96f56ac37278c7902ac90dfdc6ca296e12eec0a5e0e"
     },
     {
       "path": "artifacts/evidence/f07/desktop-schedule.png",
@@ -23,18 +23,18 @@
     },
     {
       "path": "artifacts/evidence/f07/domain-red.json",
-      "bytes": 2063,
-      "sha256": "fd10c922369650feae87b92132f96ded0b44365a6f3796d7ff5395055c16852d"
+      "bytes": 2048,
+      "sha256": "5e74f6ac430d34cdbf2f1bf0a9181eccf9c2101a0927a81cf5831a6d8185ac10"
     },
     {
       "path": "artifacts/evidence/f07/initial-checks.json",
-      "bytes": 2040,
-      "sha256": "fe8b3b5f5d8618e7b3950fb122593a5250c44d2a07690a61295a9ad209ac4c23"
+      "bytes": 2026,
+      "sha256": "e8484d103831b6b537238df722d1c1d9b07509191ee22251af0a42a55e08fc26"
     },
     {
       "path": "artifacts/evidence/f07/migration-upgrade.json",
-      "bytes": 372,
-      "sha256": "27c9729c874e1aa29a41d1e15f4fc35c78b768b52391030d0f3389a00122145b"
+      "bytes": 360,
+      "sha256": "cca502ba4a8304903019b2e1e138e56f8dc2eb44fac36995f3d524bbe2973651"
     },
     {
       "path": "artifacts/evidence/f07/mobile-schedule.png",
@@ -43,8 +43,8 @@
     },
     {
       "path": "artifacts/evidence/f07/poll-check.json",
-      "bytes": 536,
-      "sha256": "b02d287b3fa9a1c3f0454972c8243fd61cff90e41648d4cdce5b7f9f99421ac0"
+      "bytes": 524,
+      "sha256": "50cc22285e1c9d20e343cc154cf0b2ed588932ddc6a92dbe238b21b0ad8d88d8"
     }
   ]
 }
