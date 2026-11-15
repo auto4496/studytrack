@@ -1,5 +1,17 @@
 # Requirements → features → sprint → verification — B v0.2
 
+## F06 executed candidate checkpoint - 15 November 2026
+
+FR13/14/15/19 and retained FR04/BR04-12 now map through accepted PR59's22 AC-F06/TEST-F06 pairs to [actual assertion/source/results](verification/f06.md#accepted-ac-to-actual-test-mapping). B's local candidate passes203 unit/API (51 new F06),50 browser (12 new F06), restart/isolation/build. A implementation review/integration/release remain pending; no requirement IDs, Issue acceptance or F07/F08 completion are changed. Earlier NOT_RUN statuses are dated preparation history.
+
+## F06 specification checkpoint - 14 November 2026
+
+FR13/14/15/19 map to B's proposed [F06 SDS/UI/API/rules and22 AC-F06/TEST-F06 pairs](sprints/sprint-2/f06-history-streak.md), [Issue58](https://github.com/auto4496/studytrack/issues/58). Preserve FR04, BR04/05/06/07/08/09/10/11/12 and applicable NFR01-08. Historical targets/snapshots/inclusive stop bounds consume accepted F05; F07 schedules never filter streak days. [F06 ledger](verification/f06.md) remains NOT_IMPLEMENTED/NOT_RUN pending A contract review and later actual execution. Existing historical PASS counts are not F06 results; no requirement IDs or implementation acceptance change.
+
+## Current F05/F07 checkpoint - 13 November 2026
+
+FR09/FR10 and the mapped F05 rules now have [implementation/peer/main-release acceptance and F06 handoff](verification/f05.md#current-acceptance---13-november-2026). Existing17-AC actual evidence is preserved; F06 remains separate. FR16/FR17/BR13 now have the proposed [F07 API/data/UI contract and AC-F07/TEST-F07-01..18](sprints/sprint-3/f07-schedule.md), Issue54. These F07 tests are planned and NOT_RUN; no implementation, migration, acceptance or Sprint2 completion is implied. Older ledger rows retain their original writing-time statuses; this checkpoint supersedes only these stated scopes.
+
 ## F-05 candidate update - 9 November 2026
 
 FR09/FR10 and the F05 portions of BR03/05/06/07/08/10/11 are now implemented and locally verified under the B-approved contract PR32. See [AC-to-actual-test mapping and source/results](verification/f05.md): 152 API/unit tests and 38 browser cases pass after the retained browser-harness correction; build and real local process restart pass. **Implementation peer acceptance, integration/release and cloud deployment remain pending.** F06 corrections/history/streak and EP8 cloud persistence are not completed by this candidate. The dated B ledger below is historical and its PLANNED rows are superseded only for the F05 scope mapped in that verification record.

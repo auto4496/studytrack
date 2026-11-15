@@ -1,0 +1,57 @@
+{
+  "checkedAtUtc": "2026-11-13T14:59:21.860411+00:00",
+  "actor": "Codex assisting B / Datakung; editorial final-file checks, not final peer approval",
+  "status": "FINAL_SUBMISSION_COPY_NOT_SUBMITTED",
+  "artifact": "output/pdf/lab5_secB_TH-057_P8.pdf",
+  "pdfSha256": "287126a8883ec8ea630f31508cfa73f88d4d10cfd3bdff2aa23cbbd1c99bef59",
+  "reportContentCommit": "8d7f6b9c1ac6807b87d7dd7034d4774279b1e60e",
+  "acceptedTechnicalPackage": {
+    "pullRequest": 56,
+    "review": "https://github.com/auto4496/studytrack/pull/56#pullrequestreview-5892758866",
+    "head": "d98d43860c0dda64491825abbdc6775cc102f7e8",
+    "staging": "311452cc2b586da60583ebfd386311a4f98ea45b",
+    "pdfSha256": "fa6029a5629a4306591ab8b2b41b241cda574fb81371b865058828da43427f93"
+  },
+  "pages": 8,
+  "linkAnnotations": 106,
+  "uniqueUrls": 70,
+  "pinnedGitLinkTargetsVerified": 34,
+  "localMarkdownLinksVerified": 75,
+  "figureCount": 9,
+  "requiredPartsAndR01To12": "PASS",
+  "teamMetadata": "Section B / TH-057_P8 / กำลังปั้นเครดิตครับ / student IDs unchanged",
+  "provisionalMarkers": "NONE in extracted PDF text, all page footers or PDF metadata; no Draft/ร่าง",
+  "f05Contribution": "PASS page2 identifies PR35; accepted correction retained",
+  "originalEvidenceAndPanels": "PASS - all8 original-evidence records and all9 figure/crop/caption records equal accepted PR56 manifest",
+  "manifestOutputBytes": "PASS - all7 current outputs match exact hashes",
+  "deterministicRebuild": "PASS identical PDF SHA256 from second build",
+  "visualQa": {
+    "method": "Poppler110dpi; all8 rendered final PDF pages visually inspected for headings, Thai name, tables, native evidence, captions, footer/page numbers and final-copy wording",
+    "pagesInspected": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "result": "PASS - no observed overlap/clipping/unreadable glyphs; intentional source crop panels unchanged and labelled"
+  },
+  "ownerCheckAttribution": "Board/labels/protections/public checks are A owner observations from Issue24 updated2026-11-13T14:39:25Z, not new B authenticated GCP/Project inspection",
+  "submissionTracking": {
+    "submitted": false,
+    "currentLeb2DeadlineVerified": false,
+    "receipt": "Not available; actual upload handled separately in Issue24",
+    "finalFileReleaseReview": "Requested by user; pending A review of this editorial copy at check time"
+  },
+  "focusedPrivacyReview": "Selected text/docs/native figures reviewed; no credential/secret payload or full env/auth log retained. Not an exhaustive history audit.",
+  "notPerformed": [
+    "local Docker execution or redundant product runtime suite",
+    "new authenticated application/GCP inspection",
+    "cloud mutation/deployment",
+    "LEB2 upload or fabricated receipt",
+    "final course acceptance"
+  ]
+}

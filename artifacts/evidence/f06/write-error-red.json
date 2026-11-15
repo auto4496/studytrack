@@ -1,0 +1,44 @@
+{
+  "baseline": "e44ca858ea7e25aaf76e27d8c1ab2ac42574f091",
+  "scope": "Baseline plus new uncommitted browser regression. Known PATCH422 is followed by successful history GET; expected rejection alert disappears. Two genuine assertion failures (desktop/mobile), then correction d47ea93 retains independent write error and same regression passes. No failing-source commit is invented.",
+  "stats": {
+    "startTime": "2026-11-14T17:25:14.262Z",
+    "duration": 18643.051,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 2,
+    "flaky": 0
+  },
+  "cases": [
+    {
+      "file": "history.spec.ts",
+      "name": "TEST-F06-21: known correction rejection remains visible after refresh and preserves draft",
+      "project": "desktop",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "durationMs": 6419,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.history-panel').getByRole('alert')\nExpected substring: \u001b[32m\"กรุณาตรวจเวลาที่แก้ไขอีกครั้ง\"\u001b[39m\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" locator('.history-panel').getByRole('alert') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.history-panel').getByRole('alert')\u001b[22m\n\n\n  421 |   await page.getByRole(\"button\",{name:\"บันทึกการแก้ไข\",exact:true}).click();await refreshed;\n  422 |   await expect(row(page)).toBeVisible();\n> 423 |   await expect(page.locator(\".history-panel\").getByRole(\"alert\")).toContainText(\"กรุณาตรวจเวลาที่แก้ไขอีกครั้ง\");\n      |                                                                   ^\n  424 |   await expect(page.getByLabel(\"เวลาอ่านที่แก้ไข (นาที)\")).toHaveValue(\"47\");\n  425 |   expect(writes).toBe(1);expect((await db.dailyEntry.findUniqueOrThrow({where:{id:entry.id}})).minutes).toBe(20);\n  426 |   await page.unroute(patch);await page.getByRole(\"button\",{name:\"บันทึกการแก้ไข\",exact:true}).click();\n    at C:\\CPE\\CPE334\\Project\\studytrack-f06-contract\\e2e\\history.spec.ts:423:67"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "history.spec.ts",
+      "name": "TEST-F06-21: known correction rejection remains visible after refresh and preserves draft",
+      "project": "mobile",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "durationMs": 6406,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.history-panel').getByRole('alert')\nExpected substring: \u001b[32m\"กรุณาตรวจเวลาที่แก้ไขอีกครั้ง\"\u001b[39m\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" locator('.history-panel').getByRole('alert') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.history-panel').getByRole('alert')\u001b[22m\n\n\n  421 |   await page.getByRole(\"button\",{name:\"บันทึกการแก้ไข\",exact:true}).click();await refreshed;\n  422 |   await expect(row(page)).toBeVisible();\n> 423 |   await expect(page.locator(\".history-panel\").getByRole(\"alert\")).toContainText(\"กรุณาตรวจเวลาที่แก้ไขอีกครั้ง\");\n      |                                                                   ^\n  424 |   await expect(page.getByLabel(\"เวลาอ่านที่แก้ไข (นาที)\")).toHaveValue(\"47\");\n  425 |   expect(writes).toBe(1);expect((await db.dailyEntry.findUniqueOrThrow({where:{id:entry.id}})).minutes).toBe(20);\n  426 |   await page.unroute(patch);await page.getByRole(\"button\",{name:\"บันทึกการแก้ไข\",exact:true}).click();\n    at C:\\CPE\\CPE334\\Project\\studytrack-f06-contract\\e2e\\history.spec.ts:423:67"
+          ]
+        }
+      ]
+    }
+  ]
+}

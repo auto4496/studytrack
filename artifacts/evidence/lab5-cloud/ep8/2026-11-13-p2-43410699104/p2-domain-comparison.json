@@ -1,0 +1,10 @@
+{
+  "observedAt": "2026-11-13T10:48:27.719Z",
+  "run": 43410699104,
+  "baselineDate": "2026-11-12",
+  "goalAllFieldsEqualP0": true,
+  "entriesAllFieldsAndMetaEqualP0": true,
+  "progressAllFieldsEqualP0": true,
+  "recordWrites": false,
+  "student2Privacy": "NOT_RUN"
+}

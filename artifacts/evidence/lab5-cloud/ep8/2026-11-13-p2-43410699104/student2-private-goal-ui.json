@@ -1,0 +1,10 @@
+{
+  "observedAt": "2026-11-13T10:57:14.127Z",
+  "url": "https://studytrack-981693883236.asia-southeast1.run.app/goals/1da44fc2-a956-421d-88a9-8c876adc38c1",
+  "principalEmail": "student2@studytrack.test",
+  "accountDisplay": "นักอ่านคนที่สอง",
+  "message": "ไม่พบรายการที่ต้องการ",
+  "privateGoalDisplayed": false,
+  "actor": "User signed in directly; Codex performed known-goal read-only navigation and captured native result",
+  "recordWrites": false
+}

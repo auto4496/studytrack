@@ -1,0 +1,277 @@
+{
+  "attempt": 1,
+  "conclusion": "success",
+  "createdAt": "2026-11-13T10:39:02Z",
+  "databaseId": 43410699104,
+  "event": "push",
+  "headBranch": "main",
+  "headSha": "6d30aefece55b3a83194010a2e0e62c9b8b1dbfc",
+  "jobs": [
+    {
+      "completedAt": "2026-11-13T10:42:16Z",
+      "conclusion": "success",
+      "databaseId": 131836090103,
+      "name": "test / test-and-docker",
+      "startedAt": "2026-11-13T10:39:05Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-11-13T10:39:06Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-11-13T10:39:05Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-13T10:39:16Z",
+          "conclusion": "success",
+          "name": "Initialize containers",
+          "number": 2,
+          "startedAt": "2026-11-13T10:39:06Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-13T10:39:18Z",
+          "conclusion": "success",
+          "name": "Check out source",
+          "number": 3,
+          "startedAt": "2026-11-13T10:39:16Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-13T10:39:19Z",
+          "conclusion": "success",
+          "name": "Set up Node.js 24",
+          "number": 4,
+          "startedAt": "2026-11-13T10:39:18Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-13T10:39:29Z",
+          "conclusion": "success",
+          "name": "Check deployment scripts offline",
+          "number": 5,
+          "startedAt": "2026-11-13T10:39:19Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-13T10:39:36Z",
+          "conclusion": "success",
+          "name": "Install dependencies and generate Prisma client",
+          "number": 6,
+          "startedAt": "2026-11-13T10:39:29Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-13T10:39:37Z",
+          "conclusion": "success",
+          "name": "Check local container database isolation",
+          "number": 7,
+          "startedAt": "2026-11-13T10:39:36Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-13T10:39:50Z",
+          "conclusion": "success",
+          "name": "Migrate test database and run API and unit tests",
+          "number": 8,
+          "startedAt": "2026-11-13T10:39:37Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-13T10:41:18Z",
+          "conclusion": "success",
+          "name": "Run desktop and mobile browser tests",
+          "number": 9,
+          "startedAt": "2026-11-13T10:39:50Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-13T10:41:19Z",
+          "conclusion": "success",
+          "name": "Build server and client",
+          "number": 10,
+          "startedAt": "2026-11-13T10:41:18Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-13T10:42:11Z",
+          "conclusion": "success",
+          "name": "Build runtime and migration Docker images",
+          "number": 11,
+          "startedAt": "2026-11-13T10:41:19Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-13T10:42:12Z",
+          "conclusion": "success",
+          "name": "Post Set up Node.js 24",
+          "number": 20,
+          "startedAt": "2026-11-13T10:42:11Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-13T10:42:12Z",
+          "conclusion": "success",
+          "name": "Post Check out source",
+          "number": 21,
+          "startedAt": "2026-11-13T10:42:12Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-13T10:42:15Z",
+          "conclusion": "success",
+          "name": "Stop containers",
+          "number": 22,
+          "startedAt": "2026-11-13T10:42:12Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-13T10:42:15Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 23,
+          "startedAt": "2026-11-13T10:42:15Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/auto4496/studytrack/actions/runs/43410699104/job/131836090103"
+    },
+    {
+      "completedAt": "2026-11-13T10:45:48Z",
+      "conclusion": "success",
+      "databaseId": 131837503525,
+      "name": "deploy",
+      "startedAt": "2026-11-13T10:42:20Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-11-13T10:42:22Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-11-13T10:42:21Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-13T10:42:25Z",
+          "conclusion": "success",
+          "name": "Check out accepted source and rollback history",
+          "number": 2,
+          "startedAt": "2026-11-13T10:42:22Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-13T10:42:26Z",
+          "conclusion": "success",
+          "name": "Set up Python",
+          "number": 3,
+          "startedAt": "2026-11-13T10:42:25Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-13T10:42:29Z",
+          "conclusion": "success",
+          "name": "Validate settings and current main before cloud authentication",
+          "number": 4,
+          "startedAt": "2026-11-13T10:42:26Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-13T10:43:32Z",
+          "conclusion": "success",
+          "name": "Build runtime and migration images",
+          "number": 5,
+          "startedAt": "2026-11-13T10:42:29Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-13T10:43:32Z",
+          "conclusion": "success",
+          "name": "Authenticate to Google Cloud without a key",
+          "number": 6,
+          "startedAt": "2026-11-13T10:43:32Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-13T10:43:36Z",
+          "conclusion": "success",
+          "name": "Set up gcloud",
+          "number": 7,
+          "startedAt": "2026-11-13T10:43:32Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-13T10:44:11Z",
+          "conclusion": "success",
+          "name": "Push both immutable-source tags",
+          "number": 8,
+          "startedAt": "2026-11-13T10:43:36Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-13T10:45:42Z",
+          "conclusion": "success",
+          "name": "Verify digests, migrate and route the checked revision",
+          "number": 9,
+          "startedAt": "2026-11-13T10:44:11Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-13T10:45:43Z",
+          "conclusion": "success",
+          "name": "Smoke test public UI and database-backed health",
+          "number": 10,
+          "startedAt": "2026-11-13T10:45:42Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-13T10:45:43Z",
+          "conclusion": "success",
+          "name": "Record successful deployment",
+          "number": 11,
+          "startedAt": "2026-11-13T10:45:43Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-13T10:45:43Z",
+          "conclusion": "success",
+          "name": "Post Authenticate to Google Cloud without a key",
+          "number": 20,
+          "startedAt": "2026-11-13T10:45:43Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-13T10:45:43Z",
+          "conclusion": "success",
+          "name": "Post Set up Python",
+          "number": 21,
+          "startedAt": "2026-11-13T10:45:43Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-13T10:45:43Z",
+          "conclusion": "success",
+          "name": "Post Check out accepted source and rollback history",
+          "number": 22,
+          "startedAt": "2026-11-13T10:45:43Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-13T10:45:43Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 23,
+          "startedAt": "2026-11-13T10:45:43Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/auto4496/studytrack/actions/runs/43410699104/job/131837503525"
+    }
+  ],
+  "startedAt": "2026-11-13T10:39:02Z",
+  "status": "completed",
+  "updatedAt": "2026-11-13T10:45:48Z",
+  "url": "https://github.com/auto4496/studytrack/actions/runs/43410699104"
+}

@@ -1,0 +1,15 @@
+{
+  "source": "13 selected actual helper/smoke lines, environment/auth blocks excluded",
+  "runUrl": "https://github.com/auto4496/studytrack/actions/runs/43410699104",
+  "result": {
+    "SERVICE_URL": "https://studytrack-981693883236.asia-southeast1.run.app",
+    "DEPLOYED_IMAGE": "asia-southeast1-docker.pkg.dev/studytrack-cpe334/studytrack/studytrack@sha256:54dbdf5fb0fa4e6f7baec37f0568bbcff4db0fd97a0550df8c24f9923e80ba62",
+    "DEPLOYED_PLATFORM_IMAGE": "asia-southeast1-docker.pkg.dev/studytrack-cpe334/studytrack/studytrack@sha256:e311c6c11c71d51921464217ec498eef2708ccafa1d4d6f346aaec2b40a15cca",
+    "TOOLS_IMAGE": "asia-southeast1-docker.pkg.dev/studytrack-cpe334/studytrack/studytrack-tools@sha256:dc79f9ee06af7c005576673754ec670cefa133703bfd47040929de3057e46b1b",
+    "DEPLOYED_REVISION": "studytrack-g6d30aefece55-r43410699104-1",
+    "MIGRATION_EXECUTION": "studytrack-migrate-cq47b",
+    "RELEASE_SOURCE_SHA": "6d30aefece55b3a83194010a2e0e62c9b8b1dbfc",
+    "WORKFLOW_SOURCE_SHA": "6d30aefece55b3a83194010a2e0e62c9b8b1dbfc",
+    "RELEASE_ROLLBACK": "false"
+  }
+}

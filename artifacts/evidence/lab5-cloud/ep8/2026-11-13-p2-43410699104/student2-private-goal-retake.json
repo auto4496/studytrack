@@ -1,0 +1,11 @@
+{
+  "observedAt": "2026-11-13T11:07:20.271Z",
+  "url": "https://studytrack-981693883236.asia-southeast1.run.app/goals/1da44fc2-a956-421d-88a9-8c876adc38c1",
+  "principalAttribution": "Existing student2 session, account display นักอ่านคนที่สอง; prior authenticated /api/auth/me identity retained separately",
+  "action": "F5 reload of known private goal; no record write",
+  "message": "ไม่พบรายการที่ต้องการ",
+  "privateGoalDisplayed": false,
+  "evidence": "student2-private-goal-denied-clear.jpg",
+  "purpose": "Unobstructed original native recapture; original popup capture preserved",
+  "imageEditingPerformed": false
+}

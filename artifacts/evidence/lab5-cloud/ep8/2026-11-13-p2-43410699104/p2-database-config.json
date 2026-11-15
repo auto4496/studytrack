@@ -1,0 +1,11 @@
+{
+  "observedAt": "2026-11-13T10:47:34.694Z",
+  "source": "Native Edge service Containers UI",
+  "indexDigest": "sha256:54dbdf5fb0fa4e6f7baec37f0568bbcff4db0fd97a0550df8c24f9923e80ba62",
+  "secretBinding": "studytrack-database-url:1",
+  "sqlAttachment": "studytrack-cpe334:asia-southeast1:studytrack-pg",
+  "secretPayloadOpened": false,
+  "dbName": "studytrack",
+  "dbNameAttribution": "Reviewed bootstrap contract, not independent SQL/payload inspection",
+  "uiStatus": "No changes made"
+}

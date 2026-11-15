@@ -1,0 +1,141 @@
+{
+  "algorithm": "SHA256",
+  "scope": "Exact retained bytes; manifest excludes itself",
+  "files": [
+    {
+      "file": "before-release-b-ui.jpg",
+      "bytes": 80396,
+      "sha256": "4aea17f9d50feaf6d96b50845e960de701241e6099d0beb32d7322cdb538c02e"
+    },
+    {
+      "file": "before-release-b-ui.json",
+      "bytes": 349,
+      "sha256": "5704ab8b4ce046dcefc4d60ef4e5b31f5b39e978733dc605a715d24cc8522e27"
+    },
+    {
+      "file": "p2-database-binding.jpg",
+      "bytes": 144878,
+      "sha256": "5a936f4363f0143a225afcfb1f482b2292edcb22f2f23a09c7396a60f4a923d1"
+    },
+    {
+      "file": "p2-database-config.json",
+      "bytes": 491,
+      "sha256": "91514ee83ddd503d2af2c9ae872d71f744f0feedc8999be9423cb034c616ef20"
+    },
+    {
+      "file": "p2-domain-comparison.json",
+      "bytes": 268,
+      "sha256": "d0df292cfb02913942d7bbd54b9ebdfd4c589293de9bb831bc8000af8a68debf"
+    },
+    {
+      "file": "p2-entries.json",
+      "bytes": 538,
+      "sha256": "57ef50a1ecf7753e25d75949a5292a43806a4792c5ac0477a39ce0274a2785ba"
+    },
+    {
+      "file": "p2-goal.json",
+      "bytes": 624,
+      "sha256": "c93ea20fd8c46d4853ac79ce38fa2d315b1b2b4a8f3cb2ae4247912f8af98bfc"
+    },
+    {
+      "file": "p2-new-guidance-current-day.jpg",
+      "bytes": 88519,
+      "sha256": "e5da829ebe9665674a8a2d07d812ffdd075baa72b4c8000d0d277c904b3e0fc7"
+    },
+    {
+      "file": "p2-new-guidance-saved-day.jpg",
+      "bytes": 83076,
+      "sha256": "2e5c08ce3f1a8bcb8588a943e6881117f15f76d19b0d31cabf9fa40a0ec978e2"
+    },
+    {
+      "file": "p2-progress.json",
+      "bytes": 339,
+      "sha256": "3a718fad3c9e551c2e4dc57c2ec91f183715cb8d0485d581970cfcad495b31b1"
+    },
+    {
+      "file": "p2-public-smoke.json",
+      "bytes": 286,
+      "sha256": "cd258728d0bfe5dc00d88a4a8eb1336066a580318416ed07dcb8fdccb7646773"
+    },
+    {
+      "file": "p2-public-smoke.txt",
+      "bytes": 24,
+      "sha256": "12e756a3c5e7a2572c70a0fce850d4d1b6254ff1192b71b738ad951aea461463"
+    },
+    {
+      "file": "p2-serving-revision.jpg",
+      "bytes": 150100,
+      "sha256": "9ef0462d5edf5e977eaf0d41d2a2d3054e92e157e89d5c9432ae6570e41fc3ae"
+    },
+    {
+      "file": "p2-serving-revision.json",
+      "bytes": 434,
+      "sha256": "d7a77ee4beaf73a84e69b08874190c11289ee33fa731df55fd1c1d702ad6b0a7"
+    },
+    {
+      "file": "p2-visible-release-and-data.json",
+      "bytes": 781,
+      "sha256": "fa313cb673041ea299febe7cf766741dbc1ccece8f5bbaea6fa6670295040697"
+    },
+    {
+      "file": "record.json",
+      "bytes": 10598,
+      "sha256": "cf45b661f24cc73537953ce6be1a2fc6329499dd878ccf323b26fa6448b77f5c"
+    },
+    {
+      "file": "release-b-result.json",
+      "bytes": 1078,
+      "sha256": "dcce0d597d0d589a28556c0194d2b3ac1a336d1f46b70479c0bee95e5bb19021"
+    },
+    {
+      "file": "release-b-run.json",
+      "bytes": 8896,
+      "sha256": "d64d1ba7dee1ebce49504568869d3ccb1aff471363038cf4df4679baa2b80eba"
+    },
+    {
+      "file": "release-b-selected-log.txt",
+      "bytes": 2069,
+      "sha256": "dded9a649a3dda9b9483f98bbf7f97a1594cc6d96959cd6dda675f68046f8029"
+    },
+    {
+      "file": "release-pr52.json",
+      "bytes": 493,
+      "sha256": "7ccf215b43b8105fecec0b3b520b55e93eacffe532926397bd9a9f7b4e8ed359"
+    },
+    {
+      "file": "student2-authenticated-home.jpg",
+      "bytes": 74785,
+      "sha256": "4d583dcbb48d1db1e9c12364d131f8d89e6e02b91362001c2349b5daeb69bc97"
+    },
+    {
+      "file": "student2-identity.json",
+      "bytes": 510,
+      "sha256": "c3f7ad6431f348cda0723ce8e4fdfa4b2ebf7030389cb9978e20d31f86537742"
+    },
+    {
+      "file": "student2-private-api-denials.json",
+      "bytes": 1327,
+      "sha256": "80f0b3b853005f8d41843f796acc3ef305667204afbcf578d84aaf258334baba"
+    },
+    {
+      "file": "student2-private-goal-denied-clear.jpg",
+      "bytes": 54096,
+      "sha256": "396405a1a8d9ad574a4dcdc6fa50ba3c5c573c508a12ee6054432659819bf9b5"
+    },
+    {
+      "file": "student2-private-goal-denied.jpg",
+      "bytes": 59480,
+      "sha256": "63a045b3f0c5f912bcd95f231ef5500a36249221d27e04dab628bc4935d7dedf"
+    },
+    {
+      "file": "student2-private-goal-retake.json",
+      "bytes": 695,
+      "sha256": "f9e403824cb0e6068d76d19287bf796554b623f6ff02a2bd800346fe8350e1c0"
+    },
+    {
+      "file": "student2-private-goal-ui.json",
+      "bytes": 527,
+      "sha256": "c968055cfd782891e71cae75cc99e3c367efdc23d9fdb1e336fef146f239044f"
+    }
+  ]
+}

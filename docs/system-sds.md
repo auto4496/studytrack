@@ -1,5 +1,13 @@
 # StudyTrack — System-Level Software Design Specification
 
+## F06 implemented design candidate - 15 November 2026
+
+PR59 accepted the refinement below before code; B implemented the aggregate in one RepeatableRead transaction and corrections in ReadCommitted using owner-scoped Goal FOR UPDATE before matching entry with a post-lock Clock. The read loads eligible persisted entries and target versions once and derives filtered pages/lifetime streak without stored cache, per-missing-day loops or target N+1 calls. Existing Goal/DailyEntry/GoalTargetVersion schema is unchanged. Isolated history UI uses the accepted optional refresh props with F04. [Actual verification](verification/f06.md) distinguishes local candidate passes from pending A implementation acceptance/release; no production-volume benchmark or F07 schema work is claimed.
+
+## F06 design refinement proposed - 14 November 2026
+
+[F06 Issue58 contract](sprints/sprint-2/f06-history-streak.md) proposes a snapshot history/streak read-model and existing-entry minute correction using Goal,DailyEntry and GoalTargetVersion. There is no new table/migration/stored-streak cache. Goal-before-entry locks, date-effective targets, inclusive archived bounds and shared UI invalidation require A pre-code review; all F06 product/tests remain NOT_IMPLEMENTED/NOT_RUN. F07 schedule normalization remains a separate A-owned proposal. Original design/history below is retained.
+
 Version 0.1, 3 November 2026. Member A pre-code design; now implemented for A foundation/F-01/F-03 on `codex/member-a-sprint1`, teammate review still pending. [Current verification and gaps](verification/member-a.md). อ้างอิง [SRS](srs.md), [integration contract](integration-contract.md) และ [decisions](decisions.md)
 
 ## 1. Architecture
@@ -41,7 +49,7 @@ IDs เป็น UUID strings; DB names ใช้ snake_case, JSON ใช้ cam
 | Goal | id, ownerId, templateId, templateTitleSnapshot, unit, minMinutesSnapshot, maxMinutesSnapshot, startDate, endDate nullable, status, createdAt | FK owner/template; status ACTIVE/ARCHIVED; partial unique(ownerId,templateId) WHERE status=ACTIVE; bounds snapshots immutable |
 | GoalTargetVersion | id, goalId, effectiveFrom, targetMinutes, createdAt | unique(goalId,effectiveFrom); target>0; initial effectiveFrom=startDate; effective version query ordered descending <= requested date |
 | DailyEntry | id, goalId, entryDate, minutes, createdAt, updatedAt | unique(goalId,entryDate); minutes 1..1440 and service checks goal snapshot range/date; no client owner field |
-| GoalSchedule (S3) | goalId, weekday, localTime | weekday 1..7; unique(goalId,weekday); validate HH:mm; details refined in F-07 contract |
+| GoalSchedule (S3, planned logical model) | goalId, weekday, localTime | weekday1..7 and local HH:mm; proposed current-config/weekday-child normalization, reminder fields and locking are specified in the [F07 pre-code contract](sprints/sprint-3/f07-schedule.md); no schedule migration/model exists yet |
 
 ```mermaid
 erDiagram
