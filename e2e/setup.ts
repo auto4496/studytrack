@@ -25,6 +25,7 @@ export default async function setup() {
   try {
     await db.dailyEntry.deleteMany();
     await db.goalTargetVersion.deleteMany();
+    await db.goalSchedule.deleteMany();
     await db.goal.deleteMany();
     await db.activityTemplate.deleteMany();
     await db.session.deleteMany();

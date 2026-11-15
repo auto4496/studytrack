@@ -12,6 +12,7 @@ import { pagination, parseUuid } from "../../validation.js";
 import { createGoal, goalDTO, requireOwnedGoal } from "./service.js";
 import { entriesRouter } from "../entries/router.js";
 import { changeTarget, stopGoal } from "./lifecycle.js";
+import { scheduleRouter } from "../schedules/router.js";
 
 const createInput = z.strictObject({
   templateId: z.string(),
@@ -100,5 +101,6 @@ export function goalsRouter(deps: Dependencies) {
     res.json({ data: goalDTO(goal, todayBangkok(deps.clock)) });
   });
   router.use("/:goalId", entriesRouter(deps));
+  router.use("/:goalId", scheduleRouter(deps));
   return router;
 }
