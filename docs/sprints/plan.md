@@ -1,5 +1,9 @@
 # StudyTrack - แผนสาม Sprint
 
+## F06 implementation candidate - 15 November 2026
+
+A explicitly accepted PR59's Section2/refresh boundary and merged it as stagingd952ad6. B implemented F06 from that baseline; [actual ledger](../verification/f06.md) records203 unit/API and50 desktop/mobile browser passes plus build, isolation and real API restart. This is author-verified candidate work, awaiting A implementation review/protected staging integration and separately reviewed release. Keep Issue58 OPEN and Sprint2 incomplete. A's F07/Issue54 and B's later F08 remain separate; no new cloud operation or Lab5 submission/evidence change is implied. Earlier checkpoints retain their writing-time status.
+
 ## F06 preparation - 14 November 2026
 
 B begins Sprint2 [F06 Issue58](https://github.com/auto4496/studytrack/issues/58) from accepted staging906d1e7 with the [pre-code contract](sprint-2/f06-history-streak.md) and [verification ledger](../verification/f06.md). A reviews API/read-model/date/archive/concurrency/UI decisions before dependent code. F05 is accepted; F06 product/tests are NOT_IMPLEMENTED/NOT_RUN and Sprint2 remains incomplete. A's F07 and B's later F08 stay separate. Lab5 Issues22/23/24 are closed on GitHub; this preparation neither changes their evidence nor asserts a new LEB2 action. Earlier checkpoints are historical.

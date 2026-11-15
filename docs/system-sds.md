@@ -1,5 +1,9 @@
 # StudyTrack — System-Level Software Design Specification
 
+## F06 implemented design candidate - 15 November 2026
+
+PR59 accepted the refinement below before code; B implemented the aggregate in one RepeatableRead transaction and corrections in ReadCommitted using owner-scoped Goal FOR UPDATE before matching entry with a post-lock Clock. The read loads eligible persisted entries and target versions once and derives filtered pages/lifetime streak without stored cache, per-missing-day loops or target N+1 calls. Existing Goal/DailyEntry/GoalTargetVersion schema is unchanged. Isolated history UI uses the accepted optional refresh props with F04. [Actual verification](verification/f06.md) distinguishes local candidate passes from pending A implementation acceptance/release; no production-volume benchmark or F07 schema work is claimed.
+
 ## F06 design refinement proposed - 14 November 2026
 
 [F06 Issue58 contract](sprints/sprint-2/f06-history-streak.md) proposes a snapshot history/streak read-model and existing-entry minute correction using Goal,DailyEntry and GoalTargetVersion. There is no new table/migration/stored-streak cache. Goal-before-entry locks, date-effective targets, inclusive archived bounds and shared UI invalidation require A pre-code review; all F06 product/tests remain NOT_IMPLEMENTED/NOT_RUN. F07 schedule normalization remains a separate A-owned proposal. Original design/history below is retained.

@@ -9,7 +9,7 @@ import {
   validateEntryMinutes,
 } from "./rules.js";
 
-function entryDTO(entry: DailyEntry, targetMinutes: number) {
+export function entryDTO(entry: DailyEntry, targetMinutes: number) {
   return {
     id: entry.id,
     goalId: entry.goalId,
