@@ -214,9 +214,9 @@ test("TEST-F07-07/18: saved partial reading refreshes LOGGED without achievement
 test("TEST-F07-17/18: focus and minute poll preserve unsaved values with a different browser clock", async ({
   page,
 }) => {
+  await page.clock.install({ time: new Date("2031-01-01T00:00Z") });
   await open(page);
   await write(page, dueValue());
-  await page.clock.install({ time: new Date("2031-01-01T00:00Z") });
   await page
     .getByLabel(`เวลาอ่านวัน${currentLabel()}`, { exact: true })
     .fill("21:12");
@@ -227,7 +227,12 @@ test("TEST-F07-17/18: focus and minute poll preserve unsaved values with a diffe
   await expect(
     page.getByLabel(`เวลาอ่านวัน${currentLabel()}`, { exact: true }),
   ).toHaveValue("21:12");
+  const poll = page.waitForResponse(
+    (response) =>
+      response.url().endsWith(path()) && response.request().method() === "GET",
+  );
   await page.clock.fastForward(60_100);
+  expect((await poll).status()).toBe(200);
   await expect(
     page.getByLabel(`เวลาอ่านวัน${currentLabel()}`, { exact: true }),
   ).toHaveValue("21:12");
