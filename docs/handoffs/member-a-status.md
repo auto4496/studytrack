@@ -1,5 +1,9 @@
 # Member A handoff — baseline v0.1
 
+## F07 implementation candidate - 15 November 2026
+
+After B accepted PR55 and the user authorized implementation entry, A implemented [Issue54](https://github.com/auto4496/studytrack/issues/54) from accepted stagingf6a38bb. [Actual verification](../verification/f07.md) records259 API/unit (56 F07),66 real desktop/mobile browsers (16 F07),21 isolation checks, build and real API restart; populated additive migration preserves original synthetic data. Test-only poll refinement2/2 passes without product changes. New schema/API/GoalSchedulePanel follow the accepted contract; F04/F06 semantics/native evidence are preserved. B implementation review, protected staging integration and a separate release remain pending; keep Issue54 OPEN. A does not self-approve/deploy. F06's live evidence remains B's handoff and F08 remains B-owned. Earlier checkpoints below retain their writing-time status.
+
 ## Current A handoff - 13 November 2026
 
 A completed the [F05 release/acceptance audit and F06 handoff](../verification/f05.md#current-acceptance---13-november-2026): accepted PR35 is in deployed main6d30aef and actual Deploy43410699104/regression passed. Issue31's remaining release gate is met; F06 still belongs to B and Sprint2 is incomplete without it. A opened Issue54 and prepared the [F07 schedule/reminder contract](../sprints/sprint-3/f07-schedule.md) with18 planned AC/test IDs for Datakung's pre-code review. No F07 schema/API/UI/migration/test was implemented or executed. B should review the explicit per-day time/reminder/state/stop/locking decisions before implementation. A will then address findings under the agreed Sprint entry flow, and continues peer-review duty for B's F06/F08 and Lab5 report. B retains Issue24/report coordination; EP7/EP8 technical results are accepted, with final report/index/joint acceptance still open. The original baseline handoff below is historical.

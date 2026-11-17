@@ -1,0 +1,47 @@
+{
+  "checkedAtUtc": "2026-11-15T07:39:27.959295+00:00",
+  "actor": "A/auto4496 assisted by Codex; author verification, not B approval",
+  "baseline": "f6a38bb62dbc17a86f852b7bc892e63d36aa3360",
+  "contract": {
+    "pr": 55,
+    "approvedHead": "572218872f91b82381abbc484ae5b103cbdaad92",
+    "reviewer": "Datakung",
+    "implementationEntry": "User explicitly authorized15November2026"
+  },
+  "redCommit": "ad251ac",
+  "productAndFullRunSource": "2ebe12c51df08cc30eb1213792d8d6b7b0757895",
+  "testOnlyRefinementSource": "2ea2ee520f38a0630165e42026c48858fb63e267",
+  "productEquivalentAfterRefinement": true,
+  "apiUnit": {
+    "passed": 259,
+    "failed": 0,
+    "skipped": 0,
+    "newF07": 56
+  },
+  "browser": {
+    "passed": 66,
+    "failed": 0,
+    "skipped": 0,
+    "flaky": 0,
+    "newF07": 16
+  },
+  "targetedPoll": {
+    "passed": 2,
+    "failed": 0
+  },
+  "isolationChecks": {
+    "passed": 21,
+    "failed": 0
+  },
+  "build": "PASS server/client TypeScript and Vite",
+  "realApiRestart": "PASS original F03/F05/F06/F07 identities/timestamps/target versions/session/progress/history/streak/config after actual distinct API processes without reseed",
+  "migrationUpgrade": "PASS populated foundation retains original synthetic goal/entry/targets/session count; additive tables only",
+  "database": "New disposable loopback PostgreSQL17 studytrack_f07_test on25439; no existing DB reset/seed",
+  "visualReview": "Real desktop/mobile screenshots inspected; no observed clipping/overflow",
+  "limits": [
+    "Author results; B implementation review/integration/release pending",
+    "No Cloud migration/deployment, seed/reset, secret/IAM/billing operation or external notification delivery",
+    "No local app Docker image build claimed; hosted CI tracked on actual final PR head",
+    "No F08, independent external human UAT or whole-project completion"
+  ]
+}

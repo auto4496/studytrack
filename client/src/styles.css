@@ -1034,6 +1034,66 @@ dd {
   margin-block: 1rem;
   overflow-wrap: anywhere;
 }
+.schedule-panel {
+  margin-block: 1rem;
+  overflow-wrap: anywhere;
+}
+.schedule-status {
+  margin-block: 1rem;
+  padding: 1rem;
+  border-radius: 12px;
+  background: #f1f5ed;
+}
+.schedule-days {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem 1.2rem;
+  border: 1px solid #dfe5d8;
+  padding: 1rem;
+  margin-block: 1rem;
+}
+.schedule-day-choice,
+.schedule-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.schedule-day-choice input,
+.schedule-toggle input {
+  width: auto;
+  flex: 0 0 auto;
+}
+.schedule-slots {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+  gap: 1rem;
+  margin-block: 1rem;
+}
+.schedule-slot {
+  min-width: 0;
+  border: 1px solid #dfe5d8;
+  border-radius: 12px;
+  padding: 1rem;
+}
+.schedule-slot .field {
+  margin-block: 0.7rem;
+  min-width: 0;
+}
+.schedule-slot input {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+.schedule-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+.schedule-panel .button {
+  max-width: 100%;
+  white-space: normal;
+}
 .history-panel {
   margin-block: 1rem;
   overflow-wrap: anywhere;

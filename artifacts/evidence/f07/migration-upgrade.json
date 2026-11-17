@@ -1,0 +1,13 @@
+{
+  "result": "PASS",
+  "goals": 1,
+  "targetVersions": 1,
+  "entries": 1,
+  "sessionCount": 1,
+  "unchanged": "Original IDs, minutes, dates, timestamps, goal/target data and session count",
+  "newTables": [
+    "goal_schedule_days",
+    "goal_schedules"
+  ],
+  "scope": "Populated foundation -> additive schedule migration, synthetic isolated local DB only"
+}

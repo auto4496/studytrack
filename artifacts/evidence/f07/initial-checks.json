@@ -1,0 +1,15 @@
+{
+  "stage": "Initial F07 API/rules author run before final source commit",
+  "passed": 44,
+  "failed": 1,
+  "actualFailures": [
+    {
+      "name": "F07 owned reading schedule TEST-F07-03/04: rejects invalid configuration 1 without changing existing rows",
+      "status": "failed",
+      "failures": [
+        "Error: expected 422 \"Unprocessable Entity\", got 415 \"Unsupported Media Type\"\n    at C:/Users/User/Documents/Codex/2026-11-08/new-chat-2/studytrack-f07/server/tests/integration/schedule.test.ts:153:33\n    at async file:///C:/Users/User/Documents/Codex/2026-11-08/new-chat-2/studytrack-f07/node_modules/vitest/dist/chunks/run.CjdgFZiW.js:2801:20\n----\n    at Test._assertStatus (C:\\Users\\User\\Documents\\Codex\\2026-11-08\\new-chat-2\\studytrack-f07\\node_modules\\supertest\\lib\\test.js:404:14)\n    at C:\\Users\\User\\Documents\\Codex\\2026-11-08\\new-chat-2\\studytrack-f07\\node_modules\\supertest\\lib\\test.js:460:13\n    at Test._assertFunction (C:\\Users\\User\\Documents\\Codex\\2026-11-08\\new-chat-2\\studytrack-f07\\node_modules\\supertest\\lib\\test.js:437:13)\n    at Test.assert (C:\\Users\\User\\Documents\\Codex\\2026-11-08\\new-chat-2\\studytrack-f07\\node_modules\\supertest\\lib\\test.js:302:23)\n    at localAssert (C:\\Users\\User\\Documents\\Codex\\2026-11-08\\new-chat-2\\studytrack-f07\\node_modules\\supertest\\lib\\test.js:220:38)\n    at Server.<anonymous> (C:\\Users\\User\\Documents\\Codex\\2026-11-08\\new-chat-2\\studytrack-f07\\node_modules\\supertest\\lib\\test.js:227:13)\n    at Object.onceWrapper (node:events:622:28)\n    at Server.emit (node:events:508:28)\n    at emitCloseNT (node:net:2427:8)\n    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)"
+      ]
+    }
+  ],
+  "correction": "Test used supertest.send(null), which sends no JSON Content-Type and correctly yields415. Replaced fixture with valid JSON days:null to test the agreed422 field-shape rejection; production auth/parser unchanged. Full final execution is separate."
+}

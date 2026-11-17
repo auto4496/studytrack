@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, type ComponentType } from "react";
 import { GoalLifecycle } from "./GoalLifecycle";
 import { ReadingHistory } from "../entries/ReadingHistory";
+import { GoalSchedulePanel } from "../schedules/GoalSchedulePanel";
 import { Link, useParams } from "react-router-dom";
 import {
   api,
@@ -107,6 +108,11 @@ export function GoalDetail({
               setActivityRevision((v) => v + 1);
               setEntriesRevision((v) => v + 1);
             }}
+          />
+          <GoalSchedulePanel
+            key={`schedule:${goal.id}`}
+            goal={goal}
+            entriesRevision={entriesRevision}
           />
           {ActivityComponent && (
             <ActivityComponent
