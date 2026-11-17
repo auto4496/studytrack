@@ -1,5 +1,9 @@
 # StudyTrack — System-Level Software Design Specification
 
+## F08 proposed derived summary model - 15 November 2026
+
+The [F08 contract](sprints/sprint-3/f08-summary.md) proposes a read-only derived model over existing owner-scoped Goal/GoalTargetVersion/DailyEntry, without a stored summary/cache/migration or schedule-table dependency. One RepeatableRead snapshot and server instant supply lifecycle intersections, date-effective target denominators including missing dates, actuals, distinct-date unions, weighted HALF_UP ratios and a bounded daily series. Aggregate metrics precede per-goal pagination; zero denominator is null. Batched reads avoid per-day target SQL; no production-volume SLA is asserted. A must review these choices and the minimal app/navigation mounts before code. [F08 verification](verification/f08.md) is preparation-only; accepted F07 persistence and its separate Cloud release are not redefined.
+
 ## F07 normalized persistence candidate - 15 November 2026
 
 The [B-approved contract](sprints/sprint-3/f07-schedule.md) refines the logical recurring schedule into GoalSchedule (unique restrictive Goal FK/toggle/timestamps) and GoalScheduleDay (composite schedule/ISO-weekday key, local minute-of-day values). Additive SQL preserves existing tables/rows; parent deletion cascades only its children. Count/toggle consistency is enforced in one serialized service transaction, not falsely represented as cross-row CHECKs. RepeatableRead GET and Goal-first ReadCommitted PUT use the existing Clock; in-app status creates no reading activity and never changes F06/F08 denominators. [Actual author tests](verification/f07.md) precede B implementation review; no cloud migration/deployment is claimed.

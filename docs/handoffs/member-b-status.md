@@ -1,5 +1,11 @@
 # Member B status — implementation handoff
 
+## F08 เตรียมข้อตกลงล่วงหน้า - 15 November 2026
+
+ผู้ใช้ให้เตรียมงาน B ต่อได้ระหว่าง A จัดการ F07; ตรวจแล้ว PR62 ถูก B Approve และ merge staging0d79511. เปิด [Issue63](https://github.com/auto4496/studytrack/issues/63) และร่าง [F08 contract](../sprints/sprint-3/f08-summary.md) กับ [preparation ledger](../verification/f08.md): summary ของตัวเองตามช่วงวัน/เป้าหมาย, target ย้อนหลังรวมวันที่ยังไม่บันทึก, อัตรารวมแบบถ่วงน้ำหนัก, แยกวันสำเร็จต่อเป้าหมายกับวันที่มีอย่างน้อยหนึ่งเป้าหมายสำเร็จ และ22 AC/test pairs. ทุกกรณี F08 ยัง NOT_IMPLEMENTED/NOT_RUN
+
+ให้ A ตัดสิน Section2 ก่อนโค้ด: ANY/ALL ของวันรวม, denominator/weighted/null, week-to-date/ช่วง366วัน, aggregate DTO/pagination/snapshot และ App/Layout/server mount. PR รอบนี้เอกสารเท่านั้น จึงไม่ต้องใช้ Docker เพิ่ม ไม่เปลี่ยน schema/ข้อมูล Cloud/หลักฐาน Lab5 หรืออ้างว่า F07 ปล่อยแล้ว. เมื่อ A รับ contract ค่อยเริ่ม meaningful red และ implementation แยกจาก accepted stagingล่าสุด. Keep Issue63 OPEN ผ่าน review/integration/release/evidence; F07 ยังเป็นงาน A และ Lab6/7/D2 ยังมี gate แยก. ข้อความก่อนหน้าด้านล่างเป็นสถานะตามเวลาที่เขียน
+
 ## F06 implementation handoff - 15 November 2026
 
 A รับ contract ใน PR59 แล้ว merge stagingd952ad6; B ทำโค้ด F06 ตามข้อตกลงนั้นบน `codex/f06-history-streak` แล้ว ดู [ผลจริงและ22 AC mapping](../verification/f06.md). Sourced47ea93 (UI/build), fff204f (API/restart unchanged):203 unit/API ผ่าน (51 F06 ใหม่),50 browser ผ่าน (12 F06 ใหม่), build/isolation และ restart เซิร์ฟเวอร์จริงผ่าน เก็บ red404 และ regression selector failure/correction ตามจริง ภาพใหม่ใช้ข้อมูลทดสอบและเก็บแยก ไม่แก้หลักฐาน Lab5 เดิม
