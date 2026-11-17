@@ -1,0 +1,168 @@
+Browser tab: 1, Title: "StudyTrack — เป้าหมายการอ่านของคุณ", URL: "https://studytrack-981693883236.asia-southeast1.run.app/goals/573caf0d-3628-4fa8-931c-b53d3ab4ea7a".
+0 AXWebArea StudyTrack — เป้าหมายการอ่านของคุณ, URL: studytrack-981693883236.asia-southeast1.run.app/goals/573caf0d-3628-4fa8-931c-b53d3ab4ea7a
+	1 container root
+		2 container
+			3 link Description: StudyTrack A LITTLE, EVERY DAY, Value: studytrack-981693883236.asia-southeast1.run.app/
+			4 text พื้นที่ของคุณ
+			5 container เมนูหลัก
+				6 link Description: ◫ เป้าหมายการอ่าน, Value: studytrack-981693883236.asia-southeast1.run.app/goals
+				7 link Description: ▤ กิจกรรมการอ่าน, Value: studytrack-981693883236.asia-southeast1.run.app/templates
+			8 text น นักอ่านคนที่หนึ่ง นักศึกษา
+			9 button ออกจากระบบ
+		10 container
+			11 text ติดตามการอ่านในแต่ละวัน
+			12 link Description: ← เป้าหมายของฉัน, Value: studytrack-981693883236.asia-southeast1.run.app/goals
+			13 text ONE DAY AT A TIME
+			14 heading อ่านภาษาอังกฤษวันละนิด, Value: 1
+				15 text อ่านภาษาอังกฤษวันละนิด
+			16 text เป้าหมายส่วนตัวของคุณ
+			17 text Active
+			18 text เป้าหมายรายวัน
+			19 container
+				20 text 30 นาที
+			21 definition list
+				22 container เริ่มต้น
+					23 text เริ่มต้น
+				24 text 17 พ.ย. 2569
+				25 container เวลาอ่านขั้นต่ำ–สูงสุด
+					26 text เวลาอ่านขั้นต่ำ–สูงสุด
+				27 container
+					28 text 1 – 1440  นาที
+				29 container หน่วยเวลา
+					30 text หน่วยเวลา
+				31 text นาที
+			32 container จัดการเป้าหมาย
+				33 heading จัดการเป้าหมาย, Value: 2
+					34 text จัดการเป้าหมาย
+				35 container
+					36 text เป้าหมายรายวันใหม่ (นาที)
+					37 stepper (settable) เป้าหมายรายวันใหม่ (นาที), ID: new-target
+					38 container new-target-help
+						39 text มีผลวันถัดไป ( 18 พ.ย. 2569 ) ผลย้อนหลังคงเดิม การแก้ซ้ำจะแทนค่าที่รออยู่
+					40 button บันทึกเป้าหมายใหม่
+				41 button หยุดติดตามเป้าหมาย
+			42 container ตารางอ่านของคุณ
+				43 text MAKE TIME TO READ
+				44 heading ตารางอ่านของคุณ, Value: 2, ID: schedule-heading
+					45 text ตารางอ่านของคุณ
+				46 text ตั้งวันและเวลาอ่าน · เวลาไทย (Asia/Bangkok)
+				47 button อัปเดตสถานะตาราง
+				48 container
+					49 text ยังไม่ได้ตั้งตารางอ่าน สถานะจากตารางที่บันทึก ณ  17 พ.ย. 2569  · 23:14 น.
+				50 text การเตือนแสดงในหน้านี้ระหว่างเปิดเว็บ บันทึกเวลาอ่านจริงแยกในส่วนบันทึกการอ่าน
+				51 container
+					52 container เลือกวันอ่าน
+						53 text เลือกวันอ่าน
+						54 container
+							55 checkbox (settable, integer) Description: อ่านวันจันทร์, Value: 0
+							56 text จันทร์
+						57 container
+							58 checkbox (settable, integer) Description: อ่านวันอังคาร, Value: 1
+							59 text อังคาร
+						60 container
+							61 checkbox (settable, integer) Description: อ่านวันพุธ, Value: 0
+							62 text พุธ
+						63 container
+							64 checkbox (settable, integer) Description: อ่านวันพฤหัสบดี, Value: 0
+							65 text พฤหัสบดี
+						66 container
+							67 checkbox (settable, integer) Description: อ่านวันศุกร์, Value: 0
+							68 text ศุกร์
+						69 container
+							70 checkbox (settable, integer) Description: อ่านวันเสาร์, Value: 0
+							71 text เสาร์
+						72 container
+							73 checkbox (settable, integer) Description: อ่านวันอาทิตย์, Value: 0
+							74 text อาทิตย์
+					75 checkbox (settable, integer) Description: เปิดการเตือนในแอป, Value: 1
+					76 text เปิดการเตือนในแอป
+					77 container วันอังคาร
+						78 container
+							79 text วัน อังคาร
+						80 container
+							81 text เวลาอ่านวัน อังคาร
+						82 time field (settable) เวลาอ่านวันอังคาร, Value: 20:00, ID: schedule-reading-2
+							83 container
+								84 stepper
+								85 stepper
+								86 stepper
+							87 pop up button Show time picker Show time picker
+						88 container
+							89 text เวลาเตือนวัน อังคาร
+						90 time field (settable) เวลาเตือนวันอังคาร, Value: 19:45, ID: schedule-reminder-2
+							91 container
+								92 stepper
+								93 stepper
+								94 stepper
+							95 pop up button Show time picker Show time picker
+					96 button บันทึกตารางอ่าน
+					97 button (disabled) ยกเลิกการแก้ตาราง
+			98 container บันทึกการอ่าน
+				99 text EVERY MINUTE COUNTS
+				100 heading บันทึกการอ่าน, Value: 2, ID: activity-heading
+					101 text บันทึกการอ่าน
+				102 text ติดตามเวลาที่ทำจริงในแต่ละวัน
+				103 text วันที่บันทึก (เวลาไทย)
+				104 date field (settable) วันที่บันทึก (เวลาไทย), Value: 2026-11-17, ID: entry-date
+					105 container
+						106 stepper
+						107 stepper
+						108 stepper
+					109 pop up button Show date picker Show date picker
+				110 text ผลการอ่านแสดงตามวันที่เลือก หากต้องการดูบันทึกย้อนหลัง ให้เลือกวันที่ที่บันทึกไว้
+				111 text 17 พ.ย. 2569
+				112 container
+					113 text 0  /  30 นาที
+				114 container
+					115 text 0 %
+				116 text ยังไม่มีบันทึกสำหรับวันที่เลือก
+				117 progress indicator Description: ความคืบหน้าการอ่าน, Value: 0
+				118 container
+					119 text เวลาที่อ่านจริง (นาที)
+					120 stepper (settable) เวลาที่อ่านจริง (นาที), ID: entry-minutes
+					121 container minutes-help
+						122 text จำนวนเต็ม  1 – 1440  นาที บันทึกได้วันละหนึ่งรายการต่อเป้าหมาย
+					123 button บันทึกเวลา →
+			124 container ประวัติการอ่าน
+				125 text YOUR READING JOURNEY
+				126 heading ประวัติการอ่าน, Value: 2, ID: history-heading
+					127 text ประวัติการอ่าน
+				128 text เลือกเป้าหมายอื่นได้จากหน้าเป้าหมายของฉัน รวมเป้าหมายที่สิ้นสุดแล้ว
+				129 button รีเฟรชประวัติ
+				130 container
+					131 text ข้อมูล ณ  17 พ.ย. 2569  (เวลาไทย) · สถิติวันต่อเนื่องครอบคลุมทั้งเป้าหมาย ไม่เปลี่ยนตามช่วงที่กรอง
+				132 container
+					133 text ประวัติตั้งแต่วันที่
+					134 date field (settable) ประวัติตั้งแต่วันที่, ID: history-from
+						135 container
+							136 stepper
+							137 stepper
+							138 stepper
+						139 pop up button Show date picker Show date picker
+					140 text ประวัติถึงวันที่
+					141 date field (settable) ประวัติถึงวันที่, ID: history-to
+						142 container
+							143 stepper
+							144 stepper
+							145 stepper
+						146 pop up button Show date picker Show date picker
+					147 button ใช้ช่วงวันที่
+					148 button ดูทุกวัน
+				149 heading วันต่อเนื่องปัจจุบัน, Value: 3
+					150 text วันต่อเนื่องปัจจุบัน
+				151 container
+					152 text 0  วัน
+				153 text ยังไม่มีวันที่อ่านครบเป้าหมาย
+				154 heading วันต่อเนื่องดีที่สุด, Value: 3
+					155 text วันต่อเนื่องดีที่สุด
+				156 container
+					157 text 0  วัน
+				158 text ยังไม่มีวันที่อ่านครบเป้าหมาย
+				159 text อ่านครบเป้าหมายของวันนั้นจึงนับต่อเนื่อง วันที่ขาดหรือยังอ่านไม่ครบจะตัดช่วง
+				160 container
+					161 text พบ  0  รายการ · หน้า 1
+				162 text ไม่มีบันทึกในช่วงหรือหน้านี้
+				163 button (disabled) ประวัติหน้าก่อน
+				164 button (disabled) ประวัติหน้าถัดไป
+
+The focused UI element is 0 AXWebArea StudyTrack — เป้าหมายการอ่านของคุณ, URL: studytrack-981693883236.asia-southeast1.run.app/goals/573caf0d-3628-4fa8-931c-b53d3ab4ea7a

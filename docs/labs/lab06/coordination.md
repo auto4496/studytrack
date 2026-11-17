@@ -13,32 +13,32 @@
 
 | Session | Asia/Bangkok / ICT | Confirmation status |
 | --- | --- | --- |
-| First reciprocal run | 18 November 2026, 20:00-22:00 | CPMS proposed; A explicitly accepted both sessions on 17 November; B's personal availability still requires confirmation |
+| First reciprocal run | 18 November 2026, 20:00-22:00 | A accepted; B explicitly confirmed this first session in the PR67 review on 17 November |
 | Fix window | 20-21 November 2026 | Agreed planning window; individual fix-release times need both teams' approval |
 | Retest and decision | 22 November 2026, 13:00-15:00 | CPMS proposed; A explicitly accepted; B's personal availability still requires confirmation |
 | Latest requested finish | 22 November 2026, 18:00 | CPMS requested a buffer to assemble both PDFs |
 | Lab 6 submission | 22 November 2026, 23:59 | Course/team-plan deadline; each team prepares and submits its own evidence/report |
 
-The two proposed session times are work appointments before the submission deadline, not new submission deadlines. A has not impersonated B or confirmed B's attendance. The external confirmation message still needs to be sent by a human through the teams' agreed channel; a repository record is not evidence of a Discord DM.
+The session times are work appointments before the submission deadline, not new submission deadlines. B's first-session attendance is based on the actual [PR67 review](https://github.com/auto4496/studytrack/pull/67), not an inference from A's acceptance. B has **not yet confirmed the22November retest**. The external confirmation message still needs to be sent by a human through the teams' agreed channel; a repository record is not evidence of a Discord DM.
 
 ## StudyTrack: must complete before the first session
 
-Last checked deployed source is `005c20f1e732787ebb5396f947387350316f308f`, Deploy [43688319047](https://github.com/auto4496/studytrack/actions/runs/43688319047), recorded revision `studytrack-g005c20f1e732-r43688319047-1`. This is a historical deployment reference, **not a newly frozen UAT selection**. [PR65](https://github.com/auto4496/studytrack/pull/65) is the independently approved F-07 candidate at `9f35093cb4664c6892731c774786dc94a3efd8f5`; it had not merged when this draft was prepared. Recheck before relying on this checkpoint.
+Current recorded deployed source is **`ef0de7f877dcabe8ec330eb2c0029d9cebf8ed40`**, from B's normal [PR65](https://github.com/auto4496/studytrack/pull/65) main merge. [Deploy44090861325](https://github.com/auto4496/studytrack/actions/runs/44090861325) succeeded, with recorded revision **`studytrack-gef0de7f877dc-r44090861325-1`**. This replaces the earlier005c20f deployment reference. The new annotated tag **`uat-lab6-2026-11-18`** resolves to the actual deployed ef0de7f, not candidate9f35093. [Actual release and A-assisted live checks](../../verification/f07-live.md) retain provenance and limits; B's live-evidence review and external acceptance remain pending.
 
-The user authorized the immediate pre-UAT release interval on 17 November; A [recorded the window](https://github.com/auto4496/studytrack/pull/65#issuecomment-6943448535) and handed the normal merge to B. Do not confuse that limited release handoff with permission to deploy during external UAT. If F-07 cannot be accepted before testing starts, explicitly choose/freeze the existing release or reschedule; do not silently deploy it during the freeze.
+The user authorized the immediate pre-UAT release interval on 17 November; A [recorded the window](https://github.com/auto4496/studytrack/pull/65#issuecomment-6943448535), and B merged the approved release before the first session. Tag publication did not push main or deploy again. Do not confuse that limited release handoff with permission to deploy during external UAT. If a blocker prevents accepting this baseline before testing starts, explicitly reconcile the version or reschedule; do not silently deploy a replacement during the freeze.
 
 | Gate | Current record / required action |
 | --- | --- |
-| Deployed application tag | NOT_SELECTED. After the actual approved release and checks, create a new tag on the exact tested main commit. Do not move/reuse the old Sprint 1 tag. |
-| Full source SHA | Record the actual deployed main merge SHA, not merely PR65's candidate SHA. |
-| Revision/image identity | Retain successful Actions run, migration execution, runtime/platform/tools digests, serving Cloud Run revision and traffic evidence for that SHA. |
+| Deployed application tag | `uat-lab6-2026-11-18`, remotely verified to peel to ef0de7f. It identifies the baseline, not a completed UAT result; do not retarget it for fixes. |
+| Full source SHA | `ef0de7f877dcabe8ec330eb2c0029d9cebf8ed40` (actual main merge, not candidate9f35093). |
+| Revision/image identity | Successful run44090861325, migration `studytrack-migrate-tnk6w`, revision `studytrack-gef0de7f877dc-r44090861325-1`; full digests and the pipeline verification are retained in the linked live report. A fresh session-start console proof is still pending. |
 | Public verification | `/api/health` currently reports status/service only. CPMS explicitly accepts Actions run plus a Cloud Run revision screenshot at each session start as an alternative to adding a commit field. Use that evidence route unless a separately reviewed version-endpoint change is deployed **before** freeze. UI asset hashes alone do not prove backend identity. |
 | Session-start screenshot | Include service/project/revision and serving traffic, captured for that actual session. Historical deployment logs alone are not a fresh runtime-state screenshot. Do not claim this has already been collected. |
 | Credentials | MGR/P1/P2 passwords sent and receipt confirmed privately by a human. No public issue/PR/PDF attachment or secret payload reads. |
-| Cases | B reviews [the four full cases](uat-cases.md); send a link pinned to the accepted documentation SHA. |
+| Cases | B approved and merged PR67. Send [the four accepted cases pinned to documentation commit200db98](https://github.com/auto4496/studytrack/blob/200db98bc942743afbc580efdd2f5a8d6fa69566/docs/labs/lab06/uat-cases.md); their document SHA is intentionally different from the application SHA. |
 | Reporting | `uat` label created by A on 17 November. Product members apply it to external reporters' issues; reporters do not need collaborator rights. |
 
-Tag clarification: `v0.1.0-sprint1` is annotated. Its tag-object SHA is `bd64d78b9d11fa61227d43d422239e2164d4a2f4`; the peeled application commit is `df08ec19cdeb0efcfbfbee92f3d385d87059528c`. Neither identifies deployed source005c20f. Do not confuse a tag-object SHA with the requested full application commit SHA.
+Tag clarification: `v0.1.0-sprint1` is annotated. Its tag-object SHA is `bd64d78b9d11fa61227d43d422239e2164d4a2f4`; the peeled application commit is `df08ec19cdeb0efcfbfbee92f3d385d87059528c`. Neither identifies current deployed source ef0de7f or the earlier005c20f. Do not confuse a tag-object SHA with the requested full application commit SHA.
 
 Formal StudyTrack acceptance is **F-01-F-04 only**. Both teams agreed to record incidental outside-scope security/data-loss/core-flow findings for triage. CPMS uses `UAT-CPMS-` titles in StudyTrack and retains records. Source inspection and internal automation are not external human acceptance.
 

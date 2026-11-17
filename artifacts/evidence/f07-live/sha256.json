@@ -1,0 +1,190 @@
+{
+  "scope": "Canonical staged Git-blob bytes; excludes this manifest. Original captures copied without image editing.",
+  "files": [
+    {
+      "path": "artifacts/evidence/f07-live/01-new-goal-no-schedule.jpg",
+      "bytes": 169095,
+      "sha256": "1b29fd3044986e04349df1e091486caec913767d4fcdff5a9597e80f446f2d2c"
+    },
+    {
+      "path": "artifacts/evidence/f07-live/01-new-goal-no-schedule.txt",
+      "bytes": 10687,
+      "sha256": "182d49b6a07121be0738fd13872b0763a7a98813d16332981a6066f4e4db9648"
+    },
+    {
+      "path": "artifacts/evidence/f07-live/02-invalid-reminder-rejected.jpg",
+      "bytes": 184822,
+      "sha256": "99ddfb3cc5af604c68023211c5d772a051c3dfe45b34618f8f4b9b81558c5cda"
+    },
+    {
+      "path": "artifacts/evidence/f07-live/02-invalid-reminder-rejected.txt",
+      "bytes": 11660,
+      "sha256": "28bcac8e5917cfdd2c1290128c417c13b55fa5669cd62e74d2515961918fc603"
+    },
+    {
+      "path": "artifacts/evidence/f07-live/03-invalid-reload-original-schedule.txt",
+      "bytes": 11495,
+      "sha256": "ef5bb27408b71961a045ce931a0b2f248cd0bb5ef670082d41fed5d8c2af72cd"
+    },
+    {
+      "path": "artifacts/evidence/f07-live/04-valid-two-day-due-schedule.jpg",
+      "bytes": 174765,
+      "sha256": "0b17c53bac62fad3a6a9cc86cba1f60d8545520858d84f114216502ff989405c"
+    },
+    {
+      "path": "artifacts/evidence/f07-live/04-valid-two-day-due-schedule.txt",
+      "bytes": 11599,
+      "sha256": "6df4987f0edfed8d5645d725309febcd21e72f240c954f23268c844a49940807"
+    },
+    {
+      "path": "artifacts/evidence/f07-live/05-valid-schedule-reloaded.txt",
+      "bytes": 11495,
+      "sha256": "372ff75bfdf930ae07eaf91e91bb905282070ad717fb2e4b6108e4d531b1f2f5"
+    },
+    {
+      "path": "artifacts/evidence/f07-live/06-partial-entry-logged-66-67.jpg",
+      "bytes": 176610,
+      "sha256": "274c715b0b11437e555de1e6ab462891717718e998d4a78d5f10b71a99614ec9"
+    },
+    {
+      "path": "artifacts/evidence/f07-live/06-partial-entry-logged-66-67.txt",
+      "bytes": 11448,
+      "sha256": "add0ba4f23488259a41a500919a5675dc8a7a70a56151624f04d39010723cf7b"
+    },
+    {
+      "path": "artifacts/evidence/f07-live/07-reminder-disabled-entry-preserved.txt",
+      "bytes": 10829,
+      "sha256": "11e1dc688495c8e651f004ca6b21bccb436bef4ad88b3ad7705c66fafd14cf06"
+    },
+    {
+      "path": "artifacts/evidence/f07-live/08-before-account-switch.jpg",
+      "bytes": 177609,
+      "sha256": "550fde4611c84c29c6777c2c99d13978e08872285110854c95055b910b443643"
+    },
+    {
+      "path": "artifacts/evidence/f07-live/08-before-account-switch.txt",
+      "bytes": 11554,
+      "sha256": "33f874a715ccbf40459745d0b68567bd15e2a4388740fbcead0ef8a3503de0d2"
+    },
+    {
+      "path": "artifacts/evidence/f07-live/09-signed-out-private-url-redirect.txt",
+      "bytes": 1806,
+      "sha256": "4d26802f891cd8f9324b6b38456266263040cffdb07b775af78a7867f53248f5"
+    },
+    {
+      "path": "artifacts/evidence/f07-live/10-participant2-list-no-owner-goal.txt",
+      "bytes": 3132,
+      "sha256": "6289c6ec979e74ca71d8c3b1f30455b1dd5ddebbc2f013dd6d2ef1a6f6e59a3e"
+    },
+    {
+      "path": "artifacts/evidence/f07-live/11-participant2-foreign-goal-denied.jpg",
+      "bytes": 15962,
+      "sha256": "043e01933fcede571e037a7f3d142dda66e182ff30fed53f4ce773989c9e81c4"
+    },
+    {
+      "path": "artifacts/evidence/f07-live/11-participant2-foreign-goal-denied.txt",
+      "bytes": 1588,
+      "sha256": "3f0b828107c1c4648de0de676857a6901e1df15acb9b29cb40c1c53c0ad727b4"
+    },
+    {
+      "path": "artifacts/evidence/f07-live/12-participant2-schedule-api-denied.jpg",
+      "bytes": 12606,
+      "sha256": "34f948af49b279481016705545c601ca273e7143b55b84ec404865b3c4924d80"
+    },
+    {
+      "path": "artifacts/evidence/f07-live/12-participant2-schedule-api-denied.json",
+      "bytes": 184,
+      "sha256": "3d975b51a4a94b08a1025170bc8bbdb9efff041d8cd303a475e3a20556878626"
+    },
+    {
+      "path": "artifacts/evidence/f07-live/13-participant2-missing-goal-same-message.txt",
+      "bytes": 1588,
+      "sha256": "b2239ee95a277ee6bc09a083e961f7e18f1662f1338864073a78bccdff34dba0"
+    },
+    {
+      "path": "artifacts/evidence/f07-live/14-manager-ui-role-denied.jpg",
+      "bytes": 14535,
+      "sha256": "a5ebf034ef4e207d68a04f1f1586c684535f4f531ca9df2e30d62f13df1f7789"
+    },
+    {
+      "path": "artifacts/evidence/f07-live/14-manager-ui-role-denied.txt",
+      "bytes": 1389,
+      "sha256": "0a69ac62bd9fb15bdf98463ee7834dde7f3b0f3afcbfbde5a71e0bfa368dbe73"
+    },
+    {
+      "path": "artifacts/evidence/f07-live/15-manager-schedule-api-forbidden.jpg",
+      "bytes": 12967,
+      "sha256": "3d6131aa1af73d31002cd88cfebce53ab2264372e5f3b9d69037c4827846e41a"
+    },
+    {
+      "path": "artifacts/evidence/f07-live/15-manager-schedule-api-forbidden.json",
+      "bytes": 211,
+      "sha256": "716a0faf351f1d97f5e50b58f6c86b098fef20b38ae40539f58774ac4afba503"
+    },
+    {
+      "path": "artifacts/evidence/f07-live/16-owner-relogin-original-values.jpg",
+      "bytes": 174250,
+      "sha256": "b9ced18e93455d1dc66c5d80cba808f39ceb63a4931f7c34983ed51869465e9f"
+    },
+    {
+      "path": "artifacts/evidence/f07-live/16-owner-relogin-original-values.txt",
+      "bytes": 11353,
+      "sha256": "897c16e5f0f335f3358559e3cb30d6833ae08f63b098c4b98250ec0e3928c604"
+    },
+    {
+      "path": "artifacts/evidence/f07-live/17-owner-schedule-api-before-archive.json",
+      "bytes": 651,
+      "sha256": "20ceb5d0ccb045718f088ad6dc56286a8de2fa42d30423fd60782ef369dd2d0b"
+    },
+    {
+      "path": "artifacts/evidence/f07-live/18-owner-progress-api-before-archive.json",
+      "bytes": 257,
+      "sha256": "31b37a8b1f2e8bab86c89e38c2bf62abbf33b4a68f27ad8a1e8059af1bfd1fbd"
+    },
+    {
+      "path": "artifacts/evidence/f07-live/19-archived-read-only-entry-preserved.jpg",
+      "bytes": 168080,
+      "sha256": "0a7368e74c6e1d0355ee5b534d19a4334da3d72b53d32c3a324c2c3e7f942a10"
+    },
+    {
+      "path": "artifacts/evidence/f07-live/19-archived-read-only-entry-preserved.txt",
+      "bytes": 11002,
+      "sha256": "b3f978c794185808c3147d3d0c5e7e97457dd98d50661bb26f2ad59b5361b08a"
+    },
+    {
+      "path": "artifacts/evidence/f07-live/20-owner-schedule-api-after-archive.json",
+      "bytes": 658,
+      "sha256": "b36512cbb3657b3dc2b04844d7b278a7c8c9dde251c769836e0db37d2460e385"
+    },
+    {
+      "path": "artifacts/evidence/f07-live/21-owner-progress-api-after-archive.json",
+      "bytes": 257,
+      "sha256": "31b37a8b1f2e8bab86c89e38c2bf62abbf33b4a68f27ad8a1e8059af1bfd1fbd"
+    },
+    {
+      "path": "artifacts/evidence/f07-live/deploy-run.json",
+      "bytes": 8720,
+      "sha256": "d5ea01c96bd87ffcad2f4b7259f3a4ce3ba422cb248b79c508c6ef1a67e74674"
+    },
+    {
+      "path": "artifacts/evidence/f07-live/deployment-identity.json",
+      "bytes": 876,
+      "sha256": "f38c716eac7febe0bcf0366eabff4fa81a60d60d74f23b402d477522105ed955"
+    },
+    {
+      "path": "artifacts/evidence/f07-live/execution.json",
+      "bytes": 7000,
+      "sha256": "54915713f1f9dac5d383d40553e6ffa1bd2f22e947312b8c83fa5b01de8e4de4"
+    },
+    {
+      "path": "artifacts/evidence/f07-live/public-http.json",
+      "bytes": 713,
+      "sha256": "f5ada244fb2728e27c5847773bd51bc0c1644a15a89f0b1a2e1c22b1cc8f5f81"
+    },
+    {
+      "path": "artifacts/evidence/f07-live/uat-tag.json",
+      "bytes": 346,
+      "sha256": "9a050fc00f19d4db1252e6ec61debe2dffc5d48ab38a88db395c20f35c30bd1e"
+    }
+  ]
+}

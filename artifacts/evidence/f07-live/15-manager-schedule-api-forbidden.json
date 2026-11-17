@@ -1,0 +1,7 @@
+{
+  "error": {
+    "code": "FORBIDDEN",
+    "message": "บัญชีนี้ไม่มีสิทธิ์ทำรายการนี้",
+    "requestId": "f8a07f88-9c3b-455c-8aa2-5fabdeeb2cb8"
+  }
+}

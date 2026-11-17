@@ -1,0 +1,25 @@
+{
+  "checkedAt": "2026-11-17T23:20:23.2129182+07:00",
+  "kind": "Unauthenticated public HTTP checks; frontend asset hashes do not independently identify the backend",
+  "releasedSource": "ef0de7f877dcabe8ec330eb2c0029d9cebf8ed40",
+  "healthStatus": 200,
+  "health": {
+    "data": {
+      "status": "ok",
+      "service": "StudyTrack API"
+    }
+  },
+  "rootStatus": 200,
+  "assets": [
+    {
+      "path": "/assets/index-Xxphk9aV.js",
+      "sha256": "9c473eb87e68a49b5b11f94f8c81203574bd00ee83c79e1b984daec788df0a1b",
+      "bytes": 323611
+    },
+    {
+      "path": "/assets/index-CJStlViB.css",
+      "sha256": "d5457a75a748cd4accc97ef5bb73faaafb0ca9cafb5ae23ed3d4ae1a383fb7b8",
+      "bytes": 15579
+    }
+  ]
+}

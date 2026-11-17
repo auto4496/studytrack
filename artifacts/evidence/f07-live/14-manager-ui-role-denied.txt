@@ -1,0 +1,15 @@
+Browser tab: 1, Title: "StudyTrack — เป้าหมายการอ่านของคุณ", URL: "https://studytrack-981693883236.asia-southeast1.run.app/goals/573caf0d-3628-4fa8-931c-b53d3ab4ea7a".
+1 AXWebArea StudyTrack — เป้าหมายการอ่านของคุณ, URL: studytrack-981693883236.asia-southeast1.run.app/goals/573caf0d-3628-4fa8-931c-b53d3ab4ea7a
+	2 container root
+		3 container
+			4 link Description: StudyTrack A LITTLE, EVERY DAY, Value: studytrack-981693883236.asia-southeast1.run.app/
+			5 text พื้นที่ของคุณ
+			6 container เมนูหลัก
+				7 link Description: ▤ Activity Templates, Value: studytrack-981693883236.asia-southeast1.run.app/manager/templates
+			8 text ผ ผู้ดูแลกิจกรรม Program Manager
+			9 button ออกจากระบบ
+		10 container
+			11 text ติดตามการอ่านในแต่ละวัน บัญชีนี้ไม่มีสิทธิ์เปิดหน้านี้
+			12 link Description: กลับหน้าหลัก, Value: studytrack-981693883236.asia-southeast1.run.app/
+
+The focused UI element is 1 AXWebArea StudyTrack — เป้าหมายการอ่านของคุณ, URL: studytrack-981693883236.asia-southeast1.run.app/goals/573caf0d-3628-4fa8-931c-b53d3ab4ea7a

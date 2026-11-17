@@ -1,0 +1,11 @@
+{
+  "data": {
+    "goalId": "573caf0d-3628-4fa8-931c-b53d3ab4ea7a",
+    "date": "2026-11-17",
+    "actualMinutes": 20,
+    "targetMinutes": 30,
+    "progressPercent": 66.67,
+    "achieved": false,
+    "entryId": "89cbf607-f696-431b-9318-3c251b92c712"
+  }
+}
