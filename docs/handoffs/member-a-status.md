@@ -1,5 +1,11 @@
 # Member A handoff — baseline v0.1
 
+## F07 released / live evidence ready for B review - 17 November 2026
+
+B approved and merged PR62 and PR65. Main `ef0de7f877dcabe8ec330eb2c0029d9cebf8ed40` deployed successfully through run44090861325; `uat-lab6-2026-11-18` resolves to that exact application commit. A/Codex-assisted [live verification](../verification/f07-live.md) checks isolated schedule save/validation/reload, partial-entry LOGGED, reminder disable, fresh owner sign-in, foreign Participant/Manager denial and archive retention. The user entered all credentials; only a new retained test goal/entry/schedule was changed. B must review the actual evidence before Issue54 completion; no external UAT or Cloud restart/redeploy exercise is claimed.
+
+B also approved/merged PR67's four detailed UAT cases, and explicitly confirmed the18November20:00-22:00 session only. B's22November13:00-15:00 retest remains unconfirmed. [Coordination](../labs/lab06/coordination.md) records the actual runtime tag/SHA, fixed case permalink, required session-start runtime proof and private credential handoff. A leads CPMS testing; B retains StudyTrack handoff coordination/F06 live evidence/F08 implementation. Earlier checkpoints below retain their original writing-time status.
+
 ## F07 implementation candidate - 15 November 2026
 
 After B accepted PR55 and the user authorized implementation entry, A implemented [Issue54](https://github.com/auto4496/studytrack/issues/54) from accepted stagingf6a38bb. [Actual verification](../verification/f07.md) records259 API/unit (56 F07),66 real desktop/mobile browsers (16 F07),21 isolation checks, build and real API restart; populated additive migration preserves original synthetic data. Test-only poll refinement2/2 passes without product changes. New schema/API/GoalSchedulePanel follow the accepted contract; F04/F06 semantics/native evidence are preserved. B implementation review, protected staging integration and a separate release remain pending; keep Issue54 OPEN. A does not self-approve/deploy. F06's live evidence remains B's handoff and F08 remains B-owned. Earlier checkpoints below retain their writing-time status.

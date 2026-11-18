@@ -1,0 +1,56 @@
+{
+  "kind": "A/Codex-assisted live Cloud Run verification; not independent external UAT",
+  "observedDate": "2026-11-17",
+  "timeZone": "Asia/Bangkok",
+  "uiCaptureWindow": "23:14 through 23:26 ICT, as shown in the retained UI/API observations",
+  "sourceCommit": "ef0de7f877dcabe8ec330eb2c0029d9cebf8ed40",
+  "reviewedReleaseHead": "9f35093cb4664c6892731c774786dc94a3efd8f5",
+  "deployRun": 44090861325,
+  "servingRevisionRecordedByPipeline": "studytrack-gef0de7f877dc-r44090861325-1",
+  "uatTag": "uat-lab6-2026-11-18",
+  "fixture": {
+    "participant": "student1@studytrack.test",
+    "templateId": "22222222-2222-4222-8222-222222222222",
+    "templateTitle": "อ่านภาษาอังกฤษวันละนิด",
+    "templateUsage": "Existing shared catalog template was read, not modified; the new goal UUID isolates these internal checks. External UAT will use its separate prefixed templates.",
+    "goalId": "573caf0d-3628-4fa8-931c-b53d3ab4ea7a",
+    "entryId": "89cbf607-f696-431b-9318-3c251b92c712",
+    "startDate": "2026-11-17",
+    "entryDate": "2026-11-17",
+    "targetMinutes": 30,
+    "actualMinutes": 20,
+    "progressPercent": 66.67,
+    "achieved": false,
+    "finalGoalStatus": "ARCHIVED",
+    "retention": "New goal, entry and schedule retained; no reset, reseed or record deletion"
+  },
+  "observationGroups": [
+    {"id":"LIVE-F07-01","result":"PASS","observed":"New isolated goal starts without a saved schedule and with zero reading activity.","evidence":["01-new-goal-no-schedule.txt","01-new-goal-no-schedule.jpg"]},
+    {"id":"LIVE-F07-02","result":"PASS","observed":"A Tuesday/Wednesday schedule is persisted. Initial operator fill did not stick; the initial saved times were visibly the defaults 20:00/19:45, not the attempted test values.","evidence":["03-invalid-reload-original-schedule.txt"]},
+    {"id":"LIVE-F07-03","result":"PASS","observed":"After explicitly verifying the edited controls, reminder23:45 after reading23:30 is rejected with the literal time-order message. Reload restores the previously saved20:00/19:45 configuration.","evidence":["02-invalid-reminder-rejected.txt","02-invalid-reminder-rejected.jpg","03-invalid-reload-original-schedule.txt"]},
+    {"id":"LIVE-F07-04","result":"PASS","observed":"Tuesday23:30/23:00 and Wednesday20:00/19:45 save and survive refresh; server-as-of state is DUE on Tuesday evening. Saving a schedule does not create a reading entry.","evidence":["04-valid-two-day-due-schedule.txt","04-valid-two-day-due-schedule.jpg","05-valid-schedule-reloaded.txt"]},
+    {"id":"LIVE-F07-05","result":"PASS","observed":"A20-minute entry against target30 yields66.67%, achievedfalse and zero current/best streak. Schedule state changes to LOGGED even though the target is not achieved.","evidence":["06-partial-entry-logged-66-67.txt","06-partial-entry-logged-66-67.jpg","18-owner-progress-api-before-archive.json"]},
+    {"id":"LIVE-F07-06","result":"PASS","observed":"Saving reminderEnabledfalse shows the disabled state without changing20/30 progress. Re-enabling and restoring both reminder times returns LOGGED.","evidence":["07-reminder-disabled-entry-preserved.txt","08-before-account-switch.txt"]},
+    {"id":"LIVE-F07-07","result":"PASS","observed":"After logout, opening the private goal URL redirects to login without private contents.","evidence":["09-signed-out-private-url-redirect.txt"]},
+    {"id":"LIVE-F07-08","result":"PASS","observed":"Participant2 has no owner goal in its list; the foreign goal and a missing goal show the same inline not-found message. Direct navigation to the foreign schedule API renders a safe NOT_FOUND envelope with no schedule data.","evidence":["10-participant2-list-no-owner-goal.txt","11-participant2-foreign-goal-denied.txt","11-participant2-foreign-goal-denied.jpg","12-participant2-schedule-api-denied.json","13-participant2-missing-goal-same-message.txt"]},
+    {"id":"LIVE-F07-09","result":"PASS","observed":"Manager sees the role-guard message on the Participant goal route; direct schedule API navigation renders a safe FORBIDDEN envelope.","evidence":["14-manager-ui-role-denied.txt","14-manager-ui-role-denied.jpg","15-manager-schedule-api-forbidden.json"]},
+    {"id":"LIVE-F07-10","result":"PASS","observed":"After a fresh Participant1 sign-in, the original goal URL, both day/time pairs, enabled toggle and20/30/66.67% values are retained. Owner schedule JSON confirms LOGGED and the saved configuration.","evidence":["08-before-account-switch.txt","16-owner-relogin-original-values.txt","16-owner-relogin-original-values.jpg","17-owner-schedule-api-before-archive.json"]},
+    {"id":"LIVE-F07-11","result":"PASS","observed":"Archiving only the new test goal suppresses reminders and makes schedule controls read-only. Schedule configuration including createdAt/updatedAt is byte-equivalent after JSON serialization before/after archive; reading-entry identity and progress response are unchanged. Server state is GOAL_ARCHIVED.","evidence":["19-archived-read-only-entry-preserved.txt","19-archived-read-only-entry-preserved.jpg","17-owner-schedule-api-before-archive.json","20-owner-schedule-api-after-archive.json","18-owner-progress-api-before-archive.json","21-owner-progress-api-after-archive.json"]}
+  ],
+  "operatorNotes": [
+    "One batched time-input fill did not persist the intended draft values; saved defaults were re-observed before testing validation. Accessibility setValue plus an observed state check was then used for each time value. This was not reported as a product validation defect.",
+    "A locator checkbox uncheck returned an input error without changing visible state; the state was re-observed, then the accessibility checkbox action succeeded. No blind retry or duplicate save was used.",
+    "The user entered all three existing passwords manually. No password, session cookie or CSRF token was read/exported into this evidence."
+  ],
+  "limits": {
+    "rawAuthenticatedHttpStatus": "Not separately captured. Authenticated API evidence consists of the actually rendered response bodies; do not relabel their error codes as independently measured HTTP status observations.",
+    "cloudProcessRestartOrRedeployDuringThisCheck": "NOT_RUN; separate earlier engineering evidence retains its original source and date.",
+    "liveRaceExpiryAndClockBoundaryMatrix": "NOT_RUN; accepted API/unit/browser suites cover the wider matrix.",
+    "viewport": "Default in-app browser viewport only; no explicit1440x900 or390x844 live override. Hosted browser CI covers both configured projects.",
+    "fixedLab5Records": "Not targeted by any mutation. No independent cloud SQL byte-for-byte preservation audit was performed in this session.",
+    "sessionStartCloudRunConsoleScreenshot": "PENDING actual external session; pipeline revision/traffic verification is not a substitute for that screenshot.",
+    "externalStudyTrackUat": "NOT_RUN",
+    "cpmsFunctionalUat": "NOT_RUN",
+    "independentBLiveEvidenceReview": "PENDING"
+  }
+}

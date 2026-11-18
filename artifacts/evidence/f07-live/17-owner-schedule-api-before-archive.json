@@ -1,0 +1,29 @@
+{
+  "data": {
+    "goalId": "573caf0d-3628-4fa8-931c-b53d3ab4ea7a",
+    "timeZone": "Asia/Bangkok",
+    "config": {
+      "reminderEnabled": true,
+      "days": [
+        {
+          "weekday": 2,
+          "readingTime": "23:30",
+          "reminderTime": "23:00"
+        },
+        {
+          "weekday": 3,
+          "readingTime": "20:00",
+          "reminderTime": "19:45"
+        }
+      ],
+      "createdAt": "2026-11-17T16:15:48.753Z",
+      "updatedAt": "2026-11-17T16:18:51.395Z"
+    },
+    "evaluation": {
+      "evaluatedAt": "2026-11-17T16:24:57.893Z",
+      "date": "2026-11-17",
+      "weekday": 2,
+      "status": "LOGGED"
+    }
+  }
+}

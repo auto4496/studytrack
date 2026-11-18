@@ -1,0 +1,11 @@
+{
+  "DEPLOYED_IMAGE": "asia-southeast1-docker.pkg.dev/studytrack-cpe334/studytrack/studytrack@sha256:fb5903b755ad2d40964af4a08e4a748b38c0f86c69bff9b0f05bebf5388500eb",
+  "DEPLOYED_PLATFORM_IMAGE": "asia-southeast1-docker.pkg.dev/studytrack-cpe334/studytrack/studytrack@sha256:e3785a20ebbd03ac188c7e0208ad5d5593b7429bcb1399d22215ba9b27cfb906",
+  "DEPLOYED_REVISION": "studytrack-gef0de7f877dc-r44090861325-1",
+  "SERVICE_URL": "https://studytrack-981693883236.asia-southeast1.run.app",
+  "RELEASE_SOURCE_SHA": "ef0de7f877dcabe8ec330eb2c0029d9cebf8ed40",
+  "TOOLS_IMAGE": "asia-southeast1-docker.pkg.dev/studytrack-cpe334/studytrack/studytrack-tools@sha256:dbae337becfebbdf047b9530d98861e8125ab986186079d0eaf557e69c6dd208",
+  "MIGRATION_EXECUTION": "studytrack-migrate-tnk6w",
+  "WORKFLOW_SOURCE_SHA": "ef0de7f877dcabe8ec330eb2c0029d9cebf8ed40",
+  "RELEASE_ROLLBACK": "false"
+}

@@ -1,0 +1,25 @@
+Browser tab: 1, Title: "StudyTrack — เป้าหมายการอ่านของคุณ", URL: "https://studytrack-981693883236.asia-southeast1.run.app/login".
+1 AXWebArea StudyTrack — เป้าหมายการอ่านของคุณ, URL: studytrack-981693883236.asia-southeast1.run.app/login
+	2 container
+		3 link Description: StudyTrack A LITTLE, EVERY DAY, Value: studytrack-981693883236.asia-southeast1.run.app/
+		4 text MAKE ROOM TO GROW
+		5 heading ทุกหน้าที่อ่าน พาคุณไปข้างหน้า, Value: 1
+			6 text ทุกหน้าที่อ่าน
+			7 text พาคุณไปข้างหน้า
+		8 container
+			9 text ตั้งเป้าหมายเล็ก ๆ แล้วค่อย ๆ สร้าง
+			10 text ความสม่ำเสมอในแบบของคุณ
+		11 text YOUR PACE. YOUR PROGRESS.
+		12 text ยินดีต้อนรับกลับ
+		13 heading เริ่มต้นเวลาอ่านของคุณ, Value: 2
+			14 text เริ่มต้นเวลาอ่านของคุณ
+		15 text เข้าสู่ระบบเพื่อดูเป้าหมายและกิจกรรมส่วนตัว
+		16 container
+			17 text อีเมล
+			18 text field (settable) อีเมล
+			19 text รหัสผ่าน
+			20 text field (settable) รหัสผ่าน
+			21 button เข้าสู่ระบบ →
+		22 text ใช้บัญชีที่ผู้ดูแลจัดเตรียมให้
+
+The focused UI element is 1 AXWebArea StudyTrack — เป้าหมายการอ่านของคุณ, URL: studytrack-981693883236.asia-southeast1.run.app/login

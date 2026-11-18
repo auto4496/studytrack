@@ -1,0 +1,39 @@
+Browser tab: 1, Title: "StudyTrack — เป้าหมายการอ่านของคุณ", URL: "https://studytrack-981693883236.asia-southeast1.run.app/goals".
+1 AXWebArea StudyTrack — เป้าหมายการอ่านของคุณ, URL: studytrack-981693883236.asia-southeast1.run.app/goals
+	2 container root
+		3 container
+			4 link Description: StudyTrack A LITTLE, EVERY DAY, Value: studytrack-981693883236.asia-southeast1.run.app/
+			5 text พื้นที่ของคุณ
+			6 container เมนูหลัก
+				7 link Description: ◫ เป้าหมายการอ่าน, Value: studytrack-981693883236.asia-southeast1.run.app/goals
+				8 link Description: ▤ กิจกรรมการอ่าน, Value: studytrack-981693883236.asia-southeast1.run.app/templates
+			9 text น นักอ่านคนที่สอง นักศึกษา
+			10 button ออกจากระบบ
+		11 container
+			12 text ติดตามการอ่านในแต่ละวัน
+			13 text YOUR READING SPACE
+			14 heading เป้าหมายการอ่าน, Value: 1
+				15 text เป้าหมายการอ่าน
+			16 container
+				17 text สวัสดี  นักอ่านคนที่สอง  วันนี้อยากอ่านเรื่องอะไร?
+			18 link Description: ＋ ตั้งเป้าหมายใหม่, Value: studytrack-981693883236.asia-southeast1.run.app/goals/new
+			19 text ทีละนิด ทุกวัน
+			20 heading ให้เวลาสิ่งที่คุณอยากเรียนรู้, Value: 2
+				21 text ให้เวลาสิ่งที่คุณอยากเรียนรู้
+			22 container
+				23 text เลือกกิจกรรม กำหนดเวลาที่เหมาะกับคุณ
+				24 text แล้วเริ่มต้นจากเป้าหมายเล็ก ๆ
+			25 heading เป้าหมายของฉัน, Value: 2
+				26 text เป้าหมายของฉัน
+			27 text 0  เป้าหมาย สถานะเป้าหมาย
+			28 pop up button (collapsed, settable) Description: สถานะเป้าหมาย, Value: ทั้งหมด, Secondary Actions: Expand
+				29 menu
+					30 (selected) ทั้งหมด
+					31 Active
+					32 Archived
+			33 heading เป้าหมายแรกเริ่มต้นได้วันนี้, Value: 2
+				34 text เป้าหมายแรกเริ่มต้นได้วันนี้
+			35 text เลือกกิจกรรมที่สนใจ แล้วตั้งเวลาอ่านในแบบของคุณ
+			36 link Description: ตั้งเป้าหมายแรก, Value: studytrack-981693883236.asia-southeast1.run.app/goals/new
+
+The focused UI element is 1 AXWebArea StudyTrack — เป้าหมายการอ่านของคุณ, URL: studytrack-981693883236.asia-southeast1.run.app/goals
