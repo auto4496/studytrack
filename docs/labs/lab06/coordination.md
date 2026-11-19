@@ -6,6 +6,8 @@
 
 A completed CPMS's six required UI cases across 18-19 November. [Actual results and original evidence](partner-test-log.md) record six passes at source `b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c`. B's result review, final team decision, partner findings and independent fix retest remain pending. With no confirmed defect from these cases, the TA-controlled exercise remains an action under the course requirement. This checkpoint records A's observed participation. B's attendance confirmations below retain their original meaning.
 
+B approved and merged [PR68's F-07 live evidence](https://github.com/auto4496/studytrack/pull/68). The user confirmed the private password exchange and successfully signed into CPMS. A separately captured the StudyTrack Cloud Run revision `studytrack-gef0de7f877dc-r44090861325-1` serving 100% traffic on **19 November at 18:35 ICT**. That later capture is not proof of the runtime state at the 18 November session start. The dated preparation record below is retained as history; its pending wording does not override this checkpoint. External StudyTrack results and acceptance are not established by these internal updates.
+
 ## People and session status
 
 | Team | Member | Role in this exchange |
