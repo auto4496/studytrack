@@ -1,0 +1,119 @@
+- complementary:
+  - link "StudyTrack A LITTLE, EVERY DAY":
+    - /url: /
+    - generic: S
+    - text: StudyTrack
+    - generic: A LITTLE, EVERY DAY
+  - paragraph: พื้นที่ของคุณ
+  - navigation "เมนูหลัก":
+    - link "◫ เป้าหมายการอ่าน":
+      - /url: /goals
+      - text: ◫
+      - generic: เป้าหมายการอ่าน
+    - link "▤ กิจกรรมการอ่าน":
+      - /url: /templates
+      - text: ▤
+      - generic: กิจกรรมการอ่าน
+  - generic: น
+  - strong: นักอ่านคนที่หนึ่ง
+  - generic: นักศึกษา
+  - button "ออกจากระบบ": ↗
+- main:
+  - generic: ติดตามการอ่านในแต่ละวัน
+  - link "← เป้าหมายของฉัน":
+    - /url: /goals
+  - paragraph: ONE DAY AT A TIME
+  - heading "อ่านภาษาอังกฤษวันละนิด" [level=1]
+  - paragraph: เป้าหมายส่วนตัวของคุณ
+  - generic: Active
+  - paragraph: เป้าหมายรายวัน
+  - generic: 30นาที
+  - term: เริ่มต้น
+  - definition: 19 พ.ย. 2569
+  - term: เวลาอ่านขั้นต่ำ–สูงสุด
+  - definition: 1–1440 นาที
+  - term: หน่วยเวลา
+  - definition: นาที
+  - region "จัดการเป้าหมาย":
+    - heading "จัดการเป้าหมาย" [level=2]
+    - generic: เป้าหมายรายวันใหม่ (นาที)
+    - spinbutton "เป้าหมายรายวันใหม่ (นาที)"
+    - paragraph: มีผลวันถัดไป (20 พ.ย. 2569) ผลย้อนหลังคงเดิม การแก้ซ้ำจะแทนค่าที่รออยู่
+    - button "บันทึกเป้าหมายใหม่"
+    - button "หยุดติดตามเป้าหมาย"
+  - region "ตารางอ่านของคุณ":
+    - paragraph: MAKE TIME TO READ
+    - heading "ตารางอ่านของคุณ" [level=2]
+    - paragraph: ตั้งวันและเวลาอ่าน · เวลาไทย (Asia/Bangkok)
+    - button "อัปเดตสถานะตาราง" [disabled]
+    - strong: ยังไม่ได้ตั้งตารางอ่าน
+    - paragraph: สถานะจากตารางที่บันทึก ณ 19 พ.ย. 2569 · 19:50 น.
+    - paragraph: การเตือนแสดงในหน้านี้ระหว่างเปิดเว็บ บันทึกเวลาอ่านจริงแยกในส่วนบันทึกการอ่าน
+    - status: กำลังอัปเดตตารางอ่าน…
+    - group "เลือกวันอ่าน":
+      - generic: เลือกวันอ่าน
+      - checkbox "อ่านวันจันทร์"
+      - text: จันทร์
+      - checkbox "อ่านวันอังคาร"
+      - text: อังคาร
+      - checkbox "อ่านวันพุธ"
+      - text: พุธ
+      - checkbox "อ่านวันพฤหัสบดี" [checked]
+      - text: พฤหัสบดี
+      - checkbox "อ่านวันศุกร์"
+      - text: ศุกร์
+      - checkbox "อ่านวันเสาร์"
+      - text: เสาร์
+      - checkbox "อ่านวันอาทิตย์"
+      - text: อาทิตย์
+    - checkbox "เปิดการเตือนในแอป" [checked]
+    - text: เปิดการเตือนในแอป
+    - group "วันพฤหัสบดี":
+      - generic: วันพฤหัสบดี
+      - generic: เวลาอ่านวันพฤหัสบดี
+      - textbox "เวลาอ่านวันพฤหัสบดี": 20:00
+      - generic: เวลาเตือนวันพฤหัสบดี
+      - textbox "เวลาเตือนวันพฤหัสบดี": 19:45
+    - button "บันทึกตารางอ่าน"
+    - button "ยกเลิกการแก้ตาราง" [disabled]
+  - region "บันทึกการอ่าน":
+    - paragraph: EVERY MINUTE COUNTS
+    - heading "บันทึกการอ่าน" [level=2]
+    - paragraph: ติดตามเวลาที่ทำจริงในแต่ละวัน
+    - generic: วันที่บันทึก (เวลาไทย)
+    - textbox "วันที่บันทึก (เวลาไทย)": 2026-11-19
+    - paragraph: ผลการอ่านแสดงตามวันที่เลือก หากต้องการดูบันทึกย้อนหลัง ให้เลือกวันที่ที่บันทึกไว้
+    - status: บันทึกเวลาอ่านเรียบร้อยแล้ว
+    - paragraph: 19 พ.ย. 2569
+    - paragraph: 20 / 30 นาที
+    - strong: 66.67%
+    - generic: ยังไม่ครบเป้าหมาย
+    - progressbar "ความคืบหน้าการอ่าน"
+    - paragraph: บันทึกแล้ว 20 นาทีสำหรับวันที่เลือก
+  - region "ประวัติการอ่าน":
+    - paragraph: YOUR READING JOURNEY
+    - heading "ประวัติการอ่าน" [level=2]
+    - paragraph: เลือกเป้าหมายอื่นได้จากหน้าเป้าหมายของฉัน รวมเป้าหมายที่สิ้นสุดแล้ว
+    - button "รีเฟรชประวัติ"
+    - paragraph: ข้อมูล ณ 19 พ.ย. 2569 (เวลาไทย) · สถิติวันต่อเนื่องครอบคลุมทั้งเป้าหมาย ไม่เปลี่ยนตามช่วงที่กรอง
+    - generic: ประวัติตั้งแต่วันที่
+    - textbox "ประวัติตั้งแต่วันที่"
+    - generic: ประวัติถึงวันที่
+    - textbox "ประวัติถึงวันที่"
+    - button "ใช้ช่วงวันที่"
+    - button "ดูทุกวัน"
+    - heading "วันต่อเนื่องปัจจุบัน" [level=3]
+    - strong: 0 วัน
+    - paragraph: ยังไม่มีวันที่อ่านครบเป้าหมาย
+    - heading "วันต่อเนื่องดีที่สุด" [level=3]
+    - strong: 0 วัน
+    - paragraph: ยังไม่มีวันที่อ่านครบเป้าหมาย
+    - paragraph: อ่านครบเป้าหมายของวันนั้นจึงนับต่อเนื่อง วันที่ขาดหรือยังอ่านไม่ครบจะตัดช่วง
+    - status: พบ 1 รายการ · หน้า 1
+    - list:
+      - heading "19 พ.ย. 2569" [level=3]
+      - paragraph: 20 / 30 นาที · 66.67%
+      - generic: ยังไม่ครบเป้าหมาย
+      - button "แก้ไขเวลา 2026-11-19": แก้ไขเวลา
+    - button "ประวัติหน้าก่อน" [disabled]
+    - button "ประวัติหน้าถัดไป" [disabled]

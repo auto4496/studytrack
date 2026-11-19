@@ -1,0 +1,41 @@
+{
+  "data": {
+    "goalId": "921c9291-aae9-480e-b561-89a1ee18987b",
+    "evaluatedAt": "2026-11-19T12:51:09.649Z",
+    "today": "2026-11-19",
+    "eligibleRange": {
+      "from": "2026-11-19",
+      "to": "2026-11-19"
+    },
+    "filter": {
+      "from": "2026-11-19",
+      "to": "2026-11-19"
+    },
+    "entries": [
+      {
+        "id": "065945c1-9bff-4e4e-9f7f-d419597dd1de",
+        "goalId": "921c9291-aae9-480e-b561-89a1ee18987b",
+        "entryDate": "2026-11-19",
+        "minutes": 20,
+        "targetMinutes": 30,
+        "progressPercent": 66.67,
+        "achieved": false,
+        "createdAt": "2026-11-19T12:50:37.410Z",
+        "updatedAt": "2026-11-19T12:50:37.410Z"
+      }
+    ],
+    "pagination": {
+      "page": 1,
+      "pageSize": 20,
+      "total": 1
+    },
+    "streak": {
+      "current": 0,
+      "best": 0,
+      "currentStartDate": null,
+      "currentEndDate": null,
+      "bestStartDate": null,
+      "bestEndDate": null
+    }
+  }
+}

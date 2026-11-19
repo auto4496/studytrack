@@ -1,0 +1,12 @@
+{
+  "source": "005c20f1e732787ebb5396f947387350316f308f",
+  "deploymentRun": 43688319047,
+  "deploymentJob": 132734309972,
+  "conclusion": "success",
+  "revisionRecordedByPipeline": "studytrack-g005c20f1e732-r43688319047-1",
+  "migrationExecution": "studytrack-migrate-h29jd",
+  "runtimeIndexDigest": "sha256:eea39d459fdca8fdf56db5bb11dacda24e45a4de8714c718d2424bb88aa62db6",
+  "runtimePlatformDigest": "sha256:545ba6366cc5622b7e0b7a5142fbf8d162489a811475cdb6204bf95db8678b33",
+  "toolsDigest": "sha256:0386fb78f6048cdf0e55c1479587a5310fbbbaccc22d67f541d41f7817b1d571",
+  "observedInLogAtUtc": "2026-11-15T07:11:38Z"
+}

@@ -1,0 +1,23 @@
+https://studytrack-981693883236.asia-southeast1.run.app/login
+- main:
+  - link "StudyTrack A LITTLE, EVERY DAY":
+    - /url: /
+    - text: StudyTrack
+    - generic: A LITTLE, EVERY DAY
+  - paragraph: MAKE ROOM TO GROW
+  - heading "ทุกหน้าที่อ่าน พาคุณไปข้างหน้า" [level=1]:
+    - text: ทุกหน้าที่อ่าน
+    - text: พาคุณไปข้างหน้า
+  - paragraph:
+    - text: ตั้งเป้าหมายเล็ก ๆ แล้วค่อย ๆ สร้าง
+    - text: ความสม่ำเสมอในแบบของคุณ
+  - generic: YOUR PACE. YOUR PROGRESS.
+  - paragraph: ยินดีต้อนรับกลับ
+  - heading "เริ่มต้นเวลาอ่านของคุณ" [level=2]
+  - paragraph: เข้าสู่ระบบเพื่อดูเป้าหมายและกิจกรรมส่วนตัว
+  - generic: อีเมล
+  - textbox "อีเมล"
+  - generic: รหัสผ่าน
+  - textbox "รหัสผ่าน"
+  - button "เข้าสู่ระบบ →"
+  - paragraph: ใช้บัญชีที่ผู้ดูแลจัดเตรียมให้
