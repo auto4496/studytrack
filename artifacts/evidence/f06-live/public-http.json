@@ -1,0 +1,23 @@
+{
+  "observedAt": "2026-11-19T19:49:41.4738687+07:00",
+  "root": 200,
+  "healthHttp": 200,
+  "health": {
+    "data": {
+      "status": "ok",
+      "service": "StudyTrack API"
+    }
+  },
+  "assets": [
+    {
+      "path": "/assets/index-Xxphk9aV.js",
+      "sha256": "9c473eb87e68a49b5b11f94f8c81203574bd00ee83c79e1b984daec788df0a1b",
+      "matchesPrior": true
+    },
+    {
+      "path": "/assets/index-CJStlViB.css",
+      "sha256": "d5457a75a748cd4accc97ef5bb73faaafb0ca9cafb5ae23ed3d4ae1a383fb7b8",
+      "matchesPrior": true
+    }
+  ]
+}
