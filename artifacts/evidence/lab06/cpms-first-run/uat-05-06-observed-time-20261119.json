@@ -1,0 +1,10 @@
+{
+  "observedAt": "2026-11-19T16:12:03.982Z",
+  "timeZone": "Asia/Bangkok",
+  "account": "STU-A2",
+  "milestoneUrl": "https://cpms-2ww7lkzxja-as.a.run.app/milestones/7",
+  "comparedAgainst": "uat-05-05-two-feedback-entries.txt",
+  "submissionAndFeedbackMatch": true,
+  "window": "Closed",
+  "teamStatus": "Submitted"
+}

@@ -1,0 +1,16 @@
+Browser tab: 4, Title: "Course Project Management System", URL: "https://cpms-2ww7lkzxja-as.a.run.app/login".
+0 AXWebArea Course Project Management System, URL: cpms-2ww7lkzxja-as.a.run.app/login
+	1 container
+		2 heading Sign in, Value: 1
+			3 text Sign in
+		4 text Course Project Management System
+		5 container Release information
+			6 text Lab 5 deployment demo — release 2
+		12 text Email or password is incorrect
+		7 text Email
+		8 text field (settable) Email, Value: <redacted>
+		9 text Password
+		10 text field (settable) Password
+		11 button Sign in
+
+The focused UI element is 0 AXWebArea Course Project Management System, URL: cpms-2ww7lkzxja-as.a.run.app/login

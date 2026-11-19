@@ -1,0 +1,33 @@
+Browser tab: 2, Title: "Course Project Management System", URL: "https://cpms-2ww7lkzxja-as.a.run.app/milestones/6".
+1 AXWebArea Course Project Management System, URL: cpms-2ww7lkzxja-as.a.run.app/milestones/6
+	2 container root
+		3 container
+			4 text Course Project Management
+			5 container Main
+				6 link Description: My teams, Value: cpms-2ww7lkzxja-as.a.run.app/teams
+				7 link Description: Milestones, Value: cpms-2ww7lkzxja-as.a.run.app/milestones
+			8 text Demo Supervisor 1 ·  Supervisor
+			9 button Log out
+		10 container
+			11 link Description: Back to milestones, Value: cpms-2ww7lkzxja-as.a.run.app/milestones
+			12 heading UAT-ST-03 Validation, Value: 2
+				13 text UAT-ST-03 Validation
+			14 text Due 
+			15 text 19 Nov 2026, 18:00 (ICT)
+			16 text Window:  Open Team status:  Submitted
+			17 heading Submission, Value: 3
+				18 text Submission
+			19 heading Value: 4, UAT-ST-03 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+				20 text UAT-ST-03 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			21 link Description: https://example.com/uat-03, Value: example.com/uat-03
+			22 text Submitted by Demo Student 1 on 18 Nov 2026, 20:45 (ICT)
+			23 heading Feedback, Value: 3
+				24 text Feedback
+			25 text No feedback yet
+			26 container
+				27 text Feedback
+				28 text entry area (settable) Feedback, Value:    , ID: feedback-text
+				30 text Enter feedback (1–2000 characters).
+				29 button Add feedback
+
+The focused UI element is 29 button Add feedback

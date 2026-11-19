@@ -1,0 +1,33 @@
+Browser tab: 5, Title: "Course Project Management System", URL: "https://cpms-2ww7lkzxja-as.a.run.app/team".
+0 AXWebArea Course Project Management System, URL: cpms-2ww7lkzxja-as.a.run.app/team
+	1 container root
+		2 container
+			3 text Course Project Management
+			4 container Main
+				5 link Description: My team, Value: cpms-2ww7lkzxja-as.a.run.app/team
+				6 link Description: Milestones, Value: cpms-2ww7lkzxja-as.a.run.app/milestones
+			7 text Demo Student 3 ·  Student
+			8 button Log out
+		9 container
+			10 heading My team, Value: 2
+				11 text My team
+			12 heading Demo Team B, Value: 3
+				13 text Demo Team B
+			14 link Description: View team milestones, Value: cpms-2ww7lkzxja-as.a.run.app/teams/2/milestones
+			15 heading Members, Value: 4
+				16 text Members
+			17 content list
+				18 container
+					19 AXListMarker • 
+					20 text Demo Student 3
+				21 container
+					22 AXListMarker • 
+					23 text Demo Student 4
+			24 heading Assigned supervisors, Value: 4
+				25 text Assigned supervisors
+			26 content list
+				27 container
+					28 AXListMarker • 
+					29 text Demo Supervisor 2
+
+The focused UI element is 5 link Description: My team, URL: cpms-2ww7lkzxja-as.a.run.app/team

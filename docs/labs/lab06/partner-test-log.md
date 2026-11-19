@@ -1,64 +1,36 @@
-# A's CPMS UAT execution and retest log
+# StudyTrack's CPMS first-run UAT results
 
-**NOT_RUN.** Prepared 17 November 2026. This blank record is not evidence that any case, account or acceptance decision has passed. Complete actual step observations during the agreed session; preserve failures and blocked prerequisites. [Coordination](coordination.md).
+Phanuwit Butchari, 67070501070 / @auto4496, performed the walkthrough on 18 November 2026 and resumed the final persistence/team checks on 19 November. The user entered the supplied passwords manually. Codex assisted with browser actions, observations and evidence capture. All six required cases passed their recorded UI steps. Datakung's result review and the final team decision remain pending.
 
-## Session identity (fill when observed)
+## Release and execution identity
 
-| Field | Actual value |
+| Item | Recorded value |
 | --- | --- |
-| Session / tester full name(s) | NOT_RECORDED |
-| Started / finished, Asia/Bangkok | NOT_RECORDED |
-| Tested application | CPMS, <https://cpms-2ww7lkzxja-as.a.run.app> |
-| Expected tag / application SHA | `v0.3.0` / `b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c` |
-| Actual `/api/health` commit and capture time | NOT_RECORDED_FOR_SESSION |
-| Reported revision / independent runtime proof | Partner reports `cpms-00007-7r8`; session proof NOT_RECORDED |
-| Case document | [2f45da0ddab41ceb8471ac8903953f61d7d26acf](https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/2f45da0ddab41ceb8471ac8903953f61d7d26acf/docs/labs/lab06/uat-cases.md) |
-| Browser/version and real fixture suffix/dates | NOT_RECORDED |
-| Private credential receipt / account labels usable | NOT_CONFIRMED; do not enter passwords here |
-| Both teams' session/deployment freeze confirmation | NOT_RECORDED_FOR_SESSION |
+| Application and scope | [CPMS](https://cpms-2ww7lkzxja-as.a.run.app), Sprint 1 F-01 through F-06 |
+| Release | `v0.3.0`, full source `b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c` |
+| Version observations | Public health returned the expected full commit at the original session start, the 19 November continuation and completion. Partner reports revision `cpms-00007-7r8`. |
+| Fixed case specification | [Partner document at 2f45da0ddab41ceb8471ac8903953f61d7d26acf](https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/2f45da0ddab41ceb8471ac8903953f61d7d26acf/docs/labs/lab06/uat-cases.md) |
+| Per-step actual results | [Retained execution record](../../../artifacts/evidence/lab06/cpms-first-run/results.md) |
+| Completion version proof | [Actual health response](../../../artifacts/evidence/lab06/cpms-first-run/version-end-20261119.json) |
+| Original capture integrity | [Canonical evidence hashes](../../../artifacts/evidence/lab06/cpms-first-run/sha256.json) |
 
-If health differs from the expected application commit, stop and reconcile the release before executing. Do not classify a case as PASS because an internal CI run passed. Perform cases **01 -> 06** from the pinned partner document, without substituting a different product's steps or ACs.
+## Required case results
 
-## Results index
+The pinned case specification supplies the acceptance-criteria IDs, roles and expected results. The retained execution record gives actual inputs, messages and per-step evidence.
 
-| Partner case | Purpose / special dependency | Actual status | Evidence / defect / step log |
-| --- | --- | --- | --- |
-| UAT-01 | Milestone -> submission -> feedback; retain its Team A milestone URL for UAT-04 | NOT_RUN | NOT_RECORDED |
-| UAT-02 | Deadline boundary; create its own milestone, wait until at least one minute after due time before checking closed state | NOT_RUN | NOT_RECORDED |
-| UAT-03 | Input validation limits; separate milestone and exact 120-character title | NOT_RUN | NOT_RECORDED |
-| UAT-04 | Foreign team/role; reuse the milestone from UAT-01 | NOT_RUN | NOT_RECORDED |
-| UAT-05 | One submission/team and persistence; separate milestone; two independently signed-in tabs and at least five minutes after logout | NOT_RUN | NOT_RECORDED |
-| UAT-06 | Student/supervisor team views | NOT_RUN | NOT_RECORDED |
-
-Use fresh `UAT-ST-<case ID>` titles, adding `-r2` or a recorded fresh suffix for reruns. Keep the existing `C-04 cloud check` / `C-05 rollback check` data untouched. Retain all synthetic records. The CPMS accounts/roles and exact UI messages are in the pinned partner case document, not inferred from StudyTrack's UI.
-
-## Repeat this block for every case/step
-
-| Field | Observed record |
+| Case | Actual result |
 | --- | --- |
-| Case ID / step / cited ACs | NOT_RECORDED |
-| Tester / timestamp ICT | NOT_RECORDED |
-| Actual release SHA and account label | NOT_RECORDED |
-| Exact input / milestone URL / fixture date | NOT_RECORDED |
-| Expected result from the pinned case | NOT_RECORDED |
-| Actual visible result and relevant values | NOT_RECORDED |
-| Status: PASS / FAIL / BLOCKED | NOT_RUN |
-| Screenshot filename / safe HTTP evidence | NOT_RECORDED |
-| Defect URL and suggested severity if applicable | NOT_RECORDED |
+| UAT-01, normal journey | PASS. Supervisor created milestone 4, Student 1 submitted, Supervisor 1 added feedback, and Student 2 saw the shared result with no feedback form. [Student 2 evidence](../../../artifacts/evidence/lab06/cpms-first-run/uat-01-07-student2-sees-feedback.jpg). |
+| UAT-02, deadline | PASS. A past due time was rejected. Milestone 5 was open before 20:41 ICT on 18 November. At 20:42:13, 73 seconds after cutoff, the student saw Closed/Overdue with no submit form. Both role lists showed Overdue. [After cutoff](../../../artifacts/evidence/lab06/cpms-first-run/uat-02-04-student-after-deadline.jpg). |
+| UAT-03, validation | PASS. Empty login fields, invalid credentials, empty/121-character titles, malformed links and blank feedback were rejected. An exact 120-character title was accepted. [Boundary accepted](../../../artifacts/evidence/lab06/cpms-first-run/uat-03-04-title-120-accepted.jpg). |
+| UAT-04, role/ownership | PASS. Team B student/supervisor saw only Team B. Foreign/missing Team A milestones showed the same not-found message. The supervisor route rejected the student. Team A's original submission/feedback remained intact. [Supervisor B denial](../../../artifacts/evidence/lab06/cpms-first-run/uat-04-06-supervisor-b-milestone-denied.jpg). |
+| UAT-05, uniqueness/persistence | PASS. The stale second-student form was rejected with values preserved. Reload showed the first submission. All tabs logged out at 20:52:59 ICT on 18 November. Re-authentication at 23:12 ICT on 19 November retained the original submission/time and both ordered feedback entries. Logout/private-URL navigation returned to login. [Persistence](../../../artifacts/evidence/lab06/cpms-first-run/uat-05-06-student2-relogin-20261119.jpg). |
+| UAT-06, team views | PASS. Student 1 saw Team A's correct members/supervisor. Supervisor 1's My teams listed only Team A, and selecting it opened `/teams/1/milestones`. [Team list](../../../artifacts/evidence/lab06/cpms-first-run/uat-06-02-supervisor-team-list-20261119.jpg). |
 
-Do not store passwords, session values or unrelated users' private data in evidence. Report actual defects in <https://github.com/Nuggetkub/cpe334-course-project-management-system/issues>; the product team adds labels. No issue has been opened by this template.
+## Inputs, coverage and next acceptance steps
 
-## Fix retest and our independent decision
+Dedicated fixtures use the agreed `UAT-ST-` prefix. Milestones 4, 5, 6 and 7 are retained for normal/ownership, deadline, validation and persistence checks respectively. Original demo milestones 1 through 3 were retained. Exact title/link/date inputs and observed messages are in the execution record. The incorrect date value in the first UAT-01 attempt was re-observed and corrected before successful creation. Its cause remains unestablished.
 
-| Field | Actual record |
-| --- | --- |
-| Original defect / failing step / original release | NOT_RECORDED |
-| Agreed fix and fix-release tag/full SHA/revision | NOT_RECORDED |
-| Actual fix health commit at retest | NOT_RECORDED |
-| Named StudyTrack retester / ICT timestamp | NOT_RECORDED |
-| Original reproduction rerun / related regression observations | NOT_RUN |
-| Remaining defects and scope/limitations | NOT_RECORDED |
-| Independent StudyTrack acceptance decision / named signers | PENDING; no acceptance claimed |
-| Decision shared with CPMS's two named members | NOT_SENT |
+The persistence continuation happened after the fixture deadline. Window was Closed and Team status remained Submitted, while the saved title, link, author/time and both feedback entries matched. The actual wait exceeded 26 hours across the interruption, satisfying the specified minimum five minutes. The optional UAT-02 stale-form submission after cutoff remains unexecuted. The partner's case document assigns direct API role matrices and the unassigned-account case to separate automated coverage.
 
-Our developers' fix evidence does not substitute for the external team's retest of StudyTrack. If no real defect is found, follow the course/TA guidance rather than fabricate a finding or turn an out-of-scope feature request into an observed defect.
+No confirmed product defect was identified in these six cases. B must review the results and original evidence. Final team acceptance and independent fix retest remain pending. The course requires resolution and independent retest of an accepted defect. With no legitimate defect from this first run, request the TA-controlled exercise specified by the course handout. Preserve this first-run result while completing that exercise. [Joint coordination](coordination.md) and [Issue 66](https://github.com/auto4496/studytrack/issues/66) track remaining partner results, triage/fix/retest and report work.

@@ -2,6 +2,10 @@
 
 17 November 2026. This is a coordination record, not an executed UAT report. [StudyTrack cases](uat-cases.md), [A's CPMS execution log](partner-test-log.md). B retains responsibility for the StudyTrack product handoff; A leads partner-application testing. Both participate as testers/developers and review each other's work.
 
+## First-run execution checkpoint - 19 November 2026
+
+A completed CPMS's six required UI cases across 18-19 November. [Actual results and original evidence](partner-test-log.md) record six passes at source `b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c`. B's result review, final team decision, partner findings and independent fix retest remain pending. With no confirmed defect from these cases, the TA-controlled exercise remains an action under the course requirement. This checkpoint records A's observed participation. B's attendance confirmations below retain their original meaning.
+
 ## People and session status
 
 | Team | Member | Role in this exchange |
