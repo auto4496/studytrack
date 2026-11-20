@@ -1,0 +1,7 @@
+Browser tab: 8, Title: "cpms-2ww7lkzxja-as.a.run.app/api/health", URL: "https://cpms-2ww7lkzxja-as.a.run.app/api/health".
+1 AXWebArea cpms-2ww7lkzxja-as.a.run.app/api/health
+	2 text {"status":"ok","commit":"b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c"}
+	3 container
+		4 checkbox 0
+
+The focused UI element is 1 AXWebArea cpms-2ww7lkzxja-as.a.run.app/api/health

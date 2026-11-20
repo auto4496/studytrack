@@ -2,6 +2,12 @@
 
 Phanuwit Butchari, 67070501070 / @auto4496, performed the walkthrough on 18 November 2026 and resumed the final persistence/team checks on 19 November. The user entered the supplied passwords manually. Codex assisted with browser actions, observations and evidence capture. All six required cases passed their recorded UI steps. Datakung [approved and merged PR #70](https://github.com/auto4496/studytrack/pull/70#pullrequestreview-5990160290) on 20 November. That review also reports B's separate six-case PASS run with fresh milestones 8-11; B's local captures remain distinct from A's retained first-run directory. The final team decision remains pending.
 
+## Supplemental execution checkpoint — 21 November 2026
+
+A completed CPMS-X01 (6 steps), CPMS-X02 (9 steps) and CPMS-X03 (5 steps) on the same CPMS source `b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c`. The recorded UI steps passed; no confirmed product defect was found. [Actual results, retained inputs and evidence](../../../artifacts/evidence/lab06/cpms-supplement-2026-11-21/results.md) document the mixed-case-login observation limit, unobservable submission version, actual 120/121 and 2000/2001 boundaries, and the genuinely stale submit attempt after cutoff. X04 still requires an account and was not executed. All three supplemental cases in this run were performed by A with Codex assistance; the earlier suggested A/B split was not used. B's review of these new results is pending.
+
+PR #72's requested correction has been applied: X02 step 7 checks displayed submission fields rather than an invisible submission version. Feedback version remains in step 9. The coverage inventory below is the preparation-time assessment and is not retroactively promoted to 44 PASS criteria. Part D, independent final decisions and the report remain pending.
+
 ## Release and execution identity
 
 | Item | Recorded value |
@@ -31,7 +37,7 @@ The pinned case specification supplies the acceptance-criteria IDs, roles and ex
 
 Dedicated fixtures use the agreed `UAT-ST-` prefix. Milestones 4, 5, 6 and 7 are retained for normal/ownership, deadline, validation and persistence checks respectively. Original demo milestones 1 through 3 were retained. Exact title/link/date inputs and observed messages are in the execution record. The incorrect date value in the first UAT-01 attempt was re-observed and corrected before successful creation. Its cause remains unestablished.
 
-The persistence continuation happened after the fixture deadline. Window was Closed and Team status remained Submitted, while the saved title, link, author/time and both feedback entries matched. The actual wait exceeded 26 hours across the interruption, satisfying the specified minimum five minutes. The optional UAT-02 stale-form submission after cutoff remains unexecuted. The partner's case document assigns direct API role matrices and the unassigned-account case to separate automated coverage.
+The persistence continuation happened after the fixture deadline. Window was Closed and Team status remained Submitted, while the saved title, link, author/time and both feedback entries matched. The actual wait exceeded 26 hours across the interruption, satisfying the specified minimum five minutes. The optional UAT-02 stale-form submission was not executed in the first run; the separate 21 November CPMS-X03 record covers a new stale-form attempt. The partner's case document assigns direct API role matrices and the unassigned-account case to separate automated coverage.
 
 No confirmed product defect was identified in these six cases, and B's first-run evidence review is complete. The instructor clarification supplied by the user on 20 November asks the UAT team to assess requirements/AC coverage and add useful cases before concluding that thorough testing found no defect. If expanded testing still finds none, follow the announcement's standardized controlled-defect procedure; waiting for the TA to select a specific defect is superseded. No deliberate regression has been introduced by this coverage preparation. Final acceptance and the applicable Part D fix/retest work remain pending. [Joint coordination](coordination.md) and [Issue 66](https://github.com/auto4496/studytrack/issues/66) track this work.
 
@@ -50,7 +56,7 @@ The first run touches every Sprint 1 feature and its 12 SRS functional requireme
 | F-05, FR-13/FR-14 | Submission, sharing, stale duplicate rejection and persistence | Description upper limit and a genuinely stale form submitted after the deadline. The original optional stale-form action was not executed. | CPMS-X02/CPMS-X03 |
 | F-06, FR-18/FR-19 | Feedback creation, blank rejection, ordered entries with author/time/version and persistence | Feedback 2000/2001 characters. The full feedback endpoint role matrix and failed-save recovery remain separate checks. | CPMS-X02; CPMS-X01 for UI privacy |
 
-All cases below are preparation only. CPMS-X01, CPMS-X02 and CPMS-X03 are **NOT_RUN**. CPMS-X04 **REQUIRES_ACCOUNT**; this is not an executed BLOCKED result. Record the actual tester at execution. A can lead X01/X03 and B can lead X02, subject to B confirming the split; no new execution is attributed to either person yet.
+At preparation on 20 November these cases were unexecuted and an A/B split was proposed. The 21 November checkpoint above supersedes that runtime status: A performed X01–X03 with Codex assistance. X04 still **REQUIRES_ACCOUNT** and is not an executed BLOCKED result. The structured coverage-review JSON retains its preparation-time classifications.
 
 ### Shared execution rules
 
@@ -74,7 +80,7 @@ ACs: AC-01.1/01.7/01.8, AC-02.4, AC-05.5 and AC-06.4 (UI observations only). Acc
 | 5 | In that tab sign in as STU-B1 using its private password. Return to the same private URL via Back/history; also open `/milestones/999999`. | Both settled pages show `Milestone not found.` with no Team A title, submission or feedback. |
 | 6 | Log out B1, sign in A1 and reopen milestone 4. | The original authorized values match step 3. Record any mismatch; do not repair or recreate the fixture. |
 
-Outcome: NOT_RUN. Actual tester/time/evidence: not recorded.
+Outcome on 21 November: PASS for the six recorded UI steps, performed by A with Codex assistance. Mixed-case login was observed; outer-space/server normalization was not established. See the supplemental execution record above.
 
 ### CPMS-X02: whitespace and upper text boundaries
 
@@ -88,11 +94,11 @@ ACs: AC-04.1/04.2, AC-05.1/05.2 and AC-06.1/06.2. Accounts: SUP-A, STU-A1. New f
 | 4 | Keep the exact 120-character title and set Description = 2000 ASCII `D` characters. Create once and record M-X02's URL. | `Milestone created.`; the saved fixture has the correct title/description and future due time, Open/Not submitted. Retain full accessible text when visual clipping prevents a full-text comparison. |
 | 5 | STU-A1 opens M-X02. Submission title = three spaces, description = empty, link = `https://example.com/uat-st-x02`; submit if spaces remain. | `Enter a title (1–120 characters).` or native prevention; fresh read still shows `Not submitted yet`. |
 | 6 | Title = `UAT-ST-X02 work`, Description = 2001 ASCII `D` characters, same valid link. Apply the shared over-limit rule. | Over-limit description is rejected or prevented. Fresh read remains unsubmitted; do not claim a server rejection when the control capped the input. |
-| 7 | Description = exactly 2000 ASCII `D` characters; keep the valid title/link. Submit once and reload. | One submission is shown with matching title/link, full text where inspectable, author/time and version 1. |
+| 7 | Description = exactly 2000 ASCII `D` characters; keep the valid title/link. Submit once and reload. | One submission is shown with matching title/link, full text where inspectable and author/time. The page does not display the submission version; that API/data assertion is outside this UI case. |
 | 8 | SUP-A opens M-X02 and pastes Feedback = 2001 ASCII `F` characters. Apply the shared over-limit rule. | `Enter feedback (1–2000 characters).` or native prevention. Reload still shows `No feedback yet`. |
 | 9 | Set Feedback = exactly 2000 ASCII `F` characters; Add feedback once, then reload as STU-A1. | One feedback entry is retained with the full text, correct Supervisor author/time and version 1. The Student sees no feedback form. |
 
-Outcome: NOT_RUN. Actual tester/time/fixture URL/evidence: not recorded.
+Outcome on 21 November: PASS for nine recorded UI steps, performed by A with Codex assistance using milestone 12. Submission version was not displayed or claimed; feedback version 1 was observed. See the supplemental execution record above.
 
 ### CPMS-X03: stale submit form after the deadline
 
@@ -106,7 +112,7 @@ ACs: AC-04.4, AC-05.3/05.6/05.8. Accounts: SUP-A in one tab, STU-A1 in another. 
 | 4 | In the stale Student tab select Submit once. | `The deadline for this milestone has passed.`; the draft values remain available. If the UI has already removed/disabled the form, record UI prevention and leave the stale-write assertion unexecuted; do not bypass the UI or invent a server rejection. |
 | 5 | Reload as the Student and recheck the Supervisor's list. | Closed/Overdue, `Not submitted yet`, no saved submission and no submit form. A successful late save would be a genuine finding to report, not an intended exercise result. |
 
-Outcome: NOT_RUN. Actual tester/time/due time/evidence: not recorded. This improves the original optional action's coverage; it does not establish the exact server `now == dueAt` boundary or a raw HTTP 409 without separate evidence.
+Outcome on 21 November: PASS for five recorded UI steps, performed by A with Codex assistance using milestone 13. The stale valid draft was submitted more than one minute after cutoff and rejected with its values retained; reload showed no submission. See the supplemental execution record above. This does not establish the exact server `now == dueAt` boundary or a raw HTTP 409.
 
 ### CPMS-X04: unassigned Student scope, conditional on an account handoff
 

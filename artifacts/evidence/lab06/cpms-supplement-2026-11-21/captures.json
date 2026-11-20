@@ -1,0 +1,360 @@
+{
+  "kind": "Original local capture write times and hashes before repository copy",
+  "timezone": "UTC",
+  "files": [
+    {
+      "path": "execution.json",
+      "bytes": 11441,
+      "sha256": "b7ea5c8f050a11755722577b7a583f5aeb6f18515feea02d66dd59cc703b6959",
+      "localFileWrittenAtUtc": "2026-11-20T18:58:05.353Z"
+    },
+    {
+      "path": "prepared-x02-inputs.json",
+      "bytes": 8538,
+      "sha256": "b7811bb289a3a768f20b6094e296266bb33dfe4ac90b49590530e1820d15e402",
+      "localFileWrittenAtUtc": "2026-11-20T18:43:55.060Z"
+    },
+    {
+      "path": "version-before-x02.txt",
+      "bytes": 356,
+      "sha256": "1a39cf7180c69af3e7b22ee43ca61ddfa9983d35c3a4f3c6e1ccdfceda08400f",
+      "localFileWrittenAtUtc": "2026-11-20T18:41:11.062Z"
+    },
+    {
+      "path": "version-end.txt",
+      "bytes": 356,
+      "sha256": "03e549488bacc4fc13ea226392de44b054c7f8ae4a0239e26933935ff43cbafd",
+      "localFileWrittenAtUtc": "2026-11-20T18:57:02.607Z"
+    },
+    {
+      "path": "version-start.txt",
+      "bytes": 356,
+      "sha256": "a681583bdaff78a7667b6d92894690181e771d22c35413ad4bbf2ce2745544b6",
+      "localFileWrittenAtUtc": "2026-11-20T18:09:44.522Z"
+    },
+    {
+      "path": "x01-01-malformed-email.jpg",
+      "bytes": 22947,
+      "sha256": "92ad21f4bf634815953df370e1637adbeb1fb85034eee5cae86f67cfd09a7bf4",
+      "localFileWrittenAtUtc": "2026-11-20T18:09:44.664Z"
+    },
+    {
+      "path": "x01-01-malformed-email.txt",
+      "bytes": 680,
+      "sha256": "5e4a38e8e1e5d6eb54515bfaffdb2ccf0f871b00c142d8273b854764bbab9e02",
+      "localFileWrittenAtUtc": "2026-11-20T18:09:44.570Z"
+    },
+    {
+      "path": "x01-02-prepared-login.jpg",
+      "bytes": 24369,
+      "sha256": "f55fb60b0740c572fdd01a7d01d3b5f9e72381ba9af155c377774da2c4b9d15e",
+      "localFileWrittenAtUtc": "2026-11-20T18:11:11.488Z"
+    },
+    {
+      "path": "x01-02-prepared-login.txt",
+      "bytes": 693,
+      "sha256": "69cae7684f3f94debb7955924930a35e7c09a0ee915d4fe65daf93b016c55b16",
+      "localFileWrittenAtUtc": "2026-11-20T18:11:11.515Z"
+    },
+    {
+      "path": "x01-03-owner-before.jpg",
+      "bytes": 34611,
+      "sha256": "4f27dad19be9881ba79c5a096ab986f10904e48bdfff03147622f26b1bdfe5d4",
+      "localFileWrittenAtUtc": "2026-11-20T18:20:30.202Z"
+    },
+    {
+      "path": "x01-03-owner-before.txt",
+      "bytes": 1401,
+      "sha256": "30c9f2aa7555eff17050b4f38c538a242c74ecf7303721c28c28cc916b842fb9",
+      "localFileWrittenAtUtc": "2026-11-20T18:20:30.139Z"
+    },
+    {
+      "path": "x01-04-signed-out-private-url.jpg",
+      "bytes": 15837,
+      "sha256": "6a8b021b126d37ad2affc2c3e7f667ada741a5fae407704c6aa99bcb03aa535c",
+      "localFileWrittenAtUtc": "2026-11-20T18:21:33.828Z"
+    },
+    {
+      "path": "x01-04-signed-out-private-url.txt",
+      "bytes": 613,
+      "sha256": "fa0152cc3918797cce6eea43bb5d3b8288727b3c0da1f969c1fb49821ba86efc",
+      "localFileWrittenAtUtc": "2026-11-20T18:21:33.798Z"
+    },
+    {
+      "path": "x01-05-team-b-back.jpg",
+      "bytes": 13615,
+      "sha256": "f253f34adfbd2ed7974e64d1b56504bafe29f049598f727d6f43eaa4320ff660",
+      "localFileWrittenAtUtc": "2026-11-20T18:37:48.149Z"
+    },
+    {
+      "path": "x01-05-team-b-back.txt",
+      "bytes": 769,
+      "sha256": "dd71a99beb1e0b8b49011bf8e813a4dd1a558ed5a11b39970a472000a3171782",
+      "localFileWrittenAtUtc": "2026-11-20T18:37:48.113Z"
+    },
+    {
+      "path": "x01-05-team-b-foreign.jpg",
+      "bytes": 13615,
+      "sha256": "f253f34adfbd2ed7974e64d1b56504bafe29f049598f727d6f43eaa4320ff660",
+      "localFileWrittenAtUtc": "2026-11-20T18:37:01.183Z"
+    },
+    {
+      "path": "x01-05-team-b-foreign.txt",
+      "bytes": 769,
+      "sha256": "dd71a99beb1e0b8b49011bf8e813a4dd1a558ed5a11b39970a472000a3171782",
+      "localFileWrittenAtUtc": "2026-11-20T18:37:01.128Z"
+    },
+    {
+      "path": "x01-05-team-b-missing.jpg",
+      "bytes": 13615,
+      "sha256": "f253f34adfbd2ed7974e64d1b56504bafe29f049598f727d6f43eaa4320ff660",
+      "localFileWrittenAtUtc": "2026-11-20T18:37:11.016Z"
+    },
+    {
+      "path": "x01-05-team-b-missing.txt",
+      "bytes": 784,
+      "sha256": "03ae7db4770539947b762827080beb0bc3231e0784bd3f23ffd895b477c8a71e",
+      "localFileWrittenAtUtc": "2026-11-20T18:37:10.963Z"
+    },
+    {
+      "path": "x01-06-owner-restored.jpg",
+      "bytes": 34611,
+      "sha256": "4f27dad19be9881ba79c5a096ab986f10904e48bdfff03147622f26b1bdfe5d4",
+      "localFileWrittenAtUtc": "2026-11-20T18:40:07.262Z"
+    },
+    {
+      "path": "x01-06-owner-restored.txt",
+      "bytes": 1399,
+      "sha256": "3b280c82d428f2b3679e256da73fc18b40b42548bc352e07496c9cfd59721133",
+      "localFileWrittenAtUtc": "2026-11-20T18:40:07.230Z"
+    },
+    {
+      "path": "x02-00-before-list.txt",
+      "bytes": 4909,
+      "sha256": "da249d49ee69a936e2f9263675413681733b70c37603cd9ed3b4b9006fcaccba",
+      "localFileWrittenAtUtc": "2026-11-20T18:43:55.060Z"
+    },
+    {
+      "path": "x02-01-whitespace-title.jpg",
+      "bytes": 30523,
+      "sha256": "14850b3f9e28b34066a97f166f8c6705cacef8148ad312ba339ec82247ce42aa",
+      "localFileWrittenAtUtc": "2026-11-20T18:47:41.501Z"
+    },
+    {
+      "path": "x02-01-whitespace-title.txt",
+      "bytes": 4971,
+      "sha256": "ff21da9f31d40b1d4de000c4db014092f965b2f53f71dff9da67dfaf7ec7626f",
+      "localFileWrittenAtUtc": "2026-11-20T18:47:41.463Z"
+    },
+    {
+      "path": "x02-02-title121.jpg",
+      "bytes": 35706,
+      "sha256": "67d44641ee4745bcfddbd26da43b265be6410470ba0490b0df9659ed38107bbf",
+      "localFileWrittenAtUtc": "2026-11-20T18:47:49.438Z"
+    },
+    {
+      "path": "x02-02-title121.txt",
+      "bytes": 5089,
+      "sha256": "43daf78bd1ee72076e1b0f946f95bf9b282593e93e116a2f26d83d4b65fece77",
+      "localFileWrittenAtUtc": "2026-11-20T18:47:49.408Z"
+    },
+    {
+      "path": "x02-03-description2001.jpg",
+      "bytes": 63074,
+      "sha256": "156a62a9473edc0d47e743bab918721d997d78339a869abfc84df9e527c2feef",
+      "localFileWrittenAtUtc": "2026-11-20T18:47:58.091Z"
+    },
+    {
+      "path": "x02-03-description2001.txt",
+      "bytes": 7082,
+      "sha256": "41130643c2c0170c9a75a0bd735de35f15e8dd7c97d735c3a1b7eb750eb6c8e4",
+      "localFileWrittenAtUtc": "2026-11-20T18:47:58.058Z"
+    },
+    {
+      "path": "x02-03-fresh-no-invalid-records.txt",
+      "bytes": 4925,
+      "sha256": "9d1df59c58d2ec3ce86b1e015b84c65a2730bd4057fe2265460141c566f29074",
+      "localFileWrittenAtUtc": "2026-11-20T18:48:09.744Z"
+    },
+    {
+      "path": "x02-04-created-list.txt",
+      "bytes": 7437,
+      "sha256": "0e9db2fd0cc1747991d8086e6657d4a5e97eaf6e26ab82335d986b10ae103c80",
+      "localFileWrittenAtUtc": "2026-11-20T18:48:26.346Z"
+    },
+    {
+      "path": "x02-04-saved-boundaries.jpg",
+      "bytes": 121670,
+      "sha256": "7b75d9a12773e5f02dbad40da00c51e638b3883f31cbf201e46af836cc4914d3",
+      "localFileWrittenAtUtc": "2026-11-20T18:48:37.990Z"
+    },
+    {
+      "path": "x02-04-saved-boundaries.txt",
+      "bytes": 3219,
+      "sha256": "743b0cd8c49f3e665b41d54fe0be275e4afb551a80a991ea53bb7a54549316e1",
+      "localFileWrittenAtUtc": "2026-11-20T18:48:37.947Z"
+    },
+    {
+      "path": "x02-05-submission-whitespace.jpg",
+      "bytes": 26329,
+      "sha256": "8a4cc8cc70daa15f7ad28d1220aaae0a095279e9b04f3dec7d898c31f955c93f",
+      "localFileWrittenAtUtc": "2026-11-20T18:49:00.253Z"
+    },
+    {
+      "path": "x02-05-submission-whitespace.txt",
+      "bytes": 3597,
+      "sha256": "af34227ef3d48374772359202a67587a9433830520dec647e5132febb9999651",
+      "localFileWrittenAtUtc": "2026-11-20T18:49:00.223Z"
+    },
+    {
+      "path": "x02-06-fresh-no-submission.txt",
+      "bytes": 3575,
+      "sha256": "97658286fe61fabeca57ac24c20ce86b0d30b9193577b57c9661d6e1a00c5ed8",
+      "localFileWrittenAtUtc": "2026-11-20T18:49:08.162Z"
+    },
+    {
+      "path": "x02-06-submission-description2001.jpg",
+      "bytes": 54902,
+      "sha256": "09aefca91c6fcabb6df5311abc8bf40a790a42e0f1b551e3165e2dcedc25423d",
+      "localFileWrittenAtUtc": "2026-11-20T18:49:00.704Z"
+    },
+    {
+      "path": "x02-06-submission-description2001.txt",
+      "bytes": 5628,
+      "sha256": "2293d7350bc6a8bfef74a952b9df93b04cb690c4ec8a2766328ebe547aec559b",
+      "localFileWrittenAtUtc": "2026-11-20T18:49:00.669Z"
+    },
+    {
+      "path": "x02-07-saved-submission.jpg",
+      "bytes": 121095,
+      "sha256": "fd322364da808f3a3829cfcf6b2cd28d2cc874f33ec319c3b0b6261b2269630c",
+      "localFileWrittenAtUtc": "2026-11-20T18:49:28.592Z"
+    },
+    {
+      "path": "x02-07-saved-submission.txt",
+      "bytes": 5492,
+      "sha256": "93674bf85b70961be98ee43f8dea053839677da8eee2cf4e101538ae76b7f37c",
+      "localFileWrittenAtUtc": "2026-11-20T18:49:28.528Z"
+    },
+    {
+      "path": "x02-08-feedback2001.jpg",
+      "bytes": 94351,
+      "sha256": "f1892042c3b44b2e2b8697312b132e8bc805da263a2542ca304ebaebdebb11fd",
+      "localFileWrittenAtUtc": "2026-11-20T18:49:36.883Z"
+    },
+    {
+      "path": "x02-08-feedback2001.txt",
+      "bytes": 7617,
+      "sha256": "a75b58cb5c853907e95470a2f647ad29a9001ccfdbe121d745a3b63f8bd981d8",
+      "localFileWrittenAtUtc": "2026-11-20T18:49:36.836Z"
+    },
+    {
+      "path": "x02-08-fresh-no-feedback.txt",
+      "bytes": 5626,
+      "sha256": "e6786689e68a1e8a84d1ea69693f9b51c22f3474fa49c1e91d1a9994e0083731",
+      "localFileWrittenAtUtc": "2026-11-20T18:49:45.006Z"
+    },
+    {
+      "path": "x02-09-student-saved-feedback.jpg",
+      "bytes": 121039,
+      "sha256": "3f4cfa97ffe14c5548612989b64d4091b468e2f391d577fec6cb4993cbab361d",
+      "localFileWrittenAtUtc": "2026-11-20T18:49:51.854Z"
+    },
+    {
+      "path": "x02-09-student-saved-feedback.txt",
+      "bytes": 7574,
+      "sha256": "4aefb5d68214b578487cc764eea33762dda2b202eacafe126bf5ab957e14faf5",
+      "localFileWrittenAtUtc": "2026-11-20T18:49:51.796Z"
+    },
+    {
+      "path": "x02-09-supervisor-feedback-footer.jpg",
+      "bytes": 81442,
+      "sha256": "cac4d6f512180d913857666f3c38687e8fc8d40ddcbafe8b321c9828a35d31e2",
+      "localFileWrittenAtUtc": "2026-11-20T18:52:15.194Z"
+    },
+    {
+      "path": "x02-09-supervisor-feedback-footer.txt",
+      "bytes": 7708,
+      "sha256": "1fef190271b9e66e8c94c00528472a5d8e978e16870621821706b46d7f03f895",
+      "localFileWrittenAtUtc": "2026-11-20T18:52:15.263Z"
+    },
+    {
+      "path": "x03-01-created.jpg",
+      "bytes": 24586,
+      "sha256": "cd1e6b2764af294b145c778f405466ebbaa94bf51776cadae625025988f70dd5",
+      "localFileWrittenAtUtc": "2026-11-20T18:51:43.247Z"
+    },
+    {
+      "path": "x03-01-created.txt",
+      "bytes": 1047,
+      "sha256": "495f1e82fdde4001c5b5f7092a375f7a0c262028326a973bc6c33539034a2aca",
+      "localFileWrittenAtUtc": "2026-11-20T18:51:43.206Z"
+    },
+    {
+      "path": "x03-02-draft-before-deadline.jpg",
+      "bytes": 28378,
+      "sha256": "a3f1c9d31160651caa7045aa05a872ccaab35f2a78e883e65c7a4cb7c82c827a",
+      "localFileWrittenAtUtc": "2026-11-20T18:50:45.691Z"
+    },
+    {
+      "path": "x03-02-draft-before-deadline.txt",
+      "bytes": 1496,
+      "sha256": "1eac181af793f4e3431f1fc55bc9006aa77ac4cb270393374d71345c4d8a0b78",
+      "localFileWrittenAtUtc": "2026-11-20T18:50:45.666Z"
+    },
+    {
+      "path": "x03-03-supervisor-after-cutoff.jpg",
+      "bytes": 26024,
+      "sha256": "7d890244151a468c5bb7588d611ff5c91df5a9b120fda0dc43bbca7ad3fab154",
+      "localFileWrittenAtUtc": "2026-11-20T18:56:22.266Z"
+    },
+    {
+      "path": "x03-03-supervisor-after-cutoff.txt",
+      "bytes": 1068,
+      "sha256": "062f61074a3c8b34386541217f27da25f93ab3fd020f30d1845a48f3bfabaa80",
+      "localFileWrittenAtUtc": "2026-11-20T18:56:22.206Z"
+    },
+    {
+      "path": "x03-04-stale-before-click.txt",
+      "bytes": 1496,
+      "sha256": "1eac181af793f4e3431f1fc55bc9006aa77ac4cb270393374d71345c4d8a0b78",
+      "localFileWrittenAtUtc": "2026-11-20T18:56:22.296Z"
+    },
+    {
+      "path": "x03-04-stale-submit-rejected.jpg",
+      "bytes": 30904,
+      "sha256": "aed7b146980dcef1af6e5326f87eac72500bb34c680ee2e04843371988da0fd4",
+      "localFileWrittenAtUtc": "2026-11-20T18:56:29.480Z"
+    },
+    {
+      "path": "x03-04-stale-submit-rejected.txt",
+      "bytes": 1555,
+      "sha256": "b509bebdd11811ec05863e8af8cf29d1ac52f9f51afa94fda4698aed413a760e",
+      "localFileWrittenAtUtc": "2026-11-20T18:56:29.449Z"
+    },
+    {
+      "path": "x03-05-student-fresh.jpg",
+      "bytes": 26438,
+      "sha256": "0d26c8a7cc1e19e7ef8d206b4a872b01f50557171dc95ff9ed2b22e6685a7398",
+      "localFileWrittenAtUtc": "2026-11-20T18:56:48.657Z"
+    },
+    {
+      "path": "x03-05-student-fresh.txt",
+      "bytes": 1060,
+      "sha256": "2a3cd82078ab3996cfbebab4e3a992787d256e4ea160374952eda6be93c3df01",
+      "localFileWrittenAtUtc": "2026-11-20T18:56:48.626Z"
+    },
+    {
+      "path": "x03-05-supervisor-list.jpg",
+      "bytes": 31819,
+      "sha256": "b707f362a89696c2d1f34ec4b234fbb806e48f1dcbf407b005f1f0e8940a6c86",
+      "localFileWrittenAtUtc": "2026-11-20T18:56:48.689Z"
+    },
+    {
+      "path": "x03-05-supervisor-list.txt",
+      "bytes": 7707,
+      "sha256": "cb196cf4bdef5913221ff02abcf7e44276eca6a3535b8e35004bc38445f4096f",
+      "localFileWrittenAtUtc": "2026-11-20T18:56:48.657Z"
+    }
+  ]
+}

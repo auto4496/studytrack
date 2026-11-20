@@ -1,0 +1,256 @@
+{
+  "kind": "Actual supplemental CPMS UAT; X01-X03 completed, X04 requires account",
+  "tester": "Phanuwit Butchari / auto4496, Codex-assisted",
+  "startedAt": "2026-11-20T18:09:44.665Z",
+  "timezone": "Asia/Bangkok",
+  "release": "b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c",
+  "caseSource": "StudyTrack proposed PR72 aca52088ff4c3f269731534e9236d7546f21c8bd; peer review pending",
+  "preflight": {
+    "healthMatched": true,
+    "expiredSessionRedirectObserved": true,
+    "expiredSessionMessage": "Your session has expired. Please sign in again.",
+    "rawHttpStatusCaptured": false
+  },
+  "cases": [
+    {
+      "id": "CPMS-X01",
+      "status": "PASS",
+      "steps": [
+        {
+          "step": 1,
+          "outcome": "PASS",
+          "inputEmail": "not-an-email",
+          "passwordInputKind": "Synthetic invalid value, not a real password",
+          "actual": "Enter a valid email address.; remained at /login",
+          "evidence": [
+            "x01-01-malformed-email.txt",
+            "x01-01-malformed-email.jpg"
+          ],
+          "evidenceCaptureWrittenAtUtc": "2026-11-20T18:09:44.570Z"
+        },
+        {
+          "step": 2,
+          "outcome": "PASS",
+          "actual": "User confirmed the mixed-case Student1@Example.TEST email was used. Successful Demo Student 1 sign-in and Student navigation were observed. Outer-space/server trimming is not claimed.",
+          "observedAt": "2026-11-20T18:20:30.203Z",
+          "inputSource": "User confirmation and observed signed-in identity",
+          "evidence": [
+            "x01-02-prepared-login.txt",
+            "x01-02-prepared-login.jpg",
+            "x01-03-owner-before.txt"
+          ],
+          "evidenceCaptureWrittenAtUtc": "2026-11-20T18:11:11.515Z"
+        },
+        {
+          "step": 3,
+          "outcome": "PASS",
+          "actual": "Milestone 4 retains Team A proposal, https://example.com/uat-01, Demo Student 1 at 18 Nov 20:31 ICT and Good start. Add a timeline. by Demo Supervisor 1 at 20:33, version 1; Closed/Submitted.",
+          "evidence": [
+            "x01-03-owner-before.txt",
+            "x01-03-owner-before.jpg"
+          ],
+          "evidenceCaptureWrittenAtUtc": "2026-11-20T18:20:30.139Z"
+        },
+        {
+          "step": 4,
+          "outcome": "PASS",
+          "actual": "After logout, browser Back settled at /login. Explicitly revisiting /milestones/4 also redirected to /login, with no private submission/feedback text.",
+          "observedAt": "2026-11-20T18:21:33.829Z",
+          "evidence": [
+            "x01-04-signed-out-private-url.txt",
+            "x01-04-signed-out-private-url.jpg"
+          ],
+          "evidenceCaptureWrittenAtUtc": "2026-11-20T18:21:33.798Z"
+        },
+        {
+          "step": 5,
+          "outcome": "PASS",
+          "observedAt": "2026-11-20T18:37:48.151Z",
+          "actual": "Demo Student 3 received the same Milestone not found. UI for /milestones/4 and /milestones/999999. Back from the missing URL to milestone 4 also remained hidden. No Team A title/submission/feedback was shown; no raw HTTP status is claimed.",
+          "evidence": [
+            "x01-05-team-b-foreign.txt",
+            "x01-05-team-b-foreign.jpg",
+            "x01-05-team-b-missing.txt",
+            "x01-05-team-b-missing.jpg",
+            "x01-05-team-b-back.txt",
+            "x01-05-team-b-back.jpg"
+          ],
+          "evidenceCaptureWrittenAtUtc": "2026-11-20T18:37:01.128Z"
+        },
+        {
+          "step": 6,
+          "outcome": "PASS",
+          "observedAt": "2026-11-20T18:40:07.262Z",
+          "actual": "Returned as Demo Student 1. Original title/link/submitter/time and feedback author/time/version match the pre-switch baseline. Window remains Closed and Team status Submitted; no fixture was changed.",
+          "evidence": [
+            "x01-06-owner-restored.txt",
+            "x01-06-owner-restored.jpg"
+          ],
+          "evidenceCaptureWrittenAtUtc": "2026-11-20T18:40:07.230Z"
+        }
+      ],
+      "inputObservation": {
+        "requestedEmail": "  Student1@Example.TEST  ",
+        "visibleEmail": "Student1@Example.TEST",
+        "measurementLimit": "The browser interface redacts email DOM values; returned length 10 refers to the redaction marker, not the real field length. No server-side trimming or exact input-length assertion is claimed.",
+        "privatePasswordRead": false
+      },
+      "completedAt": "2026-11-20T18:40:07.263Z"
+    },
+    {
+      "id": "CPMS-X02",
+      "status": "PASS",
+      "startedAt": "2026-11-20T18:43:55.062Z",
+      "suffix": "R1-20261121-A",
+      "supervisor": "Demo Supervisor 1",
+      "team": "Demo Team A",
+      "originalListCount": 11,
+      "dueLocal": "2026-11-22T18:00",
+      "steps": [
+        {
+          "step": 1,
+          "result": "PASS",
+          "actual": "Three-space title rejected: Enter a title (1–120 characters). Valid due retained. List remains 11.",
+          "evidence": "x02-01-whitespace-title",
+          "evidenceCaptureWrittenAtUtc": "2026-11-20T18:47:41.463Z"
+        },
+        {
+          "step": 2,
+          "result": "PASS",
+          "actual": "Actual 121-character title (maxLength -1) rejected with title message; list remains 11.",
+          "evidence": "x02-02-title121",
+          "evidenceCaptureWrittenAtUtc": "2026-11-20T18:47:49.408Z"
+        },
+        {
+          "step": 3,
+          "result": "PASS",
+          "actual": "Actual 2001-character description (maxLength -1) rejected: Description must be at most 2000 characters. Fresh list still 11.",
+          "evidence": "x02-03-description2001",
+          "evidenceCaptureWrittenAtUtc": "2026-11-20T18:47:58.058Z"
+        },
+        {
+          "step": 4,
+          "result": "PASS",
+          "actual": "Exactly 120-character title and 2000-character description saved once to milestone 12. Fresh reload matches both, due 22 Nov 18:00 ICT, Open / Not submitted.",
+          "evidence": "x02-04-saved-boundaries",
+          "evidenceCaptureWrittenAtUtc": "2026-11-20T18:48:37.947Z"
+        },
+        {
+          "step": 5,
+          "result": "PASS",
+          "actual": "Three-space submission title rejected; no submission shown.",
+          "evidence": "x02-05-submission-whitespace",
+          "evidenceCaptureWrittenAtUtc": "2026-11-20T18:49:00.223Z"
+        },
+        {
+          "step": 6,
+          "result": "PASS",
+          "actual": "Actual 2001-character submission description rejected; fresh reload still Not submitted.",
+          "evidence": "x02-06-submission-description2001",
+          "evidenceCaptureWrittenAtUtc": "2026-11-20T18:49:00.669Z"
+        },
+        {
+          "step": 7,
+          "result": "PASS",
+          "actual": "2000-character description saved once; fresh reload shows one UAT-ST-X02 work submission, correct link and Demo Student 1 author/time. UI does not display a submission version.",
+          "evidence": "x02-07-saved-submission",
+          "evidenceCaptureWrittenAtUtc": "2026-11-20T18:49:28.528Z"
+        },
+        {
+          "step": 8,
+          "result": "PASS",
+          "actual": "Actual 2001-character feedback rejected: Enter feedback (1–2000 characters). Fresh reload still No feedback yet.",
+          "evidence": "x02-08-feedback2001",
+          "evidenceCaptureWrittenAtUtc": "2026-11-20T18:49:36.836Z"
+        },
+        {
+          "step": 9,
+          "result": "PASS",
+          "actual": "Exactly 2000 F characters persisted and visible after Student reload; one feedback entry, Demo Supervisor 1, 21 Nov 2026 01:49 ICT, version 1; Student has no feedback form.",
+          "evidence": "x02-09-student-saved-feedback",
+          "evidenceCaptureWrittenAtUtc": "2026-11-20T18:49:51.796Z"
+        }
+      ],
+      "setupObservation": "Initial Playwright datetime fill did not persist to application state. Re-entered 2026-11-22T18:00 through native date control, blurred, verified DOM value before and after retry. Only corrected attempts counted.",
+      "milestoneId": 12,
+      "milestoneUrl": "https://cpms-2ww7lkzxja-as.a.run.app/milestones/12",
+      "savedTextChecks": {
+        "title120": true,
+        "d2000Occurrences": 2,
+        "d2001Present": false,
+        "f2000Occurrences": 1,
+        "f2001Present": false
+      },
+      "completedAt": "2026-11-20T18:50:02.413Z"
+    },
+    {
+      "id": "CPMS-X03",
+      "status": "PASS",
+      "startedAt": "2026-11-20T18:50:16.294Z",
+      "milestoneId": 13,
+      "dueLocal": "2026-11-21T01:55",
+      "dueUtc": "2026-11-20T18:55:00.000Z",
+      "draftPreparedAt": "2026-11-20T18:50:45.691Z",
+      "steps": [
+        {
+          "step": 1,
+          "result": "PASS",
+          "actual": "Supervisor created milestone 13, due 21 Nov 01:55 ICT. Fresh detail Open / Not submitted.",
+          "evidence": [
+            "x03-01-created.txt",
+            "x03-01-created.jpg"
+          ],
+          "evidenceCaptureWrittenAtUtc": "2026-11-20T18:51:43.206Z"
+        },
+        {
+          "step": 2,
+          "result": "PASS",
+          "actual": "Student 1 opened before cutoff and prepared valid title, description, HTTPS link. Page remains unrefreshed until submit attempt.",
+          "evidence": "x03-02-draft-before-deadline",
+          "evidenceCaptureWrittenAtUtc": "2026-11-20T18:50:45.666Z"
+        },
+        {
+          "step": 3,
+          "result": "PASS",
+          "actual": "Fresh Supervisor detail after at least 68 seconds past cutoff shows Closed / Overdue and Not submitted yet.",
+          "observedAt": "2026-11-20T18:56:22.266Z",
+          "evidence": "x03-03-supervisor-after-cutoff",
+          "evidenceCaptureWrittenAtUtc": "2026-11-20T18:56:22.206Z"
+        },
+        {
+          "step": 4,
+          "result": "PASS",
+          "actual": "One stale Submit attempt 89.132 seconds after cutoff returned The deadline for this milestone has passed. All three valid draft values remained. The stale Open badge remained until reload; no raw HTTP status claimed.",
+          "observedAt": "2026-11-20T18:56:29.132Z",
+          "evidence": "x03-04-stale-submit-rejected",
+          "evidenceCaptureWrittenAtUtc": "2026-11-20T18:56:29.449Z"
+        },
+        {
+          "step": 5,
+          "result": "PASS",
+          "actual": "Reloaded Student detail and fresh Supervisor list show Closed / Overdue. Not submitted yet; Student has no submit form. No late submission was saved.",
+          "observedAt": "2026-11-20T18:56:48.689Z",
+          "evidence": [
+            "x03-05-student-fresh.txt",
+            "x03-05-student-fresh.jpg",
+            "x03-05-supervisor-list.txt",
+            "x03-05-supervisor-list.jpg"
+          ],
+          "evidenceCaptureWrittenAtUtc": "2026-11-20T18:56:48.626Z"
+        }
+      ],
+      "controlObservedAt": "2026-11-20T18:56:22.266Z",
+      "submitAttemptAt": "2026-11-20T18:56:29.132Z",
+      "secondsAfterCutoff": 89.132,
+      "completedAt": "2026-11-20T18:56:48.689Z"
+    },
+    {
+      "id": "CPMS-X04",
+      "status": "REQUIRES_ACCOUNT"
+    }
+  ],
+  "versionEndMatched": true,
+  "completedAt": "2026-11-20T18:57:02.607Z",
+  "captureTiming": "Per-file local write timestamps are retained in captures.json. They bracket capture, not server transaction time. Explicit observedAt values retain their original meaning.",
+  "peerReview": "Pending review of this documentation head by Datakung; the original case-plan review requested removal of the unobservable submission-version assertion."
+}

@@ -2,6 +2,12 @@
 
 17 November 2026. This is a coordination record, not an executed UAT report. [StudyTrack cases](uat-cases.md), [A's CPMS execution log](partner-test-log.md). B retains responsibility for the StudyTrack product handoff; A leads partner-application testing. Both participate as testers/developers and review each other's work.
 
+## Supplemental CPMS testing checkpoint — 21 November 2026
+
+A performed the three prepared supplemental UI cases: X01 6/6, X02 9/9 and X03 5/5 recorded steps passed on CPMS source b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c. X04 was not executed because a no-team Student account has not been handed over. [Actual evidence and limitations](../../../artifacts/evidence/lab06/cpms-supplement-2026-11-21/results.md) retain the observed inputs, dates, draft rejection and saved text. No confirmed genuine defect was identified. This is A's additional run; B's separate original run remains separately attributed.
+
+B requested one correction to the PR #72 case plan: submission version is not displayed in the UI. Step 7 now checks only visible submission fields, while step 9 retains the visible feedback version. Review of this updated documentation/results head is pending. The results have not been sent to CPMS by Codex. The no-defect Part D procedure, independent final decisions and final report remain pending; Issue #66 stays open. No main merge, deployment, traffic change or deliberate regression occurred during this work. Earlier dated checkpoints below retain their writing-time status.
+
 ## Runtime provenance and delivery checkpoint - 20 November 2026
 
 A collected the following read-only Cloud Run evidence at the user's request. B [approved and merged PR #71](https://github.com/auto4496/studytrack/pull/71#pullrequestreview-5994546108) on 20 November; the reviewed head and staging merge have the same tree. The original screenshots are retained without image editing; the text files contain selected accessibility lines, and the JSON is an observation record rather than a raw Logging API export. [Evidence and exact queries](../../../artifacts/evidence/lab06/runtime-provenance/observation.json).
