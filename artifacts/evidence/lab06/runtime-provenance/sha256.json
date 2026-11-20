@@ -1,0 +1,60 @@
+{
+  "kind": "Canonical staged Git-blob SHA-256; original screenshots retained without editing; manifest excludes itself",
+  "files": [
+    {
+      "path": "artifacts/evidence/lab06/runtime-provenance/01-current-revisions.jpg",
+      "bytes": 157709,
+      "sha256": "0663cd2dd2e217cc6389d70e342101562e3aace4a6d977d4d07b81bb5672043d"
+    },
+    {
+      "path": "artifacts/evidence/lab06/runtime-provenance/01-current-revisions.txt",
+      "bytes": 2307,
+      "sha256": "27907fd62e398ca83397c68a512d128b7b322ab67194f9c0a6efde4229462a89"
+    },
+    {
+      "path": "artifacts/evidence/lab06/runtime-provenance/02-admin-history.jpg",
+      "bytes": 143563,
+      "sha256": "96bf1dc4beb9480e0b95ecf96774ba48bb23cd2c87954c0efa8a96de2fdd9216"
+    },
+    {
+      "path": "artifacts/evidence/lab06/runtime-provenance/02-admin-history.txt",
+      "bytes": 1642,
+      "sha256": "32863511d2cad6435d8913ab30e1fc1427c0e18e8326a00bdb5c76114097229a"
+    },
+    {
+      "path": "artifacts/evidence/lab06/runtime-provenance/03-final-service-traffic.jpg",
+      "bytes": 130572,
+      "sha256": "dfc38005af8e4ab53a4a74b7294334b96f6fb24367f9c323a5df6ec69009a81c"
+    },
+    {
+      "path": "artifacts/evidence/lab06/runtime-provenance/03-final-service-traffic.txt",
+      "bytes": 2579,
+      "sha256": "20143c0b93a28d7b3a707efdc658cd4d196896f70fbd80b64b15ef9cb9eeee2e"
+    },
+    {
+      "path": "artifacts/evidence/lab06/runtime-provenance/04-no-later-changes.jpg",
+      "bytes": 117021,
+      "sha256": "35062887cb2b7c874caba8e6256a3db29b868b93ce42c79ec401c4ac09fc8308"
+    },
+    {
+      "path": "artifacts/evidence/lab06/runtime-provenance/04-no-later-changes.txt",
+      "bytes": 743,
+      "sha256": "2ef3c32fcb647d788b50f3851090dab68687294dc6cff6065761ef5dd3874f30"
+    },
+    {
+      "path": "artifacts/evidence/lab06/runtime-provenance/history-query.lql",
+      "bytes": 159,
+      "sha256": "80d069839511fadfc7d6483636e788cd302ca6e62588cb86d5a5cbdb3fce5379"
+    },
+    {
+      "path": "artifacts/evidence/lab06/runtime-provenance/no-later-changes-query.lql",
+      "bytes": 166,
+      "sha256": "09a88b8c29c5a0467ebefd54aac315a0e8c1662ae66b200e6cc98980c329a282"
+    },
+    {
+      "path": "artifacts/evidence/lab06/runtime-provenance/observation.json",
+      "bytes": 3377,
+      "sha256": "f5663f60fe2647a215fac09ce6b135052630e0cbd48c8f5059fda47d44955f18"
+    }
+  ]
+}

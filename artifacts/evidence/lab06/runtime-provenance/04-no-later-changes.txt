@@ -1,0 +1,6 @@
+Window: "Logs Explorer – Logging – StudyTrack CPE334 – Google Cloud console and 5 more pages - Profile 1 - Microsoft​ Edge", App: msedge.exe.
+																		1180 button Run query
+																					812 text field (editor) (settable, string) Editor content;Press Alt+F1 for Accessibility Options. Value: log_id("cloudaudit.googleapis.com/activity") protoPayload.serviceName="run.googleapis.com" timestamp>="2026-11-17T13:21:12.107951Z" timestamp<="2026-11-20T05:00:00Z"
+																		770 text 0 results
+																				1179 text Showing logs for time specified in query. To view more results update your query.
+																				1181 text Showing logs for time specified in query. To view more results update your query.

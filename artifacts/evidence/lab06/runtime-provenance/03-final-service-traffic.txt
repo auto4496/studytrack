@@ -1,0 +1,17 @@
+																					812 text field (editor) (settable, string) Editor content;Press Alt+F1 for Accessibility Options. Value: log_id("cloudaudit.googleapis.com/activity") protoPayload.serviceName="run.googleapis.com" timestamp>="2026-11-17T13:00:00Z" timestamp<="2026-11-20T04:40:00Z"
+																		770 text 3 results
+																				948 data item (row) Expand this log entry Open severity menu 2026-11-17 20:20:26.112 Cloud Run ReplaceJob studytrack-migrate studytrack-deployer@study… audit_log, method: "google.cloud.run.v1.Jobs.ReplaceJob", principal_email: "studytrack-deployer@studytrack-cpe334.iam.gserviceaccount.com"
+																				964 data item (row) Expand this log entry Open severity menu 2026-11-17 20:21:01.133 Cloud Run ReplaceService studytrack studytrack-deployer@study… audit_log, method: "google.cloud.run.v1.Services.ReplaceService", principal_email: "studytrack-deployer@studytrack-cpe334.iam.gserviceaccount.com"
+																				980 data item (row) Collapse this log entry Open severity menu 2026-11-17 20:21:12.107 Cloud Run ReplaceService studytrack studytrack-deployer@study… audit_log, method: "google.cloud.run.v1.Services.ReplaceService", principal_email: "studytrack-deployer@studytrack-cpe334.iam.gserviceaccount.com" Pin this log entry Pin and show in context Explain log Copy Expand nested fields Hide log summary
+																										1051 tree item (selectable) insertId: "go4lhzd79w5"
+																												1070 tree item (selectable) methodName: "google.cloud.run.v1.Services.ReplaceService"
+																																		1140 tree item (selectable) toggle protoPayload/request/service/spec/traffic traffic: [ ]
+																																				1142 button toggle protoPayload/request/service/spec/traffic
+																																				1146 tree item (selectable) toggle protoPayload/request/service/spec/traffic/0 0: { }
+																																						1148 button toggle protoPayload/request/service/spec/traffic/0
+																																						1152 tree item (selectable) percent: 100
+																																						1155 tree item (selectable) revisionName: "studytrack-gef0de7f877dc-r44090861325-1"
+																												1082 tree item (selectable) resourceName: "namespaces/studytrack-cpe334/services/studytrack"
+																												1085 tree item (selectable) serviceName: "run.googleapis.com"
+																												1088 tree item (selectable) status: {}
+																										1101 tree item (selectable) timestamp: "2026-11-17T13:21:12.107950Z"
