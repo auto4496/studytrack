@@ -1,0 +1,335 @@
+{
+  "scope": "Canonical staged Git-blob bytes. Original captures copied without image editing. Manifest excludes itself.",
+  "files": [
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/results.md",
+      "bytes": 11915,
+      "sha256": "ea595e0ee45c7ea32b3e4b1c183452deecb683d39a3044fe690f3b679479f623"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-01-02-milestone-created.jpg",
+      "bytes": 23487,
+      "sha256": "aa47557bd2930d42f6a55cf94e198a6946297e60ea8fc3cee7ad3558b93d98e9"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-01-02-milestone-created.txt",
+      "bytes": 2925,
+      "sha256": "0dea42a83a2d1d24dff90a86e411d8305a59d02003d67d29ddb12dff35c3d4f0"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-01-03-student-submit-form.txt",
+      "bytes": 1390,
+      "sha256": "b9bef5f321a01f91bfc9570c10ecbbef8007c73376230d9e04567579d13acf2c"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-01-04-student-submitted.jpg",
+      "bytes": 23801,
+      "sha256": "cac8103179ba375dbdcfb965b32c4dbedd61b5c2ff7c7cdb787a8df9ff8893e2"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-01-04-student-submitted.txt",
+      "bytes": 1287,
+      "sha256": "ef6949ce52659bae2b88330760e85670b7fca4937d92aa2b9ed95d119da8067d"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-01-05-supervisor-sees-submission.txt",
+      "bytes": 1422,
+      "sha256": "26d24fb9433d666e90b83cf89f76dd4432fef362b1f1736c392ba2134d0be929"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-01-06-supervisor-feedback.jpg",
+      "bytes": 20678,
+      "sha256": "58ea3d335ffbb123823874220ae4d4003109cef8f796523338373915ebeb683f"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-01-06-supervisor-feedback.txt",
+      "bytes": 1558,
+      "sha256": "f01367c13e3441c97469fcf67fb227d93262da191977f92d30ff692bfa025bf0"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-01-07-student2-sees-feedback.jpg",
+      "bytes": 28636,
+      "sha256": "531cd2d3d96a3713eaf79e1e3ae0334eb8c75983169a06f3c5026f2bc952e00d"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-01-07-student2-sees-feedback.txt",
+      "bytes": 1397,
+      "sha256": "ddb80a436645a8b8d21ab59f8f7c9577f27af4581815c9ca2195afc323259bf3"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-02-01-past-date-rejected.jpg",
+      "bytes": 25530,
+      "sha256": "63de007c5234082d8f8493bbd0160513a518c8dd444baacb6b72eba212e036fe"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-02-01-past-date-rejected.txt",
+      "bytes": 2995,
+      "sha256": "fdc78b12748a479482cdc964f585f8a31277c0f80ba26a0dbc9bb4726cf9b05a"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-02-02-supervisor-window-open.txt",
+      "bytes": 3190,
+      "sha256": "415724a9397dd054c2f802db4ef102ef5c3b54c71ccfc3778821822376717cdf"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-02-03-student-before-deadline.jpg",
+      "bytes": 24395,
+      "sha256": "dc613e8b5f5b25273897893a07e666ec38adf4f635e26e7cea1287f0469dbbe3"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-02-03-student-before-deadline.txt",
+      "bytes": 1367,
+      "sha256": "f4e806e06822f0e37207a6d23c7fed4f19db24d831954afc1a7f9c0b0d20643b"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-02-04-student-after-deadline.jpg",
+      "bytes": 22410,
+      "sha256": "4e2cdee868c6c85449a7bcc7913a865a2cf2a82976408916fc6760e55d782f70"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-02-04-student-after-deadline.txt",
+      "bytes": 1024,
+      "sha256": "812bc5512e903b8973a6cfe4873b6de65a15bb08ca553bbde09491a6445da70b"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-02-05-student-list-overdue.txt",
+      "bytes": 2282,
+      "sha256": "dcda5f8efe05f4435b5e0ab3545072f51bdd9c2e90c0ddb8954b84b5a0276ffc"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-02-05-supervisor-list-overdue.txt",
+      "bytes": 3157,
+      "sha256": "79c6c9bfc9099ddbcb61159a751110fc0e48b55bceb1c60ca35d66bedce06117"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-03-00-milestone-created.txt",
+      "bytes": 3459,
+      "sha256": "79e6e1f974df02eb434e699daff513d32be79b11739cef62f0be6c19d0dd4ccc"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-03-01-empty-login.jpg",
+      "bytes": 23203,
+      "sha256": "9dc9c688335645d344d797864df6e7b900f554dbbf4cf012740a36c4dc43b420"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-03-01-empty-login.txt",
+      "bytes": 614,
+      "sha256": "40ba2ff99860e846ae08baf0df95830550de5a7270ce42435f8554e0fd7f8025"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-03-02-known-student.txt",
+      "bytes": 672,
+      "sha256": "a922b18298e57e1ed33296ff4845679c51d1bd2ae2c41142d5e363fb8a0d22c4"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-03-02-unknown-account.txt",
+      "bytes": 672,
+      "sha256": "a922b18298e57e1ed33296ff4845679c51d1bd2ae2c41142d5e363fb8a0d22c4"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-03-03-empty-title.txt",
+      "bytes": 1378,
+      "sha256": "007852eb8784d0e18a21abfcdb22ad6fdadfca23828b28c0b934c718ae731d13"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-03-03-ftp-link.txt",
+      "bytes": 1411,
+      "sha256": "f6f2696314c02ed4c9363bfb786c8418020bfd096339c92df53c38eb94096d73"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-03-03-no-scheme.txt",
+      "bytes": 1403,
+      "sha256": "9c71373d3a32f21851a1be55a513f63a857b31c9f172ee8fea503b5bbfdeee9f"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-03-03-title-121.txt",
+      "bytes": 1508,
+      "sha256": "80109fce5af6dd81441b647fc193a78df75a5f76044d15b880ba5970ac68d9f3"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-03-04-title-120-accepted.jpg",
+      "bytes": 33953,
+      "sha256": "6a7572be26a17c9cd823ea6601804b50b78c4fa2bfbfe838f01c747cbb673ec6"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-03-04-title-120-accepted.txt",
+      "bytes": 1478,
+      "sha256": "d78f4cda937167cf8b695cf057716ec7f1b41da61a5dbc4aed3f80d5514a08c8"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-03-05-empty-feedback.txt",
+      "bytes": 1592,
+      "sha256": "0328f6ff836c8f3d499a0a2019cb2e1f8bcebbdfab3762b7b6dcbff0bd13bf41"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-03-05-spaces-feedback.jpg",
+      "bytes": 21553,
+      "sha256": "f719937eb07a9b855fa6fab0d91d5201d8d19b333c8c6fbeea879457de9174c1"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-03-05-spaces-feedback.txt",
+      "bytes": 1604,
+      "sha256": "a9de9ce8f620f5c14712e25a48b34979fdf45e8fb2cf37d2199df4874fc7bed4"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-04-01-student-b-team-view.txt",
+      "bytes": 1201,
+      "sha256": "1d4c68cd531145631c8c6a527bb2ef8c6eb72b202c8835f1e40518b2d93512a7"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-04-02-student-b-milestones.txt",
+      "bytes": 907,
+      "sha256": "57063775f7783f51df489c57d2632b17d6530f8520552d690363a4ed42af7e6a"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-04-03-student-b-foreign.jpg",
+      "bytes": 12277,
+      "sha256": "e5ffa8dfe68479aeac78848c6a521d90584e58494284ec090bb7ae2c823425fa"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-04-03-student-b-foreign.txt",
+      "bytes": 769,
+      "sha256": "0ad2bd368f633444720327eb83c9602d6e251ff3027a759e033fa1f60cb16c17"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-04-04-student-b-missing.txt",
+      "bytes": 784,
+      "sha256": "6399318fac73f0abc5fc73fe621d299fde775c2f7c3ae117d1150873fe1e99f3"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-04-05-student-b-supervisor-page-denied.txt",
+      "bytes": 736,
+      "sha256": "478becb367539f7ceb39417342777f481e499a715e4bd9aa217b5c6255ac5740"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-04-06-supervisor-b-milestone-denied.jpg",
+      "bytes": 12563,
+      "sha256": "f3647bd827172fc5968b95ad6ab8a859b2443c9edb2822fdb0292b14cddcc24f"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-04-06-supervisor-b-milestone-denied.txt",
+      "bytes": 777,
+      "sha256": "024db40a03c16f07c535298945be657e426b2969024bd74465925c748d598dcc"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-04-06-supervisor-b-team-list.txt",
+      "bytes": 826,
+      "sha256": "1749be56086705034db338b16b3299bfe90f6fa1036214a7a231a50ea345a368"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-04-07-team-a-original-intact.txt",
+      "bytes": 1396,
+      "sha256": "293ead74aaa7331f34e551fb10cab614ce11a0b0efc54152d5a00eef24197ec9"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-05-00-milestone-created.txt",
+      "bytes": 3730,
+      "sha256": "b20cd9beefb8e7a62d3081eda47b3883449624e040ae9146c86bca003a503558"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-05-01-student1-before-submit.txt",
+      "bytes": 1373,
+      "sha256": "31713899045b54349d2c201ec2dce8af5371bb47c46578ba6a5ba0a6fac5a1fd"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-05-01-student2-before-submit.txt",
+      "bytes": 1373,
+      "sha256": "88ca989f67a0048c3786b5b7426e855739be30a008f048706f9f9087a41c5ac5"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-05-02-first-submitted.txt",
+      "bytes": 1251,
+      "sha256": "28e7a8638edd4d61245bd9333adce23197f50a0df87bb56f04cfb3af50c83e39"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-05-03-duplicate-rejected.jpg",
+      "bytes": 29302,
+      "sha256": "1ddebfe08c10212cb75e4c2bbcd3c3f097bc5dd0e99ef58e055a90f3638efd60"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-05-03-duplicate-rejected.txt",
+      "bytes": 1491,
+      "sha256": "8a8d1f53a3d0a6803f88ea106633fcc3da83551a167b6fdf2e7d5f9f91e4ce97"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-05-04-reload-shows-first.txt",
+      "bytes": 1248,
+      "sha256": "b674a19da4775c165cf62e4bdd07cd839ce52bedb91a9383c4c02ea65c9d7bf6"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-05-05-two-feedback-entries.jpg",
+      "bytes": 20763,
+      "sha256": "ffe4f6775e4fe705f172990694ef29bd231ef34d249fb058b21948578ec709f6"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-05-05-two-feedback-entries.txt",
+      "bytes": 1594,
+      "sha256": "cd5e9237e3147aaad423b389bd1f3398f491e9676534a2de1073e95f1022753e"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-05-06-logout-timing.json",
+      "bytes": 346,
+      "sha256": "5cfc42c16d8ed993c710101b8e75847445b8ffc824f52af37689266f2d1e84c6"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-05-06-observed-time-20261119.json",
+      "bytes": 319,
+      "sha256": "a5b84098f2d01dca7de92d3590e4380d1b8cf5ac2da454b26b0eb07444f3d78c"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-05-06-student2-relogin-20261119.jpg",
+      "bytes": 34704,
+      "sha256": "f187511f29521fed3cefff371dc43a149bc757d0c84b2521501ff360e0496634"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-05-06-student2-relogin-20261119.txt",
+      "bytes": 1436,
+      "sha256": "f9cf4a63e8a9449ced8f4437061cf8ca356b31c457d84e4b8eaa6ab5361743b8"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-05-07-logged-out-private-url-20261119.jpg",
+      "bytes": 15837,
+      "sha256": "6a8b021b126d37ad2affc2c3e7f667ada741a5fae407704c6aa99bcb03aa535c"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-05-07-logged-out-private-url-20261119.txt",
+      "bytes": 613,
+      "sha256": "fa0152cc3918797cce6eea43bb5d3b8288727b3c0da1f969c1fb49821ba86efc"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-06-01-student1-team-view-20261119.jpg",
+      "bytes": 20681,
+      "sha256": "1991d9c7f83095b42799c7a8928b3672d2f7d14c37ad54c970114e9f4c2137fa"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-06-01-student1-team-view-20261119.txt",
+      "bytes": 1201,
+      "sha256": "8aa8543ce46fab13eb7c6f3ae759c2fcc61d8c2909ac5d0ccf40226234df4b26"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-06-02-supervisor-team-list-20261119.jpg",
+      "bytes": 13425,
+      "sha256": "dbfbd975eff8f6f8406693a12d0ade1ee06b137fbc5bd9c75b9c9275a92993f0"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-06-02-supervisor-team-list-20261119.txt",
+      "bytes": 826,
+      "sha256": "5c02979b0a7388f502cdfd1cb8ed300eecfd3419ba9a39aa5cb413e52c3a0044"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-06-02-team-a-milestones-20261119.jpg",
+      "bytes": 33663,
+      "sha256": "38315c960eaff5c78ffe150d39e364b053109a56ccbc7e95351e24fd9968c878"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/uat-06-02-team-a-milestones-20261119.txt",
+      "bytes": 4764,
+      "sha256": "8b34af3beca25691e6ff62f39244fdfb0668708ab096df3e6e9221775c34a491"
+    },
+    {
+      "path": "artifacts/evidence/lab06/cpms-first-run/version-end-20261119.json",
+      "bytes": 213,
+      "sha256": "bb69722bf25c921bf8c5775506020c3b905231122fc7e8d3a9e558dfa8b3785c"
+    }
+  ]
+}

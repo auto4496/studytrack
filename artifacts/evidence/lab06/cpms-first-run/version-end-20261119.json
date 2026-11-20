@@ -1,0 +1,8 @@
+{
+  "checkedAt": "2026-11-19T23:17:49.8965741+07:00",
+  "url": "https://cpms-2ww7lkzxja-as.a.run.app/api/health",
+  "response": {
+    "status": "ok",
+    "commit": "b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c"
+  }
+}

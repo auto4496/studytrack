@@ -1,0 +1,32 @@
+Browser tab: 6, Title: "Course Project Management System", URL: "https://cpms-2ww7lkzxja-as.a.run.app/milestones/7".
+1 AXWebArea Course Project Management System, URL: cpms-2ww7lkzxja-as.a.run.app/milestones/7
+	2 container root
+		3 container
+			4 text Course Project Management
+			5 container Main
+				6 link Description: My team, Value: cpms-2ww7lkzxja-as.a.run.app/team
+				7 link Description: Milestones, Value: cpms-2ww7lkzxja-as.a.run.app/milestones
+			8 text Demo Student 2 ·  Student
+			9 button Log out
+		10 container
+			11 link Description: Back to milestones, Value: cpms-2ww7lkzxja-as.a.run.app/milestones
+			12 heading UAT-ST-05 Persistence, Value: 2
+				13 text UAT-ST-05 Persistence
+			14 text Due 
+			15 text 19 Nov 2026, 18:00 (ICT)
+			16 text Window:  Closed Team status:  Submitted
+			17 heading Submission, Value: 3
+				18 text Submission
+			19 heading First, Value: 4
+				20 text First
+			21 link Description: https://example.com/first, Value: example.com/first
+			22 text Submitted by Demo Student 1 on 18 Nov 2026, 20:52 (ICT)
+			23 heading Feedback, Value: 3
+				24 text Feedback
+			25 content list
+				26 container
+					27 text Entry 1 Demo Supervisor 1 on 18 Nov 2026, 20:52 (ICT) · version 1
+				28 container
+					29 text Entry 2 Demo Supervisor 1 on 18 Nov 2026, 20:52 (ICT) · version 1
+
+The focused UI element is 1 AXWebArea Course Project Management System, URL: cpms-2ww7lkzxja-as.a.run.app/milestones/7

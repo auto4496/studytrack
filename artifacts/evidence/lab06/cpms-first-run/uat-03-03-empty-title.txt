@@ -1,0 +1,33 @@
+Browser tab: 3, Title: "Course Project Management System", URL: "https://cpms-2ww7lkzxja-as.a.run.app/milestones/6".
+1 AXWebArea Course Project Management System, URL: cpms-2ww7lkzxja-as.a.run.app/milestones/6
+	2 container root
+		3 container
+			4 text Course Project Management
+			5 container Main
+				6 link Description: My team, Value: cpms-2ww7lkzxja-as.a.run.app/team
+				7 link Description: Milestones, Value: cpms-2ww7lkzxja-as.a.run.app/milestones
+			8 text Demo Student 1 ·  Student
+			9 button Log out
+		10 container
+			11 link Description: Back to milestones, Value: cpms-2ww7lkzxja-as.a.run.app/milestones
+			12 heading UAT-ST-03 Validation, Value: 2
+				13 text UAT-ST-03 Validation
+			14 text Due 
+			15 text 19 Nov 2026, 18:00 (ICT)
+			16 text Window:  Open Team status:  Not submitted
+			17 heading Submission, Value: 3
+				18 text Submission
+			19 text Not submitted yet
+			20 heading Submit work, Value: 3
+				21 text Submit work
+			22 container
+				23 text Title
+				24 text field (settable) Title, ID: submission-title
+				30 text Enter a title (1–120 characters).
+				25 text Description (optional)
+				26 text entry area (settable) Description (optional), ID: submission-description
+				27 text Link
+				28 text field (settable) Link, Value: https://example.com/uat-03, ID: submission-link
+				29 button Submit
+
+The focused UI element is 29 button Submit
