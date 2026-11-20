@@ -1,0 +1,28 @@
+https://studytrack-981693883236.asia-southeast1.run.app/goals/921c9291-aae9-480e-b561-89a1ee18987b
+- complementary:
+  - link "StudyTrack A LITTLE, EVERY DAY":
+    - /url: /
+    - generic: S
+    - text: StudyTrack
+    - generic: A LITTLE, EVERY DAY
+  - paragraph: พื้นที่ของคุณ
+  - navigation "เมนูหลัก":
+    - link "◫ เป้าหมายการอ่าน":
+      - /url: /goals
+      - text: ◫
+      - generic: เป้าหมายการอ่าน
+    - link "▤ กิจกรรมการอ่าน":
+      - /url: /templates
+      - text: ▤
+      - generic: กิจกรรมการอ่าน
+  - generic: น
+  - strong: นักอ่านคนที่สอง
+  - generic: นักศึกษา
+  - button "ออกจากระบบ": ↗
+- main:
+  - generic: ติดตามการอ่านในแต่ละวัน
+  - link "← เป้าหมายของฉัน":
+    - /url: /goals
+  - alert:
+    - generic: ไม่พบรายการที่ต้องการ
+    - button "ลองใหม่"
