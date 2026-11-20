@@ -4,7 +4,7 @@
 
 ## Runtime provenance and delivery checkpoint - 20 November 2026
 
-A collected the following read-only Cloud Run evidence at the user's request. B's review of this new evidence remains pending. The original screenshots are retained without image editing; the text files contain selected accessibility lines, and the JSON is an observation record rather than a raw Logging API export. [Evidence and exact queries](../../../artifacts/evidence/lab06/runtime-provenance/observation.json).
+A collected the following read-only Cloud Run evidence at the user's request. B [approved and merged PR #71](https://github.com/auto4496/studytrack/pull/71#pullrequestreview-5994546108) on 20 November; the reviewed head and staging merge have the same tree. The original screenshots are retained without image editing; the text files contain selected accessibility lines, and the JSON is an observation record rather than a raw Logging API export. [Evidence and exact queries](../../../artifacts/evidence/lab06/runtime-provenance/observation.json).
 
 | Check | Actual observation | Evidence |
 | --- | --- | --- |
@@ -17,11 +17,11 @@ Together with the identified successful [Deploy 44090861325](https://github.com/
 
 The user confirmed receipt of CPMS's four PASS results with no findings. CPMS's [reviewed outgoing results](https://github.com/Nuggetkub/cpe334-course-project-management-system/pull/67) and [delivery follow-up at f03cc6c](https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/f03cc6c08b5a899c906c1bfee6edf898668e5ec9/docs/labs/lab06/uat-results.md) record the exchange and receipt of our CPMS results. The follow-up is still an open PR as of this checkpoint; no private messages were read to verify it. B approved and merged our first-run evidence PR #70 after final-head CI passed. B also reported a separate six-case PASS run in its review; that run's local captures remain attributed to B rather than copied into A's first-run directory.
 
-Suggested runtime reply, after B reviews the evidence:
+Reviewed runtime reply:
 
 > We checked the Cloud Run Admin Activity history. The last service update on 17 November at 20:21:12 ICT set `studytrack-gef0de7f877dc-r44090861325-1` to 100% traffic. The completed query found no subsequent Cloud Run Admin Activity entries through 20 November at 12:00 ICT, covering both of your reported test windows. This supports that the agreed revision served throughout those windows. The retained evidence shows the exact queries, the traffic-setting entry and the completed zero-result check. This is historical evidence collected on 20 November, rather than a session-start screenshot.
 
-This evidence collection did not deploy, restart, change traffic or write product data. The runtime reply has not been sent externally by this work. Issue #66 remains open for evidence review, the separately planned Part D exercise under the instructor's new clarification, independent final decisions and the report. The older preparation and execution checkpoints below retain their writing-time status; they do not override this update.
+This evidence collection did not deploy, restart, change traffic or write product data. On 20 November the user reported sending the reviewed runtime confirmation to CPMS; the partner's acknowledgement of that new reply has not been supplied. No private messages were read to establish delivery. [A's supplementary CPMS coverage review and cases](partner-test-log.md#independent-coverage-review-and-supplementary-cases---20-november-2026) now identify remaining first-run coverage gaps; the new cases are not executed. Issue #66 remains open for that testing, the applicable Part D exercise under the instructor's new clarification, independent final decisions and the report. The older preparation and execution checkpoints below retain their writing-time status; they do not override this update.
 
 ## First-run execution checkpoint - 19 November 2026
 

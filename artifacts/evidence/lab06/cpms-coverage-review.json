@@ -1,0 +1,707 @@
+{
+  "kind": "Independent UAT-team document coverage review; not new runtime execution",
+  "reviewedOnICT": "2026-11-20",
+  "reviewer": "Phanuwit Butchari / auto4496, Codex-assisted source/case comparison",
+  "peerReview": "PENDING",
+  "sourceRelease": {
+    "tag": "v0.3.0",
+    "commit": "b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c",
+    "reportedRevision": "cpms-00007-7r8"
+  },
+  "caseDocument": {
+    "commit": "2f45da0ddab41ceb8471ac8903953f61d7d26acf",
+    "url": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/2f45da0ddab41ceb8471ac8903953f61d7d26acf/docs/labs/lab06/uat-cases.md",
+    "gitBlob": "525033c3bc6df6178a5ec3c7beb65f9d67ba8d47"
+  },
+  "sources": [
+    {
+      "path": "docs/srs.md",
+      "commit": "b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c",
+      "gitBlob": "2677a329ca7ef60ea1179d5f0c8e28a96fba6978",
+      "url": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/srs.md"
+    },
+    {
+      "path": "docs/sprints/sprint-1/F-01-auth.md",
+      "commit": "b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c",
+      "gitBlob": "27c67e195697326104d8bab57380bfb5675bd5f6",
+      "url": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/sprints/sprint-1/F-01-auth.md"
+    },
+    {
+      "path": "docs/sprints/sprint-1/F-02-authz.md",
+      "commit": "b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c",
+      "gitBlob": "33451c7f0a89637838fc692b3407d1242e959fcf",
+      "url": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/sprints/sprint-1/F-02-authz.md"
+    },
+    {
+      "path": "docs/sprints/sprint-1/F-03-seed.md",
+      "commit": "b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c",
+      "gitBlob": "41fa5c1dac4f010727be4ebb9a8b4821500f018f",
+      "url": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/sprints/sprint-1/F-03-seed.md"
+    },
+    {
+      "path": "docs/sprints/sprint-1/F-03-team-views.md",
+      "commit": "b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c",
+      "gitBlob": "22672b839eb29ccd3d8204734dedb047c1744459",
+      "url": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/sprints/sprint-1/F-03-team-views.md"
+    },
+    {
+      "path": "docs/sprints/sprint-1/F-04-milestone.md",
+      "commit": "b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c",
+      "gitBlob": "167d95d343610620c06c4a781a045906d39b122c",
+      "url": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/sprints/sprint-1/F-04-milestone.md"
+    },
+    {
+      "path": "docs/sprints/sprint-1/F-05-submission.md",
+      "commit": "b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c",
+      "gitBlob": "841878776d3eb75297320935cce53addb58a94fd",
+      "url": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/sprints/sprint-1/F-05-submission.md"
+    },
+    {
+      "path": "docs/sprints/sprint-1/F-06-feedback.md",
+      "commit": "b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c",
+      "gitBlob": "a9ac26b71568bc477ed7c12f9aec57e0094c855b",
+      "url": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/sprints/sprint-1/F-06-feedback.md"
+    }
+  ],
+  "sprint1FunctionalRequirements": [
+    "FR-01",
+    "FR-02",
+    "FR-03",
+    "FR-04",
+    "FR-05",
+    "FR-06",
+    "FR-08",
+    "FR-09",
+    "FR-13",
+    "FR-14",
+    "FR-18",
+    "FR-19"
+  ],
+  "inventory": {
+    "featureACs": 44,
+    "userFacingAndRouteACs": 41,
+    "seedOnlyACs": [
+      "AC-03.1",
+      "AC-03.2",
+      "AC-03.5"
+    ],
+    "scopeNote": "Inventory of the seven F-01..F-06 contract files, not a percentage of all system-wide or nonfunctional requirements. OBSERVED_UI means the stated UI portion was observed, not every API/DB invariant."
+  },
+  "assessmentMeaning": {
+    "OBSERVED_UI": "The identified UI criterion was observed in the retained first run.",
+    "PARTIAL_UI": "Some behaviour observed; the noted acceptance variants or technical assertions remain unverified by external UAT.",
+    "NOT_OBSERVED_EXTERNALLY": "No corresponding external execution is established; partner STS/automation is separate evidence.",
+    "REQUIRES_ACCOUNT": "A suitable safe account is not supplied; this is a preparation prerequisite, not an executed BLOCKED outcome."
+  },
+  "acceptanceCriteria": [
+    {
+      "id": "AC-01.1",
+      "source": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/sprints/sprint-1/F-01-auth.md",
+      "sourceLineNumbers": [
+        160
+      ],
+      "existingCaseClaims": [],
+      "assessment": "PARTIAL_UI",
+      "reason": "Valid sign-in observed; email case/space variants and server session-row/expiry assertions were not established by the six UI outcomes.",
+      "proposedCases": [
+        "CPMS-X01"
+      ]
+    },
+    {
+      "id": "AC-01.2",
+      "source": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/sprints/sprint-1/F-01-auth.md",
+      "sourceLineNumbers": [
+        161
+      ],
+      "existingCaseClaims": [],
+      "assessment": "PARTIAL_UI",
+      "reason": "Wrong/unknown credentials show the same message; the 72-UTF-8-byte boundary and raw HTTP/session-count assertions were not exercised.",
+      "proposedCases": []
+    },
+    {
+      "id": "AC-01.3",
+      "source": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/sprints/sprint-1/F-01-auth.md",
+      "sourceLineNumbers": [
+        162
+      ],
+      "existingCaseClaims": [],
+      "assessment": "NOT_OBSERVED_EXTERNALLY",
+      "reason": "The named /me response and its safe-field allowlist were not directly checked; signed-in UI identity is narrower evidence.",
+      "proposedCases": []
+    },
+    {
+      "id": "AC-01.4",
+      "source": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/sprints/sprint-1/F-01-auth.md",
+      "sourceLineNumbers": [
+        163
+      ],
+      "existingCaseClaims": [
+        "UAT-05"
+      ],
+      "assessment": "PARTIAL_UI",
+      "reason": "Logout and private-URL redirect observed; replay of the same revoked Bearer token was not performed.",
+      "proposedCases": []
+    },
+    {
+      "id": "AC-01.5",
+      "source": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/sprints/sprint-1/F-01-auth.md",
+      "sourceLineNumbers": [
+        164
+      ],
+      "existingCaseClaims": [],
+      "assessment": "NOT_OBSERVED_EXTERNALLY",
+      "reason": "The fixed eight-hour expiry boundary was not executed by the external testers.",
+      "proposedCases": []
+    },
+    {
+      "id": "AC-01.6",
+      "source": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/sprints/sprint-1/F-01-auth.md",
+      "sourceLineNumbers": [
+        165
+      ],
+      "existingCaseClaims": [],
+      "assessment": "NOT_OBSERVED_EXTERNALLY",
+      "reason": "Password hash/cost and UTF-8 byte enforcement require separate engineering evidence, not account-password inspection.",
+      "proposedCases": []
+    },
+    {
+      "id": "AC-01.7",
+      "source": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/sprints/sprint-1/F-01-auth.md",
+      "sourceLineNumbers": [
+        166
+      ],
+      "existingCaseClaims": [
+        "UAT-01",
+        "UAT-05"
+      ],
+      "assessment": "OBSERVED_UI",
+      "reason": "Both role navigation and logout/reload-to-login were observed in the retained cases.",
+      "proposedCases": [
+        "CPMS-X01"
+      ]
+    },
+    {
+      "id": "AC-01.8",
+      "source": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/sprints/sprint-1/F-01-auth.md",
+      "sourceLineNumbers": [
+        167
+      ],
+      "existingCaseClaims": [
+        "UAT-03"
+      ],
+      "assessment": "PARTIAL_UI",
+      "reason": "Empty fields and wrong credentials observed; malformed email was not part of the recorded first-run steps.",
+      "proposedCases": [
+        "CPMS-X01"
+      ]
+    },
+    {
+      "id": "AC-01.9",
+      "source": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/sprints/sprint-1/F-01-auth.md",
+      "sourceLineNumbers": [
+        168
+      ],
+      "existingCaseClaims": [],
+      "assessment": "NOT_OBSERVED_EXTERNALLY",
+      "reason": "Login transport/5xx recovery was not exercised by the external run.",
+      "proposedCases": []
+    },
+    {
+      "id": "AC-01.10",
+      "source": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/sprints/sprint-1/F-01-auth.md",
+      "sourceLineNumbers": [
+        169
+      ],
+      "existingCaseClaims": [],
+      "assessment": "NOT_OBSERVED_EXTERNALLY",
+      "reason": "Expired/revoked-session notice and late-401 race were not exercised; the overnight persistence attempt used an explicit fresh sign-in.",
+      "proposedCases": []
+    },
+    {
+      "id": "AC-02.1",
+      "source": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/sprints/sprint-1/F-02-authz.md",
+      "sourceLineNumbers": [
+        149
+      ],
+      "existingCaseClaims": [],
+      "assessment": "NOT_OBSERVED_EXTERNALLY",
+      "reason": "The protected-endpoint Bearer-header matrix was not directly executed; UI login redirects do not prove every endpoint status.",
+      "proposedCases": []
+    },
+    {
+      "id": "AC-02.2",
+      "source": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/sprints/sprint-1/F-02-authz.md",
+      "sourceLineNumbers": [
+        150
+      ],
+      "existingCaseClaims": [
+        "UAT-04"
+      ],
+      "assessment": "PARTIAL_UI",
+      "reason": "Student supervisor-route denial observed; wrong-role API writes, including Supervisor-to-Student operations, remain distinct engineering checks.",
+      "proposedCases": []
+    },
+    {
+      "id": "AC-02.3",
+      "source": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/sprints/sprint-1/F-02-authz.md",
+      "sourceLineNumbers": [
+        151
+      ],
+      "existingCaseClaims": [],
+      "assessment": "PARTIAL_UI",
+      "reason": "Unassigned Supervisor was denied the Team A milestone and saw only Team B; no co-supervisor account was handed out.",
+      "proposedCases": []
+    },
+    {
+      "id": "AC-02.4",
+      "source": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/sprints/sprint-1/F-02-authz.md",
+      "sourceLineNumbers": [
+        152
+      ],
+      "existingCaseClaims": [
+        "UAT-04"
+      ],
+      "assessment": "PARTIAL_UI",
+      "reason": "Foreign-team Student denial observed; the no-team account is not supplied.",
+      "proposedCases": [
+        "CPMS-X01",
+        "CPMS-X04"
+      ]
+    },
+    {
+      "id": "AC-02.5",
+      "source": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/sprints/sprint-1/F-02-authz.md",
+      "sourceLineNumbers": [
+        153
+      ],
+      "existingCaseClaims": [],
+      "assessment": "NOT_OBSERVED_EXTERNALLY",
+      "reason": "A valid missing ID was read; malformed-ID and combined malformed-body guard-order matrices were not externally executed.",
+      "proposedCases": []
+    },
+    {
+      "id": "AC-03.1",
+      "source": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/sprints/sprint-1/F-03-seed.md",
+      "sourceLineNumbers": [
+        40,
+        41,
+        42,
+        43
+      ],
+      "existingCaseClaims": [],
+      "assessment": "NOT_OBSERVED_EXTERNALLY",
+      "reason": "Seed idempotence, invalid configuration and atomic rollback are engineering checks; no cloud reseed is part of UAT.",
+      "proposedCases": []
+    },
+    {
+      "id": "AC-03.2",
+      "source": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/sprints/sprint-1/F-03-seed.md",
+      "sourceLineNumbers": [
+        44
+      ],
+      "existingCaseClaims": [],
+      "assessment": "PARTIAL_UI",
+      "reason": "Seeded role accounts successfully signed in; stored bcrypt hash/cost was not inspected.",
+      "proposedCases": []
+    },
+    {
+      "id": "AC-03.5",
+      "source": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/sprints/sprint-1/F-03-seed.md",
+      "sourceLineNumbers": [
+        45
+      ],
+      "existingCaseClaims": [],
+      "assessment": "NOT_OBSERVED_EXTERNALLY",
+      "reason": "The database unique-membership constraint was not tested through a cloud write.",
+      "proposedCases": []
+    },
+    {
+      "id": "AC-03.3",
+      "source": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/sprints/sprint-1/F-03-team-views.md",
+      "sourceLineNumbers": [
+        44
+      ],
+      "existingCaseClaims": [
+        "UAT-04",
+        "UAT-06"
+      ],
+      "assessment": "OBSERVED_UI",
+      "reason": "Both known team rosters and assigned supervisors were observed with no foreign-team names or private email fields.",
+      "proposedCases": []
+    },
+    {
+      "id": "AC-03.4",
+      "source": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/sprints/sprint-1/F-03-team-views.md",
+      "sourceLineNumbers": [
+        45
+      ],
+      "existingCaseClaims": [],
+      "assessment": "REQUIRES_ACCOUNT",
+      "reason": "The unassigned Student used for smoke checks is not handed out; no external execution is claimed.",
+      "proposedCases": [
+        "CPMS-X04"
+      ]
+    },
+    {
+      "id": "AC-03.6",
+      "source": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/sprints/sprint-1/F-03-team-views.md",
+      "sourceLineNumbers": [
+        46
+      ],
+      "existingCaseClaims": [
+        "UAT-04",
+        "UAT-06"
+      ],
+      "assessment": "PARTIAL_UI",
+      "reason": "Both supplied Supervisors saw only their assigned team; co-supervision is not represented by supplied accounts.",
+      "proposedCases": []
+    },
+    {
+      "id": "AC-03.7",
+      "source": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/sprints/sprint-1/F-03-team-views.md",
+      "sourceLineNumbers": [
+        47
+      ],
+      "existingCaseClaims": [],
+      "assessment": "NOT_OBSERVED_EXTERNALLY",
+      "reason": "Empty Supervisor assignments, delayed loading and error/Retry were not exercised; suitable empty-scope accounts are not supplied.",
+      "proposedCases": []
+    },
+    {
+      "id": "AC-04.1",
+      "source": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/sprints/sprint-1/F-04-milestone.md",
+      "sourceLineNumbers": [
+        111
+      ],
+      "existingCaseClaims": [
+        "UAT-01"
+      ],
+      "assessment": "PARTIAL_UI",
+      "reason": "Milestone creation/readback and Bangkok due time observed; DB/UTC/author assertions are not established by UI PASS alone.",
+      "proposedCases": [
+        "CPMS-X02"
+      ]
+    },
+    {
+      "id": "AC-04.2",
+      "source": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/sprints/sprint-1/F-04-milestone.md",
+      "sourceLineNumbers": [
+        112
+      ],
+      "existingCaseClaims": [
+        "UAT-02"
+      ],
+      "assessment": "PARTIAL_UI",
+      "reason": "Past due time rejected; milestone whitespace title and description/title upper boundaries were not covered by submission-title checks.",
+      "proposedCases": [
+        "CPMS-X02"
+      ]
+    },
+    {
+      "id": "AC-04.3",
+      "source": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/sprints/sprint-1/F-04-milestone.md",
+      "sourceLineNumbers": [
+        113
+      ],
+      "existingCaseClaims": [
+        "UAT-01"
+      ],
+      "assessment": "PARTIAL_UI",
+      "reason": "Authorized list/detail and hidden foreign milestone observed; this does not cover every paging/status variant.",
+      "proposedCases": []
+    },
+    {
+      "id": "AC-04.4",
+      "source": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/sprints/sprint-1/F-04-milestone.md",
+      "sourceLineNumbers": [
+        114
+      ],
+      "existingCaseClaims": [
+        "UAT-02"
+      ],
+      "assessment": "PARTIAL_UI",
+      "reason": "Open before due and Closed/Overdue 73 seconds after due observed; exact due-minus-one-second/equality/plus-one-millisecond is not a manual result.",
+      "proposedCases": [
+        "CPMS-X03"
+      ]
+    },
+    {
+      "id": "AC-04.5",
+      "source": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/sprints/sprint-1/F-04-milestone.md",
+      "sourceLineNumbers": [
+        115
+      ],
+      "existingCaseClaims": [],
+      "assessment": "NOT_OBSERVED_EXTERNALLY",
+      "reason": "Milestone-create transport/5xx input-preservation recovery was not exercised.",
+      "proposedCases": []
+    },
+    {
+      "id": "AC-04.6",
+      "source": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/sprints/sprint-1/F-04-milestone.md",
+      "sourceLineNumbers": [
+        116
+      ],
+      "existingCaseClaims": [],
+      "assessment": "PARTIAL_UI",
+      "reason": "The known Team B empty list was observed; delayed loading and error/Retry were not exercised.",
+      "proposedCases": []
+    },
+    {
+      "id": "AC-04.7",
+      "source": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/sprints/sprint-1/F-04-milestone.md",
+      "sourceLineNumbers": [
+        117
+      ],
+      "existingCaseClaims": [
+        "UAT-04"
+      ],
+      "assessment": "PARTIAL_UI",
+      "reason": "Foreign/missing milestone and UI role denial observed; the full anonymous/API/write/guard-order matrix was not executed.",
+      "proposedCases": [
+        "CPMS-X04"
+      ]
+    },
+    {
+      "id": "AC-04.8",
+      "source": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/sprints/sprint-1/F-04-milestone.md",
+      "sourceLineNumbers": [
+        118
+      ],
+      "existingCaseClaims": [],
+      "assessment": "NOT_OBSERVED_EXTERNALLY",
+      "reason": "More-than-50 paging/tie order and stale old-team responses require dedicated fixtures and controls; no mass cloud fixture creation is proposed.",
+      "proposedCases": []
+    },
+    {
+      "id": "AC-05.1",
+      "source": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/sprints/sprint-1/F-05-submission.md",
+      "sourceLineNumbers": [
+        201
+      ],
+      "existingCaseClaims": [
+        "UAT-01"
+      ],
+      "assessment": "PARTIAL_UI",
+      "reason": "One valid persisted submission with author/time/version observed; server DB/clock invariants were not independently queried.",
+      "proposedCases": [
+        "CPMS-X02"
+      ]
+    },
+    {
+      "id": "AC-05.2",
+      "source": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/sprints/sprint-1/F-05-submission.md",
+      "sourceLineNumbers": [
+        202
+      ],
+      "existingCaseClaims": [
+        "UAT-03"
+      ],
+      "assessment": "PARTIAL_UI",
+      "reason": "Empty/121-character/120-character titles and malformed links observed; description 2000/2001 and whitespace title were not covered.",
+      "proposedCases": [
+        "CPMS-X02"
+      ]
+    },
+    {
+      "id": "AC-05.3",
+      "source": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/sprints/sprint-1/F-05-submission.md",
+      "sourceLineNumbers": [
+        203
+      ],
+      "existingCaseClaims": [
+        "UAT-02"
+      ],
+      "assessment": "PARTIAL_UI",
+      "reason": "Deadline read state observed; optional stale-form POST was not executed, and no exact server equality boundary was tested.",
+      "proposedCases": [
+        "CPMS-X03"
+      ]
+    },
+    {
+      "id": "AC-05.4",
+      "source": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/sprints/sprint-1/F-05-submission.md",
+      "sourceLineNumbers": [
+        204
+      ],
+      "existingCaseClaims": [
+        "UAT-05"
+      ],
+      "assessment": "PARTIAL_UI",
+      "reason": "A stale second-member form was rejected and one original submission remained; simultaneous competing writes were not forced.",
+      "proposedCases": []
+    },
+    {
+      "id": "AC-05.5",
+      "source": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/sprints/sprint-1/F-05-submission.md",
+      "sourceLineNumbers": [
+        205
+      ],
+      "existingCaseClaims": [
+        "UAT-01",
+        "UAT-04",
+        "UAT-05"
+      ],
+      "assessment": "PARTIAL_UI",
+      "reason": "Teammate/Supervisor sharing and known foreign-account hiding observed; unassigned Student/co-supervisor contexts are unavailable.",
+      "proposedCases": [
+        "CPMS-X01",
+        "CPMS-X04"
+      ]
+    },
+    {
+      "id": "AC-05.6",
+      "source": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/sprints/sprint-1/F-05-submission.md",
+      "sourceLineNumbers": [
+        206
+      ],
+      "existingCaseClaims": [],
+      "assessment": "PARTIAL_UI",
+      "reason": "Duplicate rejection retained typed values; deadline rejection and transport/5xx branches were not all exercised.",
+      "proposedCases": [
+        "CPMS-X03"
+      ]
+    },
+    {
+      "id": "AC-05.7",
+      "source": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/sprints/sprint-1/F-05-submission.md",
+      "sourceLineNumbers": [
+        207
+      ],
+      "existingCaseClaims": [],
+      "assessment": "PARTIAL_UI",
+      "reason": "The unsubmitted empty state was observed; pending loading was not deliberately held and verified.",
+      "proposedCases": []
+    },
+    {
+      "id": "AC-05.8",
+      "source": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/sprints/sprint-1/F-05-submission.md",
+      "sourceLineNumbers": [
+        208
+      ],
+      "existingCaseClaims": [
+        "UAT-02",
+        "UAT-05"
+      ],
+      "assessment": "PARTIAL_UI",
+      "reason": "Open/Not submitted, Closed/Overdue and persisted Submitted after the original deadline observed; fixed-clock equality assertions remain separate.",
+      "proposedCases": [
+        "CPMS-X03"
+      ]
+    },
+    {
+      "id": "AC-05.9",
+      "source": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/sprints/sprint-1/F-05-submission.md",
+      "sourceLineNumbers": [
+        209
+      ],
+      "existingCaseClaims": [],
+      "assessment": "NOT_OBSERVED_EXTERNALLY",
+      "reason": "Supervisor submission POST and combined invalid-foreign-body guard order were not directly executed.",
+      "proposedCases": []
+    },
+    {
+      "id": "AC-06.1",
+      "source": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/sprints/sprint-1/F-06-feedback.md",
+      "sourceLineNumbers": [
+        157
+      ],
+      "existingCaseClaims": [
+        "UAT-01"
+      ],
+      "assessment": "PARTIAL_UI",
+      "reason": "Assigned Supervisor feedback persisted with author/time/version; spoofed body fields and co-supervisor creation were not exercised.",
+      "proposedCases": [
+        "CPMS-X02"
+      ]
+    },
+    {
+      "id": "AC-06.2",
+      "source": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/sprints/sprint-1/F-06-feedback.md",
+      "sourceLineNumbers": [
+        158
+      ],
+      "existingCaseClaims": [
+        "UAT-03"
+      ],
+      "assessment": "PARTIAL_UI",
+      "reason": "Blank/spaces-only feedback was rejected; exact 2000 and 2001 character cases were not executed.",
+      "proposedCases": [
+        "CPMS-X02"
+      ]
+    },
+    {
+      "id": "AC-06.3",
+      "source": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/sprints/sprint-1/F-06-feedback.md",
+      "sourceLineNumbers": [
+        159
+      ],
+      "existingCaseClaims": [
+        "UAT-01",
+        "UAT-05"
+      ],
+      "assessment": "OBSERVED_UI",
+      "reason": "Both ordered feedback entries retained content, author, time and version after re-authentication.",
+      "proposedCases": []
+    },
+    {
+      "id": "AC-06.4",
+      "source": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/sprints/sprint-1/F-06-feedback.md",
+      "sourceLineNumbers": [
+        160
+      ],
+      "existingCaseClaims": [
+        "UAT-04"
+      ],
+      "assessment": "PARTIAL_UI",
+      "reason": "Foreign goal/milestone UI exposed no feedback and Student saw no feedback form; direct feedback endpoints/forbidden writes remain separate.",
+      "proposedCases": [
+        "CPMS-X01",
+        "CPMS-X04"
+      ]
+    },
+    {
+      "id": "AC-06.5",
+      "source": "https://github.com/Nuggetkub/cpe334-course-project-management-system/blob/b6cffa1d5da7ab33f2af27e6c34e75f20cfc5b9c/docs/sprints/sprint-1/F-06-feedback.md",
+      "sourceLineNumbers": [
+        161
+      ],
+      "existingCaseClaims": [],
+      "assessment": "PARTIAL_UI",
+      "reason": "No-feedback state observed; delayed load and failed-save input preservation/Retry were not exercised.",
+      "proposedCases": []
+    }
+  ],
+  "supplementaryCases": [
+    {
+      "id": "CPMS-X01",
+      "purpose": "Malformed/case-normalized login and private history after account switch",
+      "status": "NOT_RUN",
+      "outcome": null
+    },
+    {
+      "id": "CPMS-X02",
+      "purpose": "Whitespace and exact upper validation boundaries",
+      "status": "NOT_RUN",
+      "outcome": null
+    },
+    {
+      "id": "CPMS-X03",
+      "purpose": "Submit a previously opened form after the deadline",
+      "status": "NOT_RUN",
+      "outcome": null
+    },
+    {
+      "id": "CPMS-X04",
+      "purpose": "Unassigned Student empty scope and protected-record denial",
+      "status": "REQUIRES_ACCOUNT",
+      "outcome": null
+    }
+  ],
+  "limits": [
+    "First-run PASS results remain tied to their original release and are not overwritten.",
+    "Partner contract STS names were inspected; no new automated or external runtime tests were run by this document review.",
+    "New case inputs and outcomes must be recorded at actual execution; a suggested case is not a defect report.",
+    "No controlled defect or product change is included."
+  ]
+}
