@@ -1,0 +1,110 @@
+Browser tab: 8, Title: "Course Project Management System", URL: "https://cpms-2ww7lkzxja-as.a.run.app/milestones".
+0 AXWebArea Course Project Management System, URL: cpms-2ww7lkzxja-as.a.run.app/milestones
+	1 container root
+		2 container
+			3 text Course Project Management
+			4 container Main
+				5 link Description: My teams, Value: cpms-2ww7lkzxja-as.a.run.app/teams
+				6 link Description: Milestones, Value: cpms-2ww7lkzxja-as.a.run.app/milestones
+			7 text Demo Supervisor 1 ·  Supervisor
+			8 button Log out
+		9 container
+			10 heading Milestones, Value: 2
+				11 text Milestones
+			12 text Team
+			13 pop up button (collapsed, settable) Team, Value: Demo Team A, ID: milestone-team, Secondary Actions: Expand
+				14 menu
+					15 (selected) Demo Team A
+			16 content list
+				17 container
+					18 heading TEST1, Value: 3
+						19 link Description: TEST1, Value: cpms-2ww7lkzxja-as.a.run.app/milestones/1
+					20 text Hello Due 
+					21 text 15 Nov 2026, 00:25 (ICT)
+					22 text Window:  Closed Team status:  Submitted
+				23 container
+					24 heading UAT-ST-02 Deadline, Value: 3
+						25 link Description: UAT-ST-02 Deadline, Value: cpms-2ww7lkzxja-as.a.run.app/milestones/5
+					26 text Due 
+					27 text 18 Nov 2026, 20:41 (ICT)
+					28 text Window:  Closed Team status:  Overdue
+				29 container
+					30 heading UAT-ST-01 Proposal, Value: 3
+						31 link Description: UAT-ST-01 Proposal, Value: cpms-2ww7lkzxja-as.a.run.app/milestones/4
+					32 text Synthetic UAT milestone Due 
+					33 text 19 Nov 2026, 18:00 (ICT)
+					34 text Window:  Closed Team status:  Submitted
+				35 container
+					36 heading UAT-ST-03 Validation, Value: 3
+						37 link Description: UAT-ST-03 Validation, Value: cpms-2ww7lkzxja-as.a.run.app/milestones/6
+					38 text Due 
+					39 text 19 Nov 2026, 18:00 (ICT)
+					40 text Window:  Closed Team status:  Submitted
+				41 container
+					42 heading UAT-ST-05 Persistence, Value: 3
+						43 link Description: UAT-ST-05 Persistence, Value: cpms-2ww7lkzxja-as.a.run.app/milestones/7
+					44 text Due 
+					45 text 19 Nov 2026, 18:00 (ICT)
+					46 text Window:  Closed Team status:  Submitted
+				47 container
+					48 heading UAT-ST-02 Deadline-r2-20261119-B, Value: 3
+						49 link Description: UAT-ST-02 Deadline-r2-20261119-B, Value: cpms-2ww7lkzxja-as.a.run.app/milestones/9
+					50 text Due 
+					51 text 19 Nov 2026, 21:49 (ICT)
+					52 text Window:  Closed Team status:  Overdue
+				53 container
+					54 heading UAT-ST-01 Proposal-r2-20261119-B, Value: 3
+						55 link Description: UAT-ST-01 Proposal-r2-20261119-B, Value: cpms-2ww7lkzxja-as.a.run.app/milestones/8
+					56 text Synthetic UAT milestone Due 
+					57 text 20 Nov 2026, 18:00 (ICT)
+					58 text Window:  Closed Team status:  Submitted
+				59 container
+					60 heading UAT-ST-03 Validation-r2-20261119-B, Value: 3
+						61 link Description: UAT-ST-03 Validation-r2-20261119-B, Value: cpms-2ww7lkzxja-as.a.run.app/milestones/10
+					62 text Due 
+					63 text 20 Nov 2026, 18:00 (ICT)
+					64 text Window:  Closed Team status:  Submitted
+				65 container
+					66 heading UAT-ST-05 Persistence-r2-20261119-B, Value: 3
+						67 link Description: UAT-ST-05 Persistence-r2-20261119-B, Value: cpms-2ww7lkzxja-as.a.run.app/milestones/11
+					68 text Due 
+					69 text 20 Nov 2026, 18:00 (ICT)
+					70 text Window:  Closed Team status:  Submitted
+				71 container
+					72 heading C-04 cloud check, Value: 3
+						73 link Description: C-04 cloud check, Value: cpms-2ww7lkzxja-as.a.run.app/milestones/2
+					74 text cloud check Due 
+					75 text 25 Nov 2026, 00:28 (ICT)
+					76 text Window:  Open Team status:  Not submitted
+				77 container
+					78 heading C-05 rollback check, Value: 3
+						79 link Description: C-05 rollback check, Value: cpms-2ww7lkzxja-as.a.run.app/milestones/3
+					80 text created on release B Due 
+					81 text 30 Nov 2026, 12:00 (ICT)
+					82 text Window:  Open Team status:  Not submitted
+			83 container Milestone pages
+				84 button (disabled) Previous
+				85 text Page  1  ·  11  milestones
+				86 button (disabled) Next
+			87 heading Create milestone, Value: 3
+				88 text Create milestone
+			89 container For this team · all times are Asia/Bangkok (ICT)
+				90 text For this team · all times are Asia/Bangkok (ICT)
+				91 text Title
+				92 text field (settable) Title, Value:    , ID: milestone-title
+				106 text Enter a title (1–120 characters).
+				93 text Description (optional)
+				94 text entry area (settable) Description (optional), Value: Boundary fixture, ID: milestone-description
+				95 text Due date and time (Asia/Bangkok)
+				96 date field (settable) Due date and time (Asia/Bangkok), Value: 2026-11-22T18:00, ID: milestone-due
+					97 container
+						98 stepper
+						99 stepper
+						100 stepper
+						101 stepper
+						102 stepper
+						103 stepper
+					104 pop up button Show local date and time picker Show local date and time picker
+				105 button Create milestone
+
+The focused UI element is 105 button Create milestone
