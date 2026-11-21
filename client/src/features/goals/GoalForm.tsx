@@ -136,7 +136,9 @@ export function GoalForm() {
               </select>
               {fieldError("templateId")}
               {selected?.description && (
-                <small className="muted">{selected.description}</small>
+                <small className="muted goal-template-description">
+                  {selected.description}
+                </small>
               )}
             </div>
             <div className="field">

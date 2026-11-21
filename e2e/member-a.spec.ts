@@ -1,5 +1,10 @@
 import { test, expect, type Page } from "@playwright/test";
-import { browserPassword, longTemplateId } from "./fixtures";
+import {
+  browserPassword,
+  longTemplateDescription,
+  longTemplateId,
+  longTemplateTitle,
+} from "./fixtures";
 
 async function login(page: Page, email = "reader@browser.test") {
   await page.goto("/login");
@@ -132,7 +137,7 @@ test("FR-19: a failed list request offers retry and recovers with real API data"
   await expect(page.getByRole("alert")).toHaveCount(0);
 });
 
-test("NFR-06: a valid long activity title stays inside the goal detail viewport", async ({
+test("UAT-73: a valid long activity title stays inside the goal detail viewport", async ({
   page,
 }, info) => {
   await login(page, `reader-${info.project.name}@browser.test`);
@@ -158,14 +163,44 @@ test("NFR-06: a valid long activity title stays inside the goal detail viewport"
   expect(created.status()).toBe(201);
   const goal = (await created.json()).data;
   await page.goto(`/goals/${goal.id}`);
-  await expect(
-    page.getByRole("heading", { name: "Reading".repeat(14), exact: true }),
-  ).toBeVisible();
+  const heading = page.getByRole("heading", {
+    name: longTemplateTitle,
+    exact: true,
+  });
+  await expect(heading).toBeVisible();
+  expect(
+    await heading.evaluate(
+      (element) => element.scrollWidth - element.clientWidth,
+    ),
+  ).toBeLessThanOrEqual(0);
   expect(
     await page.evaluate(() => document.documentElement.scrollWidth),
   ).toBeLessThanOrEqual(page.viewportSize()!.width);
   await page.screenshot({
-    path: `artifacts/evidence/ui-wording/member-a/${info.project.name}-long-title.png`,
+    path: info.outputPath("long-goal-title.png"),
+    fullPage: true,
+  });
+});
+
+test("UAT-73: a valid long template description stays inside the goal form", async ({
+  page,
+}, info) => {
+  await login(page, `reader-${info.project.name}@browser.test`);
+  await page.goto("/goals/new");
+  await page.getByLabel("กิจกรรมการอ่าน").selectOption(longTemplateId);
+
+  const description = page.getByText(longTemplateDescription, { exact: true });
+  await expect(description).toBeVisible();
+  expect(
+    await description.evaluate(
+      (element) => element.scrollWidth - element.clientWidth,
+    ),
+  ).toBeLessThanOrEqual(0);
+  expect(
+    await page.evaluate(() => document.documentElement.scrollWidth),
+  ).toBeLessThanOrEqual(page.viewportSize()!.width);
+  await page.screenshot({
+    path: info.outputPath("long-template-description.png"),
     fullPage: true,
   });
 });
