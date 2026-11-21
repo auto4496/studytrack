@@ -61,7 +61,7 @@ export function GoalDetail({
           <section className="page-heading">
             <div>
               <p className="eyebrow">ONE DAY AT A TIME</p>
-              <h1>{goal.templateTitle}</h1>
+              <h1 style={{ overflowWrap: "normal" }}>{goal.templateTitle}</h1>
               <p className="muted">เป้าหมายส่วนตัวของคุณ</p>
             </div>
             <span className="pill">
