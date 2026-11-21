@@ -2,7 +2,13 @@ import { spawnSync } from "node:child_process";
 import { PrismaClient } from "@prisma/client";
 import { testDatabaseUrl } from "../scripts/test-env.mjs";
 import { hashPassword } from "../server/src/auth/password.js";
-import { browserPassword, browserTemplateId, longTemplateId } from "./fixtures";
+import {
+  browserPassword,
+  browserTemplateId,
+  longTemplateDescription,
+  longTemplateId,
+  longTemplateTitle,
+} from "./fixtures";
 
 export default async function setup() {
   const url = testDatabaseUrl();
@@ -74,7 +80,8 @@ export default async function setup() {
     await db.activityTemplate.create({
       data: {
         id: longTemplateId,
-        title: "Reading".repeat(14),
+        title: longTemplateTitle,
+        description: longTemplateDescription,
         minMinutes: 1,
         maxMinutes: 1440,
         createdById: manager.id,
