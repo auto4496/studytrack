@@ -435,6 +435,9 @@ textarea[aria-invalid="true"] {
 .field small {
   font-size: 11px;
 }
+.goal-template-description {
+  overflow-wrap: anywhere;
+}
 .field-error {
   font-size: 11px;
   color: #a33e2d;
