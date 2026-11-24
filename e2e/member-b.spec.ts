@@ -611,6 +611,7 @@ test("TEST-L7-F02-UI: three code points and description-only legacy edit", async
   });
 
   await page.getByRole("button", { name: "ออกจากระบบ", exact: true }).click();
+  await expect(page).toHaveURL(/\/login$/);
   await login(page, `reader-f02-${info.project.name}@browser.test`);
   await page.goto(`/goals/new?template=${fixtureId}`);
   await expect(page.getByLabel("กิจกรรมการอ่าน", { exact: true })).toHaveValue(
