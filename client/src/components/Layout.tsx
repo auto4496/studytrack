@@ -40,6 +40,9 @@ export function Layout() {
               <NavLink to="/templates">
                 ▤ <span>กิจกรรมการอ่าน</span>
               </NavLink>
+              <NavLink to="/summary">
+                ▥ <span>สรุปการอ่าน</span>
+              </NavLink>
             </>
           ) : (
             <NavLink to="/manager/templates">
