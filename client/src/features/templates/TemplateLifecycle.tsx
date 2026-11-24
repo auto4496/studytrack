@@ -25,12 +25,17 @@ export function TemplateLifecycle({
   const disabled = mutation.busy || mutation.uncertain;
   async function save(event: FormEvent) {
     event.preventDefault();
+    const trimmedTitle = title.trim();
+    const patch =
+      trimmedTitle === template.title.trim()
+        ? { description }
+        : { title: trimmedTitle, description };
     await mutation.run(
       async () =>
         (
           await api<{ data: Template }>(`/templates/${template.id}`, {
             method: "PATCH",
-            body: JSON.stringify({ title, description }),
+            body: JSON.stringify(patch),
           })
         ).data,
       "แก้ไขข้อมูลกิจกรรมแล้ว",
@@ -57,8 +62,11 @@ export function TemplateLifecycle({
             required
             disabled={disabled}
             aria-invalid={!!mutation.fields.title}
-            aria-describedby={`title-error-${template.id}`}
+            aria-describedby={`title-help-${template.id} title-error-${template.id}`}
           />
+          <small id={`title-help-${template.id}`}>
+            เมื่อเปลี่ยนชื่อ ให้ระบุ 3–100 ตัวอักษร
+          </small>
           <small className="field-error" id={`title-error-${template.id}`}>
             {mutation.fields.title}
           </small>
