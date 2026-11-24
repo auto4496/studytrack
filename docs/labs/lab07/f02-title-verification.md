@@ -34,4 +34,8 @@ Both write paths use the same trimmed-title schema in [rules.ts](../../../server
 | [Browser case TEST-L7-F02-UI](../../../e2e/member-b.spec.ts) | `npm run test:e2e -- e2e/member-b.spec.ts -g TEST-L7-F02-UI --reporter=list` — desktop 1440×900 and mobile 390×844 both passed. The description-only request body was exactly `{ "description": "Lab 7 legacy description updated" }`. Reload retained the two-code-point title. A Participant could still select the template and create a goal. |
 | Production build | `npm run build` passed for server and client. |
 
+## Hosted browser follow-up
+
+[The first implementation CI run](https://github.com/auto4496/studytrack/actions/runs/45354917110) passed the API/unit step and 68 browser cases. The two new Lab 7 cases reached the legacy edit and timed out at the next sign-in because the test began a new navigation immediately after clicking logout. The test now waits for the sign-in URL before logging in as the Participant. The application code and all title/legacy assertions are unchanged by this follow-up.
+
 Local runs used synthetic data. Confirm the required GitHub CI, substantive teammate implementation review, integration and post-deploy behavior before recording the release as accepted.
