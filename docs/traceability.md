@@ -54,7 +54,7 @@ FR09/FR10 and the F05 portions of BR03/05/06/07/08/10/11 are now implemented and
 
 | SRS ID | Requirement (A source) | Feature/sprint or method | Planned verification | Execution status |
 |---|---|---|---|---|
-| BR-01 | unit = MINUTES; template min/max เป็น integer ภายใน 1..1440 และ min <= max; title trim แล้ว 1..100 ตัวอักษร description ไม่เกิน 500 | F-02 / 1 | F02 validation/role/catalog + F03/F04 snapshot regression; S2 lifecycle planned | S1 local checks PASS / 0b51571 |
+| BR-01 | unit = MINUTES; template min/max เป็น integer 1..1440 และ min <= max; title ที่ส่งตอนสร้าง/เปลี่ยนชื่อ trim แล้ว 3..100 Unicode code points; description ไม่เกิน 500 | F-02 / 1; F-05 / 2 | AC-F02-02 / TEST-F02-02, TEST-F02-03; AC-F05-10 / TEST-F05-10; [Lab 7 boundary, legacy and UI plan](labs/lab07/f02-title-change.md#planned-test-sequence) | Original rule PASS / 0b51571; Lab 7 revision PLANNED / NOT RUN |
 | BR-02 | dailyTargetMinutes เป็น integer ในช่วง template; startDate เป็น today หรือ tomorrow ณ Asia/Bangkok; snapshot unit/range ณ ตอนสร้าง | F-03 / 1 | Feature contract before code; later-sprint AC/test elaboration pending | S1 local checks PASS / 0b51571 |
 | BR-03 | หนึ่ง Participant มี goal สถานะ ACTIVE ต่อ template ได้ไม่เกินหนึ่ง แม้เป็น future-start; concurrent creation ต้องได้ ACTIVE แค่หนึ่งรายการ | F-03 / 1 | Feature contract before code; later-sprint AC/test elaboration pending | S1 local checks PASS / 0b51571 |
 | BR-04 | unique(goalId, entryDate); duplicate รวม concurrent request ต้องปฏิเสธ 409 โดยไม่มีแถวซ้ำ | F-04 / 1 | F04 STS date/range/duplicate/ratio/version/archived bounds; S2 extends where applicable | S1 local checks PASS / 0b51571 |
