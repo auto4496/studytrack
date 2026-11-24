@@ -7,6 +7,7 @@ export function TemplateForm() {
   const navigate = useNavigate();
   const form = useRef<HTMLFormElement>(null);
   const [title, setTitle] = useState("");
+  const titleLength = [...title.trim()].length;
   const [description, setDescription] = useState("");
   const [min, setMin] = useState("1");
   const [max, setMax] = useState("1440");
@@ -21,8 +22,8 @@ export function TemplateForm() {
     event.preventDefault();
     if (pending || uncertain) return;
     const invalid: Record<string, string> = {};
-    if (![...title.trim()].length || [...title.trim()].length > 100)
-      invalid.title = "ระบุชื่อกิจกรรม 1–100 ตัวอักษร";
+    if (titleLength < 3 || titleLength > 100)
+      invalid.title = "ระบุชื่อกิจกรรม 3–100 ตัวอักษร";
     if ([...description.trim()].length > 500)
       invalid.description = "คำอธิบายยาวได้ไม่เกิน 500 ตัวอักษร";
     if (!Number.isInteger(Number(min)) || Number(min) < 1 || Number(min) > 1440)
@@ -115,7 +116,7 @@ export function TemplateForm() {
             />
             {fieldError("title")}
             <small id="title-help">
-              {[...title.trim()].length}/100 ตัวอักษร
+              {titleLength}/100 ตัวอักษร · ขั้นต่ำ 3 ตัวอักษร
             </small>
           </div>
           <div className="field">
