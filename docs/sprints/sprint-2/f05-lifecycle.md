@@ -6,6 +6,8 @@ Current13November: implementation/staging/main release gates are satisfied; [acc
 
 **Original creation status: proposed before implementation. Update 9 November:** B explicitly approved all lifecycle/F06 decisions at `4ba7c76` in [PR32](https://github.com/auto4496/studytrack/pull/32), before A's implementation branch. Implementation/local results are now recorded in [F05 verification](../../verification/f05.md); implementation peer acceptance, staging/release and cloud actions are separate gates. The original decisions and test specification below are retained as the reviewed contract.
 
+**24 November 2026 — Lab 7 revision pending review/release.** [The F-02 title change](../../labs/lab07/f02-title-change.md) also applies to a supplied F-05 metadata title. Existing lifecycle behavior and historical evidence remain as recorded.
+
 ## 1. Baseline and scope
 
 Read against accepted staging `e16b0af2ccfbc6bd39a2f15982537531b21960f5`, whose tree equals main `5c04cd4bf7a7a28ff5c429f3770efc42da6bd7e0`. Existing code already has immutable goal snapshots, target-version uniqueness, the partial ACTIVE owner/template index, template row locks during goal creation and goal row locks during entry creation. These are design inputs, not evidence that lifecycle mutations work.
@@ -39,7 +41,7 @@ Use the existing `{data: DTO}` / `{error:{code,message,fields?,requestId}}` enve
 | PATCH `/api/templates/:templateId` | Manager; nonempty subset `{title?:string,description?:string}` | 200 existing TemplateDTO;404 absent;422 empty patch, unknown fields or invalid normalized metadata |
 | POST `/api/templates/:templateId/deactivate` | Manager; `{}` | 200 existing TemplateDTO with isActive=false, also when already inactive;404 absent |
 
-All new endpoints: anonymous/expired/revoked401; wrong role403; bad CSRF/origin403; malformed UUID/JSON400; non-JSON415; validation/unknown fields422. Unexpected persistence errors remain safe 500 with rollback. Metadata normalization follows F-02: trim title (1-100 characters), description at most500, omitted description preserves its current value, empty description is valid. An unchanged request preserves domain values and does not need to manufacture a new updatedAt.
+All new endpoints: anonymous/expired/revoked401; wrong role403; bad CSRF/origin403; malformed UUID/JSON400; non-JSON415; validation/unknown fields422. Unexpected persistence errors remain safe 500 with rollback. Metadata normalization follows the Lab 7 F-02 revision: a supplied title is trimmed and must contain 3–100 Unicode code points. Omitting title preserves the existing title, including a legacy short title. The edit form omits an unchanged normalized title. Description is at most 500; omitted description preserves its current value and empty description is valid. An unchanged request preserves domain values and does not need to manufacture a new updatedAt.
 
 ### Additive goal read shape
 
@@ -87,7 +89,7 @@ Reuse Goal, GoalTargetVersion, ActivityTemplate and existing indexes/checks. No 
 | AC-F05-07 / TEST-F05-07 | Archived goal with endDate; read/create eligible missing entries on start/end versus after end; create new goal on active template | Eligible dates work; later date422; old records retained; new goal has separate ID and only one ACTIVE slot |
 | AC-F05-08 / TEST-F05-08 | Goal starts tomorrow; attempt first target change/stop | Proposed409 GOAL_NOT_STARTED; no version/status/date mutation; ordinary read still shows initial target |
 | AC-F05-09 / TEST-F05-09 | Force both revision-versus-stop lock orders; repeat stop; coordinate entry-versus-stop and stop-versus-create | Documented serialized results, no update after archive, no invalid post-end entry, preserved uniqueness and no deadlock/partial writes |
-| AC-F05-10 / TEST-F05-10 | Manager edits title/description including inactive template; existing goal and new goal inspected | Old goal snapshots unchanged; new goal uses committed metadata; safe normalized TemplateDTO; omitted fields preserved |
+| AC-F05-10 / TEST-F05-10 | Manager edits title/description including inactive template; existing goal and new goal inspected | Old goal snapshots unchanged; new goal uses committed metadata; safe normalized TemplateDTO; omitted fields preserved. Lab 7: trimmed 2/3 and 100/101 title boundaries, 422 with fields.title and no partial metadata update for invalid input, description-only edit preserves a legacy short title |
 | AC-F05-11 / TEST-F05-11 | Deactivate/retry; attempt new goal; existing goal target/entry/progress; participant catalog versus manager catalog | Inactive remains inactive; new goal422; existing snapshot workflow works; participant cannot see inactive detail; manager can inspect it |
 | AC-F05-12 / TEST-F05-12 | Real DB barriers force create-before/after-deactivate and create-before/after-metadata commit | Coherent snapshots; no successful create serialized after deactivation; existing creates retained |
 | AC-F05-13 / TEST-F05-13 | Every new endpoint with anonymous/revoked, wrong role, P2 targeting P1, absent ID, bad CSRF/origin, malformed/unknown fields | Documented401/403/404/400/415/422; safe envelopes; no private disclosure or write. Managers can edit other managers' shared templates |
