@@ -58,7 +58,7 @@ BR-01 ถึง BR-10 รักษาความหมายจาก project b
 
 | ID | Rule and boundary | Feature / sprint |
 |---|---|---|
-| BR-01 | unit = MINUTES; template min/max เป็น integer ภายใน 1..1440 และ min <= max; title trim แล้ว 1..100 ตัวอักษร description ไม่เกิน 500 | F-02 / 1 |
+| BR-01 | unit = MINUTES; template min/max เป็น integer ภายใน 1..1440 และ min <= max; title ที่ส่งตอนสร้างหรือเปลี่ยนชื่อ trim แล้ว 3..100 Unicode code points; description ไม่เกิน 500; คงชื่อเดิมเมื่อไม่ได้ส่ง title | F-02 / 1; F-05 / 2; [Lab 7 revision รอ review และ release](labs/lab07/f02-title-change.md) |
 | BR-02 | dailyTargetMinutes เป็น integer ในช่วง template; startDate เป็น today หรือ tomorrow ณ Asia/Bangkok; snapshot unit/range ณ ตอนสร้าง | F-03 / 1 |
 | BR-03 | หนึ่ง Participant มี goal สถานะ ACTIVE ต่อ template ได้ไม่เกินหนึ่ง แม้เป็น future-start; concurrent creation ต้องได้ ACTIVE แค่หนึ่งรายการ | F-03 / 1 |
 | BR-04 | unique(goalId, entryDate); duplicate รวม concurrent request ต้องปฏิเสธ 409 โดยไม่มีแถวซ้ำ | F-04 / 1 |

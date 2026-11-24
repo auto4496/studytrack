@@ -53,7 +53,7 @@ IDs เป็น UUID strings; DB names ใช้ snake_case, JSON ใช้ cam
 |---|---|---|
 | User | id, emailNormalized, displayName, passwordHash, role, createdAt | unique emailNormalized; role PARTICIPANT/PROGRAM_MANAGER; ไม่มี password ใน public DTO |
 | Session | id, tokenHash, csrfToken, userId nullable, createdAt, expiresAt | tokenHash unique; opaque token ไม่เก็บตรง ๆ; null userId สำหรับ pre-auth CSRF bootstrap; cascade revoke/delete เมื่อ account ถูกลบ |
-| ActivityTemplate | id, title, description, unit, minMinutes, maxMinutes, isActive, createdById, createdAt, updatedAt | unit MINUTES; 1<=min<=max<=1440; FK manager creator; title length 1..100 |
+| ActivityTemplate | id, title, description, unit, minMinutes, maxMinutes, isActive, createdById, createdAt, updatedAt | unit MINUTES; 1<=min<=max<=1440; FK manager creator; DB title length 1..100 สำหรับข้อมูลเดิม; application รับ title ใหม่ที่ trim แล้ว 3..100 Unicode code points ตาม [Lab 7 revision](labs/lab07/f02-title-change.md) |
 | Goal | id, ownerId, templateId, templateTitleSnapshot, unit, minMinutesSnapshot, maxMinutesSnapshot, startDate, endDate nullable, status, createdAt | FK owner/template; status ACTIVE/ARCHIVED; partial unique(ownerId,templateId) WHERE status=ACTIVE; bounds snapshots immutable |
 | GoalTargetVersion | id, goalId, effectiveFrom, targetMinutes, createdAt | unique(goalId,effectiveFrom); target>0; initial effectiveFrom=startDate; effective version query ordered descending <= requested date |
 | DailyEntry | id, goalId, entryDate, minutes, createdAt, updatedAt | unique(goalId,entryDate); minutes 1..1440 and service checks goal snapshot range/date; no client owner field |
