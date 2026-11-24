@@ -1,5 +1,8 @@
 import { describe, expect, it } from "vitest";
-import { templateInput } from "../../src/features/templates/rules.js";
+import {
+  templateInput,
+  templateMetadataInput,
+} from "../../src/features/templates/rules.js";
 
 describe("TEST-F02-02: template validation boundaries", () => {
   const input = { title: " Read ", minMinutes: 1, maxMinutes: 1440 };
@@ -47,5 +50,27 @@ describe("TEST-F02-02: template validation boundaries", () => {
     expect(templateInput.safeParse({ ...input, unit: "MINUTES" }).success).toBe(
       false,
     );
+  });
+
+  it("TEST-L7-F02-UNIT: create and edit count trimmed Unicode code points", () => {
+    for (const raw of [" ", " A ", " 📚📚 ", "📚".repeat(101)]) {
+      expect(templateInput.safeParse({ ...input, title: raw }).success).toBe(
+        false,
+      );
+      expect(templateMetadataInput.safeParse({ title: raw }).success).toBe(
+        false,
+      );
+    }
+    for (const valid of ["📚".repeat(3), "📚".repeat(100)]) {
+      expect(templateInput.parse({ ...input, title: ` ${valid} ` }).title).toBe(
+        valid,
+      );
+      expect(templateMetadataInput.parse({ title: ` ${valid} ` }).title).toBe(
+        valid,
+      );
+    }
+    expect(
+      templateMetadataInput.parse({ description: " Old title retained " }),
+    ).toEqual({ description: "Old title retained" });
   });
 });
