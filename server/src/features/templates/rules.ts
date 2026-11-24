@@ -5,7 +5,10 @@ const lengthAtMost = (limit: number) => (value: string) =>
 const title = z
   .string()
   .trim()
-  .min(1, "กรุณาระบุชื่อกิจกรรม")
+  .refine(
+    (value) => [...value].length >= 3,
+    "ระบุชื่อกิจกรรมอย่างน้อย 3 ตัวอักษร",
+  )
   .refine(lengthAtMost(100), "ชื่อกิจกรรมยาวได้ไม่เกิน 100 ตัวอักษร");
 const description = z
   .string()
@@ -22,16 +25,8 @@ export const templateMetadataInput = z
   );
 export const templateInput = z
   .strictObject({
-    title: z
-      .string()
-      .trim()
-      .min(1, "กรุณาระบุชื่อกิจกรรม")
-      .refine(lengthAtMost(100), "ชื่อกิจกรรมยาวได้ไม่เกิน 100 ตัวอักษร"),
-    description: z
-      .string()
-      .trim()
-      .refine(lengthAtMost(500), "คำอธิบายยาวได้ไม่เกิน 500 ตัวอักษร")
-      .default(""),
+    title,
+    description: description.default(""),
     minMinutes: z.number().int().min(1).max(1440),
     maxMinutes: z.number().int().min(1).max(1440),
   })

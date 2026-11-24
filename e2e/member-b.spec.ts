@@ -90,7 +90,7 @@ test("TEST-F02-09: validation, pending and unknown POST outcome preserve input w
     .getByRole("button", { name: "สร้าง Template →", exact: true })
     .click();
   await expect(page.getByLabel("ชื่อกิจกรรม", { exact: true })).toBeFocused();
-  await expect(page.locator("#title-error")).toContainText("1–100");
+  await expect(page.locator("#title-error")).toContainText("3–100");
   await fillTemplate(page, "a".repeat(100));
   let release!: () => void;
   const gate = new Promise<void>((resolve) => {
@@ -523,4 +523,108 @@ test("TEST-F04-15: tomorrow goal never fetches an invalid daily date and logout 
   await page.reload();
   await expect(page).toHaveURL(/\/login$/);
   await expect(page.getByTestId("progress-amount")).toHaveCount(0);
+});
+
+test("TEST-L7-F02-UI: three code points and description-only legacy edit", async ({
+  page,
+}, info) => {
+  const legacyTitle = info.project.name === "desktop" ? "L7" : "M7";
+  const acceptedTitle = info.project.name === "desktop" ? "📚AB" : "📚MB";
+  const newDescription = "Lab 7 legacy description updated";
+  const db = new PrismaClient({ datasourceUrl: testDatabaseUrl() });
+  let fixtureId: string;
+  try {
+    const manager = await db.user.findUniqueOrThrow({
+      where: { emailNormalized: "manager@browser.test" },
+      select: { id: true },
+    });
+    const template = await db.activityTemplate.create({
+      data: {
+        title: legacyTitle,
+        minMinutes: 1,
+        maxMinutes: 1440,
+        createdById: manager.id,
+      },
+      select: { id: true },
+    });
+    fixtureId = template.id;
+  } finally {
+    await db.$disconnect();
+  }
+
+  await login(page, "manager@browser.test");
+  await page.goto("/manager/templates/new");
+  const titleInput = page.getByLabel("ชื่อกิจกรรม", { exact: true });
+  const createButton = page.getByRole("button", {
+    name: "สร้าง Template →",
+    exact: true,
+  });
+  await fillTemplate(page, " 📚📚 ");
+  await createButton.click();
+  await expect(titleInput).toHaveValue(" 📚📚 ");
+  await expect(titleInput).toBeFocused();
+  await expect(page.locator("#title-error")).toContainText("3–100");
+  await page.screenshot({
+    path: info.outputPath("two-code-points-rejected.png"),
+  });
+
+  await titleInput.fill(` ${acceptedTitle} `);
+  await createButton.click();
+  await expect(page).toHaveURL(/\/manager\/templates$/);
+  await expect(
+    page.getByRole("heading", { name: acceptedTitle, exact: true }),
+  ).toBeVisible();
+
+  const card = page.locator("article").filter({
+    has: page.getByRole("heading", { name: legacyTitle, exact: true }),
+  });
+  await card
+    .getByRole("button", { name: "แก้ไขข้อมูลกิจกรรม", exact: true })
+    .click();
+  const title = card.getByLabel("ชื่อกิจกรรมใหม่", { exact: true });
+  await expect(title).toHaveValue(legacyTitle);
+  await title.fill(` ${legacyTitle} `);
+  await card.getByLabel("คำอธิบายใหม่", { exact: true }).fill(newDescription);
+  const saved = page.waitForResponse(
+    (response) =>
+      response.url().endsWith(`/api/templates/${fixtureId}`) &&
+      response.request().method() === "PATCH",
+  );
+  await card
+    .getByRole("button", { name: "บันทึกข้อมูลกิจกรรม", exact: true })
+    .click();
+  const result = await saved;
+  expect(result.request().postDataJSON()).toEqual({
+    description: newDescription,
+  });
+  expect(result.status()).toBe(200);
+  expect((await result.json()).data).toMatchObject({
+    id: fixtureId,
+    title: legacyTitle,
+    description: newDescription,
+  });
+  await page.reload();
+  await expect(card).toContainText(newDescription);
+  await card.scrollIntoViewIfNeeded();
+  await page.screenshot({
+    path: info.outputPath("legacy-title-preserved.png"),
+  });
+
+  await page.getByRole("button", { name: "ออกจากระบบ", exact: true }).click();
+  await expect(page).toHaveURL(/\/login$/);
+  await login(page, `reader-f02-${info.project.name}@browser.test`);
+  await page.goto(`/goals/new?template=${fixtureId}`);
+  await expect(page.getByLabel("กิจกรรมการอ่าน", { exact: true })).toHaveValue(
+    fixtureId,
+  );
+  await page.getByLabel("เป้าหมายรายวัน (นาที)", { exact: true }).fill("30");
+  await page
+    .getByRole("button", { name: "สร้างเป้าหมาย →", exact: true })
+    .click();
+  await expect(
+    page.getByRole("heading", { name: legacyTitle, exact: true }),
+  ).toBeVisible();
+  expect(
+    await page.evaluate(() => document.documentElement.scrollWidth),
+  ).toBeLessThanOrEqual(page.viewportSize()!.width);
 });
