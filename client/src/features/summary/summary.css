@@ -1,0 +1,93 @@
+.summary-page {
+  min-width: 0;
+}
+
+.summary-card,
+.summary-filters {
+  background: #fff;
+  border: 1px solid #dbe5d9;
+  border-radius: 14px;
+  margin-block-end: 20px;
+  padding: clamp(14px, 3vw, 28px);
+}
+
+.summary-card h2,
+.summary-goals a {
+  overflow-wrap: anywhere;
+}
+
+.summary-filters,
+.summary-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr));
+  gap: 16px;
+}
+
+.summary-filters label,
+.summary-metrics div {
+  min-width: 0;
+}
+
+.summary-filters label {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  gap: 6px;
+}
+
+.summary-filters select,
+.summary-filters input {
+  width: 100%;
+  min-width: 0;
+}
+
+.summary-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.summary-metrics dt {
+  color: #52665c;
+}
+
+.summary-metrics dd {
+  margin: 4px 0 0;
+  color: #1f4d3a;
+  font-size: 1.2rem;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.summary-days {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.summary-days th,
+.summary-days td {
+  border-bottom: 1px solid #e4ebe2;
+  padding: 10px 6px;
+  text-align: start;
+  overflow-wrap: anywhere;
+}
+
+.summary-goals {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+}
+
+.summary-goals li {
+  min-width: 0;
+  border: 1px solid #e4ebe2;
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.summary-goals p {
+  margin-block: 4px;
+}
