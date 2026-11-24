@@ -8,6 +8,7 @@ import { ApiError, errorHandler } from "./errors.js";
 import type { Dependencies } from "./auth/context.js";
 import { authRouter } from "./auth/router.js";
 import { goalsRouter } from "./features/goals/router.js";
+import { summaryRouter } from "./features/summary/router.js";
 import { templateReadRouter } from "./features/templates/read-router.js";
 
 export function createApp(deps: Dependencies) {
@@ -33,6 +34,7 @@ export function createApp(deps: Dependencies) {
   });
   app.use("/api/auth", authRouter(deps));
   app.use("/api/goals", goalsRouter(deps));
+  app.use("/api/summary", summaryRouter(deps));
   app.use("/api/templates", templateReadRouter(deps));
   app.use("/api", (_req, _res, next) =>
     next(new ApiError(404, "NOT_FOUND", "ไม่พบรายการที่ต้องการ")),

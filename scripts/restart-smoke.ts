@@ -271,10 +271,40 @@ try {
   const beforeEntry = await db.dailyEntry.findUniqueOrThrow({
     where: { id: entry.id },
   });
+  const summaryDate = entry.entryDate;
+  const readSummary = async () => {
+    const query = new URLSearchParams({
+      goalId: goal.data.id,
+      from: summaryDate,
+      to: summaryDate,
+    });
+    const result = await fetch(`${origin}/api/summary?${query}`, {
+      headers: { Cookie: cookie },
+    });
+    assert.equal(result.status, 200);
+    return (await result.json()).data;
+  };
+  const beforeSummary = await readSummary();
+  assert.equal(beforeSummary.totals.totalMinutes, 75);
+  assert.equal(beforeSummary.totals.targetMinutes, 60);
+  assert.equal(beforeSummary.totals.progressPercent, 125);
   const f06Pid = processHandle?.pid;
   await stop();
   await start();
   assert.notEqual(processHandle?.pid, f06Pid);
+  const afterSummary = await readSummary();
+  for (const key of [
+    "range",
+    "filter",
+    "totals",
+    "days",
+    "goals",
+    "pagination",
+  ])
+    assert.deepEqual(afterSummary[key], beforeSummary[key]);
+  console.log(
+    "PASS TEST-F08-19: the corrected entry and selected summary were identical across distinct local API processes.",
+  );
   const afterHistory = await readHistory();
   for (const key of [
     "goalId",
