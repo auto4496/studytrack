@@ -342,4 +342,91 @@ describe("F-08 participant period summary", () => {
       ).goal.status,
     ).toBe("ARCHIVED");
   });
+
+  it("TEST-F08-10/11/16: schedules are independent, reads preserve rows, sessions expire", async () => {
+    const { agent, csrf } = await login();
+    const goal = await makeGoal(
+      fixtures.user.id,
+      fixtures.template.id,
+      "2026-11-03",
+      30,
+    );
+    const createSchedule = (reminderEnabled: boolean) =>
+      agent
+        .put(`/api/goals/${goal.id}/schedule`)
+        .set("Origin", origin)
+        .set("X-CSRF-Token", csrf)
+        .send({
+          reminderEnabled,
+          days: [
+            {
+              weekday: 2,
+              readingTime: "20:00",
+              reminderTime: reminderEnabled ? "19:45" : null,
+            },
+          ],
+        })
+        .expect(200);
+    await db.dailyEntry.create({
+      data: { goalId: goal.id, entryDate: new Date("2026-11-03"), minutes: 20 },
+    });
+    const path = "/api/summary";
+    const baseline = (await agent.get(path).expect(200)).body.data;
+    const rows = await db.dailyEntry.findMany({ where: { goalId: goal.id } });
+    const targets = await db.goalTargetVersion.findMany({
+      where: { goalId: goal.id },
+    });
+    await createSchedule(true);
+    expect((await agent.get(path).expect(200)).body.data).toEqual(baseline);
+    await createSchedule(false);
+    expect((await agent.get(path).expect(200)).body.data).toEqual(baseline);
+    expect(
+      await db.dailyEntry.findMany({ where: { goalId: goal.id } }),
+    ).toEqual(rows);
+    expect(
+      await db.goalTargetVersion.findMany({ where: { goalId: goal.id } }),
+    ).toEqual(targets);
+    expect(await db.goal.findUnique({ where: { id: goal.id } })).toEqual(goal);
+
+    const expired = await login();
+    await agent
+      .post("/api/auth/logout")
+      .set("Origin", origin)
+      .set("X-CSRF-Token", csrf)
+      .expect(204);
+    await agent.get(path).expect(401);
+    clock.instant = new Date("2026-11-03T16:59Z");
+    await expired.agent.get(path).expect(401);
+    const atMidnight = await login();
+    clock.instant = new Date("2026-11-03T17:00Z");
+    const next = (await atMidnight.agent.get(path).expect(200)).body.data;
+    expect(next.evaluation.today).toBe("2026-11-04");
+    expect(next.range.to).toBe("2026-11-04");
+    expect(next.days.at(-1).date).toBe("2026-11-04");
+  });
+
+  it("TEST-F08-13: the default second page excludes earlier rows without changing totals", async () => {
+    for (let index = 0; index < 21; index++)
+      await makeGoal(
+        fixtures.user.id,
+        fixtures.template.id,
+        "2026-11-03",
+        30,
+        "2026-11-03",
+      );
+    const { agent } = await login();
+    const one = (await agent.get("/api/summary").expect(200)).body.data;
+    const two = (await agent.get("/api/summary?page=2").expect(200)).body.data;
+    const ids = [...one.goals, ...two.goals].map(
+      (item: { goal: { id: string } }) => item.goal.id,
+    );
+    expect(one.pagination).toEqual({ page: 1, pageSize: 20, total: 21 });
+    expect(two.pagination).toEqual({ page: 2, pageSize: 20, total: 21 });
+    expect(one.goals).toHaveLength(20);
+    expect(two.goals).toHaveLength(1);
+    expect(new Set(ids).size).toBe(21);
+    expect([...ids].sort()).toEqual(ids);
+    expect(two.totals).toEqual(one.totals);
+    expect(two.days).toEqual(one.days);
+  });
 });
