@@ -2,7 +2,12 @@ import { spawnSync } from "node:child_process";
 import { PrismaClient } from "@prisma/client";
 import { testDatabaseUrl } from "../scripts/test-env.mjs";
 import { hashPassword } from "../server/src/auth/password.js";
-import { browserPassword, browserTemplateId, longTemplateId } from "./fixtures";
+import {
+  browserPassword,
+  browserTemplateId,
+  longTemplateId,
+  longTemplateTitle,
+} from "./fixtures";
 
 export default async function setup() {
   const url = testDatabaseUrl();
@@ -51,6 +56,10 @@ export default async function setup() {
       "reader-history-mobile@browser.test",
       "reader-f05-desktop@browser.test",
       "reader-f05-mobile@browser.test",
+      "reader-f08-desktop@browser.test",
+      "reader-f08-mobile@browser.test",
+      "reader-f08-recovery-desktop@browser.test",
+      "reader-f08-recovery-mobile@browser.test",
     ]) {
       await db.user.create({
         data: {
@@ -74,7 +83,7 @@ export default async function setup() {
     await db.activityTemplate.create({
       data: {
         id: longTemplateId,
-        title: "Reading".repeat(14),
+        title: longTemplateTitle,
         minMinutes: 1,
         maxMinutes: 1440,
         createdById: manager.id,
